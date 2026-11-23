@@ -17,8 +17,8 @@ void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0(void)
   bVar4 = 0;
   g_SfxLastSlot = g_SfxLastSlot + 1;
   if (7 < g_SfxLastSlot) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0xe98;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 3736;
     core_main_c_displayErrorAndQuit_FUN_005030e0("pushSfxOptions - stack full");
   }
   pCVar2 = g_CSfxOptions_ARRAY_02c78cf0 + g_SfxLastSlot + -1;

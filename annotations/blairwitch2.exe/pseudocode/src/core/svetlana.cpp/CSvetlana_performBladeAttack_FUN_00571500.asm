@@ -32,8 +32,8 @@
 ;   TerminatedCString s_svetlana_attack_wav_005ec38a
 ;   TerminatedCString s_svetlana_miss_wav_005ec39f
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
 ;
@@ -157,8 +157,8 @@ section .text
         ;   Label: LAB_0057162a
     MOV ECX,0x2ef                       ; 0057162f
     PUSH 0x5ec368                       ; 00571634 | = "Can't find svetlana's parent bone"
-    MOV dword ptr [0x01d046a0],EDX      ; 00571639 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0057163f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00571639 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0057163f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00571645
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057164a

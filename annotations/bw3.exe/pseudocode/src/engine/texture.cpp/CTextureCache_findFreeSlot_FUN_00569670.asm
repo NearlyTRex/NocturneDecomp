@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005d5e3d
 ;   TerminatedCString s_CTextureCache_findFreeSl_005d5e53
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_02cfd0d4
 ;
 ; Called Functions:
@@ -116,8 +116,8 @@ section .text
     MOV EBP,0x5d5e3d                    ; 00569738 | = "..\\engine\\texture.cpp"
     MOV EAX,0xbc                        ; 0056973d
     PUSH 0x5d5e53                       ; 00569742 | = "CTextureCache::findFreeSlot - Cache h..."
-    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0056974d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 00569747 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0056974d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00569752
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00569757

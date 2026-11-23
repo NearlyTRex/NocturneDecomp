@@ -169,12 +169,12 @@ COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@004a4204 [ESP:???](-4)!?  # CALL 0x0046e5e0
+@004a4204 [ESP:-24](-4)  # CALL 0x0046e5e0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4a4209,4)
 CALL (ram,0x46e5e0,4)
 
-@004a4209 [ESP:???](+8)!?  # ADD ESP, 0x8
+@004a4209 [ESP:-16](+8)?  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -185,7 +185,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004a420c [ESP:???]!?  # ADD EBX, 0x18
+@004a420c [ESP:-16]  # ADD EBX, 0x18
 INT_CARRY (register,0x200,1) = (register,0xc,4) /* EBX */, (const,0x18,4)
 INT_SCARRY (register,0x20b,1) = (register,0xc,4) /* EBX */, (const,0x18,4)
 INT_ADD (register,0xc,4) /* EBX */ = (register,0xc,4) /* EBX */, (const,0x18,4)
@@ -196,7 +196,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004a420f [ESP:???]!?  # CMP EBX, EDI
+@004a420f [ESP:-16]  # CMP EBX, EDI
 COPY (unique,0x66a00,4) = (register,0xc,4) /* EBX */
 INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0x1c,4) /* EDI */
 INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0x1c,4) /* EDI */
@@ -208,7 +208,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004a4211 [ESP:???]!?  # JL 0x004a41f0
+@004a4211 [ESP:-16]  # JL 0x004a41f0
 INT_NOTEQUAL (unique,0x18700,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x4a41f0,4), (unique,0x18700,1)
 
@@ -548,5 +548,4 @@ BRANCH (ram,0x4a4204,4)
 
 # ============================================================================
 # Summary: 83 instructions, 364 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

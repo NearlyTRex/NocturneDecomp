@@ -377,5 +377,27 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 59,
+          "message": "Value stored to 'local_c' is never read",
+          "path_notes": [
+            {
+              "line": 59,
+              "message": "Value stored to 'local_c' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

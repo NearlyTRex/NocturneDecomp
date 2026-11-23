@@ -19,7 +19,7 @@ float10 __fpustack_safe pow(float10 base,float10 exp);
 
 // Original: crt_math.c_integer_power_FUN_005ffeb2
 // Address: 005ffeb2
-float10 __fpureg integer::power(float10 base,ushort exponent);
+float10 __fpureg integer_power(float10 base,ushort exponent);
 
 // Original: crt_math.c_ldexp_FUN_00600002
 // Address: 00600002
@@ -47,15 +47,15 @@ double __crtmath modf(double value,double *integer_part);
 
 // Original: crt_math.c_set_domain_error_errno_FUN_006027a0
 // Address: 006027a0
-void __cdecl set::domain_error_errno(void);
+void __cdecl set_domain_error_errno(void);
 
 // Original: crt_math.c_set_range_error_errno_FUN_006027ac
 // Address: 006027ac
-void __cdecl set::range_error_errno(void);
+void __cdecl set_range_error_errno(void);
 
 // Original: crt_math.c_math_domain_error_FUN_00606832
 // Address: 00606832
-double __cdecl math::domain_error(double x,double y,uchar error_type);
+double __cdecl math_domain_error(double x,double y,uchar error_type);
 
 // Original: crt_math.c_exp_FUN_006068e2
 // Address: 006068e2
@@ -67,43 +67,43 @@ float10 __fpustack_safe fdiv(float10 dividend,float10 divisor);
 
 // Original: crt_math.c_function_dispatch_FUN_00606a77
 // Address: 00606a77
-float10 __watcallRegister function::dispatch(int function_index);
+float10 __watcallRegister function_dispatch(int function_index);
 
 // Original: crt_math.c_generate_nan_FUN_00606a81
 // Address: 00606a81
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_fatal_math_error_FUN_00606a87
 // Address: 00606a87
-void __watcallRegister fatal::math_error(void);
+void __watcallRegister fatal_math_error(void);
 
 // Original: crt_math.c_generate_nan_FUN_00606a8c
 // Address: 00606a8c
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_fatal_math_error_FUN_00606a92
 // Address: 00606a92
-void __watcallRegister fatal::math_error(void);
+void __watcallRegister fatal_math_error(void);
 
 // Original: crt_math.c_generate_nan_FUN_00606a97
 // Address: 00606a97
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_generate_nan_FUN_00606a9d
 // Address: 00606a9d
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_generate_nan_FUN_00606aa3
 // Address: 00606aa3
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_generate_nan_FUN_00606aa9
 // Address: 00606aa9
-float10 __watcallRegister generate::nan(void);
+float10 __watcallRegister generate_nan(void);
 
 // Original: crt_math.c_dispatch_divide_FUN_00606aaf
 // Address: 00606aaf
-float10 __watcallRegister dispatch::divide(void);
+float10 __watcallRegister dispatch_divide(void);
 
 // Original: crt_math.c_FUN_00606acb
 // Address: 00606acb
@@ -119,7 +119,7 @@ void FUN_00606ae6(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606aeb
 // Address: 00606aeb
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606b07
 // Address: 00606b07
@@ -127,7 +127,7 @@ void FUN_00606b07(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606b17
 // Address: 00606b17
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606b2b
 // Address: 00606b2b
@@ -151,7 +151,7 @@ void FUN_00606b7a(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606b7f
 // Address: 00606b7f
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606b9f
 // Address: 00606b9f
@@ -159,7 +159,7 @@ void FUN_00606b9f(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606bb3
 // Address: 00606bb3
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606bcb
 // Address: 00606bcb
@@ -215,7 +215,7 @@ void FUN_00606cc2(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606cc7
 // Address: 00606cc7
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606ce7
 // Address: 00606ce7
@@ -223,7 +223,7 @@ void FUN_00606ce7(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606cfb
 // Address: 00606cfb
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606d13
 // Address: 00606d13
@@ -247,7 +247,7 @@ void FUN_00606d66(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606d6b
 // Address: 00606d6b
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606d8b
 // Address: 00606d8b
@@ -255,7 +255,7 @@ void FUN_00606d8b(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606d9f
 // Address: 00606d9f
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606db7
 // Address: 00606db7
@@ -279,7 +279,7 @@ void FUN_00606e0a(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606e0f
 // Address: 00606e0f
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606e2f
 // Address: 00606e2f
@@ -287,7 +287,7 @@ void FUN_00606e2f(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606e43
 // Address: 00606e43
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606e5b
 // Address: 00606e5b
@@ -319,7 +319,7 @@ void FUN_00606ed3(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_00606ee7
 // Address: 00606ee7
-float10 __fpu_thunk fdiv::thunk(void);
+float10 __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_math.c_FUN_00606eff
 // Address: 00606eff
@@ -351,15 +351,15 @@ ulonglong __watcallRegister multiply64(ulonglong a,ulonglong b);
 
 // Original: crt_math.c_set_math_errno_FUN_0060befa
 // Address: 0060befa
-double __cdecl set::math_errno(int errorFlags,double *valuePtr);
+double __cdecl set_math_errno(int errorFlags,double *valuePtr);
 
 // Original: crt_math.c_process_math_error_FUN_0060bf2d
 // Address: 0060bf2d
-double __cdecl process::math_error(int errorFlags,double *value1,double *value2);
+double __cdecl process_math_error(int errorFlags,double *value1,double *value2);
 
 // Original: crt_math.c_handle_math_error_FUN_0060c02b
 // Address: 0060c02b
-double __mathinternal handle::math_error(void);
+double __mathinternal handle_math_error(void);
 
 // Original: crt_math.c_udivmod64_FUN_0060d3ed
 // Address: 0060d3ed
@@ -367,8 +367,8 @@ ulonglong __watcallRegister udivmod64(ulonglong dividend,ulonglong divisor);
 
 // Original: crt_math.c_print_error_message_FUN_0060e298
 // Address: 0060e298
-void __cdecl print::error_message(int errorType,char *errorData);
+void __cdecl print_error_message(int errorType,char *errorData);
 
 // Original: crt_math.c_report_math_error_FUN_0060e2e5
 // Address: 0060e2e5
-double __cdecl report::math_error(MathErrorContext *errorCtx);
+double __cdecl report_math_error(MathErrorContext *errorCtx);

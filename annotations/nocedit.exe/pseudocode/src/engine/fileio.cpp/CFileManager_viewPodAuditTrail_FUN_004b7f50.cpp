@@ -96,28 +96,28 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
       time_ptr = _localtime((time_t *)&local_308.timestamp);
       _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       pcVar4 = "???";
-      if (local_308.operation_type == 0) {
+      if (local_308.operation_type == POD_AUDIT_OPERATION_ADD) {
         pcVar4 = "Add";
       }
-      else if ((uint)local_308.operation_type < 2) {
+      else if (local_308.operation_type < POD_AUDIT_OPERATION_CHANGE) {
         pcVar4 = "Remove";
       }
-      else if (local_308.operation_type == 2) {
+      else if (local_308.operation_type == POD_AUDIT_OPERATION_CHANGE) {
         pcVar4 = "Change";
       }
       if ((local_308.timestamp != local_10) ||
-         (iVar4 = _stricmp(local_308.user_path,local_98), iVar4 != 0)) {
+         (iVar4 = _stricmp(local_308.user_name,local_98), iVar4 != 0)) {
         _sprintf(local_508,"--\t%s\t%s",&local_308,local_34);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
-        pcVar6 = local_308.user_path;
+        pcVar6 = local_308.user_name;
         pcVar8 = local_98;
         local_10 = local_308.timestamp;
         do {
-          cVar1 = ((CPodAuditRecord *)pcVar6)->user_path[0];
+          cVar1 = ((CPodAuditRecord *)pcVar6)->user_name[0];
           *pcVar8 = cVar1;
           if (cVar1 == '\0') break;
-          cVar2 = ((CPodAuditRecord *)pcVar6)->user_path[1];
-          pcVar6 = ((CPodAuditRecord *)pcVar6)->user_path + 2;
+          cVar2 = ((CPodAuditRecord *)pcVar6)->user_name[1];
+          pcVar6 = ((CPodAuditRecord *)pcVar6)->user_name + 2;
           pcVar8[1] = cVar2;
           pcVar8 = pcVar8 + 2;
         } while (cVar2 != '\0');

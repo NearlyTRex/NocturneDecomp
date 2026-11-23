@@ -401,8 +401,8 @@ section .text
         ;   Label: default
     MOV ECX,0x13e                       ; 004c595b
     PUSH 0x5e0cec                       ; 004c5960
-    MOV dword ptr [0x01d1d400],EDX      ; 004c5965 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 004c596b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 004c5965 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 004c596b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004c5971
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004c5976

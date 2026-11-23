@@ -1826,7 +1826,7 @@
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'(char *)&pCVar7[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar7)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CBattery::carrier, CBoxActor::loop_wav_name also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(char *)&pCVar7[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar7)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CBattery::carrier, CBoxActor::loop_wav_name, CChain::vertices[2], CCrate::carrier, CCryptVessel::carrier, CDoor::ground_type, CDrip::type, CFilmReel::carrier, CFlameCan::on_fire, CFlies::flies[7], CGasMask::carrier, CGoggles::carrier, CGrave::cur_frame, CHealthItem::use_count, CKeyActor::key_mask, CLadder::ladder_size, CLever::dead, CPendulum::start_event, CPlatform::state, CSimBox::type, CSpike::spike_type, CTrap::carrier, CTrash::home_pos, CTrigger::off_event[76], CWeapon::weapon_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 815,
       "severity": "moderate",
       "text": "iVar8 = _strcmp((char *)&pCVar7[2].location.position.y,pcVar11);",

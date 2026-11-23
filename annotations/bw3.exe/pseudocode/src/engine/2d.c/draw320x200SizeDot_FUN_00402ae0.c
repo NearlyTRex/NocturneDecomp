@@ -17,8 +17,8 @@ void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402ae0(int x_3d,int y_3d,int z
     if ((uint)g_INT_005fba1c < 400) {
       if (g_INT_005fba1c != 200) {
 LAB_00402c36:
-        g_CHAR_PTR_01d71de0 = "..\\engine\\2d.c";
-        g_INT_01d71de4 = 0x7da;
+        g_CurrentFilename = "..\\engine\\2d.c";
+        g_CurrentLineNumber = 2010;
         core_main_c_displayErrorAndQuit_FUN_004e4330("draw320x200SizeDot: unknown graphics option");
         return;
       }

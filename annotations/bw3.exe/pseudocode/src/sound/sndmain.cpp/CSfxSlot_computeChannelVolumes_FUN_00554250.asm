@@ -22,8 +22,8 @@
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005d3063
 ;   float g_FLOAT_005d3086 = 0.05000000
 ;   int g_AudioChannelCount = 0x2
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_SoundLockCount
 ;
 ; Called Functions:
@@ -85,8 +85,8 @@ section .text
     MOV ECX,0x5d304e                    ; 005542be | = "..\\sound\\sndmain.cpp"
     MOV EDI,0xa9a                       ; 005542c3
     PUSH 0x5d3063                       ; 005542c8 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ECX      ; 005542cd | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005542cd | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005542d9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005542de

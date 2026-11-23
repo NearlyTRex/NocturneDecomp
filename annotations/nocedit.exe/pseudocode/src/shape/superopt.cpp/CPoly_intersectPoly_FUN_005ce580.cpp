@@ -517,7 +517,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         aiStack_d4._4_8_ = (double)(&uStack_560)[iStack_58 * 2] - dStack_150;
         uStack_1e8 = uStack_158;
         dStack_1e0 = (double)aiStack_d4._4_8_;
-        uStack_1e8._0_4_ = SUB84(uStack_158,0);
+        uStack_1e8._0_4_ = SUB84(__BITCAST_UINT64(uStack_158),0);
         uStack_d8 = (uint)uStack_1e8;
         uStack_1e8._4_4_ = (int)((ulonglong)uStack_158 >> 0x20);
         aiStack_d4[0] = uStack_1e8._4_4_;
@@ -697,7 +697,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       uStack_138 = uStack_f8;
       dStack_130 = dStack_f0;
       dStack_538 = uStack_f8;
-      dStack_130._0_4_ = SUB84(dStack_f0,0);
+      dStack_130._0_4_ = SUB84(__BITCAST_UINT64(dStack_f0),0);
       uStack_530 = dStack_130._0_4_;
       pCVar9 = (out_result->poly2).uvs + 2;
       pCVar11 = (out_result->poly2).vertices + 2;

@@ -63,6 +63,16 @@ TEST_F(COptionsScreenTest, WhoeverIsPlayingOptionsShowsTheStrangersControls) {
     EXPECT_EQ(game_.hero_number, EHeroType::HERO_TYPE_STRANGER);
 }
 
+// BW's options show the controls of its hero types 9, Moloch and Svetlana's flags.
+TEST_F(COptionsScreenTest, TheHeroShownIsTheGamesOwn) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->options_hero = 9;
+    pressEachFrame({kEscape});
+    menu_.showOptionsScreen(0);
+    EXPECT_EQ(std::to_underlying(game_.hero_number), 9);
+}
+
 // From the main menu the music is the menu's to start and stop.
 TEST_F(COptionsScreenTest, FromTheMainMenuTheMusicIsLeftAlone) {
     std::vector<int> playing;
@@ -87,6 +97,8 @@ TEST_F(COptionsScreenTest, FromAMissionTheMenuMusicPlaysOnlyWhileOptionsIsUp) {
 
 // Credits come back to Options with the menu music started again; with no credits.txt they end
 // as soon as the image is loaded.
+// Credits is the seventh line, six below Gameplay, whatever the game; its difficulties are the
+// Gameplay page's.
 TEST_F(COptionsScreenTest, CreditsRollThenTheMusicStartsAgain) {
     givenFile("art\\stats.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
     givenFile("art\\stats.act", std::string(768, '\0'));

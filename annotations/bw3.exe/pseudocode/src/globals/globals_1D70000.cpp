@@ -50,7 +50,7 @@ CVector3i g_CachedViewPosition = {};
 CVector3i g_NormalizedViewVector = {};
 
 // char*
-char* g_CHAR_PTR_01d71de0 = {};
+char* g_CurrentFilename = {};
 char* g_CHAR_PTR_01d74000 = {};
 char* g_CHAR_PTR_01d74028 = {};
 char* g_CHAR_PTR_01d74068 = {};
@@ -187,7 +187,7 @@ int g_InventoryLightAngle = {};
 int g_LightDirectionX2 = {};
 int g_LightDirectionY2 = {};
 int g_LightDirectionZ2 = {};
-int g_INT_01d71de4 = {};
+int g_CurrentLineNumber = {};
 int g_INT_01d71de8 = {};
 int g_INT_01d72644 = {};
 int g_INT_01d72648 = {};

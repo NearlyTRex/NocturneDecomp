@@ -106,6 +106,9 @@ void C3DSLight::load(common::CTextScanner &scanner, int set_file_version) {
 
 // A light with no filters has a circular shadow; one with filters takes its blend flag.
 // nocedit 0x00586a90
+// bw1 0x0055cf80
+// bw2 0x0053b6b0
+// bw3 0x00542940
 std::unique_ptr<CDemonLight> C3DSLight::create(const SDemonLightOwners &owners,
                                                CFilterCache &filter_cache) {
     auto light = std::make_unique<CDemonLight>(owners, size_.x, size_.y);

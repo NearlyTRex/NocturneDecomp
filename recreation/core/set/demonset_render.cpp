@@ -28,6 +28,9 @@ constexpr int kUntinted = 0x10000;
 // deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters
 //   and calculateSpatialLighting
 // nocedit 0x0056aca0
+// bw1 0x0054eef0
+// bw2 0x0052dc10
+// bw3 0x005346b0
 void CDemonSet::renderBackgroundActors(int layer_flag) {
     const SActorRenderOwners render_owners{.renderer = owners_.renderer,
                                            .three_d = owners_.three_d,
@@ -65,6 +68,8 @@ bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim
 // deferred: the shadow pass drawing only the mirrors, while mirrors are on, with
 //   setShadowPass's callers
 // nocedit 0x0056a190
+// bw2 0x0052d0e0
+// bw3 0x00533b80
 void CDemonSet::renderSceneGeometry(float frustum_param, int render_mode) {
     owners_.renderer.setLightDirection(kSceneLightDirection);
     if (render_mode != kDrawReachedGeometry && selected_camera_index_ >= 0) {

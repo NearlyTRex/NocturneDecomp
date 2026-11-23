@@ -11,7 +11,7 @@ void __watcallRegister reportAbnormalTermination(void);
 
 // Original: crt_startup.c_initialize_runtime_FUN_0060245c
 // Address: 0060245c
-void __cdecl initialize::runtime(HMODULE hModule,void *pThreadParam,int unused);
+void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused);
 
 // Original: crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
 // Address: 006026a8

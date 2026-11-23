@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2796
 ;   TerminatedCString s_CStrList_swap_invalid_in_005d27ac
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_004814da
     MOV EAX,0xcae                       ; 004814df
     PUSH 0x5d27ac                       ; 004814e4 | = "CStrList::swap - invalid indices"
-    MOV dword ptr [0x01d046a0],EBP      ; 004814e9 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004814ef | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004814e9 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004814ef | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004814f4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004814f9

@@ -140,6 +140,17 @@ TEST_F(CGraphicOptionsPageTest, AntialiasingStepsBothWaysAndWraps) {
     EXPECT_EQ(page.choose(kAntialias, EMenuStep::On), EMenuOutcome::Stay);
 }
 
+// The game's card_name_length, dots and all; the list keeps the whole name.
+TEST_F(CGraphicOptionsPageTest, ACardNameLongerThanTheGamesLengthIsShortened) {
+    game_parts_.getContent().menu->card_name_length = 5;
+    loadRenderer();
+    special_.setCurrentGraphicsBoard(1);
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_EQ(text(page, kCard), "3D Card : Se... (1)");
+    special_.setCurrentGraphicsBoard(0);
+    EXPECT_EQ(text(page, kCard), "3D Card : First (0)");
+}
+
 TEST_F(CGraphicOptionsPageTest, ACardTheInisNoLongerListsGoesBackToTheFirst) {
     special_.setCurrentGraphicsBoard(5);
     loadRenderer();
@@ -163,13 +174,24 @@ TEST_F(CGraphicOptionsPageTest, ACardListTheRendererRefusesIsEmpty) {
     EXPECT_EQ(text(page, kCard), "No 3D Hardware detected");
 }
 
-TEST_F(CGraphicOptionsPageTest, TheCardStepsOnWhicheverWayAndWraps) {
+// Whichever way, a list of the cards by their whole names, opened on the current one: Down and
+// Confirm take the next.
+TEST_F(CGraphicOptionsPageTest, TheCardIsPickedFromAListOfTheirWholeNames) {
     loadRenderer();
     CGraphicOptionsPage page(menu_, menu_owners_);
+    on_frame_ = [&](int frame) {
+        press(frame == 1 ? engine::EInputCodeType::DIK_DOWN : engine::EInputCodeType::DIK_RETURN);
+    };
     EXPECT_CALL(renderer_, selectCard(1));
     EXPECT_EQ(page.choose(kCard, EMenuStep::Back), EMenuOutcome::Stay);
     EXPECT_EQ(text(page, kCard), "3D Card : Second (1)");
-    EXPECT_CALL(renderer_, selectCard(0));
+}
+
+TEST_F(CGraphicOptionsPageTest, CancellingTheCardListKeepsTheCard) {
+    loadRenderer();
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    on_frame_ = [&](int /*frame*/) { press(engine::EInputCodeType::DIK_ESCAPE); };
+    EXPECT_CALL(renderer_, selectCard(_)).Times(0);
     EXPECT_EQ(page.choose(kCard, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_EQ(special_.getCurrentGraphicsBoard(), 0);
 }

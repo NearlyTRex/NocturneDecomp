@@ -46,8 +46,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_00537aa0(CPackedB
       goto LAB_00537af0;
     }
   }
-  g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-  g_INT_01d1d404 = 0x2a2;
+  g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+  g_CurrentLineNumber = 674;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CPackedBitmap::copyNoClip - invalid destBitsPerPixel: %d");
 LAB_00537af0:
   iStack_1c = 0;

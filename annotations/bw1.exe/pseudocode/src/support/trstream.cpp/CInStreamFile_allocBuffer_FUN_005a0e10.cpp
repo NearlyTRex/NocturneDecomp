@@ -16,8 +16,8 @@ void __cdecl support_trstream_cpp_CInStreamFile_allocBuffer_FUN_005a0e10(CInStre
   pvVar1 = malloc(this_ptr->buffer_capacity + 0x1f);
   this_ptr->buffer_alloc = pvVar1;
   if (pvVar1 == (void *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\support\\trstream.cpp";
-    g_INT_01d1d404 = 0x62c;
+    g_CurrentFilename = "..\\support\\trstream.cpp";
+    g_CurrentLineNumber = 1580;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
   }
   this_ptr->buffer_start = 0;

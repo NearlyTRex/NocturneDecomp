@@ -40,8 +40,8 @@ int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00430f30(SRenderVertex *
         break;
       case 1:
         if (0xb < g_ClipperTempCount) {
-          g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
-          g_INT_01d046a4 = 0x5e;
+          g_CurrentFilename = "..\\engine\\clipper.c";
+          g_CurrentLineNumber = 94;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
         }
         pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
@@ -53,8 +53,8 @@ int __cdecl engine_clipper_c_clipPolygonBottomPlane_FUN_00430f30(SRenderVertex *
       case 2:
         output_vertices[iVar5] = v1;
         if (0xb < iVar1) {
-          g_CHAR_PTR_01d046a0 = "..\\engine\\clipper.c";
-          g_INT_01d046a4 = 0x5e;
+          g_CurrentFilename = "..\\engine\\clipper.c";
+          g_CurrentLineNumber = 94;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Ran out of clipped verts!");
         }
         pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;

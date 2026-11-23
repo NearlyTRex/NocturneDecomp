@@ -35,6 +35,11 @@ const int kStatsLeft = 0x1c0;
 const int kStatsRight = 0x27f;
 const int kStatsTop = 0xf0;
 
+// CDemonMission::run's prompt after an act's stats: its right edge at the
+// picture's column 0x27f, its foot at row 0x1db.
+const int kPromptRight = 0x27f;
+const int kPromptFoot = 0x1db;
+
 // "To be continued..." for five seconds; below 480 lines in a smaller font.
 const float kContinuedTime = 5.0f;
 const int kSmallScreenHeight = 0x1e0;
@@ -224,6 +229,15 @@ extern "C" void nocturne_finish_act(struct CGame *game) {
     engine_2d_c_clearInputAndWait_FUN_00403260();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     engine_2d_c_clearInputAndWait_FUN_00403260();
+}
+
+extern "C" void nocturne_continue_prompt(char *text) {
+    const NocturneLayout layout = nocturne_layout();
+    const int width = nocturne_ui_text_width_f(g_ThemeFont, text, layout.scale);
+    const int height = nocturne_ui_char_height_f(g_ThemeFont, kHeightCharacter, layout.scale);
+    nocturne_ui_draw_text_f(g_ThemeFont, text, nocturne_layout_x(layout, kPromptRight + 1) - width,
+                            nocturne_layout_y(layout, kPromptFoot) - height, kTextColour, 0,
+                            layout.scale);
 }
 
 extern "C" void nocturne_roll_credits(struct CGame *game) {

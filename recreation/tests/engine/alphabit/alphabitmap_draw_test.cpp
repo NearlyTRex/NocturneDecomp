@@ -137,6 +137,35 @@ TEST_F(CAlphaBitmapDrawTest, ScaledToItsOwnSizeItIsDisplayed) {
     EXPECT_EQ(screen_.pixel(3, 1), kBackground);
 }
 
+// Only what falls inside the bounds is drawn, at its own size or scaled.
+TEST_F(CAlphaBitmapDrawTest, WithinBoundsOnlyTheirPartIsDrawn) {
+    loadCounting(2, 2);
+    bitmap_.displayScaledWithin(1, 0, 2, 2, kFullAlpha, EBitmapFilter::Nearest,
+                                {.left = 2, .top = 0, .right = 3, .bottom = 1});
+    EXPECT_EQ(screen_.pixel(1, 0), kBackground);
+    EXPECT_EQ(screen_.pixel(2, 0), ramp(2));
+    EXPECT_EQ(screen_.pixel(2, 1), kBackground);
+}
+
+TEST_F(CAlphaBitmapDrawTest, ScaledWithinBoundsOnlyTheirPartIsDrawn) {
+    loadCounting(2, 1);
+    bitmap_.displayScaledWithin(0, 0, 4, 2, kFullAlpha, EBitmapFilter::Nearest,
+                                {.left = 1, .top = 0, .right = 3, .bottom = 1});
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground);
+    EXPECT_EQ(screen_.pixel(1, 0), ramp(1));
+    EXPECT_EQ(screen_.pixel(2, 0), ramp(2));
+    EXPECT_EQ(screen_.pixel(3, 0), kBackground);
+    EXPECT_EQ(screen_.pixel(1, 1), kBackground);
+}
+
+// Bounds past the screen are kept to it.
+TEST_F(CAlphaBitmapDrawTest, BoundsPastTheScreenAreKeptToIt) {
+    loadCounting(2, 1);
+    bitmap_.displayScaledWithin(-1, 0, 2, 1, kFullAlpha, EBitmapFilter::Nearest,
+                                {.left = -10, .top = -10, .right = 1000, .bottom = 1000});
+    EXPECT_EQ(screen_.pixel(0, 0), ramp(2));
+}
+
 TEST_F(CAlphaBitmapDrawTest, NearestRepeatsEachPixel) {
     loadCounting(2, 1);
     bitmap_.displayScaled(0, 0, 4, 2, kFullAlpha, EBitmapFilter::Nearest);

@@ -35,8 +35,8 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004d0860(CGame *this_ptr)
           core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(this_ptr,player_control);
           break;
         default:
-          g_CHAR_PTR_01d1d400 = "..\\core\\game.cpp";
-          g_INT_01d1d404 = 0x87c;
+          g_CurrentFilename = "..\\core\\game.cpp";
+          g_CurrentLineNumber = 2172;
           core_main_c_displayErrorAndQuit_FUN_005030e0("CGame::playerControls - unknown control type");
         }
         pcVar2 = g_KeyboardState;

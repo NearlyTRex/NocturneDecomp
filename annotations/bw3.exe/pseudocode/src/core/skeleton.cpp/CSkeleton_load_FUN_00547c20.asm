@@ -15,8 +15,8 @@
 ;   TerminatedCString s_data_005d166f
 ;   TerminatedCString s_core_skeleton_cpp_005d1674
 ;   TerminatedCString s_CSkeleton_load_Can_t_ope_005d1689
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -80,8 +80,8 @@ section .text
     MOV EDX,0x5d1674                    ; 00547c7c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x101                       ; 00547c81
     PUSH 0x5d1689                       ; 00547c86 | = "CSkeleton::load - Can't open %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 00547c8b | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00547c91 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00547c8b | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00547c91 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00547c97
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00547c9c

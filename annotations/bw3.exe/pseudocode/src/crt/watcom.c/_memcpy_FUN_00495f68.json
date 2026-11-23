@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 662,
+    "complexity_score": 702,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 55,
+    "suspect_count": 59,
     "suspect_types": [
       "displaced_global_access",
       "pointer_cast",
@@ -205,6 +205,7 @@
       "line": 25,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Could not recover jumptable at 0x00495ffd. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -213,6 +214,7 @@
       "line": 26,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -261,6 +263,7 @@
       "line": 36,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Could not recover jumptable at 0x00495fed. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -269,6 +272,7 @@
       "line": 37,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -317,6 +321,7 @@
       "line": 46,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Could not recover jumptable at 0x00495fd3. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -325,6 +330,7 @@
       "line": 47,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -389,6 +395,7 @@
       "line": 59,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Could not recover jumptable at 0x00495fbb. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -397,6 +404,7 @@
       "line": 60,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -413,6 +421,7 @@
       "line": 76,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Could not recover jumptable at 0x00495f9c. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -421,6 +430,7 @@
       "line": 77,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
+      "tail_call": false,
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -604,13 +614,65 @@
       "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
       "displaced_from": "g_INT_005fc4b4",
       "displacement": "0x5fc4b4",
-      "instruction_address": "",
+      "instruction_address": "00495f9c",
       "intended_global": "g_CFilmReelClassVersion",
       "line": 27,
       "match": "0x5fc4b4",
       "scale": 4,
       "severity": "moderate",
       "text": "// 00495f9c: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_005fc4b4",
+      "displacement": "0x5fc4b4",
+      "instruction_address": "00495fbb",
+      "intended_global": "g_CFilmReelClassVersion",
+      "line": 40,
+      "match": "0x5fc4b4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00495fbb: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_005fc4b4",
+      "displacement": "0x5fc4b4",
+      "instruction_address": "00495fd3",
+      "intended_global": "g_CFilmReelClassVersion",
+      "line": 49,
+      "match": "0x5fc4b4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00495fd3: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_005fc4b4",
+      "displacement": "0x5fc4b4",
+      "instruction_address": "00495fed",
+      "intended_global": "g_CFilmReelClassVersion",
+      "line": 59,
+      "match": "0x5fc4b4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00495fed: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x5fc4b4] lands in g_INT_005fc4b4 but intended target is g_CFilmReelClassVersion at 0x5fc4b8 (displaced by 4 bytes)",
+      "displaced_from": "g_INT_005fc4b4",
+      "displacement": "0x5fc4b4",
+      "instruction_address": "00495ffd",
+      "intended_global": "g_CFilmReelClassVersion",
+      "line": 66,
+      "match": "0x5fc4b4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 00495ffd: JMP dword ptr [EAX*0x4 + 0x5fc4b4]  ; g_INT_005fc4b4",
       "type": "displaced_global_access"
     }
   ]

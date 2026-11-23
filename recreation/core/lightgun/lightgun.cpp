@@ -42,6 +42,8 @@ const CDemonActorType &CLightGun::getActorType() const {
 }
 
 // nocedit 0x005058c0
+// bw1 0x004ffe80
+// bw2 0x004e29f0
 std::unique_ptr<CDemonActor> CLightGun::create(CActor &classes) {
     return std::make_unique<CLightGun>(classes);
 }

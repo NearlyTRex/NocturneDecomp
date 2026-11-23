@@ -8,26 +8,26 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Consecutive MOVSD groups:  3289
+Consecutive MOVSD groups:  3283
   1x MOVSD ( 4 bytes):   72 sites
-  2x MOVSD ( 8 bytes):   18 sites
+  2x MOVSD ( 8 bytes):   12 sites
   3x MOVSD (12 bytes):   2928 sites
   4x MOVSD (16 bytes):   269 sites
   5x MOVSD (20 bytes):   2 sites
-  Fixable (cave patch):   3079
-  No artifacts (OK):      134
+  Fixable (cave patch):   3075
+  No artifacts (OK):      132
   Unfixable:              76
-  Est. cave space:        ~103065 bytes
+  Est. cave space:        ~102957 bytes
 
-REP MOVSD sites:           818
+REP MOVSD sites:           798
   Fixable (struct copy):  560
   No artifacts (OK):      28
   Too large (buffer):     112
-  Dynamic count:          79
+  Dynamic count:          59
   Pass-by-value:          39
 
   REP MOVSD by copy size:
-    unknown count:        79 sites
+    unknown count:        59 sites
       4 dwords (  16 bytes): 2 sites
       6 dwords (  24 bytes): 336 sites
       7 dwords (  28 bytes): 2 sites
@@ -65,7 +65,7 @@ REP MOVSD sites:           818
     3200 dwords (12800 bytes): 1 sites
     4800 dwords (19200 bytes): 1 sites
 
-Total MOVSD sites:         4107
+Total MOVSD sites:         4081
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 5x MOVSD SITES (20 bytes copy, 1 sites)
@@ -3823,15 +3823,12 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 2809 sites)
     0x004f24f1  3x MOVSD (12 bytes copy, 7 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 2x MOVSD SITES (8 bytes copy, 14 sites)
+FIXABLE 2x MOVSD SITES (8 bytes copy, 10 sites)
 ----------------------------------------------------------------------------------------------------
   CNetGame_processPacket_FUN_0050c280                                      3 sites  ~81 bytes
     0x0050c3df  2x MOVSD (8 bytes copy, 6 bytes borrowable)
     0x0050c407  2x MOVSD (8 bytes copy, 5 bytes borrowable)
     0x0050c537  2x MOVSD (8 bytes copy, 12 bytes borrowable)
-  FUN_005bdcac                                                             2 sites  ~54 bytes
-    0x005be054  2x MOVSD (8 bytes copy, 6 bytes borrowable)
-    0x005be06f  2x MOVSD (8 bytes copy, 7 bytes borrowable)
   CNetGame_addChatHistory_FUN_0050df20                                     1 sites  ~27 bytes
     0x0050df59  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   CNetGame_addPlayer_FUN_0050ce70                                          1 sites  ~27 bytes
@@ -3840,10 +3837,6 @@ FIXABLE 2x MOVSD SITES (8 bytes copy, 14 sites)
     0x0050b631  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   CNetGame_sendGameSetting_FUN_0050e970                                    1 sites  ~27 bytes
     0x0050eab0  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  FUN_005c5138                                                             1 sites  ~27 bytes
-    0x005c515a  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  FUN_005c67b0                                                             1 sites  ~27 bytes
-    0x005c6817  2x MOVSD (8 bytes copy, 8 bytes borrowable)
   CSocket_getSocketName_FUN_00579430                                       1 sites  ~27 bytes
     0x0057947b  2x MOVSD (8 bytes copy, 7 bytes borrowable)
   CSocket_pollSocketStatus_FUN_00579150                                    1 sites  ~27 bytes
@@ -4074,12 +4067,8 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 117 sites — decompiler handles OK)
     0x004f2a27  3x MOVSD (12 bytes copy)
 
 ----------------------------------------------------------------------------------------------------
-NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 4 sites — decompiler handles OK)
+NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 2 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
-  FUN_005c2200                                                             1 sites
-    0x005c2226  2x MOVSD (8 bytes copy)
-  FUN_005c22a0                                                             1 sites
-    0x005c22bb  2x MOVSD (8 bytes copy)
   copyNetworkAddr_FUN_0057b7c0                                             1 sites
     0x0057b7cc  2x MOVSD (8 bytes copy)
   getTime_FUN_0058e9e0                                                     1 sites
@@ -5307,13 +5296,8 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (112 sites)
     0x0057e2ac  REP MOVSD 256 dwords (1024 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — DYNAMIC COUNT (ECX not immediate) (79 sites)
+REP MOVSD — DYNAMIC COUNT (ECX not immediate) (59 sites)
 ----------------------------------------------------------------------------------------------------
-  FUN_005bc727                                                             4 sites
-    0x005bc7f2  REP MOVSD (dynamic count)
-    0x005bc82f  REP MOVSD (dynamic count)
-    0x005bc88d  REP MOVSD (dynamic count)
-    0x005bc8fd  REP MOVSD (dynamic count)
   rotateCircularBitmap_FUN_0042dd00                                        3 sites
     0x0042ddc2  REP MOVSD (dynamic count)
     0x0042ddd8  REP MOVSD (dynamic count)
@@ -5330,12 +5314,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (79 sites)
   CDemonRaytrace_consolidateTriList_FUN_00472600                           2 sites
     0x004726b2  REP MOVSD (dynamic count)
     0x004726cd  REP MOVSD (dynamic count)
-  FUN_005bc938                                                             2 sites
-    0x005bc9cb  REP MOVSD (dynamic count)
-    0x005bca8a  REP MOVSD (dynamic count)
-  FUN_005c6210                                                             2 sites
-    0x005c6296  REP MOVSD (dynamic count)
-    0x005c62ee  REP MOVSD (dynamic count)
   CEditorTools_setClipboardText_FUN_0047fc30                               2 sites
     0x0047fc93  REP MOVSD (dynamic count)
     0x0047fcec  REP MOVSD (dynamic count)
@@ -5391,30 +5369,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (79 sites)
     0x0059184f  REP MOVSD (dynamic count)
   CZombie_getCarryObjToBodyXForm_FUN_005980a0                              1 sites
     0x00598381  REP MOVSD (dynamic count)
-  fread_FUN_005b87c0                                                       1 sites
-    0x005b886d  REP MOVSD (dynamic count)
-  fwrite_FUN_005b9690                                                      1 sites
-    0x005b97a7  REP MOVSD (dynamic count)
-  memmove_FUN_005ba1f0                                                     1 sites
-    0x005ba236  REP MOVSD (dynamic count)
-  _strftime_FUN_005ba3a4                                                   1 sites
-    0x005ba7cf  REP MOVSD (dynamic count)
-  FUN_005b8cf8                                                             1 sites
-    0x005b8d65  REP MOVSD (dynamic count)
-  FUN_005c0f10                                                             1 sites
-    0x005c0fa1  REP MOVSD (dynamic count)
-  FUN_005c11b8                                                             1 sites
-    0x005c120f  REP MOVSD (dynamic count)
-  FUN_005c2d10                                                             1 sites
-    0x005c2d4a  REP MOVSD (dynamic count)
-  FUN_005c4310                                                             1 sites
-    0x005c437e  REP MOVSD (dynamic count)
-  FUN_005c4a88                                                             1 sites
-    0x005c4b1a  REP MOVSD (dynamic count)
-  FUN_005c4cf0                                                             1 sites
-    0x005c4d09  REP MOVSD (dynamic count)
-  FUN_005c63dc                                                             1 sites
-    0x005c64e9  REP MOVSD (dynamic count)
   wrapTextToWidth_FUN_00401d90                                             1 sites
     0x00401e2b  REP MOVSD (dynamic count)
   CAlphaBitmap_copyRawToOpa_FUN_0040dcf0                                   1 sites

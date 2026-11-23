@@ -4,6 +4,7 @@
 
 #include <optional>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -11,6 +12,10 @@ CMenuPage::CMenuPage(CMenu &menu) : menu_(menu) {}
 
 std::optional<std::string> CMenuPage::title() {
     return std::nullopt;
+}
+
+std::string_view CMenuPage::getLayoutId() const {
+    return {};
 }
 
 void CMenuPage::beginFrame() {}
@@ -24,6 +29,10 @@ EMenuOutcome CMenuPage::endFrame() {
 }
 
 CMenu &CMenuPage::getMenu() {
+    return menu_;
+}
+
+const CMenu &CMenuPage::getMenu() const {
     return menu_;
 }
 

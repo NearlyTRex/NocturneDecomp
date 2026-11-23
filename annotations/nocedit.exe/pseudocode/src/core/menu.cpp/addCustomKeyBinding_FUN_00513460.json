@@ -171,7 +171,7 @@
     "nocturne.exe": {
       "addr": "004d2880",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     }
   },
@@ -197,6 +197,28 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "addCustomKeyBinding_FUN_00513460.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 19,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

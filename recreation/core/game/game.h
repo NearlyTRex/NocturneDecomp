@@ -100,6 +100,11 @@ public:
     // Brings the game up for play at its resolution, with the scene and its lights set up, then
     // plays until the session ends.
     int runGameSession(const SGameSessionOwners &session);
+    // The packages' control modes and bindings rows; without them, or with a mode, action or row
+    // this build lacks, fatal.
+    [[nodiscard]] const engine::SControls &getControls() const;
+    // The game's entry for game_control; one it doesn't offer is fatal.
+    [[nodiscard]] const engine::SControlMode &getControlMode() const;
     void restoreDefaultControls();
     // The pad's calibration seeded if it has none; the pad itself is read once a frame by the
     // input pump.
@@ -178,6 +183,12 @@ public:
     int head_of_horror_cheat = 0;
     // The automap's zoom, in percent.
     int map_zoom = 320;
+    // The puzzles' and the combat's difficulty, as a story's difficulty list or the options page
+    // sets them: 0 normal, 1 hard.
+    // deferred: reading and writing them as BW1's and BW2's puzzleDifficultyMode and
+    //   combatDifficultyMode, with each game's own ini file
+    int puzzle_difficulty_mode = 0;
+    int combat_difficulty_mode = 0;
     // Each frame's time is multiplied by it; 1 is real time.
     float time_scale_factor = 1.0F;
     // Set while a sim frame runs, when the game's random draws come off the sim stream.

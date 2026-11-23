@@ -22,8 +22,8 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004cf430(CGame *this_ptr)
     iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ac300
                       (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp);
     if (iVar1 == 0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\game.cpp";
-      g_INT_01d1d404 = 0x529;
+      g_CurrentFilename = "..\\core\\game.cpp";
+      g_CurrentLineNumber = 1321;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CGame::setGameRes - Unable to set the video mode to %dx%dx%d");
     }
   }

@@ -15,8 +15,8 @@
 ;   void* g_SPageResourceTwanaEntryVTable = 004a2470
 ;   WatcomTypeInfo g_CAlphaBitmapTypeInfo
 ;   int g_INT_01cab780
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a1e60
@@ -73,8 +73,8 @@ section .text
     MOV ECX,0x5d5a67                    ; 004a2433 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x3f9                       ; 004a2438
     PUSH 0x5d5a7c                       ; 004a243d | = "Can't have more than one twana entry ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004a2442 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004a2448 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004a2442 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004a2448 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a244e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a2453

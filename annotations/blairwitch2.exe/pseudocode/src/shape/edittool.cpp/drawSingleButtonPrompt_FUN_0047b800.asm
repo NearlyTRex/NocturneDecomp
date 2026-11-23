@@ -35,7 +35,7 @@
 ;   int g_INT_01c35e4c
 ;   int g_ClipRight
 ;   int g_INT_01c35e54
-;   char* g_CHAR_PTR_01d046a0
+;   char* g_CurrentFilename
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -276,8 +276,8 @@ section .text
         ;   Label: LAB_0047ba80
     MOV EBX,0xa0                        ; 0047ba85
     PUSH 0x5d1e85                       ; 0047ba8a | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047ba8f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047ba95 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0047ba8f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0047ba95 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047ba9b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047baa0

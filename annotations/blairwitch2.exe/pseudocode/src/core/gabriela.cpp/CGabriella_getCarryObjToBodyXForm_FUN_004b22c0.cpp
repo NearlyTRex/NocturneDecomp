@@ -107,8 +107,8 @@ CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_F
       CStack_a8.y = fStack_c8;
     }
     else {
-      g_CHAR_PTR_01d046a0 = "..\\core\\gabriela.cpp";
-      g_INT_01d046a4 = 0x944;
+      g_CurrentFilename = "..\\core\\gabriela.cpp";
+      g_CurrentLineNumber = 2372;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Don't know how to carry light %s");
     }
     goto LAB_004b233f;

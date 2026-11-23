@@ -72,6 +72,9 @@ bool CScript::readScriptText(std::string_view text, std::string_view filename) {
 
 // The original also quit when the lines ran out of memory, which the vector throws for.
 // nocedit 0x0055a370
+// bw1 0x00543fd0
+// bw2 0x00521ec0
+// bw3 0x005295e0
 void CScript::buildParsedLines() {
     freeParsedLines();
     for (std::size_t index = 0; index < script_text_.size(); ++index) {

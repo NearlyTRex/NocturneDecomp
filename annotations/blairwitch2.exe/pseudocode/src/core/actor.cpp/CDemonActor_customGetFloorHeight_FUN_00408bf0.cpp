@@ -9,8 +9,8 @@
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height )
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-  g_INT_01d046a4 = 0x2ee;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 750;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::customGetFloorHeight should not be called for this base class");
   return 0;
 }

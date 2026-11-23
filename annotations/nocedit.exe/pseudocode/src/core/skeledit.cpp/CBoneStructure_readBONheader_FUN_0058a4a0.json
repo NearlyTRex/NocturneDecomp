@@ -740,5 +740,123 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CBoneStructure_readBONheader_FUN_0058a4a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 48,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 48,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 37,
+          "line": 76,
+          "message": "The left operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming 'iVar5' is < 0"
+            },
+            {
+              "line": 29,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 29,
+              "message": "Execution continues on line 31"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 100 is >= field 'bone_count'"
+            },
+            {
+              "line": 32,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 40,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 40,
+              "message": "Execution continues on line 42"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 0 is >= field 'bone_count'"
+            },
+            {
+              "line": 43,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 55,
+              "message": "Assuming 'iVar3' is < 0"
+            },
+            {
+              "line": 55,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 55,
+              "message": "Execution continues on line 57"
+            },
+            {
+              "line": 57,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 57,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 63,
+              "message": "0 is >= field 'bone_count'"
+            },
+            {
+              "line": 63,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 73,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 75,
+              "message": "The value 0 is assigned to 'local_14'"
+            },
+            {
+              "line": 75,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 76,
+              "message": "The left operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -184,8 +184,8 @@ section .text
     MOV ESI,0x5c1abd                    ; 004ad05a | = "..\\core\\fldnotes.cpp"
     MOV EDI,0xc54                       ; 004ad05f
     PUSH 0x5c1ad2                       ; 004ad064 | = "Hell froze"
-    MOV dword ptr [0x01d71de0],ESI      ; 004ad069 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004ad06f | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004ad069 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004ad06f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad075
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad07a
@@ -277,8 +277,8 @@ section .text
         ;   Label: default
     MOV EDX,0xc38                       ; 004ad158
     PUSH 0x5c1a46                       ; 004ad15d | = "Invalid entry item type"
-    MOV [0x01d71de0],EAX                ; 004ad162 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004ad167 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004ad162 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004ad167 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad16d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad172
@@ -301,8 +301,8 @@ section .text
         ;   Label: default
     MOV EDX,0xc50                       ; 004ad1a1
     PUSH 0x5c1aa5                       ; 004ad1a6 | = "Invalid entry item type"
-    MOV [0x01d71de0],EAX                ; 004ad1ab | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004ad1b0 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004ad1ab | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004ad1b0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad1b6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad1bb
@@ -456,8 +456,8 @@ section .text
     MOV EDX,0x5c1b91                    ; 004ad338 | = "..\\core\\fldnotes.cpp"
     MOV ECX,0xc85                       ; 004ad33d
     PUSH 0x5c1ba6                       ; 004ad342 | = "Hell froze."
-    MOV dword ptr [0x01d71de0],EDX      ; 004ad347 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004ad34d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004ad347 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004ad34d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad353
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad358
@@ -467,8 +467,8 @@ section .text
         ;   Label: LAB_004ad360
     MOV ECX,0xc67                       ; 004ad365
     PUSH 0x5c1b0d                       ; 004ad36a | = "Hell froze"
-    MOV dword ptr [0x01d71de0],EDX      ; 004ad36f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004ad375 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004ad36f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004ad375 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad37b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad380
@@ -478,8 +478,8 @@ section .text
         ;   Label: LAB_004ad388
     MOV ECX,0xc89                       ; 004ad38d
     PUSH 0x5c1bc7                       ; 004ad392 | = "Hell froze"
-    MOV dword ptr [0x01d71de0],EDX      ; 004ad397 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004ad39d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004ad397 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004ad39d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ad3a3
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ad3a8

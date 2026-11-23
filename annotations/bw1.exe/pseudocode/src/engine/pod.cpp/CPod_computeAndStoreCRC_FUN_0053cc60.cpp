@@ -25,8 +25,8 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_0053cc60(CPod *this_ptr,
   engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(&CStack_44c);
   iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0053b250(&CStack_44c,pod_filename,(char *)0x0);
   if (iVar1 == 0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x55e;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 1374;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't mount %s to check version");
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(&CStack_44c);
@@ -39,8 +39,8 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_0053cc60(CPod *this_ptr,
   }
   else {
     if (CStack_44c.pod_format_version == 100) goto LAB_0053cde2;
-    g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-    g_INT_01d1d404 = 0x56f;
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 1391;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid pod version for %s: %d");
   }
   iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0(&g_CHAR_005ed65e,pod_filename);

@@ -49,8 +49,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_0047fd00(CEdit
   
   bVar5 = 0;
   if (g_EditorFont == (CBitFont *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-    g_INT_01d046a4 = 0xa0;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 160;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
   g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;

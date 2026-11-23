@@ -894,5 +894,123 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_exportModelToS3D_FUN_00595fc0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.CallAndMessage",
+          "column": 7,
+          "line": 170,
+          "message": "4th function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 40,
+              "message": "Assuming 'file' is not equal to null"
+            },
+            {
+              "line": 40,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 47,
+              "message": "Assuming 'dest' is not equal to null"
+            },
+            {
+              "line": 47,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 59,
+              "message": "Assuming 0 is < field 'num_parts'"
+            },
+            {
+              "line": 59,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 64,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 64,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 75,
+              "message": "Assuming 'iVar1' is equal to 0"
+            },
+            {
+              "line": 75,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 91,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 91,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 110,
+              "message": "Loop condition is false. Execution continues on line 124"
+            },
+            {
+              "line": 124,
+              "message": "'local_3c' is equal to 'local_44'"
+            },
+            {
+              "line": 124,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 129,
+              "message": "'iVar1' is equal to 0"
+            },
+            {
+              "line": 129,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 151,
+              "message": "Assuming 'local_84' is >= field 'num_parts'"
+            },
+            {
+              "line": 60,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 165,
+              "message": "0 is < field 'num_parts'"
+            },
+            {
+              "line": 165,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 175,
+              "message": "The value 1 is assigned to 'iVar1'"
+            },
+            {
+              "line": 176,
+              "message": "Assuming 'iVar6' is < field 'num_parts'"
+            },
+            {
+              "line": 167,
+              "message": "Loop condition is true. Execution continues on line 168"
+            },
+            {
+              "line": 170,
+              "message": "4th function call argument is an uninitialized value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

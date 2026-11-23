@@ -53,13 +53,13 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
   if ((this_ptr->connection_type == CONNECTION_HOST) && (this_ptr->network_mode == NET_MODE_PLAYING)
      ) {
     if (this_ptr->local_player_index < 0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-      g_INT_01d1d404 = 0x8f6;
+      g_CurrentFilename = "..\\core\\netgame.cpp";
+      g_CurrentLineNumber = 2294;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - I'm not in player list!");
     }
     if (this_ptr->local_player_index != this_ptr->server_player_index) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-      g_INT_01d1d404 = 0x8f7;
+      g_CurrentFilename = "..\\core\\netgame.cpp";
+      g_CurrentLineNumber = 2295;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - I'm not the server in the player list!");
     }
     iVar2 = 0;
@@ -118,8 +118,8 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0052fee0(CNetGame 
       } while (iVar4 < g_SimFrameCount * 0x6c);
     }
     if (0x1ff < g_SimFrameCount) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-      g_INT_01d1d404 = 299;
+      g_CurrentFilename = "..\\core\\netgame.cpp";
+      g_CurrentLineNumber = 299;
       core_main_c_displayErrorAndQuit_FUN_005030e0("allocSimFrame - sim history list full");
     }
     pSVar6 = g_SSimFrame_ARRAY_01d715ac + g_SimFrameCount;
@@ -158,8 +158,8 @@ LAB_0053008d:
           iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index -
                   local_14->sim_frame_index;
           if (iVar2 < 1) {
-            g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-            g_INT_01d1d404 = 0x93b;
+            g_CurrentFilename = "..\\core\\netgame.cpp";
+            g_CurrentLineNumber = 2363;
             core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - player is ahead of the server!?!!");
           }
           if (5 < iVar2) {
@@ -181,8 +181,8 @@ LAB_0053008d:
             iVar3 = -1;
 LAB_00530282:
             if (iVar3 < 0) {
-              g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-              g_INT_01d1d404 = 0x94d;
+              g_CurrentFilename = "..\\core\\netgame.cpp";
+              g_CurrentLineNumber = 2381;
               core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::processServerFrame - client needs frame, but we don't have it in history!");
             }
             pSVar6 = g_SSimFrame_ARRAY_01d715ac + iVar3;

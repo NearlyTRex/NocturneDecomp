@@ -114,12 +114,12 @@
       "caller_details": [
         {
           "caller": "CPoly_isValid_FUN_005d1ff0",
-          "estimated_params": 0
+          "estimated_params": 1
         }
       ],
-      "estimated_params": 0,
+      "estimated_params": 1,
       "param_estimates": [
-        0
+        1
       ]
     },
     "possible_callers": [
@@ -818,6 +818,52 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CPoly_computeNormal_FUN_005cd7d0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 78,
+          "message": "Value stored to 'local_248' is never read",
+          "path_notes": [
+            {
+              "line": 78,
+              "message": "Value stored to 'local_248' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 79,
+          "message": "Value stored to 'local_240' is never read",
+          "path_notes": [
+            {
+              "line": 79,
+              "message": "Value stored to 'local_240' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 80,
+          "message": "Value stored to 'local_238' is never read",
+          "path_notes": [
+            {
+              "line": 80,
+              "message": "Value stored to 'local_238' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [],
   "vtable_info": {

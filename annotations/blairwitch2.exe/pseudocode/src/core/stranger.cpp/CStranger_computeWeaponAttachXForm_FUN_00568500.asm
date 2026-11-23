@@ -255,8 +255,8 @@
 ;   double g_DOUBLE_005eb965 = 0.300000000000000
 ;   float g_FLOAT_005eb96d = 0.3330000
 ;   undefined4 g_CLightActorClassInfo.name_hash
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_StrangerIndices[13]
 ;   undefined4 g_StrangerIndices[14]
 ;   CVector3f g_ZeroVector
@@ -1446,8 +1446,8 @@ section .text
     MOV ECX,0x5eb91d                    ; 00569572 | = "..\\core\\stranger.cpp"
     MOV ESI,0xc40                       ; 00569577
     PUSH 0x5eb932                       ; 0056957c | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00569581 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00569587 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00569581 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00569587 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0056958d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00569592

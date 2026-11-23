@@ -548,12 +548,12 @@ COPY (ram,0x1cc4800,4) = (register,0x1c,4) /* EDI */
 @004e79c9 [ESP:-40]  # MOV [0x01cc4804], EAX
 COPY (ram,0x1cc4804,4) = (register,0x0,4) /* EAX */
 
-@004e79ce [ESP:???](-4)!?  # CALL 0x004c8440
+@004e79ce [ESP:-40](-4)  # CALL 0x004c8440
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4e79d3,4)
 CALL (ram,0x4c8440,4)
 
-@004e79d3 [ESP:???](+12)!?  # ADD ESP, 0xc
+@004e79d3 [ESP:-28](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -1009,5 +1009,4 @@ BRANCH (ram,0x4e79ce,4)
 
 # ============================================================================
 # Summary: 152 instructions, 687 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -19,8 +19,8 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004d4be0(CHeroPlac
   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c4f0(this_ptr->hero_name);
   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c840(actor_ptr,class_name_hash);
   if (actor == (CHero *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\hero.cpp";
-    g_INT_01d71de4 = 0x75c;
+    g_CurrentFilename = "..\\core\\hero.cpp";
+    g_CurrentLineNumber = 1884;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530

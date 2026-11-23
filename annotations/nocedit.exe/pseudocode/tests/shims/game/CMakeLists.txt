@@ -1,8 +1,11 @@
 nocturne_test_suite(shims_game
-    TESTS test_walk_turn.cpp test_pad_tuning.cpp test_movie_audio.cpp test_movie_audio_saved.cpp
+    TESTS test_walk_turn.cpp test_platform_loop.cpp test_pad_tuning.cpp test_movie_audio.cpp
+          test_movie_audio_saved.cpp
     SUBJECTS
         # Arithmetic on two arguments; no engine state.
         shims/game/walk_turn.cpp
+        # A platform's state, events and travel times; no engine state.
+        shims/game/platform_loop.cpp
         # Read nocturne.ini through a stand-in for the engine's CIni.
         shims/game/pad_tuning.cpp
         shims/game/movie_audio.cpp
@@ -22,7 +25,7 @@ nocturne_test_suite(shims_game_heroes
     TESTS test_goggles_camera_hold.cpp test_hero_slot.cpp test_hero_breath.cpp
           test_hero_svetlana.cpp test_hq_weapon.cpp test_item_names.cpp test_hero_frame.cpp
           test_hero_baron.cpp test_hero_shove.cpp test_attract.cpp test_helper_death.cpp
-          test_hero_death.cpp test_dialogue_override.cpp test_script_cue.cpp
+          test_hero_death.cpp test_script_quirks.cpp test_script_cue.cpp
           test_status_bar.cpp
     SUBJECTS
         shims/game/goggles_camera_hold.cpp
@@ -37,7 +40,7 @@ nocturne_test_suite(shims_game_heroes
         shims/game/attract.cpp
         shims/game/helper_death.cpp
         shims/game/hero_death.cpp
-        shims/game/dialogue_override.cpp
+        shims/game/script_quirks.cpp
         shims/game/script_cue.cpp
         shims/game/status_bar.cpp
         shims/watcom/crt.cpp

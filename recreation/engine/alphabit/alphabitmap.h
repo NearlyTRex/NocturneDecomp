@@ -31,6 +31,16 @@ public:
     void display(int x, int y, int alpha);
     // Stretched to width by height with its corner at x, y; at the image's own size, display.
     void displayScaled(int x, int y, int width, int height, int alpha, EBitmapFilter filter);
+    // The screen columns left to right and rows top to bottom, the ends not included.
+    struct SBounds {
+        int left = 0;
+        int top = 0;
+        int right = 0;
+        int bottom = 0;
+    };
+    // As displayScaled, drawing only within the bounds, which are kept to the screen.
+    void displayScaledWithin(int x, int y, int width, int height, int alpha, EBitmapFilter filter,
+                             const SBounds &bounds);
     void render(int dest_x, int dest_y, int left_x, int top_y, int right_x, int bottom_y,
                 int global_alpha);
     void scale(int scaleFactorX, int scaleFactorY);
@@ -43,6 +53,9 @@ public:
 private:
     void loadPalette(std::string_view filename);
     void loadOpacity(std::string_view filename);
+    [[nodiscard]] SBounds getScreenBounds() const;
+    // display's drawing, within the bounds.
+    void displayWithin(int x, int y, int alpha, const SBounds &bounds);
 
     const CDosIo &dosio_;
     IScreenDevice &screen_;

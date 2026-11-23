@@ -10,8 +10,8 @@ void __cdecl sound_sndmain_cpp_unlockSound_FUN_00551440(void)
 
 {
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d046a4 = 0x1845;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 6213;
     core_main_c_displayErrorAndQuit_FUN_004e4500("unlockSound - sound was not locked!");
   }
   if (g_SoundLockCount == 1) {

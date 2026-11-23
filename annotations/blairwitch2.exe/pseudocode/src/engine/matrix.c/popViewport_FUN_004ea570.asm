@@ -85,8 +85,8 @@ section .text
     MOV EBX,0x5dc89d                    ; 004ea676 | = "..\\engine\\matrix.c"
     MOV ESI,0x56c                       ; 004ea67b
     PUSH 0x5dc8b0                       ; 004ea680 | = "3D Window unbalance"
-    MOV dword ptr [0x01d046a0],EBX      ; 004ea685 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004ea68b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004ea685 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004ea68b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ea691
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ea696

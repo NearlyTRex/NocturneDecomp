@@ -106,8 +106,12 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         iVar4 = 0xf0;
       }
       clear_enabled = (uint)(iVar5 != 0);
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
       core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0
                 (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar4);
+#else
+      (void)clear_enabled;
+#endif
     }
     if (((this_ptr->developer_mode_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar4 != 0 &&
@@ -177,7 +181,11 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F5),
          pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
         this_ptr->screen_clear_enabled = 1;
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
         core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(pCVar3,0,0,0xf0);
+#else
+        (void)pCVar3;
+#endif
         pCVar2 = g_CScriptPtr;
         this_ptr->subtitle_system_enabled = 1;
         if (pCVar2->script_state == 1) {

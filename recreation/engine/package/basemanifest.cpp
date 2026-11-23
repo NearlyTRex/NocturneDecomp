@@ -31,6 +31,23 @@ std::optional<std::string> findPod(std::span<const std::string> installed, std::
     return *found;
 }
 
+// The release's copy of a POD: the first with its name at the size it shipped, else the first
+// with its name. Games on the engine share POD names, so an install holding two of them gives
+// each its own.
+std::optional<std::string> findShippedPod(platform::IFileSystem &file_system,
+                                          std::span<const std::string> installed,
+                                          const SReleaseFile &shipped) {
+    for (const std::string &path : installed) {
+        if (common::equalsIgnoringAsciiCase(common::pathLeaf(path), shipped.name)) {
+            const std::optional<platform::SFileInfo> info = file_system.getFileInfo(path);
+            if (info && info->size == shipped.size) {
+                return path;
+            }
+        }
+    }
+    return findPod(installed, shipped.name);
+}
+
 // How many of a release's PODs the install has at their shipped size, then how many by name only.
 // Games on the engine share POD names, so the size tells them apart; the name alone still
 // recognises an install whose PODs were patched.
@@ -45,7 +62,7 @@ SReleaseMatch matchRelease(platform::IFileSystem &file_system,
                            std::span<const std::string> installed, const SRelease &release) {
     SReleaseMatch match;
     for (const SReleaseFile &pod : release.pods) {
-        const std::optional<std::string> path = findPod(installed, pod.name);
+        const std::optional<std::string> path = findShippedPod(file_system, installed, pod);
         if (!path) {
             continue;
         }
@@ -80,7 +97,7 @@ const SRelease &findBestRelease(platform::IFileSystem &file_system,
 SPackagePod describePod(platform::IFileSystem &file_system, const SRelease &release,
                         const SReleaseFile &shipped, std::span<const std::string> installed,
                         std::vector<std::string> &notes) {
-    const std::optional<std::string> name = findPod(installed, shipped.name);
+    const std::optional<std::string> name = findShippedPod(file_system, installed, shipped);
     if (!name) {
         notes.push_back(std::format("{} is missing", shipped.name));
         return {.path = shipped.name, .size = {}, .modified = {}, .xxh3 = {}};
@@ -106,7 +123,7 @@ SBaseManifest makeBaseManifest(platform::IFileSystem &file_system,
     std::ranges::sort(shipped, [](const SReleaseFile &a, const SReleaseFile &b) {
         return common::compareIgnoringAsciiCase(a.name, b.name) > 0;
     });
-    SBaseManifest base{.manifest = {.id = std::string(kBasePackageId),
+    SBaseManifest base{.manifest = {.id = release.game,
                                     .name = release.name,
                                     .version = {},
                                     .release = release.id,
@@ -119,7 +136,14 @@ SBaseManifest makeBaseManifest(platform::IFileSystem &file_system,
         base.manifest.pods.push_back(describePod(file_system, release, pod, installed, base.notes));
     }
     for (const std::string &required : release.required) {
-        base.manifest.required.push_back(findPod(installed, required).value_or(required));
+        const auto shipped_pod = std::ranges::find_if(release.pods, [&](const SReleaseFile &pod) {
+            return common::equalsIgnoringAsciiCase(pod.name, required);
+        });
+        const std::optional<std::string> path =
+            shipped_pod == release.pods.end()
+                ? findPod(installed, required)
+                : findShippedPod(file_system, installed, *shipped_pod);
+        base.manifest.required.push_back(path.value_or(required));
     }
     return base;
 }

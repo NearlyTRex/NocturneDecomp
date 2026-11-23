@@ -43,7 +43,7 @@ uint __cdecl getIPAddress(SNetworkAddr *net_addr);
 
 // Original: support_trisock.cpp_createNetworkAddr_FUN_005e1940
 // Address: 005e1940
-void __cdecl createNetworkAddr(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
+SNetworkAddr * __cdecl createNetworkAddr(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_005e1960
 // Address: 005e1960

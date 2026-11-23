@@ -579,8 +579,8 @@ LAB_004705bf:
         goto LAB_00470270;
       }
       if (uVar1 != 3) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\doc.cpp";
-        g_INT_01d1d404 = 0xe3d;
+        g_CurrentFilename = "..\\core\\doc.cpp";
+        g_CurrentLineNumber = 3645;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Don't know how to carry light %s");
         goto LAB_00470270;
       }

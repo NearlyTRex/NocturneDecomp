@@ -34,7 +34,7 @@ public:
     [[nodiscard]] std::unique_ptr<CDemonActor> createActorByName(std::string_view class_name);
     [[nodiscard]] std::size_t getActorClassCount() const;
     // Forgets the versions a file saved its classes' fields in, so each reads as version 1.
-    void resetSavedVersions();
+    void resetActorTypeInfo();
     void setSavedVersion(const CDemonActorType &type, int saved_version);
     // The version the file being read saved the class's fields in.
     [[nodiscard]] int getSavedVersion(const CDemonActorType &type) const;

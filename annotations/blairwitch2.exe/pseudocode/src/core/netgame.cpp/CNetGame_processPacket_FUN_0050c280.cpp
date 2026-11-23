@@ -345,7 +345,8 @@ LAB_0050c8d9:
       pcVar12 = "You have been disconnected from the game";
       pcVar11 = &g_CHAR_005e09d4;
       iVar4 = 0;
-      support_trisock_cpp_createNetworkAddr_FUN_00578e60(&local_3c,(uint32_t *)g_AnyAddressIP,0);
+      sender_addr = support_trisock_cpp_createNetworkAddr_FUN_00578e60
+                              (&local_3c,(uint32_t *)g_AnyAddressIP,0);
       core_netgame_cpp_CNetGame_addChatHistory_FUN_0050df20
                 (this_ptr,sender_addr,iVar4,pcVar11,pcVar12);
       return;
@@ -372,8 +373,8 @@ LAB_0050c8d9:
       } while (iVar4 < g_SimFrameCount * 0x74);
     }
     if (0x1ff < g_SimFrameCount) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-      g_INT_01d046a4 = 299;
+      g_CurrentFilename = "..\\core\\netgame.cpp";
+      g_CurrentLineNumber = 299;
       core_main_c_displayErrorAndQuit_FUN_004e4500("allocSimFrame - sim history list full");
     }
     dest = g_SSimFrame_ARRAY_01d54644 + g_SimFrameCount;
@@ -389,8 +390,8 @@ LAB_0050cbd2:
       local_28 = dest;
       do {
         if (iVar4 < 0) {
-          g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-          g_INT_01d046a4 = 0x596;
+          g_CurrentFilename = "..\\core\\netgame.cpp";
+          g_CurrentLineNumber = 1430;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Player list mismatch processing SimFrame Update packet!");
         }
         pSVar9 = local_28->player_input + iVar4;

@@ -353,7 +353,7 @@ LAB_0049dec1:
   core_sound_cpp_CSound_shutdown_FUN_0052df90(g_CSound_PTR_005bed68);
   engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
-  (*g_CKeys_PTR_005bac64->vtable->clearKeyPresses)(g_CKeys_PTR_005bac64);
+  (*g_CKeys_PTR_005bac64->vtable->clearKeypresses)(g_CKeys_PTR_005bac64);
   core_set_cpp_CDemonSet_clearLights_FUN_0050ad20(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList);

@@ -27,8 +27,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_00433000(CCharacter *t
   bVar3 = 0;
   if (0.0 < this_ptr->look_at_weight) {
     if (this_ptr->look_at_head_bone < 0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\charactr.cpp";
-      g_INT_01d71de4 = 0x117b;
+      g_CurrentFilename = "..\\core\\charactr.cpp";
+      g_CurrentLineNumber = 4475;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s");
     }
     core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(this_ptr->look_at_pitch,&local_24);

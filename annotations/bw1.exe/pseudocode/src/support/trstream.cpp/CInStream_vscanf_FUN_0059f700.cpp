@@ -307,7 +307,7 @@ LAB_005a0673:
                       iStack_28 = iStack_28 + 1;
                     }
                     else {
-                      uStack_e8 = SUB84(dStack_5c,0);
+                      uStack_e8 = SUB84(__BITCAST_UINT64(dStack_5c),0);
                       uStack_e4 = (uint)((ulonglong)dStack_5c >> 0x20);
                       if (uStack_50 < 0x4d) {
                         piVar6 = *(int **)args.value[0];

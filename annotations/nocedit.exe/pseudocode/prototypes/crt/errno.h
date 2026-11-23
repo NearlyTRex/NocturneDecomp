@@ -7,7 +7,7 @@
 
 // Original: crt_errno.c__errno_FUN_00601450
 // Address: 00601450
-int * __cdecl ::errno(void);
+int * __cdecl _errno(void);
 
 // Original: crt_errno.c_setErrno_FUN_00602790
 // Address: 00602790
@@ -23,4 +23,4 @@ int __cdecl convertWindowsErrorToErrno(DWORD windows_error);
 
 // Original: crt_errno.c___set_errno_FUN_006083fc
 // Address: 006083fc
-DWORD __cdecl ::_set_errno(void);
+DWORD __cdecl __set_errno(void);

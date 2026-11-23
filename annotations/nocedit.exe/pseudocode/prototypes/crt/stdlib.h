@@ -7,15 +7,15 @@
 
 // Original: crt_stdlib.c_median_of_3_FUN_005fdea0
 // Address: 005fdea0
-void * __watcallStack median::of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar);
+void * __watcallStack median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_memory_swap_FUN_005fdf10
 // Address: 005fdf10
-void __watcallRegister memory::swap(void *ptr1,void *ptr2,SIZE_T bytes);
+void __watcallRegister memory_swap(void *ptr1,void *ptr2,SIZE_T bytes);
 
 // Original: crt_stdlib.c__qsort_FUN_005fdf38
 // Address: 005fdf38
-void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
+void __cdecl _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50
 // Address: 005feb50
@@ -31,7 +31,7 @@ void __cdecl srand(uint seed);
 
 // Original: crt_stdlib.c__atexit_FUN_005ff060
 // Address: 005ff060
-void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
+void __cdecl _atexit(WatcomStaticDestructorNode *exit_node);
 
 // Original: crt_stdlib.c_atoi_FUN_005ffef0
 // Address: 005ffef0
@@ -39,7 +39,7 @@ int __cdecl atoi(char *string_ptr);
 
 // Original: crt_stdlib.c__fullpath_FUN_00601140
 // Address: 00601140
-char * __cdecl ::fullpath(char *buffer,char *path,SIZE_T buffer_size);
+char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size);
 
 // Original: crt_stdlib.c_system_FUN_00602130
 // Address: 00602130
@@ -63,7 +63,7 @@ char * __cdecl utoa(uint value,char *buffer,int base);
 
 // Original: crt_stdlib.c_strtol_internal_FUN_0060ec70
 // Address: 0060ec70
-long __cdecl strtol::internal(char *str,char **endptr,int base,int is_signed);
+long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed);
 
 // Original: crt_stdlib.c_strtoul_FUN_0060ede0
 // Address: 0060ede0

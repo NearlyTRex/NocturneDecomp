@@ -236,17 +236,17 @@ LAB_004baa7f:
     return 1;
   }
   this_ptr->batch_mode = 1;
-  (*this_ptr->vtable->extractPodFile)(this_ptr,local_340);
-  optional_pod_file[0xb292]._bufsize = 0;
+  (*this_ptr->vtable->extractPodFile)(this_ptr,local_340,0);
+  this_ptr->batch_mode = 0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_30);
   engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
-            ((CFileManager *)optional_pod_file,(CStrList *)auStack_30);
+            (this_ptr,(CStrList *)auStack_30);
   iVar4 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
-                    ((CFileManager *)optional_pod_file,(CStrList *)auStack_30,acStack_338);
+                    (this_ptr,(CStrList *)auStack_30,acStack_338);
   if (-1 < iVar4) {
     shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0((CStrList *)auStack_30,iVar4);
     engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620
-              ((CFileManager *)optional_pod_file,(CStrList *)auStack_30);
+              (this_ptr,(CStrList *)auStack_30);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

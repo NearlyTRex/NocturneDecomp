@@ -1045,7 +1045,7 @@
     "nocturne.exe": {
       "addr": "004e6160",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     }
   },
@@ -1550,6 +1550,76 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "mpegLayer3StereoProcess_FUN_005325e0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 319,
+          "message": "Value stored to 'local_b8' is never read",
+          "path_notes": [
+            {
+              "line": 319,
+              "message": "Value stored to 'local_b8' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 327,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 327,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 425,
+          "message": "Value stored to 'local_d0' is never read",
+          "path_notes": [
+            {
+              "line": 425,
+              "message": "Value stored to 'local_d0' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 15,
+          "line": 433,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 433,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 588,
+          "message": "Value stored to 'local_58' is never read",
+          "path_notes": [
+            {
+              "line": 588,
+              "message": "Value stored to 'local_58' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

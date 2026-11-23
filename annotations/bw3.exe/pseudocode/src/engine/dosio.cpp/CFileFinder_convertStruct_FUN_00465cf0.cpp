@@ -31,8 +31,8 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00465cf0(CFileFinder
     *(byte *)&this_ptr->attributes = (byte)this_ptr->attributes | 8;
   }
   if ((find_data->nFileSizeHigh != 0) || (0x7fffffff < find_data->nFileSizeLow)) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\dosio.c";
-    g_INT_01d71de4 = 0x2ff;
+    g_CurrentFilename = "..\\engine\\dosio.c";
+    g_CurrentLineNumber = 767;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CFileFinder::convertStruct - file too big!");
   }
   this_ptr->file_size = find_data->nFileSizeLow;

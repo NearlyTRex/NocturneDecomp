@@ -28,13 +28,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   g_INT_01c599bc = 0;
   _fread(&local_14,4,1,file_handle);
   if (local_14 < 1) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
-    g_INT_01d71de4 = 0x148;
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 328;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - invalid version");
   }
   if (g_INT_005fb0e0 < local_14) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
-    g_INT_01d71de4 = 0x14b;
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 331;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
   _fread(&this_ptr->grid_coord,4,1,file_handle);
@@ -57,8 +57,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
     (this_ptr->adjusted_size).z = local_18;
   }
   if (local_14 < 4) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
-    g_INT_01d71de4 = 0x1e2;
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 482;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Release build doesn't support old geometry");
   }
   else {
@@ -75,8 +75,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytra
   if ((file_handle->_flag & 0x20) == 0) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
-  g_INT_01d71de4 = 0x1ff;
+  g_CurrentFilename = "..\\core\\dtrace.cpp";
+  g_CurrentLineNumber = 511;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonRaytrace::loadBinary - error reading file");
   return;
 }

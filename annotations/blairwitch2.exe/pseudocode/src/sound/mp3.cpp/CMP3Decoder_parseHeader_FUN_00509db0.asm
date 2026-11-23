@@ -24,8 +24,8 @@
 ;   TerminatedCString s_Out_of_memory_File_s_005dfef3
 ;   double g_DOUBLE_005e0333 = 1000
 ;   double[2][4] g_MpegSampleRateTable
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -169,8 +169,8 @@ section .text
     MOV EDX,0x5dfee2                    ; 00509f07 | = "..\\sound\\mp3.cpp"
     MOV ECX,0x23d                       ; 00509f0c
     PUSH 0x5dfef3                       ; 00509f11 | = "Out of memory.  File: %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00509f16 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00509f1c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00509f16 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00509f1c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00509f22
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00509f27

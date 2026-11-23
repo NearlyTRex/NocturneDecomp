@@ -49,7 +49,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDem
           }
         }
         else if (uVar2 < 0x33) {
-          (*((this_ptr->base).vtable)->extractPodFile)(&this_ptr->base,(char *)0x0);
+          (*((this_ptr->base).vtable)->extractPodFile)(&this_ptr->base,(char *)0x0,1);
         }
         else if (uVar2 == 0x34) {
           engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(&this_ptr->base);

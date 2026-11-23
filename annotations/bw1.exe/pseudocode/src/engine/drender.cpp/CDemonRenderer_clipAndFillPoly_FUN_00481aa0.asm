@@ -28,8 +28,8 @@
 ;   SRenderVertex[16] g_SRenderVertex_ARRAY_007c7558
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 g_RenderStateFlags+1
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_00481ae3
     MOV EBP,0xad                        ; 00481ae8
     PUSH 0x5db2df                       ; 00481aed | = "CDemonRenderer::clipAndFillPoly - Bad..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00481af2 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 00481af8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00481af2 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 00481af8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00481afe
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00481b03

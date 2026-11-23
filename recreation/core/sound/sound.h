@@ -22,7 +22,9 @@ public:
     static constexpr int kMusicChannel = 1;
     static constexpr int kDialogChannel = 2;
 
-    CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system);
+    // The menu music is the packages' content's, read as configure starts it.
+    CSound(sound::CSndMain &sound_main, engine::CPod &pod, platform::IFileSystem &file_system,
+           const engine::SGameContent &content);
     ~CSound();
     CSound(const CSound &) = delete;
     CSound &operator=(const CSound &) = delete;
@@ -70,6 +72,7 @@ private:
     sound::CSndMain &sound_main_;
     engine::CPod &pod_;
     platform::IFileSystem &file_system_;
+    const engine::SGameContent &content_;
     shape::CStrList sound_file_list_;
     std::function<void(float)> music_handler_;
     std::string ambient_sound_name_;

@@ -18,8 +18,8 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0055cb20
   iVar1 = slot->hardware_buffer_handle;
   if (((iVar1 < 1) || (0x1e < iVar1)) ||
      (g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[iVar1 * 9] == (IDirectSoundBuffer *)0x0)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-    g_INT_01d71de4 = 0x5f8;
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 1528;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
   if (slot->sample != (CSfxSample *)0x0) {

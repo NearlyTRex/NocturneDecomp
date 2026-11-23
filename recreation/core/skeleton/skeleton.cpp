@@ -51,9 +51,15 @@ void readBinaryAngles(common::CTextScanner &scanner, std::span<common::CQuaterni
 
 // The original also marked its reference bone origins unread, which retail has no field for.
 // nocedit 0x00599880
+// bw1 0x00562dd0
+// bw2 0x005407e0
+// bw3 0x005479f0
 CSkeleton::CSkeleton(const engine::CDosIo &dosio) : dosio_(dosio) {}
 
 // nocedit 0x005998e0
+// bw1 0x00562e30
+// bw2 0x00540840
+// bw3 0x00547a50
 CSkeleton::~CSkeleton() = default;
 
 // nocedit 0x00599a50
@@ -67,6 +73,9 @@ void CSkeleton::free() {
 
 // The original quit when it couldn't allocate, which a failed allocation does here.
 // nocedit 0x00599910
+// bw1 0x00562e60
+// bw2 0x00540870
+// bw3 0x00547a80
 void CSkeleton::allocMemory(int bone_count, int frame_count) {
     free();
     if (bone_count > kMaxBones) {
@@ -86,6 +95,7 @@ void CSkeleton::allocMemory(int bone_count, int frame_count) {
 // whitespace to the scan.
 // nocedit 0x00599b10
 // bw1 0x00563000
+// bw2 0x00540a10
 void CSkeleton::load(std::string_view filename) {
     loaded_filename_ = filename;
     const std::optional<std::string> file = dosio_.readFile("data", filename);
@@ -101,6 +111,8 @@ void CSkeleton::load(std::string_view filename) {
 // quit on a read error, which reading the whole file first can't have.
 // nocedit 0x00599bb0
 // bw1 0x00563090
+// bw2 0x00540aa0
+// bw3 0x00547cb0
 void CSkeleton::loadStream(common::CTextScanner &scanner) {
     free();
     scanner.skipLine();
@@ -151,6 +163,9 @@ void CSkeleton::loadStream(common::CTextScanner &scanner) {
 }
 
 // nocedit 0x00599fc0
+// bw1 0x005634f0
+// bw2 0x00540e80
+// bw3 0x00548090
 int CSkeleton::findBone(std::string_view bone_name, bool assert_if_not_found) const {
     for (std::size_t i = 0; i < bones_.size(); ++i) {
         if (common::equalsIgnoringAsciiCase(bones_[i].bone_name, bone_name)) {
@@ -171,6 +186,9 @@ const common::CQuaternion4f &CSkeleton::getBoneAngleAtFrame(int bone_index, int 
 }
 
 // nocedit 0x0059a070
+// bw1 0x005635a0
+// bw2 0x00540f30
+// bw3 0x00548140
 common::CQuaternion4f CSkeleton::getBoneAngleInterpolated(int bone_index, int frame_index_1,
                                                           int frame_index_2,
                                                           float interpolation) const {

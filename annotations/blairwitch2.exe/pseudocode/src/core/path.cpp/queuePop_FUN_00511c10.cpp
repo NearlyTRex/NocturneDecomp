@@ -12,8 +12,8 @@ void __cdecl core_path_cpp_queuePop_FUN_00511c10(int *out_x,int *out_cost,int *o
   int iVar1;
   
   if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
-    g_INT_01d046a4 = 0xdf;
+    g_CurrentFilename = "..\\core\\path.cpp";
+    g_CurrentLineNumber = 223;
     core_main_c_displayErrorAndQuit_FUN_004e4500("queuePop - empty queue?!");
   }
   *out_x = g_PathfindingQueue[g_PathfindingQueueHead].x;

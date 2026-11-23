@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CDemonMission_buildActiv_005c8b70
 ;   CEventList* g_CEventListPtr = 01c6e360
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -96,8 +96,8 @@ section .text
     MOV ECX,0x5c8b5c                    ; 004f700d | = "..\\core\\mission.cpp"
     MOV ESI,0x497                       ; 004f7012
     PUSH 0x5c8b70                       ; 004f7017 | = "CDemonMission::buildActiveSetActorLis..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f701c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f7022 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f701c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004f7022 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f7028
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f702d

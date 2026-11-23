@@ -27,8 +27,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041ac60(CBodyPart *this_
     } while (iVar3 < this_ptr->texture_count);
   }
   if (9 < this_ptr->texture_count) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\bodypart.cpp";
-    g_INT_01d1d404 = 0x48d;
+    g_CurrentFilename = "..\\core\\bodypart.cpp";
+    g_CurrentLineNumber = 1165;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many body part textures!");
   }
   memset(this_ptr->textures + this_ptr->texture_count,0,0x18);

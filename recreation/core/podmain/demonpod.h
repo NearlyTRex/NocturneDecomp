@@ -31,7 +31,7 @@ public:
     void load() override;
     [[nodiscard]] bool hasArchivesToUnpack() const override;
     void unpackArchives() override;
-    // The base game's loose files are the disk's, which the lookup after this one finds.
+    // The game's own loose files are the disk's, which the lookup after this one finds.
     bool findFile(engine::SFoundFileInfo &found_file_info) override;
     void dismount(std::string_view filename) override;
     // The loaded packages' game content, merged in load order once load has run.
@@ -67,6 +67,8 @@ private:
     platform::ILog &log_;
     // The latest loaded first.
     std::vector<SLoadedPackage> packages_;
+    // The chosen game's, whose loose files the disk's lookup finds.
+    std::string game_folder_;
     // Why each package left out for a POD it needs was.
     std::vector<std::string> left_out_;
     std::size_t mounted_count_ = 0;

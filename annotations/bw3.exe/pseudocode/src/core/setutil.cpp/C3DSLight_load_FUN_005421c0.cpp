@@ -166,8 +166,8 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_005421c0(C3DSLight *this_ptr,_F
       do {
         _fscanf(file_handle,"%d,%d,%d,%d,%d\n");
         if (0xf9 < local_3c) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\setutil.cpp";
-          g_INT_01d71de4 = 0x2d8;
+          g_CurrentFilename = "..\\core\\setutil.cpp";
+          g_CurrentLineNumber = 728;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';

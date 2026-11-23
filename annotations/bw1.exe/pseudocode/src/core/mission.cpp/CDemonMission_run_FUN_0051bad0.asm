@@ -24,8 +24,8 @@
 ;   undefined4 g_CGameInstance.act_completion_state
 ;   int g_HeroCount
 ;   int g_INT_01d06ab4
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   char g_CHAR_01d33b20
 ;
 ; Called Functions:
@@ -67,8 +67,8 @@ section .text
     MOV EBP,0x5e98fa                    ; 0051baf4 | = "..\\core\\mission.cpp"
     MOV EAX,0x521                       ; 0051baf9
     PUSH 0x5e990e                       ; 0051bafe | = "CDemonMission::run - no gLocalHero"
-    MOV dword ptr [0x01d1d400],EBP      ; 0051bb03 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0051bb09 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0051bb03 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0051bb09 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051bb0e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051bb13
@@ -140,8 +140,8 @@ section .text
         ;   Label: LAB_0051bbc0
     MOV ESI,0x520                       ; 0051bbc5
     PUSH 0x5e98d5                       ; 0051bbca | = "CDemonMission::run - hero list empty"
-    MOV dword ptr [0x01d1d400],ECX      ; 0051bbcf | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0051bbd5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051bbcf | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0051bbd5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051bbdb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051bbe0

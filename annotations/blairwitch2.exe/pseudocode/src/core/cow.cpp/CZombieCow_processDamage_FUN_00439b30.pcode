@@ -176,17 +176,17 @@ COPY (unique,0x87b00,4) = (const,0x3,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@00439b67 [ESP:???](-4)!?  # PUSH ESI
+@00439b67 [ESP:-24](-4)  # PUSH ESI
 COPY (unique,0x41500,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@00439b68 [ESP:???](-4)!?  # CALL 0x00503620
+@00439b68 [ESP:-24](-4)  # CALL 0x00503620
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x439b6d,4)
 CALL (ram,0x503620,4)
 
-@00439b6d [ESP:???](+12)!?  # ADD ESP, 0xc
+@00439b6d [ESP:-12](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -458,5 +458,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 65 instructions, 310 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -349,5 +349,123 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CIni_getProfileString_FUN_004fb250.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 11,
+          "line": 59,
+          "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming 'stream' is not equal to null"
+            },
+            {
+              "line": 29,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 36,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 36,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'pcVar5' is not equal to null"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 35,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 44,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 44,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 45,
+              "message": "Assuming 'pcVar4' is not equal to null"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 46,
+              "message": "Value assigned to 'local_e1'"
+            },
+            {
+              "line": 47,
+              "message": "Assuming 'local_e1' is equal to null"
+            },
+            {
+              "line": 47,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming 'iVar6' is equal to 0"
+            },
+            {
+              "line": 51,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 51,
+              "message": "Execution continues on line 54"
+            },
+            {
+              "line": 57,
+              "message": "'bVar3' is true"
+            },
+            {
+              "line": 57,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 58,
+              "message": "Null pointer value stored to 'pcVar6'"
+            },
+            {
+              "line": 59,
+              "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 62,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 62,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

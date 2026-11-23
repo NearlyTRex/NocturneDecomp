@@ -409,7 +409,7 @@
     "nocturne.exe": {
       "addr": "00429730",
       "by": "name",
-      "class": "operand-change",
+      "class": "layout-drift",
       "ratio": 1.0
     }
   },
@@ -459,6 +459,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_findSomethingToLookAt_FUN_0042d5a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 80,
+          "line": 87,
+          "message": "Although the value stored to 'fStack_24' is used in the enclosing expression, the value is never actually read from 'fStack_24'",
+          "path_notes": [
+            {
+              "line": 87,
+              "message": "Although the value stored to 'fStack_24' is used in the enclosing expression, the value is never actually read from 'fStack_24'"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

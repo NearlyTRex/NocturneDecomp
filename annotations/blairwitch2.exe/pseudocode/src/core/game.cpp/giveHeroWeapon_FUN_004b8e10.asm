@@ -26,8 +26,8 @@
 ;   CDemonMission* g_CDemonMission_PTR_00618170 = 01d182f0
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   int g_INT_01cedef4
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -101,8 +101,8 @@ section .text
     MOV EDX,0x5d7a1f                    ; 004b8e7f | = "..\\core\\game.cpp"
     MOV ECX,0xb63                       ; 004b8e84
     PUSH 0x5d7a30                       ; 004b8e89 | = "giveHeroWeapon - This is not a weapon"
-    MOV dword ptr [0x01d046a0],EDX      ; 004b8e8e | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004b8e94 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004b8e8e | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004b8e94 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b8e9a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004b8e9f

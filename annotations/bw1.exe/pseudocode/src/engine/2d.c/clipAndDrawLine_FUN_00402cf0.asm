@@ -17,8 +17,8 @@
 ;   engine_2d.c_clipLineGlobal_FUN_00402ca0 at 00402cd4
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -94,8 +94,8 @@ section .text
     MOV ESI,0x5d211e                    ; 00402d81
     MOV EDI,0x86b                       ; 00402d86
     PUSH 0x5d212d                       ; 00402d8b
-    MOV dword ptr [0x01d1d400],ESI      ; 00402d90 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00402d96 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 00402d90 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00402d96 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00402d9c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00402da1

@@ -17,8 +17,8 @@ void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_0045b210(CDemonImage *t
   if (pvVar1 != (void *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\dimage.cpp";
-  g_INT_01d71de4 = 0x31;
+  g_CurrentFilename = "..\\core\\dimage.cpp";
+  g_CurrentLineNumber = 49;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonImage::allocMemory - Out of memory!");
   return;
 }

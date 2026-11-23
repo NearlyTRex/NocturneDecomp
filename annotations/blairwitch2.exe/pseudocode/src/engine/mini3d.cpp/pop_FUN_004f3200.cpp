@@ -11,8 +11,8 @@ void __cdecl engine_mini3d_cpp_pop_FUN_004f3200(void)
 {
   g_PTR_01d0991c = g_PTR_01d0991c + -1;
   if ((int)g_PTR_01d0991c < 0) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\mini3d.cpp";
-    g_INT_01d046a4 = 0x4bf;
+    g_CurrentFilename = "..\\engine\\mini3d.cpp";
+    g_CurrentLineNumber = 1215;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance2");
   }
   g_INT_01d0c398 = 1;

@@ -25,8 +25,8 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004f4550(CIni *this
   this_ptr->initialized = 1;
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\ini.cpp";
-    g_INT_01d1d404 = 0xfd;
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 253;
     core_main_c_displayErrorAndQuit_FUN_005030e0("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   _sprintf(local_114,"[%s]\n");

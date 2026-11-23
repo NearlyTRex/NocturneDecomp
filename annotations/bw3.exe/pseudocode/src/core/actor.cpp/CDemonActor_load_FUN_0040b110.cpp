@@ -25,8 +25,8 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b110(CDemonActor *this_ptr,
   _fscanf(file_handle," { %s \"%[^\"]\"\n");
   iVar2 = _stricmp(str1,local_dc);
   if (iVar2 != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-    g_INT_01d71de4 = 0x828;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 2088;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Start of actor file tag mismatch for class %s");
   }
   pcVar4 = local_78;
@@ -53,13 +53,13 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b110(CDemonActor *this_ptr,
   iVar3 = _stricmp(str1,local_dc);
   if ((iVar3 != 0) ||
      (iVar3 = _stricmp(this_ptr->actor_name,local_78), iVar3 != 0)) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-    g_INT_01d71de4 = 0x845;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 2117;
     core_main_c_displayErrorAndQuit_FUN_004e4330("End of actor file tag mismatch for class %s name \"%s\"");
   }
   if ((file_handle->_flag & 0x20) != 0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-    g_INT_01d71de4 = 0x84a;
+    g_CurrentFilename = "..\\core\\actor.cpp";
+    g_CurrentLineNumber = 2122;
     core_main_c_displayErrorAndQuit_FUN_004e4330("IO Error after reading %s \"%s\"");
   }
   g_CurrentActorBeingProcessed = pCVar5;

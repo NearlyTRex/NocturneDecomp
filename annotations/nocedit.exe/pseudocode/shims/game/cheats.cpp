@@ -946,13 +946,16 @@ void applyOne(int index, int value) {
     case NOCTURNE_CHEAT_SCRIPT_DEBUG:
         // SCRIPT does three things at once: the flag, the framebuffer clear it
         // needs, and a camera reinit that shrinks the 3D view to 240 lines so
-        // the debug text has somewhere to go.
+        // the debug text has somewhere to go. The debug window
+        // (debug/debug_window.h) gives the text a window of its own instead.
         g_CGamePtr->subtitle_system_enabled = value;
         g_CGamePtr->screen_clear_enabled = value;
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
         if (g_CDemonSetPtr != (CDemonSet *)0) {
             core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(g_CDemonSetPtr, 0, 0,
                                                              value != 0 ? 0xf0 : g_WindowHeight);
         }
+#endif
         break;
     case NOCTURNE_CHEAT_MEMORY_DEBUG:
         g_CGamePtr->editor_tools_enabled = value;

@@ -143,8 +143,8 @@ section .text
     MOV ECX,0x5b9c2c                    ; 00449112 | = "..\\core\\dcamera.cpp"
     MOV EBX,0x2eb                       ; 00449117
     PUSH 0x5b9c40                       ; 0044911c | = "CDemonCamera::beginScene - Scene alre..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00449121 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00449127 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00449121 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00449127 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0044912d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00449132

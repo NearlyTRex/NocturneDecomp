@@ -195,8 +195,8 @@ section .text
         ;   Label: default
     MOV EDX,0xb83                       ; 004a65f3
     PUSH 0x5d65d3                       ; 004a65f8 | = "Invalid entry item type"
-    MOV [0x01d046a0],EAX                ; 004a65fd | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004a6602 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004a65fd | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004a6602 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a6608
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a660d
@@ -220,8 +220,8 @@ section .text
         ;   Label: default
     MOV EDX,0xb9b                       ; 004a6640
     PUSH 0x5d6632                       ; 004a6645 | = "Invalid entry item type"
-    MOV [0x01d046a0],EAX                ; 004a664a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004a664f | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004a664a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004a664f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a6655
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a665a
@@ -231,8 +231,8 @@ section .text
         ;   Label: LAB_004a6662
     MOV EDI,0xb9f                       ; 004a6667
     PUSH 0x5d665f                       ; 004a666c | = "Hell froze"
-    MOV dword ptr [0x01d046a0],ESI      ; 004a6671 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004a6677 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004a6671 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004a6677 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004a667d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004a6682

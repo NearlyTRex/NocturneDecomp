@@ -97,8 +97,8 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0(void)
           }
           HVar6 = (*g_DirectDrawSurface->vtable->Unlock)(g_DirectDrawSurface,(void *)0x0);
           if (HVar6 != 0) {
-            g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-            g_INT_01d71de4 = 0x381;
+            g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+            g_CurrentLineNumber = 897;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Unable to unlock front buffer");
             g_FlipPending = 0;
             wincore_winrun_cpp_processWindowMessages_FUN_00580f70();

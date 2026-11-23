@@ -12,8 +12,8 @@ void __cdecl core_game_cpp_CGame_slamDT_FUN_004bd460(CGame *this_ptr,float delta
   double dVar1;
   
   if (delta_time < 0.0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\game.cpp";
-    g_INT_01d046a4 = 0x1313;
+    g_CurrentFilename = "..\\core\\game.cpp";
+    g_CurrentLineNumber = 4883;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CGame::slamDT - invalid dt!");
   }
   this_ptr->delta_time_float = delta_time;

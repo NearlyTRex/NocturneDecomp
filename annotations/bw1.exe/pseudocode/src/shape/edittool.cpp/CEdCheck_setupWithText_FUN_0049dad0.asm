@@ -13,8 +13,8 @@
 ;   CBitFont* g_CBitFont_PTR_01c3eb50
 ;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c3f53c
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_0049db8a
     MOV ESI,0xa4                        ; 0049db8f
     PUSH 0x5dbc7e                       ; 0049db94
-    MOV dword ptr [0x01d1d400],ECX      ; 0049db99 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0049db9f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0049db99 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0049db9f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049dba5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049dbaa

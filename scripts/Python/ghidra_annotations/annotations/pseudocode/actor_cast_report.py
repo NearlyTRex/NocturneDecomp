@@ -9,29 +9,35 @@ from collections import defaultdict
 from ghidra_annotations.util.log import log_info
 
 
-# Resolution functions identified by their unique FUN_ address suffix.
-# Using addresses avoids false positives from substring matches
-# (e.g. 'getActor' matching 'getActorType').
-#
-# hash_based: expected class determined by g_C*ClassInfo in argument window
-# string_based: expected class determined by string literal argument (e.g. "CWerewolf")
-HASH_BASED_FUNCTIONS = {
-    'castToClassHash_FUN_0040c790': 'castToClassHash',
-    'resolveActorByName_FUN_004aa400': 'resolveActorByName',
-    'getActor_FUN_005594e0': 'getActor',
+# Resolution functions, by name: each build has them at its own address.
+# 'hash': expected class determined by g_C*ClassInfo in argument window
+# 'string': expected class determined by string literal argument (e.g. "CWerewolf")
+RESOLUTION_FUNCTIONS = {
+    'castToClassHash': 'hash',
+    'resolveActorByName': 'hash',
+    'getActor': 'hash',
+    'createActorByName': 'string',
 }
 
-STRING_BASED_FUNCTIONS = {
-    'createActorByName_FUN_0040c430': 'createActorByName',
-}
+
+# An assignment's `=`, never the `==`/`!=`/`<=`/`>=` of a comparison
+_ASSIGN_CAST_RE = re.compile(r'(?<![=!<>])=(?!=)\s*\(\s*(C\w+)\s*\*\s*\)')
+_ASSIGN_RE = re.compile(r'(\w+)\s*=(?!=)')
+
+
+def _call_re(func_name):
+    """A call to func_name under its exported name (unit prefix, _FUN_ address).
+
+    The name must end at _FUN_, so getActor never matches getActorType.
+    """
+    return re.compile(r'(?<![A-Za-z0-9])' + func_name + r'_FUN_[0-9a-fA-F]{8}\b')
 
 
 def _build_class_hierarchy(headers_dir):
     """Parse struct definitions to find inheritance via 'base' member at offset 0x0."""
     hierarchy = {}
     for h in glob.glob(os.path.join(headers_dir, '*.h')):
-        basename = os.path.basename(h)
-        if '_vtable' in basename or '_full_vtable' in basename:
+        if '_vtable' in os.path.basename(h):       # vtables, full vtables among them
             continue
 
         with open(h) as f:
@@ -50,10 +56,10 @@ def _build_class_hierarchy(headers_dir):
 
 
 def _get_ancestor_chain(class_name, hierarchy):
-    """Return list from class up to root."""
+    """Return list from class up to root, stopping where a base repeats."""
     chain = []
     current = class_name
-    while current:
+    while current and current not in chain:
         chain.append(current)
         current = hierarchy.get(current)
     return chain
@@ -67,15 +73,7 @@ def _is_compatible_type(cast_type, expected_type, hierarchy):
     Upcasts (e.g. CDemonActor when CCharacter is expected) are flagged
     because they lose type info and cause bad field access downstream.
     """
-    if cast_type == expected_type:
-        return True
-
-    # Downcast: cast_type is more specific than expected_type (ok)
-    cast_chain = _get_ancestor_chain(cast_type, hierarchy)
-    if expected_type in cast_chain:
-        return True
-
-    return False
+    return expected_type in _get_ancestor_chain(cast_type, hierarchy)
 
 
 def _build_classinfo_map(globals_dir):
@@ -132,26 +130,16 @@ def _find_resolution_calls(filepath, classinfo_map):
     results = []
     lines = content.split('\n')
 
-    # Combine both function sets with their detection method
-    all_functions = []
-    for func_id, func_name in HASH_BASED_FUNCTIONS.items():
-        all_functions.append((func_id, func_name, 'hash'))
-    for func_id, func_name in STRING_BASED_FUNCTIONS.items():
-        all_functions.append((func_id, func_name, 'string'))
-
-    for func_id, func_name, method in all_functions:
+    for func_name, method in RESOLUTION_FUNCTIONS.items():
+        call_re = _call_re(func_name)
         for line_no, line in enumerate(lines, 1):
-            if func_id not in line:
+            m = call_re.search(line)
+            if not m:
                 continue
-
-            # Skip the function's own definition/signature
-            if line.lstrip().startswith('//') or line.lstrip().startswith('#'):
+            # Skip comments and preprocessor lines, and a line at column 0: the
+            # function's own signature or a declaration, never a call in a body
+            if line.lstrip().startswith(('//', '#')) or not line[:1].isspace():
                 continue
-            # Skip if this is the function definition (signature line)
-            if func_id in os.path.basename(filepath):
-                sig_match = re.match(r'\s*\w[\w\s\*]*' + re.escape(func_id) + r'\s*\(', line)
-                if sig_match:
-                    continue
 
             if method == 'hash':
                 expected_class = _find_expected_class_hash_based(lines, line_no, classinfo_map)
@@ -186,16 +174,19 @@ def _find_resolution_calls(filepath, classinfo_map):
             # Search lines in reverse order to find the assignment closest to the call.
             # Look for assignment cast "= (CType *)" first, which is more reliable
             # than a bare "(CType *)" that could be an argument cast.
-            for pre_line in reversed(pre_lines):
+            for back, pre_line in enumerate(reversed(pre_lines)):
+                # A line ending a statement or block belongs to an earlier statement
+                if back and pre_line.rstrip().endswith((';', '{', '}')):
+                    break
                 # Assignment with explicit cast: var = (CType *)
-                assign_cast_m = re.search(r'=\s*\(\s*(C\w+)\s*\*\s*\)', pre_line)
+                assign_cast_m = _ASSIGN_CAST_RE.search(pre_line)
                 if assign_cast_m:
                     cast_type = assign_cast_m.group(1)
                     break
 
                 # Assignment without cast: var = func(...)
                 # Look up the variable's declared type
-                assign_m = re.search(r'(\w+)\s*=\s*', pre_line)
+                assign_m = _ASSIGN_RE.search(pre_line)
                 if assign_m:
                     var_name = assign_m.group(1)
                     decl_m = re.search(
@@ -237,18 +228,16 @@ def generate_actor_cast_report(pseudocode_src_dir, reports_dir):
     classinfo_map = _build_classinfo_map(globals_dir)
     log_info("Actor cast report: %d ClassInfo globals" % len(classinfo_map))
 
-    # Scan all pseudocode .cpp files (include .keep.cpp)
-    cpp_files = []
-    for ext in ('*.cpp', '*.keep.cpp'):
-        cpp_files.extend(glob.glob(
-            os.path.join(pseudocode_src_dir, '**', ext), recursive=True))
-    # Deduplicate and prefer .keep files
+    # Scan all pseudocode .cpp files, a function's .keep.cpp in place of its .cpp
+    # (the *.cpp glob finds both, and the unit directories, which are named x.cpp)
     file_map = {}
-    for f in cpp_files:
+    for f in glob.glob(os.path.join(pseudocode_src_dir, '**', '*.cpp'), recursive=True):
+        if not os.path.isfile(f):
+            continue
         base = f.replace('.keep.cpp', '.cpp')
         if base not in file_map or f.endswith('.keep.cpp'):
             file_map[base] = f
-    cpp_files = sorted(f for f in file_map.values() if os.path.isfile(f))
+    cpp_files = sorted(file_map.values())
 
     all_calls = []
     mismatches = []

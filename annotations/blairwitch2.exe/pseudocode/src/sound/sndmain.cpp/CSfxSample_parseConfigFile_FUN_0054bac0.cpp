@@ -104,14 +104,14 @@ joined_r0x0054bce7:
         iVar5 = sscanf(local_484,"refDist =%f");
         if (iVar5 == 1) {
           if (local_20 != 0) {
-            g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-            g_INT_01d046a4 = 0x2e5;
+            g_CurrentFilename = "..\\sound\\sndmain.cpp";
+            g_CurrentLineNumber = 741;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Reference distance specified in %s on line %d, then again on line %d");
           }
           local_20 = local_18;
           if ((int)(this_ptr->sample_info).reference_distance < 0x3dcccccd) {
-            g_INT_01d046a4 = 0x2e7;
-            g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+            g_CurrentLineNumber = 743;
+            g_CurrentFilename = "..\\sound\\sndmain.cpp";
             core_main_c_displayErrorAndQuit_FUN_004e4500("Reference volume distance %g is too small in %s line %d!");
           }
           if (local_1c == 0) {
@@ -123,14 +123,14 @@ joined_r0x0054bce7:
           iVar5 = sscanf(local_484,"minDist =%f");
           if (iVar5 == 1) {
             if (local_1c != 0) {
-              g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-              g_INT_01d046a4 = 0x2ed;
+              g_CurrentFilename = "..\\sound\\sndmain.cpp";
+              g_CurrentLineNumber = 749;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Minimum distance specified in %s on line %d, then again on line %d");
             }
             local_1c = local_18;
             if ((int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd) {
-              g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-              g_INT_01d046a4 = 0x2ef;
+              g_CurrentFilename = "..\\sound\\sndmain.cpp";
+              g_CurrentLineNumber = 751;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Reference volume distance %g is too small in %s line %d!");
             }
           }
@@ -140,19 +140,19 @@ joined_r0x0054bce7:
               iVar5 = sscanf(local_484,"maxVol =%f");
               if (iVar5 == 1) {
                 if (local_20 == 0) {
-                  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-                  g_INT_01d046a4 = 0x2f9;
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 761;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("%s specified maxVol on line %d without first specifying reference distance");
                 }
                 if (local_1c != 0) {
-                  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-                  g_INT_01d046a4 = 0x2fa;
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 762;
                   core_main_c_displayErrorAndQuit_FUN_004e4500("Minimum distance specified in %s on line %d, then again on line %d");
                 }
                 local_1c = local_18;
                 if ((int)local_488 < 0x3a83126f) {
-                  g_INT_01d046a4 = 0x2fc;
-                  g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 764;
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
                   core_main_c_displayErrorAndQuit_FUN_004e4500("maxVol %g is too small in %s line %d!");
                 }
                 (this_ptr->sample_info).reference_volume_distance =
@@ -162,14 +162,14 @@ joined_r0x0054bce7:
                 iVar5 = sscanf(local_484,"length =%d");
                 if (iVar5 == 1) {
                   if (-1 < (this_ptr->sample_info).sample_count) {
-                    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-                    g_INT_01d046a4 = 0x303;
+                    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                    g_CurrentLineNumber = 771;
                     core_main_c_displayErrorAndQuit_FUN_004e4500
                               ("Length for %s already known, then specified again in %s line %d");
                   }
                   if (local_30 < 1) {
-                    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-                    g_INT_01d046a4 = 0x304;
+                    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                    g_CurrentLineNumber = 772;
                     core_main_c_displayErrorAndQuit_FUN_004e4500
                               ("Invalid length %d in %s line %d");
                   }
@@ -184,8 +184,8 @@ joined_r0x0054bce7:
                     this_ptr->loop_endpoints[0] = iVar5;
                   }
                   else {
-                    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-                    g_INT_01d046a4 = 0x311;
+                    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                    g_CurrentLineNumber = 785;
                     core_main_c_displayErrorAndQuit_FUN_004e4500
                               ("Error parsing %s line %d: %s");
                   }

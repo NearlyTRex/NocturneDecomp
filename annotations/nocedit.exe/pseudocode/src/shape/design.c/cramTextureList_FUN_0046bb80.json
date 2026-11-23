@@ -2060,5 +2060,499 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "cramTextureList_FUN_0046bb80.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 15,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 262,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 262,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 440,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 440,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 463,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 463,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 465,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 465,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 486,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 486,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 490,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 490,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 493,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 493,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 510,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 510,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 535,
+          "message": "4th function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 72,
+              "message": "Assuming 'g_TextureProcessedCount' is >= 1"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 77,
+              "message": "'local_5c' is < 'g_TextureProcessedCount'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 78,
+              "message": "Assuming 'g_TextureManagerMode' is not equal to 0"
+            },
+            {
+              "line": 78,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 88,
+              "message": "Assuming 'local_850' is not equal to null"
+            },
+            {
+              "line": 88,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 98,
+              "message": "Assuming 'SVar3' is equal to 1"
+            },
+            {
+              "line": 98,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 106,
+              "message": "Assuming 'SVar4' is equal to 1"
+            },
+            {
+              "line": 106,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 114,
+              "message": "Assuming 'SVar4' is equal to 1"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 122,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 122,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 146,
+              "message": "Assuming field 'max_u' is > field 'min_u'"
+            },
+            {
+              "line": 146,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 149,
+              "message": "Assuming field 'max_v' is > field 'min_v'"
+            },
+            {
+              "line": 149,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 162,
+              "message": "Assuming field 'processed_width' is >= 1"
+            },
+            {
+              "line": 162,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 165,
+              "message": "Field 'processed_height' is < 1"
+            },
+            {
+              "line": 165,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'local_5c' is >= 'g_TextureProcessedCount'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is false. Execution continues on line 172"
+            },
+            {
+              "line": 172,
+              "message": "Assuming 'cram' is not equal to null"
+            },
+            {
+              "line": 172,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 208,
+              "message": "Control jumps to line 283"
+            },
+            {
+              "line": 283,
+              "message": "Assuming 'local_58' is < 10"
+            },
+            {
+              "line": 283,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 284,
+              "message": "Assuming 'local_58' is >= 1"
+            },
+            {
+              "line": 284,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 306,
+              "message": "'local_34' is < 'local_58'"
+            },
+            {
+              "line": 306,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 308,
+              "message": "Assuming 'local_70' is < 'g_TextureProcessedCount'"
+            },
+            {
+              "line": 308,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 309,
+              "message": "Assuming 'local_34' is equal to field 'atlas_map_index'"
+            },
+            {
+              "line": 309,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 311,
+              "message": "Execution continues on line 314"
+            },
+            {
+              "line": 314,
+              "message": "'bVar2' is true"
+            },
+            {
+              "line": 314,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 306,
+              "message": "Assuming 'local_34' is >= 'local_58'"
+            },
+            {
+              "line": 306,
+              "message": "Loop condition is false. Execution continues on line 327"
+            },
+            {
+              "line": 327,
+              "message": "Assuming 'local_74' is >= 'g_TextureAtlasDimension'"
+            },
+            {
+              "line": 327,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 330,
+              "message": "Assuming 'local_60' is >= 'g_TextureAtlasDimension'"
+            },
+            {
+              "line": 330,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 333,
+              "message": "'cram' is not equal to null"
+            },
+            {
+              "line": 333,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 437,
+              "message": "'cram' is not equal to null"
+            },
+            {
+              "line": 437,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 468,
+              "message": "Assuming 'local_6c' is equal to null"
+            },
+            {
+              "line": 468,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 471,
+              "message": "'cram' is not equal to null"
+            },
+            {
+              "line": 471,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 484,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 488,
+              "message": "'local_58' is equal to 1"
+            },
+            {
+              "line": 488,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 489,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 489,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 517,
+              "message": "Assuming 'local_2c' is not equal to null"
+            },
+            {
+              "line": 517,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 517,
+              "message": "Assuming 'local_28' is not equal to null"
+            },
+            {
+              "line": 517,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 524,
+              "message": "'cram' is not equal to null"
+            },
+            {
+              "line": 524,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 533,
+              "message": "Assuming 'local_5c' is < 'g_TextureProcessedCount'"
+            },
+            {
+              "line": 533,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 534,
+              "message": "Assuming 'local_30' is not equal to field 'atlas_map_index'"
+            },
+            {
+              "line": 534,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 533,
+              "message": "The value 1 is assigned to 'local_5c'"
+            },
+            {
+              "line": 533,
+              "message": "Assuming 'local_5c' is < 'g_TextureProcessedCount'"
+            },
+            {
+              "line": 533,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 534,
+              "message": "Assuming 'local_30' is equal to field 'atlas_map_index'"
+            },
+            {
+              "line": 534,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 535,
+              "message": "4th function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 663,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 663,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 666,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 666,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 668,
+          "message": "Value stored to 'local_6c' is never read",
+          "path_notes": [
+            {
+              "line": 668,
+              "message": "Value stored to 'local_6c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 684,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 684,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 687,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 687,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 689,
+          "message": "Value stored to 'local_6c' is never read",
+          "path_notes": [
+            {
+              "line": 689,
+              "message": "Value stored to 'local_6c' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -30,6 +30,11 @@ struct Stand {
     int focus_arms = 0;
     int gamepad_pumps = 0;
 
+    // The debug window: the SDL window ID nocturne_debug_window_id answers,
+    // 0 for none, and how often its close button was pressed, which clears it.
+    unsigned int debug_window_id = 0;
+    int debug_closes = 0;
+
     void reset() {
         *this = Stand();
     }

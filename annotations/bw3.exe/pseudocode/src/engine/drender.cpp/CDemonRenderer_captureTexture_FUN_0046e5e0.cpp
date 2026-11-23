@@ -18,8 +18,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemo
   if (this_ptr->texture_capture_enabled != 0) {
     g_CaptureTextureCount = g_CaptureTextureCount + 1;
     if (100 < g_CaptureTextureCount) {
-      g_CHAR_PTR_01d71de0 = "..\\engine\\drender.cpp";
-      g_INT_01d71de4 = 0xbf3;
+      g_CurrentFilename = "..\\engine\\drender.cpp";
+      g_CurrentLineNumber = 3059;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDR::texture - Too many captured textures");
     }
     iVar2 = g_CaptureTextureCount;

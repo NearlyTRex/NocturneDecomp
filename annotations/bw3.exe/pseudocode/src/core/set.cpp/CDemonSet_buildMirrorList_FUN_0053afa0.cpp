@@ -49,8 +49,8 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0053afa0(CDemonSet *this
           iVar1 = this_ptr->mirror_glass_actor_count + 1;
           this_ptr->mirror_glass_actor_count = iVar1;
           if (99 < iVar1) {
-            g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-            g_INT_01d71de4 = 0x12ea;
+            g_CurrentFilename = "..\\core\\set.cpp";
+            g_CurrentLineNumber = 4842;
             core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }

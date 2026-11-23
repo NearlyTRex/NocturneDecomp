@@ -364,8 +364,8 @@ section .text
     MOV ECX,0x5ea752                    ; 00559783 | = "..\\core\\sound.cpp"
     MOV EBX,0x137                       ; 00559788
     PUSH 0x5ea764                       ; 0055978d | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00559792 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00559798 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00559792 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00559798 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0055979e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005597a3
@@ -532,8 +532,8 @@ section .text
     MOV EDX,0x5ea79e                    ; 00559968 | = "..\\core\\sound.cpp"
     MOV ECX,0x1a4                       ; 0055996d
     PUSH 0x5ea7b0                       ; 00559972 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 00559977 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0055997d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00559977 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0055997d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559983
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559988
@@ -577,8 +577,8 @@ section .text
     MOV EDI,0x5ea7cd                    ; 005599fc | = "..\\core\\sound.cpp"
     MOV EAX,0x1aa                       ; 00559a01
     PUSH 0x5ea7df                       ; 00559a06 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 00559a0b | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00559a11 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00559a0b | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00559a11 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559a16
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559a1b
@@ -604,8 +604,8 @@ section .text
     MOV ECX,0x5ea7f6                    ; 00559a55 | = "..\\core\\sound.cpp"
     MOV EDI,0x1ad                       ; 00559a5a
     PUSH 0x5ea808                       ; 00559a5f | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 00559a64 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00559a6a | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00559a64 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00559a6a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00559a70
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00559a75

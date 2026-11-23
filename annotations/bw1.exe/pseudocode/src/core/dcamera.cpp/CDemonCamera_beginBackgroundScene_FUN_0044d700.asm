@@ -166,8 +166,8 @@ section .text
         ;   Label: LAB_0044d88f
     MOV ESI,0x436                       ; 0044d894
     PUSH 0x5d7659                       ; 0044d899 | = "CDemonCamera::beginBackgroundScene - ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0044d89e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0044d8a4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0044d89e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0044d8a4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044d8aa
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044d8af

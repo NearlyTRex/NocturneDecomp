@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f32d4
 ;   TerminatedCString s_SfxSample_freeMemory_fre_005f32e9
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -48,8 +48,8 @@ section .text
     MOV ECX,0x5f32d4                    ; 0057002f | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x858                       ; 00570034
     PUSH 0x5f32e9                       ; 00570039 | = "SfxSample::freeMemory - freeing sampl..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0057003e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00570044 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0057003e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00570044 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057004a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0057004f

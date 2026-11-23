@@ -370,8 +370,8 @@ LAB_005b0229:
         if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
           if ((this_ptr->alpha1 == (CDemonActor *)0x0) || (this_ptr->alpha2 == (CDemonActor *)0x0))
           {
-            g_CHAR_PTR_01d1d400 = "..\\core\\werewolf.cpp";
-            g_INT_01d1d404 = 0x1ad;
+            g_CurrentFilename = "..\\core\\werewolf.cpp";
+            g_CurrentLineNumber = 429;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Alpha werewolf requires 2 waypoints");
           }
           engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"Phase: %d, Timer: %f\n");

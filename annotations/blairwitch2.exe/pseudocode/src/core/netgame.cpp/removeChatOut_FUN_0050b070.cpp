@@ -10,8 +10,8 @@ void __cdecl core_netgame_cpp_removeChatOut_FUN_0050b070(int index)
 
 {
   if ((index < 0) || (g_ChatOutCount <= index)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-    g_INT_01d046a4 = 0x107;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 263;
     core_main_c_displayErrorAndQuit_FUN_004e4500("removeChatOut - invalid index");
   }
   g_ChatOutCount = g_ChatOutCount + -1;

@@ -37,6 +37,13 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   if ((iVar3 != 0) && (this_ptr->plot_in_shadow_flag == 0)) {
     return 0;
   }
+#if !NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN
+  if (nocturne_platform_loop_return(this_ptr->state,this_ptr->to_start_event,
+                                    this_ptr->to_end_event,this_ptr->travel_time_to_start,
+                                    this_ptr->travel_time_to_end) != 0) {
+    return 0;
+  }
+#endif
   if ((2 < this_ptr->one_shot) &&
      (iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar1 == 0)) {

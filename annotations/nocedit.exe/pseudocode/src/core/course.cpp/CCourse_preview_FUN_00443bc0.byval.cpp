@@ -9,8 +9,6 @@
 void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x120
         sub EBP,0x7a
         xor EDX,EDX
         mov EAX,[g_CDemonSetPtr]

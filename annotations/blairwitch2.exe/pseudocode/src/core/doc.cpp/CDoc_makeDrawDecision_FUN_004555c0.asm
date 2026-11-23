@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_004555e4
     MOV EDI,0xbe0                       ; 004555e9
     PUSH 0x5d0217                       ; 004555ee | = "CDoc::makeDrawDecision - draw motion ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 004555f3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004555f9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004555f3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004555f9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004555ff
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00455604

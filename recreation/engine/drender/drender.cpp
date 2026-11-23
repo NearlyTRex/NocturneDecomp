@@ -39,6 +39,9 @@ bool isCulledOrDrawnInHardware(std::span<SRenderVertex *> corners, const SPolygo
 // The original stopped when a row set a global abort flag.
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00483370
+// bw1 0x0047a480
+// bw2 0x00461f70
+// bw3 0x00466d50
 void renderTriangleTextured(std::span<SRenderVertex> vertex_buffer,
                             std::span<const int> vertex_indices, const SPolygonState &state,
                             CSpecial &special, const C3d &three_d, const SCurrentTexture &texture) {
@@ -66,6 +69,9 @@ void renderTriangleTextured(std::span<SRenderVertex> vertex_buffer,
 // The original stopped when a row set a global abort flag.
 // deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x004839f0
+// bw1 0x0047ab00
+// bw2 0x004625f0
+// bw3 0x004673d0
 void renderTriangleSimple(std::span<SRenderVertex> vertex_buffer,
                           std::span<const int> vertex_indices, const SPolygonState &state,
                           CSpecial &special, const C3d &three_d, const SCurrentTexture &texture) {

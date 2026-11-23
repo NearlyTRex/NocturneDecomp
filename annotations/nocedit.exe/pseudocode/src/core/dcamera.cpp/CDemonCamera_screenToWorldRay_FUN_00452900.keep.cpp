@@ -17,6 +17,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonC
   
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
             (this_ptr,screen_x,screen_y,&local_34);
+  local_1c = local_34;
   core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(this_ptr,&local_1c,&local_28);
   fVar1 = (float)0.00390625;
   output_ray->x = (float)local_28.x * fVar1;

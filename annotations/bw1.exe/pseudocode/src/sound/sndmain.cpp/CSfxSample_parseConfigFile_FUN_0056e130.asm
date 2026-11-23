@@ -322,7 +322,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x474]     ; 0056e401
     MOV EAX,0x2e7                       ; 0056e408
     PUSH EDX                            ; 0056e40d
-    MOV [0x01d1d404],EAX                ; 0056e40e | g_INT_01d1d404
+    MOV [0x01d1d404],EAX                ; 0056e40e | g_CurrentLineNumber
     LEA EAX,[ESP + 0x134]               ; 0056e413
     PUSH EAX                            ; 0056e41a
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056e41b
@@ -331,7 +331,7 @@ section .text
     FSTP double ptr [ESP]               ; 0056e427
     MOV EDI,0x5f2ccf                    ; 0056e42a | = "..\\sound\\sndmain.cpp"
     PUSH 0x5f2ce4                       ; 0056e42f | = "Reference volume distance %g is too s..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0056e434 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d400],EDI      ; 0056e434 | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e43a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x14                        ; 0056e43f
@@ -350,12 +350,12 @@ section .text
     PUSH ECX                            ; 0056e471
     MOV EAX,0x5f2c75                    ; 0056e472 | = "..\\sound\\sndmain.cpp"
     PUSH EDI                            ; 0056e477
-    MOV [0x01d1d400],EAX                ; 0056e478 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 0056e478 | g_CurrentFilename
     LEA EAX,[ESP + 0x138]               ; 0056e47d
     PUSH EAX                            ; 0056e484
     MOV EDX,0x2e5                       ; 0056e485
     PUSH 0x5f2c8a                       ; 0056e48a | = "Reference distance specified in %s on..."
-    MOV dword ptr [0x01d1d404],EDX      ; 0056e48f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 0056e48f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e495
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e49a
@@ -385,8 +385,8 @@ section .text
     MOV EBX,0x5f2d29                    ; 0056e4e1 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x2ed                       ; 0056e4e6
     PUSH 0x5f2d3e                       ; 0056e4eb | = "Minimum distance specified in %s on l..."
-    MOV dword ptr [0x01d1d400],EBX      ; 0056e4f0 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056e4f6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0056e4f0 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0056e4f6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e4fc
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e501
@@ -408,8 +408,8 @@ section .text
     FSTP double ptr [ESP]               ; 0056e546
     MOV EBX,0x2ef                       ; 0056e549
     PUSH 0x5f2d96                       ; 0056e54e | = "Reference volume distance %g is too s..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0056e553 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0056e559 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056e553 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0056e559 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e55f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x14                        ; 0056e564
@@ -450,12 +450,12 @@ section .text
     PUSH ECX                            ; 0056e5c9
     MOV EAX,0x5f2e46                    ; 0056e5ca | = "..\\sound\\sndmain.cpp"
     PUSH EDI                            ; 0056e5cf
-    MOV [0x01d1d400],EAX                ; 0056e5d0 | g_CHAR_PTR_01d1d400
+    MOV [0x01d1d400],EAX                ; 0056e5d0 | g_CurrentFilename
     LEA EAX,[ESP + 0x138]               ; 0056e5d5
     PUSH EAX                            ; 0056e5dc
     MOV EDX,0x2fa                       ; 0056e5dd
     PUSH 0x5f2e5b                       ; 0056e5e2 | = "Minimum distance specified in %s on l..."
-    MOV dword ptr [0x01d1d404],EDX      ; 0056e5e7 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 0056e5e7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e5ed
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e5f2
@@ -481,8 +481,8 @@ section .text
     MOV ECX,0x5f2de6                    ; 0056e635 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x2f9                       ; 0056e63a
     PUSH 0x5f2dfb                       ; 0056e63f | = "%s specified maxVol on line %d withou..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0056e644 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0056e64a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056e644 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0056e64a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e650
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0056e655
@@ -492,7 +492,7 @@ section .text
         ;   Label: LAB_0056e65d
     MOV EAX,0x2fc                       ; 0056e664
     PUSH EDX                            ; 0056e669
-    MOV [0x01d1d404],EAX                ; 0056e66a | g_INT_01d1d404
+    MOV [0x01d1d404],EAX                ; 0056e66a | g_CurrentLineNumber
     LEA EAX,[ESP + 0x134]               ; 0056e66f
     PUSH EAX                            ; 0056e676
     FLD float ptr [ESP + 0x8]           ; 0056e677
@@ -500,7 +500,7 @@ section .text
     FSTP double ptr [ESP]               ; 0056e67e
     MOV EDI,0x5f2e9e                    ; 0056e681 | = "..\\sound\\sndmain.cpp"
     PUSH 0x5f2eb3                       ; 0056e686 | = "maxVol %g is too small in %s line %d!"
-    MOV dword ptr [0x01d1d400],EDI      ; 0056e68b | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d400],EDI      ; 0056e68b | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e691
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x14                        ; 0056e696
@@ -531,8 +531,8 @@ section .text
     MOV ESI,0x5f2ee4                    ; 0056e6e1 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x303                       ; 0056e6e6
     PUSH 0x5f2ef9                       ; 0056e6eb | = "Length for %s already known, then spe..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0056e6f0 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0056e6f6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0056e6f0 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0056e6f6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e6fc
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e701
@@ -556,8 +556,8 @@ section .text
     MOV EBX,0x5f2f39                    ; 0056e735 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x304                       ; 0056e73a
     PUSH 0x5f2f4e                       ; 0056e73f | = "Invalid length %d in %s line %d"
-    MOV dword ptr [0x01d1d400],EBX      ; 0056e744 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0056e74a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0056e744 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0056e74a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e750
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e755
@@ -581,7 +581,7 @@ section .text
     MOV dword ptr [ECX + 0x128],EAX     ; 0056e790
     JMP 0x0056e2aa                      ; 0056e796
         ;   XREF to: 0056e2aa (UNCONDITIONAL_JUMP)  ; LAB_0056e2aa
-    MOV dword ptr [0x01d1d400],0x5f2f73 ; 0056e79b | g_CHAR_PTR_01d1d400 | = "..\\sound\\sndmain.cpp"
+    MOV dword ptr [0x01d1d400],0x5f2f73 ; 0056e79b | g_CurrentFilename | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_0056e79b
     LEA EAX,[ESP + 0x4]                 ; 0056e7a5
     PUSH EAX                            ; 0056e7a9
@@ -591,7 +591,7 @@ section .text
     PUSH EAX                            ; 0056e7b9
     MOV EDX,0x311                       ; 0056e7ba
     PUSH 0x5f2f88                       ; 0056e7bf | = "Error parsing %s line %d: %s"
-    MOV dword ptr [0x01d1d404],EDX      ; 0056e7c4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],EDX      ; 0056e7c4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056e7ca
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x10                        ; 0056e7cf

@@ -86,8 +86,8 @@ LAB_0042c803:
     iVar2 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_34,output_buffer,0x300);
     if (iVar2 != 0x300) {
       _sprintf(acStack_84,"Error reading %s.");
-      g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-      g_INT_01d046a4 = 0x147;
+      g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+      g_CurrentLineNumber = 327;
       core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_84);
     }
     support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_34);

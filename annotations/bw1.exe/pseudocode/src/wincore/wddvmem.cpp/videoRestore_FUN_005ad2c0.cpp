@@ -19,8 +19,8 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005ad2c0(void)
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         HVar2 = (*g_DirectDrawSurface->vtable->SetPalette)(g_DirectDrawSurface,g_DirectDrawUnknown);
         if (HVar2 != 0) {
-          g_CHAR_PTR_01d1d400 = "..\\wincore\\wddvmem.cpp";
-          g_INT_01d1d404 = 0x3fe;
+          g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+          g_CurrentLineNumber = 1022;
           core_main_c_displayErrorAndQuit_FUN_005030e0("videoRestore - Unable to set front buffer palette");
           return;
         }

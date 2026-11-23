@@ -17,8 +17,8 @@ CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00532fe0(CPathMap *this_ptr)
   (this_ptr->cached_voxel_coords).x = iVar1;
   core_path_cpp_CPathMap_reset_FUN_00535200(this_ptr);
   if (199 < g_PathMapCount) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\path.cpp";
-    g_INT_01d1d404 = 0x123;
+    g_CurrentFilename = "..\\core\\path.cpp";
+    g_CurrentLineNumber = 291;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many pathmaps!");
   }
   g_PathMapList[g_PathMapCount] = this_ptr;

@@ -2,14 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 101,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "stale_struct_offset_64bit",
+      "struct_field_overrun"
+    ],
     "total_lines": 386
   },
   "cross_references": [
@@ -326,5 +329,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "*(...)(pcVar4 + 0x7c): the pointer is based on a field at offset 0x14 (size 100 in CPickList) but the +0x68 byte offset lands in field tab_column_widths (offset 0x7c). Ghidra anchored on the wrong field \u2014 rewrite as direct access to tab_column_widths (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 67,
+      "match": "*(...)(pcVar4 + 0x7c)",
+      "severity": "moderate",
+      "text": "x = x + *(int *)(pcVar4 + 0x7c);",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar4 + 0x7c) reaches field tab_column_widths (0x7c) of CPickList via a baked 32-bit offset. CPickList is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CPickList * (\u00a7de-pun/\u00a712).",
+      "line": 67,
+      "match": "*(...)(pcVar4 + 0x7c)",
+      "severity": "moderate",
+      "text": "x = x + *(int *)(pcVar4 + 0x7c);",
+      "type": "stale_struct_offset_64bit"
+    }
+  ]
 }

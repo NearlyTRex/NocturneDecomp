@@ -24,8 +24,8 @@
 ;   TerminatedCString s_engine_2d_c_005ca0b9
 ;   TerminatedCString s_Unable_to_write_quick_ma_005ca0c8
 ;   uchar[32768] g_ColorCubeLookup
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -102,8 +102,8 @@ section .text
     MOV EDX,0x5ca094                    ; 0040299a | = "..\\engine\\2d.c"
     MOV ECX,0x74f                       ; 0040299f
     PUSH 0x5ca0a3                       ; 004029a4 | = "hose!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004029a9 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004029af | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004029a9 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004029af | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004029b5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004029ba
@@ -147,8 +147,8 @@ section .text
     MOV EBX,0x5ca0b9                    ; 00402a1e | = "..\\engine\\2d.c"
     MOV ESI,0x756                       ; 00402a23
     PUSH 0x5ca0c8                       ; 00402a28 | = "Unable to write quick map!"
-    MOV dword ptr [0x01d046a0],EBX      ; 00402a2d | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00402a33 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00402a2d | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00402a33 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00402a39
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00402a3e

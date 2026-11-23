@@ -18,8 +18,8 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_F
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,"%d\n");
   if (6 < local_18) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-    g_INT_01d046a4 = 0x124e;
+    g_CurrentFilename = "..\\core\\script.cpp";
+    g_CurrentLineNumber = 4686;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);

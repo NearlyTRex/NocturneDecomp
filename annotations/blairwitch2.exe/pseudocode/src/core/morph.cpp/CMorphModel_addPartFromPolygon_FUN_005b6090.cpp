@@ -17,8 +17,8 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
   SMRGLHeaderPrimitive *pSVar6;
   
   if (4 < this_ptr->part_count) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\morph.cpp";
-    g_INT_01d046a4 = 0x77;
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 119;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::addPart - too many parts!");
   }
   iVar5 = 0;
@@ -41,8 +41,8 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090(CMorphMo
   this_ptr->part_count = this_ptr->part_count + 1;
   if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)
      ) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\morph.cpp";
-    g_INT_01d046a4 = 0x90;
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 144;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMorphModel::setup - out of memory!");
   }
   if (vertex_data != (CVector3i *)0x0) {

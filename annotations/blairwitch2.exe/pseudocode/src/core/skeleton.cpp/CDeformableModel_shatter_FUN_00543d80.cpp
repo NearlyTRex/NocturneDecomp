@@ -61,8 +61,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_00543d80(CDeformable
     __arrinit(g_ShatterVertexArray,3000,&g_CVectorTypeInfo);
   }
   if (3000 < this_ptr->vertex_count[lod_index]) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x757;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 1879;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDeformableModel::shatter - too many vertices!");
   }
   local_48 = 0;

@@ -46,8 +46,8 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_0050d6f0(char *filename)
   pcVar7 = (char *)0x0;
 LAB_0050d733:
   if (pcVar7 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\pcx.c";
-    g_INT_01d71de4 = 0x67;
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw16 - No ext found");
   }
   pcVar5 = ".RAW";
@@ -62,8 +62,8 @@ LAB_0050d733:
   } while (cVar1 != '\0');
   file = _fopen(local_70,"wb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\pcx.c";
-    g_INT_01d71de4 = 0x6d;
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 109;
     core_main_c_displayErrorAndQuit_FUN_004e4330("saveScreenRaw16 - Unable to open output");
   }
   local_14 = 0;

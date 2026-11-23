@@ -29,8 +29,8 @@ void __cdecl engine_matrix_c_pushViewport_FUN_004e6af0(int x,int y,int width,int
   g_ViewportStack_ClipBottom[g_ViewportStackIndex] = g_INT_01c6b5b4;
   g_ViewportStackIndex = g_ViewportStackIndex + 1;
   if (9 < g_ViewportStackIndex) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
-    g_INT_01d71de4 = 0x540;
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 1344;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Too many 3D windows");
   }
   engine_2d_c_setupViewportAndClipping_FUN_00401810(x,y,x + width,y + height);

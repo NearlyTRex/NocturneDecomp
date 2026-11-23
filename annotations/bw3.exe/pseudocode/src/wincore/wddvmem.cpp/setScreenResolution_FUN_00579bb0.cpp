@@ -59,14 +59,14 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int h
                         (uint)((g_INT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *
                   g_INT_005fba18 * g_INT_005fba1c);
   if (g_PTR_0060b010 == (byte *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01d71de4 = 0xed;
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 237;
     core_main_c_displayErrorAndQuit_FUN_004e4330("WDDVMEM: Fatal - out of frame buffer memory");
   }
   g_PTR_02d0bcf0 = malloc(g_INT_005fba18 * g_INT_005fba1c * 4 + 0x40);
   if (g_PTR_02d0bcf0 == (byte *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01d71de4 = 0xf2;
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 242;
     core_main_c_displayErrorAndQuit_FUN_004e4330("WDDVMEM: Fatal - out of Z buffer memory");
   }
   g_SoftwareZBuffer = (byte *)((uint)(g_PTR_02d0bcf0 + 0x10) & 0xfffffff0);
@@ -142,8 +142,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int h
       HVar1 = (*g_SoftwareRenderSurface->vtable->Lock)
                         (g_SoftwareRenderSurface,(RECT *)0x0,&DStack_84,1,(void *)0x0);
       if (HVar1 != 0) {
-        g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-        g_INT_01d71de4 = 0x1ec;
+        g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+        g_CurrentLineNumber = 492;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Clear of back buffer failed");
       }
       iVar6 = 0;
@@ -160,8 +160,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int h
       }
       HVar1 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
       if (HVar1 != 0) {
-        g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-        g_INT_01d71de4 = 0x1f6;
+        g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+        g_CurrentLineNumber = 502;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Unlock of back buffer clear failed");
       }
       g_FlipPending = 1;
@@ -170,8 +170,8 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00579bb0(int width,int h
     } while (iVar5 < 3);
     return 1;
   }
-  g_CHAR_PTR_01d71de0 = "..\\wincore\\wddvmem.cpp";
-  g_INT_01d71de4 = 0x1d1;
+  g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+  g_CurrentLineNumber = 465;
   core_main_c_displayErrorAndQuit_FUN_004e4330("setScreenResolution - Create back buffer failed!");
   return 0;
 }

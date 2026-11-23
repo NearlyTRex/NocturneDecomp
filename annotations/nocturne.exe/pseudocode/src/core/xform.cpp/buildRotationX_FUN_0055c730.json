@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 66,
+    "complexity_score": 81,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "memcpy_oversized_source",
       "unrolled_memcpy"
     ],
     "total_lines": 81
@@ -304,6 +305,14 @@
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 12 elements from local array `local_48[6]` (declared size 6) \u2014 overruns by 6. Likely Ghidra dropped explicit `local_48[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 38,
+      "match": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0055c79c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

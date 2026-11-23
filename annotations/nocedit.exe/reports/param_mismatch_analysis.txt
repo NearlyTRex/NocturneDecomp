@@ -15,12 +15,12 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 6619
 Functions with no callers: 3136
-Parameter mismatches detected: 88
-Signature accuracy rate: 97.5%
+Parameter mismatches detected: 89
+Signature accuracy rate: 97.4%
 
 Mismatches by confidence:
   High confidence:   3 (multiple call sites agree)
-  Medium confidence: 21 (some agreement)
+  Medium confidence: 22 (some agreement)
   Low confidence:    64 (limited data)
 
 ====================================================================================================
@@ -62,10 +62,10 @@ MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
   crt_unknown.c_FUN_00607c88                         declared:0 est:4 (+4) [2 calls]
-  crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_xform.cpp_buildRotationX_FUN_005f6c40         declared:2 est:4 (+2) [4 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
+  crt_unknown.c_FUN_00610970                         declared:0 est:2 (+2) [2 calls]
   engine_keyframe.c_calculatePackedSurfaceNormal_FUN declared:2 est:0 (-2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
@@ -81,6 +81,7 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_fstream.cpp_fstreambase_ctor_FUN_00606456      declared:6 est:5 (-1) [2 calls]
   crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0    declared:3 est:2 (-1) [1 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
+  crt_unknown.c_FUN_0060b5e8                         declared:2 est:1 (-1) [1 calls]
   engine_drender.cpp_CDemonRenderer_renderFacetList_ declared:5 est:4 (-1) [2 calls]
 
 ====================================================================================================
@@ -104,7 +105,7 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 49
+Functions where declaration has MORE params than estimated: 50
   (May indicate: extra params not being passed, or params in globals)
 
 Functions where declaration has FEWER params than estimated: 39
@@ -116,10 +117,10 @@ Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 5 functions
   -2 params: 7 functions
-  -1 params: 34 functions
+  -1 params: 35 functions
   +1 params: 23 functions
-  +2 params: 5 functions
-  +3 params: 6 functions
+  +2 params: 7 functions
+  +3 params: 4 functions
   +4 params: 3 functions
   +6 params: 1 functions
   +9 params: 1 functions

@@ -21,7 +21,10 @@ constexpr float kBoxMargin = 0.1F;
 
 } // namespace
 
-// nocedit 0x004143a0
+// nocedit 0x004142e0
+// bw1 0x004108c0
+// bw2 0x00410d40
+// bw3 0x0040eb50
 CBoundingBox3D *CBarrier::getBoundingBox(CBoundingBox3D *out_box) {
     constexpr float kHalf = 0.5F;
     out_box->min = {.x = -size_.x * kHalf, .y = -kBoxMargin, .z = -size_.z * kHalf};
@@ -52,6 +55,9 @@ const CDemonActorType &CBarrier::getActorType() const {
 }
 
 // nocedit 0x00414180
+// bw1 0x00410800
+// bw2 0x00410c80
+// bw3 0x0040ea90
 std::unique_ptr<CDemonActor> CBarrier::create(CActor & /*classes*/) {
     return std::make_unique<CBarrier>();
 }
@@ -59,6 +65,7 @@ std::unique_ptr<CDemonActor> CBarrier::create(CActor & /*classes*/) {
 // The original draws a barrier as transparent while the mission is in the editor, which the game
 // never is.
 // nocedit 0x00414210
+// bw2 0x00410d00
 void CBarrier::setup() {
     CDemonActor::setup();
     setRenderable(false);
@@ -66,6 +73,7 @@ void CBarrier::setup() {
 }
 
 // nocedit 0x00414340
+// bw2 0x00410dc0
 void CBarrier::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveVector(size_, "size");

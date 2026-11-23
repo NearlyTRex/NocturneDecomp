@@ -20,8 +20,8 @@
 ;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int g_CameraScreenWidth
 ;   int g_CameraScreenHeight
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044cdf0
@@ -112,8 +112,8 @@ section .text
     MOV ECX,0x5d751f                    ; 0044cd48 | = "..\\core\\dcamera.cpp"
     MOV ESI,0x24a                       ; 0044cd4d
     PUSH 0x5d7533                       ; 0044cd52 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0044cd57 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0044cd5d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0044cd57 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0044cd5d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044cd63
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044cd68
@@ -147,8 +147,8 @@ section .text
         ;   Label: LAB_0044cdbd
     MOV EDX,0x24f                       ; 0044cdc2
     PUSH 0x5d7579                       ; 0044cdc7 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV [0x01d1d400],EAX                ; 0044cdcc | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0044cdd1 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0044cdcc | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0044cdd1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044cdd7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0044cddc

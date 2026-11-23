@@ -6,7 +6,7 @@
 
 // CBoneGuy_full_vtable
 CBoneGuy_full_vtable g_CBoneGuyVTable = {
-    ._ud = {
+    ._ub = {
         .setup = (CDemonActor_setup *)core_boneguy_cpp_CBoneGuy_setup_FUN_00418800,
         .process = (CDemonActor_process *)core_boneguy_cpp_CBoneGuy_process_FUN_00418a00,
         .renderOpaque = (CDemonActor_renderOpaque *)core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419bf0,
@@ -89,7 +89,7 @@ CBoneGuy_full_vtable g_CBoneGuyVTable = {
         .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0
     },
     ._ue = {.getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_00479a30, .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60},
-    ._ub = {.reset = (CBoneGuy_reset *)core_boneguy_cpp_CBoneGuy_reset_FUN_00419f30}
+    ._ug = {.reset = (CBoneGuy_reset *)core_boneguy_cpp_CBoneGuy_reset_FUN_00419f30}
 };
 
 // CCharacter_full_vtable
@@ -4299,7 +4299,7 @@ CHero_full_vtable g_CIcePickVTable = {
 CKeys_vtable g_CKeysVTable = {
     .getKeyState = (CKeys_getKeyState *)engine_keys_cpp_CKeys_getKeyState_FUN_004c4180,
     .getAndClearKeyState = (CKeys_getAndClearKeyState *)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004c4190,
-    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_004c41b0
+    .clearKeypresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_004c41b0
 };
 
 // CParticle_vtable

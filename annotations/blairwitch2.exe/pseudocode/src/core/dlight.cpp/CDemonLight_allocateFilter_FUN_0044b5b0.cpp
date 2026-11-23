@@ -16,8 +16,8 @@ void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_0044b5b0(CDemonLight
   if (puVar1 != (uchar *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
-  g_INT_01d046a4 = 0x547;
+  g_CurrentFilename = "..\\core\\dlight.cpp";
+  g_CurrentLineNumber = 1351;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonLight::allocateFilter - Out of memory");
   return;
 }

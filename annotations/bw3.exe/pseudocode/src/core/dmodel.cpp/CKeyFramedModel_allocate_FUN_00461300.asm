@@ -24,8 +24,8 @@
 ;   TerminatedCString s_Out_of_memory_in_CKeyFra_005bb841
 ;   TerminatedCString s_core_dmodel_cpp_005bb89a
 ;   TerminatedCString s_Out_of_memory_for_vertex_005bb8ad
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00460e10
@@ -67,8 +67,8 @@ section .text
     MOV EBP,0x5bb80b                    ; 0046135b | = "..\\core\\dmodel.cpp"
     MOV EAX,0x2c1                       ; 00461360
     PUSH 0x5bb81e                       ; 00461365 | = "Too many parts!"
-    MOV dword ptr [0x01d71de0],EBP      ; 0046136a | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00461370 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 0046136a | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00461370 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461375
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046137a
@@ -127,8 +127,8 @@ section .text
     MOV ESI,0x2d3                       ; 00461429
     MOV ECX,0x5bb82e                    ; 0046142e | = "..\\core\\dmodel.cpp"
     PUSH 0x5bb841                       ; 00461433 | = "Out of memory in CKeyFramedModel::all..."
-    MOV dword ptr [0x01d71de4],ESI      ; 00461438 | g_INT_01d71de4
-    MOV dword ptr [0x01d71de0],ECX      ; 0046143e | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de4],ESI      ; 00461438 | g_CurrentLineNumber
+    MOV dword ptr [0x01d71de0],ECX      ; 0046143e | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461444
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00461449
@@ -145,8 +145,8 @@ section .text
         ;   Label: LAB_0046145e
     MOV ESI,0x2c0                       ; 00461463
     PUSH 0x5bb7f7                       ; 00461468 | = "Too many materials!"
-    MOV dword ptr [0x01d71de0],ECX      ; 0046146d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00461473 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0046146d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 00461473 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461479
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0046147e
@@ -196,8 +196,8 @@ section .text
     MOV ESI,0x5bb89a                    ; 004614fd | = "..\\core\\dmodel.cpp"
     MOV EDI,0x2db                       ; 00461502
     PUSH 0x5bb8ad                       ; 00461507 | = "Out of memory for vertex normals in C..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0046150c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00461512 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0046150c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00461512 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00461518
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0046151d

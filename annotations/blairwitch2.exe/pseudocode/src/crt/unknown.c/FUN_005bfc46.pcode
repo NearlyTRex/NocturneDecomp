@@ -192,16 +192,16 @@ FLOAT_SQRT (register,0x1100,10) = (register,0x1100,10)
 @005bfc7e [ESP:-20]~  # MOV AL, 0x0
 COPY (register,0x0,1) = (const,0x0,1)
 
-@005bfc80 [ESP:???]~!  # MOV ESP, EBP
+@005bfc80 [ESP:-4]~>  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
-@005bfc82 [ESP:???]~!  # POP EBP
+@005bfc82 [ESP:+0](+4)~>  # POP EBP
 COPY (unique,0x87300,4) = (const,0x0,4)
 LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x14,4) /* EBP */ = (unique,0x87300,4)
 
-@005bfc83 [ESP:???]~!  # RET
+@005bfc83 [ESP:+4](+4)~>  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

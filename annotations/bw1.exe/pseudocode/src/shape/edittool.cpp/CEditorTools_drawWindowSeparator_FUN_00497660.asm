@@ -27,8 +27,8 @@
 ;   undefined4 g_UCHAR_ARRAY_01c4e9f8+2
 ;   int g_INT_01c4f00c
 ;   int g_INT_01c4f020
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -164,8 +164,8 @@ section .text
         ;   Label: LAB_004977a2
     MOV EBX,0x99c                       ; 004977a7
     PUSH 0x5dc1e3                       ; 004977ac | = "CEditorTools::paintWindow() called bu..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004977b1 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 004977b7 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004977b1 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 004977b7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004977bd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004977c2

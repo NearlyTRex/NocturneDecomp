@@ -311,12 +311,12 @@ INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x1c25f88,4)
 COPY (unique,0xa100,1) = (register,0x8,1)
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa100,1)
 
-@0047b073 [ESP:???](-4)!?  # CALL 0x004a8df0
+@0047b073 [ESP:-60](-4)  # CALL 0x004a8df0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x47b078,4)
 CALL (ram,0x4a8df0,4)
 
-@0047b078 [ESP:???](+24)!?  # ADD ESP, 0x18
+@0047b078 [ESP:-36](+24)?  # ADD ESP, 0x18
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x18,4)
@@ -327,12 +327,12 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0047b07b [ESP:???](-4)!?  # CALL 0x0058e9e0
+@0047b07b [ESP:-36](-4)  # CALL 0x0058e9e0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x47b080,4)
 CALL (ram,0x58e9e0,4)
 
-@0047b080 [ESP:???]!?  # TEST EAX, 0x40000
+@0047b080 [ESP:-36]  # TEST EAX, 0x40000
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xad800,4) = (register,0x0,4) /* EAX */, (const,0x40000,4)
@@ -343,7 +343,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0047b085 [ESP:???]!?  # JZ 0x0047b0c1
+@0047b085 [ESP:-36]  # JZ 0x0047b0c1
 CBRANCH (ram,0x47b0c1,4), (register,0x206,1)
 
 @0047b087 [ESP:-36]  # MOV EDX, dword ptr [0x01c25f84]
@@ -1232,5 +1232,4 @@ BRANCH (ram,0x47b09f,4)
 
 # ============================================================================
 # Summary: 172 instructions, 870 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

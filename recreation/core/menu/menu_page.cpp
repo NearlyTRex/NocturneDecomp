@@ -23,14 +23,17 @@ namespace {
 // The character whose height spaces the lines.
 constexpr int kLineHeightChar = 'X';
 
-// renderMenuAndGetChoice double spaces an untitled list, and takes a row more; a titled list is
-// single spaced, and its title takes four.
-constexpr int getUntitledRows(int lines) {
-    return (lines * 2) + 1;
+// The rows a list takes beyond its lines: a titled one's past its title's gap, an untitled one's.
+constexpr int kTitledExtraRows = 2;
+constexpr int kUntitledExtraRows = 1;
+
+// The rows renderMenuAndGetChoice draws a list of `lines` in.
+int getUntitledRows(const engine::SMenuLayout &menu, int lines) {
+    return (lines * menu.item.spacing_untitled) + kUntitledExtraRows;
 }
 
-constexpr int getTitledRows(int lines) {
-    return lines + 4;
+int getTitledRows(const engine::SMenuLayout &menu, int lines) {
+    return menu.title.gap_lines + (lines * menu.item.spacing_titled) + kTitledExtraRows;
 }
 
 // The line under `id`, or past the end when this frame doesn't list it.
@@ -49,7 +52,8 @@ void CMenu::runPage(CMenuPage &page) {
     std::optional<int> selected_id;
     while (true) {
         page.beginFrame();
-        drawMenuBackdrop();
+        const std::optional<std::string> title = page.title();
+        drawMenuBackdrop(!title || getMenuLayout().animate_titled_backdrop);
         lines.clear();
         page.build(lines);
         page.decorate();
@@ -61,10 +65,12 @@ void CMenu::runPage(CMenuPage &page) {
         }
         const auto count = static_cast<int>(lines.size());
         selected_index = std::min(selected_index, count - 1);
-        const std::optional<std::string> title = page.title();
         const engine::SMenuLayout &layout = getMenuLayout();
-        const int top = title ? fitMenuTop(layout.titled_top, getTitledRows(count))
-                              : fitMenuTop(layout.top, getUntitledRows(count));
+        const auto own_top = layout.page_tops.find(page.getLayoutId());
+        const int titled_top =
+            own_top != layout.page_tops.end() ? own_top->second : layout.titled_top;
+        const int top = title ? fitMenuTop(titled_top, getTitledRows(layout, count))
+                              : fitMenuTop(layout.top, getUntitledRows(layout, count));
         const std::vector<std::string> texts =
             lines | std::views::transform(&SMenuLine::text) | std::ranges::to<std::vector>();
         const int choice =
@@ -91,14 +97,18 @@ bool CMenu::takeMenuCancel() {
            owners_.raw_input.getInputDisabled();
 }
 
-void CMenu::drawMenuBackdrop() {
+// The clock runs on while the backdrop holds still, so it moves on from where it stopped.
+void CMenu::drawMenuBackdrop(bool animate) {
     owners_.game.updateDT();
-    moon_.update(owners_.game.getDeltaTimeFloat());
+    if (animate) {
+        moon_.update(owners_.game.getDeltaTimeFloat());
+    }
     moon_.render();
 }
 
 int CMenu::fitMenuTop(int top, int rows) const {
-    const int height = rows * owners_.fonts.getThemeFont()->getCharHeight(kLineHeightChar);
+    const int height =
+        rows * owners_.fonts.findFont(getMenuLayout().item.font).getCharHeight(kLineHeightChar);
     const int window_height = owners_.screen.getWindowHeight();
     if (window_height < top + height) {
         top = window_height - height;

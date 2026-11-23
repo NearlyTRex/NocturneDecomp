@@ -18,8 +18,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2997
 ;   TerminatedCString s_CPickList_isItemEnabled_005d29ad
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -44,8 +44,8 @@ section .text
     MOV ECX,0x5d2997                    ; 00483ab3 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x1104                      ; 00483ab8
     PUSH 0x5d29ad                       ; 00483abd | = "CPickList::isItemEnabled - invalid index"
-    MOV dword ptr [0x01d046a0],ECX      ; 00483ac2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00483ac8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00483ac2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00483ac8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00483ace
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00483ad3

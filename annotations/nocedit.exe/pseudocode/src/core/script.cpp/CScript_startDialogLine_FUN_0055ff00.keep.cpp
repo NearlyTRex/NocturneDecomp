@@ -50,12 +50,14 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_0055ff00(CScript *this
     return -1.0;
   }
   this_ptr->last_speaker = (CDemonActor *)pCVar2;
-#if !NOCTURNE_AUTHENTIC_NETPLAY
-  if (nocturne_dialogue_override_apply
+#if !NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
+  if (nocturne_script_quirk_dialogue
                 ((CDemonActor *)pCVar2,&sound_name,&dialog_text,&local_28,
                  (int)(this_ptr->message_duration < 0.0)) != 0) {
     local_18 = (int)((sound_name != (char *)0x0) && (g_ScriptEventsEnabled == 0));
   }
+#endif
+#if !NOCTURNE_AUTHENTIC_NETPLAY
   {
     CDemonActor *focus_target = nocturne_net_camera_focus_actor(this_ptr->who_is_speaking);
     if ((this_ptr->focus_actor_locked == 0) && (focus_target != this_ptr->focus_actor)) {

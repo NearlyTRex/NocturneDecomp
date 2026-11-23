@@ -27,8 +27,8 @@
 ;   CVector3f[20000] g_PVSCubePositions
 ;   undefined4 g_PVSCubePositions[0].y
 ;   undefined4 g_PVSCubePositions[0].z
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -144,8 +144,8 @@ section .text
         ;   Label: LAB_00477189
     MOV ESI,0x8c9                       ; 0047718e
     PUSH 0x5bcaa4                       ; 00477193 | = "CDemonRaytrace::setPVS - Too many dra..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00477198 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0047719e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00477198 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0047719e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004771a4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004771a9

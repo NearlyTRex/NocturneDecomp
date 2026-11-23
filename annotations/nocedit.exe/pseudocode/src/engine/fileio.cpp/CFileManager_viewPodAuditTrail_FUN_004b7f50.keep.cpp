@@ -72,11 +72,11 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
         pcVar4 = "Change";
       }
       if ((local_308.timestamp != local_10) ||
-         (iVar4 = _stricmp(local_308.user_path,local_98), iVar4 != 0)) {
-        _sprintf(local_508,"--\t%s\t%s",local_308.user_path,local_34);
+         (iVar4 = _stricmp(local_308.user_name,local_98), iVar4 != 0)) {
+        _sprintf(local_508,"--\t%s\t%s",local_308.user_name,local_34);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
         local_10 = local_308.timestamp;
-        strcpy(local_98,local_308.user_path);
+        strcpy(local_98,local_308.user_name);
       }
       _sprintf(local_508,"\t%s\t%s",pcVar4,local_308.filename);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);

@@ -52,8 +52,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00594140(CSvetla
   }
   local_18 = iVar5;
   if (local_18 == -1) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\svetlana.cpp";
-    g_INT_01d1d404 = 0x2ef;
+    g_CurrentFilename = "..\\core\\svetlana.cpp";
+    g_CurrentLineNumber = 751;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't find svetlana's parent bone");
   }
   this_ptr_00 = &(this_ptr->base).base.model;

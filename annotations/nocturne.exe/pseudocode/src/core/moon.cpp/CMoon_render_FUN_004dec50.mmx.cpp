@@ -9,8 +9,6 @@
 void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x4c
         mov ESI,dword ptr [EBP + 0x14]
         call sound_sndmain_cpp_processAudio_FUN_005288f0
         call engine_special_cpp_clearScreen_FUN_0052ee70

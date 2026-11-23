@@ -42,6 +42,9 @@ std::string_view leadingWord(std::string_view text) {
 // deferred: clearing the notes of dialogue missing from the database first, with the dbSay
 //   commands and startDialogLine
 // nocedit 0x0055a4b0
+// bw1 0x00544100
+// bw2 0x00521ff0
+// bw3 0x00529710
 std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
     checking_ = true;
     checks_suspended_ = false;

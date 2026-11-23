@@ -13,8 +13,8 @@
 ;   TerminatedCString s_engine_dosio_c_005daa24
 ;   TerminatedCString s_addGetFileInfoHook_too_m_005daa36
 ;   int g_NumSearchHandlers
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -41,8 +41,8 @@ section .text
     MOV ECX,0x5daa24                    ; 00478e66 | = "..\\engine\\dosio.c"
     MOV EBX,0x6a                        ; 00478e6b
     PUSH 0x5daa36                       ; 00478e70 | = "addGetFileInfoHook - too many!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00478e75 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00478e7b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00478e75 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00478e7b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00478e81
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00478e86

@@ -74,7 +74,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00575bd4 [ESP:???]!?  # CMP EBX, dword ptr [EBP]
+@00575bd4 [ESP:-92]  # CMP EBX, dword ptr [EBP]
 LOAD (unique,0xa300,4) = (const,0x1a1,4), (register,0x14,4) /* EBP */
 COPY (unique,0x67600,4) = (unique,0xa300,4)
 INT_LESS (register,0x200,1) = (register,0xc,4) /* EBX */, (unique,0x67600,4)
@@ -87,7 +87,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00575bd7 [ESP:???]!?  # JGE 0x00575de7
+@00575bd7 [ESP:-92]  # JGE 0x00575de7
 INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x575de7,4), (unique,0x18900,1)
 
@@ -1218,5 +1218,4 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 164 instructions, 872 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

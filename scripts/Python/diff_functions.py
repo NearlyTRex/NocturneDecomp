@@ -16,9 +16,18 @@ CLASS plus a distance:
   layout-drift  same opcode+operand-kind sequence,
                 only memory displacements differ        -> a struct grew/shrank,
                                                            function source unchanged
+  frame-change  equal once the frame-pointer prologue
+                and epilogue and stack adjustments are
+                dropped and each stack slot is matched
+                to one slot on the other side           -> the same source built
+                                                           with a frame pointer
   const-change  ...only non-relocated immediates differ -> a #define changed
   regalloc      ...only register operands differ        -> ripple from a nearby edit
   logic-change  opcode sequence itself differs          -> real source change
+
+A source line number stored for the error reporter is not a difference. Given the
+address of the program's g_CurrentLineNumber, a constant stored there, directly or
+through the register it was loaded into, reads as LINE, and so does the address.
 
 Relocated immediates are masked using the PE .reloc table, so link-order and
 rebasing are invisible. Displacements are NOT relocations, which is why struct
@@ -43,12 +52,21 @@ from difflib import SequenceMatcher
 
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_OP_REG, CS_OP_IMM
 
+# What a line number reads as, in the immediates and the displacements.
+LINE = "LINE"
+STACK_REGISTERS = ("esp", "ebp")
+# A call leaves nothing in these (Watcom's caller-saved registers).
+CALL_CLOBBERED = ("eax", "ecx", "edx")
+
 
 # ---------------------------------------------------------------- PE plumbing
 
 class Image:
-    def __init__(self, path):
+    """A PE's bytes, with relocated dwords masked except those holding line_number_global."""
+
+    def __init__(self, path, line_number_global=None):
         self.path = path
+        self.line_number_global = line_number_global
         self.data = open(path, "rb").read()
         d = self.data
         e_lfanew = struct.unpack_from("<I", d, 0x3C)[0]
@@ -119,7 +137,7 @@ class Image:
         a = self.off(start)
         buf = bytearray(self.data[a:a + end - start])
         for va in range(start, end):
-            if va in self.reloc:
+            if va in self.reloc and not self._kept(va):
                 i = va - start
                 if i + 4 <= len(buf):
                     buf[i:i + 4] = b"\0\0\0\0"
@@ -140,9 +158,17 @@ class Image:
         a = self.off(start)
         buf = bytearray(self.data[a:a + end - start])
         for va in range(start, end):
-            if va in self.reloc:
+            if va in self.reloc and not self._kept(va):
                 buf[va - start:va - start + 4] = b"\0\0\0\0"
         return bytes(buf[:end - start])
+
+    def _kept(self, va):
+        """True for a relocated dword holding line_number_global, which tokens() recognises."""
+        if self.line_number_global is None:
+            return False
+        at = self.off(va)
+        return at + 4 <= len(self.data) and struct.unpack_from("<I", self.data, at)[0] == \
+            self.line_number_global
 
 
 # ------------------------------------------------------------- tokenisation
@@ -158,31 +184,141 @@ def _is_branch(mnem):
             or mnem.startswith("loop"))
 
 
-def tokens(md, buf, va):
-    """(opcode+operand-kind seq, displacements, immediates, registers)."""
-    ops, disps, imms, regs = [], [], [], []
+def _is_frame_code(ins, regs):
+    """The frame pointer's push, set-up, restore and pop, and any stack pointer adjustment."""
+    m = ins.mnemonic
+    if m == "leave":
+        return True
+    if m in ("push", "pop"):
+        return regs == ["ebp"]
+    if m == "mov":
+        return sorted(regs) == ["ebp", "esp"]
+    return (m in ("and", "add", "sub") and regs == ["esp"] and len(ins.operands) == 2
+            and ins.operands[1].type == CS_OP_IMM)
+
+
+def _note_line_number(mnemonic, parts, imms, loaded):
+    """Marks LINE the constant stored to the line number, and tracks constants in registers.
+
+    `loaded` maps a register to the index in `imms` of the constant last moved into it.
+    """
+    if mnemonic == "call":
+        for reg in CALL_CLOBBERED:
+            loaded.pop(reg, None)
+        return
+    if mnemonic != "mov" or len(parts) != 2:
+        if parts and parts[0][0] == "r":
+            loaded.pop(parts[0][1], None)
+        return
+    dst, src = parts
+    if dst[0] == "m" and dst[4] == LINE:
+        index = src[1] if src[0] == "i" else loaded.get(src[1])
+        if index is not None:
+            imms[index] = LINE
+    elif dst[0] == "r":
+        if src[0] == "i":
+            loaded[dst[1]] = src[1]
+        else:
+            loaded.pop(dst[1], None)
+
+
+class _Stack:
+    """Where esp and the frame pointer stand, in bytes from esp on entry; None when unknown.
+
+    On entry esp holds the return address, so an argument is at 4 or more: read
+    through either register, it has one place, the same in both builds. Below
+    that are locals, which each build lays out its own way.
+    """
+
+    def __init__(self):
+        self.esp = 0
+        self.frame = None
+        self.locals = {}
+
+    def slot(self, part):
+        base, disp = part[1], part[4]
+        origin = self.esp if base == "esp" else self.frame
+        if origin is not None and origin + disp >= 4:
+            return ("arg", origin + disp)
+        key = ("at", origin + disp) if origin is not None else (base, disp)
+        return ("local", self.locals.setdefault(key, len(self.locals)))
+
+    def step(self, mnemonic, parts, imms):
+        regs = [p[1] for p in parts if p[0] == "r"]
+        if mnemonic in ("push", "pop"):
+            self.esp = None if self.esp is None else self.esp + (4 if mnemonic == "pop" else -4)
+        elif mnemonic == "leave":
+            self.esp = None if self.frame is None else self.frame + 4
+        elif mnemonic == "mov" and regs == ["ebp", "esp"]:
+            self.frame = self.esp
+        elif mnemonic == "mov" and regs == ["esp", "ebp"]:
+            self.esp = self.frame
+        elif regs[:1] == ["esp"] and mnemonic in ("add", "sub") and parts[1][0] == "i":
+            amount = imms[parts[1][1]]
+            self.esp = None if self.esp is None else self.esp + (amount if mnemonic == "add" else -amount)
+        elif regs[:1] == ["esp"] or mnemonic == "ret":
+            self.esp = None
+
+
+def _frame_free(shaped, imms):
+    """The body without its frame code: arguments by their place, locals by their first use."""
+    stack, out = _Stack(), []
+    for mnemonic, frame_code, parts in shaped:
+        body = []
+        for part in parts:
+            if part[0] == "i":
+                body.append(("i", None if part[1] is None else imms[part[1]]))
+            elif part[0] == "m" and part[1] in STACK_REGISTERS and part[2] is None:
+                body.append(stack.slot(part))
+            else:
+                body.append(part)
+        stack.step(mnemonic, parts, imms)
+        if not frame_code:
+            out.append((mnemonic, tuple(body)))
+    return out
+
+
+def tokens(md, buf, va, line_number_global=None):
+    """(opcode+operand-kind seq, displacements, immediates, registers, frame-free body)."""
+    ops, disps, imms, regs, shaped = [], [], [], [], []
+    loaded = {}
     off = 0
     n = len(buf)
     while off < n:
         last = off
         for ins in md.disasm(buf[off:], va + off):
             branch = _is_branch(ins.mnemonic)
-            kinds = []
+            kinds, parts, ins_regs = [], [], []
             for o in ins.operands:
                 if o.type == CS_OP_REG:
                     kinds.append("r")
-                    regs.append(md.reg_name(o.reg))
+                    name = md.reg_name(o.reg)
+                    regs.append(name)
+                    ins_regs.append(name)
+                    parts.append(("r", name))
                 elif o.type == CS_OP_IMM:
                     kinds.append("i")
-                    if not branch:          # mask relative branch targets
+                    if branch:              # mask relative branch targets
+                        parts.append(("i", None))
+                    else:
                         imms.append(o.imm)
+                        parts.append(("i", len(imms) - 1))
                 else:                       # x86 operands are register, immediate or memory
                     kinds.append("m")
-                    disps.append(o.mem.disp)
+                    base = md.reg_name(o.mem.base) if o.mem.base else None
+                    index = md.reg_name(o.mem.index) if o.mem.index else None
+                    disp = o.mem.disp
+                    # An absolute address past 0x7fffffff comes back negative.
+                    if base is None and index is None and disp & 0xFFFFFFFF == line_number_global:
+                        disp = LINE
+                    disps.append(disp)
+                    parts.append(("m", base, index, o.mem.scale, disp))
+            _note_line_number(ins.mnemonic, parts, imms, loaded)
             ops.append(f"{ins.mnemonic}:{''.join(kinds)}")
+            shaped.append((ins.mnemonic, _is_frame_code(ins, ins_regs), parts))
             last = ins.address - va + ins.size
         off = last + 1 if last > off else off + 1
-    return ops, disps, imms, regs
+    return ops, disps, imms, regs, _frame_free(shaped, imms)
 
 
 def classify(a_buf, b_buf, md, va_a, va_b):
@@ -191,8 +327,8 @@ def classify(a_buf, b_buf, md, va_a, va_b):
 
 def classify_tokens(ta, tb):
     """classify() over two tokens() results, for callers that compare one body many times."""
-    oa, da, ia, ra = ta
-    ob, db, ib, rb = tb
+    oa, da, ia, ra, fa = ta
+    ob, db, ib, rb, fb = tb
     if not oa or not ob:
         return "undecodable", 1.0, ""
 
@@ -204,13 +340,15 @@ def classify_tokens(ta, tb):
     if (oa, da, ia, ra) == (ob, db, ib, rb):
         return "identical", 0.0, ""
 
+    # With the opcode + operand-kind sequence identical: what actually moved?
+    why = [part for part, differs in (("disp", da != db), ("imm", ia != ib), ("reg", ra != rb))
+           if differs] if oa == ob else []
+    if why == ["disp"]:
+        n = sum(1 for x, y in zip(da, db) if x != y)
+        return "layout-drift", dist, f"{n}/{len(da)} displacements differ"
+    if fa == fb:
+        return "frame-change", dist, f"{len(oa)} vs {len(ob)} insns, frame code dropped"
     if oa == ob:
-        # opcode + operand-kind sequence identical: what actually moved?
-        why = [part for part, differs in (("disp", da != db), ("imm", ia != ib), ("reg", ra != rb))
-               if differs]
-        if why == ["disp"]:
-            n = sum(1 for x, y in zip(da, db) if x != y)
-            return "layout-drift", dist, f"{n}/{len(da)} displacements differ"
         if why == ["imm"]:
             n = sum(1 for x, y in zip(ia, ib) if x != y)
             return "const-change", dist, f"{n}/{len(ia)} immediates differ"

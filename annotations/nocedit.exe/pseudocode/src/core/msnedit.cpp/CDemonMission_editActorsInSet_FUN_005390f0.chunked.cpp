@@ -6,8 +6,8 @@
 
 #include "nocturne.h"
 typedef struct CDemonMission_editActorsInSet_Ctx {
-    CDemonMission *this_ptr;
-    int reset_cameras;
+    CDemonMission **this_ptr;
+    int *reset_cameras;
     float fVar1;
     float fVar2;
     float fVar3;
@@ -108,13 +108,13 @@ typedef struct CDemonMission_editActorsInSet_Ctx {
     CGame *this_ptr_00;
 } CDemonMission_editActorsInSet_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
 #define GOTO_LAB_00539d68 1
 
 // Chunk: check_INT_02f7c634_0_check_pCVar11_0 (lines 142-167 of original)
 static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_pCVar11_0(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
+    CDemonMission *&this_ptr = *ctx->this_ptr;
     CDemonActor *&pCVar11 = ctx->pCVar11;
     CBoundingBox3D *&pCVar12 = ctx->pCVar12;
     CSlew &local_170 = ctx->local_170;
@@ -158,7 +158,7 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_pCVar11_0(CD
 
 // Chunk: check_INT_02f7c634_0_check_this_ptr_1 (lines 178-213 of original)
 static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_this_ptr_1(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
+    CDemonMission *&this_ptr = *ctx->this_ptr;
     float &fVar1 = ctx->fVar1;
     float &fVar2 = ctx->fVar2;
     float &fVar3 = ctx->fVar3;
@@ -221,161 +221,6 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_this_ptr_1(C
     return 0;
 }
 
-// Chunk: branch_0 (lines 398-535 of original)
-static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
-    CDemonActor *&pCVar11 = ctx->pCVar11;
-    int &iVar14 = ctx->iVar14;
-    CSlew &local_170 = ctx->local_170;
-    float &local_7c = ctx->local_7c;
-    float &local_78 = ctx->local_78;
-    float &local_3c = ctx->local_3c;
-    float &local_34 = ctx->local_34;
-    float &local_2c = ctx->local_2c;
-    float &local_28 = ctx->local_28;
-    float &local_24 = ctx->local_24;
-    float &local_20 = ctx->local_20;
-    float &local_1c = ctx->local_1c;
-    float &local_18 = ctx->local_18;
-
-      if (g_MsnEditViewMode == 4) {
-        local_3c = g_CGamePtr->delta_time_float;
-        local_2c = local_3c;
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-        if (iVar14 == 0) {
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-          if (iVar14 != 0) {
-            local_2c = local_3c * (float)10;
-          }
-        }
-        else {
-          local_2c = local_3c * (float)0.050000000000000003;
-        }
-        local_34 = local_2c * (float)1.57079632675;
-        local_1c = local_18 * (float)1.5;
-        if (local_1c < 1.0) {
-          local_1c = 1.0;
-        }
-        local_1c = local_1c * local_2c;
-        local_20 = local_18;
-        if (local_18 < 1.0) {
-          local_20 = 1.0;
-        }
-        local_20 = local_20 * local_2c;
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
-        if (iVar14 != 0) {
-          local_7c = local_7c + local_34;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
-        if (iVar14 != 0) {
-          local_7c = local_7c - local_34;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
-        if (iVar14 != 0) {
-          local_78 = local_78 + local_34;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
-        if (iVar14 != 0) {
-          local_78 = local_78 - local_34;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_EQUALS);
-        if (iVar14 != 0) {
-          local_18 = local_18 - local_1c;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MINUS);
-        if (iVar14 != 0) {
-          local_18 = local_18 + local_1c;
-        }
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_GRAVE);
-        if (iVar14 != 0) {
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
-          if (iVar14 != 0) {
-            local_28 = local_28 - local_20;
-          }
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
-          if (iVar14 != 0) {
-            local_28 = local_28 + local_20;
-          }
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
-          if (iVar14 != 0) {
-            local_24 = local_24 + local_20;
-          }
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
-          if (iVar14 != 0) {
-            local_24 = local_24 - local_20;
-          }
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
-          if (iVar14 != 0) {
-            local_18 = local_18 - local_1c;
-          }
-          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
-          if (iVar14 != 0) {
-            local_18 = local_18 + local_1c;
-          }
-        }
-        if (local_7c < (float)-1.57079632675) {
-          local_7c = -1.5707964;
-        }
-        if ((float)1.57079632675 < local_7c) {
-          local_7c = 1.5707964;
-        }
-        if (local_78 < (float)-1.57079632675) {
-          local_78 = local_78 + 6.283185f;
-        }
-        if ((float)1.57079632675 < local_78) {
-          local_78 = local_78 + -6.283185f;
-        }
-        if (local_18 < (float)0.5) {
-          local_18 = 0.5;
-        }
-      }
-      if (g_MsnEditViewMode == 2) {
-        core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_170);
-      }
-      else {
-        pCVar11 = this_ptr->selected_actor;
-        if (pCVar11 != (CDemonActor *)0x0) {
-          (*((pCVar11->vtable)._ub)->processInEditor)(pCVar11);
-          core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr->selected_actor);
-        }
-      }
-      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_BACK);
-      if (iVar14 != 0) {
-        core_msnedit_cpp_CDemonMission_undoActorChanges_FUN_0053c0b0(this_ptr);
-      }
-      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
-      if (iVar14 != 0) {
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-        if (iVar14 == 0) {
-          pCVar11 = core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30
-                              (this_ptr,this_ptr->selected_actor);
-        }
-        else {
-          pCVar11 = core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80
-                              (this_ptr,this_ptr->selected_actor);
-        }
-        core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,pCVar11);
-      }
-      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F2);
-      if (iVar14 != 0) {
-        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-        if (iVar14 == 0) {
-          core_script_cpp_CScript_initEditorLayout_FUN_00566660
-                    (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
-          INT_02f7c634 = 1;
-        }
-        else {
-          core_script_cpp_CScript_initEditorLayout_FUN_00566660
-                    (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
-          INT_02f7c634 = 2;
-        }
-LAB_00539d68:
-        core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
-        engine_2d_c_clearInputAndWait_FUN_00403260();
-      }
-    return 0;
-}
-
 // Chunk: else_2 (lines 535-568 of original)
 static int CDemonMission_editActorsInSet_else_2(CDemonMission_editActorsInSet_Ctx *ctx) {
     int &iVar14 = ctx->iVar14;
@@ -416,7 +261,7 @@ static int CDemonMission_editActorsInSet_else_2(CDemonMission_editActorsInSet_Ct
 
 // Chunk: branch_0 (lines 606-768 of original)
 static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
+    CDemonMission *&this_ptr = *ctx->this_ptr;
     CDemonSet *&pCVar7 = ctx->pCVar7;
     CDemonActor *&pCVar11 = ctx->pCVar11;
     CDemonActor *&pCVar6 = ctx->pCVar6;
@@ -592,7 +437,7 @@ LAB_0053a88c:
 
 // Chunk: chunk_4 (lines 783-809 of original)
 static int CDemonMission_editActorsInSet_chunk_4(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
+    CDemonMission *&this_ptr = *ctx->this_ptr;
     int &local_64 = ctx->local_64;
     float &local_28 = ctx->local_28;
     float &local_24 = ctx->local_24;
@@ -625,9 +470,9 @@ static int CDemonMission_editActorsInSet_chunk_4(CDemonMission_editActorsInSet_C
     return 0;
 }
 
-// Chunk: branch_0 (lines 817-883 of original)
-static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
-    CDemonMission *&this_ptr = ctx->this_ptr;
+// Chunk: branch_0_1 (lines 817-883 of original)
+static int CDemonMission_editActorsInSet_branch_0_1(CDemonMission_editActorsInSet_Ctx *ctx) {
+    CDemonMission *&this_ptr = *ctx->this_ptr;
     int &iVar14 = ctx->iVar14;
     CActorProperty *&this_ptr_01 = ctx->this_ptr_01;
     int &iVar15 = ctx->iVar15;
@@ -706,8 +551,8 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
 {
   CDemonMission_editActorsInSet_Ctx _ctx_storage = {};
   CDemonMission_editActorsInSet_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->reset_cameras = reset_cameras;
+  ctx->this_ptr = &this_ptr;
+  ctx->reset_cameras = &reset_cameras;
 
     float &fVar1 = ctx->fVar1;
     float &fVar2 = ctx->fVar2;
@@ -807,8 +652,6 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     char *&pcVar15 = ctx->pcVar15;
     CDemonSet *&pCVar1 = ctx->pCVar1;
     CGame *&this_ptr_00 = ctx->this_ptr_00;
-  // param this_ptr aliased into ctx above
-  // param reset_cameras aliased into ctx above
 
   bVar14 = 0;
   _remove("$$UNDO$$.TMP");
@@ -1155,7 +998,141 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
                            (g_CEditorToolsPtr,"Exit editor?"), iVar14 != 0))
     goto LAB_00539e00;
     if (INT_02f7c634 == 0) {
-      CDemonMission_editActorsInSet_branch_0(ctx);
+      if (g_MsnEditViewMode == 4) {
+        local_3c = g_CGamePtr->delta_time_float;
+        local_2c = local_3c;
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+        if (iVar14 == 0) {
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+          if (iVar14 != 0) {
+            local_2c = local_3c * (float)10;
+          }
+        }
+        else {
+          local_2c = local_3c * (float)0.050000000000000003;
+        }
+        local_34 = local_2c * (float)1.57079632675;
+        local_1c = local_18 * (float)1.5;
+        if (local_1c < 1.0) {
+          local_1c = 1.0;
+        }
+        local_1c = local_1c * local_2c;
+        local_20 = local_18;
+        if (local_18 < 1.0) {
+          local_20 = 1.0;
+        }
+        local_20 = local_20 * local_2c;
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
+        if (iVar14 != 0) {
+          local_7c = local_7c + local_34;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
+        if (iVar14 != 0) {
+          local_7c = local_7c - local_34;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
+        if (iVar14 != 0) {
+          local_78 = local_78 + local_34;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
+        if (iVar14 != 0) {
+          local_78 = local_78 - local_34;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_EQUALS);
+        if (iVar14 != 0) {
+          local_18 = local_18 - local_1c;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MINUS);
+        if (iVar14 != 0) {
+          local_18 = local_18 + local_1c;
+        }
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_GRAVE);
+        if (iVar14 != 0) {
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
+          if (iVar14 != 0) {
+            local_28 = local_28 - local_20;
+          }
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
+          if (iVar14 != 0) {
+            local_28 = local_28 + local_20;
+          }
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
+          if (iVar14 != 0) {
+            local_24 = local_24 + local_20;
+          }
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
+          if (iVar14 != 0) {
+            local_24 = local_24 - local_20;
+          }
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
+          if (iVar14 != 0) {
+            local_18 = local_18 - local_1c;
+          }
+          iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
+          if (iVar14 != 0) {
+            local_18 = local_18 + local_1c;
+          }
+        }
+        if (local_7c < (float)-1.57079632675) {
+          local_7c = -1.5707964;
+        }
+        if ((float)1.57079632675 < local_7c) {
+          local_7c = 1.5707964;
+        }
+        if (local_78 < (float)-1.57079632675) {
+          local_78 = local_78 + 6.283185f;
+        }
+        if ((float)1.57079632675 < local_78) {
+          local_78 = local_78 + -6.283185f;
+        }
+        if (local_18 < (float)0.5) {
+          local_18 = 0.5;
+        }
+      }
+      if (g_MsnEditViewMode == 2) {
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_170);
+      }
+      else {
+        pCVar11 = this_ptr->selected_actor;
+        if (pCVar11 != (CDemonActor *)0x0) {
+          (*((pCVar11->vtable)._ub)->processInEditor)(pCVar11);
+          core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr->selected_actor);
+        }
+      }
+      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_BACK);
+      if (iVar14 != 0) {
+        core_msnedit_cpp_CDemonMission_undoActorChanges_FUN_0053c0b0(this_ptr);
+      }
+      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
+      if (iVar14 != 0) {
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+        if (iVar14 == 0) {
+          pCVar11 = core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30
+                              (this_ptr,this_ptr->selected_actor);
+        }
+        else {
+          pCVar11 = core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80
+                              (this_ptr,this_ptr->selected_actor);
+        }
+        core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,pCVar11);
+      }
+      iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F2);
+      if (iVar14 != 0) {
+        iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+        if (iVar14 == 0) {
+          core_script_cpp_CScript_initEditorLayout_FUN_00566660
+                    (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
+          INT_02f7c634 = 1;
+        }
+        else {
+          core_script_cpp_CScript_initEditorLayout_FUN_00566660
+                    (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
+          INT_02f7c634 = 2;
+        }
+LAB_00539d68:
+        core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(g_CDemonMissionPtr,1);
+        engine_2d_c_clearInputAndWait_FUN_00403260();
+      }
     }
     else {
       int _rc = CDemonMission_editActorsInSet_else_2(ctx);
@@ -1200,7 +1177,7 @@ LAB_00539e00:
       return 2;
     }
     if ((INT_02f7c634 == 0) ||
-    {
+       (iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar14 != 0)) {
       CDemonMission_editActorsInSet_branch_0(ctx);
     }
     iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
@@ -1230,8 +1207,8 @@ LAB_00539e00:
     }
     iVar14 = g_MsnEditHoveredProperty;
     if (((((g_MouseButtonFlags.dword & 1) == 0) && ((local_30.dword & 1) != 0)) &&
-    {
-      CDemonMission_editActorsInSet_branch_0(ctx);
+        (g_MsnEditMouseOverPanel == 0)) && (g_ActiveControl == (void *)0x0)) {
+      CDemonMission_editActorsInSet_branch_0_1(ctx);
     }
     else {
       FLOAT_00680818 = g_CGamePtr->delta_time_float + FLOAT_00680818;

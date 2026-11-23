@@ -28,8 +28,8 @@
 ;   TerminatedCString s_core_boneguy_cpp_005b7119
 ;   TerminatedCString s_CBoneGuy_explode_Not_eno_005b712d
 ;   TerminatedCString s_boneguy_fallapart_wav_005b7157
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
@@ -87,8 +87,8 @@ section .text
     MOV EBX,0x5b7119                    ; 004195c4 | = "..\\core\\boneguy.cpp"
     MOV ESI,0x49c                       ; 004195c9
     PUSH 0x5b712d                       ; 004195ce | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01d71de0],EBX      ; 004195d3 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004195d9 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004195d3 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004195d9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004195df
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004195e4

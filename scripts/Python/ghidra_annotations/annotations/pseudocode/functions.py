@@ -100,7 +100,7 @@ def get_function_globals(currentProgram, function):
                             value = data.getValue()
                             if value is not None:
                                 initializer_value = str(value)
-                    except:
+                    except Exception:
                         pass
                     globals_refs.append({
                         'type': type_name,
@@ -218,13 +218,10 @@ def extract_virtual_filename(func_name):
         path_part = prefix.split("_c_")[0]
         virtual_path = path_part.replace("_", "/") + ".h"
         return virtual_path
-    elif "." in prefix:
-        if ".cpp" in prefix or ".c" in prefix:
-            for ext in [".cpp", ".c"]:
-                if ext in prefix:
-                    path_part = prefix.split(ext)[0]
-                    virtual_path = path_part.replace("_", "/") + ".h"
-                    return virtual_path
+    elif ".c" in prefix:
+        # The name is only the unit ("engine_2d.c"); ".c" also matches ".cpp"
+        ext = ".cpp" if ".cpp" in prefix else ".c"
+        return prefix.split(ext)[0].replace("_", "/") + ".h"
     return None
 
 
@@ -247,15 +244,18 @@ def extract_cpp_function_name(func_name):
     prefix = parts[0]
     fun_address = parts[1]
     function_part = None
+    is_cpp = True
     if ".cpp_" in prefix:
         function_part = prefix.split(".cpp_", 1)[1]
     elif ".c_" in prefix:
         function_part = prefix.split(".c_", 1)[1]
+        is_cpp = False
     elif "_cpp_" in prefix:
         function_part = prefix.split("_cpp_", 1)[1]
     elif "_c_" in prefix:
         function_part = prefix.split("_c_", 1)[1]
-    elif "." in prefix and (".cpp" in prefix or ".c" in prefix):
+        is_cpp = False
+    elif ".c" in prefix:
         return "FUN_%s" % fun_address
     else:
         return func_name
@@ -263,13 +263,12 @@ def extract_cpp_function_name(func_name):
     if not function_part:
         return "FUN_%s" % fun_address
 
-    function_parts = function_part.split("_")
-    if len(function_parts) >= 2:
-        class_name = function_parts[0]
-        method_name = "_".join(function_parts[1:])
+    # C has no classes: crt_stdlib.c__qsort is _qsort and
+    # crt_memory.c_operator_new is operator_new, not ::qsort / operator::new.
+    class_name, _, method_name = function_part.partition("_")
+    if is_cpp and class_name and method_name:
         return "%s::%s" % (class_name, method_name)
-    else:
-        return function_part
+    return function_part
 
 
 def _detect_format_attribute(params_str, func_name):
@@ -301,8 +300,7 @@ def _detect_format_attribute(params_str, func_name):
             current = ''
         else:
             current += ch
-    if current.strip():
-        params.append(current.strip())
+    params.append(current.strip())
 
     # Find index of ... and the param before it
     variadic_idx = None
@@ -315,8 +313,8 @@ def _detect_format_attribute(params_str, func_name):
 
     format_param = params[variadic_idx - 1]
 
-    # Check if the format param is char *
-    if 'char *' not in format_param and 'char*' not in format_param:
+    # Check if the format param is char * (a char ** is no format string)
+    if not re.search(r'\bchar\s*\*(?!\s*\*)', format_param):
         return ''
 
     # Extract the parameter name (last word)
@@ -756,15 +754,10 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
             trailing_prologue_pushes = 0
             trailing_pushed_regs = set()
 
-        if reg_set and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
-            dest_operand = current_instr.getDefaultOperandRepresentation(0)
-            if dest_operand:
-                dest_upper = dest_operand.upper()
-                for reg in reg_set:
-                    reg_up = reg.upper()
-                    if dest_upper == reg_up or dest_upper.startswith(reg_up[0:2]):
-                        reg_params_found.add(reg_up[:3])
-                        break
+        if reg_set:
+            loaded = _loaded_param_register(current_instr, mnemonic, reg_set)
+            if loaded:
+                reg_params_found.add(loaded)
 
         current_instr = current_instr.getPrevious()
 
@@ -823,18 +816,28 @@ def _scan_backward_for_reg_params(listing, call_addr, caller_func, reg_set):
         if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
             break
 
-        if mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
-            dest_operand = current_instr.getDefaultOperandRepresentation(0)
-            if dest_operand:
-                dest_upper = dest_operand.upper()
-                for reg in reg_set:
-                    if dest_upper == reg.upper() or dest_upper.startswith(reg.upper()[0:2]):
-                        reg_params_found.add(reg.upper()[:3])
-                        break
+        loaded = _loaded_param_register(current_instr, mnemonic, reg_set)
+        if loaded:
+            reg_params_found.add(loaded)
 
         current_instr = current_instr.getPrevious()
 
     return reg_params_found
+
+
+_REG_LOADS = ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX')
+
+
+def _loaded_param_register(instr, mnemonic, reg_set):
+    """The register of `reg_set` this instruction loads, upper-case, or None.
+
+    The destination must be the register itself: EDI is not EDX, EBP is not
+    EBX and ESP is not ESI, though each shares the first two letters.
+    """
+    if mnemonic not in _REG_LOADS:
+        return None
+    dest = (instr.getDefaultOperandRepresentation(0) or '').upper()
+    return dest if dest in {reg.upper() for reg in reg_set} else None
 
 
 def load_vtable_bucket_files(vtables_dir):
@@ -1083,20 +1086,18 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
         matches_declared = (estimated_params == declared_params) or \
                            (estimated_stack_bytes == declared_stack_bytes)
 
+        sites = len(param_counts)
         if matches_declared:
-            if len(param_counts) >= 3 and agreement_ratio >= 0.9:
+            if (sites >= 3 and agreement_ratio >= 0.9) or (sites >= 2 and agreement_ratio >= 0.7):
                 confidence = 'high'
-            elif len(param_counts) >= 2 and agreement_ratio >= 0.7:
-                confidence = 'high'
-            elif len(param_counts) >= 1:
+            else:
                 confidence = 'medium'
+        elif agreement_ratio >= 0.9 and sites >= 3:
+            confidence = 'high'
+        elif agreement_ratio >= 0.7 and sites >= 2:
+            confidence = 'medium'
         else:
-            if agreement_ratio >= 0.9 and len(param_counts) >= 3:
-                confidence = 'high'
-            elif agreement_ratio >= 0.7 and len(param_counts) >= 2:
-                confidence = 'medium'
-            elif len(param_counts) >= 1:
-                confidence = 'low'
+            confidence = 'low'
 
     result = {
         'declared_params': declared_params,

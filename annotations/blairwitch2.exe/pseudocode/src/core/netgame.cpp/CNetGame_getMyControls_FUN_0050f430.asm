@@ -14,8 +14,8 @@
 ;   TerminatedCString s_core_netgame_cpp_005e1116
 ;   TerminatedCString s_CNetGame_getMyControls_I_005e112a
 ;   int g_INT_01cedef4
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -52,8 +52,8 @@ section .text
     MOV ESI,0x5e1116                    ; 0050f46b | = "..\\core\\netgame.cpp"
     MOV EDI,0xa0f                       ; 0050f470
     PUSH 0x5e112a                       ; 0050f475 | = "CNetGame::getMyControls - I'm not in ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0050f47a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050f480 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0050f47a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0050f480 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f486
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f48b

@@ -22,8 +22,8 @@
 ;   int g_INT_01c6af84
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;   int g_INT_01c6af90
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -150,8 +150,8 @@ section .text
         ;   Label: LAB_00467db6
     MOV EDX,0x11e                       ; 00467dbb
     PUSH 0x5bc1e3                       ; 00467dc0
-    MOV [0x01d71de0],EAX                ; 00467dc5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00467dca | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00467dc5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00467dca | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00467dd0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00467dd5

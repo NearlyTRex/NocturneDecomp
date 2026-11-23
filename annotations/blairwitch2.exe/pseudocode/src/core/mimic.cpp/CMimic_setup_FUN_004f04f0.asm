@@ -237,8 +237,8 @@ section .text
     MOV EDX,0x5dd89d                    ; 004f070c | = "..\\core\\mimic.cpp"
     MOV ECX,0x101                       ; 004f0711
     PUSH 0x5dd8af                       ; 004f0716 | = "CMimic failed to create morph target ..."
-    MOV dword ptr [0x01d046a0],EDX      ; 004f071b | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004f0721 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004f071b | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004f0721 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f0727
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f072c
@@ -366,8 +366,8 @@ section .text
         ;   Label: LAB_004f086a
     MOV ESI,0xb6                        ; 004f086f
     PUSH 0x5dd761                       ; 004f0874 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01d046a0],ECX      ; 004f0879 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004f087f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 004f0879 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004f087f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f0885
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f088a

@@ -7,8 +7,8 @@
 ; CVector3f *      Stack[0x4]:4   offset
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_PTR_01d2257c
 ;   void* g_PTR_01d22580
 ;   int g_INT_01d24ffc
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_0051210e
     MOV EDI,0x4e3                       ; 00512113
     PUSH 0x5e8c4b                       ; 00512118
-    MOV dword ptr [0x01d1d400],ESI      ; 0051211d | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 00512123 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0051211d | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 00512123 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00512129
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051212e

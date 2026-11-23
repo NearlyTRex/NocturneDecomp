@@ -23,8 +23,8 @@
 ;   TerminatedCString s_core_dtrace_cpp_005dbb4c
 ;   TerminatedCString s_Parity_Check_999_005dbb5f
 ;   uchar[8] g_VoxelYBitMasks
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0
@@ -130,8 +130,8 @@ section .text
     MOV EDX,0x5dbb4c                    ; 0048f9e3 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb19                       ; 0048f9e8
     PUSH 0x5dbb5f                       ; 0048f9ed | = "Parity Check 999"
-    MOV dword ptr [0x01d1d400],EDX      ; 0048f9f2 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0048f9f8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0048f9f2 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0048f9f8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0048f9fe
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0048fa03

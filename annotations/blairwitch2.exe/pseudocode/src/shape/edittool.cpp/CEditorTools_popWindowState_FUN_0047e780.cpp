@@ -13,8 +13,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047e780(CEditor
   int iVar1;
   
   if (g_WindowStackCount < 1) {
-    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-    g_INT_01d046a4 = 0x8b5;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2229;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CEditorTools::popWindow() called but no window was opened!");
   }
   g_WindowStackCount = g_WindowStackCount + -1;

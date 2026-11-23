@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CDR_captureFace_too_many_005db4fb
 ;   int g_CaptureFaceCount
 ;   int g_CaptureTextureCount
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -76,8 +76,8 @@ section .text
     MOV EDI,0x5db4e5                    ; 00484c9d | = "..\\engine\\drender.cpp"
     MOV EAX,0xb78                       ; 00484ca2
     PUSH 0x5db4fb                       ; 00484ca7 | = "CDR::captureFace - too many faces cap..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00484cac | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 00484cb2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00484cac | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 00484cb2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00484cb7
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00484cbc

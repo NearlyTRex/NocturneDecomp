@@ -59,8 +59,8 @@
 ;   double g_DOUBLE_005caab9 = 0.0000152587890625
 ;   double g_DOUBLE_005caac1 = -30
 ;   double g_DOUBLE_005caac9 = 30
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -951,7 +951,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 00505604
     PUSH EAX                            ; 0050560b
     CALL support_trisock.cpp_createNetworkAddr_FUN_0056f730 ; 0050560c
-        ;   XREF to: 0056f730 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
+        ;   XREF to: 0056f730 (UNCONDITIONAL_CALL)  ; SNetworkAddr * support_trisock.cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 00505611
     PUSH EAX                            ; 00505614
     MOV ESI,dword ptr [EBP + 0x14]      ; 00505615
@@ -1039,8 +1039,8 @@ section .text
     MOV EDX,0x5caa8d                    ; 005056f8 | = "..\\core\\netgame.cpp"
     MOV ECX,0x597                       ; 005056fd
     PUSH 0x5caaa1                       ; 00505702 | = "Player list mismatch!"
-    MOV dword ptr [0x01d71de0],EDX      ; 00505707 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0050570d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00505707 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0050570d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00505713
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505718
@@ -1076,8 +1076,8 @@ section .text
     MOV EDX,0x5ca43b                    ; 00505773 | = "..\\core\\netgame.cpp"
     MOV ECX,0x12b                       ; 00505778
     PUSH 0x5ca44f                       ; 0050577d | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01d71de0],EDX      ; 00505782 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00505788 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00505782 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00505788 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050578e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00505793
@@ -1107,8 +1107,8 @@ section .text
         ;   Label: LAB_005057da
     MOV EAX,0x596                       ; 005057df
     PUSH 0x5caa55                       ; 005057e4 | = "Player list mismatch processing SimFr..."
-    MOV dword ptr [0x01d71de0],EDI      ; 005057e9 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 005057ef | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005057e9 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 005057ef | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005057f4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005057f9

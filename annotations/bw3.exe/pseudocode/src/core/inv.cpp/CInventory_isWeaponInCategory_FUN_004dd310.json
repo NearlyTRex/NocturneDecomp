@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast"
     ],
     "total_lines": 20
@@ -158,6 +159,13 @@
       "severity": "moderate",
       "text": "return (uint)(weapon_category == *(int *)(weapon_actor[4].actor_name + 0x14));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'weapon_actor[4].actor_name + 0x14' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x14 = 0x574, which is exactly offsetof(CChain, is_visible). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)weapon_actor)->is_visible (\u00a7de-pun/\u00a712). Ambiguous: CWeapon::weapon_class also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 8,
+      "severity": "moderate",
+      "text": "return (uint)(weapon_category == *(int *)(weapon_actor[4].actor_name + 0x14));",
+      "type": "derived_field_index_pun"
     }
   ]
 }

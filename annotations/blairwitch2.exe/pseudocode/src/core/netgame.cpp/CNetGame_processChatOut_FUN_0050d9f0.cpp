@@ -18,8 +18,8 @@ void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_0050d9f0(CNetGame *thi
   SChatOutMessage *pSVar6;
   
   if (0x31 < g_ChatOutCount) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-    g_INT_01d046a4 = 0x76c;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 1900;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::processChatOut - too many pending outgoing chat messages");
   }
   iVar2 = g_ChatOutCount;

@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d09854
 ;   int g_INT_01d09914
 ;   float* g_FLOAT_PTR_01d09b7c
@@ -81,8 +81,8 @@ section .text
     MOV EDI,0x5dddaf                    ; 004f3f69
     MOV EBP,0x80d                       ; 004f3f6e
     PUSH 0x5dddc4                       ; 004f3f73
-    MOV dword ptr [0x01d046a0],EDI      ; 004f3f78 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004f3f7e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004f3f78 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004f3f7e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f3f84
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004f3f89

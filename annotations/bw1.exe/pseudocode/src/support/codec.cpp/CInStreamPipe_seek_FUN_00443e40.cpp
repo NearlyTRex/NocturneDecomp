@@ -9,8 +9,8 @@
 int __cdecl support_codec_cpp_CInStreamPipe_seek_FUN_00443e40(CInStreamPipe *this_ptr,int offset,int origin)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\support\\codec.cpp";
-  g_INT_01d1d404 = 0x829;
+  g_CurrentFilename = "..\\support\\codec.cpp";
+  g_CurrentLineNumber = 2089;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CInStreamPipe::seek - not allowed");
   return 0;
 }

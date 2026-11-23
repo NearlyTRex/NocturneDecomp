@@ -3,6 +3,7 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "platform/clock.h"
 #include "shape/edittool/editortools.h"
@@ -28,6 +29,9 @@ int roundHalfUp(double value) {
 } // namespace
 
 // nocedit 0x004a0430
+// bw1 0x004961b0
+// bw2 0x0047db40
+// bw3 0x0047ed50
 void CEditorTools::showCenteredProgressDialog(std::string_view message_text) {
     initEditorFontMetrics();
     const int width = std::max(screen_.getWindowWidth() / 2,
@@ -73,18 +77,19 @@ void CEditorTools::drawProgress(int percentage, float fraction) {
     paintCurrentWindow();
     three_d_.setRenderAlpha(kOpaqueAlpha);
     const engine::SClipRect clip = two_d_.getClipRect();
-    drawCentredLine(std::format("{}% complete", percentage), clip.top, window_status_text_color_);
+    const engine::SDialogLook &look = getDialogLook();
+    drawCentredLine(std::format("{}% complete", percentage), clip.top, look.window_status_colour);
     const int left = clip.left + 1;
     const int right = clip.right - 1;
     const int top = clip.top + (editor_font_line_height_ * 2) + 1;
     const int bottom = clip.top + (editor_font_line_height_ * 4) - 1;
-    two_d_.fillRectWithBorder(left, top, right, bottom, progress_bar_background_color_,
-                              progress_bar_border_color_);
+    two_d_.fillRectWithBorder(left, top, right, bottom, look.progress_background_colour,
+                              look.progress_border_colour);
     const int fill_right =
         roundHalfUp(static_cast<double>(right - left + 1) * static_cast<double>(fraction)) + left;
     if (fill_right > left) {
         two_d_.fillRectColor(left, top, std::min(fill_right, right - 1), bottom,
-                             progress_bar_fill_color_);
+                             look.progress_fill_colour);
     }
 }
 
@@ -103,7 +108,7 @@ void CEditorTools::drawTimeRemaining(float current_progress, float total_progres
                                 shown / kSecondsPerMinute, shown % kSecondsPerMinute,
                                 remaining / kSecondsPerMinute, remaining % kSecondsPerMinute),
                     two_d_.getClipRect().bottom - editor_font_line_height_,
-                    window_status_text_color_);
+                    getDialogLook().window_status_colour);
 }
 
 // Centred in the clip at the HUD scale, as the rest of the dialog is measured; the decomp draws

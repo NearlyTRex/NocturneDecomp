@@ -19,8 +19,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00554140(CSfxSl
   double dVar8;
   
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d71de4 = 0xa6b;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2667;
     core_main_c_displayErrorAndQuit_FUN_004e4330("SfxSlot::kill - must be locked!");
   }
   iVar4 = g_AudioChannelCount;

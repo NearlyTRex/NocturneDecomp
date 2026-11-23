@@ -134,7 +134,7 @@ std::size_t CActor::getActorClassCount() const {
 
 // The original set every class's version to 1; here a class not set reads as 1.
 // nocedit 0x0040c7f0
-void CActor::resetSavedVersions() {
+void CActor::resetActorTypeInfo() {
     saved_versions_.clear();
 }
 

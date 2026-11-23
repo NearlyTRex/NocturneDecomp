@@ -21,8 +21,8 @@
 ;   int g_UseRGBConversion
 ;   int g_OriginalColorValue
 ;   int g_PackedPixelColor
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_0047e90a
     MOV EBX,0x18e                       ; 0047e90f
     PUSH 0x5db093                       ; 0047e914
-    MOV dword ptr [0x01d1d400],ECX      ; 0047e919 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0047e91f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0047e919 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0047e91f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e925
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e92a
@@ -170,8 +170,8 @@ section .text
         ;   Label: LAB_0047e99e
     MOV EDX,0x19f                       ; 0047e9a3
     PUSH 0x5db0c1                       ; 0047e9a8
-    MOV [0x01d1d400],EAX                ; 0047e9ad | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0047e9b2 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0047e9ad | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0047e9b2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e9b8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e9bd

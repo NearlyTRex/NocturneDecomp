@@ -23,8 +23,8 @@ void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_00578a80(CDirec
     return (void *)0x0;
   }
   if (g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 4] != (IDirectSoundBuffer *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\snddx.cpp";
-    g_INT_01d1d404 = 0x440;
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 1088;
     core_main_c_displayErrorAndQuit_FUN_005030e0("DirectSoundDevice::lockSample - already locked!");
   }
   iVar1 = offset * (int)g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[buffer_id * 6 + 2] >> 0x1f;

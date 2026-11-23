@@ -9,8 +9,8 @@
 void __cdecl core_xform_cpp_somebodyWriteMe_FUN_005b5450(void)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\core\\xform.cpp";
-  g_INT_01d1d404 = 0x7c;
+  g_CurrentFilename = "..\\core\\xform.cpp";
+  g_CurrentLineNumber = 124;
   core_main_c_displayErrorAndQuit_FUN_005030e0("Somebody write me!");
   return;
 }

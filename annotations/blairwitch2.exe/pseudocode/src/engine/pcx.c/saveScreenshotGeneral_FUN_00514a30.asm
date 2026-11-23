@@ -32,8 +32,8 @@
 ;   int g_INT_006141c0 = 0x8
 ;   uchar[768] g_UCHAR_ARRAY_01c35838
 ;   undefined4 g_UCHAR_ARRAY_01c35838+1
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -123,8 +123,8 @@ section .text
     MOV EBP,0x5e19d0                    ; 00514b13 | = "..\\engine\\pcx.c"
     MOV EAX,0xed                        ; 00514b18
     PUSH 0x5e19e0                       ; 00514b1d | = "Cannot write .PCX"
-    MOV dword ptr [0x01d046a0],EBP      ; 00514b22 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00514b28 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00514b22 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00514b28 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00514b2d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514b32

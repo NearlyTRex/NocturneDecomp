@@ -33,8 +33,8 @@
 ;   TerminatedCString s_Can_t_create_body_part_005b6a3f
 ;   float g_FLOAT_005b6a5a = 10
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
@@ -74,8 +74,8 @@ section .text
     MOV EDX,0x5b6a2a                    ; 0041457e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00414583
     PUSH 0x5b6a3f                       ; 00414588 | = "Can't create body part!"
-    MOV dword ptr [0x01d71de0],EDX      ; 0041458d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00414593 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0041458d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00414593 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00414599
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0041459e

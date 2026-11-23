@@ -72,12 +72,16 @@ const CDemonActorType &CFlame::getActorType() const {
 }
 
 // nocedit 0x004c9a60
+// bw1 0x004b7a00
+// bw2 0x0049f150
+// bw3 0x004a5980
 std::unique_ptr<CDemonActor> CFlame::create(CActor &classes) {
     return std::make_unique<CFlame>(classes);
 }
 
 // The original saves the off event under the on event's description too.
 // nocedit 0x004cac60
+// bw2 0x004a0460
 void CFlame::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveVector(flame_size_, "flameSize");
@@ -109,6 +113,9 @@ void CFlame::archive(CActorArchive &actor_archive) {
 //   already does, and clearing that and the visibility check first, with renderTransparent
 // deferred: nothing tested in the shadow pass, with setShadowPass's callers
 // nocedit 0x004caa80
+// bw1 0x004b8ac0
+// bw2 0x004a0210
+// bw3 0x004a6a50
 void CFlame::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
     if (layer_flag == 0) {
         return;
@@ -117,6 +124,9 @@ void CFlame::renderBackground(int layer_flag, const SActorRenderOwners &owners) 
 }
 
 // nocedit 0x004cac00
+// bw1 0x004b8c90
+// bw2 0x004a03e0
+// bw3 0x004a6c20
 CBoundingBox3D *CFlame::getBoundingBox(CBoundingBox3D *out_box) {
     out_box->min = {.x = -flame_size_.x * kHalf, .y = kBoxFloor, .z = -flame_size_.z * kHalf};
     const common::CExtendedFloat top =

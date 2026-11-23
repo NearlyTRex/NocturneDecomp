@@ -15,8 +15,8 @@
 ;   TerminatedCString s_s_File_s_Line_d_005ee8a2
 ;   TerminatedCString s_Coffin_Rock_005eeac5
 ;   void* PTR_s_Coffin_Rock_0061e984 = 005eeac5
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   char[6000] g_CHAR_ARRAY_02662df0
 ;   HWND g_MainWindowHandle
 ;
@@ -33,9 +33,9 @@ section .text
         ;   Label: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0
     PUSH ESI                            ; 0058f5d1
     PUSH EDI                            ; 0058f5d2
-    MOV EDX,dword ptr [0x01d046a4]      ; 0058f5d3 | g_INT_01d046a4
+    MOV EDX,dword ptr [0x01d046a4]      ; 0058f5d3 | g_CurrentLineNumber
     PUSH EDX                            ; 0058f5d9
-    MOV ECX,dword ptr [0x01d046a0]      ; 0058f5da | g_CHAR_PTR_01d046a0
+    MOV ECX,dword ptr [0x01d046a0]      ; 0058f5da | g_CurrentFilename
     PUSH ECX                            ; 0058f5e0
     MOV EBX,dword ptr [ESP + 0x18]      ; 0058f5e1
     PUSH EBX                            ; 0058f5e5

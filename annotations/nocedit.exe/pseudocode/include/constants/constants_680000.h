@@ -4,7 +4,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "constants.h"
+#include "constants/constants_640000.h"
+#include "constants/constants_650000.h"
 #include "prototypes/prototypes_600000.h"
 
 // =============================================================================

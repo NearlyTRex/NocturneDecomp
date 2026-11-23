@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 16,
+    "complexity_score": 31,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "mem_magic_size"
+    ],
     "total_lines": 41
   },
   "cross_references": [
@@ -129,5 +131,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "memset size hardcodes 0x1a4 == sizeof(C3DSCamera), whose dest resolves to that struct. C3DSCamera is 64-bit-unstable (contains a pointer), so the struct grows past 0x1a4 once pointers are 8 bytes and memset covers only its leading 0x1a4 bytes, leaving the grown tail untouched. Replace the magic with sizeof(C3DSCamera) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 8,
+      "match": "memset(dest) size 0x1a4 == sizeof(C3DSCamera)",
+      "severity": "moderate",
+      "text": "memset(this_ptr,0,0x1a4)",
+      "type": "mem_magic_size"
+    }
+  ]
 }

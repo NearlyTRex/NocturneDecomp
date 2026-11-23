@@ -3650,21 +3650,21 @@ COPY (unique,0x87b00,4) = (const,0x14,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@005c2ef7 [ESP:-236]~  # LEA EAX, [EBX + 0x158]
+@005c2ef7 [ESP:-244]~  # LEA EAX, [EBX + 0x158]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x158,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x6800,4)
 
-@005c2efd [ESP:-240](-4)~  # PUSH EAX
+@005c2efd [ESP:-248](-4)~  # PUSH EAX
 COPY (unique,0x41500,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@005c2efe [ESP:-240](-4)~  # CALL 0x0052db00
+@005c2efe [ESP:-248](-4)~  # CALL 0x0052db00
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5c2f03,4)
 CALL (ram,0x52db00,4)
 
-@005c2f03 [ESP:-228](+12)~  # ADD ESP, 0xc
+@005c2f03 [ESP:-236](+12)~  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -3675,15 +3675,15 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005c2f06 [ESP:-228]~  # MOV EAX, 0x1
+@005c2f06 [ESP:-236]~  # MOV EAX, 0x1
 COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
 
-@005c2f0b [ESP:-228]~  # MOV dword ptr [EBX + 0x1fc40], 0x40800000
+@005c2f0b [ESP:-236]~  # MOV dword ptr [EBX + 0x1fc40], 0x40800000
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x1fc40,4)
 COPY (unique,0xa300,4) = (const,0x40800000,4)
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
 
-@005c2f15 [ESP:-16](+212)~  # MOV ESP, EBP
+@005c2f15 [ESP:-16](+220)~  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
 @005c2f17 [ESP:-12](+4)~  # POP EBP

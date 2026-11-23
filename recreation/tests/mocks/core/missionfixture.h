@@ -88,7 +88,9 @@ protected:
                                      raw_input_)};
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,       two_d_,
+                  three_d_,  colors_,       os_fonts_,
+                  messages_, editor_tools_, engine::getShippedGameContent()};
     CLevelLoader level_loader_{{.dosio = dosio_,
                                 .screen = screen_,
                                 .special = special_,
@@ -125,7 +127,7 @@ protected:
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_};
+    CSound sound_{sound_main_, pod_, file_system_, game_parts_.getContent()};
     CScript script_{{.dosio = dosio_,
                      .editor_tools = editor_tools_,
                      .mission = mission_,

@@ -14,6 +14,10 @@ from ghidra_annotations.annotations.pseudocode.suspects import _common as c
     ({"type": "warning_jumptable"}, False),
     ({"type": "warning_type_propagation"}, False),
     ({"type": "warning_indirect_jump"}, False),
+    ({"type": "warning_jumptable", "tail_call": True}, True),
+    ({"type": "warning_indirect_jump", "tail_call": True}, True),
+    ({"type": "warning_indirect_jump", "tail_call": False}, False),
+    ({"type": "warning_type_propagation", "tail_call": True}, False),
     ({"type": "unnamed_param"}, False),
     ({}, False),
     ({"type": "warning_noreturn", "callee": "dll_dx7_cpp_fatalError_FUN_10002340"}, True),
@@ -40,6 +44,29 @@ def test_call_after_reads_the_next_code_line():
     assert c.call_after(lines, 1) == "fatalError"
     assert c.call_after(["/* WARNING */", "  (*g_ExitProcessFunc)(1);"], 0) is None
     assert c.call_after(["/* WARNING */", "   "], 0) is None
+
+
+TAIL = ["void f(int a)", "{", "  /* WARNING: Could not recover jumptable */",
+        "  /* WARNING: Treating indirect jump as call */", "", "  (*g_Func)(a, 1);", "  return;", "}"]
+
+
+@pytest.mark.parametrize("lines, index, tail", [
+    (TAIL, 2, True),
+    (TAIL, 3, True),
+    # anything else in the body, before or after the call
+    (TAIL[:2] + ["  int x;"] + TAIL[2:], 3, False),
+    (TAIL[:6] + ["  g();"] + TAIL[6:], 2, False),
+    # a call that lost its pointer type, or that goes through a table
+    (TAIL[:5] + ["  (*(code *)g_Func)();"] + TAIL[6:], 2, False),
+    (TAIL[:5] + ["  (**(code **)(&DAT_00679d50 + uVar3 * 4))();"] + TAIL[6:], 2, False),
+    (TAIL[:5] + ["  x = (*g_Func)(a);"] + TAIL[6:], 2, False),
+    (TAIL[:6] + ["  return x;"] + TAIL[7:], 2, False),
+    (TAIL[:7] + ["};"], 2, False),
+    # no opening brace above the warnings
+    (TAIL[2:], 1, False),
+])
+def test_a_pointer_tail_call_is_the_whole_body(lines, index, tail):
+    assert c.is_pointer_tail_call(lines, index) is tail
 
 
 def test_a_function_is_effectively_clean_with_only_safe_suspects():

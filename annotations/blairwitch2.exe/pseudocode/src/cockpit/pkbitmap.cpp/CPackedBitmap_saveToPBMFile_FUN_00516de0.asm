@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60
@@ -66,8 +66,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00516e38
     MOV EDI,0x472                       ; 00516e3c
     PUSH EAX                            ; 00516e41
-    MOV dword ptr [0x01d046a0],ESI      ; 00516e42 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00516e48 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00516e42 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00516e48 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00516e4e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00516e53

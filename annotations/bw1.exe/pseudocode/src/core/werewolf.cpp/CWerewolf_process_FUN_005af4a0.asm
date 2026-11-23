@@ -1315,8 +1315,8 @@ section .text
         ;   Label: LAB_005b0362
     MOV ESI,0x1ad                       ; 005b0367
     PUSH 0x5f9a61                       ; 005b036c | = "Alpha werewolf requires 2 waypoints"
-    MOV dword ptr [0x01d1d400],ECX      ; 005b0371 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005b0377 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 005b0371 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 005b0377 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005b037d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005b0382

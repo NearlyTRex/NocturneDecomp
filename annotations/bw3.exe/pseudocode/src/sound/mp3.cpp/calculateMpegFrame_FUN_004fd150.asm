@@ -24,8 +24,8 @@
 ;   undefined4 s_CMotionController_006007ad+0x13
 ;   double[2][4] g_MpegSampleRateTable
 ;   int[2][3][15] g_MpegBitrateTable
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   char[256] g_CurrentMp3Filename
 ;
 ; Called Functions:
@@ -75,8 +75,8 @@ section .text
     MOV EBP,0x5c9f11                    ; 004fd1a5 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x1ea                       ; 004fd1aa
     PUSH 0x5c9f22                       ; 004fd1af | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01d71de0],EBP      ; 004fd1b4 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004fd1ba | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBP      ; 004fd1b4 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004fd1ba | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd1bf
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 004fd1c4
@@ -149,8 +149,8 @@ section .text
     MOV EAX,0x5c9ec7                    ; 004fd278 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1d8                       ; 004fd27d
     PUSH 0x5c9ed8                       ; 004fd282 | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV [0x01d71de0],EAX                ; 004fd287 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004fd28c | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004fd287 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004fd28c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fd292
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004fd297

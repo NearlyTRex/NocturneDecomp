@@ -43,8 +43,8 @@
 ;   double g_DOUBLE_005d8c18 = 2
 ;   double g_DOUBLE_005d8c20 = -0.200000000000000
 ;   undefined4 g_CHeroClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;   int g_INT_02d24978
@@ -119,8 +119,8 @@ section .text
     MOV ECX,0x5d8bb8                    ; 0058e936 | = "..\\core\\zombiepriest.cpp"
     MOV ESI,0x2aa                       ; 0058e93b
     PUSH 0x5d8bd1                       ; 0058e940 | = "CZombiePriest::Aim Burning Cross - I'..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0058e945 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0058e94b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0058e945 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0058e94b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0058e951
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0058e956

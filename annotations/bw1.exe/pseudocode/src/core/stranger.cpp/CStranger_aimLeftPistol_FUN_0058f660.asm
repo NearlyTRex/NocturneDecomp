@@ -18,8 +18,8 @@
 ;   float g_FLOAT_006060b0 = -1.047198
 ;   float g_FLOAT_006060b4 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_INT_ARRAY_02c83600[3]
 ;
@@ -372,8 +372,8 @@ section .text
         ;   Label: LAB_0058fb0f
     MOV ESI,0x1125                      ; 0058fb14
     PUSH 0x5f6f2e                       ; 0058fb19 | = "CStranger::aimLeftPistol - no weapon?"
-    MOV dword ptr [0x01d1d400],ECX      ; 0058fb1e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0058fb24 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0058fb1e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0058fb24 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0058fb2a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0058fb2f

@@ -278,8 +278,8 @@ joined_r0x005847f3:
     actor = core_tommygun_cpp_CTommyGun_ctor_FUN_00575760(this_ptr_02);
   }
   if ((this_ptr_01 == (CMobster *)0x0) || (actor == (CTommyGun *)0x0)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\vehicle.cpp";
-    g_INT_01d046a4 = 0x161;
+    g_CurrentFilename = "..\\core\\vehicle.cpp";
+    g_CurrentLineNumber = 353;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CMobster::process - Out of memory!");
   }
   iVar14 = core_actor_cpp_randomChance_FUN_0040d060(0.5);

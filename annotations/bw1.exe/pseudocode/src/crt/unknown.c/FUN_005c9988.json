@@ -84,12 +84,10 @@
         "call_addr": "005c9aba",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_005c9a88",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -107,10 +105,10 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 3,
+    "estimated_params": 2,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -429,18 +427,18 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 2,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
     },
     {
       "description": "Compiler displaced index base: [reg*2 + 0x608544] lands in g_SHORT_00608544 but intended target is g_DaysInMonth_Leap at 0x608546 (displaced by 2 bytes)",
       "displaced_from": "g_SHORT_00608544",
       "displacement": "0x608544",
-      "instruction_address": "",
+      "instruction_address": "005c99bf",
       "intended_global": "g_DaysInMonth_Leap",
       "line": 23,
       "match": "0x608544",
@@ -453,7 +451,7 @@
       "description": "Compiler displaced index base: [reg*2 + 0x60852c] lands in g_DaysInMonth_Normal but intended target is g_INT_0060852e at 0x60852e (displaced by 2 bytes)",
       "displaced_from": "g_DaysInMonth_Normal",
       "displacement": "0x60852c",
-      "instruction_address": "",
+      "instruction_address": "005c99cb",
       "intended_global": "g_INT_0060852e",
       "line": 28,
       "match": "0x60852c",
@@ -466,7 +464,7 @@
       "description": "Compiler displaced index base: [reg*2 + 0x60852a] lands in g_DefaultStreamBufferSize but intended target is g_DaysInMonth_Normal at 0x60852c (displaced by 2 bytes)",
       "displaced_from": "g_DefaultStreamBufferSize",
       "displacement": "0x60852a",
-      "instruction_address": "",
+      "instruction_address": "005c99d2",
       "intended_global": "g_DaysInMonth_Normal",
       "line": 29,
       "match": "0x60852a",

@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_0054de3d
     MOV EBX,0x918                       ; 0054de42
     PUSH 0x5e8301                       ; 0054de47 | = "SfxSample::pollStream - my sfx isn't ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0054de4c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0054de52 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0054de4c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0054de52 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054de58
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054de5d
@@ -110,8 +110,8 @@ section .text
     MOV EAX,0x5e8360                    ; 0054de77 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x929                       ; 0054de7c
     PUSH 0x5e8375                       ; 0054de81 | = "SfxSample::pollStream - cannot stream..."
-    MOV [0x01d046a0],EAX                ; 0054de86 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0054de8b | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054de86 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0054de8b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054de91
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0054de96
@@ -220,8 +220,8 @@ section .text
     MOV EAX,0x5e83fc                    ; 0054dfba | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x96e                       ; 0054dfbf
     PUSH 0x5e8411                       ; 0054dfc4 | = "nextLoadSampleDest = %d, allocLength ..."
-    MOV [0x01d046a0],EAX                ; 0054dfc9 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0054dfce | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054dfc9 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0054dfce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054dfd4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054dfd9
@@ -319,8 +319,8 @@ section .text
         ;   Label: LAB_0054e0c3
     MOV EBX,0x90a                       ; 0054e0c8
     PUSH 0x5e82c6                       ; 0054e0cd | = "SfxSlot::pollStream - must be locked!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0054e0d2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0054e0d8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0054e0d2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0054e0d8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e0de
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e0e3
@@ -398,8 +398,8 @@ section .text
         ;   Label: LAB_0054e1a0
     MOV EAX,0x689                       ; 0054e1a5
     PUSH 0x5e806f                       ; 0054e1aa | = "generateSilence - invalid bit depth!"
-    MOV dword ptr [0x01d046a0],EDI      ; 0054e1af | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0054e1b5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0054e1af | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0054e1b5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e1ba
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e1bf
@@ -455,8 +455,8 @@ section .text
     MOV ESI,0x5e84f0                    ; 0054e230 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x9f3                       ; 0054e235
     PUSH 0x5e8505                       ; 0054e23a | = "MP3 decoded more than batch: r = %d, ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 0054e23f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0054e245 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0054e23f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0054e245 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e24b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 0054e250
@@ -576,8 +576,8 @@ section .text
         ;   Label: LAB_0054e367
     MOV EDX,0x9c0                       ; 0054e36c
     PUSH 0x5e8472                       ; 0054e371 | = "Can't stream unless we have mp3 decod..."
-    MOV [0x01d046a0],EAX                ; 0054e376 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0054e37b | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0054e376 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0054e37b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054e381
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054e386

@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "core/dfont/dfont.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -6,6 +7,7 @@
 #include "engine/keys/keys.h"
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
@@ -15,6 +17,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockosfont.h"
@@ -24,10 +27,12 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <memory>
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -49,6 +54,8 @@ TEST(CDFont, PublicInterface) {
         std::is_same_v<decltype(&CDFont::setMenuFontChoice), void (CDFont::*)(EMenuFontChoice)>);
     static_assert(
         std::is_same_v<decltype(&CDFont::getMenuFont), engine::CBitFont *(CDFont::*)() const>);
+    static_assert(std::is_same_v<decltype(&CDFont::findFont),
+                                 engine::CBitFont &(CDFont::*)(std::string_view) const>);
     static_assert(static_cast<int>(EMenuFontChoice::Large) == 0);
     static_assert(static_cast<int>(EMenuFontChoice::Small) == 1);
 }
@@ -115,11 +122,14 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = engine::getShippedGameContent()}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    engine::SGameContent content_ = engine::getShippedGameContent();
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
 };
 
 TEST_F(CDFontTest, NothingIsLoadedBeforeInit) {
@@ -137,6 +147,43 @@ TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getSmallEditorFont());
 }
 
+// The game's menus name the two; either can be any [[font]].
+TEST_F(CDFontTest, TheMenuFontsAreTheOnesTheMenusName) {
+    fonts_.initFonts();
+    content_.menu->text_font_large = "tiny";
+    content_.menu->text_font_small = "theme";
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getTinyFont());
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getThemeFont());
+}
+
+TEST_F(CDFontTest, WithoutTheMenusTheMenuFontIsFatal) {
+    content_.menu.reset();
+    EXPECT_THAT([this] { static_cast<void>(fonts_.getMenuFont()); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the menus' layout")));
+}
+
+TEST_F(CDFontTest, AManifestFindsEachFontByItsId) {
+    fonts_.initFonts();
+    EXPECT_EQ(&fonts_.findFont("medium"), fonts_.getMediumFont());
+    EXPECT_EQ(&fonts_.findFont("tiny"), fonts_.getTinyFont());
+    EXPECT_EQ(&fonts_.findFont("theme"), fonts_.getThemeFont());
+    EXPECT_EQ(&fonts_.findFont("small_editor"), fonts_.getSmallEditorFont());
+    EXPECT_EQ(&fonts_.findFont("console"), fonts_.getConsoleFont());
+    EXPECT_EQ(&fonts_.findFont("micro"), fonts_.getMicroFont());
+}
+
+TEST_F(CDFontTest, AFontNotLoadedOrNotKnownIsFatal) {
+    EXPECT_THAT(
+        [this] { static_cast<void>(fonts_.findFont("theme")); },
+        ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq("No font theme is loaded")));
+    fonts_.initFonts();
+    EXPECT_THAT([this] { static_cast<void>(fonts_.findFont("gothic")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font gothic is loaded")));
+}
+
 TEST_F(CDFontTest, InitLoadsEachFontWithItsSpacesAndOffsets) {
     fonts_.initFonts();
     expectFont(fonts_.getMediumFont(), 8, 3);
@@ -149,6 +196,39 @@ TEST_F(CDFontTest, InitLoadsEachFontWithItsSpacesAndOffsets) {
     EXPECT_EQ(fonts_.getThemeFont()->getCharYOffset(0xc0), 0);
     EXPECT_EQ(fonts_.getThemeFont()->getCharYOffset(0xe0), 1);
     EXPECT_FALSE(fonts_.getUseOSFonts());
+}
+
+// A game's own spacing and offsets for a role.
+TEST_F(CDFontTest, AFontsSpacingAndOffsetsAreTheGamesOwn) {
+    const auto tiny = std::ranges::find(content_.fonts, "tiny", &engine::SFontSpec::id);
+    ASSERT_NE(tiny, content_.fonts.end());
+    tiny->space_width = 7;
+    tiny->y_offsets = {{.offset = 4, .first = 0x20, .last = 0x7e}};
+    fonts_.initFonts();
+    expectFont(fonts_.getTinyFont(), 7, 4);
+}
+
+TEST_F(CDFontTest, ARoleNoPackageGivesIsFatal) {
+    std::erase_if(content_.fonts, [](const engine::SFontSpec &font) { return font.id == "micro"; });
+    EXPECT_THAT([this] { fonts_.initFonts(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the micro font")));
+}
+
+// BW3's menu fonts: found by their ids, with no OS text whatever the message file says.
+TEST_F(CDFontTest, AFontNoRoleTakesIsTheGamesOwn) {
+    engine::SFontSpec gothic = content_.fonts.front();
+    gothic.id = "gothic";
+    content_.fonts.push_back(gothic);
+    fonts_.initFonts();
+    EXPECT_NE(&fonts_.findFont("gothic"), fonts_.getMediumFont());
+    EXPECT_THAT(
+        [this] { static_cast<void>(fonts_.findFont("serif")); },
+        ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq("No font serif is loaded")));
+    fonts_.freeFonts();
+    EXPECT_THAT([this] { static_cast<void>(fonts_.findFont("gothic")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font gothic is loaded")));
 }
 
 // Only the console font draws its sheet's indices as they are; it is ready, so a glyph past the

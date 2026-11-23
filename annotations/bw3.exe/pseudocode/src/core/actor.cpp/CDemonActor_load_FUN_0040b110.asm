@@ -28,8 +28,8 @@
 ;   _FILE* g_ActorDataFile
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
@@ -136,8 +136,8 @@ section .text
     MOV ECX,0x5b5952                    ; 0040b20d | = "..\\core\\actor.cpp"
     MOV EAX,0x845                       ; 0040b212
     PUSH 0x5b5964                       ; 0040b217 | = "End of actor file tag mismatch for cl..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0040b21c | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 0040b222 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0040b21c | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 0040b222 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040b227
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0040b22c
@@ -162,8 +162,8 @@ section .text
     MOV ECX,0x5b5903                    ; 0040b260 | = "..\\core\\actor.cpp"
     MOV EDI,0x828                       ; 0040b265
     PUSH 0x5b5915                       ; 0040b26a | = "Start of actor file tag mismatch for ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0040b26f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0040b275 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0040b26f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 0040b275 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040b27b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0040b280
@@ -187,8 +187,8 @@ section .text
     MOV EDX,0x5b599a                    ; 0040b2a2 | = "..\\core\\actor.cpp"
     MOV ECX,0x84a                       ; 0040b2a7
     PUSH 0x5b59ac                       ; 0040b2ac | = "IO Error after reading %s \"%s\""
-    MOV dword ptr [0x01d71de0],EDX      ; 0040b2b1 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0040b2b7 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0040b2b1 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0040b2b7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0040b2bd
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0040b2c2

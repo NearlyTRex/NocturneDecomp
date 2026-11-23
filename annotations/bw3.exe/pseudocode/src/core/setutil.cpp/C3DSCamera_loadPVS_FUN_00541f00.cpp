@@ -17,8 +17,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00541f00(C3DSCamera *this_p
   this_ptr->pvs_list = piVar1;
   if (0 < this_ptr->pvs_count) {
     if (piVar1 == (int *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\setutil.cpp";
-      g_INT_01d71de4 = 0xe4;
+      g_CurrentFilename = "..\\core\\setutil.cpp";
+      g_CurrentLineNumber = 228;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory for pvsList - %d");
     }
     iVar2 = 0;

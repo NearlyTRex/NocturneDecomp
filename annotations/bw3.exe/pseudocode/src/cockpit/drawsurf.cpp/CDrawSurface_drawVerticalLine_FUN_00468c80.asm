@@ -27,8 +27,8 @@
 ;   int g_PackedPixelColor
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -139,8 +139,8 @@ section .text
         ;   Label: LAB_00468d63
     MOV EBX,0x3dc                       ; 00468d68
     PUSH 0x5bc2fb                       ; 00468d6d | = "Invalid bitsPerPixel!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00468d72 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00468d78 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00468d72 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00468d78 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00468d7e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00468d83
@@ -227,8 +227,8 @@ section .text
         ;   Label: LAB_00468e27
     MOV EDX,0x3fc                       ; 00468e2c
     PUSH 0x5bc329                       ; 00468e31 | = "Invalid bitsPerPixel!"
-    MOV [0x01d71de0],EAX                ; 00468e36 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00468e3b | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00468e36 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00468e3b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00468e41
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00468e46

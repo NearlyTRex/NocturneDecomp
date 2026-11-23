@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 152,
+    "complexity_score": 177,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "unresolved_funcptr",
       "unrolled_memcpy"
@@ -173,6 +174,20 @@
       "severity": "moderate",
       "text": "for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "'buffer[1].__b_lock + 0xc' walks 1 x sizeof(streambuf) (0x28) + offsetof(__b_lock) (0x0) + 0xc = 0x34, which is exactly offsetof(filebuf, __unbuffered_get_area). Ghidra had no filebuf type here and reached the field by index arithmetic; write it as ((filebuf *)buffer)->__unbuffered_get_area (\u00a7de-pun/\u00a712). Ambiguous: strstreambuf::__allocation_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 22,
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'buffer[1].__b_lock + 0xc' walks 1 x sizeof(streambuf) (0x28) + offsetof(__b_lock) (0x0) + 0xc = 0x34, which is exactly offsetof(filebuf, __unbuffered_get_area). Ghidra had no filebuf type here and reached the field by index arithmetic; write it as ((filebuf *)buffer)->__unbuffered_get_area (\u00a7de-pun/\u00a712). Ambiguous: strstreambuf::__allocation_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 31,
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,0xffffffff);",
+      "type": "derived_field_index_pun"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 006067cb, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

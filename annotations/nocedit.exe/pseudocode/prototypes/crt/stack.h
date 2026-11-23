@@ -7,7 +7,7 @@
 
 // Original: crt_stack.c_stack_overflow_handler_FUN_005ffa22
 // Address: 005ffa22
-void __watcallStack stack::overflow_handler(SIZE_T required_bytes);
+void __watcallStack stack_overflow_handler(SIZE_T required_bytes);
 
 // Original: crt_stack.c_ProbeStackSpace_FUN_005ffa2f
 // Address: 005ffa2f

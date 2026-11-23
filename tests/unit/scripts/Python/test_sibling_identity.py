@@ -21,8 +21,9 @@ WIDE = bytes.fromhex("5157595f5ac3")         # push ecx, edi; pop ecx, edi, edx;
 class Image:
     """A PE stand-in: the bytes each address range holds."""
 
-    def __init__(self, code):
+    def __init__(self, code, line_number_global = None):
         self.code = code
+        self.line_number_global = line_number_global
 
     def range_bytes(self, start, end):
         data = self.code.get(start)
@@ -47,8 +48,9 @@ def load(program):
     return [fn(name, addr, code or b"\x90") for name, addr, code in PROGRAMS[program]] + [{"name": "no address"}]
 
 
-def image_of(program):
-    return Image({addr: code for _name, addr, code in PROGRAMS[program] if code is not None})
+def image_of(program, line_number_global = None):
+    return Image({addr: code for _name, addr, code in PROGRAMS[program] if code is not None},
+                 line_number_global)
 
 
 @pytest.fixture(name = "found")

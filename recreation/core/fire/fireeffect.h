@@ -106,7 +106,7 @@ public:
 
 private:
     void loadStakeAssets();
-    void loadFireballAssets();
+    void loadFireBallAssets();
     // Rocks borrow their models from whoever throws them.
     static void loadRockAssets();
     void loadDynamiteAssets();

@@ -27,6 +27,9 @@ void CDemonMission::addActorToList(std::unique_ptr<CDemonActor> actor) {
 
 // The original also checked each actor it passed for corruption, in the editor build only.
 // nocedit 0x00523be0
+// bw1 0x0051b1d0
+// bw2 0x004fc270
+// bw3 0x004f69a0
 std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActor &actor_ptr) {
     const auto found = std::ranges::find(actors_, &actor_ptr, &std::unique_ptr<CDemonActor>::get);
     if (found == actors_.end()) {
@@ -38,7 +41,8 @@ std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActo
 }
 
 // The original's flag to keep the actor is removeActorFromList here, which hands it back. Its
-// deleteActor checked the actor for corruption first in the editor build; retail doesn't. It
+// deleteActor checked the actor for corruption first (doCheckForInvalidPointers) in the editor
+// build; retail doesn't. It
 // also destroyed an actor that wasn't on the list, which here belongs to its caller.
 // deferred: clearing what the player heroes hold of the actor (the weapon in hand, both carry
 //   hands, the inventory's selected weapon and item), which the original left dangling (the
@@ -49,6 +53,9 @@ std::unique_ptr<CDemonActor> CDemonMission::removeActorFromList(const CDemonActo
 //   ACTOR_DELETE), with CDemonActor::playSound and CSound::playActorSound
 // nocedit 0x00523f20
 // nocedit 0x00408820
+// bw1 0x00408560
+// bw2 0x00408730
+// bw3 0x004085a0
 // nocedit 0x0040ac80
 void CDemonMission::removeActor(const CDemonActor &actor) {
     if (removeActorFromList(actor) != nullptr) {
@@ -65,6 +72,9 @@ void CDemonMission::removeActor(const CDemonActor &actor) {
 //   network game's next mission starts in step (the decomp's nocturne_net_pathcache_rewind and
 //   nocturne_net_sim_forget_trigger_hero), with CNetGame and the path maps
 // nocedit 0x00523f50
+// bw1 0x0051b5a0
+// bw2 0x004fc640
+// bw3 0x004f6d70
 void CDemonMission::removeAllActors() {
     while (!actors_.empty()) {
         removeActor(*actors_.front());

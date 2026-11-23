@@ -56,6 +56,8 @@ void buildAndRenderTrianglePrimitive(const CDemonCubeTriangle &triangle, CDemonS
 // deferred: keeping every corner clipped while advanced culling is on, with
 //   enableAdvancedCulling's callers
 // nocedit 0x00457650
+// bw1 0x00457f70
+// bw2 0x004468c0
 void CDemonCube::rotateVertices(const SCubeDrawOwners &owners) const {
     engine::CDemonRenderer &renderer = owners.renderer;
     renderer.processCameraRelativeVertex({});

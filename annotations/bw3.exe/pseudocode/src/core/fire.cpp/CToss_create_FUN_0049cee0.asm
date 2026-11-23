@@ -31,8 +31,8 @@
 ;   TerminatedCString s_rainvial_kfm_005c06f9
 ;   TerminatedCString s_core_fire_cpp_005c0706
 ;   TerminatedCString s_CToss_create_invalid_tos_005c0717
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00
@@ -181,8 +181,8 @@ section .text
         ;   Label: default
     MOV ECX,0xe59                       ; 0049d05b
     PUSH 0x5c0717                       ; 0049d060 | = "CToss::create - invalid toss type."
-    MOV dword ptr [0x01d71de0],EDX      ; 0049d065 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 0049d06b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0049d065 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 0049d06b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049d071
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0049d076

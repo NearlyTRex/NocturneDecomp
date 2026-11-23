@@ -14,8 +14,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005e910b
 ;   TerminatedCString s_selectRecordingDevice_de_005e9120
 ;   int g_INT_0061bccc = -0x1
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_00552e70
     MOV ECX,0x168a                      ; 00552e75
     PUSH 0x5e9120                       ; 00552e7a | = "selectRecordingDevice - device alread..."
-    MOV dword ptr [0x01d046a0],EDX      ; 00552e7f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00552e85 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00552e7f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00552e85 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00552e8b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00552e90

@@ -45,8 +45,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr)
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
   do {
     if (*(int *)((int)g_CDemonLight_PTR_ARRAY_01fe4cb8 + iVar6) != 0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\set.cpp";
-      g_INT_01d1d404 = 0x3e3;
+      g_CurrentFilename = "..\\core\\set.cpp";
+      g_CurrentLineNumber = 995;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::initScene - Memory leakage detected in masterSpotList");
     }
     iVar6 = iVar6 + 4;
@@ -62,8 +62,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr)
         core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(this_ptr->lights + iVar6,pCVar1);
         g_MasterLightCount = g_MasterLightCount + 1;
         if (0x60 < g_MasterLightCount) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\set.cpp";
-          g_INT_01d1d404 = 0x3fa;
+          g_CurrentFilename = "..\\core\\set.cpp";
+          g_CurrentLineNumber = 1018;
           core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::initScene - Too many spotlights!");
         }
       }

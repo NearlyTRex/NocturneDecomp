@@ -32,8 +32,8 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   pvVar2 = malloc(this_ptr->width * this_ptr->height * 4);
   this_ptr->zbuffer_data = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-    g_INT_01d046a4 = 0x9f;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 159;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory");
   }
   if (file_handle != (_FILE *)0x0) {
@@ -45,8 +45,8 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(g_CDemonRenderer_PTR_0060b280,0);
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-    g_INT_01d046a4 = 0x67;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - already saved!");
   }
   if (0 < iVar1) {
@@ -67,8 +67,8 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00538a30(this_ptr);
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-    g_INT_01d046a4 = 0x70;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 112;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < iVar1) {

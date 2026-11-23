@@ -1,4 +1,6 @@
+#include "common/error/fatalerror.h"
 #include "core/moon/moon.h"
+#include "engine/package/gamecontent.h"
 #include "tests/mocks/core/moonfixture.h"
 
 #include <gmock/gmock.h>
@@ -48,6 +50,30 @@ TEST_F(CMoonTest, TheHeadOfHorrorCheatLoadsTheHeadInsteadOfTheMoonOnce) {
     EXPECT_CALL(file_system_, openFile(endsWith("taylor_head.kfm"), _)).Times(1);
     moon_.init();
     EXPECT_EQ(game_.head_of_horror_cheat, 0);
+}
+
+// A game's own frames, its prefix and digits: the first it loads is BW1's, which Nocturne's
+// files don't have.
+TEST_F(CMoonTest, TheTitleFramesAreTheGamesOwn) {
+    content_.sky_scene->frame_prefix = "blair_";
+    content_.sky_scene->frame_digits = 3;
+    EXPECT_THAT([this] { moon_.init(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CAlphaBitmap::load - Can't open blair_000.raw")));
+}
+
+TEST_F(CMoonTest, TheBatCoursesAreTheGamesOwn) {
+    content_.sky_scene->bat_courses = {"bats.pth"};
+    EXPECT_THAT([this] { moon_.init(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CCourse::load - can't open data\\bats.pth")));
+}
+
+TEST_F(CMoonTest, WithoutASkySceneTheBackdropIsFatal) {
+    content_.sky_scene.reset();
+    EXPECT_THAT([this] { moon_.init(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the sky_scene title backdrop's look")));
 }
 
 TEST_F(CMoonTest, TheTitleAnimationsFirstHalfLastsTwoAndAHalfSeconds) {

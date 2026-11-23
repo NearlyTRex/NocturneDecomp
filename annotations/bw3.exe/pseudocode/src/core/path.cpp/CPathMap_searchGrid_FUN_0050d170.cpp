@@ -33,8 +33,8 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_0050d170(CPathMap *this_ptr,i
       return 1;
     }
     if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\path.cpp";
-      g_INT_01d71de4 = 0xdf;
+      g_CurrentFilename = "..\\core\\path.cpp";
+      g_CurrentLineNumber = 223;
       core_main_c_displayErrorAndQuit_FUN_004e4330("queuePop - empty queue?!");
     }
     iVar8 = g_PathfindingQueue[g_PathfindingQueueHead].x;

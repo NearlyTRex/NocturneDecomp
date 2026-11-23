@@ -64,6 +64,19 @@ std::string_view describeAbsence(EPodState state) {
     return state == EPodState::Missing ? "is missing" : "can't be read";
 }
 
+// The game the load runs: its game package, or without one the first package, which every other
+// is loaded over; the install's when nothing is turned on.
+engine::SChosenGame findGame(std::span<const engine::SPackage> packages) {
+    const auto game = std::ranges::find_if(packages, &engine::SPackage::isGame);
+    if (game != packages.end()) {
+        return {.folder = game->folder, .id = game->manifest.id};
+    }
+    if (!packages.empty()) {
+        return {.folder = packages.front().folder, .id = packages.front().manifest.id};
+    }
+    return {};
+}
+
 std::string joinNotes(std::span<const std::string> notes) {
     std::string joined;
     for (const std::string &note : notes) {
@@ -121,6 +134,9 @@ void CDemonPod::loadPackages(engine::EArchiveUnpacking unpacking) {
         report(note);
     }
     left_out_.clear();
+    engine::SChosenGame game = findGame(order.packages);
+    game_folder_ = game.folder;
+    chooseGame(game);
     std::vector<const engine::SGameContent *> content;
     for (engine::SPackage &package : order.packages | std::views::reverse) {
         if (loadPackage(package)) {
@@ -240,7 +256,8 @@ std::string_view CDemonPod::whyNotAPod(const std::string &path) {
     return pod.mountFromFile(path) ? std::string_view() : "isn't a POD";
 }
 
-// The latest package first: its PODs, then its folder's loose files.
+// The latest package first: its PODs, then its folder's loose files. The game's own loose files
+// are the disk's, which the lookup after this one finds, the user's copies first.
 bool CDemonPod::findFile(engine::SFoundFileInfo &found_file_info) {
     if (getPodFiles().size() != mounted_count_) {
         refreshMounted();
@@ -252,7 +269,8 @@ bool CDemonPod::findFile(engine::SFoundFileInfo &found_file_info) {
                 return true;
             }
         }
-        if (!package.folder.empty() && findLooseFile(package, found_file_info)) {
+        if (!package.folder.empty() && package.folder != game_folder_ &&
+            findLooseFile(package, found_file_info)) {
             return true;
         }
     }

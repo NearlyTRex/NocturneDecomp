@@ -21,6 +21,9 @@ CPod::CPod(platform::IFileSystem &file_system, const CDosIo &dosio)
     : file_system_(file_system), dosio_(dosio) {}
 
 // nocedit 0x005509b0
+// bw1 0x0053c5f0
+// bw2 0x0051b0b0
+// bw3 0x00514350
 CPod::~CPod() = default;
 
 // nocedit 0x005509e0
@@ -47,6 +50,7 @@ bool CPod::findFile(SFoundFileInfo &found_file_info) {
 }
 
 // nocedit 0x00550a10
+// bw2 0x0051b110
 void CPod::mount(std::string_view pod_filename) {
     if (const std::expected<const CPodFile *, std::string> pod = mountIfValid(pod_filename); !pod) {
         common::displayErrorAndQuit(pod.error());
@@ -100,9 +104,15 @@ void CPod::init() {
     if (pod_files_.empty()) {
         load();
     }
+    if (!game_chosen_) {
+        chooseGame({});
+    }
 }
 
 // nocedit 0x00550c80
+// bw1 0x0053c8f0
+// bw2 0x0051b370
+// bw3 0x00514650
 void CPod::cleanup() {
     pod_files_.clear();
 }
@@ -171,8 +181,19 @@ const SPodSettings &CPod::getSettings() const {
     return settings_;
 }
 
+void CPod::setGameChosenHandler(std::function<void(const SChosenGame &)> handler) {
+    game_chosen_handler_ = std::move(handler);
+}
+
 platform::IFileSystem &CPod::getFileSystem() {
     return file_system_;
+}
+
+void CPod::chooseGame(const SChosenGame &game) {
+    game_chosen_ = true;
+    if (game_chosen_handler_) {
+        game_chosen_handler_(game);
+    }
 }
 
 } // namespace nocturne::engine

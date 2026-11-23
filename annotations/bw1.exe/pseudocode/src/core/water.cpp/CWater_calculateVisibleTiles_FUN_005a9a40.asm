@@ -425,8 +425,8 @@ section .text
     MOV EAX,0x5f91f2                    ; 005a9ebc | = "..\\core\\water.cpp"
     MOV EDX,0x103                       ; 005a9ec1
     PUSH 0x5f9204                       ; 005a9ec6 | = "Too many visible water tiles!"
-    MOV [0x01d1d400],EAX                ; 005a9ecb | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 005a9ed0 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 005a9ecb | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 005a9ed0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a9ed6
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a9edb

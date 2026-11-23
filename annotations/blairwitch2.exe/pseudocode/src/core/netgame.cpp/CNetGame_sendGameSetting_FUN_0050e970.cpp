@@ -30,13 +30,13 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_0050e970(CNetGame *th
   bVar9 = 0;
   if ((this_ptr->connection_type != CONNECTION_HOST) || (this_ptr->network_mode != NET_MODE_LOBBY))
   {
-    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-    g_INT_01d046a4 = 0x8a8;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2216;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");
   }
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\netgame.cpp";
-    g_INT_01d046a4 = 0x8ae;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2222;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CNetGame::send - invalid player index");
   }
   SStack_c8.type = PACKET_GAME_SETTINGS;

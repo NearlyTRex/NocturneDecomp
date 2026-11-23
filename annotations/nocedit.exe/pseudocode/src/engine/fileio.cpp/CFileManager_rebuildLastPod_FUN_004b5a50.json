@@ -569,25 +569,25 @@
     },
     {
       "addr": "02d12991",
-      "name": "g_WorkingAuditRecord.user_path[1]",
+      "name": "g_WorkingAuditRecord.user_name[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12992",
-      "name": "g_WorkingAuditRecord.user_path[2]",
+      "name": "g_WorkingAuditRecord.user_name[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12993",
-      "name": "g_WorkingAuditRecord.user_path[3]",
+      "name": "g_WorkingAuditRecord.user_name[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12994",
-      "name": "g_WorkingAuditRecord.user_path[4]",
+      "name": "g_WorkingAuditRecord.user_name[4]",
       "type": "undefined4",
       "value": null
     },
@@ -1582,6 +1582,148 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_rebuildLastPod_FUN_004b5a50.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 11,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 80,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 80,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 96,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 96,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 106,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 106,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 130,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 130,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 15,
+          "line": 162,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 162,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 15,
+          "line": 184,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 184,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 225,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 225,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 235,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 235,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 15,
+          "line": 294,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 294,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 17,
+          "line": 318,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 318,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 17,
+          "line": 340,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 340,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

@@ -19,12 +19,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_ghoul_cpp_005c4174
 ;   TerminatedCString s_CGhoul_findDarkWayPoint_005c4186
-;   undefined4 s_darkPoint_005c442c+1
-;   void* PTR_s_darkPoint_005c442c+1_005fecb0 = 005c442d
+;   TerminatedCString s_darkPoint_005c442d
+;   void* PTR_s_darkPoint_005c442d_005fecb0 = 005c442d
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CGhoulClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -115,8 +115,8 @@ section .text
     PUSH 0x0                            ; 004c6d35
         ;   Label: LAB_004c6d35
     PUSH EAX                            ; 004c6d37
-    MOV EBX,dword ptr [0x005fecb0]      ; 004c6d38 | PTR_s_darkPoint_005c442c+1_005fecb0
-    PUSH EBX                            ; 004c6d3e | s_darkPoint_005c442c+1
+    MOV EBX,dword ptr [0x005fecb0]      ; 004c6d38 | PTR_s_darkPoint_005c442d_005fecb0
+    PUSH EBX                            ; 004c6d3e | = "darkPoint*"
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_00486a40 ; 004c6d3f
         ;   XREF to: 00486a40 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_00486a40(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 004c6d44
@@ -150,8 +150,8 @@ section .text
     MOV ESI,0x5c4174                    ; 004c6d8e | = "..\\core\\ghoul.cpp"
     MOV EAX,0x12d                       ; 004c6d93
     PUSH 0x5c4186                       ; 004c6d98 | = "CGhoul::findDarkWayPoint - Can't get ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004c6d9d | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004c6da3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004c6d9d | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004c6da3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004c6da8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004c6dad

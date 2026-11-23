@@ -15,8 +15,8 @@
 ;   TerminatedCString s_SfxSlot_pollSfx_must_be_005f45f0
 ;   float g_FLOAT_005f4614 = 8.477105E-7
 ;   float g_FLOAT_005f4618 = 0.25
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02c745ec[1].options.channel_index
 ;   int g_INT_02c7fc8c
 ;   int g_SoundLockCount
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_00576fc6
     MOV EBX,0x19e3                      ; 00576fcb
     PUSH 0x5f45f0                       ; 00576fd0 | = "SfxSlot::pollSfx - must be locked!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00576fd5 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00576fdb | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00576fd5 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00576fdb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00576fe1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00576fe6

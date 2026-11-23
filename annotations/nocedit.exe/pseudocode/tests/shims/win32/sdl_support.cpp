@@ -8,6 +8,7 @@
 #include "sdl_support.h"
 
 #include "core/window_icon.h"
+#include "debug/debug_window.h"
 #include "debug/focus_trace.h"
 #include "game/gamepad.h"
 #include "game/movie_audio.h"
@@ -81,6 +82,14 @@ void nocturne_gamepad_pump(void) {
 int g_nocturne_focus_trace_active = 0;
 void nocturne_focus_trace_arm(void) {
     ++stand.focus_arms;
+}
+
+unsigned int nocturne_debug_window_id(void) {
+    return stand.debug_window_id;
+}
+void nocturne_debug_window_close(void) {
+    ++stand.debug_closes;
+    stand.debug_window_id = 0;
 }
 
 } // extern "C"

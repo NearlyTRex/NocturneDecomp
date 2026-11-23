@@ -23,7 +23,9 @@ typedef struct SHeroWeapon {
     const char *item_model_name;
     // Add a pistol as a *second* weapon, in a network game only. The class has
     // to be able to hold one for this to mean anything - see hero_add_pistol.
-    int net_extra_gun;
+    // The pistol's actor name, which gives it a slot text of its own; null
+    // adds none.
+    const char *net_extra_gun_name;
     // HERO_WEAPON_MELEE only: the weapon's actor name, when it needs a slot
     // text of its own. Null leaves it "Your_weapon".
     const char *actor_name;
@@ -33,32 +35,33 @@ typedef struct SHeroWeapon {
 // the weapon slot reads the name and description beside them.
 static const SHeroWeapon k_hero_weapon[] = {
     // Gabriella has a weapon fire path of her own and the shipped CGun suits it.
-    {HERO_WEAPON_KEEP, (const char *)0x0, 0}, // HERO_TYPE_GABRIELLA
+    {HERO_WEAPON_KEEP, (const char *)0x0}, // HERO_TYPE_GABRIELLA
     // Blades on her wrists; CSvetlana::performBladeAttack strikes from the hand
     // bones with its own damage and never reads the inventory. "Bladed Weapon".
-    {HERO_WEAPON_MELEE, "tort1.kfm", 0}, // HERO_TYPE_SVETLANA
+    {HERO_WEAPON_MELEE, "tort1.kfm"}, // HERO_TYPE_SVETLANA
     // The pistol is his. Everything in CStranger is built around it.
-    {HERO_WEAPON_KEEP, (const char *)0x0, 0}, // HERO_TYPE_STRANGER
+    {HERO_WEAPON_KEEP, (const char *)0x0}, // HERO_TYPE_STRANGER
     // CScat::ctor already replaced the pistol with a CBaronWeapon, which fires
     // by summoning Baron Samedi. CBaronWeapon::ctor sets no model name, so the
     // slot has nothing to look up; "Scat's Magic Powder" is described in
     // ITEMLIST.TXT as a component of the spell that summons him. He is also the
     // one hero here who can hold a real weapon as well.
-    {HERO_WEAPON_RENAME, "a2s2-pouch.kfm", 1}, // HERO_TYPE_SCAT
+    {HERO_WEAPON_RENAME, "a2s2-pouch.kfm", NOCTURNE_SCAT_PISTOL_NAME}, // HERO_TYPE_SCAT
     // Not offered by the lobby, and CBaron attacks with his hands regardless.
-    {HERO_WEAPON_KEEP, (const char *)0x0, 0}, // HERO_TYPE_BARON
+    {HERO_WEAPON_KEEP, (const char *)0x0}, // HERO_TYPE_BARON
     // CIcePick::performMeleeAttack strikes from the hand bones, as Haystack's
     // punches do, and never reads the inventory.
-    {HERO_WEAPON_NONE, (const char *)0x0, 0}, // HERO_TYPE_ICEPICK
+    {HERO_WEAPON_NONE, (const char *)0x0}, // HERO_TYPE_ICEPICK
     // Punches: CHaystack::checkMeleeHit is driven from the L and R Hand bones.
-    {HERO_WEAPON_NONE, (const char *)0x0, 0}, // HERO_TYPE_HAYSTACK
+    {HERO_WEAPON_NONE, (const char *)0x0}, // HERO_TYPE_HAYSTACK
     // COLONEL.SKL has draw and shoot motions that nothing plays, and his fire
     // button reaches nothing once guns_drawn is set. The pistol gives that
     // button something to fire; hero_colonel.h plays the motions.
-    {HERO_WEAPON_SIDEARM, (const char *)0x0, 0}, // HERO_TYPE_COLONEL
+    {HERO_WEAPON_SIDEARM, (const char *)0x0}, // HERO_TYPE_COLONEL
     // The amulet names his two buttons: draw morphs, fire strikes as the demon.
     // See hero_moloch.h.
-    {HERO_WEAPON_MELEE, "AMULET.KFM", 0, NOCTURNE_MOLOCH_AMULET_NAME}, // HERO_TYPE_MOLOCH
+    {HERO_WEAPON_MELEE, "AMULET.KFM", (const char *)0x0,
+     NOCTURNE_MOLOCH_AMULET_NAME}, // HERO_TYPE_MOLOCH
 };
 
 #define HERO_WEAPON_COUNT ((int)(sizeof(k_hero_weapon) / sizeof(k_hero_weapon[0])))
@@ -201,8 +204,8 @@ static CWeapon *hero_add_gun(CHero *hero, const char *actor_name) {
     return weapon;
 }
 
-static void hero_add_pistol(CHero *hero) {
-    remember_extra_gun(hero, hero_add_gun(hero, "Your_weapon"));
+static void hero_add_pistol(CHero *hero, const char *actor_name) {
+    remember_extra_gun(hero, hero_add_gun(hero, actor_name));
 }
 
 // The Colonel's pistol replaces the CHero one outright. It is a CGun like the
@@ -277,8 +280,8 @@ extern "C" void nocturne_hero_default_weapon(CHero *hero, int hero_type) {
 
     // After the action, so it is added beside the weapon chosen above rather
     // than being wiped by the initialize inside it.
-    if (entry->net_extra_gun != 0 && nocturne_net_session_active() != 0) {
-        hero_add_pistol(hero);
+    if (entry->net_extra_gun_name != (const char *)0x0 && nocturne_net_session_active() != 0) {
+        hero_add_pistol(hero, entry->net_extra_gun_name);
     }
 }
 
@@ -350,6 +353,9 @@ static const SHeroItemText k_hero_item_text[] = {
     // gat.kfm row, which describes the Stranger's.
     {1, NOCTURNE_COLONEL_SIDEARM_NAME, "Colonel's Sidearm",
      "His service pistol.  It never runs dry."},
+    // Scat's network-game pistol, likewise ahead of the Stranger's gat.kfm row.
+    {1, NOCTURNE_SCAT_PISTOL_NAME, "Scat's Pistol",
+     "A pistol for when the Baron won't do.  It never runs dry."},
     // CGabriella::ctor gives her pistol this model, which ITEMLIST.TXT never
     // listed because she was cut before the text was written.
     {0, "gabgun.kfm", "Gabriella's Pistol", "Her own sidearm.  Takes ordinary pistol rounds."},

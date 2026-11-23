@@ -11,8 +11,8 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004bf2e0 at 004bf326
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -45,8 +45,8 @@ section .text
     MOV ECX,0x5d6813                    ; 0056f4e2
     MOV ESI,0x57                        ; 0056f4e7
     PUSH 0x5d682a                       ; 0056f4ec
-    MOV dword ptr [0x01d71de0],ECX      ; 0056f4f1 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0056f4f7 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0056f4f1 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0056f4f7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0056f4fd
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0056f502

@@ -25,8 +25,8 @@
 ;   int g_INT_01c51d60
 ;   int g_INT_01c51d6c
 ;   int g_INT_01c51d78
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044ce60
@@ -171,8 +171,8 @@ section .text
         ;   Label: LAB_004629b1
     MOV ESI,0xf3                        ; 004629b6
     PUSH 0x5d8fcf                       ; 004629bb | = "CDemonLight::beginScene - Scene alrea..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004629c0 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004629c6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004629c0 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004629c6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004629cc
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004629d1

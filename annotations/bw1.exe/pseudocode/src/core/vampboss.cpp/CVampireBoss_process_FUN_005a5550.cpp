@@ -127,8 +127,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005a5550(CVampireBoss *t
   pCVar11 = this_ptr;
   do {
     if (pCVar11->way_point_0 == (CDemonActor *)0x0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\vampboss.cpp";
-      g_INT_01d1d404 = 0xcf;
+      g_CurrentFilename = "..\\core\\vampboss.cpp";
+      g_CurrentLineNumber = 207;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CVampireBoss::process - Need 4 waypoints");
     }
     pCVar11 = (CVampireBoss *)((pCVar11->base).base.base.actor_name + 4);

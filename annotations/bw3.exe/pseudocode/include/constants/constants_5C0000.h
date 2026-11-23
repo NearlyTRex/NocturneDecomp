@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "constants.h"
 
 // =============================================================================
 // CONSTANTS
@@ -858,7 +857,7 @@ static TerminatedCString s_go_berzerk_005c43c5 = "go berzerk\n";
 static TerminatedCString s_ghoul_die_wav_1_6_005c43d1 = "ghoul-die-!-?.wav @1.6";
 static TerminatedCString s_guul_flinch_d_005c43e8 = "guul flinch%d";
 static TerminatedCString s_ghoul_mad_wav_005c43f6 = "ghoul-mad-!-?.wav";
-static TerminatedCString s_darkPoint_005c442c = "?darkPoint*";
+static TerminatedCString s_darkPoint_005c442d = "darkPoint*";
 static TerminatedCString s_CGlass_005c4438 = "CGlass";
 static TerminatedCString s_HEADLITE_RAW_005c443f = "HEADLITE.RAW";
 static TerminatedCString s_true_005c444c = "true";

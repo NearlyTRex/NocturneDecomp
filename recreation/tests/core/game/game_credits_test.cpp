@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/sound/sound.h"
@@ -10,6 +11,7 @@
 #include "engine/light/light.h"
 #include "engine/matrix/matrix.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
@@ -37,6 +39,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <functional>
+#include <set>
 #include <span>
 #include <string>
 #include <vector>
@@ -54,6 +57,8 @@ constexpr std::uint32_t kImage = 0x112233U;
 // The default text colour, as the font colours give it, and colour 2.
 constexpr std::uint32_t kTextPixel = 0xf6f6f6U;
 constexpr std::uint32_t kHeadingPixel = 0x020202U;
+// A strip of colour 1.
+constexpr std::uint32_t kStripPixel = 0x010101U;
 // The column the credits roll up, and the band between its strips.
 constexpr int kColumnLeft = 414;
 constexpr int kBandTop = 31;
@@ -62,9 +67,9 @@ constexpr int kBandBottom = 438;
 constexpr int kQuarterSecond = 18 * 0x4000;
 constexpr int kRowsPerFrame = 8;
 
-// The credits on a screen 480 lines tall, over a one-colour stats image, the menus' block fonts
-// drawing them and the clock stepping a quarter second each time it is read.
-template <int ScreenWidth>
+// The credits on a screen 480 lines tall unless said, over a one-colour stats image, the menus'
+// block fonts drawing them and the clock stepping a quarter second each time it is read.
+template <int ScreenWidth, int ScreenHeight = kHeight>
 class CCreditsFixture : public sound::CSndMainFixture {
 protected:
     CCreditsFixture() {
@@ -74,7 +79,7 @@ protected:
         givenFile("msglist.txt", "; version\n0\n; use OS fonts\n0\n; font\n\"Arial\"\n");
         messages_.readMessageFile("msglist.txt");
         fonts_.initFonts();
-        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, kHeight - 1);
+        two_d_.setupViewportAndClipping(0, 0, ScreenWidth - 1, ScreenHeight - 1);
         givenFile("art\\stats.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
         givenFile("art\\stats.act", engine::makePalette({0, 0, 0, 0x11, 0x22, 0x33}));
         ON_CALL(raw_input_, getKeyboardState()).WillByDefault([this] {
@@ -111,7 +116,7 @@ protected:
 
     // The first row of the column where the predicate holds for a pixel, or -1.
     [[nodiscard]] int firstRowWhere(const std::function<bool(std::uint32_t)> &is_wanted) const {
-        for (int y = 0; y < kHeight; ++y) {
+        for (int y = 0; y < ScreenHeight; ++y) {
             for (int x = kColumnLeft; x < ScreenWidth; ++x) {
                 if (is_wanted(screen_.pixel(x, y))) {
                     return y;
@@ -149,7 +154,7 @@ protected:
     }
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
-    engine::CMemoryScreen screen_{ScreenWidth, kHeight, 32};
+    engine::CMemoryScreen screen_{ScreenWidth, ScreenHeight, 32};
     NiceMock<engine::MockRawInput> raw_input_;
     engine::C2d two_d_{dosio_, screen_, raw_input_};
     engine::CLight light_;
@@ -173,11 +178,13 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     engine::SGameContent content_ = engine::getShippedGameContent();
     NiceMock<platform::MockDisplay> display_;
     CGame game_{{.clock = game_clock_,
@@ -204,6 +211,185 @@ using CCreditsTest = CCreditsFixture<kWidth>;
 // The front end at 16:9.
 constexpr int kWideWidth = 848;
 using CWideCreditsTest = CCreditsFixture<kWideWidth>;
+constexpr int kFullHdWidth = 1440;
+constexpr int kFullHdHeight = 1080;
+using CFullHdCreditsTest = CCreditsFixture<kFullHdWidth, kFullHdHeight>;
+
+// BW2's credits over the fixture's image.
+class CFadeCreditsTest : public CCreditsTest {
+protected:
+    CFadeCreditsTest() {
+        content_.front_end.credits = "fade_loop";
+        content_.credits->fade_loop =
+            engine::getShippedGameContent("blairwitch2").credits->fade_loop;
+    }
+
+    // The first row and column where something other than the image or the black about it is.
+    [[nodiscard]] std::pair<int, int> firstText() const {
+        for (int y = 0; y < kHeight; ++y) {
+            for (int x = 0; x < kWidth; ++x) {
+                const std::uint32_t pixel = screen_.pixel(x, y);
+                if (pixel != kImage && pixel != 0) {
+                    return {y, x};
+                }
+            }
+        }
+        return {-1, -1};
+    }
+};
+
+// Thirty frames up, the line is at the fade's centre: opaque, and centred across the layout.
+TEST_F(CFadeCreditsTest, ALineAtTheMiddleIsOpaqueAndCentred) {
+    givenCredits("XX\nend\n");
+    constexpr int kFrames = 31;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    ASSERT_EQ(topAfterFrames(kFrames), 240);
+    const auto [row, column] = firstText();
+    EXPECT_EQ(row, letterRow(240));
+    EXPECT_EQ(column, (kWidth / 2) - (fonts_.getThemeFont()->getTextWidth("XX") / 2));
+    EXPECT_EQ(screen_.pixel(column, row), kTextPixel);
+}
+
+// Further from the middle, fainter.
+TEST_F(CFadeCreditsTest, ALineAwayFromTheMiddleIsFainter) {
+    givenCredits("XX\nend\n");
+    constexpr int kFrames = 11;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const auto [row, column] = firstText();
+    EXPECT_EQ(row, letterRow(topAfterFrames(kFrames)));
+    EXPECT_NE(screen_.pixel(column, row), kTextPixel);
+}
+
+// Once its top passes loop_below, it comes round again from restart_y.
+TEST_F(CFadeCreditsTest, TheCreditsStartOverOncePastTheirLoop) {
+    content_.credits->fade_loop->loop_below = 400;
+    content_.credits->fade_loop->restart_y = 450;
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(12);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().first, letterRow(450));
+}
+
+// The image at BW2's point, the black above and beside it.
+TEST_F(CFadeCreditsTest, TheImageIsAtItsPoint) {
+    givenCredits("end\n");
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(9, 100), 0U);
+    EXPECT_EQ(screen_.pixel(10, 7), kImage);
+    EXPECT_EQ(screen_.pixel(100, 6), 0U);
+}
+
+TEST_F(CFadeCreditsTest, WithoutItsValuesTheyAreFatal) {
+    content_.credits->fade_loop.reset();
+    givenCredits("XX\nend\n");
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the fade_loop credits' look")));
+}
+
+// BW3's credits, with no image.
+class CTwoColumnCreditsTest : public CCreditsTest {
+protected:
+    CTwoColumnCreditsTest() {
+        content_.front_end.credits = "two_column";
+        content_.credits = engine::getShippedGameContent("blairwitch3").credits;
+    }
+
+    // The first lit pixel's row and column, and the last column lit on that row.
+    struct SText {
+        int row = -1;
+        int first = -1;
+        int last = -1;
+    };
+
+    [[nodiscard]] SText firstText() const {
+        for (int y = 0; y < kHeight; ++y) {
+            SText text;
+            for (int x = 0; x < kWidth; ++x) {
+                if (screen_.pixel(x, y) != 0) {
+                    text.row = y;
+                    text.first = text.first < 0 ? x : text.first;
+                    text.last = x;
+                }
+            }
+            if (text.row >= 0) {
+                return text;
+            }
+        }
+        return {};
+    }
+
+    // Whether anything is lit on the row from x for a few columns.
+    [[nodiscard]] bool litFrom(int x, int y) const {
+        for (int column = x; column < x + 4; ++column) {
+            if (screen_.pixel(column, y) != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+// Between 100 and 400, as drawTextCenterInBounds centres it.
+TEST_F(CTwoColumnCreditsTest, ALineIsCentredBetweenItsBounds) {
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const SText text = firstText();
+    EXPECT_EQ(text.row, letterRow(topAfterFrames(11)));
+    EXPECT_EQ(text.first, (100 + 400 + 1 - fonts_.getThemeFont()->getTextWidth("XX")) / 2);
+}
+
+// "\1left\2right": the left at 100, the right at 300.
+TEST_F(CTwoColumnCreditsTest, AMarkedLineIsInTwoColumns) {
+    givenCredits("\\1XX\\2XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(11));
+    EXPECT_TRUE(litFrom(100, row));
+    EXPECT_TRUE(litFrom(300, row));
+    EXPECT_FALSE(litFrom(200, row));
+}
+
+TEST_F(CTwoColumnCreditsTest, ALineMarkedForColumnsWithoutTheSecondIsNotDrawn) {
+    givenCredits("\\1XXXX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().row, -1);
+}
+
+// "\b" makes it a heading, in its own colour, before its columns are looked for. With no image
+// there is no palette of its own, so the heading is only told from the line under it.
+TEST_F(CTwoColumnCreditsTest, AHeadingCanBeInColumns) {
+    givenCredits("\\b\\1XX\\2XX\n\\1XX\\2XX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    const int row = letterRow(topAfterFrames(11));
+    const auto firstLitIn = [this](int x, int y) {
+        for (int column = x; column < x + 20; ++column) {
+            if (screen_.pixel(column, y) != 0) {
+                return screen_.pixel(column, y);
+            }
+        }
+        return std::uint32_t{0};
+    };
+    const std::uint32_t heading = firstLitIn(300, row);
+    ASSERT_NE(heading, 0U);
+    EXPECT_EQ(firstLitIn(100, row), heading);
+    EXPECT_NE(firstLitIn(300, row + lineHeight()), heading);
+}
+
+// The line is drawn at 0 on frame 61 and gone on 62, so the credits start again from 480 and it
+// is at 424, clear of the bottom bar, on frame 70.
+TEST_F(CTwoColumnCreditsTest, OnceNoneIsLeftTheyStartAgain) {
+    givenCredits("XX\nend\n");
+    cancelAfterFrames(70);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().row, letterRow(424));
+}
 
 TEST_F(CCreditsTest, WithoutTheCreditsFileNothingRolls) {
     EXPECT_CALL(raw_input_, clearInput()).Times(1);
@@ -232,6 +418,44 @@ TEST_F(CCreditsTest, TheCreditsRiseThirtyTwoRowsASecond) {
     }
     EXPECT_EQ(rows, expected);
     EXPECT_EQ(screen_.swaps, kFrames);
+}
+
+// At 1080 lines the layout is 2.25 times as tall, so a row of scroll is two screen rows or three.
+// Each line still moves with the one above it: the gap between them never changes.
+TEST_F(CFullHdCreditsTest, LinesScrollTogetherAtAScaleBetweenWholePixels) {
+    givenCredits("XX\nXX\nend\n");
+    // On the screen from the start, a row of scroll a frame.
+    content_.credits->column_scroll->start_y = 200;
+    step_ = kQuarterSecond / kRowsPerFrame;
+    constexpr int kFrames = 20;
+    // The column, at the screen's scale.
+    constexpr int kFullHdColumnLeft = kColumnLeft * kFullHdHeight / kHeight;
+    std::set<int> gaps;
+    int samples = 0;
+    on_tick_ = [&](int tick) {
+        std::vector<int> starts;
+        bool in_line = false;
+        for (int y = 0; y < kFullHdHeight; ++y) {
+            bool lit = false;
+            for (int x = kFullHdColumnLeft; x < kFullHdWidth && !lit; ++x) {
+                lit = screen_.pixel(x, y) == kTextPixel;
+            }
+            if (lit && !in_line) {
+                starts.push_back(y);
+            }
+            in_line = lit;
+        }
+        if (starts.size() == 2) {
+            gaps.insert(starts[1] - starts[0]);
+            ++samples;
+        }
+        if (tick == kFrames) {
+            press(EInputCodeType::DIK_ESCAPE);
+        }
+    };
+    game_.rollCredits();
+    EXPECT_GT(samples, 10);
+    EXPECT_EQ(gaps.size(), 1U);
 }
 
 // Each line a line below the last; nothing past "end" shows.
@@ -296,6 +520,44 @@ TEST_F(CWideCreditsTest, TheImageKeepsToTheLeftAndTheColumnRunsOnToTheRightEdge)
     EXPECT_EQ(screen_.pixel(kWidth, kBandTop), 0U);
     EXPECT_EQ(screen_.pixel(kWideWidth - 1, kBandTop - 1), 0U);
     EXPECT_EQ(screen_.pixel(kWideWidth - 1, kHeight - 1), 0U);
+}
+
+// Centred, the image has black either side; the column's strips, here in colour 1 so they show,
+// stop with it unless they run on to the screen's edge.
+TEST_F(CWideCreditsTest, ACentredImagesColumnEndsWithItUnlessItRunsToTheEdge) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
+                             .anchor = engine::EPictureAnchor::Centre};
+    content_.credits->column_scroll->column_to_screen_edge = false;
+    content_.credits->column_scroll->strip_colour = 1;
+    constexpr int kLeft = (kWideWidth - kWidth) / 2;
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(kLeft - 1, kBandTop), 0U);
+    EXPECT_EQ(screen_.pixel(kLeft, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kLeft + kWidth - 1, 0), kStripPixel);
+    EXPECT_EQ(screen_.pixel(kLeft + kWidth, 0), 0U);
+}
+
+TEST_F(CWideCreditsTest, ACentredImagesColumnCanRunOnToTheScreensEdge) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::KeepAspect,
+                             .anchor = engine::EPictureAnchor::Centre};
+    content_.credits->column_scroll->strip_colour = 1;
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(kWideWidth - 1, 0), kStripPixel);
+}
+
+// Stretched, the image fills the screen.
+TEST_F(CWideCreditsTest, AStretchedImageFillsTheScreen) {
+    givenCredits("end\n");
+    content_.credits->fit = {.fit = engine::EPictureFit::Stretch,
+                             .anchor = engine::EPictureAnchor::Centre};
+    cancelAfterFrames(1);
+    game_.rollCredits();
+    EXPECT_EQ(screen_.pixel(0, kBandTop), kImage);
+    EXPECT_EQ(screen_.pixel(kWideWidth / 2, kBandTop), kImage);
 }
 
 // Centred between the column's left and the screen's right edge, so it starts further right.
@@ -429,6 +691,42 @@ TEST_F(CCreditsTest, ThePackagesNameTheCreditsFile) {
     game_.rollCredits();
     EXPECT_EQ(firstTextRow(), -1);
     EXPECT_EQ(screen_.swaps, 3);
+}
+
+TEST_F(CCreditsTest, CreditsThisBuildDoesntRollAreFatal) {
+    givenCredits("XX\r\nend\r\n");
+    content_.front_end.credits = "no_such_style";
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("The credits no_such_style isn't in this build")));
+}
+
+TEST_F(CCreditsTest, CreditsWithoutTheirColumnsLookAreFatal) {
+    givenCredits("XX\r\nend\r\n");
+    content_.credits->column_scroll.reset();
+    EXPECT_THAT([this] { game_.rollCredits(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the column_scroll credits' look")));
+}
+
+// A game's credits stop at its own end line: Nocturne's "end" is then a line like any other.
+TEST_F(CCreditsTest, TheEndLineIsTheGamesOwn) {
+    givenCredits("XX\nend\nXX\nstop\nXX\n");
+    content_.credits->column_scroll->end_line = "stop";
+    constexpr int kFrames = 20;
+    cancelAfterFrames(kFrames);
+    game_.rollCredits();
+    const int top = topAfterFrames(kFrames);
+    const auto lineAt = [this](int y) {
+        for (int x = kColumnLeft; x < kWidth; ++x) {
+            if (screen_.pixel(x, letterRow(y)) != kImage && screen_.pixel(x, letterRow(y)) != 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+    EXPECT_TRUE(lineAt(top + (2 * lineHeight())));
+    EXPECT_FALSE(lineAt(top + (3 * lineHeight())));
 }
 
 TEST_F(CCreditsTest, AGameWithoutCreditsRollsNone) {

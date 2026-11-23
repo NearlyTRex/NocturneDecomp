@@ -9,8 +9,8 @@
 ; int *            Stack[0xc]:4   out_z
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathfindingQueueHead
 ;   int g_PathfindingQueueTail
 ;
@@ -54,8 +54,8 @@ section .text
     MOV ECX,0x5cb744                    ; 0050ac99
     MOV ESI,0xdf                        ; 0050ac9e
     PUSH 0x5cb755                       ; 0050aca3
-    MOV dword ptr [0x01d71de0],ECX      ; 0050aca8 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050acae | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0050aca8 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0050acae | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050acb4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050acb9

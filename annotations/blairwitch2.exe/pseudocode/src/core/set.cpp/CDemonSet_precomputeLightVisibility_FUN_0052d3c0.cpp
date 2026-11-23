@@ -130,8 +130,8 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0052d3c0(CDemo
               } while (iVar4 < g_MasterLightCount);
             }
             if (iVar4 == g_MasterLightCount) {
-              g_CHAR_PTR_01d046a0 = "..\\core\\set.cpp";
-              g_INT_01d046a4 = 0x35c;
+              g_CurrentFilename = "..\\core\\set.cpp";
+              g_CurrentLineNumber = 860;
               core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
             light_source = g_CDemonLight_PTR_ARRAY_01fc8d04[iVar4];

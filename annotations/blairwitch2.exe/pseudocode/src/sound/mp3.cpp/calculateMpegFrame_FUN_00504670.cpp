@@ -48,8 +48,8 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00504670(SMpegFrame *frame)
       iVar5 = 4;
     }
     if (iVar5 != *(int *)(iVar2 * 0xb4 + 0xc)) {
-      g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
-      g_INT_01d046a4 = 0x1d8;
+      g_CurrentFilename = "..\\sound\\mp3.cpp";
+      g_CurrentLineNumber = 472;
       core_main_c_displayErrorAndQuit_FUN_004e4500("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
     }
     frame->sblimit = (int)frame;
@@ -64,8 +64,8 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00504670(SMpegFrame *frame)
   iVar5 = pSVar1->layer;
   iVar2 = pSVar1->mode_extension;
   if ((((iVar5 < 1) || (3 < iVar5)) || (iVar2 < 0)) || (3 < iVar2)) {
-    g_CHAR_PTR_01d046a0 = "..\\sound\\mp3.cpp";
-    g_INT_01d046a4 = 0x1ea;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 490;
     core_main_c_displayErrorAndQuit_FUN_004e4500("js_bound bad layer/modext (%d/%d)  File: %s");
   }
   frame->js_bound = *(int *)("$CMotionController$$" + iVar5 * 0x10 + iVar2 * 4 + 0x14);

@@ -17,8 +17,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_00497660(CE
   int iVar5;
   
   if (g_WindowStackCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\shape\\edittool.cpp";
-    g_INT_01d1d404 = 0x99c;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2460;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CEditorTools::paintWindow() called but no window was opened!");
   }
   iVar2 = g_INT_01c4f020;

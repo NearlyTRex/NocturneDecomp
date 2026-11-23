@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 7,
+    "complexity_score": 22,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 7,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "mem_magic_size"
+    ],
     "total_lines": 22
   },
   "cross_references": [
@@ -123,5 +125,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "memset size hardcodes 0x1c200 == the whole motions field (400 x SMotion), which the dest names. It is an array of SMotion, which contains a pointer, so it grows once pointers are 8 bytes and memset covers only its leading 0x1c200 bytes. Use sizeof(<path>->motions) (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "memset(dest) size 0x1c200 == sizeof(SMotion[400])",
+      "severity": "moderate",
+      "text": "memset(this_ptr->motions,0,0x1c200)",
+      "type": "mem_magic_size"
+    }
+  ]
 }

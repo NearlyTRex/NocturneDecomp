@@ -14,8 +14,8 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_0050d1a0(int *key_code_ptr,ch
   char *pcVar3;
   
   if (0x1f < g_CustomKeyCount) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\menu.cpp";
-    g_INT_01d1d404 = 0x8af;
+    g_CurrentFilename = "..\\core\\menu.cpp";
+    g_CurrentLineNumber = 2223;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
   }
   iVar2 = g_CustomKeyCount;

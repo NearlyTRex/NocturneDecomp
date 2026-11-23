@@ -428,7 +428,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "'pCVar3[1].base.base.create_event + 0x1c' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x1c = 0xc2fc, which is exactly offsetof(CBatman, part_indices[11]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar3)->part_indices[11] (\u00a7de-pun/\u00a712). Ambiguous: CDemnfolk::bone_indices, CDjien::boxes, CDraculaBride::freaky_timer also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar3[1].base.base.create_event + 0x1c' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x1c = 0xc2fc, which is exactly offsetof(CDjien, boxes). Ghidra had no CDjien type here and reached the field by index arithmetic; write it as ((CDjien *)pCVar3)->boxes (\u00a7de-pun/\u00a712).",
       "line": 14,
       "severity": "moderate",
       "text": "(pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);",

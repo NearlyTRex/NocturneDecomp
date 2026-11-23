@@ -149,8 +149,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       }
     }
     else {
-      g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-      g_INT_01d1d404 = 0xaf4;
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 2804;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Write me!");
     }
     if (bone_index < 0) {

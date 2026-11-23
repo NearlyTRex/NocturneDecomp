@@ -308,6 +308,7 @@ struct SNetPlayer;
 struct SPanel;
 struct SPart;
 struct SPartInstanceData;
+struct SPictureArea;
 struct SPlayerActionState;
 struct SPlayerInput;
 struct SPose;

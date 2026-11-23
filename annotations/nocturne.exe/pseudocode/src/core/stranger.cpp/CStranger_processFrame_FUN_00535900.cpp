@@ -585,7 +585,7 @@ LAB_0053713f:
               fVar23 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                                  (pCStack_28,0x23);
               if (fVar23 + fVar18 <= 0.0) {
-                in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(in_stack_fffffd10,0)));
+                in_stack_fffffd10 = __BITCAST_DOUBLE(CONCAT44(0x536e8b,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0)));
                 (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseFromGrab)
                           ((CCharacter *)this_ptr);
               }
@@ -971,7 +971,7 @@ LAB_00537586:
           in_stack_fffffd10 = 2.12199579936439e-314;
 LAB_00537712:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-                    (&(this_ptr->base).base.model.base,SUB84(in_stack_fffffd10,0),
+                    (&(this_ptr->base).base.model.base,SUB84(__BITCAST_UINT64(in_stack_fffffd10),0),
                      (int)((ulonglong)in_stack_fffffd10 >> 0x20));
         }
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)

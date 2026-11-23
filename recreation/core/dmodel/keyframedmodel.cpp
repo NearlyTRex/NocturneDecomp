@@ -17,6 +17,9 @@ CKeyFramedModel::CKeyFramedModel(const engine::CDosIo &dosio) : dosio_(dosio) {}
 CKeyFramedModel::~CKeyFramedModel() = default;
 
 // nocedit 0x00476db0
+// bw1 0x004668a0
+// bw2 0x0044dcd0
+// bw3 0x00460550
 void CKeyFramedModel::load(std::string_view filename) {
     free();
     const std::optional<std::string> file = dosio_.readFile("models", filename);
@@ -35,6 +38,9 @@ void CKeyFramedModel::load(std::string_view filename) {
 
 // The bounds are left as they were, as the original leaves them.
 // nocedit 0x00477690
+// bw1 0x00467160
+// bw2 0x0044e590
+// bw3 0x00460e10
 void CKeyFramedModel::free() {
     vertex_count_ = 0;
     frame_count_ = 0;

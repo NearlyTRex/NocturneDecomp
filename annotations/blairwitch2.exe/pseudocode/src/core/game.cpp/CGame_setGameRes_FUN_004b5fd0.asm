@@ -16,8 +16,8 @@
 ;   int g_INT_006141c0 = 0x8
 ;   CBitFont* g_SmallEditorFont
 ;   CBitFont* g_EditorFont
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d06a74
 ;
 ; Called Functions:
@@ -82,8 +82,8 @@ section .text
     MOV EBP,0x5d7673                    ; 004b603a | = "..\\core\\game.cpp"
     MOV EAX,0x504                       ; 004b603f
     PUSH 0x5d7684                       ; 004b6044 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01d046a0],EBP      ; 004b6049 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004b604f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004b6049 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004b604f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004b6054
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x10                        ; 004b6059

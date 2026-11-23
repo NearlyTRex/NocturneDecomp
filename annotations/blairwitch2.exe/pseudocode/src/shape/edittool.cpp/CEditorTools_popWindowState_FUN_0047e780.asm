@@ -24,8 +24,8 @@
 ;   int g_INT_01c35e54
 ;   int g_ViewportWidth
 ;   int g_ViewportHeight
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -92,8 +92,8 @@ section .text
         ;   Label: LAB_0047e827
     MOV EBX,0x8b5                       ; 0047e82c
     PUSH 0x5d23a4                       ; 0047e831 | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047e836 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047e83c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0047e836 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0047e83c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047e842
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047e847

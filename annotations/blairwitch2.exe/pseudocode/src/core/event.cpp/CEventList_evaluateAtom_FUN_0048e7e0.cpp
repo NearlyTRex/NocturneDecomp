@@ -1806,8 +1806,8 @@ switchD_0048ec74_caseD_5:
       break;
     default:
 switchD_0048ec74_default:
-      g_CHAR_PTR_01d046a0 = "..\\core\\event.cpp";
-      g_INT_01d046a4 = 0x9e3;
+      g_CurrentFilename = "..\\core\\event.cpp";
+      g_CurrentLineNumber = 2531;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze.");
     }
 LAB_0048ec8f:

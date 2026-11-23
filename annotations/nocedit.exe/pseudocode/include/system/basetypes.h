@@ -110,6 +110,7 @@ typedef unsigned long long ulonglong;
 // Lowercase aliases (Ghidra sometimes uses these)
 typedef unsigned int dword;      // 32-bit (Win32 DWORD width)
 typedef unsigned short word;
+typedef unsigned long long qword;
 
 // Undefined types (placeholder bytes for unknown data)
 typedef unsigned char undefined;

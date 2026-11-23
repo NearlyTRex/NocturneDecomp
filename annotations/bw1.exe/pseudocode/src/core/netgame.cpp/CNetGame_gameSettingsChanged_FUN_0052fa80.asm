@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ec006
 ;   TerminatedCString s_CNetGame_gameSettingsCha_005ec01a
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;   int g_NetNextPlayerId
@@ -94,8 +94,8 @@ section .text
         ;   Label: LAB_0052fb25
     MOV EBP,0x88c                       ; 0052fb2a
     PUSH 0x5ec01a                       ; 0052fb2f | = "CNetGame::gameSettingsChanged - shoul..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0052fb34 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0052fb3a | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0052fb34 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 0052fb3a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052fb40
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052fb45

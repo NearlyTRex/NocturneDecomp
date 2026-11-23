@@ -28,8 +28,8 @@
 ;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
 ;   int g_StatusTextColor
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_0047d073
     MOV EBX,0xa7                        ; 0047d078
     PUSH 0x5bcd3b                       ; 0047d07d | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d71de0],ECX      ; 0047d082 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0047d088 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0047d082 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0047d088 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d08e
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d093

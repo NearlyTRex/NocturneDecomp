@@ -24,8 +24,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_005380a0(CDemonSet *thi
   
   if (this_ptr->rendering_mode != 0) {
     if (surface_normal == (CVector3i *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-      g_INT_01d71de4 = 0xcb8;
+      g_CurrentFilename = "..\\core\\set.cpp";
+      g_CurrentLineNumber = 3256;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::lightVertexColor - Quick light mode with no normal");
     }
     lVar1 = (longlong)(this_ptr->light_direction).x * (longlong)surface_normal->x;

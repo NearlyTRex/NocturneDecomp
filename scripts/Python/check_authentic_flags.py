@@ -180,14 +180,13 @@ def load_skips():
 
 
 def scan_tree(toggles):
-    """Collect gate sites and nested-gate findings from every source file.
+    """Collect references and nested-gate findings from every source file.
 
-    Returns (sites, referenced, nested) where sites maps flag -> [relpath, ...],
-    referenced is every family identifier seen in code, and nested is a list of
+    Returns (refs, nested) where refs maps every family identifier seen in code
+    to the files naming it, in walk order, and nested is a list of
     (relpath, lineno, flag, context) tuples.
     """
-    sites = {name: [] for name in toggles}
-    referenced = set()
+    refs = {}
     nested = []
 
     for path in source_files():
@@ -206,33 +205,36 @@ def scan_tree(toggles):
             return name in toggles or name.startswith(POLICED_PREFIX)
 
         seen_here = set()
-        stack = []  # one entry per open #if: the family flags it tests
+        # One entry per open #if: its line and the family flags it tests. An
+        # #elif's flag only matters once the branches above it are off, the
+        # same as a gate inside their #else, so it nests in them too.
+        stack = []
         for lineno, line in enumerate(code.split('\n'), 1):
             for name in NOCT.findall(line):
-                if is_ours(name):
-                    referenced.add(name)
+                if is_ours(name) and name not in seen_here:
                     seen_here.add(name)
+                    refs.setdefault(name, []).append(rel(path))
 
             m = CPP_IF.match(line)
             if not m:
                 continue
             kind, rest = m.group(1), m.group(2)
-            if kind in ('if', 'ifdef', 'ifndef'):
+            if kind in ('if', 'ifdef', 'ifndef', 'elif'):
                 mine = [n for n in NOCT.findall(rest) if is_ours(n)]
-                outer = [(ln, ns) for ln, ns in stack if ns]
+                if kind == 'elif' and stack:
+                    opened, chain = stack.pop()
+                else:
+                    opened, chain = lineno, []
+                outer = [(ln, ns) for ln, ns in stack + [(opened, chain)] if ns]
                 if mine and outer:
                     ctx = '; '.join(f'{",".join(ns)}@{ln}' for ln, ns in outer)
                     for flag in mine:
                         nested.append((rel(path), lineno, flag, ctx))
-                stack.append((lineno, mine))
+                stack.append((opened, chain + mine))
             elif kind == 'endif' and stack:
                 stack.pop()
 
-        for name in seen_here:
-            if name in sites:
-                sites[name].append(rel(path))
-
-    return sites, referenced, nested
+    return refs, nested
 
 
 def parse_index_table(header_text):
@@ -312,7 +314,8 @@ def main():
         print(f'FATAL: no toggles parsed from {rel(HEADER)}', file=sys.stderr)
         return 2
 
-    sites, referenced, nested = scan_tree(family)
+    refs, nested = scan_tree(family)
+    sites = {name: refs.get(name, []) for name in family}
     skips = load_skips()
     failures = 0
 
@@ -334,11 +337,10 @@ def main():
     failures += len(ungated)
 
     # 2 -- referenced but undefined.
-    orphans = sorted(referenced - set(family))
+    orphans = sorted(set(refs) - set(family))
     print(f'\n[2] undefined references: {len(orphans)}')
     for name in orphans:
-        where = [rel(p) for p in source_files()
-                 if name in strip_comments(open(p, errors="replace").read())]
+        where = refs[name]
         print(f'  FAIL {name} -- referenced in {len(where)} file(s), '
               f'not defined in the header')
         for w in where[:5]:

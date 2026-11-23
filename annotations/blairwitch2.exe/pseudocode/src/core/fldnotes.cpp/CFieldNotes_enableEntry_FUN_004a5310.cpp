@@ -47,8 +47,8 @@ LAB_004a5348:
       g_INT_00616014 = 1;
       return;
     default:
-      g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-      g_INT_01d046a4 = 0xa0d;
+      g_CurrentFilename = "..\\core\\fldnotes.cpp";
+      g_CurrentLineNumber = 2573;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Field note %s has invalid type %d");
 switchD_004a535a_caseD_1:
       g_INT_00616014 = 1;

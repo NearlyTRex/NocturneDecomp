@@ -76,17 +76,27 @@ void CAlphaBitmap::initPalette() {
 // overhanging both edges ran off the end of each row; and it drew an 8-bit screen as 16-bit.
 // nocedit 0x00410950
 void CAlphaBitmap::display(int x, int y, int alpha) {
-    const int window_width = screen_.getWindowWidth();
-    const int window_height = screen_.getWindowHeight();
-    if (x + width_ < 0 || x >= window_width || y + height_ < 0 || y >= window_height) {
+    displayWithin(x, y, alpha, getScreenBounds());
+}
+
+CAlphaBitmap::SBounds CAlphaBitmap::getScreenBounds() const {
+    return {.left = 0,
+            .top = 0,
+            .right = screen_.getWindowWidth(),
+            .bottom = screen_.getWindowHeight()};
+}
+
+void CAlphaBitmap::displayWithin(int x, int y, int alpha, const SBounds &bounds) {
+    if (x + width_ < bounds.left || x >= bounds.right || y + height_ < bounds.top ||
+        y >= bounds.bottom) {
         return;
     }
     // An image touching the screen installs its palette even when none of it is visible.
     initPalette();
-    const int left = std::max(x, 0);
-    const int top = std::max(y, 0);
-    const int right = std::min(x + width_, window_width);
-    const int bottom = std::min(y + height_, window_height);
+    const int left = std::max(x, bounds.left);
+    const int top = std::max(y, bounds.top);
+    const int right = std::min(x + width_, bounds.right);
+    const int bottom = std::min(y + height_, bounds.bottom);
     if (left >= right || top >= bottom) {
         return;
     }
@@ -114,21 +124,29 @@ void CAlphaBitmap::display(int x, int y, int alpha) {
 // Nearest, colours mixed for Smooth.
 void CAlphaBitmap::displayScaled(int x, int y, int width, int height, int alpha,
                                  EBitmapFilter filter) {
+    displayScaledWithin(x, y, width, height, alpha, filter, getScreenBounds());
+}
+
+void CAlphaBitmap::displayScaledWithin(int x, int y, int width, int height, int alpha,
+                                       EBitmapFilter filter, const SBounds &within) {
+    const SBounds screen = getScreenBounds();
+    const SBounds bounds{.left = std::max(within.left, screen.left),
+                         .top = std::max(within.top, screen.top),
+                         .right = std::min(within.right, screen.right),
+                         .bottom = std::min(within.bottom, screen.bottom)};
     if (width == width_ && height == height_) {
-        display(x, y, alpha);
+        displayWithin(x, y, alpha, bounds);
         return;
     }
-    const int window_width = screen_.getWindowWidth();
-    const int window_height = screen_.getWindowHeight();
-    if (width <= 0 || height <= 0 || width_ <= 0 || height_ <= 0 || x + width < 0 ||
-        x >= window_width || y + height < 0 || y >= window_height) {
+    if (width <= 0 || height <= 0 || width_ <= 0 || height_ <= 0 || x + width < bounds.left ||
+        x >= bounds.right || y + height < bounds.top || y >= bounds.bottom) {
         return;
     }
     initPalette();
-    const int left = std::max(x, 0);
-    const int top = std::max(y, 0);
-    const int right = std::min(x + width, window_width);
-    const int bottom = std::min(y + height, window_height);
+    const int left = std::max(x, bounds.left);
+    const int top = std::max(y, bounds.top);
+    const int right = std::min(x + width, bounds.right);
+    const int bottom = std::min(y + height, bounds.bottom);
     if (left >= right || top >= bottom) {
         return;
     }

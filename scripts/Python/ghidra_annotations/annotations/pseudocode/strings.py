@@ -2,6 +2,7 @@
 # Provides string escaping, formatting, and symbol replacement functions
 
 import re
+from ghidra.program.model.mem import MemoryAccessException
 from ghidra_annotations.util.string import is_string_data_type_obj, extract_string_value
 
 
@@ -15,62 +16,46 @@ def format_array_initializer(values, vals_per_line=16):
     Returns:
         Formatted string like "{0x00, 0x01}" or multi-line for larger arrays
     """
-    if not values:
-        return "{}"
-
     if len(values) <= vals_per_line:
         return "{" + ", ".join(values) + "}"
+    lines = ["    " + ", ".join(values[i:i + vals_per_line]) for i in range(0, len(values), vals_per_line)]
+    return "{\n" + ",\n".join(lines) + "\n}"
 
-    lines = []
-    for i in range(0, len(values), vals_per_line):
-        line_vals = values[i:i + vals_per_line]
-        if i == 0:
-            lines.append("{\n    " + ", ".join(line_vals))
-        else:
-            lines.append("    " + ", ".join(line_vals))
-    return ",\n".join(lines) + "\n}"
+
+def _braced_literals(items):
+    """String literals as an initializer: one line up to 8, else 4 to a line."""
+    if len(items) <= 8:
+        return "{%s}" % ", ".join(items)
+    return format_array_initializer(items, vals_per_line=4)
 
 
 def get_safe_str(val):
-    """Convert a value to a safe ASCII string."""
+    """A value (a Java object, a Python string or anything else) as ASCII text, non-ASCII dropped."""
     if val is None:
         return ""
-    try:
-        if hasattr(val, "toString"):
-            val = val.toString()
-        if hasattr(val, 'encode'):
-            return val.encode("ascii", "ignore").decode("ascii")
-        else:
-            return str(val)
-    except Exception:
-        try:
-            return str(val)
-        except Exception:
-            return "[conversion_error]"
+    if hasattr(val, "toString"):
+        val = val.toString()
+    return str(val).encode("ascii", "ignore").decode("ascii")
+
+
+_ESCAPES = {
+    '\\': '\\\\', '"': '\\"', '\n': '\\n', '\r': '\\r', '\t': '\\t',
+    '\b': '\\b', '\f': '\\f', '\v': '\\v', '\a': '\\a',
+}
 
 
 def escape_c_string(s):
-    """Escape a string for use in C code."""
+    """Escape a string for use in a C string literal.
+
+    Other control and non-printable characters become three-digit octal
+    escapes, NUL included: a shorter "\\0" would swallow a digit after it.
+    """
     if not s:
         return s
-
-    escape_map = {
-        '\\': '\\\\',
-        '"': '\\"',
-        '\n': '\\n',
-        '\r': '\\r',
-        '\t': '\\t',
-        '\b': '\\b',
-        '\f': '\\f',
-        '\v': '\\v',
-        '\a': '\\a',
-        '\0': '\\0',
-    }
-
     result = []
     for char in s:
-        if char in escape_map:
-            result.append(escape_map[char])
+        if char in _ESCAPES:
+            result.append(_ESCAPES[char])
         elif ord(char) < 32 or ord(char) > 126:
             result.append('\\%03o' % ord(char))
         else:
@@ -78,8 +63,13 @@ def escape_c_string(s):
     return ''.join(result)
 
 
-# Pre-compiled regex for control character detection (excluding tab, newline, carriage return)
-_CONTROL_CHAR_PATTERN = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\xff]')
+# What file content must escape: control characters but tab, newline and
+# carriage return, and anything past printable ASCII
+_CONTROL_CHAR_PATTERN = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\U0010ffff]')
+# What single-line metadata must escape: every control character, anything
+# past printable ASCII, and quotes and backslashes
+_METADATA_ESCAPE_PATTERN = re.compile(r'[\x00-\x1f\x7f-\U0010ffff"\\]')
+_METADATA_ESCAPES = {'"': '\\"', '\\': '\\\\', '\n': '\\n', '\r': '\\r', '\t': '\\t'}
 
 
 def sanitize_string(text, preserve_newlines=False):
@@ -97,341 +87,160 @@ def sanitize_string(text, preserve_newlines=False):
     """
     if not text:
         return ""
+    pattern = _CONTROL_CHAR_PATTERN if preserve_newlines else _METADATA_ESCAPE_PATTERN
+    if not pattern.search(text):
+        return text
 
-    # Fast path: check if text is already clean ASCII (common case)
-    try:
-        text.encode('ascii')
-        if preserve_newlines:
-            # For file content: only need to check for control chars (not newlines/tabs)
-            if not _CONTROL_CHAR_PATTERN.search(text):
-                return text
-        else:
-            # For metadata: also need to escape quotes, backslashes, newlines, tabs
-            if '"' not in text and '\\' not in text and '\n' not in text and '\r' not in text and '\t' not in text:
-                # Check for control characters
-                has_control = False
-                for c in text:
-                    if ord(c) < 32:
-                        has_control = True
-                        break
-                if not has_control:
-                    return text
-    except UnicodeEncodeError:
-        pass  # Has non-ASCII, fall through to slow path
-
-    # Slow path: character-by-character processing
     result = []
     for char in text:
         code = ord(char)
-        if 32 <= code <= 126:
-            if preserve_newlines:
-                # File content: keep printable ASCII as-is
-                result.append(char)
-            else:
-                # Metadata: escape quotes and backslashes
-                if char == '"':
-                    result.append('\\"')
-                elif char == '\\':
-                    result.append('\\\\')
-                else:
-                    result.append(char)
-        elif char in '\n\r\t':
-            if preserve_newlines:
-                # File content: preserve whitespace
-                result.append(char)
-            else:
-                # Metadata: escape whitespace
-                if char == '\n':
-                    result.append('\\n')
-                elif char == '\r':
-                    result.append('\\r')
-                elif char == '\t':
-                    result.append('\\t')
-        elif code < 128:
-            # Other ASCII control characters - escape as hex
+        if not preserve_newlines and char in _METADATA_ESCAPES:
+            result.append(_METADATA_ESCAPES[char])
+        elif 32 <= code <= 126 or char in '\n\r\t':
+            result.append(char)
+        elif code <= 0xFF:
             result.append('\\x%02x' % code)
         else:
-            # Non-ASCII - escape as hex or unicode
-            if code <= 0xFF:
-                result.append('\\x%02x' % code)
-            else:
-                result.append('\\u%04x' % code)
+            result.append('\\u%04x' % code)
     return ''.join(result)
 
 
+def _pointed_string(currentProgram, ptr_val):
+    """The string value of the defined string data at ptr_val, or None."""
+    ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
+    pointed_data = currentProgram.getListing().getDefinedDataAt(ptr_addr)
+    if pointed_data and is_string_data_type_obj(pointed_data.getDataType()):
+        return get_safe_str(extract_string_value(pointed_data)) or None
+    return None
+
+
+# The longest string read from undefined memory
+MEMORY_STRING_LIMIT = 1024
+
+
+def _memory_c_string(currentProgram, ptr_val):
+    """The NUL-terminated printable string in memory at ptr_val, or None.
+
+    Anything else is not taken as a string: a non-printable byte, memory that
+    ends, or no terminator within MEMORY_STRING_LIMIT bytes, since a literal
+    of only part of it would not hold what the pointer points at.
+    """
+    ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
+    memory = currentProgram.getMemory()
+    chars = []
+    for j in range(MEMORY_STRING_LIMIT):
+        char_addr = ptr_addr.add(j)
+        if not memory.contains(char_addr):
+            return None
+        try:
+            byte_val = memory.getByte(char_addr) & 0xFF
+        except MemoryAccessException:        # uninitialized, as in .bss
+            return None
+        if byte_val == 0:
+            text = ''.join(chars)
+            return text if text.strip() else None
+        if not (32 <= byte_val <= 126 or byte_val in (9, 10, 13)):
+            return None
+        chars.append(chr(byte_val))
+    return None
 
 
 def format_char_array_as_c_strings(currentProgram, raw_bytes, type_name, string_map=None):
-    """Format a char array as C string literals.
+    """Format a char pointer array as C string literals.
 
     Args:
         currentProgram: The Ghidra program
         raw_bytes: List of raw byte values
         type_name: The type name (e.g., "char*[12]")
-        string_map: Optional map of address hex strings to escaped string values
+        string_map: Optional map of 8-digit address hex strings to escaped string values
 
     Returns:
-        Formatted initializer string or None
+        Formatted initializer string, or None when under 30% of the pointers
+        lead to a string
     """
-    if not raw_bytes or len(raw_bytes) < 4:
+    if not raw_bytes or len(raw_bytes) < 4 or "[" not in type_name or "]" not in type_name:
         return None
 
-    if "[" in type_name and "]" in type_name:
-        string_array = []
-        ptr_size = 4
-        num_ptrs = len(raw_bytes) // ptr_size
-        successful_strings = 0
+    string_array = []
+    successful_strings = 0
+    for i in range(len(raw_bytes) // 4):
+        b = raw_bytes[i * 4:(i + 1) * 4]
+        ptr_val = (b[3] << 24) | (b[2] << 16) | (b[1] << 8) | b[0]
+        if ptr_val == 0:
+            string_array.append("nullptr")
+            continue
+        # The string map first, then the string data Ghidra defines there,
+        # then a terminated string in undefined memory
+        escaped = (string_map or {}).get("%08x" % ptr_val)
+        if escaped is None:
+            text = _pointed_string(currentProgram, ptr_val) or _memory_c_string(currentProgram, ptr_val)
+            escaped = escape_c_string(text) if text else None
+        if escaped is None:
+            string_array.append("(char*)0x%08X" % ptr_val)
+        else:
+            string_array.append('"%s"' % escaped)
+            successful_strings += 1
 
-        for i in range(num_ptrs):
-            ptr_bytes = raw_bytes[i * ptr_size:(i + 1) * ptr_size]
-            if len(ptr_bytes) == 4:
-                ptr_val = (ptr_bytes[3] << 24) | (ptr_bytes[2] << 16) | (ptr_bytes[1] << 8) | ptr_bytes[0]
-                if ptr_val != 0:
-                    string_found = False
-
-                    # Strategy 1: Fast O(1) lookup in string_map
-                    if string_map and not string_found:
-                        addr_hex = "%08x" % ptr_val
-                        if addr_hex in string_map:
-                            string_array.append('"%s"' % string_map[addr_hex])
-                            successful_strings += 1
-                            string_found = True
-                        else:
-                            # Try without leading zeros
-                            addr_hex_short = "%x" % ptr_val
-                            if addr_hex_short in string_map:
-                                string_array.append('"%s"' % string_map[addr_hex_short])
-                                successful_strings += 1
-                                string_found = True
-
-                    # Strategy 2: Ghidra API lookup
-                    if not string_found:
-                        try:
-                            ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
-                            pointed_data = currentProgram.getListing().getDefinedDataAt(ptr_addr)
-                            if pointed_data and is_string_data_type_obj(pointed_data.getDataType()):
-                                pointed_value = extract_string_value(pointed_data)
-                                if pointed_value:
-                                    safe_str = get_safe_str(pointed_value)
-                                    escaped = escape_c_string(safe_str)
-                                    string_array.append('"%s"' % escaped)
-                                    successful_strings += 1
-                                    string_found = True
-                        except Exception:
-                            pass
-
-                    # Strategy 3: Memory scan for null-terminated string
-                    if not string_found:
-                        try:
-                            ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_val)
-                            memory = currentProgram.getMemory()
-                            string_chars = []
-                            for j in range(128):
-                                char_addr = ptr_addr.add(j)
-                                if not memory.contains(char_addr):
-                                    break
-                                byte_val = memory.getByte(char_addr) & 0xFF
-                                if byte_val == 0:
-                                    break
-                                if 32 <= byte_val <= 126:
-                                    string_chars.append(chr(byte_val))
-                                elif byte_val in [9, 10, 13]:
-                                    string_chars.append(chr(byte_val))
-                                else:
-                                    if len(string_chars) > 0:
-                                        break
-
-                            if string_chars and len(string_chars) >= 1:
-                                string_val = ''.join(string_chars)
-                                if string_val.strip():
-                                    escaped = escape_c_string(string_val)
-                                    string_array.append('"%s"' % escaped)
-                                    successful_strings += 1
-                                    string_found = True
-                        except:
-                            pass
-
-                    if not string_found:
-                        string_array.append("(char*)0x%08X" % ptr_val)
-                else:
-                    string_array.append("nullptr")
-
-        if string_array and successful_strings >= max(1, len(string_array) * 0.3):
-            if len(string_array) <= 8:
-                return "{%s}" % ", ".join(string_array)
-            else:
-                lines = []
-                for i in range(0, len(string_array), 4):
-                    line_items = string_array[i:i+4]
-                    if i == 0:
-                        lines.append("{\n    " + ", ".join(line_items))
-                    else:
-                        lines.append("    " + ", ".join(line_items))
-                return ",\n".join(lines) + "\n}"
+    if successful_strings >= max(1, len(string_array) * 0.3):
+        return _braced_literals(string_array)
     return None
 
 
 def format_single_char_pointer(currentProgram, ghidra_value, name):
-    """Format a single char pointer as a C string literal."""
-    try:
-        str_val = get_safe_str(ghidra_value)
-        if str_val and (str_val.startswith("0x") or name.startswith("s_")):
-            if str_val.startswith("0x"):
-                try:
-                    ptr_addr_val = int(str_val.replace("0x", ""), 16)
-                    ptr_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(ptr_addr_val)
-                    pointed_data = currentProgram.getListing().getDefinedDataAt(ptr_addr)
-                    if pointed_data and is_string_data_type_obj(pointed_data.getDataType()):
-                        pointed_value = extract_string_value(pointed_data)
-                        if pointed_value:
-                            safe_str = get_safe_str(pointed_value)
-                            escaped = escape_c_string(safe_str)
-                            return '"%s"' % escaped
-                except Exception:
-                    pass
+    """Format a single char pointer as a C string literal.
+
+    A value Ghidra shows as an address ("0x...") is taken from the string data
+    defined there; anything else is None. name is not used.
+    """
+    str_val = get_safe_str(ghidra_value)
+    if not str_val.startswith("0x"):
         return None
-    except Exception:
-        return None
-
-
-def detect_char_array_pattern(type_name, raw_bytes):
-    """Detect if data represents a char array or 2D char array."""
-    if not type_name or not raw_bytes:
-        return False, False
-
-    type_lower = type_name.lower()
-    is_char_array = "char" in type_lower and "[" in type_name
-    is_2d_char_array = "char" in type_lower and type_name.count("[") >= 2
-
-    has_string_pattern = False
-    if len(raw_bytes) >= 4:
-        null_count = raw_bytes.count(0)
-        printable_count = sum(1 for b in raw_bytes if 32 <= b <= 126)
-        has_string_pattern = null_count >= 2 and printable_count >= len(raw_bytes) * 0.6
-
-        if null_count >= 3 and is_char_array:
-            null_positions = [i for i, b in enumerate(raw_bytes) if b == 0]
-            if len(null_positions) >= 2:
-                intervals = []
-                for i in range(1, len(null_positions)):
-                    intervals.append(null_positions[i] - null_positions[i-1])
-                if intervals and all(abs(interval - intervals[0]) <= 1 for interval in intervals):
-                    is_2d_char_array = True
-    return is_char_array or has_string_pattern, is_2d_char_array
+    pointed = _pointed_string(currentProgram, int(str_val, 16))
+    return '"%s"' % escape_c_string(pointed) if pointed else None
 
 
 def format_2d_char_array(raw_bytes, type_name=None):
-    """Format a 2D char array as C string literals."""
-    if not raw_bytes:
-        return None
+    """Format a char[rows][cols] array as C string literals, one per row.
 
-    rows = None
-    cols = None
-    is_2d_array = False
-    if type_name:
-        match = re.search(r'char\s*\[(\d+)\]\s*\[(\d+)\]', type_name)
-        if match:
-            rows = int(match.group(1))
-            cols = int(match.group(2))
-            is_2d_array = True
+    Returns None unless the type gives both dimensions, the bytes are mostly
+    printable and hold a NUL, there are at least two rows, and every row is
+    printable text that ends in a NUL within the row: C++ does not take a
+    literal that fills the row with no room for its NUL.
+    """
+    match = re.search(r'char\s*\[(\d+)\]\s*\[(\d+)\]', type_name or '')
+    if not raw_bytes or not match:
+        return None
+    rows, cols = int(match.group(1)), int(match.group(2))
 
     printable_count = sum(1 for b in raw_bytes if 32 <= b <= 126)
-    null_count = raw_bytes.count(0)
-    total_bytes = len(raw_bytes)
-
-    if printable_count < total_bytes * 0.5:
-        return None
-    if null_count == 0:
+    if printable_count < len(raw_bytes) * 0.5 or 0 not in raw_bytes:
         return None
 
     strings = []
-    if rows and cols:
-        for row in range(rows):
-            start_idx = row * cols
-            end_idx = start_idx + cols
-            if end_idx <= len(raw_bytes):
-                row_bytes = raw_bytes[start_idx:end_idx]
-                string_chars = []
-                for b in row_bytes:
-                    if b == 0:
-                        break
-                    if 32 <= b <= 126:
-                        string_chars.append(chr(b))
-                    else:
-                        return None
-                if string_chars:
-                    string_val = ''.join(string_chars)
-                    escaped = escape_c_string(string_val)
-                    strings.append('"%s"' % escaped)
-                else:
-                    strings.append('""')
-    else:
-        current_string = []
-        string_start_pos = 0
-
-        for i, byte in enumerate(raw_bytes):
-            if byte == 0:
-                if current_string:
-                    try:
-                        string_val = ''.join(chr(b) for b in current_string)
-                        if string_val and len(string_val) > 0:
-                            escaped = escape_c_string(string_val)
-                            strings.append('"%s"' % escaped)
-                        current_string = []
-                        string_start_pos = i + 1
-                    except Exception:
-                        current_string = []
-            elif 32 <= byte <= 126:
-                current_string.append(byte)
-            else:
-                if len(current_string) == 0:
-                    string_start_pos = i + 1
-                else:
-                    current_string.append(byte)
-
-        if current_string and len(current_string) > 1:
-            try:
-                string_val = ''.join(chr(b) for b in current_string if 32 <= b <= 126)
-                if string_val:
-                    escaped = escape_c_string(string_val)
-                    strings.append('"%s"' % escaped)
-            except Exception:
-                pass
-
-    if strings and len(strings) >= 2:
-        # Only return braced multi-string initializers for actual 2D arrays
-        # For 1D arrays, {"str1", "str2"} is invalid C - return None
-        if not is_2d_array:
+    for row in range(rows):
+        row_bytes = raw_bytes[row * cols:(row + 1) * cols]
+        if len(row_bytes) < cols:
+            break
+        if 0 not in row_bytes:
             return None
-        if len(strings) <= 8:
-            return "{%s}" % ", ".join(strings)
-        else:
-            lines = []
-            for i in range(0, len(strings), 4):
-                line_items = strings[i:i+4]
-                if i == 0:
-                    lines.append("{\n    " + ", ".join(line_items))
-                else:
-                    lines.append("    " + ", ".join(line_items))
-            return ",\n".join(lines) + "\n}"
-    return None
+        text = row_bytes[:row_bytes.index(0)]
+        if any(not 32 <= b <= 126 for b in text):
+            return None
+        strings.append('"%s"' % escape_c_string(''.join(chr(b) for b in text)))
+
+    if len(strings) < 2:
+        return None
+    return _braced_literals(strings)
 
 
 def build_string_map(defined_data):
-    """Build a map of string addresses to their values for symbol replacement."""
+    """Map each defined string's 8-digit address to its escaped value, for symbol replacement."""
     string_map = {}
     for data in defined_data:
-        try:
-            if is_string_data_type_obj(data.getDataType()):
-                addr = str(data.getAddress())
-                addr_hex = addr.replace("0x", "").lower()
-                value = extract_string_value(data)
-                if value:
-                    safe_value = get_safe_str(value)
-                    escaped = escape_c_string(safe_value)
-                    string_map[addr_hex] = escaped
-        except Exception:
-            pass
+        if is_string_data_type_obj(data.getDataType()):
+            value = extract_string_value(data)
+            if value:
+                string_map[str(data.getAddress()).lower()] = escape_c_string(get_safe_str(value))
     return string_map
 
 

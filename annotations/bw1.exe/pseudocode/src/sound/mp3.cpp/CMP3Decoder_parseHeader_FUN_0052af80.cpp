@@ -42,8 +42,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_0052af80(CMP3Decoder *this
   pcVar3 = (char *)malloc(local_18);
   (this_ptr->file_bitstream).buffer = pcVar3;
   if (pcVar3 == (char *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
-    g_INT_01d1d404 = 0x23d;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 573;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory.  File: %s");
   }
   _fseek(pCVar1->file_handle,(this_ptr->file_bitstream).stream_start_position,0);

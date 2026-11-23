@@ -552,8 +552,8 @@ section .text
         ;   Label: LAB_00581f8f
     MOV EAX,0xcf                        ; 00581f94
     PUSH 0x5ed9ef                       ; 00581f99 | = "CVampireBoss::process - Need 4 waypoints"
-    MOV dword ptr [0x01d046a0],ECX      ; 00581f9e | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00581fa4 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00581f9e | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00581fa4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00581fa9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00581fae

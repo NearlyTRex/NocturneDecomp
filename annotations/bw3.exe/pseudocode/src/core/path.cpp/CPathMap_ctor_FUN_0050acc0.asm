@@ -16,8 +16,8 @@
 ;   core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60 at 00599f79
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;
 ; Called Functions:
@@ -58,8 +58,8 @@ section .text
     MOV ECX,0x5cb76e                    ; 0050ad14
     MOV ESI,0x123                       ; 0050ad19
     PUSH 0x5cb77f                       ; 0050ad1e
-    MOV dword ptr [0x01d71de0],ECX      ; 0050ad23 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050ad29 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0050ad23 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0050ad29 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050ad2f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050ad34

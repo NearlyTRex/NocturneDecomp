@@ -14,8 +14,8 @@
 ;   TerminatedCString s_turret_tail_wav_005f8a51
 ;   double g_DOUBLE_005f8a68 = 2
 ;   CEventList* g_CEventListPtr = 01c51d80
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
@@ -358,8 +358,8 @@ section .text
         ;   Label: default
     MOV ECX,0x15a                       ; 005a27f9
     PUSH 0x5f8a1b                       ; 005a27fe
-    MOV dword ptr [0x01d1d400],EDX      ; 005a2803 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 005a2809 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 005a2803 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 005a2809 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005a280f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005a2814

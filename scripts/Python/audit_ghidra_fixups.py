@@ -38,7 +38,8 @@ import os
 import re
 import sys
 import argparse
-from collections import Counter, defaultdict
+import traceback
+from collections import defaultdict
 
 # A __FILE__ literal as the original compiler emitted it: "..\<dir>\<file>.c".
 FILE_LITERAL_RE = re.compile(r'^\.\.[\\/](.+\.(?:c|cpp))$', re.IGNORECASE)
@@ -48,16 +49,13 @@ FILE_LITERAL_RE = re.compile(r'^\.\.[\\/](.+\.(?:c|cpp))$', re.IGNORECASE)
 MIN_PLAUSIBLE_ADDR = 0x1000
 
 
-def collect_strings(program, file_literals_only):
+def collect_strings(program, file_literals_only=False):
     """Map string start offset -> (value, is_file_literal)."""
     out = {}
     for data in program.getListing().getDefinedData(True):
         if not data.hasStringValue():
             continue
-        try:
-            value = data.getValue()
-        except Exception:
-            continue
+        value = data.getValue()
         if value is None:
             continue
         text = str(value)
@@ -68,44 +66,50 @@ def collect_strings(program, file_literals_only):
     return out
 
 
-def find_missing_string_refs(program, strings):
-    """Instructions whose scalar immediate is a string address but carry no ref.
-
-    Returns a list of dicts, one per offending instruction.
-    """
+def unreferenced_string_immediates(program, strings):
+    """([(instr, op_index, value)], n_sites): each operand whose immediate is a string's
+    start address while its instruction has no reference to that string, and how many
+    operands load a string's address at all."""
     from ghidra.program.model.scalar import Scalar
 
-    listing = program.getListing()
-    fm = program.getFunctionManager()
-
-    findings = []
+    sites = []
     n_sites = 0
-    for instr in listing.getInstructions(True):
-        for i in range(instr.getNumOperands()):
-            for obj in instr.getOpObjects(i):
+    for instr in program.getListing().getInstructions(True):
+        for op_index in range(instr.getNumOperands()):
+            for obj in instr.getOpObjects(op_index):
                 if not isinstance(obj, Scalar):
                     continue
                 val = obj.getUnsignedValue()
                 if val < MIN_PLAUSIBLE_ADDR or val not in strings:
                     continue
                 n_sites += 1
-                # Does this instruction already reference the string?
-                if any(r.getToAddress() is not None
-                       and r.getToAddress().getOffset() == val
-                       for r in instr.getReferencesFrom()):
+                if any(r.getToAddress().getOffset() == val for r in instr.getReferencesFrom()):
                     continue
-                func = fm.getFunctionContaining(instr.getAddress())
-                text, is_file = strings[val]
-                findings.append({
-                    "at": str(instr.getAddress()),
-                    "target": "%08x" % val,
-                    "func": func.getName() if func else "(no function)",
-                    "func_addr": ("%08x" % func.getEntryPoint().getOffset()
-                                  if func else ""),
-                    "is_file": is_file,
-                    "text": text,
-                    "instr": str(instr),
-                })
+                sites.append((instr, op_index, val))
+    return sites, n_sites
+
+
+def find_missing_string_refs(program, strings):
+    """Instructions whose scalar immediate is a string address but carry no ref.
+
+    Returns (a dict per offending operand, the number of string-loading sites).
+    """
+    fm = program.getFunctionManager()
+    sites, n_sites = unreferenced_string_immediates(program, strings)
+    findings = []
+    for instr, _, val in sites:
+        func = fm.getFunctionContaining(instr.getAddress())
+        text, is_file = strings[val]
+        findings.append({
+            "at": str(instr.getAddress()),
+            "target": "%08x" % val,
+            "func": func.getName() if func else "(no function)",
+            "func_addr": ("%08x" % func.getEntryPoint().getOffset()
+                          if func else ""),
+            "is_file": is_file,
+            "text": text,
+            "instr": str(instr),
+        })
     return findings, n_sites
 
 
@@ -131,8 +135,7 @@ def find_unknown_conventions(program):
     return findings
 
 
-def write_report(out_path, program_name, missing, n_sites, conventions,
-                 strings, file_literals_only):
+def write_report(out_path, program_name, missing, n_sites, conventions, file_literals_only):
     lines = []
     lines.append("Ghidra fix-up worklist: %s" % program_name)
     lines.append("scope: %s" % ("__FILE__ literals only" if file_literals_only
@@ -187,7 +190,26 @@ def write_report(out_path, program_name, missing, n_sites, conventions,
         fh.write("\n".join(lines) + "\n")
 
 
-def main():
+def run(program, args, out_path):
+    print("Collecting defined strings...")
+    strings = collect_strings(program, args.file_literals_only)
+    print("  %d string(s)" % len(strings))
+
+    print("Scanning instructions for unreferenced string immediates...")
+    missing, n_sites = find_missing_string_refs(program, strings)
+    print("  %d/%d site(s) missing a reference" % (len(missing), n_sites))
+
+    print("Checking calling conventions...")
+    conventions = find_unknown_conventions(program)
+    print("  %d function(s) with unknown convention + locked signature"
+          % len(conventions))
+
+    write_report(out_path, args.program_name, missing, n_sites,
+                 conventions, args.file_literals_only)
+    print("\nReport written to: %s" % out_path)
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(
         description="Audit a program for Ghidra-side defects needing a manual fix.")
     p.add_argument("project_path")
@@ -196,7 +218,7 @@ def main():
     p.add_argument("--file-literals-only", action="store_true",
                    help="Restrict the string scan to __FILE__ path literals")
     p.add_argument("--out", default=None)
-    args = p.parse_args()
+    args = p.parse_args(argv)
 
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_ghidra_fixups.txt" % args.program_name)
@@ -206,32 +228,17 @@ def main():
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
 
-    code = 0
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            print("Collecting defined strings...")
-            strings = collect_strings(program, args.file_literals_only)
-            print("  %d string(s)" % len(strings))
-
-            print("Scanning instructions for unreferenced string immediates...")
-            missing, n_sites = find_missing_string_refs(program, strings)
-            print("  %d/%d site(s) missing a reference" % (len(missing), n_sites))
-
-            print("Checking calling conventions...")
-            conventions = find_unknown_conventions(program)
-            print("  %d function(s) with unknown convention + locked signature"
-                  % len(conventions))
-
-            write_report(out_path, args.program_name, missing, n_sites,
-                         conventions, strings, args.file_literals_only)
-            print("\nReport written to: %s" % out_path)
-        project.close()
+            run(program, args, out_path)
+        code = 0
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
 
     sys.stdout.flush()
     sys.stderr.flush()

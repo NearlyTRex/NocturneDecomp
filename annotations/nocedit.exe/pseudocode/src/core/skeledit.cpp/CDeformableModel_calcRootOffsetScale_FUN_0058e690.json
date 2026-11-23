@@ -396,5 +396,39 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_calcRootOffsetScale_FUN_0058e690.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 90,
+          "message": "Value stored to 'local_1c' is never read",
+          "path_notes": [
+            {
+              "line": 90,
+              "message": "Value stored to 'local_1c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 91,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 91,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

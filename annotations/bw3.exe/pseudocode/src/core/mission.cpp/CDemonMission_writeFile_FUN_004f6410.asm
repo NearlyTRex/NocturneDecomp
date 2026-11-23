@@ -242,8 +242,8 @@ section .text
     MOV ECX,0x5c887d                    ; 004f6612 | = "..\\core\\mission.cpp"
     MOV EDI,0x1f0                       ; 004f6617
     PUSH 0x5c8891                       ; 004f661c | = "Too many actors"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f6621 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004f6627 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f6621 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004f6627 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f662d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6632
@@ -345,8 +345,8 @@ section .text
         ;   Label: LAB_004f6736
     MOV EAX,0x1fb                       ; 004f673b
     PUSH 0x5c88b5                       ; 004f6740 | = "Too many actors"
-    MOV dword ptr [0x01d71de0],ECX      ; 004f6745 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004f674b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f6745 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004f674b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6750
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6755

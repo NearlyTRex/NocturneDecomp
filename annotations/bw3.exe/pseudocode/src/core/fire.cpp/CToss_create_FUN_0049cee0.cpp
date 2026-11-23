@@ -46,8 +46,8 @@ void __cdecl core_fire_cpp_CToss_create_FUN_0049cee0(CToss *this_ptr,int toss_ty
     local_1c[2] = 1.0;
     break;
   default:
-    g_CHAR_PTR_01d71de0 = "..\\core\\fire.cpp";
-    g_INT_01d71de4 = 0xe59;
+    g_CurrentFilename = "..\\core\\fire.cpp";
+    g_CurrentLineNumber = 3673;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CToss::create - invalid toss type.");
   }
   extents = &local_38;

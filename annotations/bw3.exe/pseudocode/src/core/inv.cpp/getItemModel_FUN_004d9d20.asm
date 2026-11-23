@@ -23,8 +23,8 @@
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   undefined4 g_CHealthItemClassInfo.name_hash
 ;   undefined4 g_CKeyActorClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -147,8 +147,8 @@ section .text
     MOV EDX,0x5c5e55                    ; 004d9e08 | = "..\\core\\inv.cpp"
     MOV ECX,0xaf                        ; 004d9e0d
     PUSH 0x5c5e65                       ; 004d9e12 | = "getModel - Can't classify : %s"
-    MOV dword ptr [0x01d71de0],EDX      ; 004d9e17 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004d9e1d | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004d9e17 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004d9e1d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d9e23
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004d9e28

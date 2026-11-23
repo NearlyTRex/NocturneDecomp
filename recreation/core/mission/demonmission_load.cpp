@@ -91,6 +91,9 @@ std::pair<std::string, std::string> readActorEntry(CTextScanner &scanner) {
 
 // The original read the file as text, turning CR LF into LF; the scanner reads either.
 // nocedit 0x00522d90
+// bw1 0x0051a3f0
+// bw2 0x004fb490
+// bw3 0x004f5bc0
 void CDemonMission::load(std::string_view mission_filename, bool keep_assets) {
     const std::optional<std::string> text = owners_.dosio.readFile("world", mission_filename);
     if (!text) {
@@ -146,7 +149,7 @@ void CDemonMission::readMissionFile(CTextScanner &scanner, bool keep_assets) {
     for (int i = 0; i < set_count; ++i) {
         set_names_.emplace_back(readWord(scanner));
     }
-    owners_.actor.resetSavedVersions();
+    owners_.actor.resetActorTypeInfo();
     if (mission_version_num_ >= kTypedVersion) {
         readActorTypes(scanner);
     }
@@ -222,7 +225,7 @@ CDemonActor *CDemonMission::loadActor(CTextScanner &scanner, const CDemonActor &
 
 // Each claimed comes off the list, which leaves the next where the first was.
 // nocedit 0x00523520
-std::unique_ptr<CDemonActor> CDemonMission::takeCarriedActor(std::string_view name) {
+std::unique_ptr<CDemonActor> CDemonMission::getNextLoadedInventoryActor(std::string_view name) {
     if (!carried_start_) {
         return nullptr;
     }
@@ -269,6 +272,9 @@ void CDemonMission::readActorTypes(CTextScanner &scanner) {
 // nocedit also zeroed the count of visible corona globes; retail doesn't.
 // deferred: clearing actor_lookup_count, with saveActor
 // nocedit 0x00522d30
+// bw1 0x0051a3b0
+// bw2 0x004fb450
+// bw3 0x004f5b80
 void CDemonMission::clearMissionData() {
     removeAllActors();
     carried_start_.reset();
@@ -279,12 +285,18 @@ void CDemonMission::clearMissionData() {
 // deferred: freeing the keyframed models, deformable models and skeletons the mission's actors
 //   loaded, with their pools
 // nocedit 0x005248e0
+// bw1 0x0051bf10
+// bw2 0x004fcf50
+// bw3 0x004f76f0
 void CDemonMission::freeAllAssets() {
     owners_.textures.clearTextureCache();
 }
 
 // The original quit when the picked name found no actor, which a hero's name always does.
 // nocedit 0x00524c20
+// bw1 0x0051c240
+// bw2 0x004fd280
+// bw3 0x004f7a20
 void CDemonMission::ensureHeroPlaceholder() {
     shape::CPickList heroes(owners_.pick_list);
     for (const std::unique_ptr<CDemonActor> &actor : actors_) {

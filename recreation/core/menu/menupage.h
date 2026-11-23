@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <optional>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::core {
@@ -41,6 +42,9 @@ public:
     // Localized. A titled page sits under the logo with its lines single spaced; an untitled one
     // double spaces them from the main menu's top.
     [[nodiscard]] virtual std::optional<std::string> title();
+    // The name a manifest's [menu.page_tops] gives a titled page its own top under; none for one
+    // that takes titled_top whatever the manifest says.
+    [[nodiscard]] virtual std::string_view getLayoutId() const;
     // Before the moon is drawn.
     virtual void beginFrame();
     // This frame's lines, at least one.
@@ -55,6 +59,7 @@ public:
 
 protected:
     [[nodiscard]] CMenu &getMenu();
+    [[nodiscard]] const CMenu &getMenu() const;
 
 private:
     CMenu &menu_;

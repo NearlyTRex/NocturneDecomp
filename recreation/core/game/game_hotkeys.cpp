@@ -27,7 +27,6 @@ constexpr double kGammaOne = 65536.0;
 constexpr float kGammaMessageSeconds = 1.0F;
 // The script view needs a screen this tall, whose top this many lines show the scene.
 constexpr int kScriptViewLeastHeight = 480;
-constexpr int kScriptViewHeight = 240;
 constexpr float kAmbientStep = 0.02F;
 // The camera's blend factor's units, 0xffff full.
 constexpr double kBlendUnit = 1.0 / 65535.0;
@@ -52,7 +51,11 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 } // namespace
 
 // The original read fixed keys; each is now an action's. Muting goes as the main menu's does; the
-// original shut the sound down and started it again.
+// original shut the sound down and started it again. The light view leaves the camera the whole
+// screen: the original shrank it to 240 lines for room beside it, laid out only for 640x480.
+// deferred: the light view in a debug window of its own, the shadow maps in a grid, closing it
+//   turning the view off (the decomp's debug_window, DEBUG_WINDOW), with
+//   CDemonSet::renderLightDebugView and a second platform window
 // deferred: nothing while a modal dialog is up, with the pause menu's network dialogs
 // deferred: edit mode and its cameras left alone while a cinematic skips, and the agreed skip
 //   polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
@@ -100,7 +103,6 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
     const int height = owners_.screen.getWindowHeight();
     if (developer_mode && takeAction(EGameAction::ScriptView) && height >= kScriptViewLeastHeight) {
         script_view = !script_view;
-        session.set.reinitCamera(script_view ? kScriptViewHeight : height);
     }
     if (takeAction(EGameAction::GammaDown)) {
         stepGamma(session, -kGammaStep);

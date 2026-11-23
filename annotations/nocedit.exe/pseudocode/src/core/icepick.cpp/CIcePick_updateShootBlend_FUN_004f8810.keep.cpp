@@ -55,6 +55,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *t
       this_ptr->aim_pitch = -0.7853982;
     }
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->aim_pitch,&local_30);
+    local_20 = local_30;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
               (&(this_ptr->base).base.model,&local_20,this_ptr->shoot_blend_weight,
                g_IcePickIndices[0x10],core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);

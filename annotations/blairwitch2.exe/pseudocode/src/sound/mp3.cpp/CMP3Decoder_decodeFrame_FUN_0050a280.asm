@@ -83,8 +83,8 @@
 ;   double[2][4] g_MpegSampleRateTable
 ;   int[2][3][15] g_MpegBitrateTable
 ;   double[64] g_MpegScalefactorTable
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -658,8 +658,8 @@ section .text
     MOV EDX,0x5e033b                    ; 0050a96f | = "..\\sound\\mp3.cpp"
     MOV ECX,0x1029                      ; 0050a974
     PUSH 0x5e034c                       ; 0050a979 | = "Not enough main data to decode frame %d."
-    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050a97e | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0050a984 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050a98a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050a98f

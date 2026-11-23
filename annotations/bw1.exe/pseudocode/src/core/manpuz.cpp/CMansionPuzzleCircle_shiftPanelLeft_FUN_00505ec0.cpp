@@ -19,8 +19,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_00505ec0(CM
   pSVar2 = this_ptr->panels + panel_index_00;
   if ((((pSVar1->exists == 0) || (pSVar2->exists != 0)) || (ABS(pSVar1->anim_progress) != 0.0)) ||
      (ABS(pSVar1->anim_speed) != 0.0)) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\manpuz.cpp";
-    g_INT_01d1d404 = 0x554;
+    g_CurrentFilename = "..\\core\\manpuz.cpp";
+    g_CurrentLineNumber = 1364;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
   }
   pSVar2->exists = pSVar1->exists;

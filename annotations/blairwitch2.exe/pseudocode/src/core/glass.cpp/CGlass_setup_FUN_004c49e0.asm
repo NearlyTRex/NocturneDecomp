@@ -12,8 +12,8 @@
 ;   double g_DOUBLE_005d9362 = 16515072
 ;   double g_DOUBLE_005d936a = 131072
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
@@ -102,8 +102,8 @@ section .text
     MOV EDX,0x5d9296                    ; 004c4ad2
     MOV ECX,0x86                        ; 004c4ad7
     PUSH 0x5d92a8                       ; 004c4adc
-    MOV dword ptr [0x01d046a0],EDX      ; 004c4ae1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004c4ae7 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004c4ae1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004c4ae7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004c4aed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004c4af2

@@ -123,8 +123,8 @@ section .text
         ;   Label: default
     MOV ECX,0x88c                       ; 004b9396
     PUSH 0x5c27d1                       ; 004b939b | = "CGame::playerControls - unknown contr..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004b93a0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004b93a6 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004b93a0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004b93a6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004b93ac
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004b93b1

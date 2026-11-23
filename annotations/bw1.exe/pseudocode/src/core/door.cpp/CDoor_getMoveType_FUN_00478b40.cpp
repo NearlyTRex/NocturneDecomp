@@ -65,8 +65,8 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00478b40(CDoor *this_ptr,CDemonA
   case DOOR_TYPE_TILT:
     return 1;
   default:
-    g_CHAR_PTR_01d1d400 = "..\\core\\door.cpp";
-    g_INT_01d1d404 = 0x3de;
+    g_CurrentFilename = "..\\core\\door.cpp";
+    g_CurrentLineNumber = 990;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDoor::getMoveType - invalid door!");
     return 0;
   }

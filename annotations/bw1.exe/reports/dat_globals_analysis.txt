@@ -2,20 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 343
+Total DAT_ globals found: 344
 Filtered out (inside named data): 46
-Immediate constants (not real globals): 13
-Real globals remaining: 284
+Outside the program image: 2
+Immediate constants (not real globals): 11
+Real globals remaining: 285
 
 Current type breakdown:
-  undefined4                     279
+  undefined4                     280
   undefined1                     4
   undefined2                     1
 
-DAT_ globals with type hints: 73 / 284
+DAT_ globals with type hints: 74 / 285
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (42)
+HIGH CONFIDENCE INFERENCES (43)
 --------------------------------------------------------------------------------
   DAT_005da15c                    addr=005da15c    current=undefined4      likely=double          refs=1
     nearby: g_DOUBLE_005da154 (double) at offset +8
@@ -23,6 +24,8 @@ HIGH CONFIDENCE INFERENCES (42)
     nearby: g_FLOAT_005f4694 (float) at offset +4
   DAT_005f8068                    addr=005f8068    current=undefined4      likely=double          refs=1
     nearby: g_DOUBLE_005f8060 (double) at offset +8
+  DAT_005f8070                    addr=005f8070    current=undefined4      likely=float           refs=1
+    nearby: g_DOUBLE_005f8060 (double) at offset +16
   DAT_00612488                    addr=00612488    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_CDocClassVersion (int) at offset -68
   DAT_0061b4d4                    addr=0061b4d4    current=undefined4      likely=int             refs=2
@@ -431,7 +434,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_007dc5c8                    addr=007dc5c8    refs=1     type=undefined4      nearby: g_INT_007dc5c0(+8)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (13)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (11)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
@@ -446,9 +449,16 @@ They appear only as inline constant values.
   DAT_0061c434                    value=0x61C434        refs=1
   DAT_0061f5e8                    value=0x61F5E8        refs=1
   DAT_00480000                    value=0x480000        refs=1
-  DAT_00000065                    value=0x65            refs=1
-  DAT_00007f00                    value=0x7F00          refs=1
   DAT_02c9c908                    value=0x2C9C908       refs=1
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (2)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_00000065
+  DAT_00007f00
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (46)

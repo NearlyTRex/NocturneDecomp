@@ -23,8 +23,8 @@
 ;   TerminatedCString s_shadow_dfm_005d5726
 ;   float g_FLOAT_005fd614 = 9999
 ;   CKeyFramedModelInstance g_StakeModelInstance
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
@@ -247,8 +247,8 @@ section .text
     MOV EDX,0x5d56cb                    ; 0042c731 | = "..\\core\\charactr.cpp"
     MOV ECX,0x13c                       ; 0042c736
     PUSH 0x5d56e0                       ; 0042c73b | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0042c740 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0042c746 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0042c740 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0042c746 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0042c74c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x14                        ; 0042c751

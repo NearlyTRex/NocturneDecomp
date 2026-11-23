@@ -350,8 +350,8 @@ LAB_00598ad6:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_00598bba:
-      g_CHAR_PTR_01d046a0 = "..\\core\\zombie.cpp";
-      g_INT_01d046a4 = 0x5d1;
+      g_CurrentFilename = "..\\core\\zombie.cpp";
+      g_CurrentLineNumber = 1489;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid zombie object shape!");
       return 1;
     }

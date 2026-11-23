@@ -74,17 +74,17 @@ COPY (unique,0x87b00,4) = (const,0x5,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@0045d07b [ESP:???](-4)!?  # PUSH EDX
+@0045d07b [ESP:-16](-4)  # PUSH EDX
 COPY (unique,0x41500,4) = (register,0x8,4) /* EDX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0045d07c [ESP:???](-4)!?  # CALL 0x0040cc60
+@0045d07c [ESP:-16](-4)  # CALL 0x0040cc60
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x45d081,4)
 CALL (ram,0x40cc60,4)
 
-@0045d081 [ESP:???](+8)!?  # ADD ESP, 0x8
+@0045d081 [ESP:-8](+8)?  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -95,11 +95,11 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0045d084 [ESP:???]!?  # LEA EBX, [EAX + 0x4]
+@0045d084 [ESP:-8]  # LEA EBX, [EAX + 0x4]
 INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x6600,4)
 
-@0045d087 [ESP:???]!?  # CMP EBX, 0x9
+@0045d087 [ESP:-8]  # CMP EBX, 0x9
 COPY (unique,0x66100,4) = (register,0xc,4) /* EBX */
 INT_LESS (register,0x200,1) = (unique,0x66100,4), (const,0x9,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x66100,4), (const,0x9,4)
@@ -111,7 +111,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@0045d08a [ESP:???]!?  # JNZ 0x0045d0d0
+@0045d08a [ESP:-8]  # JNZ 0x0045d0d0
 BOOL_NEGATE (unique,0x17c00,1) = (register,0x206,1)
 CBRANCH (ram,0x45d0d0,4), (unique,0x17c00,1)
 
@@ -299,5 +299,4 @@ BRANCH (ram,0x45d0a2,4)
 
 # ============================================================================
 # Summary: 44 instructions, 193 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

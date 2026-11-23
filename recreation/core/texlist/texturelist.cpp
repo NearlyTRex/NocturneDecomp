@@ -16,11 +16,17 @@
 namespace nocturne::core {
 
 // nocedit 0x005dbdd0
+// bw1 0x005960b0
+// bw2 0x00573490
+// bw3 0x005690a0
 CTextureList::CTextureList(const engine::CDosIo &dosio) : dosio_(&dosio) {}
 
 // A line the file lacks repeats the name before it, with 0, as the original read each into the
 // same buffer; the first such line takes the .TEX file's own name.
 // nocedit 0x005dbe00
+// bw1 0x005960d0
+// bw2 0x005734b0
+// bw3 0x005690c0
 void CTextureList::load(std::string_view filename) {
     std::string tex_filename(filename);
     const std::size_t extension = tex_filename.find('.');

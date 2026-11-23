@@ -17,8 +17,8 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00438ef0(char *filename,voi
     buffer = malloc(size);
     if (buffer == (void *)0x0) {
       _sprintf(local_8c,"Unable to allocate %u bytes for bitmap file (%s).");
-      g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
-      g_INT_01d71de4 = 0x98b;
+      g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+      g_CurrentLineNumber = 2443;
       core_main_c_displayErrorAndQuit_FUN_004e4330(local_8c);
     }
   }
@@ -27,16 +27,16 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00438ef0(char *filename,voi
                     (&local_3c,"art",filename,1);
   if (iVar1 == 0) {
     _sprintf(local_8c,"Unable to open bitmap file (%s).");
-    g_INT_01d71de4 = 0x994;
-    g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 2452;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_004e4330(local_8c);
   }
   iVar1 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,buffer,size);
   if (iVar1 != size) {
     _sprintf(local_8c,"Unable to read bitmap file (%s).");
     support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
-    g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
-    g_INT_01d71de4 = 0x99c;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 2460;
     core_main_c_displayErrorAndQuit_FUN_004e4330(local_8c);
   }
   support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);

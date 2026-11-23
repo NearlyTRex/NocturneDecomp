@@ -21,8 +21,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_00484790(
     render_mode = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\drender.cpp";
-    g_INT_01d1d404 = 0xa6a;
+    g_CurrentFilename = "..\\engine\\drender.cpp";
+    g_CurrentLineNumber = 2666;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't capture this type of face!");
   }
   if (this_ptr->shadow_pass_active == 0) {

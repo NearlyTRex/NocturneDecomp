@@ -2,16 +2,11 @@
 
 #include "engine/2d/2d.h"
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "shape/edittool/editortools.h"
 
 namespace nocturne::shape {
-namespace {
-
-constexpr int kGridColumns = 48;
-constexpr int kButtonHeightMargin = 80;
-
-} // namespace
 
 CEdControls::CEdControls(const SEdControlsOwners &owners) : owners_(owners) {}
 
@@ -30,13 +25,14 @@ void CEdControls::setActiveControl(const void *control) {
 // nocedit 0x004a58f0
 void CEdControls::draw3DBorder(int left, int top, int right, int bottom, bool pressed) {
     engine::C2d &two_d = owners_.two_d;
-    two_d.setActiveRenderColor(pressed ? kShadeColor : kHighlightColor);
+    const engine::SDialogLook &look = owners_.editor_tools.getDialogLook();
+    two_d.setActiveRenderColor(pressed ? look.bevel_shade_colour : look.bevel_highlight_colour);
     two_d.drawHLine(left, top, right - 1);
     two_d.drawVLine(left, top, bottom - 1);
-    two_d.setActiveRenderColor(pressed ? kHighlightColor : kShadeColor);
+    two_d.setActiveRenderColor(pressed ? look.bevel_highlight_colour : look.bevel_shade_colour);
     two_d.drawHLine(left, bottom - 1, right - 1);
     two_d.drawVLine(right - 1, top, bottom - 1);
-    two_d.fillRectColor(left + 1, top + 1, right - 2, bottom - 2, kFaceColor);
+    two_d.fillRectColor(left + 1, top + 1, right - 2, bottom - 2, look.bevel_face_colour);
 }
 
 // Up and down widen a row at a time from the tip, left and right a column at a time.
@@ -44,7 +40,7 @@ void CEdControls::draw3DBorder(int left, int top, int right, int bottom, bool pr
 void CEdControls::draw3DInsetBorder(int left, int top, int right, int bottom, int offset,
                                     int style) {
     engine::C2d &two_d = owners_.two_d;
-    two_d.setActiveRenderColor(kMarkColor);
+    two_d.setActiveRenderColor(owners_.editor_tools.getDialogLook().bevel_mark_colour);
     if (style == 0 || style == 1) {
         const int centre = ((right + left - 1) / 2) + offset;
         const int size = (bottom - top) / 3;
@@ -66,7 +62,7 @@ void CEdControls::draw3DInsetBorder(int left, int top, int right, int bottom, in
 
 // nocedit 0x004a6490
 int CEdControls::calculateGridWidth() const {
-    return owners_.screen.getWindowWidth() / kGridColumns;
+    return owners_.screen.getWindowWidth() / owners_.editor_tools.getDialogLook().grid_divisor;
 }
 
 // nocedit 0x004a64b0
@@ -91,7 +87,8 @@ int CEdControls::calculateButtonHeight(std::optional<std::string_view> text) {
     tools.initEditorFontMetrics();
     const int height = text ? font.getTextHeight(*text, tools.getScale())
                             : font.getMaxCharHeight() * tools.getScale();
-    return (owners_.screen.getWindowHeight() / kButtonHeightMargin) + height;
+    return (owners_.screen.getWindowHeight() / tools.getDialogLook().button_margin_divisor) +
+           height;
 }
 
 } // namespace nocturne::shape

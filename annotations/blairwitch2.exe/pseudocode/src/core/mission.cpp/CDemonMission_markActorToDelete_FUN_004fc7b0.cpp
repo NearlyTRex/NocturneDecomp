@@ -18,8 +18,8 @@ void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemo
   if (iVar1 < 100) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-  g_INT_01d046a4 = 0x446;
+  g_CurrentFilename = "..\\core\\mission.cpp";
+  g_CurrentLineNumber = 1094;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonMission::markActorToDelete - Too many of them!");
   return;
 }

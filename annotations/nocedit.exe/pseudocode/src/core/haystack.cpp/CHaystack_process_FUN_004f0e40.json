@@ -339,7 +339,7 @@
       "type": "unrolled_memset"
     },
     {
-      "description": "Struct-type local `CStack_8c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `CStack_8c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 24,
       "match": "CQuaternion4f CStack_8c; ... f(&CStack_8c, ...);",
       "resolution_source": "keep",
@@ -348,7 +348,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `CStack_7c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `CStack_7c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 25,
       "match": "CQuaternion4f CStack_7c; ... f(&CStack_7c, ...);",
       "resolution_source": "keep",

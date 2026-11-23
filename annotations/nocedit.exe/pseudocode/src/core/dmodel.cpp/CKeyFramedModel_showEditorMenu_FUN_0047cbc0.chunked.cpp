@@ -8,7 +8,7 @@
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 typedef struct CKeyFramedModel_showEditorMenu_Ctx {
-    CKeyFramedModel *this_ptr;
+    CKeyFramedModel **this_ptr;
     char cVar1;
     bool bVar2;
     float fVar3;
@@ -143,14 +143,14 @@ typedef struct CKeyFramedModel_showEditorMenu_Ctx {
     int *piVar1;
 } CKeyFramedModel_showEditorMenu_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
 #define GOTO_LAB_0047d6c7 1
 #define GOTO_LAB_0047dc33 2
 
 // Chunk: check_bVar2_0 (lines 31-83 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar2_0(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     bool &bVar7 = ctx->bVar7;
     bool &bVar8 = ctx->bVar8;
     bool &bVar9 = ctx->bVar9;
@@ -228,7 +228,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar2_0(CKeyFramedModel_showEdit
 
 // Chunk: chunk_1 (lines 86-137 of original)
 static int CKeyFramedModel_showEditorMenu_chunk_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     bool &bVar8 = ctx->bVar8;
     char *&pcVar19 = ctx->pcVar19;
     auto &local_408 = ctx->local_408;
@@ -287,7 +287,7 @@ static int CKeyFramedModel_showEditorMenu_chunk_1(CKeyFramedModel_showEditorMenu
 
 // Chunk: check_bVar8_2 (lines 187-237 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar8_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
     float &fVar4 = ctx->fVar4;
     float &fVar6 = ctx->fVar6;
@@ -408,7 +408,7 @@ static int CKeyFramedModel_showEditorMenu_else_3(CKeyFramedModel_showEditorMenu_
 
 // Chunk: check_bVar10_4_check_local_84_0_check_local_84_0 (lines 310-422 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_0(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     char &cVar1 = ctx->cVar1;
     bool &bVar2 = ctx->bVar2;
     int &iVar12 = ctx->iVar12;
@@ -543,7 +543,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
 
 // Chunk: check_bVar10_4_check_local_84_0_check_local_84_1 (lines 422-456 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
     int &iVar18 = ctx->iVar18;
     char *&pcVar19 = ctx->pcVar19;
@@ -562,7 +562,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
                   iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                      (g_CEditorToolsPtr,"Enter network model filename (*.KFM)",
                                       g_NetworkModelFilename,200,1);
- return GOTO_LAB_0047d6c7;
+                  if (iVar18 == 0) return GOTO_LAB_0047d6c7;
                   splitpath
                             (g_NetworkModelFilename,local_14,local_a98,local_798,local_898);
                   if (local_898[0] != '\0') break;
@@ -589,7 +589,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
 
 // Chunk: check_bVar10_4_check_local_84_0_check_local_84_2 (lines 456-486 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
     int &iVar18 = ctx->iVar18;
     auto &local_408 = ctx->local_408;
@@ -629,7 +629,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
 
 // Chunk: check_bVar10_4_check_local_84_0_check_local_84_3 (lines 486-509 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_3(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     int &iVar18 = ctx->iVar18;
     float &local_34 = ctx->local_34;
     auto &local_30 = ctx->local_30;
@@ -660,7 +660,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
 
 // Chunk: check_bVar10_4_check_local_84_1 (lines 551-624 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
+    CKeyFramedModel *&this_ptr = *ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
     int &iVar12 = ctx->iVar12;
     CVector3f *&pCVar17 = ctx->pCVar17;
@@ -751,70 +751,12 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFr
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_2 (lines 633-676 of original)
-static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
-    CKeyFramedModel *&this_ptr = ctx->this_ptr;
-    int &iVar18 = ctx->iVar18;
-    int &x = ctx->x;
-    char *&pcVar19 = ctx->pcVar19;
-    char *&pcVar20 = ctx->pcVar20;
-    byte &bVar15 = ctx->bVar15;
-    auto &local_4d0 = ctx->local_4d0;
-    auto &local_278 = ctx->local_278;
-    CVector3f &local_12c = ctx->local_12c;
-    uint &local_84 = ctx->local_84;
-    float &local_70 = ctx->local_70;
-
-          if (0x51 < local_84) {
-            if (local_84 < 0x53) {
-              if (this_ptr->frame_count < 1) {
-                shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                          (g_CEditorToolsPtr,"Nothing to recenter!");
-              }
-              else {
-                core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220
-                          (this_ptr,(int)ROUND(ROUND(local_70)));
-              }
-            }
-            else if (this_ptr->frame_count < 1) {
-              shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                        (g_CEditorToolsPtr,"Nothing to scale!");
-            }
-            else {
-              _sprintf(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
-              pcVar19 = g_ModelLastScaleInput;
-              pcVar20 = local_278;
-              for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {
-                *(uint *)pcVar20 = *(uint *)pcVar19;
-                pcVar19 = pcVar19 + ((uint)bVar15 * -2 + 1) * 4;
-                pcVar20 = pcVar20 + (uint)bVar15 * -8 + 4;
-              }
-              while (iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar18 != 0)
-              {
-                iVar18 = sscanf(local_278,"%f,%f,%f");
-                if (iVar18 == 3) {
-                  core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(this_ptr,&local_12c);
-                  break;
-                }
-                if (iVar18 == 1) {
-                  core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0(this_ptr,local_12c.x);
-                  break;
-                }
-                shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                          (g_CEditorToolsPtr,"Please enter either a single scale factor, or x,y,z scale factors on each axis.");
-              }
-            }
-          }
-    return 0;
-}
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel *this_ptr)
 
 {
   CKeyFramedModel_showEditorMenu_Ctx _ctx_storage = {};
   CKeyFramedModel_showEditorMenu_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
+  ctx->this_ptr = &this_ptr;
 
     char &cVar1 = ctx->cVar1;
     bool &bVar2 = ctx->bVar2;
@@ -948,7 +890,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     SRenderVertex *&pSVar3 = ctx->pSVar3;
     char &cVar2 = ctx->cVar2;
     int *&piVar1 = ctx->piVar1;
-  // param this_ptr aliased into ctx above
 
   bVar15 = 0;
   local_84 = 0;
@@ -1084,20 +1025,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       if (iVar18 != 0) {
         local_84 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
         if (local_84 < 0x42) {
-        if (local_84 < 0x35) {
-          CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_0(ctx);
-        }
-        else if (local_84 < 0x36) {
-          int _rc = CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_1(ctx);
-          if (_rc == GOTO_LAB_0047d6c7) goto LAB_0047d6c7;
-        }
-        else if (local_84 < 0x37) {
-          int _rc = CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_2(ctx);
-          if (_rc == GOTO_LAB_0047dc33) goto LAB_0047dc33;
-        }
-        else if (local_84 < 0x38) {
-          CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_3(ctx);
-        }
+          if (local_84 < 0x35) {
+            CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_0(ctx);
+          }
+          else if (local_84 < 0x36) {
+            int _rc = CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_1(ctx);
+            if (_rc == GOTO_LAB_0047d6c7) goto LAB_0047d6c7;
+          }
+          else if (local_84 < 0x37) {
+            int _rc = CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_2(ctx);
+            if (_rc == GOTO_LAB_0047dc33) goto LAB_0047dc33;
+          }
+          else if (local_84 < 0x38) {
+            CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_3(ctx);
+          }
           else if (local_84 < 0x39) {
             if (this_ptr->frame_count < 1) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -1153,7 +1094,47 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
           }
         }
         else if (local_84 < 0x54) {
-          CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_2(ctx);
+          if (0x51 < local_84) {
+            if (local_84 < 0x53) {
+              if (this_ptr->frame_count < 1) {
+                shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                          (g_CEditorToolsPtr,"Nothing to recenter!");
+              }
+              else {
+                core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220
+                          (this_ptr,(int)ROUND(ROUND(local_70)));
+              }
+            }
+            else if (this_ptr->frame_count < 1) {
+              shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                        (g_CEditorToolsPtr,"Nothing to scale!");
+            }
+            else {
+              _sprintf(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
+              pcVar19 = g_ModelLastScaleInput;
+              pcVar20 = local_278;
+              for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {
+                *(uint *)pcVar20 = *(uint *)pcVar19;
+                pcVar19 = pcVar19 + ((uint)bVar15 * -2 + 1) * 4;
+                pcVar20 = pcVar20 + (uint)bVar15 * -8 + 4;
+              }
+              while (iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar18 != 0)
+              {
+                iVar18 = sscanf(local_278,"%f,%f,%f");
+                if (iVar18 == 3) {
+                  core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(this_ptr,&local_12c);
+                  break;
+                }
+                if (iVar18 == 1) {
+                  core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0(this_ptr,local_12c.x);
+                  break;
+                }
+                shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                          (g_CEditorToolsPtr,"Please enter either a single scale factor, or x,y,z scale factors on each axis.");
+              }
+            }
+          }
         }
         else if (local_84 < 0x55) {
           this_ptr->transparent_pixel_flag = (uint)(this_ptr->transparent_pixel_flag == 0);

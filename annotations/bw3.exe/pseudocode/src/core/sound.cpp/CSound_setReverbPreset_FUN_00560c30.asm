@@ -16,8 +16,8 @@
 ;   undefined4 g_ReverbPresetTable[0].reverb.volume
 ;   undefined4 g_ReverbPresetTable[0].reverb.decay_time
 ;   undefined4 g_ReverbPresetTable[0].reverb.damping
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_00560c64
     MOV ECX,0x3fd                       ; 00560c69
     PUSH 0x5d538d                       ; 00560c6e | = "CSound::setReverbPreset - invalid index"
-    MOV dword ptr [0x01d71de0],EDX      ; 00560c73 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00560c79 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00560c73 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00560c79 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00560c7f
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00560c84

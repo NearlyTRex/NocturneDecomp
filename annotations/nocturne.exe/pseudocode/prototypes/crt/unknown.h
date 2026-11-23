@@ -7,11 +7,11 @@
 
 // Original: crt_unknown.c_getc_helper_FUN_00563290
 // Address: 00563290
-int __cdecl getc::helper(scanf_state_t *state);
+int __cdecl getc_helper(scanf_state_t *state);
 
 // Original: crt_unknown.c_ungetc_helper_FUN_005632b0
 // Address: 005632b0
-int __watcallStack ungetc::helper(int character,scanf_state_t *state);
+int __watcallStack ungetc_helper(int character,scanf_state_t *state);
 
 // Original: crt_unknown.c_vfscanf_FUN_005632c8
 // Address: 005632c8
@@ -19,7 +19,7 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args);
 
 // Original: crt_unknown.c___CClose_FUN_005633c4
 // Address: 005633c4
-int __cdecl ::_CClose(_FILE *file_handle,int close_flags);
+int __cdecl __CClose(_FILE *file_handle,int close_flags);
 
 // Original: crt_unknown.c_hexDigitToChar_FUN_005633ec
 // Address: 005633ec
@@ -27,7 +27,7 @@ char __watcallStack hexDigitToChar(int digit);
 
 // Original: crt_unknown.c__tempnam_FUN_005633fc
 // Address: 005633fc
-void __watcallStack ::tempnam(char *buffer,int file_handle);
+void __watcallStack _tempnam(char *buffer,int file_handle);
 
 // Original: crt_unknown.c_fclose_FUN_005634b0
 // Address: 005634b0
@@ -59,11 +59,11 @@ void FUN_00563d13(void);
 
 // Original: crt_unknown.c_median_of_3_FUN_00563d20
 // Address: 00563d20
-void * __watcallStack median::of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar);
+void * __watcallStack median_of_3(void *a,void *b,void *c,QSORT_COMPARATOR compar);
 
 // Original: crt_unknown.c_memory_swap_FUN_00563d90
 // Address: 00563d90
-void __watcallRegister memory::swap(void *ptr1,void *ptr2,SIZE_T bytes);
+void __watcallRegister memory_swap(void *ptr1,void *ptr2,SIZE_T bytes);
 
 // Original: crt_unknown.c_FillBufferAndGetChar_FUN_00564640
 // Address: 00564640
@@ -79,15 +79,15 @@ uint * __watcallRegister GetRandomSeedPointer(void);
 
 // Original: crt_unknown.c___arrdtor_FUN_00564915
 // Address: 00564915
-void * __cdecl ::_arrdtor(WatcomTypeArrayInfo *destroy_info);
+void * __cdecl __arrdtor(WatcomTypeArrayInfo *destroy_info);
 
 // Original: crt_unknown.c_realloc__FUN_00564a88
 // Address: 00564a88
-void * __cdecl realloc::(void *ptr,ulong new_size);
+void * __cdecl realloc_(void *ptr,ulong new_size);
 
 // Original: crt_unknown.c__atexit_FUN_00564bb0
 // Address: 00564bb0
-void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
+void __cdecl _atexit(WatcomStaticDestructorNode *exit_node);
 
 // Original: crt_unknown.c_FUN_00564e3d
 // Address: 00564e3d
@@ -139,23 +139,23 @@ _FILE * FUN_005656a4(_FILE *param_1);
 
 // Original: crt_unknown.c_seek_within_buffer_FUN_005657d0
 // Address: 005657d0
-int __cdecl seek::within_buffer(int offset,_FILE *file);
+int __cdecl seek_within_buffer(int offset,_FILE *file);
 
 // Original: crt_unknown.c_seek_within_buffer_FUN_00565814
 // Address: 00565814
-int __cdecl seek::within_buffer(_FILE *file);
+int __cdecl seek_within_buffer(_FILE *file);
 
 // Original: crt_unknown.c_integer_power_FUN_00565c12
 // Address: 00565c12
-void __fpureg integer::power(void);
+void __fpureg integer_power(void);
 
 // Original: crt_unknown.c___arrinit_dispatch_FUN_005661c2
 // Address: 005661c2
-void * __cdecl ::_arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_unknown.c___vec_new_FUN_005661f4
 // Address: 005661f4
-void * __cdecl ::_vec_new(void *dest,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __vec_new(void *dest,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_unknown.c_FUN_0056621a
 // Address: 0056621a
@@ -163,15 +163,15 @@ void FUN_0056621a(void *param_1,int param_2,WatcomTypeInfo *param_3);
 
 // Original: crt_unknown.c_normalize_path_separator_FUN_00566250
 // Address: 00566250
-int __cdecl normalize::path_separator(int ch,int *preferred_separator);
+int __cdecl normalize_path_separator(int ch,int *preferred_separator);
 
 // Original: crt_unknown.c_strncpy_safe_FUN_00566450
 // Address: 00566450
-void __watcallStack strncpy::safe(char *dest,char *src,int length,int maxlen);
+void __watcallStack strncpy_safe(char *dest,char *src,int length,int maxlen);
 
 // Original: crt_unknown.c_localtime_r_FUN_00566590
 // Address: 00566590
-_tm * __cdecl localtime::r(time_t *timer,_tm *result);
+_tm * __cdecl localtime_r(time_t *timer,_tm *result);
 
 // Original: crt_unknown.c_formatTwoDigits_FUN_00566600
 // Address: 00566600
@@ -179,11 +179,11 @@ void __cdecl formatTwoDigits(char *buffer,int value);
 
 // Original: crt_unknown.c_string_getc_FUN_00566af0
 // Address: 00566af0
-int __cdecl string::getc(scanf_state_t *state);
+int __cdecl string_getc(scanf_state_t *state);
 
 // Original: crt_unknown.c_string_ungetc_FUN_00566b18
 // Address: 00566b18
-int __cdecl string::ungetc(int ch,scanf_state_t *state);
+int __cdecl string_ungetc(int ch,scanf_state_t *state);
 
 // Original: crt_unknown.c_vsscanf_FUN_00566b20
 // Address: 00566b20
@@ -227,7 +227,7 @@ undefined4 FUN_005670c1(void);
 
 // Original: crt_unknown.c_stack_overflow_handler_FUN_005670e0
 // Address: 005670e0
-void __watcallStack stack::overflow_handler(SIZE_T required_bytes);
+void __watcallStack stack_overflow_handler(SIZE_T required_bytes);
 
 // Original: crt_unknown.c_ProbeStackSpace_FUN_005670ed
 // Address: 005670ed
@@ -387,7 +387,7 @@ void FUN_0056a170(void);
 
 // Original: crt_unknown.c__strtod_FUN_0056a189
 // Address: 0056a189
-double __cdecl ::strtod(char *str);
+double __cdecl _strtod(char *str);
 
 // Original: crt_unknown.c_FUN_0056a1b5
 // Address: 0056a1b5
@@ -527,7 +527,7 @@ void FUN_0056bfd6(void);
 
 // Original: crt_unknown.c_fdiv_thunk_FUN_0056bfdb
 // Address: 0056bfdb
-void __fpu_thunk fdiv::thunk(void);
+void __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_unknown.c_FUN_0056bff7
 // Address: 0056bff7
@@ -555,7 +555,7 @@ void FUN_0056c06a(void);
 
 // Original: crt_unknown.c_fdiv_thunk_FUN_0056c06f
 // Address: 0056c06f
-void __fpu_thunk fdiv::thunk(void);
+void __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_unknown.c_FUN_0056c08f
 // Address: 0056c08f
@@ -615,7 +615,7 @@ void FUN_0056c1b2(void);
 
 // Original: crt_unknown.c_fdiv_thunk_FUN_0056c1b7
 // Address: 0056c1b7
-void __fpu_thunk fdiv::thunk(void);
+void __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_unknown.c_FUN_0056c1d7
 // Address: 0056c1d7
@@ -643,7 +643,7 @@ void FUN_0056c256(void);
 
 // Original: crt_unknown.c_fdiv_thunk_FUN_0056c25b
 // Address: 0056c25b
-void __fpu_thunk fdiv::thunk(void);
+void __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_unknown.c_FUN_0056c27b
 // Address: 0056c27b
@@ -671,7 +671,7 @@ void FUN_0056c2fa(void);
 
 // Original: crt_unknown.c_fdiv_thunk_FUN_0056c2ff
 // Address: 0056c2ff
-void __fpu_thunk fdiv::thunk(void);
+void __fpu_thunk fdiv_thunk(void);
 
 // Original: crt_unknown.c_FUN_0056c31f
 // Address: 0056c31f
@@ -783,7 +783,7 @@ uint FUN_0056d4e8(void);
 
 // Original: crt_unknown.c_build_cmdline_FUN_0056ddf0
 // Address: 0056ddf0
-int __cdecl build::cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag);
+int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag);
 
 // Original: crt_unknown.c_FUN_0056de90
 // Address: 0056de90
@@ -1243,7 +1243,7 @@ uint FUN_00571cc6(int *param_1);
 
 // Original: crt_unknown.c_streambuf_allocBuffer_FUN_00571ee0
 // Address: 00571ee0
-void * __watcallStack streambuf::allocBuffer(uint size);
+void * __watcallStack streambuf_allocBuffer(uint size);
 
 // Original: crt_unknown.c_freeBuffer_FUN_00571ef0
 // Address: 00571ef0

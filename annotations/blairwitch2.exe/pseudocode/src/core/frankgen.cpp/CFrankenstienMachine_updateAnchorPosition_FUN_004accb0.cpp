@@ -59,8 +59,8 @@ LAB_004accd9:
     core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(this_ptr,start_frame,fVar6);
     break;
   default:
-    g_CHAR_PTR_01d046a0 = "..\\core\\frankgen.cpp";
-    g_INT_01d046a4 = 0x1bb;
+    g_CurrentFilename = "..\\core\\frankgen.cpp";
+    g_CurrentLineNumber = 443;
     core_main_c_displayErrorAndQuit_FUN_004e4500("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);

@@ -19,8 +19,8 @@
 ;   CConsole* g_CConsolePtr = 007f7ea4
 ;   GUID g_IID_IDirectSound3DBuffer = IDirectSound3DBuffer 279afa86-4981-11ce-a521-0020af0be560
 ;   CConsole g_CConsoleInstance
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   IDirectSound* g_DirectSound
 ;   IDirectSound3DListener* g_DirectSound3DListener
 ;   ... and 11 more
@@ -55,8 +55,8 @@ section .text
     MOV EBX,0x5d4802                    ; 0055be4f | = "..\\sound\\snddx.cpp"
     MOV ESI,0x472                       ; 0055be54
     PUSH 0x5d4815                       ; 0055be59 | = "DirectSoundDevice::allocateSfx - Inva..."
-    MOV dword ptr [0x01d71de0],EBX      ; 0055be5e | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0055be64 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0055be5e | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0055be64 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055be6a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0055be6f
@@ -67,8 +67,8 @@ section .text
     MOV EAX,0x5d4850                    ; 0055be7b | = "..\\sound\\snddx.cpp"
     MOV EDX,0x473                       ; 0055be80
     PUSH 0x5d4863                       ; 0055be85 | = "DirectSoundDevice::allocateSfx - dSou..."
-    MOV [0x01d71de0],EAX                ; 0055be8a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0055be8f | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0055be8a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0055be8f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0055be95
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0055be9a

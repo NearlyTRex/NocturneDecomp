@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 511,
+    "complexity_score": 556,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 201,
-    "suspect_count": 28,
+    "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
+      "struct_field_overrun",
       "suspect_float"
     ],
     "total_lines": 637
@@ -672,6 +673,38 @@
       "severity": "moderate",
       "text": "pCVar3 = (CDemonLight *)((pCVar3->base).camera_name + 4);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(pcVar4 + 0x14c8): the pointer is based on a field at offset 0x0 (size 256 in CDemonLight) but the +0x14cc byte offset lands in field left_extent (offset 0x14c8). Ghidra anchored on the wrong field \u2014 rewrite as direct access to left_extent (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 109,
+      "match": "*(...)(pcVar4 + 0x14c8)",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar4 + 0x14c8) = 999;",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar4 + 0x1888): the pointer is based on a field at offset 0x0 (size 256 in CDemonLight) but the +0x188c byte offset lands in field right_extent (offset 0x1888). Ghidra anchored on the wrong field \u2014 rewrite as direct access to right_extent (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 110,
+      "match": "*(...)(pcVar4 + 0x1888)",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar4 + 0x1888) = 0;",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(local_48 + 0x14c8): the pointer is based on a field at offset 0x0 (size 256 in CDemonLight) but the +0x14c8 byte offset lands in field left_extent (offset 0x14c8). Ghidra anchored on the wrong field \u2014 rewrite as direct access to left_extent (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 196,
+      "match": "*(...)(local_48 + 0x14c8)",
+      "severity": "moderate",
+      "text": "*(int *)(local_48 + 0x14c8) = local_38;",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(local_48 + 0x1888): the pointer is based on a field at offset 0x0 (size 256 in CDemonLight) but the +0x1888 byte offset lands in field right_extent (offset 0x1888). Ghidra anchored on the wrong field \u2014 rewrite as direct access to right_extent (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 197,
+      "match": "*(...)(local_48 + 0x1888)",
+      "severity": "moderate",
+      "text": "*(int *)(local_48 + 0x1888) = local_34;",
+      "type": "struct_field_overrun"
     }
   ]
 }

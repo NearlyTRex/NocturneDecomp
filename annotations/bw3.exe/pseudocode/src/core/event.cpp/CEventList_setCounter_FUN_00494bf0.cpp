@@ -18,8 +18,8 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_00494bf0(CEventList *this_
   if (iVar2 < 0) {
     if (value != 0) {
       if (9 < (this_ptr->counters).count) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\event.cpp";
-        g_INT_01d71de4 = 0xebb;
+        g_CurrentFilename = "..\\core\\event.cpp";
+        g_CurrentLineNumber = 3771;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CEventList::setCounter - too many counters!");
       }
       pacVar4 = (this_ptr->counters).names + (this_ptr->counters).count;

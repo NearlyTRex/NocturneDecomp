@@ -58,6 +58,7 @@
 #include "types/enums/EOneShotState.h"
 #include "types/enums/EPlatformStateType.h"
 #include "types/enums/EPlatformType.h"
+#include "types/enums/EPodAuditOperation.h"
 #include "types/enums/ERenderStateFlagBits.h"
 #include "types/enums/EScriptXRefType.h"
 #include "types/enums/EShadowBoundsMode.h"

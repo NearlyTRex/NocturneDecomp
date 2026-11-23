@@ -65,7 +65,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 0052c6f4
     PUSH EAX                            ; 0052c6f8
     CALL support_trisock.cpp_createNetworkAddr_FUN_0059c740 ; 0052c6f9
-        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
+        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; SNetworkAddr * support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0052c6fe
     PUSH EAX                            ; 0052c701
     PUSH EBX                            ; 0052c702
@@ -94,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 0052c730
     PUSH EAX                            ; 0052c734
     CALL support_trisock.cpp_createNetworkAddr_FUN_0059c740 ; 0052c735
-        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
+        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; SNetworkAddr * support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0052c73a
     PUSH 0x0                            ; 0052c73d
     PUSH 0x0                            ; 0052c73f

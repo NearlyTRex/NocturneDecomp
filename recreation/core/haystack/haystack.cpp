@@ -22,6 +22,7 @@ constinit const CDemonActorType CHaystack::kType =
 // deferred: the defaults the constructor gives Haystack's own fields, with the steps that read
 //   them
 // nocedit 0x004f0c10
+// bw2 0x004cc760
 CHaystack::CHaystack(CActor &classes) : CHero(classes) {
     getModel().init("haystack.dfm");
 }
@@ -52,6 +53,8 @@ void CHaystack::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f0bd0
+// bw1 0x004e8ff0
+// bw2 0x004cc730
 std::unique_ptr<CDemonActor> CHaystack::create(CActor &classes) {
     return std::make_unique<CHaystack>(classes);
 }

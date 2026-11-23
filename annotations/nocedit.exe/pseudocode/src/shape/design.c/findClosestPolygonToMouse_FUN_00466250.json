@@ -434,5 +434,75 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "findClosestPolygonToMouse_FUN_00466250.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.DivideZero",
+          "column": 23,
+          "line": 62,
+          "message": "Division by zero",
+          "path_notes": [
+            {
+              "line": 18,
+              "message": "Value assigned to field 'vertex_indices_count'"
+            },
+            {
+              "line": 27,
+              "message": "Assuming 'g_PolygonCount' is not equal to 0"
+            },
+            {
+              "line": 27,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 31,
+              "message": "Assuming 'local_4c' is >= 'g_VertexCount'"
+            },
+            {
+              "line": 31,
+              "message": "Loop condition is false. Execution continues on line 40"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'local_4c' is < 'g_PolygonCount'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'local_3c' is >= field 'vertex_indices_count'"
+            },
+            {
+              "line": 42,
+              "message": "Loop condition is false. Execution continues on line 49"
+            },
+            {
+              "line": 49,
+              "message": "'bVar1' is false"
+            },
+            {
+              "line": 49,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 55,
+              "message": "Loop condition is false. Execution continues on line 62"
+            },
+            {
+              "line": 62,
+              "message": "Division by zero"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

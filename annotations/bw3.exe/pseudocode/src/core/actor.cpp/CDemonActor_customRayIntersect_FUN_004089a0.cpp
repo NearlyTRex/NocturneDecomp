@@ -9,8 +9,8 @@
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_004089a0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
-  g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-  g_INT_01d71de4 = 0x2dc;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 732;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::customRayIntersect should not be called for this base class");
   return 2.0;
 }

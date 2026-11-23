@@ -440,5 +440,71 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CGabriella_findAndPickupNearbyObject_FUN_004d5870.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 64,
+          "message": "Value stored to 'reach' is never read",
+          "path_notes": [
+            {
+              "line": 64,
+              "message": "Value stored to 'reach' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.ArraySubscript",
+          "column": 41,
+          "line": 119,
+          "message": "Array subscript is undefined",
+          "path_notes": [
+            {
+              "line": 30,
+              "message": "'local_28' declared without an initial value"
+            },
+            {
+              "line": 44,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 52,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 68,
+              "message": "Assuming 'local_18' is >= field 'actor_count'"
+            },
+            {
+              "line": 68,
+              "message": "Loop condition is false. Execution continues on line 113"
+            },
+            {
+              "line": 114,
+              "message": "Assuming 'pCVar2' is not equal to null"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Array subscript is undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

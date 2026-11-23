@@ -111,6 +111,7 @@ public:
     virtual void calculateChecksum(std::uint32_t *out_crc);
     // The original's quit when called, since nothing can be just a CDemonActor.
     // nocedit 0x00408b50
+    // bw2 0x00408a20
     [[nodiscard]] virtual const CDemonActorType &getActorType() const = 0;
     // Reads the class's own fields, between the tags load reads, after its parent's.
     virtual void archive(CActorArchive &actor_archive);

@@ -14,6 +14,9 @@ class CBox {
 public:
     CBox();
     // nocedit 0x0041dd00
+    // bw1 0x0041dab0
+    // bw2 0x005b1c70
+    // bw3 0x0041adf0
     ~CBox() = default;
 
     void setupCorners(common::CVector3f *position, common::CVector3f *orientation,

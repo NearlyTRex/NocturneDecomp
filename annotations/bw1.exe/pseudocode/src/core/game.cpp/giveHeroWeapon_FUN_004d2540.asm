@@ -15,8 +15,8 @@
 ;   TerminatedCString s_giveHeroWeapon_This_is_n_005e1afd
 ;   CDemonMission* g_CDemonMission_PTR_0061f650 = 01d2c900
 ;   int g_INT_01d06ab4
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d2c900
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -90,8 +90,8 @@ section .text
         ;   Label: LAB_004d25d1
     MOV EAX,0xbf9                       ; 004d25d6
     PUSH 0x5e1afd                       ; 004d25db | = "giveHeroWeapon - This is not a weapon"
-    MOV dword ptr [0x01d1d400],EBP      ; 004d25e0 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004d25e6 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 004d25e0 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004d25e6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004d25eb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004d25f0

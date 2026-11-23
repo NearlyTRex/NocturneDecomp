@@ -19,8 +19,8 @@
 ;   TerminatedCString s_core_setdir_cpp_005e6025
 ;   TerminatedCString s_Hell_froze_005e6038
 ;   double g_DOUBLE_005e6045 = 0.0555555555555556
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -118,8 +118,8 @@ section .text
     MOV ESI,0x5e6025                    ; 005399c4 | = "..\\core\\setdir.cpp"
     MOV EDI,0x3aa                       ; 005399c9
     PUSH 0x5e6038                       ; 005399ce | = "Hell froze"
-    MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005399df
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005399e4

@@ -89,8 +89,8 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_0056db10(CInStream *stream,int *f
                   (sfx_sample->sample_info).bit_depth = 4;
                 }
                 else {
-                  g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-                  g_INT_01d1d404 = 0x211;
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 529;
                   core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze");
                 }
                 goto LAB_0056dcfd;
@@ -118,8 +118,8 @@ LAB_0056dcfd:
                     (sfx_sample->sample_info).num_channels = (uint)uStack_22;
                     iVar1 = (sfx_sample->sample_info).streaming_flag;
                     if ((iVar1 != 0) && (iVar1 != 2)) {
-                      g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-                      g_INT_01d1d404 = 0x236;
+                      g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                      g_CurrentLineNumber = 566;
                       core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze");
                     }
                     (sfx_sample->sample_info).sample_count =

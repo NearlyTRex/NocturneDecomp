@@ -130,8 +130,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
           pcVar7 = (char *)realloc(this_ptr->file_data_buffer,local_2c);
           this_ptr->file_data_buffer = pcVar7;
           if (pcVar7 == (char *)0x0) {
-            g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-            g_INT_01d046a4 = 0x198;
+            g_CurrentFilename = "..\\engine\\pod.cpp";
+            g_CurrentLineNumber = 408;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
@@ -219,8 +219,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
             pcVar7 = (char *)malloc(local_380);
             this_ptr->file_data_buffer = pcVar7;
             if (pcVar7 == (char *)0x0) {
-              g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-              g_INT_01d046a4 = 0x1ed;
+              g_CurrentFilename = "..\\engine\\pod.cpp";
+              g_CurrentLineNumber = 493;
               core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
             }
             _fread(this_ptr->file_data_buffer,local_380,1,local_30);
@@ -269,8 +269,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
       pcVar7 = (char *)malloc(size);
       this_ptr->file_data_buffer = pcVar7;
       if (pcVar7 == (char *)0x0) {
-        g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-        g_INT_01d046a4 = 0x228;
+        g_CurrentFilename = "..\\engine\\pod.cpp";
+        g_CurrentLineNumber = 552;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
       }
       _fread(this_ptr->file_data_buffer,size,1,local_30);
@@ -326,8 +326,8 @@ LAB_00519fa2:
           pcVar7 = (char *)realloc(this_ptr->file_data_buffer,local_14);
           this_ptr->file_data_buffer = pcVar7;
           if (pcVar7 == (char *)0x0) {
-            g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-            g_INT_01d046a4 = 0x260;
+            g_CurrentFilename = "..\\engine\\pod.cpp";
+            g_CurrentLineNumber = 608;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
           }
         }
@@ -363,8 +363,8 @@ LAB_0051a22e:
     pcVar7 = (char *)realloc(this_ptr->file_data_buffer,size);
     this_ptr->file_data_buffer = pcVar7;
     if (pcVar7 == (char *)0x0) {
-      g_CHAR_PTR_01d046a0 = "..\\engine\\pod.cpp";
-      g_INT_01d046a4 = 0x27b;
+      g_CurrentFilename = "..\\engine\\pod.cpp";
+      g_CurrentLineNumber = 635;
       core_main_c_displayErrorAndQuit_FUN_004e4500("realloc returns NULL shrinking filenameBlockSize to fit.");
     }
   }

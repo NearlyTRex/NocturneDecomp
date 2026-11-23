@@ -2,15 +2,94 @@
 # releases copies this, so the game reads it from the install like any package's.
 
 title = "Nocturne"
-front_end = "nocturne"
-loading_indicator = "moon"
 copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending."
 copyright_os_font = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending."
 
+# The turning moon with bats and clouds behind the menus; the moon in a corner while a level
+# loads; the credits in a column up the right of their picture; START lists the stories, then
+# the chosen one's chapters
+[front_end]
+title_backdrop = "sky_scene"
+loading_indicator = "moon"
+credits = "column_scroll"
+story_select = "story_list"
+
 [credits]
 text = "credits.txt"
+# The image keeps its shape against the screen's left, its column running on to the right edge
+fit = "keep_aspect"
+anchor = "left"
 image = "stats"
 music = "faded-remix.mp3"
+
+# Up the right of the image at 32 pixels a second from its foot, between black strips over its
+# top and bottom, until the line "end"; a line starting "\b" is a heading
+[credits.column_scroll]
+font = "theme"
+column_left = 414
+column_to_screen_edge = true
+top_strip_bottom = 30
+bottom_strip_top = 439
+strip_colour = 0x00
+text_colour = 0xf8
+heading_colour = 0x02
+shadow_colour = 0
+scroll_speed = 32
+start_y = 480
+end_line = "end"
+marker = "\\"
+heading = "b"
+
+# The moon turning into place, 30 bats flying three courses across it once it has, two layers of
+# cloud drifting over, and the title's 30 frames on top, 12 a second; past them, held on the first
+[title_backdrop.sky_scene]
+model = "moon.kfm"
+cheat_model = "taylor_head.kfm"
+cheat_code = 666
+start_phase = 0.25
+turn_per_second = 0.0125
+rest_phase = 0.58
+projection = 112
+swing = 48
+depth = 72
+moon_light = [-37000, -37000, 37000]
+moon_ambient = 0x280
+moon_flat = 0x10000
+bat_model = "menubat.kfm"
+bat_courses = ["menu1.pth", "menu2.pth", "menu3.pth"]
+bat_count = 30
+bat_speed = 20
+bat_animation_speed = 30
+bat_scatter = 5
+bat_light = [-18500, -18500, 18500]
+bat_ambient = 0x2000
+cloud_image = "menucld2"
+cloud_size = 256
+cloud_shift_x = 5
+cloud_shift_y = 4
+frame_prefix = "noc"
+frame_digits = 5
+frame_count = 30
+frame_x = 0
+frame_y = 0
+frame_width = 640
+frame_height = 278
+frame_alpha = 48000
+frame_rate = 12
+frame_wrap = 60
+
+# The fangs at half alpha while archives unpack and the game loads, "Loading..." centred on
+# them, then the opening movie
+[startup]
+picture = "fangs"
+fit = "keep_aspect"
+picture_alpha = 0x8000
+label_x = 320
+label_y = 240
+label_font = "theme"
+label_colour = 0xf8
+movie_directory = "video"
+movie = "opening.avi"
 
 # The main menu's top, and the highest title any shipped screen draws, Sound Options', which
 # clears the logo.
@@ -18,26 +97,536 @@ music = "faded-remix.mp3"
 left = 160
 top = 250
 titled_top = 225
-trademark = { x = 518, y = 99 }
+# The backdrop moves on behind the options pages
+animate_titled_backdrop = true
+# The Menu text setting's fonts for the menus' lists and dialogs
+text_fonts = { large = "theme", small = "small_editor" }
+# The trademark sign beside the title art, at the build line's alpha
+trademark = { x = 518, y = 99, glyph = 0x99, alpha = 0x8000 }
+
+# Colours are palette indices; a shadow of -1 draws none
+[menu.title]
+colour = 0x07
+shadow = 0
+gap_lines = 2
+
+# Without a title the items are double spaced
+[menu.item]
+font = "theme"
+colour = 0xf8
+selected_colour = 0xff
+alpha = 48000
+shadow = -1
+spacing_titled = 1
+spacing_untitled = 2
+
+# The selected item's copies, pulsing with the title animation
+[menu.item.glow]
+colour = 0x07
+copies = 5
+flicker = true
+
+[menu.footer]
+font = "small_editor"
+colour = 0xf8
+shadow = 0
+version_alpha = 0x8000
+
+# The copyright in the screen's bottom right, the build line in its bottom left, a pixel up
+[menu.footer.copyright]
+corner = "bottom_right"
+edge = "screen"
+x = 1
+y = 1
+
+[menu.footer.version]
+corner = "bottom_left"
+edge = "screen"
+x = 4
+y = 1
+
+# The menus' music, by the output rate
+[menu.music]
+low_rate = "splash-music-22.wav"
+high_rate = "splash-music-44.wav"
+
+[menu.calibration]
+image = "brightness"
+# Plain enough to stretch over a wide screen
+fit = "stretch"
+steps = [
+    "1. Turn off all the lights in your room.",
+    "2. Turn your brightness up, so that you see 3 bars on the left side of the screen.",
+    "3. Turn down the brightness, so that the left 2 bars become the same color.",
+    "4. Turn your contrast all the way up.",
+    "You're done with calibration.",
+]
+title = "Monitor calibration"
+prompt = "  Press any key to continue."
+font = "small_editor"
+colour = 0xf8
+title_lines = 2
+prompt_lines = 3
+
+# Whoever is playing, the options pages show the Stranger's controls
+[menu.options]
+hero = 2
+# The 3D card's name on the graphic page, in characters with "..." for the rest
+card_name_length = 24
+
+[menu.sound]
+effects_sample = "colt45-0.wav"
+
+# Flame bars over the sound page for what plays, a frame on per column
+[menu.sound.spectrum]
+frames = ["F0100.RAW", "F0300.RAW", "F0500.RAW", "F0700.RAW",
+          "F0900.RAW", "F1100.RAW", "F1300.RAW", "F1500.RAW"]
+fps = 24
+pitch = 4
+half_width = 16
+margin_divisor = 20
+height_percent = 25
+alpha = 0x8000
+
+# Three quarters of the screen wide
+[menu.slider]
+width_share = 3
+width_parts = 4
+height = 0x2c
+bar_colour = 0x04
+trough_colour = 0x00
+border_colour = 0xff
+text_colour = 0xff
+text_shadow = 0
+
+# NOC1.AVI to NOC4.AVI, as the main menu's music ends
+[menu.attract]
+directory = "video"
+movies = ["noc1.avi", "noc2.avi", "noc3.avi", "noc4.avi"]
+
+# Nocturne has no puzzle or combat difficulty
+[menu.features]
+difficulty = false
+
+# The control modes the Control line steps through, in order: each one's label, whether it aims
+# by hand, and the codes each play action starts bound to, as the INI stores them. The hotkeys'
+# are the engine's, the same in every mode.
+[[controls.mode]]
+id = "keyboard"
+label = "Control : Keyboard"
+manual_aim = false
+[controls.mode.defaults]
+walk = [0x148]  # DIK_UP
+backup = [0x150]  # DIK_DOWN
+run = [0x2a]  # DIK_LSHIFT
+strafe = [0x38]  # DIK_LMENU
+strafe_left = [0x2c]  # DIK_Z
+strafe_right = [0x2d]  # DIK_X
+right = [0x14d]  # DIK_RIGHT
+left = [0x14b]  # DIK_LEFT
+fire = [0x39]  # DIK_SPACE
+use_item = [0x1c]  # DIK_RETURN
+light = [0x21]  # DIK_F
+infrared = [0x17]  # DIK_I
+draw = [0x20]  # DIK_D
+jump = [0x22]  # DIK_G
+point_up = [0x10]  # DIK_Q
+point_down = [0x1e]  # DIK_A
+weapon1 = [0x2]  # DIK_1
+weapon2 = [0x3]  # DIK_2
+weapon3 = [0x4]  # DIK_3
+weapon4 = [0x5]  # DIK_4
+weapon5 = [0x6]  # DIK_5
+next_weapon = [0xd]  # DIK_EQUALS
+prev_weapon = [0xc]  # DIK_MINUS
+next_item = [0x1a]  # DIK_LBRACKET
+prev_item = [0x1b]  # DIK_RBRACKET
+item_desc = [0x35]  # DIK_SLASH
+next_ammo = [0x29]  # DIK_GRAVE
+map = [0x32]  # DIK_M
+
+[[controls.mode]]
+id = "keyboard_mouse"
+label = "Control : Keyboard/Mouse"
+manual_aim = true
+[controls.mode.defaults]
+walk = [0x11]  # DIK_W
+backup = [0x1f]  # DIK_S
+run = [0x3a]  # DIK_CAPITAL
+strafe = [0x38]  # DIK_LMENU
+strafe_left = [0x1e]  # DIK_A
+strafe_right = [0x20]  # DIK_D
+right = [0x255]  # DIM_XAXIS
+left = [0x255]  # DIM_XAXIS
+fire = [0x200]  # DIM_LBUTTON
+use_item = [0x1c]  # DIK_RETURN
+light = [0x10]  # DIK_Q
+infrared = [0x17]  # DIK_I
+draw = [0x12]  # DIK_E
+jump = [0x22]  # DIK_G
+point_up = [0x256]  # DIM_YAXIS
+point_down = [0x256]  # DIM_YAXIS
+weapon1 = [0x2]  # DIK_1
+weapon2 = [0x3]  # DIK_2
+weapon3 = [0x4]  # DIK_3
+weapon4 = [0x5]  # DIK_4
+weapon5 = [0x6]  # DIK_5
+next_weapon = [0xd]  # DIK_EQUALS
+prev_weapon = [0xc]  # DIK_MINUS
+next_item = [0x1a]  # DIK_LBRACKET
+prev_item = [0x1b]  # DIK_RBRACKET
+item_desc = [0x35]  # DIK_SLASH
+next_ammo = [0x29]  # DIK_GRAVE
+map = [0x32]  # DIK_M
+
+# The enhanced game's.
+[[controls.mode]]
+id = "gamepad"
+label = "Control : Gamepad"
+manual_aim = false
+[controls.mode.defaults]
+walk = [0x253]  # DIJ_UP
+backup = [0x254]  # DIJ_DOWN
+run = [0x167]  # PAD_LEFTSTICK
+strafe = []
+strafe_left = [0x251]  # DIJ_LEFT
+strafe_right = [0x252]  # DIJ_RIGHT
+right = [0x17f]  # PAD_RSTICK_RIGHT
+left = [0x17e]  # PAD_RSTICK_LEFT
+fire = [0x17b]  # PAD_RTRIGGER
+use_item = [0x161]  # PAD_B
+light = [0x162]  # PAD_X
+infrared = [0x163]  # PAD_Y
+draw = [0x17a]  # PAD_LTRIGGER
+jump = [0x160]  # PAD_A
+point_up = [0x17c]  # PAD_RSTICK_UP
+point_down = [0x17d]  # PAD_RSTICK_DOWN
+weapon1 = []
+weapon2 = []
+weapon3 = []
+weapon4 = []
+weapon5 = [0x16c]  # PAD_DPAD_DOWN
+next_weapon = [0x16a]  # PAD_RIGHTSHOULDER
+prev_weapon = [0x169]  # PAD_LEFTSHOULDER
+next_item = [0x16e]  # PAD_DPAD_RIGHT
+prev_item = [0x16d]  # PAD_DPAD_LEFT
+item_desc = [0x165]  # PAD_GUIDE
+next_ammo = [0x16b]  # PAD_DPAD_UP
+map = [0x164]  # PAD_BACK
+
+# The bindings page's rows above Hotkeys: the original's, in its order, and the map after them.
+[[controls.binding]]
+action = "walk"
+label = "Forward"
+
+[[controls.binding]]
+action = "backup"
+label = "Back"
+
+[[controls.binding]]
+action = "run"
+label = "Run"
+
+[[controls.binding]]
+action = "strafe"
+label = "Strafe on"
+
+[[controls.binding]]
+action = "strafe_left"
+label = "Strafe left"
+
+[[controls.binding]]
+action = "strafe_right"
+label = "Strafe right"
+
+[[controls.binding]]
+action = "left"
+label = "Turn left"
+
+[[controls.binding]]
+action = "right"
+label = "Turn right"
+
+[[controls.binding]]
+action = "fire"
+label = "Fire / Action"
+
+[[controls.binding]]
+action = "use_item"
+label = "Use item"
+
+[[controls.binding]]
+action = "light"
+label = "Light"
+
+[[controls.binding]]
+action = "infrared"
+label = "Night Vision"
+
+[[controls.binding]]
+action = "draw"
+label = "Draw"
+
+[[controls.binding]]
+action = "point_up"
+label = "Point up"
+
+[[controls.binding]]
+action = "point_down"
+label = "Point down"
+
+[[controls.binding]]
+action = "jump"
+label = "Jump"
+
+[[controls.binding]]
+action = "weapon1"
+label = "Select pistol weapons"
+
+[[controls.binding]]
+action = "weapon2"
+label = "Select assault weapons"
+
+[[controls.binding]]
+action = "weapon3"
+label = "Select flame weapons"
+
+[[controls.binding]]
+action = "weapon4"
+label = "Select grenade weapons"
+
+[[controls.binding]]
+action = "weapon5"
+label = "Select melee weapons"
+
+[[controls.binding]]
+action = "next_weapon"
+label = "Next weapon"
+
+[[controls.binding]]
+action = "prev_weapon"
+label = "Previous weapon"
+
+[[controls.binding]]
+action = "next_item"
+label = "Next item"
+
+[[controls.binding]]
+action = "prev_item"
+label = "Previous item"
+
+[[controls.binding]]
+action = "item_desc"
+label = "Item description"
+
+[[controls.binding]]
+action = "next_ammo"
+label = "Next ammo"
+
+[[controls.binding]]
+action = "map"
+label = "Map"
+
+# The bitmap fonts, by the role the game's code asks for: their sheets, how far runs of
+# characters sit down, the space's width and the shadow's offset, and the OS font each takes
+# when OS text is on. The console draws in its sheet's own colours, the rest in the text colour.
+[[font]]
+id = "medium"
+file = "nocfont.raw"
+width = 0x136
+height = 0x1ae
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 1, first = 0xc0, last = 0xdf }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
+
+[[font]]
+id = "tiny"
+file = "nocsmall.raw"
+width = 0xf8
+height = 0x158
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 2, first = 0x20, last = 0x7e }]
+space_width = 5
+shadow_x = 2
+os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "theme"
+file = "menufont.raw"
+width = 0xfa
+height = 0x23f
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0xc0, last = 0xdf },
+             { offset = 1, first = 0xe0, last = 0xff }]
+space_width = 8
+shadow_x = 2
+os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "small_editor"
+file = "fnte_pfd.RAW"
+width = 0x94
+height = 0xec
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
+
+[[font]]
+id = "console"
+file = "fnte_f.RAW"
+width = 0x94
+height = 0xec
+transparent = 0xff
+own_colours = true
+y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+[[font]]
+id = "micro"
+file = "micro.raw"
+width = 0x94
+height = 0xec
+transparent = 0x00
+own_colours = false
+y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
+space_width = 4
+shadow_x = 1
+
+# The pick lists every list in the menus and the editor draws
+[list]
+item_colour = 0xff
+disabled_colour = 0xf8
+selected_colour = 0x02
+confirmed_colour = 0xfa
+separator_colour = 0x07
+alpha = 0xffff
+shadow = -1
+column_padding = 8
+margin_width = 8
+margin_height = 6
+field_gap_divisor = 40
+row_extra = 1
+reserved_lines = 4
+width_share = 7
+width_parts = 8
+# A quarter second, in game-clock ticks of 18 x 65536 a second
+double_click_ticks = 0x48000
+
+# The colour cube's black, white, green and magenta
+[list.pointer]
+cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
+size = 9
+default_height = 11
+
+# A quarter second before a held press repeats, then a thirtieth between repeats
+[list.scroll_bar]
+first_repeat_ticks = 0x48000
+repeat_ticks = 0x9999
+track_fill_colour = 0x00
+track_border_colour = 0x07
+
+# The windows, prompts, progress bar and controls of every dialog
+[dialog]
+content_colour = 0x00
+border_colour = 0x07
+title_colour = 0xfb
+text_colour = 0xff
+warning_colour = 0xff
+window_status_colour = 0xff
+status_colour = 0xff
+progress_background_colour = 0x00
+progress_border_colour = 0xff
+progress_fill_colour = 0x04
+bevel_highlight_colour = 0xff
+bevel_shade_colour = 0xf8
+bevel_face_colour = 0x07
+bevel_mark_colour = 0x00
+margin_width_divisor = 128
+margin_height_divisor = 96
+grid_divisor = 48
+button_margin_divisor = 80
+prompt_padding_chars = 4
+prompt_padding_lines = 2
 
 [[loading]]
+fit = "keep_aspect"
 id = "load1"
 moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load2"
 moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load3"
 moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
 random = true
 
 [[loading]]
+fit = "keep_aspect"
 id = "load4"
 moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
+
+# The moon turning in its light with a glow before it: in a picture's window, in the top-right
+# corner, or over the whole screen above a black status box
+[loading_indicator.moon]
+model = "moon.kfm"
+glow_texture = "MOONGLOW.RAW"
+window_size = 90
+corner_x = 447
+corner_y = 0
+corner_size = 192
+default_tint = [0xff00, 0xff00, 0xff00]
+full_projection = 56
+window_projection = 84
+depth = 36
+light_reach = 37000
+ambient = 0x280
+glow_half_size = 1856
+status_box = [32, 448, 576, 24]
+status_box_colour = 0x00
+status_font = "theme"
+status_colour = 0xf8
+
+# Without enemy.pod the install is partial; ten loading frames before the chosen mission
+[story_select.story_list]
+full_install_probe = "enemy.pod"
+loading_frames = 10
+
+# Eight seconds of "1927 - 'Dark Reign of the Vampire King'", two glyphs in and one up from the
+# game's bottom left, in smaller fonts on shorter screens
+[chapter_title]
+seconds = 8
+format = "{year} - {title}"
+colour = 0xf8
+shadow = 0
+alpha = 0xffff
+inset_across = 2
+inset_up = 1
+
+[[chapter_title.font]]
+below_height = 384
+font = "small_editor"
+
+[[chapter_title.font]]
+below_height = 480
+font = "tiny"
+
+[[chapter_title.font]]
+font = "medium"
 
 [[story]]
 id = "volume1"
@@ -190,3 +779,175 @@ requires = ["volume1", "volume2", "volume3", "volume4"]
 [[story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = "hq-act5.msn"
+
+# The menus' text, by the id the code asks for; the message file then looks each up as English.
+# A trailing space is part of the text a number or name follows.
+[labels]
+loading = "Loading..."
+choose_story = "Choose a story to play"
+
+# The main menu and what PLAY and MULTIPLAYER open
+main_play = "P L A Y"
+main_multiplayer = "M U L T I P L A Y E R"
+main_options = "O P T I O N S"
+main_quit = "Q U I T"
+play_continue = "C O N T I N U E"
+play_start = "S T A R T"
+play_load = "L O A D"
+multiplayer_host = "H O S T   G A M E"
+multiplayer_join = "J O I N   G A M E"
+
+options_title = "Option Menu"
+options_gameplay = "Gameplay options"
+options_graphic = "Graphic options"
+options_display = "Display options"
+options_sound = "Sound options"
+options_controls = "Control options"
+options_cheats = "Cheats"
+options_credits = "Credits"
+
+gameplay_title = "Gameplay"
+gameplay_always_run_on = "Always run : ON"
+gameplay_always_run_off = "Always run : OFF"
+gameplay_aiming_auto = "Aiming : Auto"
+gameplay_aiming_kindof_auto = "Aiming : Kindof auto"
+gameplay_aiming_manual = "Aiming : Manual"
+gameplay_auto_health_on = "Auto use health : On"
+gameplay_auto_health_off = "Auto use health : Off"
+gameplay_subtitles_on = "Subtitles : On"
+gameplay_subtitles_off = "Subtitles : Off"
+gameplay_text_font = "Text font : "
+gameplay_text_font_auto = "Auto"
+gameplay_text_font_bitmap = "Bitmap"
+gameplay_text_font_system = "System"
+gameplay_menu_text = "Menu text : "
+gameplay_menu_text_large = "Large"
+gameplay_menu_text_small = "Small"
+gameplay_rating_mature = "Rating: Mature"
+gameplay_rating_teen = "Rating: Teen"
+gameplay_puzzle_normal = "Puzzle difficulty: Normal"
+gameplay_puzzle_hard = "Puzzle difficulty: Hard"
+gameplay_combat_normal = "Combat difficulty: Normal"
+gameplay_combat_hard = "Combat difficulty: Hard"
+
+graphic_title = "Graphic Options"
+graphic_acceleration_on = "Acceleration : On"
+graphic_acceleration_off = "Acceleration : Off"
+graphic_api = "3D API : "
+graphic_api_none = "3D API : None"
+graphic_card = "3D Card : "
+graphic_no_card = "No 3D Hardware detected"
+graphic_select_card = "Select 3D card"
+graphic_bits_per_pixel = "Bits per pixel : "
+graphic_upscaler = "Upscaler : "
+graphic_upscaler_standard = "Standard"
+graphic_upscaler_nearest = "Nearest"
+graphic_upscaler_smooth = "Smooth"
+graphic_upscaler_fsr = "FSR"
+graphic_upscaler_lanczos = "Lanczos"
+graphic_upscaler_gsr = "GSR"
+graphic_upscaler_nis = "NIS"
+graphic_upscaler_xbr = "xBR"
+graphic_sharpness = "Sharpness : "
+graphic_antialias = "Anti-aliasing : "
+graphic_antialias_off = "Off"
+graphic_antialias_fxaa = "FXAA"
+graphic_halo_off = "Flashlight halo : Off"
+graphic_halo_simple = "Flashlight halo : Simple"
+graphic_halo_complex = "Flashlight halo : Complex"
+
+display_title = "Display Options"
+display_display = "Display : "
+display_resolution = "Resolution : "
+display_resolution_wide = " (wide)"
+display_window = "Window : "
+display_window_windowed = "Windowed"
+display_window_fullscreen = "Fullscreen"
+display_window_borderless = "Borderless"
+display_fullscreen_size = "Fullscreen size : "
+display_fullscreen_size_game = "Game"
+display_fullscreen_size_desktop = "Desktop"
+display_refresh_rate = "Refresh rate : "
+display_refresh_rate_unit = " Hz"
+display_refresh_rate_auto = "Refresh rate : Auto"
+display_vsync_on = "Vertical sync : On"
+display_vsync_off = "Vertical sync : Off"
+display_widescreen = "Widescreen : "
+display_widescreen_stretch = "Stretch"
+display_widescreen_pillarbox = "Pillarbox"
+display_widescreen_pan_scan = "Pan & scan"
+display_calibration = "Monitor calibration"
+
+sound_title = "Sound Options"
+sound_mute = "Sound : "
+sound_muted = "Muted"
+sound_on = "On"
+sound_effects = "Sound effects : "
+sound_effects_off = "Sound effects : Off"
+sound_dialog = "Dialog : "
+sound_dialog_off = "Dialog : Off"
+sound_music = "Music Vol : "
+sound_music_off = "Music Vol : Off"
+sound_movie = "Movie Vol : "
+sound_movie_off = "Movie Vol : Off"
+sound_percent = "%."
+sound_rate = "Output rate : "
+sound_rate_unit = "hz"
+sound_quality = "Output quality : "
+sound_quality_unit = "bit"
+sound_stereo = "Output type : STEREO"
+sound_mono = "Output type : MONO"
+sound_device = "Device : "
+sound_select_device = "Select sound device"
+
+controls_title = "Control Options"
+controls_keys = "Customize Keys"
+controls_x_sensitivity = "X-axis sensitivity : "
+controls_y_sensitivity = "Y-axis sensitivity : "
+controls_adjust_x_sensitivity = "Adjust X-Axis sensitivity"
+controls_adjust_y_sensitivity = "Adjust Y-Axis sensitivity"
+controls_invert_y_on = "Invert Y Axis : ON"
+controls_invert_y_off = "Invert Y Axis : OFF"
+controls_pad_deadzone = "Stick deadzone : "
+controls_pad_turn_speed = "Stick turn speed : "
+controls_pad_look_speed = "Stick look speed : "
+controls_pad_invert_look_on = "Invert stick look : ON"
+controls_pad_invert_look_off = "Invert stick look : OFF"
+controls_calibrate = "Calibrate"
+
+bindings_title = "Edit key settings"
+bindings_restore_defaults = "Restore defaults"
+bindings_walk = "Walk"
+bindings_hotkeys = "Hotkeys"
+bindings_add = "Add binding"
+bindings_release_key = "OK - you can release the key now..."
+bindings_press_key = "Press new key or button for "
+bindings_invalid = "One or more keys not valid.  Restoring default controls."
+# The bindings lists' buttons; empty is none, as Nocturne's lists have
+bindings_select = ""
+bindings_close = ""
+
+# The hotkeys' rows, the engine's in every game
+hotkey_mute = "Mute sound"
+hotkey_save_game = "Save game"
+hotkey_load_game = "Load game"
+hotkey_quick_save = "Quick save"
+hotkey_quick_load = "Quick load"
+hotkey_keys_help = "Keys help"
+hotkey_gamma_down = "Gamma down"
+hotkey_gamma_up = "Gamma up"
+hotkey_motion_debug = "Motion debug"
+hotkey_edit_mode = "Edit mode"
+hotkey_pause = "Pause"
+hotkey_camera_debug = "Camera debug"
+hotkey_script_view = "Script view"
+hotkey_debug_display = "Debug display"
+hotkey_console = "Console"
+hotkey_camera_toggle = "Camera on/off"
+hotkey_ambient_up = "Ambient light up"
+hotkey_ambient_down = "Ambient light down"
+hotkey_next_camera = "Next camera (edit mode)"
+hotkey_prev_camera = "Previous camera (edit mode)"
+hotkey_script_run = "Run or stop script (script debug)"
+hotkey_script_resume = "Resume script (script debug)"
+hotkey_script_reset_dialog = "Reset dialog (script debug)"

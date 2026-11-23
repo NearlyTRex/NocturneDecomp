@@ -112,6 +112,10 @@ public:
     [[nodiscard]] bool getMenuLeftRightPressed() const;
     // Whether Options is up over a mission's pause, where the mission owns the screen's mode.
     [[nodiscard]] bool getInMission() const;
+    // The packages' menus; without them, fatal.
+    [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
 
 private:
     class CMainMenuPage;
@@ -131,6 +135,8 @@ private:
     void configureCustomKeys();
     // The hotkeys as Customize Keys lists the play actions, the developers' in developer mode.
     void configureHotkeyBindings();
+    // The game's buttons under a bindings list, as BW's Select and Close; Nocturne's has none.
+    void setBindingButtons(shape::CPickList &list) const;
     // An action's chords' names, or (none).
     [[nodiscard]] std::string getBindingNames(EGameAction action) const;
     // The codes of one action, as a list with Add binding after them, until Cancel.
@@ -151,7 +157,7 @@ private:
         int height_half = 0;
         int frame = 0;
     };
-    void renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top);
+    void renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top, int alpha);
     // The flame frame a bar at layout column `column` shows now.
     [[nodiscard]] int getAudioSpectrumFrame(int column) const;
     // PLAY's Continue, Start and Load.
@@ -163,17 +169,21 @@ private:
     // An untitled page of the localized items from the main menu's top: the item chosen, or
     // nothing for Cancel.
     [[nodiscard]] std::optional<int> showSubmenu(std::span<const std::string_view> items);
-    void drawMenuBackdrop();
-    // `top`, raised where `rows` lines of the theme font would run off the layout's 480 rows,
+    // The title backdrop, moved on first when animate.
+    void drawMenuBackdrop(bool animate);
+    // `top`, raised where `rows` lines of the items' font would run off the layout's 480 rows,
     // and never above them.
     [[nodiscard]] int fitMenuTop(int top, int rows) const;
     void showCalibrationTestPattern(engine::CAlphaBitmap &bitmap, std::string_view message_text);
     // The selected item: five faint copies jittered about it, then the item over them.
     // The 640x480 layout as this screen shows it.
     [[nodiscard]] SFrontEndLayout getScreenLayout() const;
-    // The packages' layout; without one, fatal.
-    [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
+    [[nodiscard]] int getLineLeft(const engine::CBitFont &font, std::string_view text) const;
+    void drawFooterLine(engine::CBitFont &font, std::string_view text,
+                        const engine::SFooterPlace &place);
+    void drawMenuLine(engine::CBitFont &font, std::string_view text, int left, int y, int colour,
+                      int shadow, const std::optional<engine::SMenuDrop> &drop);
     [[nodiscard]] std::string_view getCopyright() const;
     void drawFooter();
     // The choice the menu actions make this frame, or -1.
@@ -184,18 +194,10 @@ private:
     bool menu_input_happened_ = false;
     bool menu_left_right_pressed_ = false;
     bool in_mission_ = false;
-    // Which flame frame the bars show, in 16.16; it runs through eight a third of a second.
+    // Which flame frame the bars show, in 16.16.
     int audio_visualization_counter_ = 0;
-    std::array<platform::SMRGLTextureBasic, 8> audio_spectrum_textures_{{
-        {.texture_name = "F0100.RAW"},
-        {.texture_name = "F0300.RAW"},
-        {.texture_name = "F0500.RAW"},
-        {.texture_name = "F0700.RAW"},
-        {.texture_name = "F0900.RAW"},
-        {.texture_name = "F1100.RAW"},
-        {.texture_name = "F1300.RAW"},
-        {.texture_name = "F1500.RAW"},
-    }};
+    // The menus' spectrum frames, made as the bars are first drawn.
+    std::vector<platform::SMRGLTextureBasic> audio_spectrum_textures_;
 };
 
 } // namespace nocturne::core

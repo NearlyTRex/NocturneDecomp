@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "constants.h"
 
 // =============================================================================
 // CONSTANTS
@@ -2163,7 +2162,7 @@ static TerminatedCString s_CTrash_005ecd06 = "CTrash";
 static TerminatedCString s_question_kfm_005ecd0d = "question.kfm";
 static TerminatedCString s_modelName_005ecd1a = "modelName";
 static TerminatedCString s_homePos_005ecd24 = "homePos";
-static TerminatedCString s_s_333_CTrigger_005ecd55 = "?333?CTrigger";
+static TerminatedCString s_CTrigger_005ecd5a = "CTrigger";
 static TerminatedCString s_nobody_005ecd63 = "nobody";
 static TerminatedCString s_CDemonActor_005ecd6a = "CDemonActor";
 static TerminatedCString s_none_005ecd76 = "none";

@@ -370,8 +370,8 @@ section .text
     MOV EBP,0x5ceed4                    ; 004482aa | = "..\\core\\dfont.cpp"
     MOV EAX,0xa5                        ; 004482af
     PUSH 0x5ceee6                       ; 004482b4 | = "Hand font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004482b9 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004482bf | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004482b9 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004482bf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004482c4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004482c9
@@ -443,8 +443,8 @@ section .text
         ;   Label: LAB_00448394
     MOV ECX,0x41                        ; 00448399
     PUSH 0x5ced6a                       ; 0044839e | = "Medium font object not allocated!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004483a3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004483a9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004483a3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004483a9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483af
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004483b4
@@ -454,8 +454,8 @@ section .text
         ;   Label: LAB_004483bc
     MOV EAX,0x51                        ; 004483c1
     PUSH 0x5cedaa                       ; 004483c6 | = "Tiny font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 004483cb | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004483d1 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004483cb | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004483d1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483d6
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004483db
@@ -465,8 +465,8 @@ section .text
         ;   Label: LAB_004483e3
     MOV ESI,0x60                        ; 004483e8
     PUSH 0x5cede9                       ; 004483ed | = "Theme font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBX      ; 004483f2 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004483f8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004483f2 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004483f8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004483fe
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448403
@@ -476,8 +476,8 @@ section .text
         ;   Label: LAB_0044840b
     MOV EBX,0x71                        ; 00448410
     PUSH 0x5cee29                       ; 00448415 | = "Debug font object not allocated!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0044841a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00448420 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0044841a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00448420 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448426
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044842b
@@ -487,8 +487,8 @@ section .text
         ;   Label: LAB_00448433
     MOV EAX,0x84                        ; 00448438
     PUSH 0x5cee69                       ; 0044843d | = "Console font object not allocated!"
-    MOV dword ptr [0x01d046a0],EBP      ; 00448442 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00448448 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00448442 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00448448 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044844d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448452
@@ -498,8 +498,8 @@ section .text
         ;   Label: LAB_0044845a
     MOV EBX,0x96                        ; 0044845f
     PUSH 0x5ceea9                       ; 00448464 | = "Micro font object not allocated!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00448469 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0044846f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00448469 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0044846f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448475
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044847a
@@ -529,8 +529,8 @@ section .text
     MOV EBP,0x5cef12                    ; 004484b0 | = "..\\core\\dfont.cpp"
     MOV EAX,0xb7                        ; 004484b5
     PUSH 0x5cef24                       ; 004484ba | = "initFonts - Can't allocate gMediumOSFont"
-    MOV dword ptr [0x01d046a0],EBP      ; 004484bf | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004484c5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004484bf | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004484c5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004484ca
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004484cf
@@ -562,8 +562,8 @@ section .text
     MOV EDX,0x5cef4d                    ; 0044851b | = "..\\core\\dfont.cpp"
     MOV ECX,0xbd                        ; 00448520
     PUSH 0x5cef5f                       ; 00448525 | = "initFonts - Can't allocate gThemeOSFont"
-    MOV dword ptr [0x01d046a0],EDX      ; 0044852a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00448530 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0044852a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00448530 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00448536
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0044853b
@@ -595,8 +595,8 @@ section .text
     MOV EBX,0x5cef87                    ; 00448587 | = "..\\core\\dfont.cpp"
     MOV ESI,0xc3                        ; 0044858c
     PUSH 0x5cef99                       ; 00448591 | = "initFonts - Can't allocate gTinyOSFont"
-    MOV dword ptr [0x01d046a0],EBX      ; 00448596 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0044859c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00448596 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0044859c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004485a2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004485a7
@@ -628,8 +628,8 @@ section .text
     MOV EDI,0x5cefc0                    ; 004485f3 | = "..\\core\\dfont.cpp"
     MOV EBP,0xc9                        ; 004485f8
     PUSH 0x5cefd2                       ; 004485fd | = "initFonts - Can't allocate gDebugOSFont"
-    MOV dword ptr [0x01d046a0],EDI      ; 00448602 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00448608 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00448602 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 00448608 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044860e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00448613

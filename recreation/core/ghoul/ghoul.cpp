@@ -66,6 +66,9 @@ CGhoul::CGhoul(CActor &classes)
 }
 
 // nocedit 0x004e8f10
+// bw1 0x004e0f20
+// bw2 0x004c47a0
+// bw3 0x004c9ab0
 CGhoul::~CGhoul() = default;
 
 // The original keeps the bones for every ghoul in one global; here each keeps its own.
@@ -100,6 +103,9 @@ const CDemonActorType &CGhoul::getActorType() const {
 }
 
 // nocedit 0x004e5ff0
+// bw1 0x004ddd30
+// bw2 0x004c15b0
+// bw3 0x004c68b0
 std::unique_ptr<CDemonActor> CGhoul::create(CActor &classes) {
     return std::make_unique<CGhoul>(classes);
 }
@@ -114,6 +120,9 @@ void CGhoul::renderBackground(int layer_flag, const SActorRenderOwners &owners) 
 }
 
 // nocedit 0x004e81c0
+// bw1 0x004e0130
+// bw2 0x004c39b0
+// bw3 0x004c8cc0
 void CGhoul::archive(CActorArchive &actor_archive) {
     CEnemy::archive(actor_archive);
     const int version = actor_archive.getSavedVersion(kType);

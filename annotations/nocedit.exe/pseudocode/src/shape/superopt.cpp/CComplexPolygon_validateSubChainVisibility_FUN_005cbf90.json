@@ -1032,5 +1032,171 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CComplexPolygon_validateSubChainVisibility_FUN_005cbf90.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 34,
+          "line": 75,
+          "message": "The left operand of '!=' is a garbage value",
+          "path_notes": [
+            {
+              "line": 29,
+              "message": "Assuming field 'x' is >= 0"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 29,
+              "message": "'?' condition is false"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 30,
+              "message": "Assuming field 'y' is >= 0"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 30,
+              "message": "'?' condition is false"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 31,
+              "message": "Assuming field 'z' is >= 0"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 31,
+              "message": "'?' condition is false"
+            },
+            {
+              "line": 590,
+              "message": "expanded from macro 'ABS'"
+            },
+            {
+              "line": 32,
+              "message": "Assuming 'abs_nx' is < 'abs_ny'"
+            },
+            {
+              "line": 32,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 33,
+              "message": "Assuming 'abs_ny' is < 'abs_nx'"
+            },
+            {
+              "line": 33,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 34,
+              "message": "Assuming 'abs_nz' is < 'abs_nx'"
+            },
+            {
+              "line": 34,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 35,
+              "message": "Assuming 'full_edge_count' is not equal to 0"
+            },
+            {
+              "line": 35,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming 'local_28' is < 'sub_chain'"
+            },
+            {
+              "line": 38,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 39,
+              "message": "'x_dominant' is false"
+            },
+            {
+              "line": 39,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 43,
+              "message": "'y_dominant' is false"
+            },
+            {
+              "line": 43,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 47,
+              "message": "'z_dominant' is false"
+            },
+            {
+              "line": 47,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 54,
+              "message": "Assuming 'sub_chain_count' is not equal to 0"
+            },
+            {
+              "line": 54,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "'x_dominant' is false"
+            },
+            {
+              "line": 57,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 63,
+              "message": "'y_dominant' is false"
+            },
+            {
+              "line": 63,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 69,
+              "message": "'z_dominant' is false"
+            },
+            {
+              "line": 69,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 75,
+              "message": "The left operand of '!=' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

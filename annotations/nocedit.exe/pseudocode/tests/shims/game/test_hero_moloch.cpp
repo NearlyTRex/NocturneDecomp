@@ -120,6 +120,12 @@ NOCTURNE_TEST(a_blow_lands_from_whichever_hand_reaches) {
     controller(m)->current_frame_number = 17.0f;
     nocturne_moloch_attack_hit(m, kPunch, 15.0f);
     CHECK_EQ(stand.cylinder_points.size(), (size_t)3); // right once, left twice
+    // One punch sound for the blow that landed.
+    CHECK_EQ(stand.sounds.size(), (size_t)1);
+    if (!stand.sounds.empty()) {
+        CHECK(stand.sounds[0].first == &m->base.base.base);
+        CHECK_EQ(stand.sounds[0].second, std::string("icepick-punch?.wav"));
+    }
 
     // A smash lands on its own frame; with no hands to strike from, nothing.
     stand.cylinder_points.clear();
@@ -128,8 +134,27 @@ NOCTURNE_TEST(a_blow_lands_from_whichever_hand_reaches) {
     CHECK_EQ(stand.cylinder_points.size(), (size_t)3);
     stand.bones.clear();
     stand.cylinder_points.clear();
+    stand.sounds.clear();
     nocturne_moloch_attack_hit(m, kSmash, 14.0f);
     CHECK(stand.cylinder_points.empty());
+    CHECK(stand.sounds.empty());
+
+    // A blow that reaches nobody is silent.
+    stand.bones["Bip01 R Hand"] = 1;
+    stand.cylinder_hits.clear();
+    nocturne_moloch_attack_hit(m, kSmash, 14.0f);
+    CHECK_EQ(stand.cylinder_points.size(), (size_t)2); // the right hand, on each
+    CHECK(stand.sounds.empty());
+
+    // The left hand landing alone sounds as well.
+    stand.bones.clear();
+    stand.bones["Bip01 L Hand"] = 2;
+    stand.cylinder_hits[left] = 1;
+    nocturne_moloch_attack_hit(m, kSmash, 14.0f);
+    CHECK_EQ(stand.sounds.size(), (size_t)1);
+    stand.sounds.clear();
+    stand.bones.clear();
+    stand.cylinder_points.clear();
 
     // Not in another motion, in human form, or with no Moloch.
     s_punching.state_index = kWalk;

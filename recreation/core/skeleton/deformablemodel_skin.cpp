@@ -12,6 +12,9 @@ namespace nocturne::core {
 // Each weighed point is stored as a float before it is added. The original also took the parts'
 // visibility, which it didn't read.
 // nocedit 0x0059a880
+// bw1 0x00563cb0
+// bw2 0x00541640
+// bw3 0x00548850
 void CDeformableModel::skinVertices(std::size_t lod_index,
                                     std::span<const common::CMatrix3x4f> bone_matrices,
                                     std::span<common::CVector3i> output) const {

@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CPickList_enableItem_inv_005dc6e6
 ;   TerminatedCString s_shape_edittool_cpp_005dc70c
 ;   TerminatedCString s_Out_of_memory_005dc722
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -47,8 +47,8 @@ section .text
         ;   Label: LAB_0049c044
     MOV EDI,0x116c                      ; 0049c049
     PUSH 0x5dc6e6                       ; 0049c04e | = "CPickList::enableItem - invalid index"
-    MOV dword ptr [0x01d1d400],ECX      ; 0049c053 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0049c059 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0049c053 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0049c059 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c05f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c064
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_0049c0be
     MOV EBP,0x1174                      ; 0049c0c3
     PUSH 0x5dc722                       ; 0049c0c8 | = "Out of memory"
-    MOV dword ptr [0x01d1d400],EDI      ; 0049c0cd | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0049c0d3 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0049c0cd | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 0049c0d3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0049c0d9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0049c0de

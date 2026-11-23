@@ -263,5 +263,95 @@
     "return_addr_offset": 0,
     "variables": []
   },
+  "static_analysis": {
+    "analyzed_file": "captureDebugMovieFrame_FUN_004d7810.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.DivideZero",
+          "column": 31,
+          "line": 94,
+          "message": "Division by zero",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Assuming 'g_MovieRecordingArmed' is not equal to 0"
+            },
+            {
+              "line": 33,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 35,
+              "message": "Assuming 'iVar2' is equal to 0"
+            },
+            {
+              "line": 35,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "Assuming 'g_MovieRecordingMaxFrames' is <= 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'g_MovieRecordingActive' is not equal to 0"
+            },
+            {
+              "line": 53,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'p_Stack_2c' is not equal to null"
+            },
+            {
+              "line": 57,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 59,
+              "message": "Assuming 'g_MovieRecordingHeight' is > 0"
+            },
+            {
+              "line": 59,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 62,
+              "message": "Assuming 'g_MovieRecordingWidth' is > 0"
+            },
+            {
+              "line": 62,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 73,
+              "message": "The value 0 is assigned to 'iStack_14'"
+            },
+            {
+              "line": 74,
+              "message": "Assuming 'iVar2' is >= 'iVar3'"
+            },
+            {
+              "line": 74,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 94,
+              "message": "Division by zero"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

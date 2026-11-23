@@ -91,20 +91,30 @@ std::string relativeTo(std::string_view folder, std::string_view path) {
 }
 
 // A folder's nocturne.toml: nothing when it has none, else the package or what is wrong with it.
+// One the game wrote that this build can't read, written by a build before a key it needs, is
+// removed, so the folder is searched as one without, and its manifest written again.
 std::optional<std::expected<SPackage, std::string>> readPackage(platform::IFileSystem &file_system,
-                                                                std::string_view folder) {
+                                                                std::string_view folder,
+                                                                std::vector<std::string> &notes) {
     const std::string path = common::joinPath(folder, kManifestName);
     const std::optional<std::string> text = file_system.readFile(path);
     if (!text) {
         return std::nullopt;
     }
     std::expected<SPackageManifest, std::string> manifest = parsePackageManifest(*text);
+    if (!manifest && text->starts_with(kWrittenByGame)) {
+        notes.push_back(std::format("{}: {}; the game wrote it, so it is written again", path,
+                                    manifest.error()));
+        static_cast<void>(file_system.removeFile(path));
+        return std::nullopt;
+    }
     if (!manifest) {
         return std::unexpected(std::format("{}: {}", path, manifest.error()));
     }
     return SPackage{.manifest = std::move(*manifest),
                     .folder = std::string(folder),
-                    .written_by_game = text->starts_with(kWrittenByGame)};
+                    .written_by_game = text->starts_with(kWrittenByGame),
+                    .is_game = false};
 }
 
 // A folder of the install, the install folder ("") among them, or of an archive, and its PODs.
@@ -152,15 +162,13 @@ public:
                EArchiveUnpacking unpacking)
         : file_system_(file_system), releases_(releases), unpacking_(unpacking) {}
 
-    // The install's folders give the base game, whose title names the cache its archives are
-    // unpacked in; an archive may hold the base game itself, so its PODs not being found waits.
+    // The install's folders give the games, the first of whose titles names the cache its
+    // archives are unpacked in; an archive may hold a game itself, so its PODs not being found
+    // waits.
     SPackageDiscovery run() && {
         searchFolder("", "", "");
-        std::optional<std::string> no_base;
-        if (!hasPackage(kBasePackageId)) {
-            no_base = addBasePackage();
-        }
-        cache_ = findArchiveCache(file_system_, findBaseTitle());
+        const std::optional<std::string> no_game = addGamePackages();
+        cache_ = findArchiveCache(file_system_, findFirstGameTitle());
         // Those an archive holds are searched after the ones found with it.
         while (!archives_.empty()) {
             for (const std::string &archive : std::exchange(archives_, {})) {
@@ -168,8 +176,8 @@ public:
             }
         }
         pruneArchiveCache(file_system_, cache_, unpacked_);
-        if (no_base && !hasPackage(kBasePackageId)) {
-            found_.notes.push_back(std::move(*no_base));
+        if (no_game && !std::ranges::any_of(found_.packages, &SPackage::isGame)) {
+            found_.notes.push_back(*no_game);
         }
         for (const SFolder &folder : folders_) {
             addFolderPackage(folder);
@@ -178,11 +186,9 @@ public:
     }
 
 private:
-    // The base game's, or failing that its release's.
-    [[nodiscard]] std::optional<std::string> findBaseTitle() const {
-        const auto base = std::ranges::find(
-            found_.packages, kBasePackageId,
-            [](const SPackage &package) -> const std::string & { return package.manifest.id; });
+    // The first game's, or failing that its release's.
+    [[nodiscard]] std::optional<std::string> findFirstGameTitle() const {
+        const auto base = std::ranges::find_if(found_.packages, &SPackage::isGame);
         if (base == found_.packages.end()) {
             return std::nullopt;
         }
@@ -199,7 +205,7 @@ private:
     void searchFolder(const std::string &folder, const std::string &inner,
                       const std::string &archive) {
         std::optional<std::expected<SPackage, std::string>> read =
-            readPackage(file_system_, folder);
+            readPackage(file_system_, folder, found_.notes);
         folders_.push_back({.path = folder,
                             .inner = inner,
                             .archive = archive,
@@ -251,12 +257,14 @@ private:
             found_.notes.push_back(std::format("{}; the package isn't loaded", read.error()));
             return;
         }
+        read->is_game = !read->manifest.release.empty() ||
+                        std::ranges::contains(releases_, read->manifest.id, &SRelease::game);
         if (isStaleBaseManifest(*read)) {
             dropStaleBaseManifest(*read);
             return;
         }
+        refreshGameContent(*read);
         if (!isIdTaken(*read)) {
-            refreshGameContent(*read);
             claim(*read);
             found_.packages.push_back(std::move(*read));
         }
@@ -268,27 +276,29 @@ private:
             return;
         }
         const auto release = std::ranges::find(releases_, package.manifest.release, &SRelease::id);
-        if (release == releases_.end() || package.manifest.game == release->content) {
+        if (release == releases_.end() ||
+            (package.manifest.game == release->content && package.manifest.id == release->game)) {
             return;
         }
         package.manifest.game = release->content;
+        package.manifest.id = release->game;
         found_.notes.push_back(std::format("{} is written again with {}'s game content",
                                            common::joinPath(package.folder, kManifestName),
                                            release->name));
         write(package);
     }
 
-    // A base manifest the game wrote that has lost a POD it needs.
+    // A game's manifest the game wrote that has lost a POD it needs.
     [[nodiscard]] bool isStaleBaseManifest(const SPackage &package) {
-        return package.manifest.id == kBasePackageId && package.written_by_game &&
+        return package.isGame() && package.written_by_game &&
                !std::ranges::all_of(package.manifest.required, [&](const std::string &pod) {
                    return file_system_.getFileInfo(common::joinPath(package.folder, pod))
                        .has_value();
                });
     }
 
-    // Removed before it takes the base game's id, so another manifest may have it, or one is
-    // written again from where the PODs are now; its folder is then searched as any other.
+    // Removed before it takes its game's id, so another manifest may have it, or one is written
+    // again from where the PODs are now; its folder is then searched as any other.
     void dropStaleBaseManifest(const SPackage &package) {
         found_.notes.push_back(std::format("{} has lost a POD it needs, so it is written again",
                                            common::joinPath(package.folder, kManifestName)));
@@ -297,9 +307,8 @@ private:
     }
 
     // In the folder holding the release's PODs, from the PODs no manifest has; not written
-    // without the PODs the release needs.
-    // Why there is none, when its PODs weren't found.
-    std::optional<std::string> addBasePackage() {
+    // The PODs no manifest has, in folders without one.
+    [[nodiscard]] std::vector<std::string> findUnlistedPods() {
         std::vector<std::string> unlisted;
         for (const SFolder &folder : folders_) {
             if (folder.has_manifest) {
@@ -311,13 +320,38 @@ private:
                 }
             }
         }
-        SBaseManifest base = makeBaseManifest(file_system_, unlisted, releases_);
-        if (!std::ranges::all_of(base.manifest.required, [&](const std::string &pod) {
-                return std::ranges::contains(unlisted, pod);
-            })) {
-            return std::format("{}'s PODs weren't found, so the base game has no manifest",
-                               base.manifest.name);
+        return unlisted;
+    }
+
+    // A game's package for each release whose PODs are left, the best match first, until none
+    // is. Why there is none at all, when no game's PODs were found.
+    std::optional<std::string> addGamePackages() {
+        std::optional<std::string> none;
+        while (true) {
+            const bool has_game = std::ranges::any_of(found_.packages, &SPackage::isGame);
+            const std::vector<std::string> unlisted = findUnlistedPods();
+            if (has_game && (unlisted.empty() || releases_.empty())) {
+                return none;
+            }
+            SBaseManifest base = makeBaseManifest(file_system_, unlisted, releases_);
+            if (!std::ranges::all_of(base.manifest.required, [&](const std::string &pod) {
+                    return std::ranges::contains(unlisted, pod);
+                })) {
+                if (!has_game) {
+                    none = std::format("{}'s PODs weren't found, so no game has a manifest",
+                                       base.manifest.name);
+                }
+                return none;
+            }
+            if (!addGamePackage(std::move(base))) {
+                return none;
+            }
         }
+    }
+
+    // In the folder holding the release's PODs, from the PODs no manifest has. False when it
+    // can't be added: its id is another package's, or its folder holds another game's manifest.
+    bool addGamePackage(SBaseManifest base) {
         found_.notes.insert(found_.notes.end(), base.notes.begin(), base.notes.end());
         std::vector<std::string> present;
         for (const SPackagePod &pod : base.manifest.pods) {
@@ -327,7 +361,8 @@ private:
         }
         SPackage package{.manifest = std::move(base.manifest),
                          .folder = findCommonFolder(present),
-                         .written_by_game = true};
+                         .written_by_game = true,
+                         .is_game = true};
         for (SPackagePod &pod : package.manifest.pods) {
             pod.path = relativeTo(package.folder, pod.path);
         }
@@ -335,6 +370,16 @@ private:
             pod = relativeTo(package.folder, pod);
         }
         SFolder &folder = *std::ranges::find(folders_, package.folder, &SFolder::path);
+        if (folder.has_manifest) {
+            found_.notes.push_back(std::format(
+                "{}'s PODs are in {}, which has a package's manifest already; give each game a "
+                "folder of its own",
+                package.manifest.name, folder.name()));
+            return false;
+        }
+        if (isIdTaken(package)) {
+            return false;
+        }
         if (folder.has_broken_manifest) {
             found_.notes.push_back(std::format("the install is read as {} and {} is left as it is",
                                                package.manifest.name,
@@ -344,8 +389,9 @@ private:
             folder.has_manifest = true;
         }
         claim(package);
-        found_.packages.insert(found_.packages.begin(), std::move(package));
-        return std::nullopt;
+        const auto games = std::ranges::count_if(found_.packages, &SPackage::isGame);
+        found_.packages.insert(found_.packages.begin() + games, std::move(package));
+        return true;
     }
 
     // A subfolder's PODs that no manifest has are given one naming them, its id its path; those
@@ -378,7 +424,8 @@ private:
                                       .pods = {},
                                       .game = {}},
                          .folder = folder.path,
-                         .written_by_game = true};
+                         .written_by_game = true,
+                         .is_game = false};
         for (const std::string &pod : unlisted) {
             package.manifest.pods.push_back(recordPod(file_system_, folder.path, pod));
         }
@@ -403,11 +450,6 @@ private:
     [[nodiscard]] bool isClaimed(const std::string &path) {
         const std::optional<std::string> real = file_system_.getRealPath(path);
         return real && claimed_.contains(*real);
-    }
-
-    [[nodiscard]] bool hasPackage(std::string_view id) const {
-        return std::ranges::contains(found_.packages, id,
-                                     [](const SPackage &p) { return p.manifest.id; });
     }
 
     // The first folder, by name, keeps an id.

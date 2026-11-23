@@ -32,8 +32,8 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00496560(CFilmProjecto
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
                          ((this_ptr->base).dest_actor,g_CFilmReelClassInfo.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\filmreel.cpp";
-        g_INT_01d71de4 = 0x11d;
+        g_CurrentFilename = "..\\core\\filmreel.cpp";
+        g_CurrentLineNumber = 285;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CFilmProjector::Need to put CFilmReel in place");
       }
       core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00

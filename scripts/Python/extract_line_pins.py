@@ -31,10 +31,7 @@ import struct
 import sys
 from collections import Counter, defaultdict
 
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_OP_REG, CS_OP_IMM, CS_OP_MEM
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_OP_REG, CS_OP_IMM, CS_OP_MEM
 
 
 # --------------------------------------------------------------------------
@@ -139,15 +136,14 @@ def sweep_text(data, sec, md):
     blob = data[sec.raw_off:sec.raw_off + sec.extent]
     insns = []
     offset = 0
-    n = len(blob)
-    while offset < n:
+    while offset < len(blob):
         last_end = offset
         for ins in md.disasm(blob[offset:], sec.va + offset):
-            _record(ins, insns, md)
+            insns.append(_record(ins, md))
             last_end = ins.address - sec.va + ins.size
         # disasm stopped: either we consumed everything, or the byte at
         # last_end is not decodable. Skip it and resume.
-        offset = last_end + 1 if last_end > offset else offset + 1
+        offset = last_end + 1
     return insns
 
 
@@ -169,17 +165,14 @@ def _parent(md, reg):
     """Map a sub-register to its 32-bit parent so partial writes invalidate."""
     p = _PARENT.get(reg)
     if p is None:
-        name = md.reg_name(reg) or f"?{reg}"
+        name = md.reg_name(reg)
         p = _PARENT[reg] = _SUBREG.get(name, name)
     return p
 
 
-def _record(ins, insns, md):
-    """Append (addr, rec, clobbered_regs) for one instruction."""
-    try:
-        _, written = ins.regs_access()
-    except Exception:
-        written = ()
+def _record(ins, md):
+    """(addr, rec, clobbered_regs) for one instruction."""
+    _, written = ins.regs_access()
     clobber = tuple(_parent(md, r) for r in written)
 
     rec = None
@@ -192,11 +185,12 @@ def _record(ins, insns, md):
         elif (dst.type == CS_OP_MEM and dst.size == 4
               and dst.mem.base == 0 and dst.mem.index == 0):
             target = dst.mem.disp & 0xFFFFFFFF
+            # the source of a store to memory is a register or an immediate
             if src.type == CS_OP_REG:
                 rec = ("store_reg", target, _parent(md, src.reg))
-            elif src.type == CS_OP_IMM:
+            else:
                 rec = ("store_imm", target, src.imm & 0xFFFFFFFF)
-    insns.append((ins.address, rec, clobber))
+    return ins.address, rec, clobber
 
 
 MAX_LINE = 200_000     # no source file in this project is remotely this long
@@ -209,9 +203,9 @@ def extract_pins(insns, str_vas):
     """Find filename stores, then pair each with its line store.
 
     Two passes. The first learns, per filename-global, which line-global it is
-    actually partnered with -- by counting *every* plausible candidate in the
-    window, so the true partner wins on sheer frequency. The second pass then
-    accepts only that partner. Picking the merely-nearest store instead
+    actually partnered with, by a vote of each site's nearest candidate, so the
+    true partner wins on frequency. The second pass then accepts only that
+    partner at each site. Taking each site's nearest store on its own instead
     mispairs ~20% of sites, because an unrelated global write often sits
     immediately before the filename store.
     """
@@ -219,66 +213,47 @@ def extract_pins(insns, str_vas):
     # Without clobbering, a `mov [g_line], EAX` whose EAX came from a CALL
     # would silently inherit a stale immediate and emit a bogus line number.
     regval = {}
-    resolved = []          # (idx, addr, kind, target, value_or_None)
-    for idx, (addr, rec, clobber) in enumerate(insns):
+    stores = []            # (addr, target, value_or_None), in instruction order
+    for addr, rec, clobber in insns:
         for r in clobber:
             regval.pop(r, None)
         if rec is None:
-            resolved.append((idx, addr, None, None, None))
             continue
-        kind = rec[0]
+        kind, a, b = rec
         if kind == "load":
-            _, reg, imm = rec
-            regval[reg] = imm
-            resolved.append((idx, addr, None, None, None))
+            regval[a] = b
         elif kind == "store_reg":
-            _, target, reg = rec
-            resolved.append((idx, addr, "store", target, regval.get(reg)))
-        elif kind == "store_imm":
-            _, target, imm = rec
-            resolved.append((idx, addr, "store", target, imm))
+            stores.append((addr, a, regval.get(b)))
+        else:
+            stores.append((addr, a, b))
 
     # --- which globals receive filename-string pointers? -------------------
     # Discovered, not hardcoded: the assert slots (g_CurrentFilename,
     # g_CurrentDebugFilename) are whichever globals get written a __FILE__
     # pointer over and over. This is what lets the script run unchanged on a
     # sibling binary where those globals sit at different addresses.
-    hits = Counter()
-    for idx, addr, kind, target, val in resolved:
-        if kind == "store" and val in str_vas:
-            hits[target] += 1
+    hits = Counter(target for _, target, val in stores if val in str_vas)
     file_globals = Counter({g: c for g, c in hits.items() if c >= MIN_SLOT_HITS})
 
     if not file_globals:
         return [], {}, {"unpaired": 0, "file_stores": 0, "pairing": {},
                         "rejected_slots": len(hits)}
 
-    store_idx = [i for i, (_, _, k, _, _) in enumerate(resolved) if k == "store"]
-    store_pos = {i: p for p, i in enumerate(store_idx)}
-
-    def candidates(i):
-        """Plausible line-number stores near filename store `i`, nearest first."""
-        p = store_pos[i]
+    def candidates(p):
+        """Plausible line-number stores near filename store `p`, nearest first."""
         out = []
-        lo = max(0, p - PAIR_WINDOW)
-        hi = min(len(store_idx), p + PAIR_WINDOW + 1)
-        for q in range(lo, hi):
-            j = store_idx[q]
-            if j == i:
-                continue
-            _, _, _, jtarget, jval = resolved[j]
-            if jtarget in file_globals or jval is None:
-                continue
-            if not (0 < jval < MAX_LINE):
+        for q in range(max(0, p - PAIR_WINDOW), min(len(stores), p + PAIR_WINDOW + 1)):
+            _, qtarget, qval = stores[q]
+            if q == p or qtarget in file_globals or qval is None or not 0 < qval < MAX_LINE:
                 continue
             # forward bias: the line store follows the filename store more often
             # than it precedes it, so break distance ties in favour of q > p.
-            out.append(((abs(q - p), 0 if q > p else 1), jtarget, jval))
+            out.append(((abs(q - p), 0 if q > p else 1), qtarget, qval))
         out.sort(key=lambda t: t[0])
         return out
 
-    file_stores = [(i, addr, target, val) for i, addr, kind, target, val in resolved
-                   if kind == "store" and val in str_vas and target in file_globals]
+    file_stores = [p for p, (_, target, val) in enumerate(stores)
+                   if val in str_vas and target in file_globals]
 
     # --- pass 1: learn each filename-global's true line-global partner ------
     # Vote on the NEAREST candidate only. Counting every candidate in the window
@@ -286,17 +261,18 @@ def extract_pins(insns, str_vas):
     # once per pin, while g_CurrentLineNumber stores from adjacent asserts flood
     # the same window and would outvote it.
     pairing = defaultdict(Counter)
-    for i, addr, target, val in file_stores:
-        near = candidates(i)
+    for p in file_stores:
+        near = candidates(p)
         if near:
-            pairing[target][near[0][1]] += 1
-    canonical = {fg: lg.most_common(1)[0][0] for fg, lg in pairing.items() if lg}
+            pairing[stores[p][1]][near[0][1]] += 1
+    canonical = {fg: lg.most_common(1)[0][0] for fg, lg in pairing.items()}
 
     # --- pass 2: accept only the canonical partner -------------------------
     pins, unpaired = [], 0
-    for i, addr, target, val in file_stores:
+    for p in file_stores:
+        addr, target, val = stores[p]
         want = canonical.get(target)
-        line = next((jval for _, jtarget, jval in candidates(i) if jtarget == want), None)
+        line = next((qval for _, qtarget, qval in candidates(p) if qtarget == want), None)
         if line is None:
             unpaired += 1
             continue
@@ -311,7 +287,7 @@ def extract_pins(insns, str_vas):
 
 # --------------------------------------------------------------------------
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("exe")
@@ -319,9 +295,10 @@ def main():
     ap.add_argument("--self-check", type=int, metavar="N",
                     help="fail unless at least N pins are recovered")
     ap.add_argument("-v", "--verbose", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
-    data = open(args.exe, "rb").read()
+    with open(args.exe, "rb") as fh:
+        data = fh.read()
     image_base, sections = parse_pe(data)
 
     str_vas = find_source_strings(data, sections)

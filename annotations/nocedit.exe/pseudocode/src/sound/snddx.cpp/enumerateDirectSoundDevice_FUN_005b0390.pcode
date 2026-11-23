@@ -52,7 +52,7 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 INT_NOTEQUAL (unique,0x18700,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x5b03b4,4), (unique,0x18700,1)
 
-@005b03a3 [ESP:-8]  # TEST ESI, ESI
+@005b03a3 [ESP:???]!?  # TEST ESI, ESI
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xae400,4) = (register,0x18,4) /* ESI */, (register,0x18,4) /* ESI */
@@ -63,7 +63,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005b03a5 [ESP:-8]  # JL 0x005b03af
+@005b03a5 [ESP:???]!?  # JL 0x005b03af
 INT_NOTEQUAL (unique,0x18700,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x5b03af,4), (unique,0x18700,1)
 
@@ -368,4 +368,5 @@ RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 45 instructions, 260 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

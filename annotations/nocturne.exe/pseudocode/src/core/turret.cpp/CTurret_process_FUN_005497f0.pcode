@@ -261,17 +261,17 @@ COPY (unique,0x87f00,4) = (const,0x596d1d,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
 
-@00549887 [ESP:-248]~  # MOV EAX, dword ptr [EBX + 0x14c]
+@00549887 [ESP:-252]~  # MOV EAX, dword ptr [EBX + 0x14c]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x14c,4)
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@0054988d [ESP:-252](-4)~  # PUSH EBX
+@0054988d [ESP:-256](-4)~  # PUSH EBX
 COPY (unique,0x41500,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0054988e [ESP:-252](-4)~  # CALL dword ptr [EAX + 0x24]
+@0054988e [ESP:-256](-4)~  # CALL dword ptr [EAX + 0x24]
 INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x24,4)
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
 COPY (unique,0x63500,4) = (unique,0x17200,4)
@@ -279,7 +279,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x549891,4)
 CALLIND (unique,0x63500,4)
 
-@00549891 [ESP:-244](+8)~  # ADD ESP, 0x8
+@00549891 [ESP:-248](+8)~  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -290,7 +290,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00549894 [ESP:-244]~  # MOV dword ptr [EBX + 0x8b0], EAX
+@00549894 [ESP:-248]~  # MOV dword ptr [EBX + 0x8b0], EAX
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x8b0,4)
 COPY (unique,0xa300,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)

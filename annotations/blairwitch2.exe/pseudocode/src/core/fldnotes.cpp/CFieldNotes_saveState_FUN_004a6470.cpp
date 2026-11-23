@@ -43,8 +43,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
             iVar2 = iVar2 + 1;
             break;
           default:
-            g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-            g_INT_01d046a4 = 0xb83;
+            g_CurrentFilename = "..\\core\\fldnotes.cpp";
+            g_CurrentLineNumber = 2947;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid entry item type");
           }
           iVar1 = iVar1 + 1;
@@ -78,8 +78,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
             _fprintf(file,"\"%s\", %d\n");
             break;
           default:
-            g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-            g_INT_01d046a4 = 0xb9b;
+            g_CurrentFilename = "..\\core\\fldnotes.cpp";
+            g_CurrentLineNumber = 2971;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid entry item type");
           }
           iVar1 = iVar1 + 1;
@@ -90,8 +90,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *t
     } while (local_18 < g_INT_01cab9f0);
   }
   if (iVar2 != 0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d046a4 = 0xb9f;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 2975;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze");
   }
   _fprintf(file,"//-- END FIELD NOTES --------------------------------\n");

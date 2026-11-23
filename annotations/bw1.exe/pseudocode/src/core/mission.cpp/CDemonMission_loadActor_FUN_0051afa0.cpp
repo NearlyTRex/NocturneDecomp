@@ -49,8 +49,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_0051afa0(CDem
     if (iVar2 == 1) goto LAB_0051b028;
   }
   do {
-    g_CHAR_PTR_01d1d400 = "..\\core\\mission.cpp";
-    g_INT_01d1d404 = 0x234;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 564;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Error reading actor pointer.\nOwner: %s\nDescription: %s\n");
     pCVar1 = unaff_ESI;
 LAB_0051b028:

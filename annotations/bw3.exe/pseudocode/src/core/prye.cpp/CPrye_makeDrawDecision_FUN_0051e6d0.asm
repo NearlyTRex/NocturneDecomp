@@ -47,8 +47,8 @@
 ;   float g_FLOAT_005e3524 = -0.7853982
 ;   float g_FLOAT_005e3528 = 0.7853982
 ;   undefined4 g_CDemonActorType_007e1a18.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_StrangerIndices[1]
 ;   undefined4 g_StrangerIndices[2]
 ;   ... and 3 more
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_0051e6f1
     MOV EDI,0xe24                       ; 0051e6f6
     PUSH 0x5cd408                       ; 0051e6fb | = "CPrye::makeDrawDecision - draw motion..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0051e700 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0051e706 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0051e700 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 0051e706 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0051e70c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051e711

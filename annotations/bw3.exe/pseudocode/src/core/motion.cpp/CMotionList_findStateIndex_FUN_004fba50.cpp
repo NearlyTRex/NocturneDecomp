@@ -28,8 +28,8 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList 
   if (error_on_not_found == 0) {
     return -1;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\motion.cpp";
-  g_INT_01d71de4 = 0x152;
+  g_CurrentFilename = "..\\core\\motion.cpp";
+  g_CurrentLineNumber = 338;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Can't find state \"%s\" in motion list");
   return -1;
 }

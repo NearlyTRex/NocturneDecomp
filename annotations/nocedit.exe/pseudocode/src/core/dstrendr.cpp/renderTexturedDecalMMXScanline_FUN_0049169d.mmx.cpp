@@ -78,7 +78,6 @@ __asm {
         add ESI,dword ptr [g_SoftwareDeltaDepthZ]
         jmp LAB_0049174a
     LAB_004917b6:
-        pop EBP
         emms
 }
 }

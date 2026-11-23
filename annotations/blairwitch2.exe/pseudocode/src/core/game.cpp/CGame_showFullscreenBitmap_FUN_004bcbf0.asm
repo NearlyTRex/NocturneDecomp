@@ -250,8 +250,8 @@ section .text
     MOV EDI,0x5d87ab                    ; 004bce5a | = "..\\core\\game.cpp"
     MOV EAX,0x1275                      ; 004bce5f
     PUSH 0x5d87bc                       ; 004bce64 | = "Can't open %s"
-    MOV dword ptr [0x01d046a0],EDI      ; 004bce69 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004bce6f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004bce69 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004bce6f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004bce74
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 004bce79

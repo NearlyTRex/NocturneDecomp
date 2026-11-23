@@ -6,8 +6,9 @@ two kinds of work on top, both read from the `siblings` key sibling_identity.py
 writes into every function's pseudocode JSON:
 
   variants   a nocedit function whose twin in a Blair Witch build has a different
-             body (anything but identical or layout-drift, which is only structure
-             offsets). Builds that share one body make one variant. A variant is
+             body (anything but identical, layout-drift, which is only structure
+             offsets, or frame-change, which is only the frame pointer's code).
+             Builds that share one body make one variant. A variant is
              done when the recreation has its `// bw1 0x<addr>` line (bw2, bw3
              likewise) beside the function's `// nocedit 0x<addr>` line.
   BW-only    a Blair Witch function with no nocedit twin, in a module the
@@ -31,7 +32,7 @@ import sibling_identity  # noqa: E402
 BUILDS = (("bw1", "bw1.exe"), ("bw2", "blairwitch2.exe"), ("bw3", "bw3.exe"))
 PROGRAM = dict(BUILDS)
 REFERENCE = "nocedit.exe"
-SAME = {"identical", "layout-drift"}
+SAME = {"identical", "layout-drift", "frame-change"}
 PORTED = re.compile(r"^[ \t]*// (bw[123]) 0x([0-9a-f]{8})$")
 
 

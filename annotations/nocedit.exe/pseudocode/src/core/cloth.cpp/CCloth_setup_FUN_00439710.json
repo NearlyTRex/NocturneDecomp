@@ -595,6 +595,15 @@
       "severity": "moderate",
       "text": "pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(local_3c + 0x3f1bc): the pointer is based on a field at offset 0x0 (size 256 in CCloth) but the +0x3f1bc byte offset lands in field locked_vertex_indices (offset 0x3f02c). Ghidra anchored on the wrong field \u2014 rewrite as direct access to locked_vertex_indices (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 334,
+      "match": "*(...)(local_3c + 0x3f1bc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(local_3c + 0x3f1bc) = local_64;",
+      "type": "struct_field_overrun"
     }
   ],
   "siblings": {
@@ -1023,6 +1032,248 @@
         "type": "CDeformableModelInstance *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CCloth_setup_FUN_00439710.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 51,
+          "line": 177,
+          "message": "The right operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 52,
+              "message": "'local_18' declared without an initial value"
+            },
+            {
+              "line": 58,
+              "message": "Assuming 0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 58,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 64,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 64,
+              "message": "Loop condition is false. Execution continues on line 87"
+            },
+            {
+              "line": 87,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 87,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 90,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 94,
+              "message": "0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 94,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 113,
+              "message": "Assuming 0 is < field 'locked_vertex_count'"
+            },
+            {
+              "line": 113,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 117,
+              "message": "Assuming 'iVar14' is >= field 'locked_vertex_count'"
+            },
+            {
+              "line": 114,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 119,
+              "message": "Assuming 'model_ptr' is not equal to null"
+            },
+            {
+              "line": 119,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 123,
+              "message": "Assuming 0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 123,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 145,
+              "message": "0 is < field 'locked_vertex_count'"
+            },
+            {
+              "line": 145,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 150,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 150,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 177,
+              "message": "The right operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 70,
+          "line": 240,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 45,
+              "message": "'local_64' declared without an initial value"
+            },
+            {
+              "line": 58,
+              "message": "Assuming 0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 58,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 64,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 64,
+              "message": "Loop condition is false. Execution continues on line 87"
+            },
+            {
+              "line": 87,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 87,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 90,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 90,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 94,
+              "message": "0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 94,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 113,
+              "message": "Assuming 0 is >= field 'locked_vertex_count'"
+            },
+            {
+              "line": 113,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Assuming 'model_ptr' is not equal to null"
+            },
+            {
+              "line": 119,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 123,
+              "message": "Assuming 0 is >= field 'vertex_count'"
+            },
+            {
+              "line": 123,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 145,
+              "message": "0 is >= field 'locked_vertex_count'"
+            },
+            {
+              "line": 145,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 199,
+              "message": "Assuming 0 is < field 'collide_bone_count'"
+            },
+            {
+              "line": 199,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 203,
+              "message": "Assuming 'iVar14' is >= field 'collide_bone_count'"
+            },
+            {
+              "line": 200,
+              "message": "Loop condition is false.  Exiting loop"
+            },
+            {
+              "line": 206,
+              "message": "Assuming 0 is < field 'locked_vertex_count'"
+            },
+            {
+              "line": 206,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 210,
+              "message": "Assuming 'local_30' is < field 'num_lods'"
+            },
+            {
+              "line": 210,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 212,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 212,
+              "message": "Loop condition is false. Execution continues on line 239"
+            },
+            {
+              "line": 240,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

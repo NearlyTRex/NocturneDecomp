@@ -41,8 +41,8 @@ void __cdecl core_construc_cpp_CConstruct_explode_FUN_004472a0(CConstruct *this_
   iVar5 = local_20->num_parts;
   this_ptr->box_count = iVar5;
   if (0x18 < iVar5) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\construc.cpp";
-    g_INT_01d1d404 = 0x31d;
+    g_CurrentFilename = "..\\core\\construc.cpp";
+    g_CurrentLineNumber = 797;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CConstruct::explode - Not enough containers");
   }
   iVar5 = 0;

@@ -852,5 +852,307 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "loadS3DModelFile_FUN_004593a0.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 7,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 33,
+          "message": "Value stored to 'bVar6' is never read",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "Value stored to 'bVar6' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 3,
+          "line": 43,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 43,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 11,
+          "line": 99,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 99,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 37,
+          "line": 106,
+          "message": "The right operand of '<' is a garbage value",
+          "path_notes": [
+            {
+              "line": 36,
+              "message": "Assuming 'file' is not equal to null"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'iVar2' is equal to 1"
+            },
+            {
+              "line": 50,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 60,
+              "message": "Assuming 'iVar3' is equal to 7"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'g_PolygonCount' is <= 20000"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 66,
+              "message": "Assuming 'g_VertexCount' is <= 20000"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 'g_PartsCount' is <= 500"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'local_40' is >= 'g_PartsCount'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is false. Execution continues on line 82"
+            },
+            {
+              "line": 83,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 83,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 105,
+              "message": "The value 0 is assigned to 'local_40'"
+            },
+            {
+              "line": 105,
+              "message": "Assuming 'local_40' is < 'g_PartsCount'"
+            },
+            {
+              "line": 105,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 106,
+              "message": "The right operand of '<' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 13,
+          "line": 119,
+          "message": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+          "path_notes": [
+            {
+              "line": 36,
+              "message": "Assuming 'file' is not equal to null"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 50,
+              "message": "Assuming 'iVar2' is equal to 1"
+            },
+            {
+              "line": 50,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 60,
+              "message": "Assuming 'iVar3' is equal to 7"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'g_PolygonCount' is <= 20000"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 66,
+              "message": "Assuming 'g_VertexCount' is <= 20000"
+            },
+            {
+              "line": 66,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming 'g_PartsCount' is <= 500"
+            },
+            {
+              "line": 71,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'local_40' is < 'g_PartsCount'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 80,
+              "message": "Assuming 'iVar3' is equal to 5"
+            },
+            {
+              "line": 80,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'local_40' is >= 'g_PartsCount'"
+            },
+            {
+              "line": 77,
+              "message": "Loop condition is false. Execution continues on line 82"
+            },
+            {
+              "line": 83,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 83,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 105,
+              "message": "Assuming 'local_40' is < 'g_PartsCount'"
+            },
+            {
+              "line": 105,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 106,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 106,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 109,
+              "message": "Value assigned to 'local_9e4'"
+            },
+            {
+              "line": 113,
+              "message": "Assuming 'iVar3' is equal to 10"
+            },
+            {
+              "line": 113,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 114,
+              "message": "Assuming 'local_9e4' is >= 0"
+            },
+            {
+              "line": 114,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 119,
+              "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 119,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 119,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 120,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 120,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

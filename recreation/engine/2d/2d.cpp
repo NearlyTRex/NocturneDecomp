@@ -56,6 +56,9 @@ void C2d::resetGraphicsSystem() {
 
 // A short file replaces only the entries it has.
 // nocedit 0x004015a0
+// bw1 0x00401590
+// bw2 0x00401590
+// bw3 0x00401590
 void C2d::loadPaletteFile(std::string_view filename) {
     const std::optional<std::string> palette = dosio_.readFile("art", filename);
     if (!palette) {

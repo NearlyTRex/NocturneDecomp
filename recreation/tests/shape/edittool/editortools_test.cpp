@@ -14,6 +14,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/podfixture.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -143,6 +144,7 @@ protected:
     NiceMock<platform::MockClock> clock_;
     NiceMock<engine::MockGameClock> game_clock_;
     NiceMock<platform::MockClipboard> clipboard_;
+    engine::SGameContent content_ = engine::getShippedGameContent();
     CEditorTools editor_tools_{{.two_d = two_d_,
                                 .matrix = matrix_,
                                 .three_d = three_d_,
@@ -152,8 +154,31 @@ protected:
                                 .raw_input = raw_input_,
                                 .game_clock = game_clock_,
                                 .clock = clock_,
-                                .clipboard = clipboard_}};
+                                .clipboard = clipboard_,
+                                .content = content_}};
 };
+
+TEST_F(CEditorToolsTest, WithoutAPackagesLookTheDialogsAndPointerAreFatal) {
+    content_.dialog.reset();
+    content_.list.reset();
+    EXPECT_THAT([this] { editor_tools_.showWarning("!"); },
+                ThrowsMessage<common::CFatalError>(StrEq("No package gives the dialogs' look")));
+    EXPECT_THAT([this] { static_cast<void>(editor_tools_.getTimeCycledColorByte()); },
+                ThrowsMessage<common::CFatalError>(StrEq("No package gives the lists' look")));
+}
+
+// A game's pointer cycles through the colours its packages give.
+TEST_F(CEditorToolsTest, ThePointerCyclesThroughTheLooksColours) {
+    content_.list->pointer.colours = {0x1f, 0x1f, 0x1f, 0x1f};
+    EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), two_d_.getColorCubeLookup()[0x1f]);
+}
+
+// BW1's and BW3's are palette entries as they are.
+TEST_F(CEditorToolsTest, APointersPaletteColoursAreTheEntriesThemselves) {
+    content_.list->pointer.colours = {0xfd, 0xfd, 0xfd, 0xfd};
+    content_.list->pointer.palette_indices = true;
+    EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), 0xfd);
+}
 
 TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {
     editor_tools_.setEditorFont(nullptr);

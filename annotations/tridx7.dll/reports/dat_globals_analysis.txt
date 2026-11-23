@@ -4,18 +4,19 @@ DAT_ GLOBALS ANALYSIS REPORT
 
 Total DAT_ globals found: 226
 Filtered out (inside named data): 5
-Immediate constants (not real globals): 27
-Real globals remaining: 194
+Outside the program image: 0
+Immediate constants (not real globals): 26
+Real globals remaining: 195
 
 Current type breakdown:
-  undefined4                     145
+  undefined4                     146
   undefined2                     26
   undefined1                     23
 
-DAT_ globals with type hints: 70 / 194
+DAT_ globals with type hints: 71 / 195
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (34)
+HIGH CONFIDENCE INFERENCES (35)
 --------------------------------------------------------------------------------
   DAT_10016d64                    addr=10016d64    current=undefined4      likely=char            refs=1
     nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +8
@@ -27,6 +28,8 @@ HIGH CONFIDENCE INFERENCES (34)
     nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c (void*) at offset +124
   DAT_10017080                    addr=10017080    current=undefined4      likely=function_ptr    refs=3
     nearby: PTR_DAT_10017088 (void*) at offset -8
+  DAT_100170a8                    addr=100170a8    current=undefined4      likely=_FILE *         refs=3
+    nearby: PTR_DAT_10017088 (void*) at offset +32
   DAT_10017774                    addr=10017774    current=undefined4      likely=function_ptr    refs=1
     nearby: PTR_LAB_10017798 (undefined1*) at offset -36
   DAT_10017778                    addr=10017778    current=undefined4      likely=function_ptr    refs=1
@@ -292,6 +295,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_10016ee0                    addr=10016ee0    refs=3     type=undefined4    
   DAT_10017780                    addr=10017780    refs=3     type=undefined4      nearby: PTR_LAB_10017798(-24)
   DAT_10241874                    addr=10241874    refs=3     type=undefined4    
+  DAT_100170a8                    addr=100170a8    refs=3     type=undefined4      likely=_FILE *  nearby: PTR_DAT_10017088(+32)
   DAT_102407a0                    addr=102407a0    refs=3     type=undefined4    
   DAT_10016dd8+1                  addr=10016dd9    refs=3     type=undefined4      likely=byte  nearby: PTR_crt_fpu.c__fptrap_FUN_10009ab0_10016d5c(+125)
   DAT_10017788                    addr=10017788    refs=3     type=undefined1      likely=byte  nearby: PTR_LAB_10017798(-16)
@@ -319,17 +323,15 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_10017789                    addr=10017789    refs=2     type=undefined1      likely=byte  nearby: PTR_LAB_10017798(-15)
   DAT_1001778a                    addr=1001778a    refs=2     type=undefined1      nearby: PTR_LAB_10017798(-14)
   DAT_1001778b                    addr=1001778b    refs=2     type=undefined1      nearby: PTR_LAB_10017798(-13)
-  DAT_10017758                    addr=10017758    refs=2     type=undefined4      nearby: PTR_LAB_10017798(-64)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (27)
+IMMEDIATE CONSTANTS - NOT REAL GLOBALS (26)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values.
 
   DAT_1001276c                    value=0x1001276C      refs=8
   DAT_10012770                    value=0x10012770      refs=8
-  DAT_100170a8                    value=0x100170A8      refs=2
   DAT_100170c8                    value=0x100170C8      refs=2
   DAT_100172e8                    value=0x100172E8      refs=2
   DAT_10017478                    value=0x10017478      refs=1

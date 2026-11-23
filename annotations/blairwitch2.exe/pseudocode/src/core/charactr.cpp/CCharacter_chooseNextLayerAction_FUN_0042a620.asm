@@ -23,8 +23,8 @@
 ;   TerminatedCString s_CCharacter_chooseNextLay_005cd1ed
 ;   double g_DOUBLE_005cd22e = 0.0000100000000000000
 ;   double g_DOUBLE_005cd236 = 0.999990000000000
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_0042a644
     MOV EAX,0x11fe                      ; 0042a649
     PUSH 0x5cd1ed                       ; 0042a64e | = "CCharacter::chooseNextLayerAction - i..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0042a653 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0042a659 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0042a653 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0042a659 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0042a65e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0042a663

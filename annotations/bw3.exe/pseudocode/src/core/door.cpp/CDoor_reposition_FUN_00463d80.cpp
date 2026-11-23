@@ -195,8 +195,8 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr)
     }
     break;
   default:
-    g_CHAR_PTR_01d71de0 = "..\\core\\door.cpp";
-    g_INT_01d71de4 = 0x117;
+    g_CurrentFilename = "..\\core\\door.cpp";
+    g_CurrentLineNumber = 279;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDoor::reposition - Unknown type");
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0

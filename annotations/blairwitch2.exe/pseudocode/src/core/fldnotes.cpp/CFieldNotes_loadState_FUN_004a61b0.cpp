@@ -31,8 +31,8 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004a61b0(CFieldNotes *t
   _fscanf(file,"%*[^\n]\n");
   _fscanf(file,"%d\n");
   if ((local_20 < 1) || (1 < local_20)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d046a4 = 0xb30;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 2864;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Invalid field notes file version: %d, latest this .exe supports is %d");
   }
   puVar4 = &DAT_00616048;

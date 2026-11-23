@@ -106,8 +106,8 @@ section .text
     MOV EDI,0x5c17cd                    ; 004ac977 | = "..\\core\\fldnotes.cpp"
     MOV EAX,0xbae                       ; 004ac97c
     PUSH 0x5c17e2                       ; 004ac981 | = "Invalid field notes file version: %d,..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004ac986 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 004ac98c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 004ac986 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 004ac98c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ac991
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004ac996
@@ -351,12 +351,12 @@ section .text
     TEST EAX,EAX                        ; 004acc7c
     JNZ 0x004accaa                      ; 004acc7e
         ;   XREF to: 004accaa (CONDITIONAL_JUMP)  ; LAB_004accaa
-    MOV dword ptr [0x01d71de4],0xbe4    ; 004acc80 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de4],0xbe4    ; 004acc80 | g_CurrentLineNumber
     LEA EAX,[ESP + 0x300]               ; 004acc8a
     PUSH EAX                            ; 004acc91
     MOV EDI,0x5c18c8                    ; 004acc92 | = "..\\core\\fldnotes.cpp"
     PUSH 0x5c18dd                       ; 004acc97 | = "CFieldNotes::loadState - No such map ..."
-    MOV dword ptr [0x01d71de0],EDI      ; 004acc9c | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de0],EDI      ; 004acc9c | g_CurrentFilename
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004acca2
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004acca7
@@ -370,8 +370,8 @@ section .text
     MOV ESI,0x5c1907                    ; 004accbf | = "..\\core\\fldnotes.cpp"
     MOV EDI,0xbe7                       ; 004accc4
     PUSH 0x5c191c                       ; 004accc9 | = "CFieldNotes::loadState - Entry '%s' i..."
-    MOV dword ptr [0x01d71de0],ESI      ; 004accce | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004accd4 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 004accce | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004accd4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004accda
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004accdf
@@ -388,8 +388,8 @@ section .text
     MOV EBX,0x5c1956                    ; 004acd0d | = "..\\core\\fldnotes.cpp"
     MOV ESI,0xbec                       ; 004acd12
     PUSH 0x5c196b                       ; 004acd17 | = "CFieldNotes::loadState - Map '%s' has..."
-    MOV dword ptr [0x01d71de0],EBX      ; 004acd1c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004acd22 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004acd1c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004acd22 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004acd28
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004acd2d

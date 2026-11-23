@@ -158,6 +158,24 @@
       "severity": "moderate",
       "text": "local_40.min.x = (pCVar1->min).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_d0` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 21,
+      "match": "CMatrix3x4f local_d0; ... f(&local_d0, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_d0;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_a0` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 22,
+      "match": "CMatrix3x4f local_a0; ... f(&local_a0, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_a0;",
+      "type": "missing_cave_copy"
     }
   ],
   "siblings": {

@@ -80,11 +80,10 @@ public:
     }
 
 private:
-    // The base game, where there is one, is turned on; the rest are added turned off.
+    // The first game found, where there is one, is turned on; the rest are added turned off.
     [[nodiscard]] std::string defaultText() const {
-        const bool has_base = std::ranges::contains(
-            unordered_, kBasePackageId, [](const SPackage &p) { return p.manifest.id; });
-        return has_base ? std::format("{}\n", kBasePackageId) : std::string();
+        const auto game = std::ranges::find_if(unordered_, &SPackage::isGame);
+        return game == unordered_.end() ? std::string() : std::format("{}\n", game->manifest.id);
     }
 
     void take(const SListed &listed) {
@@ -128,10 +127,18 @@ private:
         }
     }
 
-    // Each package whose requirements are all loaded before it.
+    // Each package whose requirements are all loaded before it. One game runs at a time, the
+    // first turned on: the games share POD and file names, so a second would mix into it.
     std::vector<SPackage> loadable() {
         std::vector<SPackage> loaded;
+        std::optional<std::string> game;
         for (SPackage &package : ordered_) {
+            if (package.isGame() && game) {
+                notes_.push_back(std::format("{} is a game as {} is, and one game runs at a "
+                                             "time, so it isn't loaded",
+                                             package.manifest.id, *game));
+                continue;
+            }
             const auto missing =
                 std::ranges::find_if(package.manifest.dependencies, [&loaded](const auto &id) {
                     return std::ranges::none_of(
@@ -141,6 +148,9 @@ private:
                 notes_.push_back(std::format("{} needs {} loaded before it, so it isn't loaded",
                                              package.manifest.id, *missing));
                 continue;
+            }
+            if (package.isGame()) {
+                game = package.manifest.id;
             }
             loaded.push_back(std::move(package));
         }

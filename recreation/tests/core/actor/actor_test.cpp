@@ -196,7 +196,7 @@ TEST_F(CActorRegistryTest, ItKeepsTheVersionsAFileSavedItsClassesIn) {
     actor_.setSavedVersion(CDemonActor::kType, 7);
     EXPECT_EQ(actor_.getSavedVersion(CDemonActor::kType), 7);
     EXPECT_EQ(actor_.getSavedVersion(CHero::kType), 3);
-    actor_.resetSavedVersions();
+    actor_.resetActorTypeInfo();
     EXPECT_EQ(actor_.getSavedVersion(CDemonActor::kType), 1);
     EXPECT_EQ(actor_.getSavedVersion(CHero::kType), 1);
 }

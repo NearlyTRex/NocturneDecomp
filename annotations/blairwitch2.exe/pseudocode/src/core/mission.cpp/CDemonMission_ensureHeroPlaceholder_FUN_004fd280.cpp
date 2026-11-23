@@ -33,8 +33,8 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004fd280(C
           name = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(&local_3cc.base,iVar1);
           pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(this_ptr,name);
           if (pCVar3 == (CDemonActor *)0x0) {
-            g_CHAR_PTR_01d046a0 = "..\\core\\mission.cpp";
-            g_INT_01d046a4 = 0x6d4;
+            g_CurrentFilename = "..\\core\\mission.cpp";
+            g_CurrentLineNumber = 1748;
             core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze finding hero.");
           }
           this_ptr_00 = operator_new(0x2d8);

@@ -143,15 +143,16 @@ TEST_F(CGameHotkeysTest, EditModeStepsThroughTheCameras) {
     EXPECT_TRUE(game_.game_active);
 }
 
-// The scene in the top 240 lines and back, on a screen of 480 lines or more.
-TEST_F(CGameHotkeysTest, TheScriptViewHalvesTheScene) {
+// On a screen of 480 lines or more. The original shrank the scene to the top 240 lines.
+TEST_F(CGameHotkeysTest, TheScriptViewTurnsOnAndOffLeavingTheSceneWhole) {
     game_.developer_mode = true;
+    const int height = session_.camera.getFramebufferHeight();
     press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_W});
     EXPECT_TRUE(game_.script_view);
-    EXPECT_EQ(session_.camera.getFramebufferHeight(), 240);
+    EXPECT_EQ(session_.camera.getFramebufferHeight(), height);
     press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_W});
     EXPECT_FALSE(game_.script_view);
-    EXPECT_EQ(session_.camera.getFramebufferHeight(), 480);
+    EXPECT_EQ(session_.camera.getFramebufferHeight(), height);
     height_ = 479;
     press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_W});
     EXPECT_FALSE(game_.script_view);

@@ -182,7 +182,7 @@
   },
   "suspects": [
     {
-      "description": "'pCVar1[2].create_event + 8' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x8 = 0x320, which is exactly offsetof(CAmmoBox, open_sound). Ghidra had no CAmmoBox type here and reached the field by index arithmetic; write it as ((CAmmoBox *)pCVar1)->open_sound (\u00a7de-pun/\u00a712). Ambiguous: CAnvil::drop_condition[84], CBat::periodic_sound[20], CBoxActor::push_sfx_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[2].create_event + 8' walks 2 x sizeof(CDemonActor) (0x150) + offsetof(create_event) (0x78) + 0x8 = 0x320, which is exactly offsetof(CAmmoBox, open_sound). Ghidra had no CAmmoBox type here and reached the field by index arithmetic; write it as ((CAmmoBox *)pCVar1)->open_sound (\u00a7de-pun/\u00a712). Ambiguous: CAnvil::drop_condition[84], CBat::periodic_sound[20], CBoxActor::push_sfx_handle, CCryptVessel::destroyed_event[72], CDoor::open_condition[64], CDrip::hit_sound[20], CFlameCan::on_fire_condition[76], CGlass::breakable_condition[28], CGrave::start_condition[64], CLever::on_event[72], CPendulum::start_event[84], CPlatform::end_pos, CSimBox::trigger_event[76], CSpike::start_event[56], CTrigger::damage_actor_wildcard_name[36] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 14,
       "severity": "moderate",
       "text": "sfx_handle = *(uint *)(pCVar1[2].create_event + 8);",

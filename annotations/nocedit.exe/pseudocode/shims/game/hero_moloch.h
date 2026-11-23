@@ -11,7 +11,8 @@
 // human skeleton has no attack at all. Fire alternates the two. Their motions
 // carry no signals, so the hit lands when the motion
 // crosses a fixed frame, tested from both hand bones the way
-// CHaystack::checkMeleeHit tests one.
+// CHaystack::checkMeleeHit tests one. A blow that lands plays IcePick's punch
+// sound once, as CIcePick::performMeleeAttack does.
 //
 // Only synced input and the motion frame are read, so every machine in a
 // network game lands the same hit. Gated at the call sites on

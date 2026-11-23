@@ -8,8 +8,8 @@
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 typedef struct CSkeleton_importSkeletonFile_Ctx {
-    CSkeleton *this_ptr;
-    char *filename;
+    CSkeleton **this_ptr;
+    char **filename;
     int *piVar1;
     char cVar2;
     CEditorTools *this_ptr_00;
@@ -35,15 +35,190 @@ typedef struct CSkeleton_importSkeletonFile_Ctx {
     CMatrix3x4f *pCVar19;
     CQuaternion4f *pCVar20;
     SBoneData *pSVar21;
+    char (*pacVar22) [260];
+    SSkeleditBiasEntry *pSVar23;
+    CMatrix3x4f *pCVar24;
+    SMotionTransition *dest;
+    bool bVar25;
+    byte bVar26;
+    CBoneStructure CStack_113f8;
+    CBoneStructure local_ded4;
+    CBoneStructure local_a9b0;
+    CBoneStructure local_748c;
+    CMatrix3x4f local_3f68[100];
+    CPickList local_2ca8;
+    int aiStack_2900[120];
+    int aiStack_2720[120];
+    int local_2540[120];
+    char local_2360[400];
+    char local_21d0[6];
+    char local_21ca[294];
+    char local_20a4[2];
+    char local_20a2[15];
+    byte local_2093[283];
+    char local_1f78[260];
+    char local_1e74[260];
+    char local_1d70[256];
+    char local_1c70[256];
+    char local_1b70[256];
+    char local_1a70[256];
+    char local_1970[256];
+    char local_1870[256];
+    char local_1770[256];
+    char local_1670[256];
+    char local_1570[256];
+    char local_1470[256];
+    char local_1370[256];
+    char local_1270[256];
+    char local_1170[256];
+    char local_1070[256];
+    char local_f70[256];
+    char local_e70[256];
+    char local_d70[256];
+    char local_c70[256];
+    char local_b70[200];
+    char local_aa8[200];
+    char local_9e0[200];
+    char local_918[199];
+    char acStack_851[101];
+    char local_7ec[100];
+    char local_788[100];
+    char local_724[100];
+    char local_6c0[100];
+    char local_65c[100];
+    char local_5f8[100];
+    char local_594[100];
+    char local_530[100];
+    char local_4cc[100];
+    char local_468[52];
+    CMatrix3x4f local_434;
+    CMatrix3x4f local_404;
+    CMatrix3x4f local_3d4;
+    CMatrix3x4f local_3a4;
+    CMatrix3x4f local_374;
+    CMatrix3x4f local_344;
+    CMatrix3x4f local_314;
+    CMatrix3x3f local_2e4;
+    char local_2b4[40];
+    char local_28c[40];
+    char local_264[32];
+    char local_244[32];
+    CQuaternion4f local_224;
+    CQuaternion4f local_214;
+    float local_204;
+    float local_200;
+    float local_1fc;
+    float local_1f8;
+    float local_1f4;
+    float local_1f0;
+    float local_1ec;
+    float local_1e8;
+    float local_1e4;
+    CVector3f local_1e0;
+    float local_1d4;
+    float local_1d0;
+    float local_1cc;
+    float local_1c8;
+    float local_1c4;
+    float local_1c0;
+    CVector3f local_1bc;
+    CVector3f local_1b0;
+    float local_1a4;
+    float local_1a0;
+    float local_19c;
+    CVector3f local_198;
+    CVector3f local_18c;
+    CVector3f local_180;
+    float local_174;
+    float local_170;
+    float local_16c;
+    float local_168;
+    float local_164;
+    float local_160;
+    CVector3f local_15c;
+    CVector3f local_150;
+    float local_144;
+    float local_140;
+    float local_13c;
+    CVector3f local_138;
+    double local_12c;
+    double local_124;
+    _FILE *local_11c;
+    int local_118;
+    int local_114;
+    long local_110;
+    int local_10c;
+    int local_108;
+    int local_104;
+    int local_100;
+    char (*local_fc) [260];
+    SMotion *local_f8;
+    int local_f4;
+    int local_f0;
+    SMotion *local_ec;
+    char (*local_e8) [260];
+    int local_e4;
+    uint local_e0;
+    uint local_dc;
+    int local_d8;
+    float local_d4;
+    float local_d0;
+    int local_cc;
+    int local_c8;
+    int local_c4;
+    _FILE *local_c0;
+    int local_b8;
+    int local_b4;
+    int local_b0;
+    int local_ac;
+    float *local_a8;
+    char *local_a4;
+    int local_a0;
+    SMotionTransition *local_9c;
+    int local_98;
+    int local_94;
+    int local_90;
+    float *local_8c;
+    int local_88;
+    int local_84;
+    int local_80;
+    int local_7c;
+    int local_78;
+    uint local_74;
+    int local_70;
+    float local_6c;
+    int local_68;
+    int local_64;
+    uint local_60;
+    int local_5c;
+    int local_58;
+    float local_54;
+    CSkeleton *local_50;
+    CMatrix3x4f *local_4c;
+    CMatrix3x4f *local_48;
+    char (*local_44) [260];
+    SMotion *local_40;
+    int local_3c;
+    int local_38;
+    int local_34;
+    int local_2c;
+    char local_28[4];
+    char local_24[4];
+    char local_20[4];
+    char local_1c[4];
+    char local_18[4];
+    char local_14[4];
+    int _retval;
 } CSkeleton_importSkeletonFile_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
+#define CHUNK_RETURN -1
 #define GOTO_LAB_005927ee 1
 #define GOTO_LAB_00593749 2
 #define GOTO_LAB_00592a67 3
 
-// Chunk: branch_1_branch_0_check_0_0 (lines 335-366 of original)
+// Chunk: branch_1_branch_0_check_0_0 (lines 161-192 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
     _FILE *&file = ctx->file;
     int &iVar4 = ctx->iVar4;
@@ -51,6 +226,10 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_0(CSkeleton_im
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     char *&pcVar18 = ctx->pcVar18;
+    CBoneStructure &CStack_113f8 = ctx->CStack_113f8;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_2360 = ctx->local_2360;
+    auto &local_1e74 = ctx->local_1e74;
 
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base,local_1e74);
           iVar16 = 0;
@@ -80,19 +259,21 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_0(CSkeleton_im
             }
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
-          return 0;
+          { ctx->_retval = 0; return CHUNK_RETURN; }
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_1 (lines 369-392 of original)
+// Chunk: branch_1_branch_0_check_0_1 (lines 195-218 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_1(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
     char &cVar2 = ctx->cVar2;
     SBone *&pSVar12 = ctx->pSVar12;
     SBone *&pSVar13 = ctx->pSVar13;
     SBoneData *&pSVar14 = ctx->pSVar14;
     int &iVar16 = ctx->iVar16;
     SBoneData *&pSVar21 = ctx->pSVar21;
+    CBoneStructure &local_ded4 = ctx->local_ded4;
+    CSkeleton *&local_50 = ctx->local_50;
 
           pSVar14 = local_ded4.bones;
           local_50 = this_ptr;
@@ -118,15 +299,31 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_1(CSkeleton_im
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_branch_0 (lines 478-649 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_branch_0 (lines 304-475 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
-    char *&filename = ctx->filename;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
+    char *&filename = *ctx->filename;
     EMotionTransitionCmd &EVar6 = ctx->EVar6;
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     SMotion *&pSVar17 = ctx->pSVar17;
     char *&pcVar18 = ctx->pcVar18;
+    SMotionTransition *&dest = ctx->dest;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a4 = ctx->local_20a4;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_aa8 = ctx->local_aa8;
+    auto &local_918 = ctx->local_918;
+    auto &local_788 = ctx->local_788;
+    auto &local_468 = ctx->local_468;
+    auto &local_28c = ctx->local_28c;
+    double &local_124 = ctx->local_124;
+    SMotion *&local_ec = ctx->local_ec;
+    char *&local_a4 = ctx->local_a4;
+    int &local_a0 = ctx->local_a0;
+    SMotionTransition *&local_9c = ctx->local_9c;
+    int &local_98 = ctx->local_98;
+    int &local_2c = ctx->local_2c;
 
                     if (0x2c < local_ec->transition_count) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -300,14 +497,28 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_br
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_branch_0 (lines 651-829 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_branch_0 (lines 477-655 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
-    char *&filename = ctx->filename;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
+    char *&filename = *ctx->filename;
     char *&pcVar7 = ctx->pcVar7;
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     char *&pcVar18 = ctx->pcVar18;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a4 = ctx->local_20a4;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_b70 = ctx->local_b70;
+    auto &local_9e0 = ctx->local_9e0;
+    auto &local_5f8 = ctx->local_5f8;
+    auto &local_2b4 = ctx->local_2b4;
+    double &local_12c = ctx->local_12c;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_90 = ctx->local_90;
+    float *&local_8c = ctx->local_8c;
+    int &local_64 = ctx->local_64;
+    int &local_38 = ctx->local_38;
+    int &local_2c = ctx->local_2c;
 
                       pcVar18 = local_20a2;
                       while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
@@ -488,12 +699,18 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_el
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_branch_0 (lines 831-872 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_branch_0 (lines 657-698 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    char *&filename = ctx->filename;
+    char *&filename = *ctx->filename;
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     char *&pcVar18 = ctx->pcVar18;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_7ec = ctx->local_7ec;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_88 = ctx->local_88;
+    int &local_84 = ctx->local_84;
 
                         pcVar18 = local_20a2 + 4;
                         while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
@@ -537,11 +754,14 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_el
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_branch_0 (lines 886-931 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_branch_0 (lines 712-757 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
     byte *&pbVar8 = ctx->pbVar8;
     uint &uVar9 = ctx->uVar9;
     char *&pcVar18 = ctx->pcVar18;
+    auto &local_20a2 = ctx->local_20a2;
+    uint &local_e0 = ctx->local_e0;
+    uint &local_dc = ctx->local_dc;
 
                               pbVar8 = (byte *)(local_20a2 + 4);
                               while ((g_CharacterClassificationTable[(byte)(*pbVar8 + 1)] & 2) != 0)
@@ -589,14 +809,22 @@ LAB_005949a6:
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_branch_0 (lines 934-996 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_branch_0 (lines 760-822 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
-    char *&filename = ctx->filename;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
+    char *&filename = *ctx->filename;
     int &iVar4 = ctx->iVar4;
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     char *&pcVar18 = ctx->pcVar18;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_65c = ctx->local_65c;
+    auto &local_594 = ctx->local_594;
+    auto &local_530 = ctx->local_530;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_80 = ctx->local_80;
+    int &local_38 = ctx->local_38;
 
                                 pcVar18 = local_20a2 + 2;
                                 while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) !=
@@ -661,12 +889,17 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_el
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_branch_0 (lines 999-1061 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_branch_0 (lines 825-887 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_branch_0(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    char *&filename = ctx->filename;
+    char *&filename = *ctx->filename;
     char &cVar2 = ctx->cVar2;
     SIZE_T &n = ctx->n;
     char *&pcVar18 = ctx->pcVar18;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a2 = ctx->local_20a2;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_7c = ctx->local_7c;
+    int &local_78 = ctx->local_78;
 
                                   if (0 < local_ec->marker_count) {
                                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -731,14 +964,36 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_el
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_else_1 (lines 1061-1245 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_else_1 (lines 887-1071 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_else_1_else_1(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    char *&filename = ctx->filename;
+    char *&filename = *ctx->filename;
     byte *&pbVar8 = ctx->pbVar8;
     SIZE_T &n = ctx->n;
     int &iVar16 = ctx->iVar16;
     char *&pcVar18 = ctx->pcVar18;
     byte *&str = ctx->str;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &local_20a4 = ctx->local_20a4;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_2093 = ctx->local_2093;
+    auto &local_6c0 = ctx->local_6c0;
+    auto &local_4cc = ctx->local_4cc;
+    CMatrix3x4f &local_434 = ctx->local_434;
+    float &local_1c8 = ctx->local_1c8;
+    float &local_1c4 = ctx->local_1c4;
+    float &local_1c0 = ctx->local_1c0;
+    CVector3f &local_15c = ctx->local_15c;
+    float &local_144 = ctx->local_144;
+    float &local_140 = ctx->local_140;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_d8 = ctx->local_d8;
+    int &local_cc = ctx->local_cc;
+    int &local_c4 = ctx->local_c4;
+    int &local_94 = ctx->local_94;
+    uint &local_74 = ctx->local_74;
+    int &local_70 = ctx->local_70;
+    float &local_6c = ctx->local_6c;
+    int &local_68 = ctx->local_68;
 
                                   iVar16 = _strnicmp
                                                      (local_20a4,"displace",8);
@@ -925,14 +1180,63 @@ LAB_0059518b:
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_chunk_1 (lines 1287-1430 of original)
+// Chunk: branch_1_branch_0_check_0_2_chunk_1 (lines 1113-1256 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_chunk_1(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
     int &iVar4 = ctx->iVar4;
     CVector3f *&pCVar10 = ctx->pCVar10;
     int &iVar16 = ctx->iVar16;
     CMatrix3x4f *&pCVar19 = ctx->pCVar19;
     CQuaternion4f *&pCVar20 = ctx->pCVar20;
+    CBoneStructure &local_748c = ctx->local_748c;
+    auto &local_3f68 = ctx->local_3f68;
+    CMatrix3x4f &local_434 = ctx->local_434;
+    CMatrix3x4f &local_404 = ctx->local_404;
+    CMatrix3x4f &local_3d4 = ctx->local_3d4;
+    CMatrix3x4f &local_3a4 = ctx->local_3a4;
+    CMatrix3x4f &local_374 = ctx->local_374;
+    CMatrix3x4f &local_344 = ctx->local_344;
+    CMatrix3x4f &local_314 = ctx->local_314;
+    CMatrix3x3f &local_2e4 = ctx->local_2e4;
+    CQuaternion4f &local_224 = ctx->local_224;
+    CQuaternion4f &local_214 = ctx->local_214;
+    float &local_1f8 = ctx->local_1f8;
+    float &local_1f4 = ctx->local_1f4;
+    float &local_1f0 = ctx->local_1f0;
+    CVector3f &local_1e0 = ctx->local_1e0;
+    CVector3f &local_1bc = ctx->local_1bc;
+    CVector3f &local_1b0 = ctx->local_1b0;
+    float &local_1a4 = ctx->local_1a4;
+    float &local_1a0 = ctx->local_1a0;
+    float &local_19c = ctx->local_19c;
+    CVector3f &local_198 = ctx->local_198;
+    CVector3f &local_180 = ctx->local_180;
+    float &local_174 = ctx->local_174;
+    float &local_170 = ctx->local_170;
+    float &local_16c = ctx->local_16c;
+    float &local_168 = ctx->local_168;
+    float &local_164 = ctx->local_164;
+    float &local_160 = ctx->local_160;
+    CVector3f &local_150 = ctx->local_150;
+    float &local_144 = ctx->local_144;
+    float &local_140 = ctx->local_140;
+    float &local_13c = ctx->local_13c;
+    int &local_10c = ctx->local_10c;
+    SMotion *&local_ec = ctx->local_ec;
+    int &local_e4 = ctx->local_e4;
+    uint &local_dc = ctx->local_dc;
+    int &local_d8 = ctx->local_d8;
+    int &local_c4 = ctx->local_c4;
+    _FILE *&local_c0 = ctx->local_c0;
+    int &local_b8 = ctx->local_b8;
+    int &local_b4 = ctx->local_b4;
+    int &local_b0 = ctx->local_b0;
+    uint &local_60 = ctx->local_60;
+    int &local_5c = ctx->local_5c;
+    CMatrix3x4f *&local_4c = ctx->local_4c;
+    CMatrix3x4f *&local_48 = ctx->local_48;
+    int &local_34 = ctx->local_34;
+    int &local_2c = ctx->local_2c;
 
               do {
                 iVar16 = local_34;
@@ -1078,14 +1382,25 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_chunk_1(CSke
     return 0;
 }
 
-// Chunk: branch_1_branch_0_check_0_2_check_0_2 (lines 1435-1511 of original)
+// Chunk: branch_1_branch_0_check_0_2_check_0_2 (lines 1261-1337 of original)
 static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_2(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
     int &iVar4 = ctx->iVar4;
     CVector3f *&pCVar10 = ctx->pCVar10;
     float &fVar11 = ctx->fVar11;
     CVector3f *&pCVar15 = ctx->pCVar15;
     int &iVar16 = ctx->iVar16;
+    float &local_204 = ctx->local_204;
+    float &local_200 = ctx->local_200;
+    float &local_1fc = ctx->local_1fc;
+    CVector3f &local_198 = ctx->local_198;
+    CVector3f &local_18c = ctx->local_18c;
+    CVector3f &local_138 = ctx->local_138;
+    SMotion *&local_ec = ctx->local_ec;
+    uint &local_e0 = ctx->local_e0;
+    int &local_cc = ctx->local_cc;
+    int &local_b0 = ctx->local_b0;
+    int &local_94 = ctx->local_94;
 
               do {
                 iVar4 = local_ec->frame_start + iVar16;
@@ -1164,10 +1479,10 @@ LAB_00595723:
     return 0;
 }
 
-// Chunk: branch_1_check_iVar16_1 (lines 1649-1758 of original)
+// Chunk: branch_1_check_iVar16_1 (lines 1475-1584 of original)
 static int CSkeleton_importSkeletonFile_branch_1_check_iVar16_1(CSkeleton_importSkeletonFile_Ctx *ctx) {
-    CSkeleton *&this_ptr = ctx->this_ptr;
-    char *&filename = ctx->filename;
+    CSkeleton *&this_ptr = *ctx->this_ptr;
+    char *&filename = *ctx->filename;
     char &cVar2 = ctx->cVar2;
     _FILE *&file = ctx->file;
     _FILE *&p_Var3 = ctx->p_Var3;
@@ -1177,6 +1492,28 @@ static int CSkeleton_importSkeletonFile_branch_1_check_iVar16_1(CSkeleton_import
     int &iVar16 = ctx->iVar16;
     SMotion *&pSVar17 = ctx->pSVar17;
     char *&pcVar18 = ctx->pcVar18;
+    auto &pacVar22 = ctx->pacVar22;
+    byte &bVar26 = ctx->bVar26;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &aiStack_2720 = ctx->aiStack_2720;
+    auto &local_21d0 = ctx->local_21d0;
+    auto &local_21ca = ctx->local_21ca;
+    auto &local_1b70 = ctx->local_1b70;
+    auto &local_1a70 = ctx->local_1a70;
+    auto &local_1970 = ctx->local_1970;
+    auto &local_1470 = ctx->local_1470;
+    auto &local_d70 = ctx->local_d70;
+    auto &local_c70 = ctx->local_c70;
+    auto &acStack_851 = ctx->acStack_851;
+    auto &local_264 = ctx->local_264;
+    auto &local_244 = ctx->local_244;
+    int &local_108 = ctx->local_108;
+    int &local_104 = ctx->local_104;
+    int &local_100 = ctx->local_100;
+    SMotion *&local_f8 = ctx->local_f8;
+    int &local_f4 = ctx->local_f4;
+    auto &local_20 = ctx->local_20;
+    auto &local_1c = ctx->local_1c;
 
         iVar16 = _strnicmp(local_21d0,"checkout",8);
         if (iVar16 == 0) {
@@ -1293,8 +1630,8 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
 {
   CSkeleton_importSkeletonFile_Ctx _ctx_storage = {};
   CSkeleton_importSkeletonFile_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->filename = filename;
+  ctx->this_ptr = &this_ptr;
+  ctx->filename = &filename;
 
     int *&piVar1 = ctx->piVar1;
     char &cVar2 = ctx->cVar2;
@@ -1321,183 +1658,180 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
     CMatrix3x4f *&pCVar19 = ctx->pCVar19;
     CQuaternion4f *&pCVar20 = ctx->pCVar20;
     SBoneData *&pSVar21 = ctx->pSVar21;
-  // param this_ptr aliased into ctx above
-  // param filename aliased into ctx above
+    auto &pacVar22 = ctx->pacVar22;
+    SSkeleditBiasEntry *&pSVar23 = ctx->pSVar23;
+    CMatrix3x4f *&pCVar24 = ctx->pCVar24;
+    SMotionTransition *&dest = ctx->dest;
+    bool &bVar25 = ctx->bVar25;
+    byte &bVar26 = ctx->bVar26;
+    CBoneStructure &CStack_113f8 = ctx->CStack_113f8;
+    CBoneStructure &local_ded4 = ctx->local_ded4;
+    CBoneStructure &local_a9b0 = ctx->local_a9b0;
+    CBoneStructure &local_748c = ctx->local_748c;
+    auto &local_3f68 = ctx->local_3f68;
+    CPickList &local_2ca8 = ctx->local_2ca8;
+    auto &aiStack_2900 = ctx->aiStack_2900;
+    auto &aiStack_2720 = ctx->aiStack_2720;
+    auto &local_2540 = ctx->local_2540;
+    auto &local_2360 = ctx->local_2360;
+    auto &local_21d0 = ctx->local_21d0;
+    auto &local_21ca = ctx->local_21ca;
+    auto &local_20a4 = ctx->local_20a4;
+    auto &local_20a2 = ctx->local_20a2;
+    auto &local_2093 = ctx->local_2093;
+    auto &local_1f78 = ctx->local_1f78;
+    auto &local_1e74 = ctx->local_1e74;
+    auto &local_1d70 = ctx->local_1d70;
+    auto &local_1c70 = ctx->local_1c70;
+    auto &local_1b70 = ctx->local_1b70;
+    auto &local_1a70 = ctx->local_1a70;
+    auto &local_1970 = ctx->local_1970;
+    auto &local_1870 = ctx->local_1870;
+    auto &local_1770 = ctx->local_1770;
+    auto &local_1670 = ctx->local_1670;
+    auto &local_1570 = ctx->local_1570;
+    auto &local_1470 = ctx->local_1470;
+    auto &local_1370 = ctx->local_1370;
+    auto &local_1270 = ctx->local_1270;
+    auto &local_1170 = ctx->local_1170;
+    auto &local_1070 = ctx->local_1070;
+    auto &local_f70 = ctx->local_f70;
+    auto &local_e70 = ctx->local_e70;
+    auto &local_d70 = ctx->local_d70;
+    auto &local_c70 = ctx->local_c70;
+    auto &local_b70 = ctx->local_b70;
+    auto &local_aa8 = ctx->local_aa8;
+    auto &local_9e0 = ctx->local_9e0;
+    auto &local_918 = ctx->local_918;
+    auto &acStack_851 = ctx->acStack_851;
+    auto &local_7ec = ctx->local_7ec;
+    auto &local_788 = ctx->local_788;
+    auto &local_724 = ctx->local_724;
+    auto &local_6c0 = ctx->local_6c0;
+    auto &local_65c = ctx->local_65c;
+    auto &local_5f8 = ctx->local_5f8;
+    auto &local_594 = ctx->local_594;
+    auto &local_530 = ctx->local_530;
+    auto &local_4cc = ctx->local_4cc;
+    auto &local_468 = ctx->local_468;
+    CMatrix3x4f &local_434 = ctx->local_434;
+    CMatrix3x4f &local_404 = ctx->local_404;
+    CMatrix3x4f &local_3d4 = ctx->local_3d4;
+    CMatrix3x4f &local_3a4 = ctx->local_3a4;
+    CMatrix3x4f &local_374 = ctx->local_374;
+    CMatrix3x4f &local_344 = ctx->local_344;
+    CMatrix3x4f &local_314 = ctx->local_314;
+    CMatrix3x3f &local_2e4 = ctx->local_2e4;
+    auto &local_2b4 = ctx->local_2b4;
+    auto &local_28c = ctx->local_28c;
+    auto &local_264 = ctx->local_264;
+    auto &local_244 = ctx->local_244;
+    CQuaternion4f &local_224 = ctx->local_224;
+    CQuaternion4f &local_214 = ctx->local_214;
+    float &local_204 = ctx->local_204;
+    float &local_200 = ctx->local_200;
+    float &local_1fc = ctx->local_1fc;
+    float &local_1f8 = ctx->local_1f8;
+    float &local_1f4 = ctx->local_1f4;
+    float &local_1f0 = ctx->local_1f0;
+    float &local_1ec = ctx->local_1ec;
+    float &local_1e8 = ctx->local_1e8;
+    float &local_1e4 = ctx->local_1e4;
+    CVector3f &local_1e0 = ctx->local_1e0;
+    float &local_1d4 = ctx->local_1d4;
+    float &local_1d0 = ctx->local_1d0;
+    float &local_1cc = ctx->local_1cc;
+    float &local_1c8 = ctx->local_1c8;
+    float &local_1c4 = ctx->local_1c4;
+    float &local_1c0 = ctx->local_1c0;
+    CVector3f &local_1bc = ctx->local_1bc;
+    CVector3f &local_1b0 = ctx->local_1b0;
+    float &local_1a4 = ctx->local_1a4;
+    float &local_1a0 = ctx->local_1a0;
+    float &local_19c = ctx->local_19c;
+    CVector3f &local_198 = ctx->local_198;
+    CVector3f &local_18c = ctx->local_18c;
+    CVector3f &local_180 = ctx->local_180;
+    float &local_174 = ctx->local_174;
+    float &local_170 = ctx->local_170;
+    float &local_16c = ctx->local_16c;
+    float &local_168 = ctx->local_168;
+    float &local_164 = ctx->local_164;
+    float &local_160 = ctx->local_160;
+    CVector3f &local_15c = ctx->local_15c;
+    CVector3f &local_150 = ctx->local_150;
+    float &local_144 = ctx->local_144;
+    float &local_140 = ctx->local_140;
+    float &local_13c = ctx->local_13c;
+    CVector3f &local_138 = ctx->local_138;
+    double &local_12c = ctx->local_12c;
+    double &local_124 = ctx->local_124;
+    _FILE *&local_11c = ctx->local_11c;
+    int &local_118 = ctx->local_118;
+    int &local_114 = ctx->local_114;
+    long &local_110 = ctx->local_110;
+    int &local_10c = ctx->local_10c;
+    int &local_108 = ctx->local_108;
+    int &local_104 = ctx->local_104;
+    int &local_100 = ctx->local_100;
+    auto &local_fc = ctx->local_fc;
+    SMotion *&local_f8 = ctx->local_f8;
+    int &local_f4 = ctx->local_f4;
+    int &local_f0 = ctx->local_f0;
+    SMotion *&local_ec = ctx->local_ec;
+    auto &local_e8 = ctx->local_e8;
+    int &local_e4 = ctx->local_e4;
+    uint &local_e0 = ctx->local_e0;
+    uint &local_dc = ctx->local_dc;
+    int &local_d8 = ctx->local_d8;
+    float &local_d4 = ctx->local_d4;
+    float &local_d0 = ctx->local_d0;
+    int &local_cc = ctx->local_cc;
+    int &local_c8 = ctx->local_c8;
+    int &local_c4 = ctx->local_c4;
+    _FILE *&local_c0 = ctx->local_c0;
+    int &local_b8 = ctx->local_b8;
+    int &local_b4 = ctx->local_b4;
+    int &local_b0 = ctx->local_b0;
+    int &local_ac = ctx->local_ac;
+    float *&local_a8 = ctx->local_a8;
+    char *&local_a4 = ctx->local_a4;
+    int &local_a0 = ctx->local_a0;
+    SMotionTransition *&local_9c = ctx->local_9c;
+    int &local_98 = ctx->local_98;
+    int &local_94 = ctx->local_94;
+    int &local_90 = ctx->local_90;
+    float *&local_8c = ctx->local_8c;
+    int &local_88 = ctx->local_88;
+    int &local_84 = ctx->local_84;
+    int &local_80 = ctx->local_80;
+    int &local_7c = ctx->local_7c;
+    int &local_78 = ctx->local_78;
+    uint &local_74 = ctx->local_74;
+    int &local_70 = ctx->local_70;
+    float &local_6c = ctx->local_6c;
+    int &local_68 = ctx->local_68;
+    int &local_64 = ctx->local_64;
+    uint &local_60 = ctx->local_60;
+    int &local_5c = ctx->local_5c;
+    int &local_58 = ctx->local_58;
+    float &local_54 = ctx->local_54;
+    CSkeleton *&local_50 = ctx->local_50;
+    CMatrix3x4f *&local_4c = ctx->local_4c;
+    CMatrix3x4f *&local_48 = ctx->local_48;
+    auto &local_44 = ctx->local_44;
+    SMotion *&local_40 = ctx->local_40;
+    int &local_3c = ctx->local_3c;
+    int &local_38 = ctx->local_38;
+    int &local_34 = ctx->local_34;
+    int &local_2c = ctx->local_2c;
+    auto &local_28 = ctx->local_28;
+    auto &local_24 = ctx->local_24;
+    auto &local_20 = ctx->local_20;
+    auto &local_1c = ctx->local_1c;
+    auto &local_18 = ctx->local_18;
+    auto &local_14 = ctx->local_14;
 
-  char (*pacVar22) [260];
-  SSkeleditBiasEntry *pSVar23;
-  CMatrix3x4f *pCVar24;
-  SMotionTransition *dest;
-  bool bVar25;
-  byte bVar26;
-  CBoneStructure CStack_113f8;
-  CBoneStructure local_ded4;
-  CBoneStructure local_a9b0;
-  CBoneStructure local_748c;
-  CMatrix3x4f local_3f68 [100];
-  CPickList local_2ca8;
-  int aiStack_2900 [120];
-  int aiStack_2720 [120];
-  int local_2540 [120];
-  char local_2360 [400];
-  char local_21d0 [6];
-  char local_21ca [294];
-  char local_20a4 [2];
-  char local_20a2 [15];
-  byte local_2093 [283];
-  char local_1f78 [260];
-  char local_1e74 [260];
-  char local_1d70 [256];
-  char local_1c70 [256];
-  char local_1b70 [256];
-  char local_1a70 [256];
-  char local_1970 [256];
-  char local_1870 [256];
-  char local_1770 [256];
-  char local_1670 [256];
-  char local_1570 [256];
-  char local_1470 [256];
-  char local_1370 [256];
-  char local_1270 [256];
-  char local_1170 [256];
-  char local_1070 [256];
-  char local_f70 [256];
-  char local_e70 [256];
-  char local_d70 [256];
-  char local_c70 [256];
-  char local_b70 [200];
-  char local_aa8 [200];
-  char local_9e0 [200];
-  char local_918 [199];
-  char acStack_851 [101];
-  char local_7ec [100];
-  char local_788 [100];
-  char local_724 [100];
-  char local_6c0 [100];
-  char local_65c [100];
-  char local_5f8 [100];
-  char local_594 [100];
-  char local_530 [100];
-  char local_4cc [100];
-  char local_468 [52];
-  CMatrix3x4f local_434;
-  CMatrix3x4f local_404;
-  CMatrix3x4f local_3d4;
-  CMatrix3x4f local_3a4;
-  CMatrix3x4f local_374;
-  CMatrix3x4f local_344;
-  CMatrix3x4f local_314;
-  CMatrix3x3f local_2e4;
-  char local_2b4 [40];
-  char local_28c [40];
-  char local_264 [32];
-  char local_244 [32];
-  CQuaternion4f local_224;
-  CQuaternion4f local_214;
-  float local_204;
-  float local_200;
-  float local_1fc;
-  float local_1f8;
-  float local_1f4;
-  float local_1f0;
-  float local_1ec;
-  float local_1e8;
-  float local_1e4;
-  CVector3f local_1e0;
-  float local_1d4;
-  float local_1d0;
-  float local_1cc;
-  float local_1c8;
-  float local_1c4;
-  float local_1c0;
-  CVector3f local_1bc;
-  CVector3f local_1b0;
-  float local_1a4;
-  float local_1a0;
-  float local_19c;
-  CVector3f local_198;
-  CVector3f local_18c;
-  CVector3f local_180;
-  float local_174;
-  float local_170;
-  float local_16c;
-  float local_168;
-  float local_164;
-  float local_160;
-  CVector3f local_15c;
-  CVector3f local_150;
-  float local_144;
-  float local_140;
-  float local_13c;
-  CVector3f local_138;
-  double local_12c;
-  double local_124;
-  _FILE *local_11c;
-  int local_118;
-  int local_114;
-  long local_110;
-  int local_10c;
-  int local_108;
-  int local_104;
-  int local_100;
-  char (*local_fc) [260];
-  SMotion *local_f8;
-  int local_f4;
-  int local_f0;
-  SMotion *local_ec;
-  char (*local_e8) [260];
-  int local_e4;
-  uint local_e0;
-  uint local_dc;
-  int local_d8;
-  float local_d4;
-  float local_d0;
-  int local_cc;
-  int local_c8;
-  int local_c4;
-  _FILE *local_c0;
-  int local_b8;
-  int local_b4;
-  int local_b0;
-  int local_ac;
-  float *local_a8;
-  char *local_a4;
-  int local_a0;
-  SMotionTransition *local_9c;
-  int local_98;
-  int local_94;
-  int local_90;
-  float *local_8c;
-  int local_88;
-  int local_84;
-  int local_80;
-  int local_7c;
-  int local_78;
-  uint local_74;
-  int local_70;
-  float local_6c;
-  int local_68;
-  int local_64;
-  uint local_60;
-  int local_5c;
-  int local_58;
-  float local_54;
-  CSkeleton *local_50;
-  CMatrix3x4f *local_4c;
-  CMatrix3x4f *local_48;
-  char (*local_44) [260];
-  SMotion *local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_2c;
-  char local_28 [4];
-  char local_24 [4];
-  char local_20 [4];
-  char local_1c [4];
-  char local_18 [4];
-  char local_14 [4];
-  
   bVar26 = 0;
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -1660,7 +1994,8 @@ LAB_00592a67:
           core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
         }
         if (0 < local_2ca8.base.item_count) {
-          CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_0(ctx);
+          int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_0(ctx);
+          if (_rc == CHUNK_RETURN) return ctx->_retval;
         }
         core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910
                   (this_ptr,local_ded4.bone_count,local_10c);
@@ -1754,10 +2089,10 @@ LAB_00592a67:
                 }
                 else {
                   iVar16 = _strnicmp(local_20a4,"if",2);
-                if (iVar16 == 0) {
-                  int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_branch_0(ctx);
-                  if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
-                }
+                  if (iVar16 == 0) {
+                    int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_branch_0(ctx);
+                    if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
+                  }
                   else {
                     iVar16 = _strnicmp(local_20a4,"->",2);
                     if (iVar16 == 0) {
@@ -1766,10 +2101,10 @@ LAB_00592a67:
                     }
                     else {
                       iVar16 = _strnicmp(local_20a4,"signal",6);
-                    if (iVar16 == 0) {
-                      int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_branch_0(ctx);
-                      if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
-                    }
+                      if (iVar16 == 0) {
+                        int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_branch_0(ctx);
+                        if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
+                      }
                       else {
                         iVar16 = _strnicmp
                                            (local_20a4,"reverse",7);
@@ -1790,10 +2125,10 @@ LAB_00592a67:
                             else {
                               iVar16 = _strnicmp
                                                  (local_20a4,"bias",4);
-                            if (iVar16 == 0) {
-                              int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_branch_0(ctx);
-                              if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
-                            }
+                              if (iVar16 == 0) {
+                                int _rc = CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_check_0_0_else_1_else_1_else_1_else_1_branch_0(ctx);
+                                if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
+                              }
                               else {
                                 iVar16 = _strnicmp
                                                    (local_20a4,"markers",7);
@@ -1996,12 +2331,12 @@ LAB_00595eb8:
         } while( true );
       }
       iVar16 = _strnicmp(local_21d0,"animation",9);
-    if (iVar16 != 0) {
-      int _rc = CSkeleton_importSkeletonFile_branch_1_check_iVar16_1(ctx);
-      if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
-      if (_rc == GOTO_LAB_00593749) goto LAB_00593749;
-      if (_rc == GOTO_LAB_00592a67) goto LAB_00592a67;
-    }
+      if (iVar16 != 0) {
+        int _rc = CSkeleton_importSkeletonFile_branch_1_check_iVar16_1(ctx);
+        if (_rc == GOTO_LAB_005927ee) goto LAB_005927ee;
+        if (_rc == GOTO_LAB_00593749) goto LAB_00593749;
+        if (_rc == GOTO_LAB_00592a67) goto LAB_00592a67;
+      }
       if (0x77 < (this_ptr->motion_list).motion_count) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Too many motions in %s, max is %d",filename);

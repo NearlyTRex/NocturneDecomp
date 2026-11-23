@@ -46,6 +46,8 @@ struct Stand {
     std::map<std::string, CDemonActor *> named; // findActorByName
     std::set<unsigned int> playing;             // isSfxPlaying
     std::map<std::string, float> durations;     // getSoundDuration; else -1
+    std::vector<int> skipped;                   // skipCommands' start; answers start + 1
+    int skip_fails_at = -1;                     // a start skipCommands answers -1 for
 
     void reset();
 };

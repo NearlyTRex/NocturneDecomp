@@ -20,8 +20,8 @@
 ;   double g_DOUBLE_005e10ad = 0.0000152587890625
 ;   double g_DOUBLE_005e10b5 = 30
 ;   double g_DOUBLE_005e10bd = 0.100000000000000
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   uint g_CurrentGameTime
 ;   uint g_NetLastSimFrameAckTime
 ;   int g_SimFrameCount
@@ -179,8 +179,8 @@ section .text
         ;   Label: LAB_0050f29d
     MOV EDX,0x97c                       ; 0050f2a2
     PUSH 0x5e1074                       ; 0050f2a7 | = "CNetGame::processClientFrame - I'm no..."
-    MOV [0x01d046a0],EAX                ; 0050f2ac | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0050f2b1 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0050f2ac | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0050f2b1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050f2b7
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050f2bc

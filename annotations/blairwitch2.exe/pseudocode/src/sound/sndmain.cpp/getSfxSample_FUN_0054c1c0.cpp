@@ -96,8 +96,8 @@ LAB_0054c228:
         iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                           (&local_38,"sound",filename);
         if (iVar5 == 0) {
-          g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-          g_INT_01d046a4 = 0x36b;
+          g_CurrentFilename = "..\\sound\\sndmain.cpp";
+          g_CurrentLineNumber = 875;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open %s");
         }
         pCVar4->file_offset = 0;
@@ -150,8 +150,8 @@ LAB_0054c228:
       else {
         iVar5 = _stricmp(&local_238,"mp3");
         if (iVar5 != 0) {
-          g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-          g_INT_01d046a4 = 0x40d;
+          g_CurrentFilename = "..\\sound\\sndmain.cpp";
+          g_CurrentLineNumber = 1037;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Unknown sample file format extension: %s");
 LAB_0054c57b:
           _sprintf(&local_238,"SOUND: Loaded sample %s\n");
@@ -166,8 +166,8 @@ LAB_0054c57b:
         (pCVar4->sample_info).sample_rate = iVar5;
         sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0054bac0(pCVar4);
         if ((pCVar4->sample_info).sample_count < 0) {
-          g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-          g_INT_01d046a4 = 0x3dd;
+          g_CurrentFilename = "..\\sound\\sndmain.cpp";
+          g_CurrentLineNumber = 989;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Don't know length of sample %s");
         }
         pCVar4->taken = 0;

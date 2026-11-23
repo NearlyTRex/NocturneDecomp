@@ -13,8 +13,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(CDemonSet *this
   if (ray_type != 3) {
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\core\\setcolid.cpp";
-  g_INT_01d1d404 = 0x49a;
+  g_CurrentFilename = "..\\core\\setcolid.cpp";
+  g_CurrentLineNumber = 1178;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::setRayType - use setRayTypeLaser");
   return;
 }

@@ -126,8 +126,8 @@ section .text
     MOV EBX,0x5e1926                    ; 00514744 | = "..\\engine\\pcx.c"
     MOV ESI,0x6d                        ; 00514749
     PUSH 0x5e1936                       ; 0051474e | = "saveScreenRaw16 - Unable to open output"
-    MOV dword ptr [0x01d046a0],EBX      ; 00514753 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00514759 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00514753 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00514759 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051475f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514764
@@ -217,8 +217,8 @@ section .text
         ;   Label: LAB_00514857
     MOV ECX,0x67                        ; 0051485c
     PUSH 0x5e18ff                       ; 00514861 | = "saveScreenRaw16 - No ext found"
-    MOV dword ptr [0x01d046a0],EDX      ; 00514866 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0051486c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00514866 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0051486c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00514872
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00514877

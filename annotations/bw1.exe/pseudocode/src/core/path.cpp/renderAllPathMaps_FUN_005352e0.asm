@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   fog
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
         ;   Label: LAB_00535328
     MOV ECX,0x6a9                       ; 0053532d
     PUSH 0x5ecae5                       ; 00535332
-    MOV dword ptr [0x01d1d400],EDX      ; 00535337 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0053533d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00535337 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0053533d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00535343
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00535348

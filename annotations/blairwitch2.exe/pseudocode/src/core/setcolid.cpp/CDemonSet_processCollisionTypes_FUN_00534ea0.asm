@@ -45,8 +45,8 @@
 ;   float g_FLOAT_005e5da5 = 2
 ;   float g_FLOAT_005e5da9 = -10
 ;   WatcomTypeInfo g_CVectorTypeInfo
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   undefined4 g_CSpikeClassInfo.name_hash
 ;
@@ -885,8 +885,8 @@ section .text
     MOV ECX,0x5e5d15                    ; 00535a66 | = "..\\core\\setcolid.cpp"
     MOV ESI,0xcb                        ; 00535a6b
     PUSH 0x5e5d2a                       ; 00535a70 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00535a75 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00535a7b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00535a75 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00535a7b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535a81
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00535a86
@@ -1018,8 +1018,8 @@ section .text
         ;   Label: LAB_00535c8d
     MOV EBX,0x12b                       ; 00535c92
     PUSH 0x5e5d8b                       ; 00535c97 | = "Invalid collision type!"
-    MOV dword ptr [0x01d046a0],ECX      ; 00535c9c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00535ca2 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00535c9c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00535ca2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00535ca8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00535cad

@@ -110,8 +110,8 @@ section .text
     MOV EBX,0x5dc1f4                    ; 004e4776 | = "..\\core\\main.c"
     MOV ESI,0x3da                       ; 004e477b
     PUSH 0x5dc203                       ; 004e4780 | = "This CPU does not have an MMX unit."
-    MOV dword ptr [0x01d046a0],EBX      ; 004e4785 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004e478b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004e4785 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004e478b | g_CurrentLineNumber
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004e4791
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004e4796
@@ -142,8 +142,8 @@ section .text
     MOV EDI,0x5dc227                    ; 004e47d3 | = "..\\core\\main.c"
     MOV EAX,0x3f2                       ; 004e47d8
     PUSH 0x5dc236                       ; 004e47dd | = "Unable to set 640x480x32bpp.  Please ..."
-    MOV dword ptr [0x01d046a0],EDI      ; 004e47e2 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004e47e8 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004e47e2 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004e47e8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e47ed
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e47f2
@@ -783,8 +783,8 @@ section .text
     MOV ESI,0x5dc1a3                    ; 004e4dc4 | = "..\\core\\main.c"
     MOV EDI,0x3b5                       ; 004e4dc9
     PUSH 0x5dc1b2                       ; 004e4dce | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01d046a0],ESI      ; 004e4dd3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 004e4dd9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004e4dd3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 004e4dd9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004e4ddf
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004e4de4

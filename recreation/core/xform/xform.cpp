@@ -20,6 +20,9 @@ double widen(float value) {
 } // namespace
 
 // nocedit 0x005f4dc0
+// bw1 0x005b5080
+// bw2 0x00591530
+// bw3 0x00583260
 common::CVector3f transformVector3x4(const common::CVector3f &input_vector,
                                      const common::CMatrix3x4f &matrix) {
     const auto row = [&input_vector](const std::array<float, 4> &m) {
@@ -48,6 +51,9 @@ common::CMatrix3x4f multiplyMatrix3x4(const common::CMatrix3x4f &matrix_a,
 }
 
 // nocedit 0x005f5390
+// bw1 0x005b5620
+// bw2 0x00591ad0
+// bw3 0x00583800
 common::CMatrix3x4f buildMatrixFromEulerAndPosition(const common::CVector3f &position,
                                                     const common::CVector3f &euler_angles) {
     const double sx = std::sin(widen(euler_angles.x));
@@ -80,6 +86,9 @@ double determinant(const common::CMatrix3x4f &matrix) {
 }
 
 // nocedit 0x005f6210
+// bw1 0x005b6380
+// bw2 0x00592830
+// bw3 0x00584560
 common::CMatrix3x4f inverse(const common::CMatrix3x4f &matrix_in) {
     const double det = determinant(matrix_in);
     if (det == 0.0) {
@@ -146,6 +155,9 @@ common::CVector3f matrixToEulerAngles(const common::CMatrix3x4f &matrix_in) {
 }
 
 // nocedit 0x005f7280
+// bw1 0x005b7410
+// bw2 0x005938c0
+// bw3 0x005855f0
 void quaternionToMatrix3x3(common::CMatrix3x4f &matrix_out, const common::CQuaternion4f &quat_in) {
     const double w = quat_in.w;
     const double x = quat_in.x;
@@ -173,6 +185,9 @@ common::CMatrix3x4f quaternionToMatrix3x4(const common::CQuaternion4f &quat_in) 
 }
 
 // nocedit 0x005f75e0
+// bw1 0x005b7750
+// bw2 0x00593c00
+// bw3 0x00585930
 common::CQuaternion4f negateFirstComponent(const common::CQuaternion4f &vector_in) {
     return {.w = -vector_in.w, .x = vector_in.x, .y = vector_in.y, .z = vector_in.z};
 }
@@ -184,6 +199,9 @@ void setIdentityQuaternion(common::CQuaternion4f &quaternion) {
 
 // Each component's products summed at the x87's precision in the original's order, then stored.
 // nocedit 0x005f7640
+// bw1 0x005b77b0
+// bw2 0x00593c60
+// bw3 0x00585990
 common::CQuaternion4f multiplyQuaternion(const common::CQuaternion4f &quat1_in,
                                          const common::CQuaternion4f &quat2_in) {
     const auto x = [](float value) { return common::CExtendedFloat(value); };
@@ -204,6 +222,9 @@ common::CQuaternion4f multiplyQuaternion(const common::CQuaternion4f &quat1_in,
 // As the original's unordered compares do, a NaN t gives the second rotation and a NaN cosine
 // takes the arc.
 // nocedit 0x005f77e0
+// bw1 0x005b7940
+// bw2 0x00593df0
+// bw3 0x00585b20
 common::CQuaternion4f slerpQuaternion(const common::CQuaternion4f &quat1_in,
                                       const common::CQuaternion4f &quat2_in, float t) {
     if (t <= 0.0F) {

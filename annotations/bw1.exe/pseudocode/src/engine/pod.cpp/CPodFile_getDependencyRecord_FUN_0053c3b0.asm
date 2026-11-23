@@ -11,8 +11,8 @@
 ;   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0 at 0053d0f3
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_0053c3d5
     MOV EDI,0x3d8                       ; 0053c3da
     PUSH 0x5ed895                       ; 0053c3df
-    MOV dword ptr [0x01d1d400],ESI      ; 0053c3e4 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0053c3ea | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0053c3e4 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0053c3ea | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c3f0
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053c3f5
@@ -63,8 +63,8 @@ section .text
     MOV EAX,0x5ed8d9                    ; 0053c410
     MOV EDX,0x3dd                       ; 0053c415
     PUSH 0x5ed8eb                       ; 0053c41a
-    MOV [0x01d1d400],EAX                ; 0053c41f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0053c424 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0053c41f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0053c424 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c42a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0053c42f
@@ -115,8 +115,8 @@ section .text
     MOV EDI,0x5ed919                    ; 0053c49a
     MOV EAX,0x3ee                       ; 0053c49f
     PUSH 0x5ed92b                       ; 0053c4a4
-    MOV dword ptr [0x01d1d400],EDI      ; 0053c4a9 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053c4af | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0053c4a9 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0053c4af | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053c4b4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0053c4b9

@@ -749,7 +749,7 @@ CALL (ram,0x50d9f0,4)
 INT_ADD (unique,0x7600,4) = (const,0x10,4), (register,0x10,4) /* ESP */
 COPY (register,0x18,4) /* ESI */ = (unique,0x7600,4)
 
-@004f00ba [ESP:???](+4)!?  # ADD ESP, 0x4
+@004f00ba [ESP:-96](+4)?  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -760,7 +760,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004f00bd [ESP:???]!?  # JMP 0x0060c5dd
+@004f00bd [ESP:-96]  # JMP 0x0060c5dd
 BRANCH (ram,0x60c5dd,4)
 
 @004f00c4 [ESP:-96]~  # MOV EDI, EBP
@@ -2124,5 +2124,4 @@ BRANCH (ram,0x4f00cb,4)
 
 # ============================================================================
 # Summary: 248 instructions, 1610 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

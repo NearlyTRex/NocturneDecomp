@@ -123,6 +123,9 @@ void CDeformableModelInstance::updateMotionAtFrame(int motion_index, float frame
 // A motion the skeleton hasn't, as any of one with no motions, leaves the bones it poses at rest;
 // the original read past the end of the motions and their frames.
 // nocedit 0x0059e0a0
+// bw1 0x00567620
+// bw2 0x00544f80
+// bw3 0x0054c1b0
 void CDeformableModelInstance::updateMotion(int motion_index, float frame_number, int bone_index) {
     const CSkeleton &skeleton = *getSkeletonPtr();
     if (motion_index < 0 ||
@@ -167,6 +170,9 @@ void CDeformableModelInstance::updateMotion(int motion_index, float frame_number
 // The original reads the root offsets of frames past the skeleton's last; the decomp holds them to
 // the last, and so does this.
 // nocedit 0x0059eb50
+// bw1 0x00568100
+// bw2 0x00545a60
+// bw3 0x0054cc90
 void CDeformableModelInstance::blendMotion(int target_motion_index, float target_frame_number,
                                            float blend_weight, int bone_index,
                                            CDeformableModel::MotionBlendWeightFunc *callback_func) {
@@ -302,6 +308,9 @@ void CDeformableModelInstance::poseAdditively(const CSkeleton &skeleton,
 }
 
 // nocedit 0x0059fb40
+// bw1 0x00569180
+// bw2 0x00546ae0
+// bw3 0x0054dd10
 void CDeformableModelInstance::computeBoneTransforms() {
     computeBoneModelMatrices(bone_transform_);
     cached_skinned_lod_index_ = kNoSkinnedLod;
@@ -309,6 +318,9 @@ void CDeformableModelInstance::computeBoneTransforms() {
 
 // Below 0, no turn and the root's position.
 // nocedit 0x0059f820
+// bw1 0x00568e30
+// bw2 0x00546790
+// bw3 0x0054d9c0
 common::CMatrix3x4f *CDeformableModelInstance::getBoneModelMatrix(int bone_index,
                                                                   common::CMatrix3x4f *out_matrix) {
     common::CMatrix3x4f matrix{};
@@ -337,6 +349,9 @@ common::CMatrix3x4f *CDeformableModelInstance::getBoneModelMatrix(int bone_index
 
 // Below 0, the root's position.
 // nocedit 0x0059fa20
+// bw1 0x00569040
+// bw2 0x005469a0
+// bw3 0x0054dbd0
 common::CVector3f *CDeformableModelInstance::getBoneModelPosition(common::CVector3f *out_position,
                                                                   int bone_index) {
     const common::CVector3f &root = bone_transform_.pose_data.root_position;
@@ -356,6 +371,9 @@ common::CVector3f *CDeformableModelInstance::getBoneModelPosition(common::CVecto
 }
 
 // nocedit 0x005a1950
+// bw1 0x0056b130
+// bw2 0x00548a90
+// bw3 0x0054fcc0
 void CDeformableModelInstance::computeBoneModelMatrices(SPose &bone_data) {
     const std::span<const SBone> bones = getSkeletonPtr()->getBones();
     std::array<common::CMatrix3x4f, kMaxPoseBones> &matrices = bone_data.bone_model_matrices;
@@ -384,6 +402,9 @@ void CDeformableModelInstance::computeBoneModelMatrices(SPose &bone_data) {
 }
 
 // nocedit 0x005a0ad0
+// bw1 0x0056a220
+// bw2 0x00547b80
+// bw3 0x0054edb0
 void CDeformableModelInstance::computeBoneTransformsForFrame(int motion_index, float animation_time,
                                                              SPose &output_bone_data) {
     const CSkeleton &skeleton = *getSkeletonPtr();
@@ -403,6 +424,9 @@ void CDeformableModelInstance::computeBoneTransformsForFrame(int motion_index, f
 // stored; the first of equals is kept. As the original's unordered compare does, a NaN distance
 // is taken as nearer, and so then is every frame after it.
 // nocedit 0x005a08a0
+// bw1 0x00569fb0
+// bw2 0x00547910
+// bw3 0x0054eb40
 int CDeformableModelInstance::findPatchToFrame(int source_motion_index, float source_frame,
                                                int target_motion_index) {
     const int frame_count = getMotionList()->getMotions()[toIndex(target_motion_index)].frame_count;
@@ -437,6 +461,9 @@ int CDeformableModelInstance::findPatchToFrame(int source_motion_index, float so
 }
 
 // nocedit 0x005a0c90
+// bw1 0x0056a410
+// bw2 0x00547d70
+// bw3 0x0054efa0
 void CDeformableModelInstance::accumulateScaledRootMotion(float start_frame, float end_frame,
                                                           float scale_factor) {
     const common::CVector3f delta = getRootMotionDelta(start_frame, end_frame);
@@ -451,6 +478,9 @@ void CDeformableModelInstance::accumulateScaledRootMotion(float start_frame, flo
 // list has no movement, where the original reads past its ends; a motion's exit cutting to its
 // frame -1 reaches one, which no shipped skeleton has.
 // nocedit 0x005a0d10
+// bw1 0x0056a4b0
+// bw2 0x00547e10
+// bw3 0x0054f040
 common::CVector3f CDeformableModelInstance::getRootMotionDelta(float start_frame, float end_frame) {
     if (start_frame >= end_frame) {
         return {};
@@ -486,6 +516,9 @@ common::CVector3f CDeformableModelInstance::getRootMotionDelta(float start_frame
 }
 
 // nocedit 0x005a16c0
+// bw1 0x0056ae70
+// bw2 0x005487d0
+// bw3 0x0054fa00
 CBoundingBox3D CDeformableModelInstance::computeBoundingBoxFromBones() {
     CDeformableModel &model = *getModelPtr();
     const std::size_t bone_count = model.getSkeletonPtr()->getBones().size();
@@ -515,6 +548,9 @@ void CDeformableModelInstance::skinVerticesForLOD(int lod_index) {
 // The padding is a twentieth of the extent at the x87's precision, then stored as a float. With
 // no vertices, the box is the inverted one between the extremes it starts from.
 // nocedit 0x005a05e0
+// bw1 0x00569cc0
+// bw2 0x00547620
+// bw3 0x0054e850
 void CDeformableModelInstance::computeBoundingBoxFromVertices() {
     updateMotionAtFrame(0, 0.0F);
     skinVerticesForLOD(0);

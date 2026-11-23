@@ -381,7 +381,7 @@ LAB_004b66e4:
   core_sound_cpp_CSound_shutdown_FUN_0055a360(g_CSound_PTR_0061c068);
   core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_0059ac10();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(this_ptr);
-  (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+  (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
   core_set_cpp_CDemonSet_clearLights_FUN_005308e0(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00483d10(&g_CPickList);

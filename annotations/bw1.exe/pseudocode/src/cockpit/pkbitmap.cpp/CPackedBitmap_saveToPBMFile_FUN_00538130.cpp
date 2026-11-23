@@ -15,8 +15,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_saveToPBMFile_FUN_00538130(CPack
   file_handle = _fopen(filename,"wb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Unable to create PBM file %s");
-    g_CHAR_PTR_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
-    g_INT_01d1d404 = 0x474;
+    g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+    g_CurrentLineNumber = 1140;
     core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_6c);
   }
   cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_005381b0(this_ptr,file_handle);

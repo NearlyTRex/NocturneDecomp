@@ -22,14 +22,21 @@ namespace nocturne::core {
 CDeformableModelInstance::CDeformableModelInstance(IDeformableModels &models) : models_(models) {}
 
 // nocedit 0x0059de40
+// bw1 0x005673f0
+// bw2 0x00544d50
+// bw3 0x0054bf80
 CDeformableModelInstance::~CDeformableModelInstance() = default;
 
 // nocedit 0x005a0410
+// bw1 0x00569ae0
+// bw3 0x0054e670
 void CDeformableModelInstance::showAllParts() {
     part_visibility_.fill(EPartVisibility::kShown);
 }
 
 // nocedit 0x005a0430
+// bw1 0x00569b00
+// bw3 0x0054e690
 void CDeformableModelInstance::clearAllTextureSetIndices() {
     part_texture_sets_.fill(kFirstTextureSet);
 }
@@ -64,11 +71,16 @@ CSkeleton *CDeformableModelInstance::getSkeletonPtr() {
 }
 
 // nocedit 0x005a0450
+// bw1 0x00569b20
+// bw3 0x0054e6b0
 void CDeformableModelInstance::preCache() {
     initializeFromModel(models_.getDeformableModel(model_name_));
 }
 
 // nocedit 0x005a0480
+// bw1 0x00569b50
+// bw2 0x005474b0
+// bw3 0x0054e6e0
 void CDeformableModelInstance::initializeFromModel(CDeformableModel &model) {
     model_ptr_ = &model;
     const CSkeleton &skeleton = *getSkeletonPtr();
@@ -95,6 +107,9 @@ void CDeformableModelInstance::initializeFromModel(CDeformableModel &model) {
 
 // The original quit when it couldn't have the room, where this throws.
 // nocedit 0x0059deb0
+// bw1 0x00567450
+// bw2 0x00544db0
+// bw3 0x0054bfe0
 void CDeformableModelInstance::allocPointList() {
     free();
     const std::span<const SLodMesh> meshes = getModelPtr()->getLodMeshes();
@@ -103,6 +118,9 @@ void CDeformableModelInstance::allocPointList() {
 }
 
 // nocedit 0x0059df40
+// bw1 0x005674d0
+// bw2 0x00544e30
+// bw3 0x0054c060
 void CDeformableModelInstance::free() {
     skinned_vertices_ = {};
 }

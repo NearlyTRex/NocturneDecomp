@@ -16,8 +16,8 @@
 ;   int g_RecordingBitsPerSample = 0x8
 ;   int g_RecordingChannelCount = 0x1
 ;   int g_RecordingSampleRate = 0x2b11
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CSoundDevice* g_RecordingDeviceInterface
 ;   int g_RecordingSamplesSigned
 ;
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00552fcf
     MOV ECX,0x16f6                      ; 00552fd4
     PUSH 0x5e9162                       ; 00552fd9
-    MOV dword ptr [0x01d046a0],EDX      ; 00552fde | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00552fe4 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00552fde | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00552fe4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00552fea
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00552fef

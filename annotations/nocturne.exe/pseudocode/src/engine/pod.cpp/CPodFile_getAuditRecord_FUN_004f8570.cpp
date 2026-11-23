@@ -35,7 +35,7 @@ CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f85
   puVar2 = auStack_144;
   pCVar3 = out_record;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pCVar3->user_path = *puVar2;
+    *(uint *)pCVar3->user_name = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
   }

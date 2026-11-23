@@ -86,6 +86,17 @@
     },
     "pcode_op_count": 41
   },
+  "resolved_suspects": [
+    {
+      "description": "memset size hardcodes 0x4b44 == sizeof(CColorQuantizer), whose dest resolves to that struct. CColorQuantizer is 64-bit-unstable (contains a pointer), so the struct grows past 0x4b44 once pointers are 8 bytes and memset covers only its leading 0x4b44 bytes, leaving the grown tail untouched. Replace the magic with sizeof(CColorQuantizer) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 5,
+      "match": "memset(dest) size 0x4b44 == sizeof(CColorQuantizer)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(this_ptr,0,0x4b44)",
+      "type": "mem_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

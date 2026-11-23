@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e753f
 ;   TerminatedCString s_Can_t_load_s_because_def_005e7554
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_DeformableModelPool[0].model_filename[0]
 ;   char[256] g_CHAR_ARRAY_02177ff4
 ;
@@ -120,8 +120,8 @@ section .text
     MOV EBX,0x5e753f                    ; 00548f4b | = "..\\core\\skeleton.cpp"
     MOV ESI,0x1076                      ; 00548f50
     PUSH 0x5e7554                       ; 00548f55 | = "Can't load %s because deformable mode..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00548f5a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00548f60 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00548f5a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00548f60 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00548f66
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00548f6b

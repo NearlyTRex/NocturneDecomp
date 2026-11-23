@@ -7,7 +7,7 @@
 
 // Original: crt_stdlib.c__qsort_FUN_005bfc68
 // Address: 005bfc68
-void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
+void __cdecl _qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_rand_FUN_005c084c
 // Address: 005c084c
@@ -19,11 +19,11 @@ void __cdecl srand(uint seed);
 
 // Original: crt_stdlib.c__atexit_FUN_005c1093
 // Address: 005c1093
-void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
+void __cdecl _atexit(WatcomStaticDestructorNode *exit_node);
 
 // Original: crt_stdlib.c__fullpath_FUN_005c2500
 // Address: 005c2500
-char * __cdecl ::fullpath(char *buffer,char *path,SIZE_T buffer_size);
+char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size);
 
 // Original: crt_stdlib.c_atoi_FUN_005c30e0
 // Address: 005c30e0

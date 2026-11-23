@@ -59,6 +59,9 @@ void CDemonRenderer::setupSceneRendering(const CVector3f &euler_angles) {
 }
 
 // nocedit 0x0048c200
+// bw1 0x00483560
+// bw2 0x0046b060
+// bw3 0x0046cc40
 void CDemonRenderer::setupCameraAndProjection(const common::CMatrix3x3f &transform_matrix) {
     const CVector3f angles = transform_matrix.getEulerAngles();
     common::CMatrix3x3i transform{.m = {toFixedRow(transform_matrix.m[0]),
@@ -73,7 +76,8 @@ void CDemonRenderer::setupCameraAndProjection(const common::CMatrix3x3f &transfo
     // The width is shifted in 32 bits before the divide, as the original's SHL wraps it.
     const auto width =
         static_cast<std::int32_t>(static_cast<std::uint32_t>(clip.right - clip.left + 1) << 16U);
-    const std::int32_t aspect = width / (clip.bottom - clip.top + 1);
+    const std::int32_t aspect =
+        matrix_.getProjectionAspect().value_or(width / (clip.bottom - clip.top + 1));
     const auto y_scale = static_cast<std::int32_t>((std::int64_t{aspect} * 0x10000) / scale);
     for (CVector3i &row : transform.m) {
         row.x = common::fixedMultiply(x_scale, row.x);
@@ -114,12 +118,18 @@ void CDemonRenderer::setProjectionScale(float field_of_view) {
 }
 
 // nocedit 0x0048c760
+// bw1 0x00483ac0
+// bw2 0x0046b5c0
+// bw3 0x0046d1a0
 CVector3i CDemonRenderer::getCameraOriginFixed() const {
     return matrix_.getCameraOrigin();
 }
 
 // The origin's 24.8 coordinates over 256.
 // nocedit 0x0048c780
+// bw1 0x00483ae0
+// bw2 0x0046b5e0
+// bw3 0x0046d1c0
 CVector3f *CDemonRenderer::getCameraOriginWorld(CVector3f *output) {
     const CVector3i origin = matrix_.getCameraOrigin();
     const auto world = [](int fixed) {
@@ -137,6 +147,12 @@ void CDemonRenderer::pushViewport(int x, int y, int width, int height) {
 // nocedit 0x0048c8c0
 void CDemonRenderer::popViewport() {
     matrix_.popViewport();
+}
+
+// As setupCameraAndProjection works the clip's out, the rectangle one pixel wider and taller.
+void CDemonRenderer::setProjectionShape(int width, int height) {
+    const auto shifted = static_cast<std::int32_t>(static_cast<std::uint32_t>(width + 1) << 16U);
+    matrix_.setProjectionAspect(shifted / (height + 1));
 }
 
 } // namespace nocturne::engine

@@ -20,8 +20,8 @@
 ;   TerminatedCString s_CDemonCube_allocMemory_O_005ce95d
 ;   TerminatedCString s_core_dcube_cpp_005ce98b
 ;   TerminatedCString s_CDemonCube_allocMemory_O_005ce99d
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -63,8 +63,8 @@ section .text
     MOV EBP,0x5ce8c7                    ; 004465d0 | = "..\\core\\dcube.cpp"
     MOV EAX,0x602                       ; 004465d5
     PUSH 0x5ce8d9                       ; 004465da | = "CDemonCube::allocMemory - Out of tri ..."
-    MOV dword ptr [0x01d046a0],EBP      ; 004465df | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004465e5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004465df | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004465e5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004465ea
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004465ef
@@ -82,8 +82,8 @@ section .text
     MOV ESI,0x5ce905                    ; 00446606 | = "..\\core\\dcube.cpp"
     MOV EDI,0x604                       ; 0044660b
     PUSH 0x5ce917                       ; 00446610 | = "CDemonCube::allocMemory - Out of grou..."
-    MOV dword ptr [0x01d046a0],ESI      ; 00446615 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0044661b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00446615 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0044661b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00446621
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00446626
@@ -100,8 +100,8 @@ section .text
     MOV EAX,0x5ce94b                    ; 0044663a | = "..\\core\\dcube.cpp"
     MOV EDX,0x606                       ; 0044663f
     PUSH 0x5ce95d                       ; 00446644 | = "CDemonCube::allocMemory - Out of voxe..."
-    MOV [0x01d046a0],EAX                ; 00446649 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0044664e | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00446649 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0044664e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00446654
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00446659
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_00446671
     MOV ESI,0x600                       ; 00446676
     PUSH 0x5ce898                       ; 0044667b | = "CDemonCube::allocMemory - Out of vert..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00446680 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00446686 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00446680 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00446686 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044668c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00446691
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_00446699
     MOV ESI,0x608                       ; 0044669e
     PUSH 0x5ce99d                       ; 004466a3 | = "CDemonCube::allocMemory - Out of voxe..."
-    MOV dword ptr [0x01d046a0],EBX      ; 004466a8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004466ae | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004466a8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004466ae | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004466b4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004466b9

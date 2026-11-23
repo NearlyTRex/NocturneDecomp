@@ -15,8 +15,8 @@
 ;   int g_INT_005fba18 = 0x140
 ;   int g_INT_005fba1c = 0xc8
 ;   int g_MouseCursorType
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -118,8 +118,8 @@ section .text
     MOV ESI,0x5bd3ad                    ; 00481eb3
     MOV EDI,0xb9d                       ; 00481eb8
     PUSH 0x5bd3c3                       ; 00481ebd
-    MOV dword ptr [0x01d71de0],ESI      ; 00481ec2 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00481ec8 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00481ec2 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00481ec8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00481ece
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00481ed3

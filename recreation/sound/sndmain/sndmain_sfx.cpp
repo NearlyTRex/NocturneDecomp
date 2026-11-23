@@ -85,6 +85,9 @@ CSfxSlot *CSndMain::getSfxSlotFromHandle(std::uint32_t sfx_handle) {
 }
 
 // nocedit 0x005a9660
+// bw1 0x005735a0
+// bw2 0x00550b70
+// bw3 0x00556700
 bool CSndMain::isSfxPlaying(std::uint32_t sfx_handle) {
     return getSfxSlotFromHandle(sfx_handle) != nullptr;
 }
@@ -182,6 +185,9 @@ bool CSndMain::setSfxFade(std::uint32_t sfx_handle, float target_volume, float f
 }
 
 // nocedit 0x005a9cc0
+// bw1 0x00573b00
+// bw2 0x005510d0
+// bw3 0x00556c60
 void CSndMain::killAllSfx() {
     for (CSfxSlot &slot : sfx_slots_) {
         slot.kill();
@@ -198,18 +204,27 @@ const CSfxSlot *CSndMain::findActiveSfx(std::size_t first_index) const {
 }
 
 // nocedit 0x005a9ef0
+// bw1 0x00573d20
+// bw2 0x005512f0
+// bw3 0x00556e80
 std::uint32_t CSndMain::getFirstActiveSfx() const {
     const CSfxSlot *const slot = findActiveSfx(0);
     return slot == nullptr ? 0 : getSfxHandle(*slot);
 }
 
 // nocedit 0x005a9f30
+// bw1 0x00573d60
+// bw2 0x00551330
+// bw3 0x00556ec0
 std::uint32_t CSndMain::getNextActiveSfx(std::uint32_t current_sfx_handle) const {
     const CSfxSlot *const slot = findActiveSfx((current_sfx_handle & kSlotMask) + 1);
     return slot == nullptr ? 0 : getSfxHandle(*slot);
 }
 
 // nocedit 0x005a9ff0
+// bw1 0x00573e20
+// bw2 0x005513f0
+// bw3 0x00556f80
 int CSndMain::countActiveSfx() const {
     return static_cast<int>(std::ranges::count_if(sfx_slots_, isActive));
 }

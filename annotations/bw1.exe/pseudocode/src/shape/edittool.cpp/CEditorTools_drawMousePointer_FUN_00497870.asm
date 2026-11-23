@@ -975,8 +975,8 @@ section .text
         ;   Label: LAB_004981de
     MOV EDX,0xa0d                       ; 004981e3
     PUSH 0x5dc236                       ; 004981e8 | = "CEditorTools::setMousePointerType - i..."
-    MOV [0x01d1d400],EAX                ; 004981ed | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 004981f2 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 004981ed | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 004981f2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004981f8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004981fd

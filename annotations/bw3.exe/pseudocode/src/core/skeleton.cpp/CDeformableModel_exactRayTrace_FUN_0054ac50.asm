@@ -40,8 +40,8 @@
 ;   TerminatedCString s_CDeformableModel_exactRa_005d1ea5
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   float g_FLOAT_005e4760 = 0.00390625
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f[5000] g_FloatVertexArray
 ;   undefined4 g_FloatVertexArray[0].y
 ;   undefined4 g_FloatVertexArray[0].z
@@ -86,8 +86,8 @@ section .text
     MOV EBX,0x5d1e90                    ; 0054ac7f | = "..\\core\\skeleton.cpp"
     MOV ESI,0x6e2                       ; 0054ac84
     PUSH 0x5d1ea5                       ; 0054ac89 | = "CDeformableModel::exactRayTrace - too..."
-    MOV dword ptr [0x01d71de0],EBX      ; 0054ac8e | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0054ac94 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0054ac8e | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0054ac94 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054ac9a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054ac9f

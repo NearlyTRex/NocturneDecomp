@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   light_index
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MasterLightCount
 ;   int g_SpotLightCount
 ;   int g_INT_01fc9608
@@ -147,8 +147,8 @@ section .text
     MOV EDX,0x5e566b                    ; 0052d578
     MOV ECX,0x35c                       ; 0052d57d
     PUSH 0x5e567b                       ; 0052d582
-    MOV dword ptr [0x01d046a0],EDX      ; 0052d587 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0052d58d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0052d587 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0052d58d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052d593
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052d598

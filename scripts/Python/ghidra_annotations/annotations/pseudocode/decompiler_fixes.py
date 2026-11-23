@@ -197,9 +197,8 @@ HOW IT WORKS
 
 import os
 import json
-from ghidra.app.decompiler import DecompInterface
 
-from ghidra_annotations.util.log import log_info
+from ghidra_annotations.util.log import log_info, log_warning
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 
 # Fix flag constants - must match DecompilerFixFlags in decompiler_fixes.hh
@@ -219,57 +218,66 @@ FIX_NAME_TO_FLAG = {
     "spacebase_propagation": DFIX_SPACEBASE_PROPAGATION,
 }
 
-# Cache of loaded fixes configuration (global file - bitmask per address)
+FIXES_FILENAME = "decompiler_fixes.json"
+
+# Fixes from the global file: {function address: flags}. Only these are
+# written back to it, so a fix given in a function's JSON stays there.
 _fixes_cache = {}
+
+# Fixes from the function JSONs: {function address: flags}
+_per_function_flags = {}
 
 # Cache manager for per-function decompiler_fixes (list of fix names)
 per_function_fixes_cache = JsonCacheManager('decompiler_fixes', json_key='decompiler_fixes',
                                              default_factory=list, type_check=list)
 
 
+def _add_flag(flags_by_addr, addr, flag):
+    flags_by_addr[addr] = flags_by_addr.get(addr, 0) | flag
+
+
 def preload_decompiler_fixes(pseudocode_dir):
     """Pre-load decompiler fixes configuration from JSON file.
+
+    An entry that cannot be read is warned about and left out; the others load.
 
     Args:
         pseudocode_dir: Path to the pseudocode directory containing decompiler_fixes.json
     """
-    global _fixes_cache
-    _fixes_cache = {}
+    _fixes_cache.clear()
 
-    fixes_path = os.path.join(pseudocode_dir, "decompiler_fixes.json")
+    fixes_path = os.path.join(pseudocode_dir, FIXES_FILENAME)
     if not os.path.exists(fixes_path):
         return
-
     try:
         with open(fixes_path, 'r') as f:
             data = json.load(f)
+    except (OSError, ValueError) as e:
+        log_warning("Could not read %s: %s" % (fixes_path, e))
+        return
+    if not isinstance(data, dict):
+        log_warning("%s is not an object of fix names" % fixes_path)
+        return
 
-        # Parse the JSON - format is {"fix_name": ["0xaddr1", "0xaddr2", ...]}
-        for fix_name, addresses in data.items():
-            if fix_name not in FIX_NAME_TO_FLAG:
-                log_info("Warning: Unknown decompiler fix '%s' in decompiler_fixes.json" % fix_name)
+    # {"fix_name": ["0xaddr1", "0xaddr2", ...]}; an address without 0x is decimal
+    for fix_name, addresses in data.items():
+        if fix_name not in FIX_NAME_TO_FLAG:
+            log_warning("Unknown decompiler fix '%s' in %s" % (fix_name, FIXES_FILENAME))
+            continue
+        for addr_str in addresses:
+            try:
+                addr = int(addr_str, 16) if addr_str.lower().startswith("0x") else int(addr_str)
+            except (AttributeError, ValueError):
+                log_warning("Bad address %r for decompiler fix '%s'" % (addr_str, fix_name))
                 continue
+            _add_flag(_fixes_cache, addr, FIX_NAME_TO_FLAG[fix_name])
 
-            flag = FIX_NAME_TO_FLAG[fix_name]
-            for addr_str in addresses:
-                # Parse address (supports "0x..." or just decimal)
-                if addr_str.startswith("0x") or addr_str.startswith("0X"):
-                    addr = int(addr_str, 16)
-                else:
-                    addr = int(addr_str)
-
-                if addr not in _fixes_cache:
-                    _fixes_cache[addr] = 0
-                _fixes_cache[addr] |= flag
-
-        if _fixes_cache:
-            log_info("Loaded decompiler fixes for %d functions" % len(_fixes_cache))
-    except Exception as e:
-        log_info("Error loading decompiler_fixes.json: %s" % str(e))
+    if _fixes_cache:
+        log_info("Loaded decompiler fixes for %d functions" % len(_fixes_cache))
 
 
 def generate_decompiler_fixes_file(pseudocode_dir):
-    """Generate the decompiler_fixes.json file from cached data.
+    """Generate the decompiler_fixes.json file from the global file's cached fixes.
 
     Args:
         pseudocode_dir: Path to the pseudocode directory
@@ -277,35 +285,21 @@ def generate_decompiler_fixes_file(pseudocode_dir):
     Returns:
         Path to the generated file
     """
-    global _fixes_cache
-
-    fixes_path = os.path.join(pseudocode_dir, "decompiler_fixes.json")
-
-    # Convert cache back to JSON format
     output = {}
-    for addr, flags in _fixes_cache.items():
+    for addr in sorted(_fixes_cache):
         for fix_name, flag_value in FIX_NAME_TO_FLAG.items():
-            if flags & flag_value:
-                if fix_name not in output:
-                    output[fix_name] = []
-                output[fix_name].append("0x%x" % addr)
+            if _fixes_cache[addr] & flag_value:
+                output.setdefault(fix_name, []).append("0x%x" % addr)
 
-    # Sort addresses for consistent output
-    for fix_name in output:
-        output[fix_name].sort(key=lambda x: int(x, 16))
-
-    try:
-        with open(fixes_path, 'w') as f:
-            json.dump(output, f, indent=2)
-            f.write("\n")
-    except Exception as e:
-        log_info("Error writing decompiler_fixes.json: %s" % str(e))
-
+    fixes_path = os.path.join(pseudocode_dir, FIXES_FILENAME)
+    with open(fixes_path, 'w') as f:
+        json.dump(output, f, indent=2)
+        f.write("\n")
     return fixes_path
 
 
 def register_decompiler_fixes(decompiler_interface):
-    """Register all cached decompiler fixes with the decompiler process.
+    """Register all cached decompiler fixes, global and per-function, with the decompiler process.
 
     This must be called AFTER a DecompInterface has been opened with a program,
     and BEFORE decompilation begins.
@@ -316,22 +310,19 @@ def register_decompiler_fixes(decompiler_interface):
     Returns:
         Number of functions registered
     """
-    global _fixes_cache
-    if not _fixes_cache:
-        return 0
+    merged = dict(_fixes_cache)
+    for addr, flags in _per_function_flags.items():
+        _add_flag(merged, addr, flags)
 
     # Group addresses by flag combination
     by_flags = {}
-    for addr, flags in _fixes_cache.items():
-        if flags not in by_flags:
-            by_flags[flags] = []
-        by_flags[flags].append(addr)
+    for addr, flags in merged.items():
+        by_flags.setdefault(flags, []).append(addr)
 
     total_registered = 0
     for flags, addresses in by_flags.items():
-        addr_array = [int(addr) for addr in addresses]
         try:
-            success = decompiler_interface.setDecompilerFixes(flags, addr_array)
+            success = decompiler_interface.setDecompilerFixes(flags, addresses)
             if success:
                 total_registered += len(addresses)
                 log_info("Registered %d functions with decompiler fix flags 0x%x" % (len(addresses), flags))
@@ -361,55 +352,6 @@ def clear_decompiler_fixes(decompiler_interface):
         return False
 
 
-def add_function_fix(func_addr, fix_name):
-    """Add a decompiler fix for a specific function (updates cache).
-
-    Args:
-        func_addr: Function entry address (int)
-        fix_name: Name of the fix (e.g., "multiequal_stack_trace")
-    """
-    global _fixes_cache
-
-    if fix_name not in FIX_NAME_TO_FLAG:
-        log_info("Warning: Unknown decompiler fix '%s'" % fix_name)
-        return
-
-    flag = FIX_NAME_TO_FLAG[fix_name]
-    if func_addr not in _fixes_cache:
-        _fixes_cache[func_addr] = 0
-    _fixes_cache[func_addr] |= flag
-
-
-def get_function_fixes(func_addr):
-    """Get the fix flags for a specific function.
-
-    Args:
-        func_addr: Function entry address (int)
-
-    Returns:
-        Bitmask of fix flags, or 0 if none
-    """
-    global _fixes_cache
-    return _fixes_cache.get(func_addr, 0)
-
-
-def has_fix(func_addr, fix_name):
-    """Check if a specific fix is enabled for a function.
-
-    Args:
-        func_addr: Function entry address (int)
-        fix_name: Name of the fix
-
-    Returns:
-        True if the fix is enabled
-    """
-    if fix_name not in FIX_NAME_TO_FLAG:
-        return False
-
-    flag = FIX_NAME_TO_FLAG[fix_name]
-    return (get_function_fixes(func_addr) & flag) != 0
-
-
 # ============================================================================
 # Per-function decompiler_fixes support (from function JSON files)
 # ============================================================================
@@ -417,62 +359,44 @@ def has_fix(func_addr, fix_name):
 def preload_per_function_decompiler_fixes(base_dir):
     """Pre-load all decompiler_fixes from function JSON files in a directory.
 
-    Call this once before processing functions to cache all per-function fixes.
-    Also merges them into _fixes_cache so they're registered with the decompiler.
-    Recursively scans all subdirectories.
+    Call this once before processing functions to cache all per-function fixes,
+    both for preserving them in the function's new JSON and for registering
+    them with the decompiler. Recursively scans all subdirectories. A JSON that
+    cannot be read is warned about: cleanup deletes it next, fixes and all.
 
     Args:
         base_dir: Directory containing function JSON files
     """
-    global _fixes_cache
-
-    # Clear the per-function cache
     per_function_fixes_cache.clear()
-
+    _per_function_flags.clear()
     if not base_dir or not os.path.exists(base_dir):
         return
 
-    # Recursively scan for all .json files and load their decompiler_fixes
-    # We do this manually because we also need to extract the function address
-    # from the same JSON file to merge into the bitmask cache
     loaded_count = 0
-    try:
-        for root, dirs, files in os.walk(base_dir):
-            for filename in files:
-                if filename.endswith('.json'):
-                    json_path = os.path.join(root, filename)
-                    try:
-                        with open(json_path, 'r') as f:
-                            data = json.load(f)
-                            decompiler_fixes = data.get('decompiler_fixes')
-                            if decompiler_fixes and isinstance(decompiler_fixes, list):
-                                # Cache for preservation in output JSON
-                                per_function_fixes_cache.set_cache(json_path, decompiler_fixes)
-
-                                # Also merge into _fixes_cache for registration
-                                # Get function address from the JSON
-                                func_addr_str = data.get('function', {}).get('address', '')
-                                if func_addr_str:
-                                    if func_addr_str.startswith('0x') or func_addr_str.startswith('0X'):
-                                        func_addr = int(func_addr_str, 16)
-                                    else:
-                                        func_addr = int(func_addr_str, 16)
-
-                                    # Add each fix name to the cache
-                                    for fix_name in decompiler_fixes:
-                                        if fix_name in FIX_NAME_TO_FLAG:
-                                            flag = FIX_NAME_TO_FLAG[fix_name]
-                                            if func_addr not in _fixes_cache:
-                                                _fixes_cache[func_addr] = 0
-                                            _fixes_cache[func_addr] |= flag
-
-                                loaded_count += 1
-                                log_info("Preloaded decompiler_fixes from %s: %s" % (
-                                    json_path, decompiler_fixes))
-                    except Exception:
-                        pass
-    except Exception:
-        pass
+    for root, _dirs, files in os.walk(base_dir):
+        for filename in files:
+            if not filename.endswith('.json'):
+                continue
+            json_path = os.path.join(root, filename)
+            try:
+                with open(json_path, 'r') as f:
+                    data = json.load(f)
+            except (OSError, ValueError) as e:
+                log_warning("Could not read decompiler_fixes from %s: %s" % (json_path, e))
+                continue
+            decompiler_fixes = data.get('decompiler_fixes')
+            if not decompiler_fixes or not isinstance(decompiler_fixes, list):
+                continue
+            per_function_fixes_cache.set_cache(json_path, decompiler_fixes)
+            # The exported address is bare hex: "0040b870"
+            func_addr = int(data['function']['address'], 16)
+            for fix_name in decompiler_fixes:
+                if fix_name in FIX_NAME_TO_FLAG:
+                    _add_flag(_per_function_flags, func_addr, FIX_NAME_TO_FLAG[fix_name])
+                else:
+                    log_warning("Unknown decompiler fix '%s' in %s" % (fix_name, json_path))
+            loaded_count += 1
+            log_info("Preloaded decompiler_fixes from %s: %s" % (json_path, decompiler_fixes))
 
     if loaded_count > 0:
         log_info("Preloaded decompiler_fixes from %d function JSON files" % loaded_count)

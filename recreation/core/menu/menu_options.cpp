@@ -5,9 +5,11 @@
 #include "core/menu/menu.h"
 #include "core/menu/menupage.h"
 #include "core/sound/sound.h"
+#include "engine/package/gamecontent.h"
 #include "support/newmsg/newmsg.h"
 
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <optional>
 #include <string>
@@ -29,13 +31,13 @@ enum class EOptionsLine : std::uint8_t {
 };
 
 constexpr std::array<std::pair<EOptionsLine, std::string_view>, 7> kOptionsLines{{
-    {EOptionsLine::Gameplay, "Gameplay options"},
-    {EOptionsLine::Graphic, "Graphic options"},
-    {EOptionsLine::Display, "Display options"},
-    {EOptionsLine::Sound, "Sound options"},
-    {EOptionsLine::Control, "Control options"},
-    {EOptionsLine::Cheats, "Cheats"},
-    {EOptionsLine::Credits, "Credits"},
+    {EOptionsLine::Gameplay, "options_gameplay"},
+    {EOptionsLine::Graphic, "options_graphic"},
+    {EOptionsLine::Display, "options_display"},
+    {EOptionsLine::Sound, "options_sound"},
+    {EOptionsLine::Control, "options_controls"},
+    {EOptionsLine::Cheats, "options_cheats"},
+    {EOptionsLine::Credits, "options_credits"},
 }};
 
 } // namespace
@@ -46,15 +48,20 @@ public:
     COptionsPage(CMenu &menu, const SMenuOwners &owners) : CMenuPage(menu), owners_(owners) {}
 
     std::optional<std::string> title() override {
-        return std::string(owners_.messages.getLocalizedString("Option Menu"));
+        return getLabel(owners_.content, owners_.messages, "options_title");
     }
 
-    // Whoever is playing, Options shows the Stranger's controls.
+    [[nodiscard]] std::string_view getLayoutId() const override {
+        return "options";
+    }
+
+    // Whoever is playing, Options shows the controls of the hero the menus name.
     void build(std::vector<SMenuLine> &lines) override {
-        owners_.game.hero_number = EHeroType::HERO_TYPE_STRANGER;
-        for (const auto &[line, key] : kOptionsLines) {
+        const engine::SMenuLayout &menu = getMenu().getMenuLayout();
+        owners_.game.hero_number = static_cast<EHeroType>(menu.options_hero);
+        for (const auto &[line, id] : kOptionsLines) {
             lines.push_back({.id = std::to_underlying(line),
-                             .text = std::string(owners_.messages.getLocalizedString(key))});
+                             .text = getLabel(owners_.content, owners_.messages, id)});
         }
     }
 
@@ -100,7 +107,8 @@ private:
 };
 
 // The original's lines were Graphic, Sound and Control options, and Credits, and it left on
-// Escape alone, not on the window closing.
+// Escape alone, not on the window closing. BW1 listed its difficulty lines here, before Credits;
+// they are the Gameplay page's.
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h
 //   nocturne_cheats_menu), with the cheats menu
 // deferred: over the sound the pause menu holds, the menu music started without configure's

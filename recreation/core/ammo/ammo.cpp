@@ -34,6 +34,7 @@ CAmmo::CAmmo(CActor &classes) : model_(classes.getKeyFramedModels()) {
 }
 
 // nocedit 0x004114e0
+// bw2 0x0040de50
 CAmmo::~CAmmo() = default;
 
 // nocedit 0x00410db0
@@ -42,12 +43,16 @@ const CDemonActorType &CAmmo::getActorType() const {
 }
 
 // nocedit 0x00410d80
+// bw1 0x0040db90
+// bw2 0x0040dd80
+// bw3 0x0040de30
 std::unique_ptr<CDemonActor> CAmmo::create(CActor &classes) {
     return std::make_unique<CAmmo>(classes);
 }
 
 // The original's buffer for the weapon class held 64 characters.
 // nocedit 0x00410f40
+// bw2 0x0040e1b0
 void CAmmo::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
@@ -73,6 +78,9 @@ EAmmoType CAmmo::getAmmoType() const {
 }
 
 // nocedit 0x00410e50
+// bw1 0x0040dc50
+// bw2 0x0040deb0
+// bw3 0x0040def0
 void CAmmo::setup() {
     model_.preCache();
     CDemonActor::setup();

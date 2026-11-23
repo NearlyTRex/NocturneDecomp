@@ -23,8 +23,8 @@
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c
 ;   int g_INT_01c6af90
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -74,8 +74,8 @@ section .text
     MOV ESI,0x5d76af                    ; 0057a602 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x2c0                       ; 0057a607
     PUSH 0x5d76c6                       ; 0057a60c | = "setColorTable16 - Unable to unlock ba..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0057a611 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 0057a617 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0057a611 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 0057a617 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a61d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a622
@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_0057a670
     MOV EBX,0x2be                       ; 0057a675
     PUSH 0x5d7681                       ; 0057a67a | = "setColorTable16 - Unable to lock back..."
-    MOV dword ptr [0x01d71de0],ECX      ; 0057a67f | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0057a685 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0057a67f | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0057a685 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0057a68b
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0057a690

@@ -190,7 +190,7 @@ TEST_F(CInventoryLoadTest, TheItemsAreMadeAndTheWeaponHeld) {
 TEST_F(CInventoryLoadTest, ACarriedItemComesFromTheMission) {
     auto carried = std::make_unique<CTestActor>(kGunType);
     const CDemonActor *carried_item = carried.get();
-    EXPECT_CALL(actors_, takeCarriedActor(StrEq("Your_weapon")))
+    EXPECT_CALL(actors_, getNextLoadedInventoryActor(StrEq("Your_weapon")))
         .WillOnce(Return(::testing::ByMove(std::move(carried))));
     load(text(2, 0, {"CTestGun \"Your_weapon\""}));
     EXPECT_EQ(inventory_.getItems()[0].get(), carried_item);
@@ -199,7 +199,7 @@ TEST_F(CInventoryLoadTest, ACarriedItemComesFromTheMission) {
 TEST_F(CInventoryLoadTest, SettingUpTheItemsSetsEachUp) {
     auto carried = std::make_unique<CTestActor>(kGunType);
     const CTestActor &item = *carried;
-    EXPECT_CALL(actors_, takeCarriedActor(StrEq("Your_weapon")))
+    EXPECT_CALL(actors_, getNextLoadedInventoryActor(StrEq("Your_weapon")))
         .WillOnce(Return(::testing::ByMove(std::move(carried))));
     load(text(2, 0, {"CTestGun \"Your_weapon\""}));
     inventory_.setupItems();

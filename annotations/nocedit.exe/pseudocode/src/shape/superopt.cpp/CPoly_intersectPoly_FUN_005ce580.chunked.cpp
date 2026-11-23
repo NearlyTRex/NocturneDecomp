@@ -6,9 +6,9 @@
 
 #include "nocturne.h"
 typedef struct CPoly_intersectPoly_Ctx {
-    CPoly *this_ptr;
-    CPoly *other_poly;
-    CPolyIntersectResult *out_result;
+    CPoly **this_ptr;
+    CPoly **other_poly;
+    CPolyIntersectResult **out_result;
     CVector3d *pCVar4;
     CVector2d *pCVar5;
     CVector3d *pCVar6;
@@ -257,12 +257,17 @@ typedef struct CPoly_intersectPoly_Ctx {
     CVert *pCVar3;
     CVector3d *pCVar2;
     CP3D *pCVar1;
+    int _retval;
 } CPoly_intersectPoly_Ctx;
+
+// Chunk return codes
+// 0 = normal continuation
+#define CHUNK_RETURN -1
 
 // Chunk: branch_0 (lines 11-44 of original)
 static int CPoly_intersectPoly_branch_0(CPoly_intersectPoly_Ctx *ctx) {
-    CPoly *&this_ptr = ctx->this_ptr;
-    CPoly *&other_poly = ctx->other_poly;
+    CPoly *&this_ptr = *ctx->this_ptr;
+    CPoly *&other_poly = *ctx->other_poly;
     int &iVar19 = ctx->iVar19;
     CVert *&pCVar26 = ctx->pCVar26;
     CVector3d &CStack_410 = ctx->CStack_410;
@@ -292,7 +297,7 @@ static int CPoly_intersectPoly_branch_0(CPoly_intersectPoly_Ctx *ctx) {
                                  (other_poly,&pCVar26[this_ptr->vertex_idx_2].position,
                                   &pCVar26[this_ptr->vertex_idx_0].position,&CStack_410);
               if (iVar19 == 0) {
-                return 0;
+                { ctx->_retval = 0; return CHUNK_RETURN; }
               }
             }
           }
@@ -303,7 +308,7 @@ static int CPoly_intersectPoly_branch_0(CPoly_intersectPoly_Ctx *ctx) {
 
 // Chunk: chunk_1 (lines 134-556 of original)
 static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
-    CPolyIntersectResult *&out_result = ctx->out_result;
+    CPolyIntersectResult *&out_result = *ctx->out_result;
     CVector3d *&pCVar4 = ctx->pCVar4;
     CVector2d *&pCVar5 = ctx->pCVar5;
     CVector3d *&pCVar6 = ctx->pCVar6;
@@ -570,7 +575,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
         aiStack_d4._4_8_ = (double)(&uStack_560)[iStack_58 * 2] - dStack_150;
         uStack_1e8 = uStack_158;
         dStack_1e0 = (double)aiStack_d4._4_8_;
-        uStack_1e8._0_4_ = SUB84(uStack_158,0);
+        uStack_1e8._0_4_ = SUB84(__BITCAST_UINT64(uStack_158),0);
         uStack_d8 = (uint)uStack_1e8;
         uStack_1e8._4_4_ = (int)((ulonglong)uStack_158 >> 0x20);
         aiStack_d4[0] = uStack_1e8._4_4_;
@@ -631,7 +636,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
                *(uint *)((int)dStack_1e0._4_4_ + 0x14);
           (out_result->poly2).uvs[3].x = uStack_158;
           (out_result->poly2).uvs[3].y = (double)aiStack_d4._4_8_;
-          return 1;
+          { ctx->_retval = 1; return CHUNK_RETURN; }
         }
         (out_result->poly1).vertex_count = 4;
         pCVar8->x = __BITCAST_DOUBLE(CONCAT44(uStack_34c,uStack_350));
@@ -684,7 +689,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
              *(uint *)((int)dStack_1e0._4_4_ + 0x14);
         pCVar9->x = uStack_158;
         (out_result->poly2).uvs[2].y = (double)aiStack_d4._4_8_;
-        return 1;
+        { ctx->_retval = 1; return CHUNK_RETURN; }
       }
       if ((((ulonglong)dStack_3f8 & 0x7fffffff00000000) == 0) && (dStack_3f8._0_4_ == 0)) {
         iStack_4c = 1;
@@ -750,7 +755,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
       uStack_138 = uStack_f8;
       dStack_130 = dStack_f0;
       dStack_538 = uStack_f8;
-      dStack_130._0_4_ = SUB84(dStack_f0,0);
+      dStack_130._0_4_ = SUB84(__BITCAST_UINT64(dStack_f0),0);
       uStack_530 = dStack_130._0_4_;
       pCVar9 = (out_result->poly2).uvs + 2;
       pCVar11 = (out_result->poly2).vertices + 2;
@@ -816,7 +821,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
         (out_result->poly2).vertices[2].z = (double)(&uStack_5d0)[iStack_54 * 3];
         pCVar9->x = *pdVar28;
         (out_result->poly2).uvs[2].y = (double)(&uStack_560)[iStack_54 * 2];
-        return 1;
+        { ctx->_retval = 1; return CHUNK_RETURN; }
       }
       (out_result->poly2).vertex_count = 3;
       pCVar15->x = *pdVar21;
@@ -865,7 +870,7 @@ static int CPoly_intersectPoly_chunk_1(CPoly_intersectPoly_Ctx *ctx) {
       (out_result->poly1).vertices[2].z = (double)(&uStack_5d0)[iStack_54 * 3];
       pCVar16->x = *pdVar28;
       (out_result->poly1).uvs[2].y = (double)(&uStack_560)[iStack_54 * 2];
-      return 1;
+      { ctx->_retval = 1; return CHUNK_RETURN; }
     return 0;
 }
 
@@ -874,9 +879,9 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
 {
   CPoly_intersectPoly_Ctx _ctx_storage = {};
   CPoly_intersectPoly_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->other_poly = other_poly;
-  ctx->out_result = out_result;
+  ctx->this_ptr = &this_ptr;
+  ctx->other_poly = &other_poly;
+  ctx->out_result = &out_result;
 
     CVector3d *&pCVar4 = ctx->pCVar4;
     CVector2d *&pCVar5 = ctx->pCVar5;
@@ -1126,9 +1131,6 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
     CVert *&pCVar3 = ctx->pCVar3;
     CVector3d *&pCVar2 = ctx->pCVar2;
     CP3D *&pCVar1 = ctx->pCVar1;
-  // param this_ptr aliased into ctx above
-  // param other_poly aliased into ctx above
-  // param out_result aliased into ctx above
 
   bVar16 = 0;
   (*other_poly->vtable->getBounds)(other_poly,&local_3c8,&local_458);
@@ -1142,7 +1144,8 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
                       (this_ptr,&pCVar26[other_poly->vertex_idx_0].position,
                        &pCVar26[other_poly->vertex_idx_1].position,&CStack_410);
     if (iVar5 == 0) {
-      CPoly_intersectPoly_branch_0(ctx);
+      int _rc = CPoly_intersectPoly_branch_0(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
     memset(out_result,0,0x148);
     pCVar3 = this_ptr->parent_obj->vertex_data;
@@ -1235,8 +1238,9 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       dStack_3e8 = 0.0;
     }
     if ((((dStack_3f8 < 0.0) || (dStack_3f0 < 0.0)) || (dStack_3e8 < 0.0)) &&
-    {
-      CPoly_intersectPoly_chunk_1(ctx);
+       (((0.0 < dStack_3f8 || (0.0 < dStack_3f0)) || (0.0 < dStack_3e8)))) {
+      int _rc = CPoly_intersectPoly_chunk_1(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
   }
   return 0;

@@ -58,6 +58,7 @@ CBoxActor::CBoxActor(CActor &classes) : model_(classes.getKeyFramedModels()) {
 }
 
 // nocedit 0x00423670
+// bw2 0x0041d830
 CBoxActor::~CBoxActor() = default;
 
 // nocedit 0x004216f0
@@ -66,6 +67,9 @@ const CDemonActorType &CBoxActor::getActorType() const {
 }
 
 // nocedit 0x004216c0
+// bw1 0x00421c70
+// bw2 0x0041bd00
+// bw3 0x0041efb0
 std::unique_ptr<CDemonActor> CBoxActor::create(CActor &classes) {
     return std::make_unique<CBoxActor>(classes);
 }
@@ -152,6 +156,9 @@ void CBoxActor::setup() {
 // The original also checked the actor hadn't been deleted, and left a box whose model wasn't
 // found yet to set up later; finding its model is fatal here before that.
 // nocedit 0x004218d0
+// bw1 0x00421e80
+// bw2 0x0041bf10
+// bw3 0x0041f1e0
 void CBoxActor::setupPhysicsBox() {
     physics_box_.setValidity(0);
     if (!(weight_in_pounds_ > 0.0F)) {
@@ -166,6 +173,9 @@ void CBoxActor::setupPhysicsBox() {
 // last frame when the frame rounded up to the count, and before the first for a model with none,
 // which has no bounds here.
 // nocedit 0x00421fe0
+// bw1 0x00422700
+// bw2 0x0041c790
+// bw3 0x0041fb30
 CBoundingBox3D *CBoxActor::getBoundingBox(CBoundingBox3D *out_box) {
     const std::span<const CBoundingBox3D> bounds = model_.getModelPtr().getFrameBounds();
     if (bounds.empty()) {

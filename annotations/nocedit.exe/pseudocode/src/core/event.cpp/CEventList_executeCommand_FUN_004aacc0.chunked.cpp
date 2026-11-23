@@ -6,8 +6,8 @@
 
 #include "nocturne.h"
 typedef struct CEventList_executeCommand_Ctx {
-    CEventList *this_ptr;
-    char *command_buffer;
+    CEventList **this_ptr;
+    char **command_buffer;
     CDeformableModelInstance *this_ptr_00;
     char cVar1;
     CHero *this_ptr_01;
@@ -30,16 +30,113 @@ typedef struct CEventList_executeCommand_Ctx {
     SIZE_T SVar16;
     char *pcVar17;
     char *pcVar18;
+    char (*str1) [32];
+    char *pcVar19;
+    byte bVar20;
+    char local_153d[200];
+    char local_1475[200];
+    char local_13ad[200];
+    char local_12e5[200];
+    char local_121d[201];
+    char local_1154[199];
+    char local_108d[201];
+    char local_fc4[199];
+    char local_efd[200];
+    char local_e35[200];
+    char local_d6d[200];
+    char local_ca5[200];
+    char local_bdd[200];
+    char local_b15[200];
+    char local_a4d[200];
+    char local_985[200];
+    char local_8bd[201];
+    char local_7f4[199];
+    char local_72d[200];
+    char local_665[200];
+    char local_59d[200];
+    char local_4d5[200];
+    char local_40d[201];
+    char local_344[99];
+    char local_2e1[101];
+    char local_27c[99];
+    char local_219[101];
+    char local_1b4[32];
+    char local_194[32];
+    char local_174[32];
+    char local_154[32];
+    CVector3f local_134;
+    CVector3f local_128;
+    CVector3f local_11c;
+    CVector3f local_110;
+    uint uStack_f8;
+    char *local_f4;
+    uint local_f0;
+    byte *local_ec;
+    C3DSLight *local_e8;
+    int local_e4;
+    float local_e0[2];
+    int local_d8;
+    int local_d4;
+    int local_d0;
+    float local_cc;
+    float local_c8;
+    int local_c4;
+    float local_c0;
+    float local_bc;
+    int local_b8;
+    int local_b4;
+    float local_b0;
+    int local_ac;
+    int local_a8;
+    int local_a4;
+    CVector3f *local_a0;
+    float local_9c;
+    int local_98;
+    int local_94;
+    int local_90;
+    int local_8c;
+    float local_88;
+    int local_84;
+    float local_80;
+    int local_7c;
+    float local_78;
+    int local_74;
+    float local_70;
+    int local_6c;
+    int local_68;
+    int local_64;
+    float local_60;
+    int local_5c;
+    int local_58;
+    int local_54;
+    C3DSLight *local_50;
+    CDemonLight *local_4c;
+    int local_48;
+    CDemonLight *local_44;
+    int local_40;
+    float local_3c;
+    int local_38;
+    int local_34;
+    float local_30;
+    float local_2c;
+    float local_28;
+    int local_24;
+    int local_20;
+    int local_1c;
+    int local_18;
+    uint local_14;
+    int _retval;
 } CEventList_executeCommand_Ctx;
 
-// Chunk return codes for cross-boundary gotos
+// Chunk return codes
 // 0 = normal continuation
+#define CHUNK_RETURN -1
 #define GOTO_LAB_004aaf38 1
 
-// Chunk: chunk_0_check_pcVar17_0 (lines 115-186 of original)
+// Chunk: chunk_0_check_pcVar17_0 (lines 20-91 of original)
 static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeCommand_Ctx *ctx) {
-    CEventList *&this_ptr = ctx->this_ptr;
-    char *&command_buffer = ctx->command_buffer;
+    CEventList *&this_ptr = *ctx->this_ptr;
+    char *&command_buffer = *ctx->command_buffer;
     char &cVar1 = ctx->cVar1;
     int &iVar2 = ctx->iVar2;
     int &iVar3 = ctx->iVar3;
@@ -47,6 +144,11 @@ static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeC
     uint &uVar15 = ctx->uVar15;
     char *&pcVar17 = ctx->pcVar17;
     char *&pcVar18 = ctx->pcVar18;
+    auto &str1 = ctx->str1;
+    char *&pcVar19 = ctx->pcVar19;
+    byte &bVar20 = ctx->bVar20;
+    uint &local_f0 = ctx->local_f0;
+    uint &local_14 = ctx->local_14;
 
       iVar2 = 0;
       if (0 < (this_ptr->events).count) {
@@ -54,7 +156,7 @@ static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeC
         do {
           iVar3 = _stricmp(*str1,command_buffer);
           if (iVar3 == 0) {
-            return 1;
+            { ctx->_retval = 1; return CHUNK_RETURN; }
           }
           iVar2 = iVar2 + 1;
           str1 = str1 + 1;
@@ -70,7 +172,7 @@ static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeC
       } while (cVar1 != '\0');
       if (0x1f < ~uVar14 - 1) {
         iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
-        return iVar2;
+        { ctx->_retval = iVar2; return CHUNK_RETURN; }
       }
       if (99 < (this_ptr->events).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
@@ -102,17 +204,17 @@ static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeC
         } while (cVar1 != '\0');
         if (~uVar15 - 1 <= local_14) {
           if (local_f0 == 0) {
-            return 1;
+            { ctx->_retval = 1; return CHUNK_RETURN; }
           }
           (this_ptr->events).count = (this_ptr->events).count + 1;
-          return 1;
+          { ctx->_retval = 1; return CHUNK_RETURN; }
         }
         iVar2 = toupper((uint)(byte)*pcVar19);
         *pcVar19 = (byte)iVar2;
         iVar2 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*pcVar19);
         if (iVar2 == 0) {
           iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid");
-          return iVar2;
+          { ctx->_retval = iVar2; return CHUNK_RETURN; }
         }
         local_14 = uVar14 + 1;
         pcVar19 = pcVar19 + 1;
@@ -120,23 +222,28 @@ static int CEventList_executeCommand_chunk_0_check_pcVar17_0(CEventList_executeC
     return 0;
 }
 
-// Chunk: chunk_0_branch_0 (lines 187-210 of original)
+// Chunk: chunk_0_branch_0 (lines 92-115 of original)
 static int CEventList_executeCommand_chunk_0_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    char *&command_buffer = ctx->command_buffer;
+    char *&command_buffer = *ctx->command_buffer;
     int &iVar2 = ctx->iVar2;
     char *&pcVar18 = ctx->pcVar18;
+    auto &local_fc4 = ctx->local_fc4;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    C3DSLight *&local_e8 = ctx->local_e8;
+    CDemonLight *&local_44 = ctx->local_44;
 
       local_ec = (byte *)(command_buffer + 0x12);
       while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
         local_ec = local_ec + 1;
       }
       pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_fc4,200);
- return GOTO_LAB_004aaf38;
+      if (pcVar18 != (char *)0x0) return GOTO_LAB_004aaf38;
       core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
                 (g_CDemonSetPtr,local_fc4,&local_e8,&local_44);
       if (local_e8 == (C3DSLight *)0x0) {
         iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
-        return iVar2;
+        { ctx->_retval = iVar2; return CHUNK_RETURN; }
       }
       if (local_f0 != 0) {
         if (local_44 == (CDemonLight *)0x0) {
@@ -149,15 +256,22 @@ static int CEventList_executeCommand_chunk_0_branch_0(CEventList_executeCommand_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_branch_0 (lines 212-300 of original)
+// Chunk: chunk_0_else_2_branch_0 (lines 117-205 of original)
 static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    char *&command_buffer = ctx->command_buffer;
+    char *&command_buffer = *ctx->command_buffer;
     char &cVar1 = ctx->cVar1;
     int &iVar2 = ctx->iVar2;
     CDemonActor *&pCVar8 = ctx->pCVar8;
     uint &uVar14 = ctx->uVar14;
     SIZE_T &SVar16 = ctx->SVar16;
     char *&pcVar18 = ctx->pcVar18;
+    byte &bVar20 = ctx->bVar20;
+    auto &local_4d5 = ctx->local_4d5;
+    CVector3f &local_128 = ctx->local_128;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    int &local_e4 = ctx->local_e4;
+    auto &local_e0 = ctx->local_e0;
 
         local_ec = (byte *)(command_buffer + 0xf);
         while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -167,7 +281,7 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
         sscanf((char *)local_ec,"( %f , %n",local_e0);
         if (local_e4 < 0) {
           iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms");
-          return iVar2;
+          { ctx->_retval = iVar2; return CHUNK_RETURN; }
         }
         local_ec = local_ec + local_e4;
         local_e4 = -1;
@@ -202,7 +316,7 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
                              (local_4d5 + 1,g_CDemonActorClassInfo.name_hash,
                               g_CDemonActorClassInfo.class_name);
           if (pCVar8 == (CDemonActor *)0x0) {
-            return 0;
+            { ctx->_retval = 0; return CHUNK_RETURN; }
           }
           if (pCVar8 == g_ActorNameSentinel) {
             local_f0 = 0;
@@ -215,7 +329,7 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
         }
         if (local_e4 < 0) {
           iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms");
-          return iVar2;
+          { ctx->_retval = iVar2; return CHUNK_RETURN; }
         }
         local_ec = local_ec + local_e4;
         while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -228,7 +342,7 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
           if (local_e4 < 0) {
             iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                               ("Error parsing createExplosion() parms");
-            return iVar2;
+            { ctx->_retval = iVar2; return CHUNK_RETURN; }
           }
           local_ec = local_ec + local_e4;
           while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -237,7 +351,7 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
         }
         if (*local_ec != 0x29) {
           iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms, expected matching ')'");
-          return iVar2;
+          { ctx->_retval = iVar2; return CHUNK_RETURN; }
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
@@ -247,28 +361,31 @@ static int CEventList_executeCommand_chunk_0_else_2_branch_0(CEventList_executeC
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_branch_0 (lines 302-337 of original)
+// Chunk: chunk_0_else_2_else_1_branch_0 (lines 207-242 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    char *&command_buffer = ctx->command_buffer;
+    char *&command_buffer = *ctx->command_buffer;
     CDemonActor *&pCVar8 = ctx->pCVar8;
     CBoxActor *&pCVar6 = ctx->pCVar6;
     CChain *&pCVar5 = ctx->pCVar5;
     uint &uVar14 = ctx->uVar14;
     char *&pcVar18 = ctx->pcVar18;
+    auto &local_1154 = ctx->local_1154;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
 
           local_ec = (byte *)(command_buffer + 0xb);
           while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
             local_ec = local_ec + 1;
           }
           pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_1154,200);
- return GOTO_LAB_004aaf38;
+          if (pcVar18 != (char *)0x0) return GOTO_LAB_004aaf38;
           pCVar8 = core_event_cpp_resolveActorByName_FUN_004aa400
                              (local_1154,g_CDemonActorClassInfo.name_hash,
                               g_CDemonActorClassInfo.class_name);
           uVar14 = g_CBoxActorClassInfo.name_hash;
           if (pCVar8 == (CDemonActor *)0x0) {
             if (g_EventDryRun != 0) {
-              return 0;
+              { ctx->_retval = 0; return CHUNK_RETURN; }
             }
             local_f0 = 0;
           }
@@ -291,10 +408,15 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_branch_0(CEventList_e
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_branch_0 (lines 339-372 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_branch_0 (lines 244-277 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    char *&command_buffer = ctx->command_buffer;
+    char *&command_buffer = *ctx->command_buffer;
     int &iVar2 = ctx->iVar2;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    int &local_d8 = ctx->local_d8;
+    int &local_d4 = ctx->local_d4;
+    int &local_d0 = ctx->local_d0;
 
             local_ec = (byte *)(command_buffer + 0xd);
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -306,7 +428,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(CEven
             if (local_d0 < 0) {
               iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                                 ("Error parsing displayBitmap() parms");
-              return iVar2;
+              { ctx->_retval = iVar2; return CHUNK_RETURN; }
             }
             local_ec = local_ec + local_d0;
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -315,12 +437,12 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(CEven
             iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
             if (iVar2 < 0) {
               iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Bitmap doesn't exist");
-              return iVar2;
+              { ctx->_retval = iVar2; return CHUNK_RETURN; }
             }
             if (iVar2 != local_d8 * local_d4) {
               iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                                 ("Bitmap file size does not match specified dimensions");
-              return iVar2;
+              { ctx->_retval = iVar2; return CHUNK_RETURN; }
             }
             if (local_f0 != 0) {
               core_game_cpp_CGame_displayBitmap_FUN_004e2890
@@ -329,14 +451,21 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(CEven
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_branch_0 (lines 395-442 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_branch_0 (lines 300-347 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    CEventList *&this_ptr = ctx->this_ptr;
-    char *&command_buffer = ctx->command_buffer;
+    CEventList *&this_ptr = *ctx->this_ptr;
+    char *&command_buffer = *ctx->command_buffer;
     char &cVar1 = ctx->cVar1;
     uint &uVar14 = ctx->uVar14;
     SIZE_T &SVar16 = ctx->SVar16;
     char *&pcVar18 = ctx->pcVar18;
+    byte &bVar20 = ctx->bVar20;
+    auto &local_108d = ctx->local_108d;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    float &local_c0 = ctx->local_c0;
+    float &local_bc = ctx->local_bc;
+    int &local_b8 = ctx->local_b8;
 
                 local_ec = (byte *)(command_buffer + 7);
                 while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -347,7 +476,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_
                           ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
                   _sprintf(g_EventErrorMessageBuffer,"Error parsing fadeSfx parms");
-                  return 0;
+                  { ctx->_retval = 0; return CHUNK_RETURN; }
                 }
                 local_ec = local_ec + local_b8;
                 uVar14 = 0xffffffff;
@@ -385,49 +514,16 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0 (lines 444-473 of original)
-static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
-    CEventList *&this_ptr = ctx->this_ptr;
-    char *&command_buffer = ctx->command_buffer;
-    char &cVar1 = ctx->cVar1;
-    char *&pcVar17 = ctx->pcVar17;
-    char *&pcVar18 = ctx->pcVar18;
-
-                  local_ec = (byte *)(command_buffer + 6);
-                  while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
-                    local_ec = local_ec + 1;
-                  }
-                  pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0
-                                      ((char **)&local_ec,local_194,0x20);
-                  if (pcVar18 != (char *)0x0) {
-LAB_004aaf38:
-                    pcVar17 = g_EventErrorMessageBuffer;
-                    do {
-                      cVar1 = *pcVar18;
-                      *pcVar17 = cVar1;
-                      if (cVar1 == '\0') {
-                        return 0;
-                      }
-                      cVar1 = pcVar18[1];
-                      pcVar18 = pcVar18 + 2;
-                      pcVar17[1] = cVar1;
-                      pcVar17 = pcVar17 + 2;
-                    } while (cVar1 != '\0');
-                    return 0;
-                  }
-                  if (local_f0 != 0) {
-                    core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330
-                              (this_ptr,local_194,1);
-                  }
-    return 0;
-}
-
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c (lines 988-1038 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c (lines 893-943 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c(CEventList_executeCommand_Ctx *ctx) {
     char &cVar1 = ctx->cVar1;
     uint &uVar14 = ctx->uVar14;
     SIZE_T &SVar16 = ctx->SVar16;
     char *&pcVar18 = ctx->pcVar18;
+    byte &bVar20 = ctx->bVar20;
+    auto &local_b15 = ctx->local_b15;
+    byte *&local_ec = ctx->local_ec;
+    int &local_7c = ctx->local_7c;
 
                                         local_7c = -1;
                                         sscanf
@@ -435,7 +531,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                         if (local_7c < 3) {
                                           _sprintf(g_EventErrorMessageBuffer,
                                                      "Error parsing playSfx parms");
-                                          return 0;
+                                          { ctx->_retval = 0; return CHUNK_RETURN; }
                                         }
                                         local_ec = local_ec + local_7c;
                                         uVar14 = 0xffffffff;
@@ -475,16 +571,18 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                           _sprintf(g_EventErrorMessageBuffer,
                                                      "handle name %s is too long, max %d chars",
                                                      local_b15 + 1,0x13);
-                                          return 0;
+                                          { ctx->_retval = 0; return CHUNK_RETURN; }
                                         }
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1 (lines 1049-1077 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1 (lines 954-982 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1(CEventList_executeCommand_Ctx *ctx) {
-    CEventList *&this_ptr = ctx->this_ptr;
+    CEventList *&this_ptr = *ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
     uint &uVar14 = ctx->uVar14;
+    auto &local_13ad = ctx->local_13ad;
+    auto &local_b15 = ctx->local_b15;
 
                                         iVar2 = _strnicmp
                                                           (local_13ad + 1,"cue",3);
@@ -515,12 +613,14 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1492-1514 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1397-1419 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0(CEventList_executeCommand_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     CCharacter *&pCVar4 = ctx->pCVar4;
     CMotionList *&pCVar10 = ctx->pCVar10;
     char *&pcVar18 = ctx->pcVar18;
+    auto &local_8bd = ctx->local_8bd;
+    uint &local_f0 = ctx->local_f0;
 
                                                     pcVar18 = local_8bd + 1;
                                                     iVar2 = 0;
@@ -535,7 +635,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                                "Model %s does not have state %s",
                                                                (pCVar4->model).model_name,
                                                                local_8bd + 1);
-                                                    return 0;
+                                                    { ctx->_retval = 0; return CHUNK_RETURN; }
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
@@ -545,7 +645,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1787-1817 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1692-1722 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0(CEventList_executeCommand_Ctx *ctx) {
     CDeformableModelInstance *&this_ptr_00 = ctx->this_ptr_00;
     int &iVar2 = ctx->iVar2;
@@ -553,6 +653,8 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     CHero *&pCVar7 = ctx->pCVar7;
     SMotion *&pSVar11 = ctx->pSVar11;
     char *&pcVar18 = ctx->pcVar18;
+    auto &local_40d = ctx->local_40d;
+    uint &local_f0 = ctx->local_f0;
 
                                                     pcVar18 = local_40d + 1;
                                                     iVar2 = 0;
@@ -568,7 +670,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                                "Model %s does not have motion %s",
                                                                (pCVar7->base).model.model_name,
                                                                local_40d + 1);
-                                                    return 0;
+                                                    { ctx->_retval = 0; return CHUNK_RETURN; }
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
@@ -585,9 +687,9 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1897-2087 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1802-1992 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1(CEventList_executeCommand_Ctx *ctx) {
-    char *&command_buffer = ctx->command_buffer;
+    char *&command_buffer = *ctx->command_buffer;
     char &cVar1 = ctx->cVar1;
     int &iVar2 = ctx->iVar2;
     CDemonActor *&pCVar8 = ctx->pCVar8;
@@ -596,6 +698,14 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     uint &uVar14 = ctx->uVar14;
     SIZE_T &SVar16 = ctx->SVar16;
     char *&pcVar18 = ctx->pcVar18;
+    byte &bVar20 = ctx->bVar20;
+    auto &local_bdd = ctx->local_bdd;
+    auto &local_59d = ctx->local_59d;
+    CVector3f &local_134 = ctx->local_134;
+    CVector3f &local_11c = ctx->local_11c;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    int &local_18 = ctx->local_18;
 
                                                     iVar2 = _strnicmp
                                                                       (command_buffer,
@@ -607,7 +717,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                       iVar2 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Unknown meta-function starting at %s");
-                                                  return iVar2;
+                                                  { ctx->_retval = iVar2; return CHUNK_RETURN; }
                                                   }
                                                   local_ec = (byte *)(command_buffer + 6);
                                                   while ((g_CharacterClassificationTable
@@ -622,7 +732,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                     iVar2 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
-                                                  return iVar2;
+                                                  { ctx->_retval = iVar2; return CHUNK_RETURN; }
                                                   }
                                                   uVar14 = 0xffffffff;
                                                   pcVar18 = local_bdd + 1;
@@ -687,7 +797,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                              g_CDemonActorClassInfo.name_hash,
                                                              g_CDemonActorClassInfo.class_name);
                                                   if (pCVar8 == (CDemonActor *)0x0) {
-                                                    return 0;
+                                                    { ctx->_retval = 0; return CHUNK_RETURN; }
                                                   }
                                                   if (pCVar8 == g_ActorNameSentinel) {
                                                     local_f0 = 0;
@@ -730,7 +840,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                              g_CDemonActorClassInfo.name_hash,
                                                              g_CDemonActorClassInfo.class_name);
                                                   if (pCVar13 == (CDemonActor *)0x0) {
-                                                    return 0;
+                                                    { ctx->_retval = 0; return CHUNK_RETURN; }
                                                   }
                                                   if (pCVar13 == g_ActorNameSentinel) {
                                                     local_f0 = 0;
@@ -764,7 +874,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                     iVar2 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
-                                                  return iVar2;
+                                                  { ctx->_retval = iVar2; return CHUNK_RETURN; }
                                                   }
                                                   if (local_f0 != 0) {
                                                     pCVar9 = (CCharacter *)
@@ -793,8 +903,8 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
 {
   CEventList_executeCommand_Ctx _ctx_storage = {};
   CEventList_executeCommand_Ctx *ctx = &_ctx_storage;
-  ctx->this_ptr = this_ptr;
-  ctx->command_buffer = command_buffer;
+  ctx->this_ptr = &this_ptr;
+  ctx->command_buffer = &command_buffer;
 
     CDeformableModelInstance *&this_ptr_00 = ctx->this_ptr_00;
     char &cVar1 = ctx->cVar1;
@@ -818,105 +928,102 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
     SIZE_T &SVar16 = ctx->SVar16;
     char *&pcVar17 = ctx->pcVar17;
     char *&pcVar18 = ctx->pcVar18;
-  // param this_ptr aliased into ctx above
-  // param command_buffer aliased into ctx above
+    auto &str1 = ctx->str1;
+    char *&pcVar19 = ctx->pcVar19;
+    byte &bVar20 = ctx->bVar20;
+    auto &local_153d = ctx->local_153d;
+    auto &local_1475 = ctx->local_1475;
+    auto &local_13ad = ctx->local_13ad;
+    auto &local_12e5 = ctx->local_12e5;
+    auto &local_121d = ctx->local_121d;
+    auto &local_1154 = ctx->local_1154;
+    auto &local_108d = ctx->local_108d;
+    auto &local_fc4 = ctx->local_fc4;
+    auto &local_efd = ctx->local_efd;
+    auto &local_e35 = ctx->local_e35;
+    auto &local_d6d = ctx->local_d6d;
+    auto &local_ca5 = ctx->local_ca5;
+    auto &local_bdd = ctx->local_bdd;
+    auto &local_b15 = ctx->local_b15;
+    auto &local_a4d = ctx->local_a4d;
+    auto &local_985 = ctx->local_985;
+    auto &local_8bd = ctx->local_8bd;
+    auto &local_7f4 = ctx->local_7f4;
+    auto &local_72d = ctx->local_72d;
+    auto &local_665 = ctx->local_665;
+    auto &local_59d = ctx->local_59d;
+    auto &local_4d5 = ctx->local_4d5;
+    auto &local_40d = ctx->local_40d;
+    auto &local_344 = ctx->local_344;
+    auto &local_2e1 = ctx->local_2e1;
+    auto &local_27c = ctx->local_27c;
+    auto &local_219 = ctx->local_219;
+    auto &local_1b4 = ctx->local_1b4;
+    auto &local_194 = ctx->local_194;
+    auto &local_174 = ctx->local_174;
+    auto &local_154 = ctx->local_154;
+    CVector3f &local_134 = ctx->local_134;
+    CVector3f &local_128 = ctx->local_128;
+    CVector3f &local_11c = ctx->local_11c;
+    CVector3f &local_110 = ctx->local_110;
+    uint &uStack_f8 = ctx->uStack_f8;
+    char *&local_f4 = ctx->local_f4;
+    uint &local_f0 = ctx->local_f0;
+    byte *&local_ec = ctx->local_ec;
+    C3DSLight *&local_e8 = ctx->local_e8;
+    int &local_e4 = ctx->local_e4;
+    auto &local_e0 = ctx->local_e0;
+    int &local_d8 = ctx->local_d8;
+    int &local_d4 = ctx->local_d4;
+    int &local_d0 = ctx->local_d0;
+    float &local_cc = ctx->local_cc;
+    float &local_c8 = ctx->local_c8;
+    int &local_c4 = ctx->local_c4;
+    float &local_c0 = ctx->local_c0;
+    float &local_bc = ctx->local_bc;
+    int &local_b8 = ctx->local_b8;
+    int &local_b4 = ctx->local_b4;
+    float &local_b0 = ctx->local_b0;
+    int &local_ac = ctx->local_ac;
+    int &local_a8 = ctx->local_a8;
+    int &local_a4 = ctx->local_a4;
+    CVector3f *&local_a0 = ctx->local_a0;
+    float &local_9c = ctx->local_9c;
+    int &local_98 = ctx->local_98;
+    int &local_94 = ctx->local_94;
+    int &local_90 = ctx->local_90;
+    int &local_8c = ctx->local_8c;
+    float &local_88 = ctx->local_88;
+    int &local_84 = ctx->local_84;
+    float &local_80 = ctx->local_80;
+    int &local_7c = ctx->local_7c;
+    float &local_78 = ctx->local_78;
+    int &local_74 = ctx->local_74;
+    float &local_70 = ctx->local_70;
+    int &local_6c = ctx->local_6c;
+    int &local_68 = ctx->local_68;
+    int &local_64 = ctx->local_64;
+    float &local_60 = ctx->local_60;
+    int &local_5c = ctx->local_5c;
+    int &local_58 = ctx->local_58;
+    int &local_54 = ctx->local_54;
+    C3DSLight *&local_50 = ctx->local_50;
+    CDemonLight *&local_4c = ctx->local_4c;
+    int &local_48 = ctx->local_48;
+    CDemonLight *&local_44 = ctx->local_44;
+    int &local_40 = ctx->local_40;
+    float &local_3c = ctx->local_3c;
+    int &local_38 = ctx->local_38;
+    int &local_34 = ctx->local_34;
+    float &local_30 = ctx->local_30;
+    float &local_2c = ctx->local_2c;
+    float &local_28 = ctx->local_28;
+    int &local_24 = ctx->local_24;
+    int &local_20 = ctx->local_20;
+    int &local_1c = ctx->local_1c;
+    int &local_18 = ctx->local_18;
+    uint &local_14 = ctx->local_14;
 
-  char (*str1) [32];
-  char *pcVar19;
-  byte bVar20;
-  char local_153d [200];
-  char local_1475 [200];
-  char local_13ad [200];
-  char local_12e5 [200];
-  char local_121d [201];
-  char local_1154 [199];
-  char local_108d [201];
-  char local_fc4 [199];
-  char local_efd [200];
-  char local_e35 [200];
-  char local_d6d [200];
-  char local_ca5 [200];
-  char local_bdd [200];
-  char local_b15 [200];
-  char local_a4d [200];
-  char local_985 [200];
-  char local_8bd [201];
-  char local_7f4 [199];
-  char local_72d [200];
-  char local_665 [200];
-  char local_59d [200];
-  char local_4d5 [200];
-  char local_40d [201];
-  char local_344 [99];
-  char local_2e1 [101];
-  char local_27c [99];
-  char local_219 [101];
-  char local_1b4 [32];
-  char local_194 [32];
-  char local_174 [32];
-  char local_154 [32];
-  CVector3f local_134;
-  CVector3f local_128;
-  CVector3f local_11c;
-  CVector3f local_110;
-  uint uStack_f8;
-  char *local_f4;
-  uint local_f0;
-  byte *local_ec;
-  C3DSLight *local_e8;
-  int local_e4;
-  float local_e0 [2];
-  int local_d8;
-  int local_d4;
-  int local_d0;
-  float local_cc;
-  float local_c8;
-  int local_c4;
-  float local_c0;
-  float local_bc;
-  int local_b8;
-  int local_b4;
-  float local_b0;
-  int local_ac;
-  int local_a8;
-  int local_a4;
-  CVector3f *local_a0;
-  float local_9c;
-  int local_98;
-  int local_94;
-  int local_90;
-  int local_8c;
-  float local_88;
-  int local_84;
-  float local_80;
-  int local_7c;
-  float local_78;
-  int local_74;
-  float local_70;
-  int local_6c;
-  int local_68;
-  int local_64;
-  float local_60;
-  int local_5c;
-  int local_58;
-  int local_54;
-  C3DSLight *local_50;
-  CDemonLight *local_4c;
-  int local_48;
-  CDemonLight *local_44;
-  int local_40;
-  float local_3c;
-  int local_38;
-  int local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  uint local_14;
-  
   bVar20 = 0;
   g_EventErrorMessageBuffer[0] = '\0';
   if (((command_buffer != (char *)0x0) && (*command_buffer != '\0')) &&
@@ -937,29 +1044,38 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
     } while (*pcVar17 != '\0');
     pcVar17 = (char *)0x0;
 LAB_004aad41:
-      CEventList_executeCommand_chunk_0_check_pcVar17_0(ctx);
-    }
+    if (pcVar17 == (char *)0x0) {
+      int _rc = CEventList_executeCommand_chunk_0_check_pcVar17_0(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
     iVar2 = _strnicmp(command_buffer,"advanceLightFilter",0x12);
+    if ((iVar2 == 0) &&
+       ((g_CharacterClassificationTable[(byte)(command_buffer[0x12] + 1)] & 0xe0) == 0)) {
       int _rc = CEventList_executeCommand_chunk_0_branch_0(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
       if (_rc == GOTO_LAB_004aaf38) goto LAB_004aaf38;
-    }
     }
     else {
       iVar2 = _strnicmp(command_buffer,"createExplosion",0xf);
-      CEventList_executeCommand_chunk_0_else_2_branch_0(ctx);
-    }
+      if ((iVar2 == 0) &&
+         ((g_CharacterClassificationTable[(byte)(command_buffer[0xf] + 1)] & 0xe0) == 0)) {
+        int _rc = CEventList_executeCommand_chunk_0_else_2_branch_0(ctx);
+        if (_rc == CHUNK_RETURN) return ctx->_retval;
       }
       else {
         iVar2 = _strnicmp(command_buffer,"deleteActor",0xb);
+        if ((iVar2 == 0) &&
+           ((g_CharacterClassificationTable[(byte)(command_buffer[0xb] + 1)] & 0xe0) == 0)) {
           int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_branch_0(ctx);
+          if (_rc == CHUNK_RETURN) return ctx->_retval;
           if (_rc == GOTO_LAB_004aaf38) goto LAB_004aaf38;
-        }
         }
         else {
           iVar2 = _strnicmp(command_buffer,"displayBitmap",0xd);
-          CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(ctx);
-        }
+          if ((iVar2 == 0) &&
+             ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] & 0xe0) == 0)) {
+            int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(ctx);
+            if (_rc == CHUNK_RETURN) return ctx->_retval;
           }
           else {
             iVar2 = _strnicmp
@@ -984,13 +1100,41 @@ LAB_004aad41:
             }
             else {
               iVar2 = _strnicmp(command_buffer,"fadeSfx",7);
-              CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_0(ctx);
-            }
+              if ((iVar2 == 0) &&
+                 ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] & 0xe0) == 0)) {
+                int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_0(ctx);
+                if (_rc == CHUNK_RETURN) return ctx->_retval;
               }
               else {
                 iVar2 = _strnicmp(command_buffer,"flagOn",6);
-                  CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0(ctx);
-                }
+                if ((iVar2 == 0) &&
+                   ((g_CharacterClassificationTable[(byte)(command_buffer[6] + 1)] & 0xe0) == 0)) {
+                  local_ec = (byte *)(command_buffer + 6);
+                  while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
+                    local_ec = local_ec + 1;
+                  }
+                  pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0
+                                      ((char **)&local_ec,local_194,0x20);
+                  if (pcVar18 != (char *)0x0) {
+LAB_004aaf38:
+                    pcVar17 = g_EventErrorMessageBuffer;
+                    do {
+                      cVar1 = *pcVar18;
+                      *pcVar17 = cVar1;
+                      if (cVar1 == '\0') {
+                        return 0;
+                      }
+                      cVar1 = pcVar18[1];
+                      pcVar18 = pcVar18 + 2;
+                      pcVar17[1] = cVar1;
+                      pcVar17 = pcVar17 + 2;
+                    } while (cVar1 != '\0');
+                    return 0;
+                  }
+                  if (local_f0 != 0) {
+                    core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330
+                              (this_ptr,local_194,1);
+                  }
                 }
                 else {
                   iVar2 = _strnicmp(command_buffer,"flagOff",7);
@@ -1507,8 +1651,9 @@ LAB_004aad41:
                                         pcVar18 = pcVar18 + ((uint)bVar20 * -2 + 1) * 4;
                                         pcVar17 = pcVar17 + (uint)bVar20 * -8 + 4;
                                       }
-                                      CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c(ctx);
-                                    }
+                                      if (*pbVar12 == 0x2c) {
+                                        int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c(ctx);
+                                        if (_rc == CHUNK_RETURN) return ctx->_retval;
                                       }
                                       do {
                                         pbVar12 = local_ec;
@@ -1521,8 +1666,8 @@ LAB_004aad41:
                                                    "Can't find matching ) in playSfx command");
                                         return 0;
                                       }
-                                      CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1(ctx);
-                                    }
+                                      if (local_f0 != 0) {
+                                        CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1(ctx);
                                       }
                                     }
                                     else {
@@ -1939,8 +2084,9 @@ LAB_004aad41:
                                                   if (pCVar4 == (CCharacter *)0x0) {
                                                     return 0;
                                                   }
-                                                  CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0(ctx);
-                                                }
+                                                  if (pCVar4 != (CCharacter *)g_ActorNameSentinel) {
+                                                    int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0(ctx);
+                                                    if (_rc == CHUNK_RETURN) return ctx->_retval;
                                                   }
                                                 }
                                                 else {
@@ -2215,8 +2361,9 @@ LAB_004aad41:
                                                   if (pCVar7 == (CHero *)0x0) {
                                                     return 0;
                                                   }
-                                                  CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0(ctx);
-                                                }
+                                                  if (pCVar7 != (CHero *)g_ActorNameSentinel) {
+                                                    int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0(ctx);
+                                                    if (_rc == CHUNK_RETURN) return ctx->_retval;
                                                   }
                                                   }
                                                   else {
@@ -2298,8 +2445,9 @@ LAB_004aad41:
                                                             (g_CDemonSetPtr,iVar2,local_70);
                                                   }
                                                   }
-                                                  CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1(ctx);
-                                                }
+                                                  else {
+                                                    int _rc = CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1(ctx);
+                                                    if (_rc == CHUNK_RETURN) return ctx->_retval;
                                                   }
                                                   }
                                                   }

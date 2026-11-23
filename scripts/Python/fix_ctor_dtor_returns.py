@@ -42,9 +42,7 @@ HOW THE EVIDENCE WORKS
 3. Classify that writer:
      MOV EAX,<receiver reg>            -> returns this          (RETURNS_THIS)
      MOV EAX,[ESP+<param0 slot>]       -> returns this          (RETURNS_THIS)
-     receiver already lives in EAX and EAX is never rewritten
-                                       -> returns this          (RETURNS_THIS)
-     a CALL                            -> EAX is the callee's   (VIA_CALL)
+     a CALL                           -> EAX is the callee's   (VIA_CALL)
      anything else                     -> does not return this  (NOT_THIS)
 
 WHAT IT DOES WITH EACH VERDICT
@@ -62,18 +60,24 @@ FIX_RECEIVER exists because the fix is not always "change the return". The CRT
 iostream classes have the *receiver* typed `void*` and the return typed properly;
 copying the receiver onto the return there would throw away the better type.
 
-Report-first. Pass --apply to mutate + save. Persist is via
-getDomainFile().save() - project.save() alone silently discards changes.
+Report-first. Pass --apply to snapshot the project (tag pre-ctor-dtor-returns),
+then mutate + save. Persist is via getDomainFile().save() - project.save() alone
+silently discards changes.
 
 Usage:
     GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
     python3 -u fix_ctor_dtor_returns.py <ABS_project_path> <project_name> <program_name> \
-            [--apply] [--only FIX_RETURN|FIX_RECEIVER] [--addr HEX]... [--out PATH]
+            [--apply] [--no-snapshot] [--only FIX_RETURN|FIX_RECEIVER] [--addr HEX]... [--out PATH]
 """
 
 import argparse
 import os
 import re
+import subprocess
+import sys
+import traceback
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 NAME_RE = re.compile(r"_(arrdtor\d*|ctor|dtor)$")
 STACK_RE = re.compile(r"^(E[A-D]X|E[SD]I|EBP),dword ptr \[ESP \+ (0x[0-9a-f]+)\]$", re.I)
@@ -115,11 +119,7 @@ def insn_text(insn):
 
 
 def instructions(program, func):
-    out = []
-    it = program.getListing().getInstructions(func.getBody(), True)
-    while it.hasNext():
-        out.append(it.next())
-    return out
+    return list(program.getListing().getInstructions(func.getBody(), True))
 
 
 def writes_eax(insn, mn, op):
@@ -148,8 +148,8 @@ def find_receiver_reg(insns):
         if mn == "SUB" and op.upper().startswith("ESP,"):
             try:
                 depth += int(op.split(",")[1], 0)
-            except Exception:
-                pass
+            except ValueError:
+                pass            # SUB ESP,<register>: a run-time size, not a frame
             continue
         m = STACK_RE.match(op)
         if mn == "MOV" and m and int(m.group(2), 16) == depth + 4:
@@ -187,10 +187,10 @@ def gather_evidence(insns, recv_reg, recv_off):
                 votes.append((NOT_THIS, "EAX last written by %s %s" % (mn2, op2)))
             break
         else:
-            if recv_reg == "EAX":
-                votes.append((RETURNS_THIS, "receiver lives in EAX and is never overwritten"))
-            else:
-                votes.append((NO_EVIDENCE, "EAX is never written"))
+            # A receiver find_receiver_reg put in EAX was loaded by a MOV before
+            # the first RET, and the walk back from any RET meets that MOV, so
+            # reaching the entry means nothing set EAX at all.
+            votes.append((NO_EVIDENCE, "EAX is never written"))
     if not votes:
         return NO_EVIDENCE, "no RET in the body"
     for want in (RETURNS_THIS, VIA_CALL, NOT_THIS):
@@ -236,9 +236,7 @@ def tu_of(name):
 def gather(program, addr_filter, include_crt):
     fm = program.getFunctionManager()
     rows = []
-    it = fm.getFunctions(True)
-    while it.hasNext():
-        f = it.next()
+    for f in fm.getFunctions(True):
         name = str(f.getName())
         k = kind_of(name)
         if not k:
@@ -305,8 +303,35 @@ def report(rows, out_path):
     return counts
 
 
-def apply(program, rows, only):
+def resolve(dtm, type_name):
+    """Find the DataType for a printed type name, pointers included.
+
+    A class lives in a category (/Nocturne/Struct/Game/...), not at the root,
+    so the search by name is what finds it. Ghidra fills the java.util.List it
+    is handed; a Python list reaches Java as a converted copy, never filled
+    back, so it has to be a Java list, as every other caller here uses.
+    """
     from ghidra.program.model.data import PointerDataType
+    from java.util import ArrayList
+    nm = type_name.strip()
+    stars = 0
+    while nm.endswith("*"):
+        stars += 1
+        nm = nm[:-1].strip()
+    base = dtm.getDataType("/" + nm)
+    if base is None:
+        found = ArrayList()
+        dtm.findDataTypes(nm, found)
+        if found.isEmpty():
+            return None
+        base = found.get(0)
+    for _ in range(stars):
+        base = PointerDataType(base, dtm)
+    return base
+
+
+def apply(program, rows, only):
+    """Retype what the rows propose, in one transaction. Returns (ok, changed)."""
     from ghidra.program.model.symbol import SourceType
 
     todo = [r for r in rows if r["action"] in ("FIX_RETURN", "FIX_RECEIVER")]
@@ -314,28 +339,9 @@ def apply(program, rows, only):
         todo = [r for r in todo if r["action"] == only]
     if not todo:
         print("\nNothing to apply.")
-        return False
+        return True, 0
 
     dtm = program.getDataTypeManager()
-
-    def resolve(type_name):
-        """Find the DataType for a printed type name, pointers included."""
-        nm = type_name.strip()
-        stars = 0
-        while nm.endswith("*"):
-            stars += 1
-            nm = nm[:-1].strip()
-        base = dtm.getDataType("/" + nm)
-        if base is None:
-            found = []
-            dtm.findDataTypes(nm, found)
-            if found:
-                base = found[0]
-        if base is None:
-            return None
-        for _ in range(stars):
-            base = PointerDataType(base, dtm)
-        return base
 
     print("\n[apply] %d change(s)" % len(todo))
     changed = 0
@@ -344,7 +350,7 @@ def apply(program, rows, only):
     try:
         for r in todo:
             want = r["recv"] if r["action"] == "FIX_RETURN" else r["ret"]
-            dt = resolve(want)
+            dt = resolve(dtm, want)
             if dt is None:
                 print("  %s %s: SKIP - cannot resolve type %r" % (r["entry"], r["name"], want))
                 continue
@@ -358,14 +364,36 @@ def apply(program, rows, only):
     except Exception as e:
         ok = False
         print("ERROR during apply: %s" % e)
-        import traceback
         traceback.print_exc()
     finally:
         program.endTransaction(tx, ok)
-    return ok and changed > 0
+    return ok, changed
 
 
-def main():
+def run(program, args, addr_filter, out_path):
+    """Report, and with --apply retype and save. Returns the exit code."""
+    rows = gather(program, addr_filter, args.include_crt)
+    report(rows, out_path)
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+        return 0
+    ok, changed = apply(program, rows, args.only)
+    if ok and changed:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("Saving program database...")
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+    return 0 if ok else 1
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-ctor-dtor-returns"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(
         description="Make ctor/dtor return types agree with their receiver.")
     p.add_argument("project_path")
@@ -381,36 +409,32 @@ def main():
                         "default: those signatures are deliberately shaped for the "
                         "compiling decompilation, not for ABI fidelity.")
     p.add_argument("--out", default=None, help="report path")
-    args = p.parse_args()
+    p.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
+    args = p.parse_args(argv)
 
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_ctor_dtor_returns.txt" % args.program_name)
-    addr_filter = {a.lower().lstrip("0x").rjust(8, "0") for a in args.addr} or None
+    addr_filter = {"%08x" % int(a, 16) for a in args.addr} or None
+
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
 
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
-    code = 0
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            rows = gather(program, addr_filter, args.include_crt)
-            report(rows, out_path)
-            if args.apply:
-                if apply(program, rows, args.only):
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    print("Saving program database...")
-                    program.getDomainFile().save(ConsoleTaskMonitor())
-                    print("Saved.")
-            else:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            code = run(program, args, addr_filter, out_path)
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
+    sys.stdout.flush()
     os._exit(code)
 
 

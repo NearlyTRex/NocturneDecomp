@@ -12,8 +12,8 @@
 ;   CBitFont* g_CBitFont_PTR_01c5b0e0
 ;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -64,8 +64,8 @@ section .text
     MOV ECX,0x5bcd25                    ; 0047d1fb
     MOV EBX,0xa7                        ; 0047d200
     PUSH 0x5bcd3b                       ; 0047d205
-    MOV dword ptr [0x01d71de0],ECX      ; 0047d20a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0047d210 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0047d20a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0047d210 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047d216
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047d21b

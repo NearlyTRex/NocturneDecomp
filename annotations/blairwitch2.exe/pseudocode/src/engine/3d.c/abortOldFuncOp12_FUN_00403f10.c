@@ -9,8 +9,8 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp12_FUN_00403f10(SMRGLHeaderExtended *primitive)
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\engine\\3d.c";
-  g_INT_01d046a4 = 899;
+  g_CurrentFilename = "..\\engine\\3d.c";
+  g_CurrentLineNumber = 899;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Old func");
   return (SMRGLHeaderExtended *)0x0;
 }

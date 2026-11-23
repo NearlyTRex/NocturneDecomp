@@ -3278,7 +3278,7 @@ CHero_full_vtable g_CSvetlanaVTable = {
 CKeys_vtable g_CKeysVTable = {
     .getKeyState = (CKeys_getKeyState *)engine_keys_cpp_CKeys_getKeyState_FUN_00502420,
     .getAndClearKeyState = (CKeys_getAndClearKeyState *)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430,
-    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_00502450
+    .clearKeypresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_00502450
 };
 
 // CMatrix3x4f

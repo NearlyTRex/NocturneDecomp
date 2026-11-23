@@ -17,8 +17,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cf9ba
 ;   TerminatedCString s_Tried_to_call_CKeyFramed_005cf9cd
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840
@@ -54,8 +54,8 @@ section .text
     MOV EBX,0x5cf9ba                    ; 0044f69f | = "..\\core\\dmodel.cpp"
     MOV EAX,0x43e                       ; 0044f6a4
     PUSH 0x5cf9cd                       ; 0044f6a9 | = "Tried to call CKeyFramedModel::getFlo..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0044f6ae | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0044f6b4 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0044f6ae | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0044f6b4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0044f6b9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0044f6be

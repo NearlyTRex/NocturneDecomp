@@ -87,10 +87,18 @@ TEST(PackageManifest, WritesWhatItReadsBack) {
 // The game's own keys come before the [[pod]] tables and its tables after them.
 TEST(PackageManifest, CarriesGameContentAroundItsPods) {
     SPackageManifest manifest = fullManifest();
-    manifest.game.front_end = "nocturne";
-    manifest.game.credits = SGameCredits{.text = "c.txt", .image = "i", .music = {}};
+    manifest.game.copyright = "Game";
+    manifest.game.front_end.title_backdrop = "sky_scene";
+    manifest.game.credits = SGameCredits{.text = "c.txt",
+                                         .image = "i",
+                                         .fit = {},
+                                         .music = {},
+                                         .column_scroll = {},
+                                         .fade_loop = {},
+                                         .two_column = {}};
     const std::string text = formatPackageManifest(manifest);
-    EXPECT_LT(text.find("front_end"), text.find("[[pod]]"));
+    EXPECT_LT(text.find("copyright"), text.find("[[pod]]"));
+    EXPECT_GT(text.find("[front_end]"), text.find("[[pod]]"));
     EXPECT_GT(text.find("[credits]"), text.find("[[pod]]"));
     EXPECT_EQ(parsePackageManifest(text), manifest);
 }
@@ -213,7 +221,7 @@ TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
         loadReleaseCatalog(getReleaseCatalogText(), getEmbeddedGames());
     ASSERT_FALSE(releases.empty());
     for (const SRelease &release : releases) {
-        EXPECT_EQ(release.content.front_end, release.game) << release.id;
+        EXPECT_TRUE(release.content.front_end.title_backdrop.has_value()) << release.id;
     }
     const auto coffin_rock = std::ranges::find(releases, "2000-en-blairwitch2", &SRelease::id);
     ASSERT_NE(coffin_rock, releases.end());
@@ -229,11 +237,11 @@ TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
 }
 
 TEST(ReleaseCatalog, EachReleaseTakesItsGamesContent) {
-    const std::array games{SEmbeddedGame{.id = "f", .text = "front_end = \"other\""},
-                           SEmbeddedGame{.id = "g", .text = "front_end = \"mine\""}};
+    const std::array games{SEmbeddedGame{.id = "f", .text = "front_end.title_backdrop = \"other\""},
+                           SEmbeddedGame{.id = "g", .text = "front_end.title_backdrop = \"mine\""}};
     const std::vector<SRelease> releases = loadReleaseCatalog(kRelease, games);
     ASSERT_EQ(releases.size(), 1U);
-    EXPECT_EQ(releases.front().content.front_end, "mine");
+    EXPECT_EQ(releases.front().content.front_end.title_backdrop, "mine");
 }
 
 TEST(ReleaseCatalog, AGameWithoutDataOrWithBrokenDataIsFatal) {

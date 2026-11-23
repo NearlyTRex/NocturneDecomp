@@ -31,9 +31,9 @@ bool isInFront(int depth, std::uint32_t buffered) {
 // until one is in front of the buffer, which stops the polygon. The original counted them
 // against a budget, one pixel but for the water's, kept with the stop in globals.
 // nocedit 0x00490c37
-bool findDepthInterlaced(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
-                         int scanline_y, IScreenDevice &screen,
-                         std::span<const std::uint32_t> reciprocals) {
+bool renderDepthInterlacedProfiled(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
+                                   int scanline_y, IScreenDevice &screen,
+                                   std::span<const std::uint32_t> reciprocals) {
     if ((scanline_y & 1) != 0) {
         return false;
     }
@@ -58,9 +58,11 @@ bool findDepthInterlaced(const SSoftwareEdge &left_edge, const SSoftwareEdge &ri
 // buffer taking the colour and its depth, shifted down by 8. The original unrolled it sixteen
 // pixels at a time.
 // nocedit 0x00490a58
-void fillSolidColorDepth(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
-                         int scanline_y, IScreenDevice &screen,
-                         std::span<const std::uint32_t> reciprocals, std::uint32_t color) {
+void renderSolidColorDepth16xUnrolled(const SSoftwareEdge &left_edge,
+                                      const SSoftwareEdge &right_edge, int scanline_y,
+                                      IScreenDevice &screen,
+                                      std::span<const std::uint32_t> reciprocals,
+                                      std::uint32_t color) {
     const SRowSpan span = getRowSpan(left_edge, right_edge);
     if (span.count <= 0) {
         return;
@@ -102,7 +104,7 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
     state.draw_scanline = [this, color = static_cast<std::uint32_t>(two_d_.getActiveRenderColor()),
                            reciprocals = two_d_.getReciprocalLookupTable()](
                               const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
-        fillSolidColorDepth(left, right, y, screen_, reciprocals, color);
+        renderSolidColorDepth16xUnrolled(left, right, y, screen_, reciprocals, color);
         return false;
     };
     clipAndFillPoly(prim.vertex_indices, state);
@@ -124,7 +126,7 @@ bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimit
     state.vertex_processing = face_capture_enabled_;
     state.draw_scanline = [this, &visible, reciprocals = two_d_.getReciprocalLookupTable()](
                               const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
-        visible = findDepthInterlaced(left, right, y, screen_, reciprocals);
+        visible = renderDepthInterlacedProfiled(left, right, y, screen_, reciprocals);
         return visible;
     };
     clipAndFillPoly(prim.vertex_indices, state);

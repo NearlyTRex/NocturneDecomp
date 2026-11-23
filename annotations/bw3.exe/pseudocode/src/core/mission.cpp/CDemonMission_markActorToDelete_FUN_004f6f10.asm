@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005c8b0e
 ;   TerminatedCString s_CDemonMission_markActorT_005c8b22
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -55,8 +55,8 @@ section .text
     MOV EBX,0x5c8b0e                    ; 004f6f4b | = "..\\core\\mission.cpp"
     MOV ESI,0x453                       ; 004f6f50
     PUSH 0x5c8b22                       ; 004f6f55 | = "CDemonMission::markActorToDelete - To..."
-    MOV dword ptr [0x01d71de0],EBX      ; 004f6f5a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f6f60 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004f6f5a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004f6f60 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f6f66
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6f6b

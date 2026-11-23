@@ -33,6 +33,9 @@ const CDemonActorType &CGun::getActorType() const {
 }
 
 // nocedit 0x004f02b0
+// bw1 0x004e85a0
+// bw2 0x004cbd20
+// bw3 0x004d0f30
 std::unique_ptr<CDemonActor> CGun::create(CActor &classes) {
     return std::make_unique<CGun>(classes);
 }

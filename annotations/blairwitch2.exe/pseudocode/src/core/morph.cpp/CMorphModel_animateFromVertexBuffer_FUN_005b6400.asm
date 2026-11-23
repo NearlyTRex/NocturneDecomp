@@ -22,8 +22,8 @@
 ;   TerminatedCString s_core_morph_cpp_005f15e9
 ;   TerminatedCString s_CMorphModel_animate_inva_005f15fb
 ;   float g_FLOAT_006013a8 = 0.00390625
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -51,8 +51,8 @@ section .text
         ;   Label: LAB_005b641c
     MOV EAX,0x112                       ; 005b6421
     PUSH 0x5f15bf                       ; 005b6426 | = "CMorphModel::animate - invalid part i..."
-    MOV dword ptr [0x01d046a0],ESI      ; 005b642b | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 005b6431 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 005b642b | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 005b6431 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6436
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b643b
@@ -72,8 +72,8 @@ section .text
     MOV EAX,0x5f15e9                    ; 005b645b | = "..\\core\\morph.cpp"
     MOV EDX,0x119                       ; 005b6460
     PUSH 0x5f15fb                       ; 005b6465 | = "CMorphModel::animate - invalid vertex..."
-    MOV [0x01d046a0],EAX                ; 005b646a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 005b646f | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005b646a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 005b646f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005b6475
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005b647a

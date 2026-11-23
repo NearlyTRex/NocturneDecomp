@@ -48,8 +48,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e872e
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_005e8743
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_ChannelTertiaryBuffers[1]
 ;   int g_SoundLockCount
 ;
@@ -224,8 +224,8 @@ section .text
         ;   Label: LAB_0054ef54
     MOV EBX,0xb9d                       ; 0054ef59
     PUSH 0x5e8743                       ; 0054ef5e | = "SfxSlot::mix - must be locked!"
-    MOV dword ptr [0x01d046a0],ECX      ; 0054ef63 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0054ef69 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0054ef63 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0054ef69 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0054ef6f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0054ef74

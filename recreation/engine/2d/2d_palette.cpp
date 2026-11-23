@@ -31,6 +31,9 @@ float luminance(int red, int green, int blue) {
 
 // The original left the result unset for an empty range; it is start_index here.
 // nocedit 0x00401460
+// bw1 0x00401450
+// bw2 0x00401450
+// bw3 0x00401450
 int C2d::findBestPaletteMatch(int red, int green, int blue, int start_index, int end_index) const {
     const float target = luminance(red, green, blue);
     int best_index = start_index;
@@ -74,6 +77,9 @@ void C2d::buildColorLookupTable() {
 
 // fog/<name>.map caches the cube; it is built and written when it isn't there.
 // nocedit 0x00402930
+// bw1 0x00402940
+// bw2 0x00402940
+// bw3 0x00402940
 void C2d::loadOrBuildColorMap(std::string_view filename) {
     const std::size_t dot = filename.find('.');
     if (dot == std::string_view::npos) {

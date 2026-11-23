@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_005cb90c
 ;   TerminatedCString s_Global_pathmap_list_corr_005cb91d
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;
 ; Called Functions:
@@ -42,8 +42,8 @@ section .text
     MOV EAX,0x5cb90c                    ; 0050cf7a | = "..\\core\\path.cpp"
     MOV EDX,0x6a2                       ; 0050cf7f
     PUSH 0x5cb91d                       ; 0050cf84 | = "Global pathmap list corruption"
-    MOV [0x01d71de0],EAX                ; 0050cf89 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0050cf8e | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0050cf89 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0050cf8e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050cf94
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050cf99

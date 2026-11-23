@@ -3,8 +3,6 @@
 
 import os
 import re
-import json
-from java.io import File
 from ghidra.program.model.data import Enum
 from ghidra.program.model.data import Structure
 from ghidra.program.model.data import Union
@@ -16,7 +14,7 @@ from ghidra.program.model.data import PointerTypeSettingsDefinition
 from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_notice
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
-from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes, get_libc_provided_types
+from ghidra_annotations.annotations.pseudocode.basetypes import get_all_basetypes, get_libc_provided_types
 from ghidra_annotations.annotations.pseudocode.intrinsics import write_intrinsics_header
 from ghidra_annotations.util.data_type import get_primitive_data_types, is_standard_ghidra_category
 from ghidra_annotations.util.string import sanitize_c_identifier
@@ -217,6 +215,21 @@ def struct_field_rows(currentProgram, struct):
     return rows
 
 
+def union_field_rows(currentProgram, union):
+    """(type, name, comment) for each member of a union.
+
+    Every member sits at offset 0, so an unnamed one is named for its index:
+    named for its offset, two of them would both be field_0.
+    """
+    rows = []
+    for index, comp in enumerate(union.getComponents()):
+        name = comp.getFieldName()
+        rows.append((resolve_field_type_for_component(currentProgram, comp),
+                     sanitize_c_identifier(name) if name else "field_%d" % index,
+                     comp.getComment()))
+    return rows
+
+
 def is_function_definition_type(data_type):
     """Check if a data type is a function definition type.
 
@@ -346,133 +359,6 @@ def format_field_declaration(field_type, field_name):
         return "%s %s%s" % (base_type, field_name, array_dims)
     else:
         return "%s %s" % (field_type, field_name)
-
-
-def type_uses_basetypes(currentProgram, data_type, visited=None):
-    """Check if a data type uses any types that require basetypes.h.
-
-    Args:
-        currentProgram: The Ghidra program
-        data_type: The data type to check
-        visited: Set of already visited type IDs to prevent infinite recursion
-
-    Returns:
-        True if the type uses basetypes, False otherwise
-    """
-    if visited is None:
-        visited = set()
-
-    if data_type is None:
-        return False
-
-    # Prevent infinite recursion
-    try:
-        dt_id = data_type.getUniversalID()
-    except:
-        dt_id = id(data_type)
-
-    if dt_id in visited:
-        return False
-    visited.add(dt_id)
-
-    type_name = data_type.getName()
-    basetypes = get_types_needing_basetypes()
-
-    # Check if this type itself is a basetype
-    if type_name in basetypes:
-        return True
-
-    # Also check if the type name looks like an array (e.g., "uchar[8][8]") and
-    # extract the base type name to check against basetypes. This is a fallback
-    # in case the isinstance(Array) check doesn't work as expected.
-    if '[' in type_name:
-        base_type_name = type_name[:type_name.index('[')]
-        if base_type_name in basetypes:
-            return True
-
-    # Also check if the type name looks like a pointer (e.g., "uint *" or "uint*")
-    # and extract the base type name to check against basetypes.
-    if type_name.endswith('*') or ' *' in type_name:
-        base_type_name = type_name.replace(' *', '').replace('*', '').strip()
-        if base_type_name in basetypes:
-            return True
-
-    # Helper to check if a type is a pointer (handles Jython isinstance issues)
-    def is_pointer_type(dt):
-        if isinstance(dt, Pointer):
-            return True
-        class_name = dt.__class__.__name__
-        return 'Pointer' in class_name
-
-    # Helper to check if a type is an array
-    def is_array_type(dt):
-        if isinstance(dt, Array):
-            return True
-        class_name = dt.__class__.__name__
-        return 'Array' in class_name
-
-    # Helper to check if a type is a typedef
-    def is_typedef_type(dt):
-        if isinstance(dt, TypeDef):
-            return True
-        class_name = dt.__class__.__name__
-        return 'TypeDef' in class_name or 'Typedef' in class_name
-
-    # Helper to check if a type is a struct or union
-    def is_struct_or_union(dt):
-        if isinstance(dt, (Structure, Union)):
-            return True
-        class_name = dt.__class__.__name__
-        return 'Structure' in class_name or 'Union' in class_name
-
-    # Check pointers
-    if is_pointer_type(data_type):
-        if hasattr(data_type, 'getDataType'):
-            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
-
-    # Check arrays
-    if is_array_type(data_type):
-        if hasattr(data_type, 'getDataType'):
-            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
-
-    # Check typedefs
-    if is_typedef_type(data_type):
-        if hasattr(data_type, 'getDataType'):
-            return type_uses_basetypes(currentProgram, data_type.getDataType(), visited)
-
-    # Check structs/unions - check all component types
-    if is_struct_or_union(data_type):
-        if hasattr(data_type, 'getComponents'):
-            # Filler bytes are emitted as char, which needs no basetype
-            for comp in data_type.getDefinedComponents():
-                comp_dt = comp.getDataType()
-                if comp_dt:
-                    # Check the component type name directly first
-                    comp_name = comp_dt.getName()
-                    if comp_name in basetypes:
-                        return True
-                    # Then check recursively for nested types
-                    if type_uses_basetypes(currentProgram, comp_dt, visited):
-                        return True
-
-    # Check function definitions
-    if is_function_definition_type(data_type):
-        if hasattr(data_type, 'getReturnType') and data_type.getReturnType():
-            ret_name = data_type.getReturnType().getName()
-            if ret_name in basetypes:
-                return True
-            if type_uses_basetypes(currentProgram, data_type.getReturnType(), visited):
-                return True
-        if hasattr(data_type, 'getArguments') and data_type.getArguments():
-            for param in data_type.getArguments():
-                if hasattr(param, 'getDataType') and param.getDataType():
-                    param_name = param.getDataType().getName()
-                    if param_name in basetypes:
-                        return True
-                    if type_uses_basetypes(currentProgram, param.getDataType(), visited):
-                        return True
-
-    return False
 
 
 def collect_type_dependencies(currentProgram, data_type):
@@ -673,32 +559,6 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
     # Add Ghidra size
     ghidra_size = struct.getLength()
     content.append("// Ghidra size: 0x%x (%d bytes)" % (ghidra_size, ghidra_size))
-
-    # Try to load Watcom typeinfo size
-    try:
-        script_source = sourceFile if 'sourceFile' in dir() else None
-        if script_source:
-            repo_root = File(script_source).getParentFile().getParentFile().getParentFile()
-        else:
-            import sys
-            for path in sys.path:
-                if 'NocturneDecomp' in path:
-                    repo_root = File(path).getParentFile()
-                    if File(repo_root, 'annotations').exists():
-                        break
-        typeinfo_path = os.path.join(str(repo_root), 'annotations', 'nocedit.exe', 'type_info', 'type_info.json')
-        if os.path.exists(typeinfo_path):
-            with open(typeinfo_path, 'r') as f:
-                typeinfo_data = json.load(f)
-                for type_entry in typeinfo_data.get('type_info', []):
-                    if type_entry.get('name') == struct.getName() and 'watcom_size' in type_entry:
-                        watcom_size = type_entry['watcom_size']
-                        content.append("// Watcom typeinfo size: 0x%x (%d bytes)" % (watcom_size, watcom_size))
-                        if watcom_size != ghidra_size:
-                            content.append("// WARNING: Size mismatch between Ghidra (0x%x) and Watcom typeinfo (0x%x)" % (ghidra_size, watcom_size))
-                        break
-    except:
-        pass
 
     # Mirror Ghidra's packing + alignment exactly so struct layouts match the
     # original Watcom binary. Order of precedence:
@@ -983,11 +843,8 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
     if pack_value is not None:
         content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef union %s {" % union.getName())
-    for field_index, comp in enumerate(union.getComponents()):
-        field_type = resolve_field_type_for_component(currentProgram, comp)
-        # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-        comment = " // %s" % comp.getComment() if comp.getComment() else ""
+    for field_type, field_name, field_comment in union_field_rows(currentProgram, union):
+        comment = " // %s" % field_comment if field_comment else ""
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
     if align_attr is not None:
@@ -1125,9 +982,8 @@ def build_member_designator(dt, offset):
         comp = _containing_component(dt, offset)
         if comp is None:
             return None
-        fname = comp.getFieldName()
-        if not fname:
-            return None  # padding / undefined component -> no named path
+        # The name the header declares the field by (struct_field_rows)
+        fname = sanitize_c_identifier(comp.getFieldName())
         within = offset - comp.getOffset()
         if within == 0:
             return (".%s" % fname, 0)  # field start: name is enough, no deeper recursion
@@ -1378,175 +1234,6 @@ def generate_individual_function_definition_header(currentProgram, func_def, typ
     return "\n".join(content)
 
 
-def generate_structs_header(currentProgram, structs):
-    """Generate combined header content for multiple structs.
-
-    Args:
-        currentProgram: The Ghidra program
-        structs: List of structure data types
-
-    Returns:
-        Header content as string
-    """
-    content = []
-    content.append("#pragma once")
-    content.append("")
-    for struct in sorted(structs, key=lambda s: s.getName()):
-        content.append("// Structure: %s" % struct.getName())
-        if struct.getDescription():
-            content.append("// %s" % struct.getDescription())
-        pack_value, align_attr = _packing_and_alignment(struct)
-        if pack_value is not None:
-            content.append("#pragma pack(push, %d)" % pack_value)
-        content.append("typedef struct %s {" % struct.getName())
-        for field_type, field_name, _, field_comment in struct_field_rows(currentProgram, struct):
-            comment = " // %s" % field_comment if field_comment else ""
-            field_decl = format_field_declaration(field_type, field_name)
-            content.append("    %s;%s" % (field_decl, comment))
-        if align_attr is not None:
-            content.append("} %s %s;" % (align_attr, struct.getName()))
-        else:
-            content.append("} %s;" % struct.getName())
-        if pack_value is not None:
-            content.append("#pragma pack(pop)")
-        content.append("")
-    return "\n".join(content)
-
-
-def generate_unions_header(currentProgram, unions):
-    """Generate combined header content for multiple unions.
-
-    Args:
-        currentProgram: The Ghidra program
-        unions: List of union data types
-
-    Returns:
-        Header content as string
-    """
-    content = []
-    content.append("#pragma once")
-    content.append("")
-    for union in sorted(unions, key=lambda u: u.getName()):
-        content.append("// Union: %s" % union.getName())
-        if union.getDescription():
-            content.append("// %s" % union.getDescription())
-        pack_value, align_attr = _packing_and_alignment(union)
-        if pack_value is not None:
-            content.append("#pragma pack(push, %d)" % pack_value)
-        content.append("typedef union %s {" % union.getName())
-        for field_index, comp in enumerate(union.getComponents()):
-            field_type = resolve_field_type_for_component(currentProgram, comp)
-            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-            comment = " // %s" % comp.getComment() if comp.getComment() else ""
-            field_decl = format_field_declaration(field_type, field_name)
-            content.append("    %s;%s" % (field_decl, comment))
-        if align_attr is not None:
-            content.append("} %s %s;" % (align_attr, union.getName()))
-        else:
-            content.append("} %s;" % union.getName())
-        if pack_value is not None:
-            content.append("#pragma pack(pop)")
-        content.append("")
-    return "\n".join(content)
-
-
-def generate_enums_header(currentProgram, enums):
-    """Generate combined header content for multiple enums.
-
-    Args:
-        currentProgram: The Ghidra program
-        enums: List of enum data types
-
-    Returns:
-        Header content as string
-    """
-    content = []
-    content.append("#pragma once")
-    content.append("")
-    # Include basetypes if any enum needs a non-int typedef (uchar, ushort)
-    needs_basetypes = any(_enum_typedef_type(e) != "int" for e in enums)
-    if needs_basetypes:
-        content.append('#include "system/basetypes.h"')
-        content.append("")
-    for enum in sorted(enums, key=lambda e: e.getName()):
-        content.append("// Enum: %s" % enum.getName())
-        if enum.getDescription():
-            content.append("// %s" % enum.getDescription())
-        content.append("enum {")
-        enum_values = []
-        for name in enum.getNames():
-            value = enum.getValue(name)
-            enum_values.append("    %s = %s" % (name, _format_enum_value(value)))
-        content.append(",\n".join(enum_values))
-        content.append("};")
-        content.append("typedef %s %s;" % (_enum_typedef_type(enum), enum.getName()))
-        content.append("")
-    return "\n".join(content)
-
-
-def generate_typedefs_header(currentProgram, typedefs):
-    """Generate combined header content for multiple typedefs.
-
-    Args:
-        currentProgram: The Ghidra program
-        typedefs: List of typedef data types
-
-    Returns:
-        Header content as string
-    """
-    content = []
-    content.append("#pragma once")
-    content.append("")
-    for typedef in sorted(typedefs, key=lambda t: t.getName()):
-        content.append("// Typedef: %s" % typedef.getName())
-        if typedef.getDescription():
-            content.append("// %s" % typedef.getDescription())
-        base_type = resolve_data_type_name_for_headers(currentProgram, typedef.getDataType())
-        content.append("typedef %s %s;" % (base_type, typedef.getName()))
-        content.append("")
-    return "\n".join(content)
-
-
-def generate_function_definitions_header(currentProgram, function_definitions):
-    """Generate combined header content for function definitions.
-
-    Args:
-        currentProgram: The Ghidra program
-        function_definitions: List of function definition data types
-
-    Returns:
-        Header content as string
-    """
-    content = []
-    content.append("#pragma once")
-    content.append("")
-    for func_def in sorted(function_definitions, key=lambda f: f.getName()):
-        content.append("// Function Definition: %s" % func_def.getName())
-        if func_def.getComment():
-            content.append("// %s" % func_def.getComment())
-        return_type = "void"
-        if hasattr(func_def, 'getReturnType') and func_def.getReturnType():
-            return_type = resolve_data_type_name_for_headers(currentProgram, func_def.getReturnType())
-        params = []
-        used_param_names = set()
-        if hasattr(func_def, 'getArguments') and func_def.getArguments():
-            for param in func_def.getArguments():
-                param_type = "void"
-                param_name = "param"
-                if hasattr(param, 'getDataType') and param.getDataType():
-                    param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
-                if hasattr(param, 'getName') and param.getName():
-                    param_name = sanitize_c_identifier(param.getName())
-                # Ensure unique parameter names to avoid "conflicting types" errors
-                param_name = make_unique_param_name(param_name, used_param_names)
-                params.append("%s %s" % (param_type, param_name))
-        params_str = ", ".join(params) if params else "void"
-        content.append("typedef %s %s(%s);" % (return_type, func_def.getName(), params_str))
-        content.append("")
-    return "\n".join(content)
-
-
 def generate_equates_header(currentProgram, equates_list):
     """Generate header content for equates (defines).
 
@@ -1638,10 +1325,6 @@ def is_valid_define_name(name):
         if not (char.isalnum() or char == '_'):
             return False
 
-    # Reject names that are just numbers with prefix (like hex literals)
-    if name.startswith('0x') or name.startswith('0X'):
-        return False
-
     # Reject names that look like addresses or raw hex
     if re.match(r'^[0-9A-Fa-f]+$', name):
         return False
@@ -1665,6 +1348,19 @@ EQUATE_VALUE_OVERRIDES = {
     # the binary, so spans to ~1598 pixels. 3840 + 2 for a 3840-wide screen.
     'GAME_RECIPROCAL_TABLE_SIZE': 3842,
 }
+
+
+def missing_override_equates(equates):
+    """EQUATE_VALUE_OVERRIDES names a program has no equate for, as equates.
+
+    GLOBAL_TYPE_OVERRIDES sizes the same globals by these names in every
+    program, so defines.h must define them even where Ghidra holds no such
+    equate (the BW builds). With no binary value, there is nothing to compare.
+    """
+    present = {equate['name'] for equate in equates}
+    return [{'name': name, 'value': value, 'binary_value': value, 'refs': [],
+             'formatted_value': format_equate_value(value)}
+            for name, value in sorted(EQUATE_VALUE_OVERRIDES.items()) if name not in present]
 
 
 def organize_equates_by_category(currentProgram):
@@ -1715,6 +1411,7 @@ def organize_equates_by_category(currentProgram):
 
     log_info("Found %d equates in Ghidra (%d valid, %d skipped invalid names)" % (
         total_count, len(all_equates), skipped_count))
+    all_equates += missing_override_equates(all_equates)
 
     # Categorize equates based on usage patterns and names
     for equate_data in all_equates:
@@ -2033,11 +1730,8 @@ def generate_type_definition(currentProgram, dt):
         if pack_value is not None:
             lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef union %s {" % dt_name)
-        for field_index, comp in enumerate(dt.getComponents()):
-            field_type = resolve_field_type_for_component(currentProgram, comp)
-            # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
-            comment = " // %s" % comp.getComment() if comp.getComment() else ""
+        for field_type, field_name, field_comment in union_field_rows(currentProgram, dt):
+            comment = " // %s" % field_comment if field_comment else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
         if align_attr is not None:
@@ -2098,7 +1792,7 @@ def generate_type_definition(currentProgram, dt):
                 if hasattr(param, 'getDataType') and param.getDataType():
                     param_type = resolve_data_type_name_for_headers(currentProgram, param.getDataType())
                 if hasattr(param, 'getName') and param.getName():
-                    param_name = param.getName()
+                    param_name = sanitize_c_identifier(param.getName())
                 # Ensure unique parameter names to avoid "conflicting types" errors
                 param_name = make_unique_param_name(param_name, used_param_names)
                 params.append("%s %s" % (param_type, param_name))
@@ -2230,6 +1924,7 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("// Lowercase aliases (Ghidra sometimes uses these)")
     content.append("typedef unsigned int dword;      // 32-bit (Win32 DWORD width)")
     content.append("typedef unsigned short word;")
+    content.append("typedef unsigned long long qword;")
     content.append("")
     content.append("// Undefined types (placeholder bytes for unknown data)")
     content.append("typedef unsigned char undefined;")
@@ -2742,7 +2437,11 @@ def generate_winsock_runtime_inlines():
     lines.append("// Winsock Initialization")
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("")
-    lines.append("extern int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData);")
+    # struct WSADATA * is what LPWSADATA names; spelled out, it needs no typedef a
+    # program's Ghidra types may lack (bw1 has none). Declared at file scope
+    # first, or C would scope the struct to this prototype alone.
+    lines.append("struct WSADATA;")
+    lines.append("extern int WSAStartup(WORD wVersionRequested, struct WSADATA* lpWSAData);")
     lines.append("extern int WSACleanup(void);")
     lines.append("")
     lines.append("// ---------------------------------------------------------------------------")
@@ -3017,10 +2716,8 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
                 all_deps.update(d for d in direct_deps if d not in basetypes_types)
                 all_deps.update(d for d in pointer_deps if d not in basetypes_types)
 
-        # Find which system headers we need to include
+        # Find which system headers we need to include, after basetypes.h
         needed_includes = set()
-        # Always include basetypes.h first
-        needed_includes.add("system/basetypes.h")
 
         if type_to_path_map is not None:
             for dep in all_deps:
@@ -3035,16 +2732,11 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
 
         content = []
         content.append("#pragma once")
-
-        if needed_includes:
-            content.append("")
-            content.append("// Dependencies")
-            # Put basetypes.h first
-            if "system/basetypes.h" in needed_includes:
-                content.append('#include "system/basetypes.h"')
-                needed_includes.remove("system/basetypes.h")
-            for inc_path in sorted(needed_includes):
-                content.append('#include "%s"' % inc_path)
+        content.append("")
+        content.append("// Dependencies")
+        content.append('#include "system/basetypes.h"')
+        for inc_path in sorted(needed_includes):
+            content.append('#include "%s"' % inc_path)
 
         content.append("")
         content.append("// =============================================================================")

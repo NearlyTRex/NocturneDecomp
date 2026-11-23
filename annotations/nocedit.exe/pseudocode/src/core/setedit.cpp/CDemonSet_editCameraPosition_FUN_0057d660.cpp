@@ -177,7 +177,7 @@ LAB_0057d6df:
   piStack_30 = &this_ptr->cameras[camera_index + -1].enabled;
   pCStack_34 = this_ptr->cameras;
   do {
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
     bVar22 = uStack_38 == 0;
     uStack_38 = (uint)bVar22;
     if ((p_Stack_20 == (_FILE *)0x0) ||

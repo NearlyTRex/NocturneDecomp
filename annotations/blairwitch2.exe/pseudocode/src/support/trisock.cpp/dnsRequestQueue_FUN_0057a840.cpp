@@ -16,8 +16,8 @@ void __cdecl support_trisock_cpp_dnsRequestQueue_FUN_0057a840(void *request)
   if ((g_HANDLE_0265363c == (HANDLE)0x0) &&
      (g_HANDLE_0265363c = wincore_winrun_cpp_createMutex_FUN_0058fc90(),
      g_HANDLE_0265363c == (HANDLE)0x0)) {
-    g_CHAR_PTR_01d046a0 = "..\\support\\trisock.cpp";
-    g_INT_01d046a4 = 0x70a;
+    g_CurrentFilename = "..\\support\\trisock.cpp";
+    g_CurrentLineNumber = 1802;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Can't create mutex");
   }
   wincore_winrun_cpp_waitForMutex_FUN_0058fca0(g_HANDLE_0265363c);

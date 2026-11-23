@@ -17,8 +17,8 @@
 ;   int g_INT_0061b4a0 = 0x8
 ;   int g_WindowStackCount
 ;   void*[1200] g_ScreenBufferArray
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -91,8 +91,8 @@ section .text
         ;   Label: LAB_00494277
     MOV EBX,0x3dc                       ; 0049427c
     PUSH 0x5dbd7b                       ; 00494281 | = "paintWindowBackground called but no w..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00494286 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0049428c | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00494286 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0049428c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00494292
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00494297

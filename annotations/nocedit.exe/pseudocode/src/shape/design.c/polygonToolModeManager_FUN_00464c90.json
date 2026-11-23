@@ -502,5 +502,863 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "polygonToolModeManager_FUN_00464c90.keep.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 23,
+          "message": "Value stored to 'bVar7' is never read",
+          "path_notes": [
+            {
+              "line": 23,
+              "message": "Value stored to 'bVar7' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 39,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 39,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 79,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming 'g_PolygonToolMode' is not equal to 0"
+            },
+            {
+              "line": 73,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Control jumps to 'case 1:'  at line 78"
+            },
+            {
+              "line": 79,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 82,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming 'g_PolygonToolMode' is not equal to 0"
+            },
+            {
+              "line": 73,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Control jumps to 'case 2:'  at line 81"
+            },
+            {
+              "line": 82,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 88,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming 'g_PolygonToolMode' is not equal to 0"
+            },
+            {
+              "line": 73,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Control jumps to 'case 4:'  at line 87"
+            },
+            {
+              "line": 88,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 13,
+          "line": 91,
+          "message": "1st function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is not equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 73,
+              "message": "Assuming 'g_PolygonToolMode' is not equal to 0"
+            },
+            {
+              "line": 73,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Control jumps to 'case 5:'  at line 90"
+            },
+            {
+              "line": 91,
+              "message": "1st function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 99,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 99,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 11,
+          "line": 102,
+          "message": "3rd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 100,
+              "message": "Control jumps to 'case 1:'  at line 101"
+            },
+            {
+              "line": 102,
+              "message": "3rd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 11,
+          "line": 105,
+          "message": "3rd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 100,
+              "message": "Control jumps to 'case 2:'  at line 104"
+            },
+            {
+              "line": 105,
+              "message": "3rd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 11,
+          "line": 111,
+          "message": "3rd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 100,
+              "message": "Control jumps to 'case 4:'  at line 110"
+            },
+            {
+              "line": 111,
+              "message": "3rd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "core.CallAndMessage",
+          "column": 11,
+          "line": 114,
+          "message": "3rd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 25,
+              "message": "Assuming 'iVar2' is not equal to 0"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 29,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 29,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 41,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 42,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_VertexCount' is <= 'g_SavedVertexCount'"
+            },
+            {
+              "line": 42,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 43,
+              "message": "Assuming 'g_PolygonCount' is <= 'g_SavedPolygonCount'"
+            },
+            {
+              "line": 41,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 44,
+              "message": "Assuming 'g_ToolModeEnabled' is not equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 49,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 49,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 56,
+              "message": "'Default' branch taken. Execution continues on line 71"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 72,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 100,
+              "message": "Control jumps to 'case 5:'  at line 113"
+            },
+            {
+              "line": 114,
+              "message": "3rd function call argument is an uninitialized value"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 9,
+          "line": 116,
+          "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119",
+          "path_notes": [
+            {
+              "line": 116,
+              "message": "Call to function 'strcat' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcat'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

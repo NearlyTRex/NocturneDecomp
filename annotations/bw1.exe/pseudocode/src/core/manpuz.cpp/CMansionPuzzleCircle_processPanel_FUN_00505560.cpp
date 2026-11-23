@@ -27,8 +27,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(CMan
                         (this_ptr,panel_index);
       pSVar4 = this_ptr->panels + iVar2;
       if (pSVar4->exists != 0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\manpuz.cpp";
-        g_INT_01d1d404 = 0x45d;
+        g_CurrentFilename = "..\\core\\manpuz.cpp";
+        g_CurrentLineNumber = 1117;
         core_main_c_displayErrorAndQuit_FUN_005030e0("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
       pSVar4->exists = pSVar3->exists;

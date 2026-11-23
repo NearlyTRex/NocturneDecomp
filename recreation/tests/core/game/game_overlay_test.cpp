@@ -280,7 +280,7 @@ TEST_F(COverlay480Test, ABarGoesWhenItsTimeIsUp) {
 // The battery picture is 16 wide, drawn 4 in: its 20, wider than the gauge, and the gap of 4.
 TEST_F(COverlay480Test, BarsStartClearOfTheBatteryPicture) {
     givenSessionAssets();
-    inventory_assets_.load();
+    inventory_assets_.loadAssets();
     watchText();
     EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 24, 462, _, _));
     game_.setStatusDisplay("Doc", 1.0F, 2.0F);

@@ -7,11 +7,11 @@
 
 // Original: crt_watcom.c__memset_FUN_00492670
 // Address: 00492670
-void __fastcall ::memset(void *dest,int fill_byte,uint size);
+void __fastcall _memset(void *dest,int fill_byte,uint size);
 
 // Original: crt_watcom.c__memcpy_FUN_00492718
 // Address: 00492718
-void __fastcall ::memcpy(void *dest,void *src,uint size);
+void __fastcall _memcpy(void *dest,void *src,uint size);
 
 // Original: crt_watcom.c_FUN_004927fc
 // Address: 004927fc
@@ -19,7 +19,7 @@ void FUN_004927fc(void);
 
 // Original: crt_watcom.c__mkdir_FUN_005b9c20
 // Address: 005b9c20
-int __cdecl ::mkdir(char *path);
+int __cdecl _mkdir(char *path);
 
 // Original: crt_watcom.c_notifyAbnormalTermination_FUN_005bad80
 // Address: 005bad80

@@ -51,11 +51,13 @@ VCALL = re.compile(r'(?:->|\.)\s*([a-z]\w*)\s*\)\s*\(')
 FIELD_DEF = re.compile(r'^\s+[\w\s\*]+?\**\s*\b(\w+)(?:\[[^\]]*\])*;\s*//\s*0x[0-9a-f]+')
 STRUCT_DEF = re.compile(r'^typedef\s+(?:struct|union)\s+(\w+)')
 
+# An assignment operator, plain or compound, and not the `==` comparison.
+ASSIGN_OP = r'(?:<<|>>|[-+*/%|&^])?=(?!=)'
 # A target path ending in a field, followed by an assignment operator. The
 # path may open with a parenthesised base, e.g. (this_ptr->base).x.y = ...
 ASSIGN = re.compile(
     r'(?P<path>(?:[A-Za-z_]\w*|\))(?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\[\]]*\])+)'
-    r'\s*(?P<op>[-+*/|&^]?=)(?!=)')
+    r'\s*(?P<op>' + ASSIGN_OP + ')')
 LOCAL_ROOT = re.compile(r'^(?:local_|[a-zA-Z]*Stack_|auStack|[a-z]Var\d)')
 # g_Name, or a Ghidra data label ending in its address.
 GLOBAL_ROOT = re.compile(r'^(?:g_\w+|\w+_[0-9a-f]{8})$')
@@ -76,10 +78,21 @@ OFF_SIM_NAMES = (r'^(?:CDemonCamera|CZThumb|CConsole|CLZW)_|VirtualDirector|'
 SIM_ROOTS = {'CGame_process', 'CDemonMission_process', 'CNetGame_applySimFrameHistory'}
 
 
+# Strings and comments in one pass, so a "//" inside a string is not a comment
+# and a "/*" inside one does not swallow code up to the next "*/".
+_LEXEME = re.compile(r'"(?:\\.|[^"\\\n])*"|/\*.*?\*/|//[^\n]*', re.S)
+
+
+def _blank(m):
+    s = m.group(0)
+    if s[0] == '"':
+        return '""'
+    # Keep a block comment's newlines, so line numbers still match the file.
+    return ' ' + '\n' * s.count('\n') if s[1] == '*' else ''
+
+
 def strip_comments(text):
-    text = re.sub(r'/\*.*?\*/', ' ', text, flags=re.S)
-    text = re.sub(r'//[^\n]*', '', text)
-    return re.sub(r'"(?:\\.|[^"\\])*"', '""', text)
+    return _LEXEME.sub(_blank, text)
 
 
 def full_path(body, start, path):
@@ -240,7 +253,7 @@ def writes_in(func, ignore_rx):
     return out
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--program', default='nocedit.exe')
     ap.add_argument('--render-pattern', default=RENDER_PATTERN,
@@ -260,7 +273,7 @@ def main():
     ap.add_argument('--all', action='store_true',
                     help='also list tagged hits and writes with no sim-side reader')
     ap.add_argument('--json', help='write the full result here')
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     pseudo = os.path.join(ROOT, 'annotations', args.program, 'pseudocode')
     src = os.path.join(pseudo, 'src')
@@ -292,16 +305,16 @@ def main():
 
     readers = defaultdict(set)
     if writes:
+        # A plain `=` only overwrites the field; a compound one (`+=`, `|=`)
+        # reads it first, so the sim's result depends on the render write.
         field_rx = re.compile(r'(?:->|\.)\s*(' + '|'.join(map(re.escape, writes)) +
-                              r')\b(?P<tail>(?:\s*\[[^\[\]]*\])*\s*(?:[-+*/|&^]?=(?!=))?)')
+                              r')\b(?:\s*\[[^\[\]]*\])*\s*(?P<op>' + ASSIGN_OP + r')?')
         for a, f in funcs.items():
             if a in side or (sim is not None and a not in sim):
                 continue
             for m in field_rx.finditer(f['body']):
-                tail = m.group('tail')
-                if re.search(r'[-+*/|&^]?=$', tail.strip()) and not tail.strip().endswith('=='):
-                    continue
-                readers[m.group(1)].add(a)
+                if m.group('op') != '=':
+                    readers[m.group(1)].add(a)
 
     setters = []
     for a in sorted(side):

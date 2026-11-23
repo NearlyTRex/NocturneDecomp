@@ -9,6 +9,8 @@
 
 #include <array>
 #include <cstddef>
+#include <cstdint>
+#include <optional>
 
 namespace nocturne::engine {
 
@@ -55,6 +57,11 @@ public:
     void popViewport();
     [[nodiscard]] int getProjectionScale() const;
     void setProjectionScale(int scale);
+    // The 16.16 width over height the camera's projection is shaped by, in place of the clip's,
+    // until the window is popped: so a 4:3 view can stretch over a wider window, as a stretched
+    // picture under it does. The enhanced game's; none takes the clip's, as the original did.
+    [[nodiscard]] std::optional<std::int32_t> getProjectionAspect() const;
+    void setProjectionAspect(std::optional<std::int32_t> aspect);
     // The angles alone; unlike setCameraRotation, the transform is not rebuilt from them.
     void storeCameraRotation(const common::CVector3i &rotation);
     // What carries a point into camera space: the rotation, then the origin added.
@@ -83,6 +90,7 @@ private:
         SProjectionParams projection;
         int projection_scale = 0;
         SClipRect clip;
+        std::optional<std::int32_t> projection_aspect;
     };
 
     void initializeTrigTables();
@@ -95,6 +103,7 @@ private:
     common::CVector3i camera_origin_;
     common::CVector3i camera_rotation_;
     int projection_scale_ = kUnitProjectionScale;
+    std::optional<std::int32_t> projection_aspect_;
     std::array<SViewportState, kViewportStackSize> viewport_stack_{};
     std::size_t viewport_stack_index_ = 0;
     common::CMatrix3x3i transform_matrix_;

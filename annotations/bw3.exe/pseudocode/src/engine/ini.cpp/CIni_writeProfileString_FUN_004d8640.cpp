@@ -31,8 +31,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(CIni *this_ptr,c
   }
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\ini.cpp";
-    g_INT_01d71de4 = 0x18b;
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 395;
     core_main_c_displayErrorAndQuit_FUN_004e4330("cIni::writeProfileString: Unable to open input");
   }
   pcVar3 = acStack_216;
@@ -57,8 +57,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(CIni *this_ptr,c
   acStack_216[~uVar4] = 'x';
   file = _fopen(acStack_216 + 2,"wt");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\ini.cpp";
-    g_INT_01d71de4 = 399;
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 399;
     core_main_c_displayErrorAndQuit_FUN_004e4330("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {

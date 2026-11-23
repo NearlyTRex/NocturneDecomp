@@ -2,21 +2,22 @@
 # Regenerated on every export; re-check by hand with
 #   python3 scripts/Python/check_keep_drift.py
 
-2640 .keep files, each compared with the export beside it
-  identical      5   (+0 using shim/AUTHENTIC switches)
-  near         193   (+26 using shim/AUTHENTIC switches)
-  partial     1015   (+144 using shim/AUTHENTIC switches)
-  rewritten   1131   (+126 using shim/AUTHENTIC switches)
+2643 .keep files, each compared with the export beside it
+  identical      4   (+0 using shim/AUTHENTIC switches)
+  near         191   (+26 using shim/AUTHENTIC switches)
+  partial     1016   (+145 using shim/AUTHENTIC switches)
+  rewritten   1132   (+129 using shim/AUTHENTIC switches)
   no export      0   (+0 using shim/AUTHENTIC switches)
 
--- REDUNDANT: identical code, no shim switch - can be deleted --  5
+-- REDUNDANT: identical code, no shim switch - can be deleted --  0
+
+-- REVIEWED: identical code, drops a counted Ghidra warning - kept --  4
   1.000    0 line(s) differ  core/dracbrid.cpp/CDraculaBride_dismemberPart_FUN_00485b20.keep.cpp
   1.000    0 line(s) differ  core/smiley.cpp/CSmiley_attractActorToward_FUN_005a3160.keep.cpp
   1.000    0 line(s) differ  core/zombie.cpp/CZombie_canPickupWithHand_FUN_005fbda0.keep.cpp
   1.000    0 line(s) differ  core/zombie.cpp/CZombie_setup_FUN_005f9140.keep.cpp
-  1.000    0 line(s) differ  engine/special.cpp/renderScanline_FUN_005b5710.keep.cpp
 
--- NEAR: a few lines from the export - finish in Ghidra, then delete --  193
+-- NEAR: a few lines from the export - finish in Ghidra, then delete --  191
   0.997    1 line(s) differ  sound/sndmain.cpp/analyzeFrequencyBand_FUN_005ac400.keep.cpp
   0.995    1 line(s) differ  engine/2d.c/clipAndDrawLine_FUN_00402ca0.keep.c
   0.995    1 line(s) differ  core/dcamera.cpp/CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0.keep.cpp
@@ -138,7 +139,6 @@
   0.964    3 line(s) differ  engine/fileio.cpp/CFileManager_buildPodFromResponseFile_FUN_004b7ac0.keep.cpp
   0.964    2 line(s) differ  core/script.cpp/CScript_executeContextAction_FUN_00565d00.keep.cpp
   0.963    1 line(s) differ  core/dmodel.cpp/writeModelDependencies_FUN_0047ee30.keep.cpp
-  0.963    3 line(s) differ  core/setedit.cpp/CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0.keep.cpp
   0.963    1 line(s) differ  shape/edittool.cpp/CStrList_allocate_FUN_004a2cc0.keep.cpp
   0.963    1 line(s) differ  shape/meshlod.cpp/CLodMesh_createNextLOD_FUN_00516f50.keep.cpp
   0.963    2 line(s) differ  shape/superopt.cpp/CComplexPolygon_removedSharedEdges_FUN_005c8160.keep.cpp
@@ -151,7 +151,6 @@
   0.962    2 line(s) differ  sound/sndmain.cpp/CSfxSlot_pollHwHandle_FUN_005a7fe0.keep.cpp
   0.962    1 line(s) differ  support/trisock.cpp/CSocket_receiveSocketData_FUN_005e1c20.keep.cpp
   0.961    6 line(s) differ  core/set.cpp/CDemonSet_lightVertexColor_FUN_0056ddb0.keep.cpp
-  0.961    3 line(s) differ  core/msnedit.cpp/screenToWorldPosition_FUN_00535c60.keep.cpp
   0.961    4 line(s) differ  core/zombie.cpp/CZombie_processDamage_FUN_005fc4f0.keep.cpp
   0.961    3 line(s) differ  core/dynamite.cpp/CDynamite_process_FUN_0049cfb0.keep.cpp
   0.961    3 line(s) differ  engine/2d.c/drawCharacterMaskedColor_FUN_00401a10.keep.c
@@ -211,13 +210,14 @@
   0.950    1 line(s) differ  core/msnedit.cpp/CDemonMission_deleteActorWithConfirm_FUN_0053bc80.keep.cpp
   0.950    2 line(s) differ  engine/model.c/loadModelChunk_FUN_00528970.keep.c
 
--- PARTIAL: most lines shared with the export --  1015
+-- PARTIAL: most lines shared with the export --  1016
   0.950    4 line(s) differ  wincore/wddvmem.cpp/setupColorPalette_FUN_005ed8f0.keep.cpp
   0.949   19 line(s) differ  shape/design.c/mergeTrianglesIntoQuad_FUN_00462190.keep.c
   0.949    5 line(s) differ  engine/2d.c/drawCharacter_FUN_00401610.keep.c
   0.949    8 line(s) differ  core/fire.cpp/CGunFlame_render_FUN_004c50b0.keep.cpp
   0.949    2 line(s) differ  core/morph.cpp/CMorphModel_addPartFromVertexBuffer_FUN_0052a710.keep.cpp
   0.949   22 line(s) differ  core/msnedit.cpp/CDemonMission_showEditorMenu_FUN_005381e0.keep.cpp
+  0.949    4 line(s) differ  core/msnedit.cpp/screenToWorldPosition_FUN_00535c60.keep.cpp
   0.949    9 line(s) differ  shape/design.c/createRotationalSweepGeometry_FUN_0045e070.keep.c
   0.949    3 line(s) differ  core/dcamera.cpp/CDemonCamera_isSphereVisible_FUN_00452730.keep.cpp
   0.948    3 line(s) differ  cockpit/drawsurf.cpp/CDrawSurface_drawHorizontalLine_FUN_00488110.keep.cpp
@@ -294,6 +294,7 @@
   0.940   13 line(s) differ  core/water.cpp/CWater_render_FUN_005ea320.keep.cpp
   0.940    4 line(s) differ  core/inv.cpp/CInventory_checkHasMatchingKey_FUN_005013d0.keep.cpp
   0.940    7 line(s) differ  core/mimic.cpp/CMimic_renderMirrored_FUN_005205f0.keep.cpp
+  0.940    5 line(s) differ  core/setedit.cpp/CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0.keep.cpp
   0.940    5 line(s) differ  shape/design.c/convertWorldToScreenCoordinates_FUN_0045bd10.keep.c
   0.939    6 line(s) differ  core/mobster.cpp/CMobster_playTaunt_FUN_005279f0.keep.cpp
   0.939   12 line(s) differ  core/pendulum.cpp/CPendulum_testCollisionWithActor_FUN_005495c0.keep.cpp
@@ -420,14 +421,12 @@
   0.919    2 line(s) differ  core/enemy.cpp/CEnemy_testAttackLine_FUN_004a9930.keep.cpp
   0.918    6 line(s) differ  core/box.cpp/CBoundingBox3D_computeFromPoints_FUN_00420dc0.keep.cpp
   0.918   14 line(s) differ  core/waypoint.cpp/CWayPoint_renderOpaque_FUN_005ebf70.keep.cpp
-  0.918    4 line(s) differ  core/haystack.cpp/CHaystack_checkMeleeHit_FUN_004f1ab0.keep.cpp
   0.918    8 line(s) differ  core/motion.cpp/CMotionController_advanceFrameToExitPoint_FUN_0052e020.keep.cpp
   0.918    4 line(s) differ  core/motion.cpp/CMotionController_advanceTween_FUN_0052e1d0.keep.cpp
   0.918    5 line(s) differ  core/wateract.cpp/CWaterActor_updateWorldPositions_FUN_005eafa0.keep.cpp
   0.918    4 line(s) differ  sound/sndmain.cpp/CSfxSlot_seek_FUN_005a8390.keep.cpp
   0.918   13 line(s) differ  core/gore.cpp/CBloodSplat_render_FUN_004ec500.keep.cpp
   0.918    5 line(s) differ  core/skeleton.cpp/CDeformableModel_allocMemory_FUN_0059a3f0.keep.cpp
-  0.917    8 line(s) differ  core/icepick.cpp/CIcePick_updateShootBlend_FUN_004f8810.keep.cpp
   0.917   30 line(s) differ  core/curtain.cpp/CCurtain_process_FUN_0044a920.keep.cpp
   0.917    3 line(s) differ  cockpit/drawsurf.cpp/drawHorizontalLineWithEffect_FUN_00487630.keep.cpp
   0.917    1 line(s) differ  core/anvil.cpp/CAnvil_addFilesToExtract_FUN_00412090.keep.cpp
@@ -457,7 +456,6 @@
   0.915   12 line(s) differ  core/mission.cpp/CDemonMission_writeFile_FUN_00523600.keep.cpp
   0.914    4 line(s) differ  core/boxactor.cpp/CBoxActor_ctor_FUN_00421700.keep.cpp
   0.914    3 line(s) differ  core/ground.cpp/CGround_transformAndStoreVertex_FUN_004ef3a0.keep.cpp
-  0.914    8 line(s) differ  core/fire.cpp/CRainDrop_render_FUN_004c6830.keep.cpp
   0.914   25 line(s) differ  core/charactr.cpp/CCharacter_findSomethingToLookAt_FUN_0042d5a0.keep.cpp
   0.914    7 line(s) differ  cockpit/ckptutil.c/loadRotatedBitmapFile_FUN_00434690.keep.c
   0.914   12 line(s) differ  core/procedur.cpp/CProceduralTexture_applyRipple_FUN_00554670.keep.cpp
@@ -473,12 +471,10 @@
   0.912    9 line(s) differ  core/glass.cpp/CGlass_renderBackground_FUN_004e9e90.keep.cpp
   0.912    9 line(s) differ  core/glass.cpp/CGlass_renderTransparent_FUN_004e9af0.keep.cpp
   0.912   10 line(s) differ  core/hero.cpp/CHero_closestEnemy_FUN_004f3960.keep.cpp
-  0.912   13 line(s) differ  core/platfrm.cpp/CPlatform_renderOpaque_FUN_0054d720.keep.cpp
   0.912    9 line(s) differ  core/dcamera.cpp/renderVolumetricLightScanline_FUN_00450440.keep.cpp
   0.911    4 line(s) differ  shape/design.c/addQuadPolygonHalfSphere_FUN_00468d20.keep.c
   0.911   42 line(s) differ  core/trash.cpp/CTrash_process_FUN_005decf0.keep.cpp
   0.910   12 line(s) differ  core/hero.cpp/CHero_tryPushNearbyBox_FUN_004f3120.keep.cpp
-  0.910    8 line(s) differ  core/fire.cpp/CPopcorn_render_FUN_004c64c0.keep.cpp
   0.910   15 line(s) differ  core/mobster.cpp/CMobster_getCarryObjToBodyXForm_FUN_00526b20.keep.cpp
   0.910   24 line(s) differ  core/setedit.cpp/CDemonSet_drawCameraThumbnailBar_FUN_00577af0.keep.cpp
   0.910   21 line(s) differ  shape/design.c/bisectMesh_FUN_0046ed50.keep.c
@@ -500,6 +496,7 @@
   0.909    1 line(s) differ  core/filmreel.cpp/factoryFuncFilmProjector_FUN_004bea00.keep.cpp
   0.909    1 line(s) differ  core/filmreel.cpp/factoryFuncFilmReel_FUN_004be670.keep.cpp
   0.909    8 line(s) differ  core/fire.cpp/CExplosion_render_FUN_004c3b10.keep.cpp
+  0.909    9 line(s) differ  core/fire.cpp/CRainDrop_render_FUN_004c6830.keep.cpp
   0.909    8 line(s) differ  core/fire.cpp/CSmokeParticle_render_FUN_004bf4c0.keep.cpp
   0.909    1 line(s) differ  core/flamecan.cpp/factoryFuncFlameCan_FUN_004cb120.keep.cpp
   0.909    1 line(s) differ  core/flamegun.cpp/factoryFuncFlameThrower_FUN_004cb840.keep.cpp
@@ -511,6 +508,7 @@
   0.909    1 line(s) differ  core/hostage.cpp/factoryFuncHostage_FUN_004f4800.keep.cpp
   0.909    1 line(s) differ  core/hotdemon.cpp/factoryFuncHotDemon_FUN_004f6c60.keep.cpp
   0.909    1 line(s) differ  core/hpriest.cpp/factoryFuncHighPriestOfGardath_FUN_004f7b30.keep.cpp
+  0.909    9 line(s) differ  core/icepick.cpp/CIcePick_updateShootBlend_FUN_004f8810.keep.cpp
   0.909    1 line(s) differ  core/icepick.cpp/factoryFuncIcePick_FUN_004f7db0.keep.cpp
   0.909    1 line(s) differ  core/keyactor.cpp/factoryFuncKeyActor_FUN_00501650.keep.cpp
   0.909    1 line(s) differ  core/lightgun.cpp/factoryFuncLightGun_FUN_005058c0.keep.cpp
@@ -561,6 +559,7 @@
   0.906    4 line(s) differ  core/dmodel.cpp/CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820.keep.cpp
   0.905   17 line(s) differ  engine/fileio.cpp/CFileManager_extractFileWithTimestamp_FUN_004b7d50.keep.cpp
   0.905   20 line(s) differ  core/dmodel.cpp/CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0.keep.cpp
+  0.905    9 line(s) differ  core/fire.cpp/CPopcorn_render_FUN_004c64c0.keep.cpp
   0.905    8 line(s) differ  cockpit/ckptutil.c/blendPixelWithHardwarePalette_FUN_00433f50.keep.c
   0.905    5 line(s) differ  core/ladder.cpp/CLadder_processInEditor_FUN_00502d00.keep.cpp
   0.905    7 line(s) differ  core/mission.cpp/CDemonMission_loadActor_FUN_00523990.keep.cpp
@@ -659,7 +658,6 @@
   0.899    5 line(s) differ  core/lever.cpp/CLever_setState_FUN_00504b20.keep.cpp
   0.899    5 line(s) differ  core/zombie.cpp/CZombie_canBeAttracted_FUN_005fc120.keep.cpp
   0.898   40 line(s) differ  core/setedit.cpp/CDemonSet_showLightFilterEditor_FUN_0057bbe0.keep.cpp
-  0.898    8 line(s) differ  core/course.cpp/CCourse_importMatrices_FUN_00442ea0.keep.cpp
   0.898    6 line(s) differ  shape/cramtex.cpp/placementCollisionCheck_FUN_00448260.keep.cpp
   0.898    8 line(s) differ  core/fire.cpp/CToss_process_FUN_004c4000.keep.cpp
   0.898    8 line(s) differ  engine/drender.cpp/CDemonRenderer_renderZPrepassPoly_FUN_0048a950.keep.cpp
@@ -682,7 +680,6 @@
   0.894    6 line(s) differ  engine/colquant.c/partitionByIntensity_FUN_00440f00.keep.c
   0.894    4 line(s) differ  engine/pod.cpp/CPod_getPodIndexByFilename_FUN_00551820.keep.cpp
   0.894   13 line(s) differ  shape/meshlod.cpp/CLodMesh_parseS3DFileVariant_FUN_0051adf0.keep.cpp
-  0.893  241 line(s) differ  core/skeledit.cpp/CSkeleton_importSkeletonFile_FUN_00592690.keep.cpp
   0.893    8 line(s) differ  core/skeledit.cpp/CBoneStructure_showBoneHierarchy_FUN_0058afe0.keep.cpp
   0.893    3 line(s) differ  core/setedit.cpp/blitThumbnailToScreen8_FUN_00577120.keep.cpp
   0.892   11 line(s) differ  core/dtri.cpp/rayTriangleIntersection_FUN_0049a800.keep.cpp
@@ -731,6 +728,7 @@
   0.885    6 line(s) differ  engine/fileio.cpp/CFileManager_deleteLocalFilesFromPod_FUN_004bca50.keep.cpp
   0.885   17 line(s) differ  core/event.cpp/CEventList_render_FUN_004addf0.keep.cpp
   0.885   18 line(s) differ  engine/font.cpp/CBitFont_wrapText_FUN_004d0010.keep.cpp
+  0.885  258 line(s) differ  core/skeledit.cpp/CSkeleton_importSkeletonFile_FUN_00592690.keep.cpp
   0.885    5 line(s) differ  core/set.cpp/CDemonSet_getReverbPresetAtPosition_FUN_0056fac0.keep.cpp
   0.884   10 line(s) differ  shape/design.c/removeDuplicatePolygons_FUN_004651b0.keep.c
   0.884   15 line(s) differ  engine/font.cpp/CBitFont_loadBitmap_FUN_004ccff0.keep.cpp
@@ -749,6 +747,7 @@
   0.882   13 line(s) differ  core/gore.cpp/CBloodPool_render_FUN_004ecce0.keep.cpp
   0.882    8 line(s) differ  core/vessel.cpp/CCryptVessel_setup_FUN_005e8fc0.keep.cpp
   0.881    5 line(s) differ  core/dlight.cpp/CDemonLight_clearCircularShadowMapEdges_FUN_004735c0.keep.cpp
+  0.881    4 line(s) differ  core/lightgun.cpp/isLightVulnerable_FUN_00505a20.keep.cpp
   0.881   27 line(s) differ  core/bugs.cpp/CBugs_updateBugPathfinding_FUN_00426420.keep.cpp
   0.881   23 line(s) differ  core/dlight.cpp/CDemonLight_renderLightBloomQuad_FUN_00473a20.keep.cpp
   0.881   15 line(s) differ  core/setedit.cpp/CDemonSet_importSet_FUN_00578a20.keep.cpp
@@ -784,7 +783,6 @@
   0.876   12 line(s) differ  core/script.cpp/CCmdParm_parseValue_FUN_00561cb0.keep.cpp
   0.876   12 line(s) differ  shape/design.c/triangulateDSE_FUN_0046e4d0.keep.c
   0.876   10 line(s) differ  cockpit/pkbmpset.cpp/CPackedBitmapSet_reload_FUN_0054c1e0.keep.cpp
-  0.875   12 line(s) differ  core/baron.cpp/CBaron_renderTransparent_FUN_00413ae0.keep.cpp
   0.875    3 line(s) differ  core/bugs.cpp/normalizeVector_FUN_00427a60.keep.cpp
   0.875    7 line(s) differ  core/dirmat.cpp/angleFromSinCos_FUN_00472090.keep.cpp
   0.875   29 line(s) differ  core/dmodel.cpp/CKeyFramedModel_removeUnusedVertices_FUN_0047aa30.keep.cpp
@@ -899,7 +897,6 @@
   0.857   12 line(s) differ  core/actor.cpp/CDemonActor_getWorldBoundingBox_FUN_00409270.keep.cpp
   0.857   16 line(s) differ  core/actor.cpp/archivePartStatus_FUN_0040bae0.keep.cpp
   0.857    4 line(s) differ  core/actor.cpp/handleActorPropertyParseError_FUN_0040b210.keep.cpp
-  0.857    5 line(s) differ  core/dcamera.cpp/CDemonCamera_screenToWorldRay_FUN_00452900.keep.cpp
   0.857    3 line(s) differ  core/dracbrid.cpp/randomizePosition_FUN_00486430.keep.cpp
   0.857    6 line(s) differ  core/fire.cpp/CMuzzleFlash_init_FUN_004c1940.keep.cpp
   0.857    6 line(s) differ  core/fire.cpp/CStake_render_FUN_004c0140.keep.cpp
@@ -928,6 +925,7 @@
   0.854   10 line(s) differ  core/bugs.cpp/CBugs_recalculateBoundingBox_FUN_004272f0.keep.cpp
   0.854   21 line(s) differ  engine/fileio.cpp/CCheckOutItem_selectCheckedOutFile_FUN_004b3f50.keep.cpp
   0.853   27 line(s) differ  core/manpuz.cpp/CMansionPuzzleCircle_customRayIntersect_FUN_00509330.keep.cpp
+  0.853   14 line(s) differ  core/baron.cpp/CBaron_renderTransparent_FUN_00413ae0.keep.cpp
   0.853   19 line(s) differ  core/msnedit.cpp/CDemonMission_showDifficultyStats_FUN_0053d3b0.keep.cpp
   0.853   24 line(s) differ  core/dcamera.cpp/CDemonCamera_saveCameraTransform_FUN_0044ef30.keep.cpp
   0.853    6 line(s) differ  core/morph.cpp/CMorphModel_findNearestPoint_FUN_0052b280.keep.cpp
@@ -995,6 +993,7 @@
   0.843   10 line(s) differ  cockpit/ckptutil.c/blendPixelWithSourcePalette_FUN_004342f0.keep.c
   0.842   77 line(s) differ  core/smiley.cpp/CSmiley_process_FUN_005a2800.keep.cpp
   0.842    4 line(s) differ  cockpit/ckptutil.c/applyActPalette_FUN_004319b0.keep.c
+  0.842   13 line(s) differ  core/course.cpp/CCourse_importMatrices_FUN_00442ea0.keep.cpp
   0.842    8 line(s) differ  core/curtain.cpp/CCurtain_updateLocalPositions_FUN_00449f10.keep.cpp
   0.842    5 line(s) differ  core/dcube.cpp/CDemonCube_testAABBIntersection_FUN_00457ca0.keep.cpp
   0.842   12 line(s) differ  core/netgame.cpp/CNetGame_processChatOut_FUN_00541e40.keep.cpp
@@ -1044,9 +1043,9 @@
   0.835   18 line(s) differ  core/passngr.cpp/CPassenger_setup_FUN_00545d30.keep.cpp
   0.834   20 line(s) differ  core/crate.cpp/CCrate_process_FUN_00448660.keep.cpp
   0.834   30 line(s) differ  core/cloth.cpp/CCloth_showMenu_FUN_0043ddf0.keep.cpp
-  0.834  194 line(s) differ  engine/fileio.cpp/CFileManager_managePodFiles_FUN_004b86b0.keep.cpp
   0.833    9 line(s) differ  core/charactr.cpp/CCharacter_setOrientation_FUN_0042ded0.keep.cpp
   0.833    1 line(s) differ  core/cloth.cpp/CCloth_addFilesToExtract_FUN_0043e0a0.keep.cpp
+  0.833    6 line(s) differ  core/dcamera.cpp/CDemonCamera_screenToWorldRay_FUN_00452900.keep.cpp
   0.833    3 line(s) differ  core/fire.cpp/CLightningBolt_activate_FUN_004c5640.keep.cpp
   0.833    7 line(s) differ  core/fire.cpp/CRock_render_FUN_004c1870.keep.cpp
   0.833   15 line(s) differ  core/gargoyle.cpp/CGargoyle_getTargetPoints_FUN_004e5930.keep.cpp
@@ -1065,6 +1064,7 @@
   0.832   18 line(s) differ  core/tbplayer.cpp/CDrummer_getCarryObjToBodyXForm_FUN_005da370.keep.cpp
   0.832   21 line(s) differ  core/setutil.cpp/C3DSLight_renderVolumetricSphere_FUN_00587b50.keep.cpp
   0.831   10 line(s) differ  core/morph.cpp/CMorphModel_renderFaces_FUN_0052b160.keep.cpp
+  0.831  197 line(s) differ  engine/fileio.cpp/CFileManager_managePodFiles_FUN_004b86b0.keep.cpp
   0.831   17 line(s) differ  engine/drender.cpp/CDemonRenderer_renderTexturedPoly_FUN_0048aeb0.keep.cpp
   0.831   16 line(s) differ  shape/dsemodel.cpp/CDSEModel_centerModel_FUN_0048fa50.keep.cpp
   0.830   26 line(s) differ  sound/mp3.cpp/CMP3Decoder_readLayer3Scalefactors_FUN_00530d20.keep.cpp
@@ -1078,7 +1078,6 @@
   0.829  147 line(s) differ  engine/clipper.c/clipPolygonToViewFrustum_FUN_004366e0.keep.c
   0.829    5 line(s) differ  engine/pod.cpp/CPod_findFile_FUN_00551380.keep.cpp
   0.829   29 line(s) differ  core/dlight.cpp/CDemonLight_restoreDirtyRegions_FUN_00472f80.keep.cpp
-  0.829   78 line(s) differ  engine/fileio.cpp/CFileManager_checkOutAndExtractPod_FUN_004ba740.keep.cpp
   0.829    9 line(s) differ  core/dcamera.cpp/CDemonCamera_endScene_FUN_0044cb80.keep.cpp
   0.828   16 line(s) differ  core/cloth.cpp/CCloth_createFromKFM_FUN_0043dcc0.keep.cpp
   0.828   28 line(s) differ  engine/3d.c/dispatchMRGLToRenderer_FUN_00407aa0.keep.c
@@ -1184,6 +1183,7 @@
   0.804   17 line(s) differ  engine/drender.cpp/CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0.keep.cpp
   0.803  194 line(s) differ  core/setedit.cpp/CDemonSet_showCameraEditor_FUN_0057e7c0.keep.cpp
   0.802   88 line(s) differ  core/dstrendr.cpp/renderPerspectiveCorrectTextured16xCached_FUN_00490ec0.keep.cpp
+  0.802   86 line(s) differ  engine/fileio.cpp/CFileManager_checkOutAndExtractPod_FUN_004ba740.keep.cpp
   0.801   88 line(s) differ  core/charactr.cpp/CCharacter_moveAndCollide_FUN_00428f40.keep.cpp
   0.801  108 line(s) differ  core/batman.cpp/CBatman_process_FUN_00416870.keep.cpp
   0.800   13 line(s) differ  core/ammobox.cpp/CAmmoBox_propertyDisplayCallback_FUN_00411a30.keep.cpp
@@ -1228,7 +1228,7 @@
   0.800    5 line(s) differ  sound/sndwav.cpp/CWavInDevice_reset_FUN_005b0f10.keep.cpp
   0.800    5 line(s) differ  support/trisock.cpp/CSocket_sendSocketData_FUN_005e1ca0.keep.cpp
 
--- REWRITTEN: under 80% shared with the export --  1131
+-- REWRITTEN: under 80% shared with the export --  1132
   0.799   53 line(s) differ  core/dlight.cpp/CDemonLight_renderLightGlowSprites_FUN_00473f90.keep.cpp
   0.798  112 line(s) differ  shape/meshlod.cpp/CLodMesh_computeEdgeCollapseCost_FUN_00518910.keep.cpp
   0.797   28 line(s) differ  shape/design.c/centerVerticesAroundPoint_FUN_0045ea90.keep.c
@@ -1380,6 +1380,7 @@
   0.765  104 line(s) differ  cockpit/ckptutil.c/traceConnectedEdges_FUN_00434af0.keep.c
   0.765   38 line(s) differ  core/charactr.cpp/CCharacter_setup_FUN_00428140.keep.cpp
   0.765    6 line(s) differ  core/dcube.cpp/CDemonCube_setBounds_FUN_00456a90.keep.cpp
+  0.765    5 line(s) differ  engine/drender.cpp/CDemonRenderer_processVisiblePrimitive_FUN_0048d700.keep.cpp
   0.765   10 line(s) differ  engine/drender.cpp/CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320.keep.cpp
   0.765   11 line(s) differ  sound/sndwav.cpp/CWavInDevice_start_FUN_005b0e20.keep.cpp
   0.764   25 line(s) differ  shape/design.c/createCenterVertex_FUN_00469690.keep.c
@@ -1405,7 +1406,6 @@
   0.760   11 line(s) differ  engine/fileio.cpp/trimWhitespace_FUN_004b1d40.keep.cpp
   0.760   10 line(s) differ  engine/prim.c/calculateTriangleWindingOrder_FUN_00552150.keep.c
   0.760    6 line(s) differ  shape/design.c/turnModelInsideOut_FUN_004671e0.keep.c
-  0.759   53 line(s) differ  core/fire.cpp/CSpark_render_FUN_004c0420.keep.cpp
   0.759    6 line(s) differ  core/bride.cpp/CBride_getTargetPoint_FUN_00424aa0.keep.cpp
   0.759    5 line(s) differ  core/cloth.cpp/CClothList_process_FUN_0043c2d0.keep.cpp
   0.759    6 line(s) differ  core/ghoul.cpp/CGhoul_getTargetPoint_FUN_004e84a0.keep.cpp
@@ -1418,10 +1418,10 @@
   0.756    7 line(s) differ  core/cloth.cpp/CClothList_reset_FUN_0043c070.keep.cpp
   0.756   32 line(s) differ  shape/quantize.cpp/CColorQuantizer_importBitmap_FUN_00554a50.keep.cpp
   0.756    8 line(s) differ  wincore/wddvmem.cpp/allocateRenderBuffers_FUN_005ecac0.keep.cpp
-  0.755  101 line(s) differ  core/course.cpp/CCourse_showEditorMenu_FUN_00443040.keep.cpp
   0.755   11 line(s) differ  sound/sndmain.cpp/getSfxPlaybackPosition_FUN_005a9720.keep.cpp
   0.754   24 line(s) differ  core/skeledit.cpp/CDeformableModel_removeUnusedTextures_FUN_0058ec60.keep.cpp
   0.754   16 line(s) differ  core/succubus.cpp/CSuccubus_ctor_FUN_005c6a80.keep.cpp
+  0.753  101 line(s) differ  core/course.cpp/CCourse_showEditorMenu_FUN_00443040.keep.cpp
   0.753   73 line(s) differ  core/dtrace.cpp/CDemonRaytrace_loadBinary_FUN_004947a0.keep.cpp
   0.753   39 line(s) differ  sound/mp3.cpp/CMP3Decoder_parseHeader_FUN_00534630.keep.cpp
   0.753   52 line(s) differ  core/bodypart.cpp/CBodyPart_applyRotation_FUN_0041a630.keep.cpp
@@ -1468,6 +1468,7 @@
   0.744   81 line(s) differ  engine/fileio.cpp/CFileManager_removeAuditRecords_FUN_004bd190.keep.cpp
   0.743   10 line(s) differ  core/hero.cpp/CHero_dtor_FUN_004f2470.keep.cpp
   0.743    8 line(s) differ  core/xform.cpp/eulerToQuaternion_FUN_005f7b20.keep.cpp
+  0.743   54 line(s) differ  core/fire.cpp/CSpark_render_FUN_004c0420.keep.cpp
   0.742   14 line(s) differ  core/texlist.cpp/CTextureList_addTextureSelection_FUN_005dc5e0.keep.cpp
   0.741   38 line(s) differ  core/dcube.cpp/CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0.keep.cpp
   0.740   17 line(s) differ  engine/clipper.c/interpolateVertexBottomClipAdvanced_FUN_004375c0.keep.c
@@ -1588,7 +1589,6 @@
   0.709   19 line(s) differ  sound/snddx.cpp/CDirectSoundDevice_initPropertySet_FUN_005ae660.keep.cpp
   0.709   34 line(s) differ  core/dmodel.cpp/CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0.keep.cpp
   0.708   11 line(s) differ  core/dmodel.cpp/CKeyFramedModel_applyBias_FUN_0047c370.keep.cpp
-  0.708   53 line(s) differ  engine/fileio.cpp/CFileManager_viewPodAuditTrail_FUN_004b7f50.keep.cpp
   0.707   72 line(s) differ  engine/zraster.c/rasterizePolygonCustom_FUN_005fd4e0.keep.c
   0.706    6 line(s) differ  cockpit/pkbitmap.cpp/CPackedBitmap_getPixelValue_FUN_0054a9b0.keep.cpp
   0.706   14 line(s) differ  core/ammobox.cpp/CAmmoBox_ctor_FUN_004115a0.keep.cpp
@@ -1601,7 +1601,6 @@
   0.703   25 line(s) differ  engine/3d.c/renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860.keep.c
   0.703    9 line(s) differ  engine/fileio.cpp/CCheckOutList_add_FUN_004b2d00.keep.cpp
   0.703   22 line(s) differ  shape/design.c/removeUnusedVertices_FUN_00463830.keep.c
-  0.702  269 line(s) differ  engine/fileio.cpp/CFileManager_rebuildLastPod_FUN_004b5a50.keep.cpp
   0.702   30 line(s) differ  core/setcolid.cpp/CDemonSet_testOBBCylinderCollision_FUN_00573140.keep.cpp
   0.702   12 line(s) differ  core/skeledit.cpp/CBoneStructure_fixupMatrices_FUN_0058adb0.keep.cpp
   0.702   21 line(s) differ  core/skeleton.cpp/CDeformableModel_allocLOD_FUN_0059a510.keep.cpp
@@ -1618,6 +1617,7 @@
   0.698   31 line(s) differ  core/manpuz.cpp/CMansionPuzzleCircle_processPanel_FUN_0050a290.keep.cpp
   0.698   35 line(s) differ  shape/superopt.cpp/CPoly_isValid_FUN_005d1ff0.keep.cpp
   0.698   12 line(s) differ  core/platfrm.cpp/CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0.keep.cpp
+  0.697  272 line(s) differ  engine/fileio.cpp/CFileManager_rebuildLastPod_FUN_004b5a50.keep.cpp
   0.696    5 line(s) differ  cockpit/pkbitmap.cpp/CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0.keep.cpp
   0.696    6 line(s) differ  core/ammo.cpp/CAmmo_getBoundingBox_FUN_00410ef0.keep.cpp
   0.696    6 line(s) differ  core/ammobox.cpp/CAmmoBox_getBoundingBox_FUN_004118b0.keep.cpp
@@ -1700,6 +1700,7 @@
   0.681   10 line(s) differ  shape/edittool.cpp/CStrList_remove_FUN_004a2e00.keep.cpp
   0.680   14 line(s) differ  core/door.cpp/CDoor_processInEditor_FUN_00481590.keep.cpp
   0.680   12 line(s) differ  core/mirror.cpp/CMirror_setupCorners_FUN_00521400.keep.cpp
+  0.679   56 line(s) differ  engine/fileio.cpp/CFileManager_viewPodAuditTrail_FUN_004b7f50.keep.cpp
   0.679   78 line(s) differ  engine/pod.cpp/CPod_resolveDependenciesAndSort_FUN_005513d0.keep.cpp
   0.679   24 line(s) differ  core/bugs.cpp/CBugs_applySwarmTranslation_FUN_004276c0.keep.cpp
   0.679   38 line(s) differ  core/skeleton.cpp/CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0.keep.cpp
@@ -1863,7 +1864,7 @@
   0.628  122 line(s) differ  core/set.cpp/CDemonSet_gatherVisibleLights_FUN_0056d4a0.keep.cpp
   0.627   54 line(s) differ  core/set.cpp/CDemonSet_renderEnvMapPrimitives_FUN_00570040.keep.cpp
   0.625   74 line(s) differ  shape/superopt.cpp/COptimize_exportOptimizeGeometry_FUN_005d7e00.keep.cpp
-  0.625  111 line(s) differ  core/skeledit.cpp/CDeformableModel_exportModelToS3D_FUN_00595fc0.keep.cpp
+  0.625  113 line(s) differ  core/skeledit.cpp/CDeformableModel_exportModelToS3D_FUN_00595fc0.keep.cpp
   0.625   28 line(s) differ  shape/design.c/selectModelPart_FUN_0045de80.keep.c
   0.625   31 line(s) differ  sound/mp3.cpp/CFileBitStream_readAllocationValues_FUN_0052f670.keep.cpp
   0.625   79 line(s) differ  sound/mp3.cpp/requantizeLayer3Samples_FUN_00531d50.keep.cpp
@@ -1900,7 +1901,6 @@
   0.610  123 line(s) differ  sound/mp3.cpp/applyPolyphaseWindow_FUN_00533690.keep.cpp
   0.610   29 line(s) differ  core/dmodel.cpp/CKeyFramedModel_addFilesToExtract_FUN_0047ed00.keep.cpp
   0.610   31 line(s) differ  core/manpuz.cpp/CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0.keep.cpp
-  0.610   30 line(s) differ  core/turret.cpp/CTurret_getBoundingBox_FUN_005e2910.keep.cpp
   0.609   61 line(s) differ  core/actor.cpp/CDemonActor_doCheckForInvalidPointers_FUN_0040ac80.keep.cpp
   0.609   25 line(s) differ  core/chain.cpp/CChain_addFilesToExtract_FUN_00431250.keep.cpp
   0.609    9 line(s) differ  core/trash.cpp/CTrash_setup_FUN_005debc0.keep.cpp
@@ -1913,6 +1913,7 @@
   0.606   23 line(s) differ  shape/superopt.cpp/CObj_copyFrom_FUN_005d2650.keep.cpp
   0.606   12 line(s) differ  sound/sndmain.cpp/pushSfxOptions_FUN_005a8c30.keep.cpp
   0.605   16 line(s) differ  cockpit/pkbitmap.cpp/writePBGHeader_FUN_0054b930.keep.cpp
+  0.604   30 line(s) differ  core/turret.cpp/CTurret_getBoundingBox_FUN_005e2910.keep.cpp
   0.604   34 line(s) differ  shape/edittool.cpp/CStrList_populateFromFileSearch_FUN_004a35b0.keep.cpp
   0.603   26 line(s) differ  core/dcube.cpp/CDemonCube_load_FUN_00457530.keep.cpp
   0.602   60 line(s) differ  engine/ini.cpp/CIni_getProfileString_FUN_004fb250.keep.cpp
@@ -1937,7 +1938,6 @@
   0.597   18 line(s) differ  core/simbox.cpp/CSimBox_ctor_FUN_00588d40.keep.cpp
   0.597   33 line(s) differ  wincore/wddvmem.cpp/convertPaletteToDirectColor_FUN_004f41c0.keep.cpp
   0.596   18 line(s) differ  engine/drender.cpp/CDemonRenderer_captureTexture_FUN_0048db80.keep.cpp
-  0.595  227 line(s) differ  shape/meshlod.cpp/CLodMesh_collapseEdge_FUN_00517630.keep.cpp
   0.595   72 line(s) differ  shape/superopt.cpp/CComplexPolygon_findReflexVertex_FUN_005c8b50.keep.cpp
   0.595   13 line(s) differ  core/actor.cpp/adjustIndentationLevel_FUN_0040aee0.keep.cpp
   0.595   23 line(s) differ  core/course.cpp/CCourse_save_FUN_00442a90.keep.cpp
@@ -1958,6 +1958,7 @@
   0.588   15 line(s) differ  engine/2d.c/drawStringMasked_FUN_00402030.keep.c
   0.588   15 line(s) differ  engine/2d.c/drawString_FUN_00402080.keep.c
   0.587   40 line(s) differ  core/actor.cpp/CDemonActor_ctor_FUN_004088b0.keep.cpp
+  0.586  235 line(s) differ  shape/meshlod.cpp/CLodMesh_collapseEdge_FUN_00517630.keep.cpp
   0.586   37 line(s) differ  core/skeleton.cpp/computeBoneModelMatrices_FUN_005a1950.keep.cpp
   0.585   25 line(s) differ  core/script.cpp/CScript_loadLineToBuffer_FUN_00566230.keep.cpp
   0.583   38 line(s) differ  shape/edittool.cpp/CEditorTools_setClipboardText_FUN_004a1bc0.keep.cpp
@@ -2008,9 +2009,9 @@
   0.556    8 line(s) differ  core/gore.cpp/CBloodSplat_setupRenderState_FUN_004ec470.keep.cpp
   0.554   24 line(s) differ  core/inv.cpp/CInventory_save_FUN_004ff210.keep.cpp
   0.554   61 line(s) differ  shape/superopt.cpp/CObj_removeUnusedVertices_FUN_005d44d0.keep.cpp
-  0.553  231 line(s) differ  core/morph.cpp/CMorph_editMorph_FUN_0052bcb0.keep.cpp
   0.553   52 line(s) differ  core/dimage.cpp/CDemonImage_load_FUN_00471ad0.keep.cpp
   0.553   13 line(s) differ  shape/meshlod.cpp/CLodMesh_clearFaceAttributes_FUN_0051bcc0.keep.cpp
+  0.553  232 line(s) differ  core/morph.cpp/CMorph_editMorph_FUN_0052bcb0.keep.cpp
   0.553   26 line(s) differ  shape/meshlod.cpp/CLodMesh_processGridCell_FUN_0051a030.keep.cpp
   0.552   12 line(s) differ  core/skeleton.cpp/CDeformableModelInstance_init_FUN_005a0840.keep.cpp
   0.552   10 line(s) differ  core/skeleton.cpp/CDeformableModel_calculateMemorySize_FUN_0059dd60.keep.cpp
@@ -2361,7 +2362,7 @@
   0.040  836 line(s) differ  engine/special.cpp/renderMMXPerspectiveScanline32_FUN_005b4031.keep.cpp
   0.039  861 line(s) differ  engine/special.cpp/renderMMXPerspectiveScanline16_FUN_005b4823.keep.cpp
 
--- SHIM: uses a shim/AUTHENTIC switch - carries behaviour, kept whatever its ratio --  296
+-- SHIM: uses a shim/AUTHENTIC switch - carries behaviour, kept whatever its ratio --  300
   0.984    4 line(s) differ  core/batman.cpp/CBatman_processDismemberment_FUN_00417660.keep.cpp  [near]
   0.980    4 line(s) differ  core/imp.cpp/CImp_processDismemberment_FUN_004fab60.keep.cpp  [near]
   0.980    4 line(s) differ  core/gargoyle.cpp/CGargoyle_processDismemberment_FUN_004e5530.keep.cpp  [near]
@@ -2402,7 +2403,6 @@
   0.933    8 line(s) differ  core/main.c/showPromoScreen_FUN_00508340.keep.c  [partial]
   0.931   32 line(s) differ  shape/cramtex.cpp/generateTextureAtlasLayout_FUN_00444d90.keep.cpp  [partial]
   0.928   25 line(s) differ  sound/sndmain.cpp/CSfxSample_pollStream_FUN_005a6730.keep.cpp  [partial]
-  0.927   30 line(s) differ  core/game.cpp/CGame_processHotkeys_FUN_004dcee0.keep.cpp  [partial]
   0.924   38 line(s) differ  core/stranger.cpp/CStranger_autoAimAtThreat_FUN_005c3960.keep.cpp  [partial]
   0.920    4 line(s) differ  core/fire.cpp/CFireEffect_createSpark_FUN_004c79d0.keep.cpp  [partial]
   0.920   18 line(s) differ  core/ghoul.cpp/CGhoul_processDamage_FUN_004e87e0.keep.cpp  [partial]
@@ -2414,6 +2414,7 @@
   0.916   22 line(s) differ  core/fire.cpp/CLightningBolt_render_FUN_004c5720.keep.cpp  [partial]
   0.913    4 line(s) differ  shape/edittool.cpp/CEditorTools_displayCenteredStatusMessage_FUN_0049e790.keep.cpp  [partial]
   0.913   27 line(s) differ  core/charactr.cpp/CCharacter_walkToPoint_FUN_004286e0.keep.cpp  [partial]
+  0.912   38 line(s) differ  core/game.cpp/CGame_processHotkeys_FUN_004dcee0.keep.cpp  [partial]
   0.910   35 line(s) differ  shape/edittool.cpp/CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0.keep.cpp  [partial]
   0.910   22 line(s) differ  core/scat.cpp/CScat_updateAI_FUN_005578e0.keep.cpp  [partial]
   0.909    8 line(s) differ  core/sound.cpp/CSound_configure_FUN_005b3830.keep.cpp  [partial]
@@ -2422,7 +2423,7 @@
   0.902   68 line(s) differ  core/game.cpp/CGame_showChapterSelect_FUN_004e1cb0.keep.cpp  [partial]
   0.902   31 line(s) differ  core/icepick.cpp/CIcePick_processAI_FUN_004f8c70.keep.cpp  [partial]
   0.902   32 line(s) differ  core/svetlana.cpp/CSvetlana_processAI_FUN_005d9260.keep.cpp  [partial]
-  0.902  516 line(s) differ  core/script.cpp/CScript_step_FUN_0055a810.keep.cpp  [partial]
+  0.901  521 line(s) differ  core/script.cpp/CScript_step_FUN_0055a810.keep.cpp  [partial]
   0.901   13 line(s) differ  core/flies.cpp/CFlies_generateRandomPoint_FUN_004cc820.keep.cpp  [partial]
   0.901   94 line(s) differ  core/werewolf.cpp/CWerewolf_process_FUN_005efde0.keep.cpp  [partial]
   0.900    5 line(s) differ  core/flame.cpp/CFlame_ctor_FUN_004c9aa0.keep.cpp  [partial]
@@ -2436,12 +2437,14 @@
   0.889   16 line(s) differ  core/menu.cpp/getKeyDisplayName_FUN_005134e0.keep.cpp  [partial]
   0.889    7 line(s) differ  shape/edittool.cpp/CPickList_displayChoicesAndWaitForInput_FUN_004a3e20.keep.cpp  [partial]
   0.887  112 line(s) differ  core/dracbrid.cpp/CDraculaBride_process_FUN_00484410.keep.cpp  [partial]
+  0.885    6 line(s) differ  core/motion.cpp/CMotionController_getStateBlendWeight_FUN_0052dd20.keep.cpp  [partial]
   0.883    8 line(s) differ  core/fire.cpp/CSmokeParticle_process_FUN_004bf390.keep.cpp  [partial]
   0.883    8 line(s) differ  core/mission.cpp/CDemonMission_startMission_FUN_00524760.keep.cpp  [partial]
   0.883    9 line(s) differ  shape/edittool.cpp/CInputString_calcX_FUN_0049d8f0.keep.cpp  [partial]
   0.882    7 line(s) differ  core/elephant.cpp/CElephantGun_onFired_FUN_004a78a0.keep.cpp  [partial]
   0.882   33 line(s) differ  core/haystack.cpp/CHaystack_updateAI_FUN_004f13f0.keep.cpp  [partial]
   0.882   25 line(s) differ  core/moloch.cpp/CMoloch_processAI_FUN_005293b0.keep.cpp  [partial]
+  0.881   20 line(s) differ  core/platfrm.cpp/CPlatform_renderOpaque_FUN_0054d720.keep.cpp  [partial]
   0.881   23 line(s) differ  core/menu.cpp/renderMenuAndGetChoice_FUN_00510000.keep.cpp  [partial]
   0.880   23 line(s) differ  sound/sndmain.cpp/CSfxSlot_compute_FUN_005a7100.keep.cpp  [partial]
   0.879   19 line(s) differ  sound/snddx.cpp/CDirectSoundDevice_allocateSfx_FUN_005af410.keep.cpp  [partial]
@@ -2482,7 +2485,6 @@
   0.848   58 line(s) differ  core/haystack.cpp/CHaystack_process_FUN_004f0e40.keep.cpp  [partial]
   0.846    8 line(s) differ  core/actor.cpp/getRandomInt_FUN_0040cc70.keep.cpp  [partial]
   0.846    4 line(s) differ  core/bodypart.cpp/CBodyPart_spawnGore_FUN_0041b1b0.keep.cpp  [partial]
-  0.846   24 line(s) differ  core/mission.cpp/CDemonMission_run_FUN_00524420.keep.cpp  [partial]
   0.846   16 line(s) differ  core/svetlana.cpp/CSvetlana_processDamage_FUN_005d9d30.keep.cpp  [partial]
   0.846    4 line(s) differ  shape/edittool.cpp/initEditorFontMetrics_FUN_0049d1f0.keep.cpp  [partial]
   0.845   29 line(s) differ  core/stranger.cpp/CStranger_processDamage_FUN_005c48b0.keep.cpp  [partial]
@@ -2505,6 +2507,7 @@
   0.829   16 line(s) differ  core/bodypart.cpp/createBodyPart_FUN_00418e10.keep.cpp  [partial]
   0.828   21 line(s) differ  core/gabriela.cpp/CGabriella_processDamage_FUN_004d6b30.keep.cpp  [partial]
   0.827   11 line(s) differ  core/flies.cpp/CFlies_initFly_FUN_004cc760.keep.cpp  [partial]
+  0.825   28 line(s) differ  core/mission.cpp/CDemonMission_run_FUN_00524420.keep.cpp  [partial]
   0.824    5 line(s) differ  core/emitter.cpp/CEmitter_setup_FUN_004a7e00.keep.cpp  [partial]
   0.823   46 line(s) differ  shape/edittool.cpp/CEditorTools_createModalWindow_FUN_004a0970.keep.cpp  [partial]
   0.818    8 line(s) differ  core/game.cpp/CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0.keep.cpp  [partial]
@@ -2513,15 +2516,14 @@
   0.817   13 line(s) differ  core/anvil.cpp/CAnvil_process_FUN_00411d90.keep.cpp  [partial]
   0.814   72 line(s) differ  core/colonel.cpp/CColonel_process_FUN_0043fa00.keep.cpp  [partial]
   0.814   23 line(s) differ  core/fire.cpp/CBulletHole_init_FUN_004bf7f0.keep.cpp  [partial]
-  0.812   33 line(s) differ  core/netgame.cpp/CNetGame_initializeNetworkToJoin_FUN_0053f900.keep.cpp  [partial]
   0.812  151 line(s) differ  core/vampboss.cpp/CVampireBoss_process_FUN_005e5970.keep.cpp  [partial]
   0.811   19 line(s) differ  core/event.cpp/resolveActorByName_FUN_004aa400.keep.cpp  [partial]
   0.811   17 line(s) differ  core/fire.cpp/CShell_onCollision_FUN_004c6380.keep.cpp  [partial]
   0.811    6 line(s) differ  core/icepick.cpp/CIcePick_ctor_FUN_004f7df0.keep.cpp  [partial]
   0.810   91 line(s) differ  core/game.cpp/CGame_loadGame_FUN_004e12b0.keep.cpp  [partial]
+  0.809   34 line(s) differ  core/netgame.cpp/CNetGame_initializeNetworkToJoin_FUN_0053f900.keep.cpp  [partial]
   0.808   10 line(s) differ  shape/edittool.cpp/CEditorTools_drawWindowStatusMessage_FUN_0049e870.keep.cpp  [partial]
   0.808   29 line(s) differ  shape/edittool.cpp/drawSingleButtonPrompt_FUN_0049e130.keep.cpp  [partial]
-  0.806   10 line(s) differ  core/netgame.cpp/CNetGame_initializeNetworkToHost_FUN_0053f860.keep.cpp  [partial]
   0.805   77 line(s) differ  core/menu.cpp/configureCustomKeys_FUN_00511890.keep.cpp  [partial]
   0.804   17 line(s) differ  core/path.cpp/CPathMap_updateIfNeeded_FUN_00546a60.keep.cpp  [partial]
   0.804   37 line(s) differ  core/fire.cpp/CGlassParticle_init_FUN_004c1c00.keep.cpp  [partial]
@@ -2534,6 +2536,7 @@
   0.800    8 line(s) differ  shape/edittool.cpp/calculateButtonWidth_FUN_004a68e0.keep.cpp  [partial]
   0.797   99 line(s) differ  core/inv.cpp/CInventory_renderAllItems_FUN_00500690.keep.cpp  [rewritten]
   0.795   15 line(s) differ  core/baron.cpp/CBaronWeapon_findOrCreateBaron_FUN_00413f20.keep.cpp  [rewritten]
+  0.794   10 line(s) differ  core/netgame.cpp/CNetGame_initializeNetworkToHost_FUN_0053f860.keep.cpp  [rewritten]
   0.789    8 line(s) differ  core/actor.cpp/getRandomFloatFromRange_FUN_0040cc10.keep.cpp  [rewritten]
   0.789    8 line(s) differ  core/actor.cpp/randomChance_FUN_0040cd10.keep.cpp  [rewritten]
   0.789  223 line(s) differ  core/menu.cpp/configureGraphicsOptions_FUN_00510c80.keep.cpp  [rewritten]
@@ -2544,15 +2547,14 @@
   0.782   12 line(s) differ  core/netgame.cpp/CNetGame_initializeNetwork_FUN_0053fbc0.keep.cpp  [rewritten]
   0.781  103 line(s) differ  sound/sndmain.cpp/CSfxSlot_mix_FUN_005a75e0.keep.cpp  [rewritten]
   0.777   50 line(s) differ  core/game.cpp/CGame_rollCredits_FUN_004e4010.keep.cpp  [rewritten]
-  0.776   49 line(s) differ  core/set.cpp/CDemonSet_buildDisplayList_FUN_0056fbd0.keep.cpp  [rewritten]
   0.773   71 line(s) differ  core/main.c/enterMainGameMenu_FUN_00507a50.keep.c  [rewritten]
   0.772   12 line(s) differ  engine/drender.cpp/CDemonRenderer_depthTest_FUN_0048dc50.keep.cpp  [rewritten]
-  0.770  143 line(s) differ  core/game.cpp/CGame_processFrame_FUN_004da100.keep.cpp  [rewritten]
   0.769   11 line(s) differ  core/flame.cpp/CFlame_updateGlobe_FUN_004cad90.keep.cpp  [rewritten]
   0.767   50 line(s) differ  core/main.c/finalizeGameSystems_FUN_00508570.keep.c  [rewritten]
   0.765   69 line(s) differ  core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp  [rewritten]
   0.765    7 line(s) differ  core/gabriela.cpp/CGabriella_tryFireWeapon_FUN_004d5fe0.keep.cpp  [rewritten]
   0.763   26 line(s) differ  core/script.cpp/getActor_FUN_005594e0.keep.cpp  [rewritten]
+  0.763  150 line(s) differ  core/game.cpp/CGame_processFrame_FUN_004da100.keep.cpp  [rewritten]
   0.762    9 line(s) differ  core/fire.cpp/CShell_setup_FUN_004c6170.keep.cpp  [rewritten]
   0.760   39 line(s) differ  core/dcamera.cpp/CDemonCamera_renderLightCoronas_FUN_00450ac0.keep.cpp  [rewritten]
   0.759   28 line(s) differ  core/simbox.cpp/CSimBox_process_FUN_00588f20.keep.cpp  [rewritten]
@@ -2562,13 +2564,15 @@
   0.753   16 line(s) differ  core/netgame.cpp/CNetGame_sendSimFrameAck_FUN_00543970.keep.cpp  [rewritten]
   0.750  104 line(s) differ  core/larva.cpp/CLarva_process_FUN_00503080.keep.cpp  [rewritten]
   0.750   20 line(s) differ  core/event.cpp/CEventList_process_FUN_004aaac0.keep.cpp  [rewritten]
+  0.750   50 line(s) differ  core/set.cpp/CDemonSet_buildDisplayList_FUN_0056fbd0.keep.cpp  [rewritten]
   0.749   45 line(s) differ  core/gabriela.cpp/CGabriella_updateWeaponPosition_FUN_004d5550.keep.cpp  [rewritten]
   0.741   19 line(s) differ  core/moon.cpp/CMoon_init_FUN_00529ae0.keep.cpp  [rewritten]
   0.741   17 line(s) differ  engine/console.cpp/CConsole_writeChar_FUN_00441970.keep.cpp  [rewritten]
   0.739  640 line(s) differ  core/event.cpp/CEventList_evaluateAtom_FUN_004ae140.keep.cpp  [rewritten]
-  0.739  638 line(s) differ  core/game.cpp/CGame_processCheatCodes_FUN_004ddaf0.keep.cpp  [rewritten]
   0.738  157 line(s) differ  core/set.cpp/CDemonSet_load_FUN_00569410.keep.cpp  [rewritten]
+  0.738  643 line(s) differ  core/game.cpp/CGame_processCheatCodes_FUN_004ddaf0.keep.cpp  [rewritten]
   0.737  257 line(s) differ  core/gabriela.cpp/CGabriella_process_FUN_004d2ea0.keep.cpp  [rewritten]
+  0.737   19 line(s) differ  core/haystack.cpp/CHaystack_checkMeleeHit_FUN_004f1ab0.keep.cpp  [rewritten]
   0.736   39 line(s) differ  core/charactr.cpp/CCharacter_renderBurn_FUN_0042ad00.keep.cpp  [rewritten]
   0.735   13 line(s) differ  shape/edittool.cpp/calculateButtonHeight_FUN_004a6970.keep.cpp  [rewritten]
   0.733    8 line(s) differ  core/actor.cpp/getRandomFloat_FUN_0040cbc0.keep.cpp  [rewritten]
@@ -2586,11 +2590,11 @@
   0.716   23 line(s) differ  core/mission.cpp/CDemonMission_process_FUN_00524250.keep.cpp  [rewritten]
   0.715  101 line(s) differ  core/netgame.cpp/CNetGame_processServerFrame_FUN_00543150.keep.cpp  [rewritten]
   0.706    5 line(s) differ  core/colonel.cpp/CColonel_renderOpaque_FUN_004404a0.keep.cpp  [rewritten]
-  0.704   44 line(s) differ  core/script.cpp/CScript_startDialogLine_FUN_0055ff00.keep.cpp  [rewritten]
   0.700    5 line(s) differ  engine/console.cpp/CConsole_reset_FUN_00441a40.keep.cpp  [rewritten]
   0.697   91 line(s) differ  core/charactr.cpp/CCharacter_processFire_FUN_0042a830.keep.cpp  [rewritten]
   0.696   21 line(s) differ  core/game.cpp/hostNetworkGame_FUN_004e2f10.keep.cpp  [rewritten]
   0.696    7 line(s) differ  core/motion.cpp/CMotionController_ctor_FUN_0052d570.keep.cpp  [rewritten]
+  0.696   46 line(s) differ  core/script.cpp/CScript_startDialogLine_FUN_0055ff00.keep.cpp  [rewritten]
   0.692   29 line(s) differ  core/colonel.cpp/CColonel_processDamage_FUN_004404b0.keep.cpp  [rewritten]
   0.689   86 line(s) differ  core/dlight.cpp/CDemonLight_drawShadowDepthBuffer_FUN_00476670.keep.cpp  [rewritten]
   0.688   24 line(s) differ  core/mirror.cpp/CMirror_renderMirrorQuadDepth_FUN_00522800.keep.cpp  [rewritten]
@@ -2603,12 +2607,12 @@
   0.680   10 line(s) differ  core/inv.cpp/CInventory_initialize_FUN_004fd190.keep.cpp  [rewritten]
   0.679   65 line(s) differ  core/set.cpp/CDemonSet_renderEnvMapTriangles_FUN_005702b0.keep.cpp  [rewritten]
   0.679   13 line(s) differ  core/fire.cpp/CSmokeParticle_init_FUN_004bf2f0.keep.cpp  [rewritten]
-  0.675  117 line(s) differ  core/succubus.cpp/CSuccubus_process_FUN_005c6e90.keep.cpp  [rewritten]
   0.674   21 line(s) differ  core/weapon.cpp/CWeapon_process_FUN_005ee110.keep.cpp  [rewritten]
   0.671   80 line(s) differ  core/mimic.cpp/CMimic_setup_FUN_0051f3e0.keep.cpp  [rewritten]
   0.671   50 line(s) differ  core/mission.cpp/CDemonMission_createOneHero_FUN_00524920.keep.cpp  [rewritten]
   0.667    4 line(s) differ  core/svetlana.cpp/CSvetlana_getGrabbed_FUN_005d9ec0.keep.cpp  [rewritten]
   0.667   26 line(s) differ  shape/edittool.cpp/CEdCheck_setupWithText_FUN_004a6a60.keep.cpp  [rewritten]
+  0.665  125 line(s) differ  core/succubus.cpp/CSuccubus_process_FUN_005c6e90.keep.cpp  [rewritten]
   0.665  138 line(s) differ  core/set.cpp/CDemonSet_renderScene_FUN_0056c1a0.keep.cpp  [rewritten]
   0.661  362 line(s) differ  core/menu.cpp/configureSoundOptions_FUN_00511e50.keep.cpp  [rewritten]
   0.660   22 line(s) differ  core/game.cpp/CGame_playerControls_FUN_004dbd80.keep.cpp  [rewritten]
@@ -2617,8 +2621,8 @@
   0.650  442 line(s) differ  core/stranger.cpp/CStranger_processFrame_FUN_005bb960.keep.cpp  [rewritten]
   0.650   22 line(s) differ  core/set.cpp/CDemonSet_setupMirrorRendering_FUN_005709e0.keep.cpp  [rewritten]
   0.649   70 line(s) differ  core/inv.cpp/CInventory_select_FUN_004ff800.keep.cpp  [rewritten]
-  0.639  249 line(s) differ  core/netgame.cpp/CNetGame_processPacket_FUN_005406a0.keep.cpp  [rewritten]
   0.636   38 line(s) differ  core/game.cpp/CGame_promptLoadGame_FUN_004e36f0.keep.cpp  [rewritten]
+  0.632  253 line(s) differ  core/netgame.cpp/CNetGame_processPacket_FUN_005406a0.keep.cpp  [rewritten]
   0.632   23 line(s) differ  core/game.cpp/CGame_renderIrisFade_FUN_004e0aa0.keep.cpp  [rewritten]
   0.629   12 line(s) differ  core/path.cpp/CPathMap_reset_FUN_00548510.keep.cpp  [rewritten]
   0.627  134 line(s) differ  core/icepick.cpp/CIcePick_process_FUN_004f80b0.keep.cpp  [rewritten]
@@ -2627,12 +2631,13 @@
   0.595   88 line(s) differ  core/moon.cpp/CMoon_render_FUN_00529ed0.keep.cpp  [rewritten]
   0.590   21 line(s) differ  engine/console.cpp/CConsole_scrollUp_FUN_00441a80.keep.cpp  [rewritten]
   0.587  468 line(s) differ  core/ghoul.cpp/CGhoul_process_FUN_004e6600.keep.cpp  [rewritten]
-  0.565  148 line(s) differ  core/actor.cpp/CDemonActor_processMeleeHit_FUN_0040a210.keep.cpp  [rewritten]
+  0.564  149 line(s) differ  core/actor.cpp/CDemonActor_processMeleeHit_FUN_0040a210.keep.cpp  [rewritten]
   0.560   16 line(s) differ  wincore/winrun.cpp/processWindowMessages_FUN_005f35e0.keep.cpp  [rewritten]
   0.557  136 line(s) differ  core/sound.cpp/playSfxInternal_FUN_005b1fd0.keep.cpp  [rewritten]
   0.547  147 line(s) differ  shape/edittool.cpp/CEditorTools_showFilenameInputDialog_FUN_0049fb70.keep.cpp  [rewritten]
   0.546  143 line(s) differ  core/game.cpp/CGame_finishAct_FUN_004e3b90.keep.cpp  [rewritten]
   0.546  241 line(s) differ  core/imp.cpp/CImp_process_FUN_004f9c30.keep.cpp  [rewritten]
+  0.545   10 line(s) differ  core/succubus.cpp/CSuccubus_processDamage_FUN_005c7760.keep.cpp  [rewritten]
   0.545   10 line(s) differ  engine/console.cpp/staticInit_FUN_004417e0.keep.cpp  [rewritten]
   0.527   37 line(s) differ  core/menu.cpp/showCalibrationTestPattern_FUN_00510a50.keep.cpp  [rewritten]
   0.524   62 line(s) differ  engine/console.cpp/CConsole_render_FUN_00441b00.keep.cpp  [rewritten]

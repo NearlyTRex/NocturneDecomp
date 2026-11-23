@@ -10,7 +10,7 @@ whose entry is stamped into a place where no real function exists at all, e.g.
 data. There is no valid start to slide the boundary to - the function must be
 removed outright.
 
-Report-first. Pass --apply to mutate + save.
+Report-first. Pass --apply to snapshot the project, then mutate + save.
 
 For each target address:
   * getFunctionAt(addr) - the entry must land EXACTLY on a function entry.
@@ -35,33 +35,19 @@ Persist: getDomainFile().save() - project.save() alone silently discards changes
 Usage:
     GHIDRA_INSTALL_DIR=/path/to/ghidra/lib \
     python3 -u delete_function.py <ABS_project_path> <project_name> [program_name] \
-            --addr 005748cd [--addr ...] [--apply] [--undefine] [--force]
+            --addr 005748cd [--addr ...] [--apply] [--undefine] [--force] [--no-snapshot]
 """
 
 import argparse
 import os
+import subprocess
+import sys
+import traceback
 
+# fix_misaligned_functions reaches it through this module
+from fix_function_boundaries import clear_vacated_symbol  # noqa: F401
 
-def clear_vacated_symbol(program, addr, old_name):
-    """Delete the label removeFunction() leaves behind at a vacated entry.
-
-    Matches by exact name so genuine LAB_* / jump-target labels at the same
-    address are untouched. Returns the number of symbols deleted.
-    (Same logic as fix_function_boundaries.clear_vacated_symbol.)
-    """
-    from ghidra.program.model.symbol import SymbolType
-    deleted = 0
-    try:
-        for sym in program.getSymbolTable().getSymbols(addr):
-            if sym.getName() != old_name:
-                continue
-            if sym.getSymbolType() == SymbolType.FUNCTION:
-                continue  # a live function still owns this - leave it alone
-            if sym.delete():
-                deleted += 1
-    except Exception as e:
-        print("      WARN: could not clear stale symbol at %s: %s" % (addr, e))
-    return deleted
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def parse_addr(program, hexstr):
@@ -118,10 +104,11 @@ def gather(program, hexstr):
 
 
 def report(infos, force):
+    """Print each target, and mark the referenced ones skipped unless force."""
     print("\nDelete-function report")
     print("=" * 60)
     for i in infos:
-        if i["skip"] and i["func"] is None:
+        if i["func"] is None:
             print("%-10s  SKIP: %s" % (i["req"], i["skip"]))
             continue
         refs = i["n_call"] + i["n_data"] + i["n_other"]
@@ -143,7 +130,10 @@ def report(infos, force):
 
 
 def apply(program, infos, undefine):
-    from ghidra.util.task import ConsoleTaskMonitor
+    """Delete the unskipped targets in one transaction.
+
+    Returns (ok, changed): ok is False when an error rolled the transaction back.
+    """
     fm = program.getFunctionManager()
     listing = program.getListing()
 
@@ -153,7 +143,7 @@ def apply(program, infos, undefine):
     ok = True
     try:
         for i in infos:
-            if i.get("skip") or i["func"] is None:
+            if i["skip"]:
                 continue
             entry = i["entry"]
             name = i["name"]
@@ -163,35 +153,78 @@ def apply(program, infos, undefine):
                 for r in i["func"].getBody().getAddressRanges():
                     ranges.append((r.getMinAddress(), r.getMaxAddress()))
 
-            removed = fm.removeFunction(entry)
-            if not removed:
+            if not fm.removeFunction(entry):
                 print("  !! removeFunction returned False for %s (%s)" % (entry, name))
                 continue
             stale += clear_vacated_symbol(program, entry, name)
 
-            cleared = 0
-            if undefine:
-                for lo, hi in ranges:
-                    listing.clearCodeUnits(lo, hi, False)
-                    cleared += 1
+            for lo, hi in ranges:
+                listing.clearCodeUnits(lo, hi, False)
             changed = True
             print("  deleted %s (%s)%s" % (
                 entry, name,
-                ("  + undefined %d body range(s)" % cleared) if undefine else ""))
+                ("  + undefined %d body range(s)" % len(ranges)) if undefine else ""))
     except Exception as e:
         ok = False
         print("ERROR during apply: %s" % e)
-        import traceback
         traceback.print_exc()
     finally:
         program.endTransaction(tx, ok)
 
     if stale:
         print("cleared %d stale symbol(s) at vacated entry addresses" % stale)
-    return changed and ok
+    return ok, changed
 
 
-def main():
+def write_report(out_path, args, infos, actionable):
+    lines = ["Delete-function report: %s" % args.program_name,
+             "requested: %d  actionable: %d  mode: %s%s" % (
+                 len(infos), len(actionable),
+                 "APPLY" if args.apply else "report",
+                 " (--undefine)" if args.undefine else ""), ""]
+    for i in infos:
+        if i["func"] is None:
+            lines.append("%-10s  --  SKIP: %s" % (i["req"], i["skip"]))
+        else:
+            lines.append("%-10s  %-50s refs=%d/%d/%d  %s" % (
+                i["entry"], i["name"], i["n_call"], i["n_data"], i["n_other"],
+                ("SKIP: %s" % i["skip"]) if i["skip"] else "deletable"))
+    with open(out_path, "w") as fh:
+        fh.write("\n".join(lines) + "\n")
+    print("\nReport written to: %s" % out_path)
+
+
+def run(program, args, out_path):
+    """Report, and with --apply delete and save. Returns the exit code."""
+    infos = [gather(program, h) for h in args.addr]
+    report(infos, args.force)
+    actionable = [i for i in infos if not i["skip"]]
+    write_report(out_path, args, infos, actionable)
+
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+        return 0
+    if not actionable:
+        print("\nNothing actionable to apply (all targets skipped).")
+        return 0
+    print("\n[apply] deleting %d function(s)" % len(actionable))
+    ok, changed = apply(program, infos, args.undefine)
+    if ok and changed:
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("Saving program database...")
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("Saved.")
+    return 0 if ok else 1
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-delete-function"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(description="Delete mis-defined (bogus) functions from a Ghidra program.")
     p.add_argument("project_path")
     p.add_argument("project_name")
@@ -204,58 +237,35 @@ def main():
                         "(revert mis-decoded bytes to undefined)")
     p.add_argument("--force", action="store_true",
                    help="Delete even functions that have incoming references (DANGEROUS)")
+    p.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
     p.add_argument("--out", default=None)
-    args = p.parse_args()
+    args = p.parse_args(argv)
 
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_deleted_functions.txt" % args.program_name)
+
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
 
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
-    code = 0
+
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            infos = [gather(program, h) for h in args.addr]
-            report(infos, args.force)
-
-            actionable = [i for i in infos if not i.get("skip") and i["func"] is not None]
-            lines = ["Delete-function report: %s" % args.program_name,
-                     "requested: %d  actionable: %d  mode: %s%s" % (
-                         len(infos), len(actionable),
-                         "APPLY" if args.apply else "report",
-                         " (--undefine)" if args.undefine else ""), ""]
-            for i in infos:
-                if i["func"] is None:
-                    lines.append("%-10s  --  SKIP: %s" % (i["req"], i["skip"]))
-                else:
-                    lines.append("%-10s  %-50s refs=%d/%d/%d  %s" % (
-                        i["entry"], i["name"], i["n_call"], i["n_data"], i["n_other"],
-                        ("SKIP: %s" % i["skip"]) if i.get("skip") else "deletable"))
-            with open(out_path, "w") as fh:
-                fh.write("\n".join(lines) + "\n")
-            print("\nReport written to: %s" % out_path)
-
-            if args.apply and actionable:
-                print("\n[apply] deleting %d function(s)" % len(actionable))
-                changed = apply(program, infos, args.undefine)
-                if changed:
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    print("Saving program database...")
-                    program.getDomainFile().save(ConsoleTaskMonitor())
-                    print("Saved.")
-            elif args.apply and not actionable:
-                print("\nNothing actionable to apply (all targets skipped).")
-            else:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            code = run(program, args, out_path)
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
+
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(code)
 
 

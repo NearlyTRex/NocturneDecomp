@@ -642,8 +642,8 @@ section .text
         ;   Label: LAB_004d9595
     MOV ECX,0x57                        ; 004d959a
     PUSH 0x5c58df                       ; 004d959f | = "Please copy Blair Witch 3 to your har..."
-    MOV dword ptr [0x01d71de0],EDX      ; 004d95a4 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 004d95aa | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 004d95a4 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 004d95aa | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d95b0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d95b5

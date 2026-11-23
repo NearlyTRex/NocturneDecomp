@@ -226,8 +226,8 @@ section .text
         ;   Label: LAB_0050fbe0
     MOV EDI,0x57                        ; 0050fbe5
     PUSH 0x5e12c0                       ; 0050fbea | = "Unknown message file version"
-    MOV dword ptr [0x01d046a0],ESI      ; 0050fbef | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050fbf5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0050fbef | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0050fbf5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fbfb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050fc00
@@ -250,8 +250,8 @@ section .text
     MOV ECX,0x5e12fa                    ; 0050fc27 | = "..\\support\\newmsg.cpp"
     MOV ESI,0x68                        ; 0050fc2c
     PUSH 0x5e1310                       ; 0050fc31 | = "Error reading %s"
-    MOV dword ptr [0x01d046a0],ECX      ; 0050fc36 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0050fc3c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0050fc36 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0050fc3c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fc42
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fc47
@@ -263,8 +263,8 @@ section .text
     MOV EAX,0x5e1321                    ; 0050fc57 | = "..\\support\\newmsg.cpp"
     MOV EDX,0x6d                        ; 0050fc5c
     PUSH 0x5e1337                       ; 0050fc61 | = "Too many messages in %s"
-    MOV [0x01d046a0],EAX                ; 0050fc66 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0050fc6b | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0050fc66 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0050fc6b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fc71
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fc76
@@ -293,8 +293,8 @@ section .text
     MOV ESI,0x5e134f                    ; 0050fcb0 | = "..\\support\\newmsg.cpp"
     MOV EDI,0x70                        ; 0050fcb5
     PUSH 0x5e1365                       ; 0050fcba | = "Out of memory mallocing message tag : %s"
-    MOV dword ptr [0x01d046a0],ESI      ; 0050fcbf | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050fcc5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0050fcbf | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0050fcc5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fccb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fcd0
@@ -364,8 +364,8 @@ section .text
     MOV EDX,0x5e138e                    ; 0050fd5f | = "..\\support\\newmsg.cpp"
     MOV ECX,0x73                        ; 0050fd64
     PUSH 0x5e13a4                       ; 0050fd69 | = "Out of memory mallocing message tag : %s"
-    MOV dword ptr [0x01d046a0],EDX      ; 0050fd6e | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0050fd74 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0050fd6e | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0050fd74 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050fd7a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0050fd7f

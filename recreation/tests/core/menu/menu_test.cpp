@@ -41,6 +41,7 @@
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -176,6 +177,16 @@ protected:
         return -1;
     }
 
+    // The last pixel drawn along row y, or -1.
+    [[nodiscard]] int lastLit(int y) const {
+        for (int x = ScreenWidth - 1; x >= 0; --x) {
+            if (lit(x, y)) {
+                return x;
+            }
+        }
+        return -1;
+    }
+
     void press(EInputCodeType code) {
         keyboard_[static_cast<std::size_t>(code)] = 1;
     }
@@ -208,11 +219,14 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = engine::getShippedGameContent()}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,       two_d_,
+                  three_d_,  colors_,       os_fonts_,
+                  messages_, editor_tools_, engine::getShippedGameContent()};
     NiceMock<engine::MockGameClock> game_clock_;
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
@@ -237,7 +251,7 @@ protected:
     CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
     engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     engine::CPod pod_{file_system_, dosio_};
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, game_parts_.getContent()};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -425,6 +439,26 @@ TEST_F(CMenuTest, TheSelectedItemGlowsInTheTitleAnimationsFirstHalf) {
     EXPECT_TRUE(lit(158, letterRow(98)));
 }
 
+// A game whose glow doesn't flicker draws the selected item steady throughout.
+TEST_F(CMenuTest, WithoutFlickerTheSelectedItemIsSteadyInTheFirstHalfToo) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_FALSE(lit(158, letterRow(98)));
+}
+
+TEST_F(CMenuTest, AFontNoneLoadsIsFatal) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.font = "gothic";
+    int selected = 0;
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font gothic is loaded")));
+}
+
 TEST_F(CMenuTest, InTheSecondHalfTheSelectedItemIsSteadyAndBrighter) {
     menu_.getMoon().update(2.5F);
     int selected = 0;
@@ -493,6 +527,28 @@ TEST_F(CWideMenuTest, TheFooterKeepsToTheScreensCorners) {
     EXPECT_TRUE(lit(kWideWidth - 1 - smallFont().getTextWidth(copyright), letterRow(bottom)));
 }
 
+// The title backdrop's corner: the sky has no still picture, so it is the screen's.
+TEST_F(CWideMenuTest, TheBuildsLineCanKeepToTheBackdropsCorner) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version.edge = engine::EFooterEdge::Backdrop;
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+}
+
+// The layout's corner is the 4:3 picture's.
+TEST_F(CWideMenuTest, TheBuildsLineCanKeepToTheLayoutsCorner) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version.edge = engine::EFooterEdge::Layout;
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_EQ(firstLit(letterRow(bottom)), kLeft + 4);
+}
+
 TEST_F(CWideMenuTest, TheGlowMovesWithTheItem) {
     int selected = 0;
     choose({"XX"}, selected);
@@ -541,6 +597,138 @@ TEST_F(CMenuTest, TheItemsStartAtThePackagesLeftEdge) {
     int selected = 1;
     choose({"XX", "XX"}, selected);
     EXPECT_EQ(firstLit(letterRow(100)), 300);
+}
+
+// As a long device name makes one beside a menu on the right: it ends in "..." short of the edge,
+// where whole it would run off.
+TEST_F(CMenuTest, AnItemTooWideForTheRoomToTheRightIsShortened) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 560;
+    int selected = 1;
+    choose({std::string(40, 'X'), "XX"}, selected);
+    const int row = letterRow(100);
+    EXPECT_EQ(firstLit(row), 560);
+    EXPECT_LT(lastLit(row), kWidth - 1);
+    EXPECT_GT(lastLit(row), 600);
+}
+
+TEST_F(CMenuTest, AnItemThatFitsIsDrawnWhole) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 560;
+    int whole = 1;
+    choose({"XX", "XX"}, whole);
+    const int fitting = lastLit(letterRow(100));
+    EXPECT_GT(fitting, 560);
+    EXPECT_LT(fitting, 600);
+}
+
+// BW2's: each line about the layout's middle, the title too.
+TEST_F(CMenuTest, CentredMenusCentreEachLine) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->align = engine::EMenuAlign::Centre;
+    menu->item.glow.flicker = false;
+    int selected = 1;
+    choose({"XX", "XXXXXX"}, selected, "XXXX");
+    EXPECT_EQ(firstLit(letterRow(100)), (kWidth - smallFont().getTextWidth("XXXX")) / 2);
+    const int first_item = 100 + (menu->title.gap_lines * lineHeight());
+    EXPECT_EQ(firstLit(letterRow(first_item)), (kWidth - smallFont().getTextWidth("XX")) / 2);
+    EXPECT_EQ(firstLit(letterRow(first_item + lineHeight())),
+              (kWidth - smallFont().getTextWidth("XXXXXX")) / 2);
+}
+
+// BW3's main menu: each line at its own point; one past the last follows it; a titled list keeps
+// to the layout's left.
+TEST_F(CMenuTest, AListWithoutATitlePutsEachLineAtItsPoint) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 300, .y = 120}, {.x = 200, .y = 200}};
+    int selected = 0;
+    choose({"XX", "XX", "XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(120)), 300);
+    EXPECT_EQ(firstLit(letterRow(200)), 200);
+    EXPECT_EQ(firstLit(letterRow(200 + (menu->item.spacing_untitled * lineHeight()))), 160);
+}
+
+// BW3's: each line's middle on the point.
+TEST_F(CMenuTest, ACentredPointCentresItsLine) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 320, .y = 120, .centred = true},
+                                     {.x = 320, .y = 200, .centred = true}};
+    int selected = 0;
+    choose({"XX", "XXXXXX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(120)), 320 - (smallFont().getTextWidth("XX") / 2));
+    EXPECT_EQ(firstLit(letterRow(200)), 320 - (smallFont().getTextWidth("XXXXXX") / 2));
+}
+
+TEST_F(CMenuTest, ATitledListTakesNoPoints) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    menu->item.untitled_positions = {{.x = 300, .y = 120}};
+    int selected = 0;
+    choose({"XX"}, selected, "XXX");
+    EXPECT_EQ(firstLit(letterRow(100)), 160);
+    EXPECT_EQ(firstLit(letterRow(100 + (menu->title.gap_lines * lineHeight()))), 160);
+}
+
+// A copy one row down makes every line reach a row further.
+TEST_F(CMenuTest, ALinesDropCopyIsDrawnUnderIt) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.glow.flicker = false;
+    const auto lowest = [this] {
+        for (int y = 100 + lineHeight(); y >= 100; --y) {
+            if (firstLit(y) >= 0) {
+                return y;
+            }
+        }
+        return -1;
+    };
+    int selected = 1;
+    choose({"XX", "XX"}, selected);
+    const int without = lowest();
+    menu->item.drop = engine::SMenuDrop{.x = 0, .y = 1, .colour = 4};
+    choose({"XX", "XX"}, selected);
+    EXPECT_EQ(lowest(), without + 1);
+}
+
+// BW2 drew its "1.2" there.
+TEST_F(CMenuTest, TheBuildsLineCanBeInTheTopRight) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->footer.version = {.corner = engine::EFooterCorner::TopRight,
+                            .edge = engine::EFooterEdge::Layout,
+                            .x = 0,
+                            .y = 0};
+    int selected = 0;
+    choose({"XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(0)), kWidth - smallFont().getTextWidth("X"));
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("X");
+    EXPECT_NE(firstLit(letterRow(bottom)), 4);
+}
+
+// BW1's and BW3's end at 619 on the layout.
+TEST_F(CMenuTest, TheCopyrightIsPlacedFromItsCorner) {
+    engine::SGameContent &content = game_parts_.getContent();
+    content.copyright = "XX";
+    content.copyright_os_font.reset();
+    ASSERT_TRUE(content.menu.has_value());
+    content.menu->footer.copyright = {.corner = engine::EFooterCorner::BottomRight,
+                                      .edge = engine::EFooterEdge::Layout,
+                                      .x = 21,
+                                      .y = 1};
+    int selected = 0;
+    choose({"XX"}, selected);
+    const int bottom = kHeight - 1 - smallFont().getTextHeight("XX");
+    EXPECT_EQ(firstLit(letterRow(bottom)), 4);
+    EXPECT_EQ(lastLit(letterRow(bottom)) < 619, true);
+    EXPECT_GT(lastLit(letterRow(bottom)), 600);
 }
 
 TEST_F(CMenuTest, WithoutACopyrightOrTrademarkOnlyTheBuildIsInTheFooter) {

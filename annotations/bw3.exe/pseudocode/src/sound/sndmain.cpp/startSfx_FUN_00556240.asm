@@ -30,8 +30,8 @@
 ;   TerminatedCString s_mp3_005d29d1
 ;   TerminatedCString s_startSfx_can_t_get_sampl_005d37f9
 ;   int g_SfxPlaybackStateCounter = 0x1
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]
 ;   undefined4 g_CSfxSlot_ARRAY_02ce721c[0].playback_state
 ;   undefined4 g_CSfxSlot_ARRAY_02ce721c[1].options.channel_index
@@ -290,8 +290,8 @@ section .text
         ;   Label: LAB_005564d5
     MOV EDI,0x24b                       ; 005564da
     PUSH 0x5d251c                       ; 005564df | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01d71de0],ESI      ; 005564e4 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 005564ea | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 005564e4 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 005564ea | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005564f0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 005564f5

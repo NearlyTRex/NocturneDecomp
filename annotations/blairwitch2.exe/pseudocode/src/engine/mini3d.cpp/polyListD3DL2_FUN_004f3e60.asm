@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   int g_INT_01c37788
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d09854
 ;   int g_RenderedTriangleCount
 ;   void* g_APIDLL_setVideoModeX
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_004f3eca
     MOV EBP,0x7ca                       ; 004f3ecf
     PUSH 0x5ddd75                       ; 004f3ed4
-    MOV dword ptr [0x01d046a0],EDI      ; 004f3ed9 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004f3edf | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004f3ed9 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004f3edf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004f3ee5
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004f3eea

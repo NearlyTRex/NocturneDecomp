@@ -31,6 +31,8 @@ constinit const CDemonActorType CSvetlana::kType =
 // deferred: a player Svetlana at zero hit points not regenerating, so the death check sees her
 //   (the decomp's hero_death.h nocturne_hero_regenerates), with CSvetlana::process
 // nocedit 0x005d8850
+// bw1 0x00592e00
+// bw2 0x005701c0
 CSvetlana::CSvetlana(CActor &classes)
     : CHero(classes), game_(classes.getGame()),
       cape_(classes.getDosIo(), classes.getKeyFramedModels()),
@@ -39,6 +41,8 @@ CSvetlana::CSvetlana(CActor &classes)
 }
 
 // nocedit 0x005d9f50
+// bw1 0x00594680
+// bw2 0x00571a30
 CSvetlana::~CSvetlana() = default;
 
 // With nudity off she wears svetlanax.dfm. The original keeps the bones for every Svetlana in one
@@ -104,6 +108,8 @@ void CSvetlana::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x005d8810
+// bw1 0x00592dd0
+// bw2 0x00570190
 std::unique_ptr<CDemonActor> CSvetlana::create(CActor &classes) {
     return std::make_unique<CSvetlana>(classes);
 }

@@ -1690,7 +1690,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Struct-type local `local_320` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_320` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 48,
       "match": "CMatrix3x4f local_320; ... f(&local_320, ...);",
       "resolution_source": "keep",
@@ -1699,12 +1699,21 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_290` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_290` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 51,
       "match": "CMatrix3x4f local_290; ... f(&local_290, ...);",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "CMatrix3x4f local_290;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_16c` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 74,
+      "match": "CVector3f local_16c; ... f(&local_16c, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3f local_16c;",
       "type": "missing_cave_copy"
     }
   ],
@@ -2500,6 +2509,124 @@
         "type": "CDeformableModelInstance *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_viewModel_FUN_005968b0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 9,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 171,
+          "message": "Value stored to 'local_34' is never read",
+          "path_notes": [
+            {
+              "line": 171,
+              "message": "Value stored to 'local_34' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 13,
+          "line": 247,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 247,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 263,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 263,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 277,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 277,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 291,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 291,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 756,
+          "message": "Value stored to 'local_18' is never read",
+          "path_notes": [
+            {
+              "line": 756,
+              "message": "Value stored to 'local_18' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 864,
+          "message": "Value stored to 'local_24' is never read",
+          "path_notes": [
+            {
+              "line": 864,
+              "message": "Value stored to 'local_24' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 870,
+          "message": "Value stored to 'local_20' is never read",
+          "path_notes": [
+            {
+              "line": 870,
+              "message": "Value stored to 'local_20' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 5,
+          "line": 1025,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 1025,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

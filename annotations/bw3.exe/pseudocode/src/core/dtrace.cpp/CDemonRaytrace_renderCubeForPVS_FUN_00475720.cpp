@@ -211,8 +211,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00475720(CDemon
         }
         g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
         if (19999 < g_PVSDrawnCubeCount) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\dtrace.cpp";
-          g_INT_01d71de4 = 0x792;
+          g_CurrentFilename = "..\\core\\dtrace.cpp";
+          g_CurrentLineNumber = 1938;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Too many drawn cubes.  Need to recompile.");
           return;
         }

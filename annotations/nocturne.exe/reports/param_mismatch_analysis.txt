@@ -15,12 +15,12 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5306
 Functions with no callers: 2575
-Parameter mismatches detected: 171
-Signature accuracy rate: 93.7%
+Parameter mismatches detected: 170
+Signature accuracy rate: 93.8%
 
 Mismatches by confidence:
   High confidence:   9 (multiple call sites agree)
-  Medium confidence: 49 (some agreement)
+  Medium confidence: 48 (some agreement)
   Low confidence:    113 (limited data)
 
 ====================================================================================================
@@ -121,16 +121,15 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  crt_unknown.c_FUN_00567560                         declared:0 est:7 (+7) [2 calls]
-  crt_unknown.c_FUN_00568f70                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005698b0                         declared:0 est:5 (+5) [2 calls]
-  crt_unknown.c_FUN_0056e890                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_00571410                         declared:0 est:5 (+5) [4 calls]
   crt_fstream.cpp_FUN_0057264c                       declared:0 est:4 (+4) [1 calls]
   crt_unknown.c_FUN_00567bc0                         declared:0 est:4 (+4) [2 calls]
+  crt_unknown.c_FUN_0056963c                         declared:0 est:4 (+4) [4 calls]
+  crt_unknown.c_FUN_00569fb0                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_0056d308                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_005708c0                         declared:0 est:4 (+4) [4 calls]
-  crt_unknown.c_FUN_0056ced8                         declared:0 est:3 (+3) [2 calls]
+  crt_unknown.c_FUN_00571280                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_0056f170                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_00572e00                         declared:0 est:3 (+3) [2 calls]
   crt_fstream.cpp_FUN_00572809                       declared:0 est:2 (+2) [1 calls]
@@ -140,8 +139,8 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0056e608                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0056f278                         declared:0 est:2 (+2) [6 calls]
   crt_unknown.c_FUN_00571160                         declared:0 est:2 (+2) [1 calls]
-  crt_unknown.c_FUN_00571b8e                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_00572d90                         declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_FUN_005746f0                         declared:0 est:2 (+2) [2 calls]
   engine_keyframe.c_calculatePackedSurfaceNormal_FUN declared:2 est:0 (-2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
@@ -166,8 +165,8 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_iostream.cpp_streambuf_destructor_FUN_00571d9f declared:1 est:2 (+1) [2 calls]
   crt_stdio.c_CreateFileVariadic_FUN_0056b934        declared:3 est:4 (+1) [2 calls]
   crt_unknown.c_FUN_005684f8                         declared:0 est:1 (+1) [4 calls]
-  crt_unknown.c_FUN_0056dfc0                         declared:0 est:1 (+1) [1 calls]
   crt_unknown.c_FUN_0056e664                         declared:0 est:1 (+1) [2 calls]
+  crt_unknown.c_FUN_00571b8e                         declared:0 est:1 (+1) [1 calls]
   crt_unknown.c_FUN_00573ff0                         declared:0 est:1 (+1) [1 calls]
   engine_drender.cpp_CDemonRenderer_renderFacetList_ declared:5 est:4 (-1) [2 calls]
 
@@ -195,7 +194,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 47
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 124
+Functions where declaration has FEWER params than estimated: 123
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -205,12 +204,12 @@ Distribution of differences (estimated - declared):
   -3 params: 4 functions
   -2 params: 8 functions
   -1 params: 32 functions
-  +1 params: 37 functions
+  +1 params: 38 functions
   +2 params: 24 functions
-  +3 params: 21 functions
+  +3 params: 23 functions
   +4 params: 18 functions
-  +5 params: 11 functions
+  +5 params: 9 functions
   +6 params: 7 functions
-  +7 params: 4 functions
+  +7 params: 2 functions
   +8 params: 1 functions
   +10 params: 1 functions

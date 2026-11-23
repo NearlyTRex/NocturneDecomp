@@ -35,6 +35,9 @@ C3DSCamera::C3DSCamera() = default;
 C3DSCamera::~C3DSCamera() = default;
 
 // nocedit 0x00585360
+// bw1 0x0055c100
+// bw2 0x0053a830
+// bw3 0x00541ac0
 void C3DSCamera::free() {
     pvs_list_.clear();
 }
@@ -51,6 +54,9 @@ void C3DSCamera::reset() {
 // nocedit also read whether a version 27 camera panned, quitting if it did; retail reads no such
 // line.
 // nocedit 0x00585420
+// bw1 0x0055c1b0
+// bw2 0x0053a8e0
+// bw3 0x00541b70
 void C3DSCamera::load(common::CTextScanner &scanner, int set_file_version, const SFog &set_fog) {
     reset();
     const bool labelled = set_file_version >= kLabelledSetFileVersion;
@@ -97,6 +103,9 @@ void C3DSCamera::load(common::CTextScanner &scanner, int set_file_version, const
 // A count the file lacks keeps the list as it was; a cube the file lacks reads as 0. A count
 // whose byte size wrapped got the original a short list it wrote past; here it is fatal.
 // nocedit 0x005857b0
+// bw1 0x0055c540
+// bw2 0x0053ac70
+// bw3 0x00541f00
 void C3DSCamera::loadPVS(common::CTextScanner &scanner) {
     int pvs_count = static_cast<int>(pvs_list_.size());
     scanFormat(scanner, "%d\n", pvs_count);
@@ -124,6 +133,9 @@ void C3DSCamera::apply(CDemonCamera &camera) const {
 
 // Each side compared with the point moved by the radius at the x87's precision.
 // nocedit 0x00585970
+// bw1 0x0055c6f0
+// bw2 0x0053ae20
+// bw3 0x005420b0
 bool C3DSCamera::testSphereInFrustum(const common::CVector3f &world_position, float radius) const {
     const common::CVector3f local =
         rotation_matrix_.transformVectorTranspose({.x = world_position.x - position_.x,

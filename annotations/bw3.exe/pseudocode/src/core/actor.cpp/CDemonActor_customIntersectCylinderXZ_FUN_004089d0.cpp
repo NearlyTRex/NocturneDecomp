@@ -9,8 +9,8 @@
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_004089d0(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
-  g_CHAR_PTR_01d71de0 = "..\\core\\actor.cpp";
-  g_INT_01d71de4 = 0x2e2;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 738;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonActor::customIntersectCylinderXZ should not be called for this base class");
   return;
 }

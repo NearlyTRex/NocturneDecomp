@@ -12,8 +12,8 @@
 ;   core_stranger.cpp_CStranger_ctor_FUN_00585270 at 0058564b
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_00441e30
     MOV ESI,0x5de                       ; 00441e35
     PUSH 0x5d69c8                       ; 00441e3a
-    MOV dword ptr [0x01d1d400],ECX      ; 00441e3f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00441e45 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00441e3f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00441e45 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00441e4b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00441e50

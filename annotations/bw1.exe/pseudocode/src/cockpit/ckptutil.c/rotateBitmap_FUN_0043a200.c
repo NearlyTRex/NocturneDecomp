@@ -30,8 +30,8 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_0043a200(uchar *source_data,int
   puStack_24 = (uchar *)malloc(width * height * bytes_per_pixel);
   if (puStack_24 == (uchar *)0x0) {
     _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.");
-    g_INT_01d1d404 = 0x801;
-    g_CHAR_PTR_01d1d400 = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 2049;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_005030e0(acStack_78);
   }
   if (bytes_per_pixel == 1) {

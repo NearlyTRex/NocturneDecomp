@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_005f832e
 ;   TerminatedCString s_sockaddr_is_not_of_AF_IN_005f8345
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_0059c7a0
     MOV ECX,0xd8                        ; 0059c7a5
     PUSH 0x5f8345                       ; 0059c7aa | = "sockaddr is not of AF_INET family!"
-    MOV dword ptr [0x01d1d400],EDX      ; 0059c7af | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0059c7b5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0059c7af | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0059c7b5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059c7bb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0059c7c0

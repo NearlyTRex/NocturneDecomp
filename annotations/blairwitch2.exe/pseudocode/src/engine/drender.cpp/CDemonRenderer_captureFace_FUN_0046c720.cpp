@@ -40,8 +40,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046c720(CDemonRe
     }
   }
   if (4999 < g_CaptureFaceCount) {
-    g_CHAR_PTR_01d046a0 = "..\\engine\\drender.cpp";
-    g_INT_01d046a4 = 0xb78;
+    g_CurrentFilename = "..\\engine\\drender.cpp";
+    g_CurrentLineNumber = 2936;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDR::captureFace - too many faces captured");
   }
   iVar8 = g_CaptureTextureCount;

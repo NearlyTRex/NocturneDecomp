@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2671,
-    "complexity_score": 3630,
+    "complexity_score": 3665,
     "cross_reference_count": 0,
     "function_call_count": 50,
     "global_count": 54,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1310,
-    "suspect_count": 226,
+    "suspect_count": 229,
     "suspect_types": [
       "fast_sqrt_inline",
       "pointer_cast",
@@ -17,6 +17,7 @@
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
+      "stale_struct_offset_64bit",
       "suspect_float",
       "unknown_field",
       "unresolved_funcptr",
@@ -594,13 +595,13 @@
     },
     {
       "addr": "01d1d400",
-      "name": "g_CHAR_PTR_01d1d400",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "g_INT_01d1d404",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -2485,6 +2486,30 @@
       "severity": "moderate",
       "text": "fStack_8c = (float)(((int)fStack_90 >> 1) + g_FastSqrtMagic);",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "*(...)(iVar10 + 0x20) reaches field bleedout_timer (0xc348) of CDemnfolk via a baked 32-bit offset. CDemnfolk is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDemnfolk * (\u00a7de-pun/\u00a712).",
+      "line": 1018,
+      "match": "*(...)(iVar10 + 0x20)",
+      "severity": "moderate",
+      "text": "afStack_228[2] = *(float *)(iVar10 + 0x20) - (pCStack_7c->position).x;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar10 + 0x24) reaches field sfx_handles (0xc34c) of CDemnfolk via a baked 32-bit offset. CDemnfolk is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDemnfolk * (\u00a7de-pun/\u00a712).",
+      "line": 1019,
+      "match": "*(...)(iVar10 + 0x24)",
+      "severity": "moderate",
+      "text": "pCStack_21c = (CPlatform *)(*(float *)(iVar10 + 0x24) - (pCStack_7c->position).y);",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar10 + 0x28) reaches field sfx_handles (0xc34c) of CDemnfolk via a baked 32-bit offset. CDemnfolk is 64-bit-unstable (grows past its first pointer/unstable field at 0x0); on the 64-bit build field offsets at/after 0x0 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDemnfolk * (\u00a7de-pun/\u00a712).",
+      "line": 1020,
+      "match": "*(...)(iVar10 + 0x28)",
+      "severity": "moderate",
+      "text": "fStack_218 = *(float *)(iVar10 + 0x28) - (pCStack_7c->position).z;",
+      "type": "stale_struct_offset_64bit"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 004598e3, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

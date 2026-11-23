@@ -60,9 +60,10 @@ import struct
 import sys
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
+sys.path.insert(0, THIS_DIR)
 REPO = os.path.dirname(os.path.dirname(THIS_DIR))
+
+import sibling_match as sm  # noqa: E402
 
 INIT_TABLE = "g_InitHandlers"
 ENTRY_SIZE = 6                       # RuntimeHandlerEntry: u8 status, u8 priority, ptr
@@ -70,6 +71,8 @@ REGISTER_HINT = "register"           # substring of the registrar's name
 PUSH_RE = re.compile(r'^\s*PUSH\s+(0x[0-9a-f]+)', re.I)
 CALL_RE = re.compile(r'^\s*CALL\s+(\S+)', re.I)
 STR_RE = re.compile(r'=\s*"([^"]*)"')
+# A NUL-terminated identifier: the class name a register call pushes
+NAME_RE = re.compile(rb'([A-Za-z_]\w*)\0')
 
 
 def ann_dir(program):
@@ -87,7 +90,7 @@ def _buckets(program, category):
 def function_addrs(program):
     return {r["addr"].lower(): r.get("name")
             for r in _buckets(program, "functions")
-            if isinstance(r, dict) and r.get("addr")}
+            if r.get("addr")}
 
 
 def init_table_addr(program):
@@ -97,18 +100,16 @@ def init_table_addr(program):
     return None
 
 
-def init_handlers(program, limit=4096):
+def init_handlers(img, program, limit=4096):
     """Static-init function addresses, read from g_InitHandlers itself.
 
     Read from the table rather than by globbing for files called staticInit:
     the table is the ground truth, and it still works for handlers that have
     not been named.
     """
-    import sibling_match as sm
     base = init_table_addr(program)
     if base is None:
         return []
-    img = sm.Image(program)
     off = img.va2off(base)
     if off is None:
         return []
@@ -132,40 +133,62 @@ def asm_path(program, addr):
     return hits[0] if hits else None
 
 
+def image_string(img, value):
+    """The identifier stored at a pushed address, or None.
+
+    The asm only comments a push with its string when Ghidra has a string
+    defined there; the BW exports have almost none, so without reading the
+    image they lose every class name.
+    """
+    off = img.va2off(int(value, 16))
+    m = NAME_RE.match(img.data, off) if off is not None else None
+    return m.group(1).decode("ascii") if m else None
+
+
 def class_to_factory(program, verbose=False):
     """class name -> {factory addresses}, parsed from each staticInit's register call."""
+    img = sm.Image(program)
     funcs = function_addrs(program)
     out, seen, noreg = {}, 0, 0
-    for addr in init_handlers(program):
+    for addr in init_handlers(img, program):
         path = asm_path(program, addr)
         if not path:
             continue
         seen += 1
+        # A TU with several actor classes registers each in turn, so every
+        # register call is read, each from the pushes since the call before it.
         pushes, hit = [], False
-        for line in open(path):
+        with open(path) as fh:
+            lines = fh.readlines()
+        for line in lines:
             code = line.split(";")[0]
             m = PUSH_RE.match(code)
             if m:
+                value = "%08x" % int(m.group(1), 16)
                 s = STR_RE.search(line)
-                pushes.append(("%08x" % int(m.group(1), 16),
-                               s.group(1) if s else None))
+                if s:
+                    text = s.group(1)
+                else:
+                    # A function entry is the factory, never a name
+                    text = None if value in funcs else image_string(img, value)
+                pushes.append((value, text))
                 continue
             c = CALL_RE.match(code)
-            if c:
-                if REGISTER_HINT in c.group(1).lower():
-                    hit = True
-                    break
-                pushes = []          # a different call: its args are not ours
+            if not c:
+                continue
+            if REGISTER_HINT in c.group(1).lower():
+                hit = True
+                cls = next((s for _v, s in pushes if s), None)
+                # The factory is the pushed value that is a real function entry.
+                # Using the function list rather than an address range matters:
+                # the two images have different .text extents and a range guess
+                # silently loses matches.
+                facs = [v for v, s in pushes if s is None and v in funcs]
+                if cls and facs:
+                    out.setdefault(cls, set()).update(facs)
+            pushes = []              # the next call's args start here
         if not hit:
             noreg += 1
-            continue
-        cls = next((s for _v, s in pushes if s), None)
-        # The factory is the pushed value that is a real function entry. Using
-        # the function list rather than an address range matters: the two images
-        # have different .text extents and a range guess silently loses matches.
-        facs = [v for v, s in pushes if s is None and v in funcs]
-        if cls and facs:
-            out.setdefault(cls, set()).update(facs)
     if verbose:
         print(f"  {program}: {seen} init handler(s) read, {noreg} without a register "
               f"call, {len(out)} class key(s)")
@@ -226,7 +249,7 @@ def report(res, show):
             print(f"    {cls:26} factory {a} <-> {b}\n        {why}")
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--from-program", dest="a_prog", default="nocedit.exe")
@@ -236,7 +259,7 @@ def main():
     ap.add_argument("--show", type=int, default=15)
     ap.add_argument("--fail-on-conflict", action="store_true")
     ap.add_argument("-q", "--quiet", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     res = analyse(args.a_prog, args.b_prog, args.mapping, verbose=not args.quiet)
     report(res, args.show)

@@ -12,8 +12,8 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d832
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
 ;   int g_ChatOutCount
@@ -140,8 +140,8 @@ section .text
         ;   Label: LAB_0050db26
     MOV EDI,0x76c                       ; 0050db2b
     PUSH 0x5e0c31                       ; 0050db30
-    MOV dword ptr [0x01d046a0],ECX      ; 0050db35 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050db3b | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0050db35 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0050db3b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050db41
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050db46

@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_setCurrentListener_FUN_00573eb0(int listener_inde
   sound_sndmain_cpp_lockSound_FUN_00575d20();
   g_INT_02c7fc88 = listener_index;
   if (g_SoundLockCount < 1) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x183c;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 6204;
     core_main_c_displayErrorAndQuit_FUN_005030e0("unlockSound - sound was not locked!");
   }
   if (g_SoundLockCount == 1) {

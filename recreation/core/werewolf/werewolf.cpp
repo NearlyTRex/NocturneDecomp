@@ -36,11 +36,15 @@ constinit const CDemonActorType CWerewolf::kType =
 // deferred: chasing the hero netplay gives it rather than the local one (the decomp's
 //   nocturne_net_sim_target_for), with CWerewolf::process
 // nocedit 0x005efc10
+// bw2 0x0058b780
 CWerewolf::CWerewolf(CActor &classes) : CEnemy(classes), classes_(classes) {
     getModel().init("wolfbrn.dfm");
 }
 
 // nocedit 0x005f2220
+// bw1 0x005b1a40
+// bw2 0x0058def0
+// bw3 0x0057fcc0
 CWerewolf::~CWerewolf() = default;
 
 // Each bone is fatal when the skeleton hasn't it. Lit eyes are drawn as transparent.
@@ -69,12 +73,18 @@ const CDemonActorType &CWerewolf::getActorType() const {
 }
 
 // nocedit 0x005efbd0
+// bw1 0x005af2a0
+// bw2 0x0058b750
+// bw3 0x0057d520
 std::unique_ptr<CDemonActor> CWerewolf::create(CActor &classes) {
     return std::make_unique<CWerewolf>(classes);
 }
 
 // The speed is saved again after CEnemy's.
 // nocedit 0x005f1980
+// bw1 0x005b1330
+// bw2 0x0058d7e0
+// bw3 0x0057f5b0
 void CWerewolf::archive(CActorArchive &actor_archive) {
     CEnemy::archive(actor_archive);
     archiveSpeed(actor_archive);

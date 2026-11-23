@@ -64,8 +64,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
     support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(&local_5c,local_10c,"wb");
     bVar1 = support_trstream_cpp_COutStreamFile_isOpen_FUN_00574980(&local_5c);
     if (CONCAT31(extraout_var,bVar1) == 0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
-      g_INT_01d71de4 = 0x1344;
+      g_CurrentFilename = "..\\core\\dcamera.cpp";
+      g_CurrentLineNumber = 4932;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Can't create %s");
     }
     support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_5c,&g_CameraFogGrid,0x1000);
@@ -196,19 +196,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
                              ((CCodec *)auStack_b4,(char *)&g_CameraPlaneWorkBuffer,(int *)&local_5c
                               ,&local_68);
           if (iVar11 == 0) {
-            g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
-            g_INT_01d71de4 = 0x13b1;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 5041;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Error compressing %s");
           }
           if (local_5c.base.vtable != (void *)0x0) {
-            g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
-            g_INT_01d71de4 = 0x13b3;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 5043;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Not all bytes consumed compressing %s");
           }
           bVar1 = support_trstream_cpp_COutStreamFile_isOpen_FUN_00574980(&local_68);
           if (CONCAT31(extraout_var_00,bVar1) == 0) {
-            g_CHAR_PTR_01d71de0 = "..\\core\\dcamera.cpp";
-            g_INT_01d71de4 = 0x13b4;
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 5044;
             core_main_c_displayErrorAndQuit_FUN_004e4330("Error writing compressed file %s");
           }
           local_54 = (char  [4])((int)local_54 + 0x12c00);

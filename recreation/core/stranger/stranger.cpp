@@ -74,6 +74,7 @@ constinit const CDemonActorType CStranger::kType =
 // deferred: the defaults the constructor gives the Stranger's aiming, recoil, melee, turning,
 //   carried object and airborne fields, with the steps that read them
 // nocedit 0x005bb120
+// bw2 0x005627f0
 CStranger::CStranger(CActor &classes)
     : CHero(classes), events_(classes.getEvents()), hat_(classes.getKeyFramedModels()) {
     getModel().init("stranger.dfm");
@@ -120,6 +121,8 @@ const CDemonActorType &CStranger::getActorType() const {
 }
 
 // nocedit 0x005c2fe0
+// bw1 0x0058e240
+// bw2 0x0056b600
 void CStranger::archive(CActorArchive &actor_archive) {
     CHero::archive(actor_archive);
     const int saved_version = actor_archive.getSavedVersion(kType);
@@ -183,6 +186,8 @@ int CStranger::getHeadPart() const {
 }
 
 // nocedit 0x005bb0e0
+// bw1 0x00585240
+// bw2 0x005627c0
 std::unique_ptr<CDemonActor> CStranger::create(CActor &classes) {
     return std::make_unique<CStranger>(classes);
 }

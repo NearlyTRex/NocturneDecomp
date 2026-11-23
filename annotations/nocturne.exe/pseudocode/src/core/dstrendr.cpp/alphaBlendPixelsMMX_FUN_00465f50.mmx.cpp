@@ -44,7 +44,6 @@ __asm {
         sub ECX,0x4
         jg LAB_00465f8c
         pop ECX
-        pop EBX
         emms
 }
 }

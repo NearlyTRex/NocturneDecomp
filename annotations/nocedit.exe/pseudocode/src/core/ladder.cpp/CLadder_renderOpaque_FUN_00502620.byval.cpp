@@ -9,8 +9,6 @@
 int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x70
         and ESP,0xfffffff8
         mov EDX,dword ptr [EBP + 0x14]
         push EDX

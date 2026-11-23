@@ -61,13 +61,12 @@
         "call_addr": "005739cd",
         "call_type": "direct",
         "caller": "crt_env.c_putenv_internal_FUN_00573930",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EAX",
-          "ECX",
-          "EDX"
+          "ECX"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -76,12 +75,10 @@
         "call_addr": "00574698",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_00574680",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -100,7 +97,7 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -192,11 +189,11 @@
       "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 1,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -29,8 +29,8 @@
 ;   TerminatedCString s_WTF_005d6ce6
 ;   float g_FLOAT_005f71d8 = 0.00390625
 ;   float g_FLOAT_005f71f0 = 2300
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -186,8 +186,8 @@ section .text
         ;   Label: default
     MOV ECX,0x1bb                       ; 004ace1f
     PUSH 0x5d6ce6                       ; 004ace24 | = "WTF!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004ace29 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004ace2f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004ace29 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004ace2f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004ace35
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004ace3a

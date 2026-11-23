@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 974,
-    "complexity_score": 1432,
+    "complexity_score": 1457,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 452,
-    "suspect_count": 93,
+    "suspect_count": 95,
     "suspect_types": [
+      "memcpy_oversized_source",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
@@ -1089,6 +1090,22 @@
       "severity": "moderate",
       "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_1d4[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_1d4[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 102,
+      "match": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "memcpy_oversized_source"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_1e0[3]` (declared size 3) \u2014 overruns by 3. Likely Ghidra dropped explicit `auStack_1e0[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 208,
+      "match": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_108 != &fStack_168)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

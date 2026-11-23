@@ -68,8 +68,8 @@ section .text
     MOV ECX,0x5ccd3e                    ; 0051846a | = "..\\core\\prye.cpp"
     MOV ESI,0x39f                       ; 0051846f
     PUSH 0x5ccd4f                       ; 00518474 | = "Out of memory!"
-    MOV dword ptr [0x01d71de0],ECX      ; 00518479 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0051847f | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00518479 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0051847f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518485
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051848a
@@ -163,8 +163,8 @@ section .text
     MOV ESI,0x5ccdb8                    ; 0051854c | = "..\\core\\prye.cpp"
     MOV EDI,0x3b3                       ; 00518551
     PUSH 0x5ccdc9                       ; 00518556 | = "Out of memory!"
-    MOV dword ptr [0x01d71de0],ESI      ; 0051855b | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00518561 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0051855b | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00518561 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518567
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051856c
@@ -254,8 +254,8 @@ section .text
         ;   Label: LAB_00518626
     MOV EDX,0x3ab                       ; 0051862b
     PUSH 0x5ccd8b                       ; 00518630 | = "Out of memory!"
-    MOV [0x01d71de0],EAX                ; 00518635 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0051863a | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00518635 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0051863a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518640
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00518645
@@ -265,8 +265,8 @@ section .text
         ;   Label: LAB_0051864d
     MOV ECX,0x3bd                       ; 00518652
     PUSH 0x5cce02                       ; 00518657 | = "Out of memory!"
-    MOV dword ptr [0x01d71de0],EDX      ; 0051865c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00518662 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 0051865c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00518662 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00518668
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0051866d

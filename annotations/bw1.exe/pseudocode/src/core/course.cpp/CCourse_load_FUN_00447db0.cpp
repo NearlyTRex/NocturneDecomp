@@ -16,8 +16,8 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00447db0(CCourse *this_ptr,char *f
   core_course_cpp_CCourse_free_FUN_00447ee0(this_ptr);
   file = engine_dosio_cpp_getFile_FUN_00479180("data",filename,"rt");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\course.cpp";
-    g_INT_01d1d404 = 0x7c;
+    g_CurrentFilename = "..\\core\\course.cpp";
+    g_CurrentLineNumber = 124;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CCourse::load - can't open data\\%s");
   }
   do {

@@ -129,8 +129,8 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004bcbf0(CGame *this_p
       p_Var4 = engine_dosio_cpp_getFile_FUN_00460c70
                          ("art",this_ptr->bitmap_filename,"rb");
       if (p_Var4 == (_FILE *)0x0) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\game.cpp";
-        g_INT_01d046a4 = 0x1275;
+        g_CurrentFilename = "..\\core\\game.cpp";
+        g_CurrentLineNumber = 4725;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Can't open %s");
       }
       _fread(local_18,this_ptr->bitmap_width,this_ptr->bitmap_height,p_Var4)

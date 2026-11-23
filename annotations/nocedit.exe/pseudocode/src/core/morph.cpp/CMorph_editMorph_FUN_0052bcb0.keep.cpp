@@ -87,6 +87,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
       local_6c = -1;
       local_70 = -1;
       local_74 = 0;
+      local_5c = 0;
       iVar4 = 0;
       while( true ) {
         __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);

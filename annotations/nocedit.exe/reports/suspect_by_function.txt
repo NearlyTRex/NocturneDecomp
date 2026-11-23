@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6453
-Clean: 6408 (99.3%)
-With suspects: 45
-Total suspects: 53
+Clean: 6407 (99.3%)
+With suspects: 46
+Total suspects: 55
 
 ====================================================================================================
 cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 (1 suspect)
@@ -244,6 +244,13 @@ engine_matrix.c_vectorLength3DToInt_FUN_0050dad0 (1 suspect)
   File: engine/matrix.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+engine_special.cpp_renderScanline_FUN_005b5710 (2 suspects)
+  File: engine/special.cpp
+====================================================================================================
+  Line 5 [warning_jumptable]: /* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */
+  Line 6 [warning_indirect_jump]: /* WARNING: Treating indirect jump as call */
 
 ====================================================================================================
 shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 (1 suspect)

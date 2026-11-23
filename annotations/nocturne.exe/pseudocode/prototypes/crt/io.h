@@ -11,11 +11,11 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_00565dc6
 // Address: 00565dc6
-int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c__chmod_FUN_00565dd0
 // Address: 00565dd0
-int __cdecl ::chmod(char *path,int mode);
+int __cdecl _chmod(char *path,int mode);
 
 // Original: crt_io.c_chdir_FUN_00566570
 // Address: 00566570
@@ -23,11 +23,11 @@ int __cdecl chdir(char *path);
 
 // Original: crt_io.c_register_handler_wrapper_FUN_005671e8
 // Address: 005671e8
-int __cdecl register::handler_wrapper(HANDLE file_handle);
+int __cdecl register_handler_wrapper(HANDLE file_handle);
 
 // Original: crt_io.c_invalidate_handle_wrapper_FUN_005671f8
 // Address: 005671f8
-void __cdecl invalidate::handle_wrapper(int handle_index);
+void __cdecl invalidate_handle_wrapper(int handle_index);
 
 // Original: crt_io.c_getTempDirectory_FUN_005687bc
 // Address: 005687bc
@@ -43,7 +43,7 @@ long __watcallStack tell(int file_handle_index);
 
 // Original: crt_io.c_analyze_file_type_FUN_0056c750
 // Address: 0056c750
-uint __watcallStack analyze::file_type(uint open_flags,char *filename);
+uint __watcallStack analyze_file_type(uint open_flags,char *filename);
 
 // Original: crt_io.c_getFileStat_FUN_0056c864
 // Address: 0056c864
@@ -51,7 +51,7 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__utime_FUN_0056cb60
 // Address: 0056cb60
-int __cdecl ::utime(char *filename,WatcomUtimbuf *timestamps);
+int __cdecl _utime(char *filename,WatcomUtimbuf *timestamps);
 
 // Original: crt_io.c_IsSpecialDevice_FUN_005705c0
 // Address: 005705c0
@@ -59,7 +59,7 @@ int __cdecl IsSpecialDevice(int handle_index);
 
 // Original: crt_io.c_extend_file_for_append_FUN_00572f40
 // Address: 00572f40
-int __cdecl extend::file_for_append(int fd);
+int __cdecl extend_file_for_append(int fd);
 
 // Original: crt_io.c_write_FUN_0057301c
 // Address: 0057301c

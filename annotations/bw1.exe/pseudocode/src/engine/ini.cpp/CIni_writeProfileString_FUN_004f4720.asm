@@ -30,8 +30,8 @@
 ;   TerminatedCString s_s_s_005e57ca
 ;   TerminatedCString s_s_s_005e57d1
 ;   TerminatedCString s_s_s_005e57d8
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -95,8 +95,8 @@ section .text
     MOV ECX,0x5e573e                    ; 004f478f | = "..\\engine\\ini.cpp"
     MOV ESI,0x18b                       ; 004f4794
     PUSH 0x5e5750                       ; 004f4799 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004f479e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004f47a4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004f479e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004f47a4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f47aa
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f47af
@@ -141,8 +141,8 @@ section .text
     MOV EDI,0x5e5782                    ; 004f480f | = "..\\engine\\ini.cpp"
     MOV EAX,0x18f                       ; 004f4814
     PUSH 0x5e5794                       ; 004f4819 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01d1d400],EDI      ; 004f481e | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004f4824 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004f481e | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004f4824 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f4829
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f482e

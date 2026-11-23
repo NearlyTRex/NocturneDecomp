@@ -24,8 +24,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005d3a5b
 ;   TerminatedCString s_getSampleInfo_can_t_dete_005d3a70
 ;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CMP3DecoderInstanceOther.sample_rate
 ;   undefined4 g_CMP3DecoderInstanceOther.num_channels
 ;   byte g_BYTE_02ce71e8
@@ -273,8 +273,8 @@ section .text
     MOV ECX,0x5d3a1d                    ; 005577a6 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x12d1                      ; 005577ab
     PUSH 0x5d3a32                       ; 005577b0 | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 005577b5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 005577bb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 005577b5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 005577bb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005577c1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     JMP 0x005576c5                      ; 005577c6
@@ -284,8 +284,8 @@ section .text
     MOV EDI,0x5d3a5b                    ; 005577cc | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x12dc                      ; 005577d1
     PUSH 0x5d3a70                       ; 005577d6 | = "getSampleInfo - can't determine lengt..."
-    MOV dword ptr [0x01d71de0],EDI      ; 005577db | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 005577e1 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 005577db | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 005577e1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005577e6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 005577eb

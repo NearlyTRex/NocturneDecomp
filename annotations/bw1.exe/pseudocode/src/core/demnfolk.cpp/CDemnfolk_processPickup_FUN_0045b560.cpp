@@ -350,8 +350,8 @@ LAB_0045bb56:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_0045bc3a:
-      g_CHAR_PTR_01d1d400 = "..\\core\\demnfolk.cpp";
-      g_INT_01d1d404 = 0x5d5;
+      g_CurrentFilename = "..\\core\\demnfolk.cpp";
+      g_CurrentLineNumber = 1493;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid demon townsfolk object shape!");
       return 1;
     }

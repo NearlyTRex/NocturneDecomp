@@ -20,8 +20,10 @@ namespace nocturne::core {
 //   with CSound::getSoundDuration and the script editor
 // deferred: the speaker, the focus actor unless it is locked, the caption, the speaker's speech
 //   timer and the sound, while running, with renderSubtitles and the scene camera
-// deferred: the dialogue override's caption, silence and length for a hero the line wasn't
-//   recorded for, and the network camera's focus, with CNetGame's sessions
+// deferred: the script quirks' caption, silence and length for a hero the line wasn't recorded
+//   for, such as the gas room's lines (the decomp's script_quirks, SCRIPT_QUIRKS), with the
+//   speaker, caption and sound above
+// deferred: the network camera's focus, with CNetGame's sessions
 // nocedit 0x0055ff00
 CScript::CommandResult CScript::startDialogLine(std::string_view speaker,
                                                 std::string_view /*sound_name*/,

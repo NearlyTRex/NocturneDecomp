@@ -7,8 +7,8 @@
 ; SMpegFrame *     Stack[0x4]:4   frame
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -152,8 +152,8 @@ section .text
     MOV EAX,0x5dfe5b                    ; 005045d2
     MOV EDX,0x1d8                       ; 005045d7
     PUSH 0x5dfe6c                       ; 005045dc
-    MOV [0x01d046a0],EAX                ; 005045e1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 005045e6 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005045e1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 005045e6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005045ec
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005045f1

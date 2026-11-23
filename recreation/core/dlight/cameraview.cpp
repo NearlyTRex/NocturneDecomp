@@ -9,6 +9,9 @@ namespace nocturne::core {
 CCameraView::CCameraView() = default;
 
 // nocedit 0x00427d00
+// bw1 0x00428240
+// bw2 0x00422220
+// bw3 0x004254d0
 CCameraView::~CCameraView() = default;
 
 // nocedit 0x00427d20

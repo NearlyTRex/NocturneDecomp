@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005e2829
 ;   TerminatedCString s_CPod_init_No_POD_to_init_005e283b
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -37,8 +37,8 @@ section .text
         ;   Label: LAB_0051b330
     MOV ECX,0x432                       ; 0051b335
     PUSH 0x5e283b                       ; 0051b33a | = "CPod::init - No .POD to init!"
-    MOV dword ptr [0x01d046a0],EDX      ; 0051b33f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0051b345 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0051b33f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0051b345 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0051b34b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0051b350

@@ -89,12 +89,12 @@ std::optional<bool> matchClassExpression(const CDemonActorType &type, std::strin
     }
 }
 
-// nocedit 0x0040c740
 // Pi, a whole turn and turns to a radian, as the original's doubles hold them.
 constexpr double kHalfTurn = 3.1415926535;
 constexpr double kTurn = 6.283185307;
 constexpr double kTurnsPerRadian = 0.15915494309644432;
 
+// nocedit 0x0040c740
 bool matchesClassName(const CDemonActorType &type, std::string_view class_name) {
     return matchClassExpression(type, class_name).value_or(false);
 }

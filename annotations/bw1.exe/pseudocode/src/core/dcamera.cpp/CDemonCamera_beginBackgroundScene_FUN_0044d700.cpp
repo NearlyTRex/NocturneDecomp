@@ -19,8 +19,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700(CDe
   
   bVar6 = 0;
   if (this_ptr->scene_open_flag == 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\dcamera.cpp";
-    g_INT_01d1d404 = 0x436;
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 1078;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonCamera::beginBackgroundScene - Scene not open");
   }
   g_BackgroundSceneDepth = g_BackgroundSceneDepth + 1;

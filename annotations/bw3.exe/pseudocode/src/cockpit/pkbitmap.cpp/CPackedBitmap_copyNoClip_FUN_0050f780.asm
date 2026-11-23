@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   row_stride
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_get16BitConversionFunction_FUN_00434ec0
@@ -142,8 +142,8 @@ section .text
     MOV ECX,0x5cbbfd                    ; 0050f88b
     MOV EBX,0x2a2                       ; 0050f890
     PUSH 0x5cbc15                       ; 0050f895
-    MOV dword ptr [0x01d71de0],ECX      ; 0050f89a | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0050f8a0 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0050f89a | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0050f8a0 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050f8a6
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0050f8ab

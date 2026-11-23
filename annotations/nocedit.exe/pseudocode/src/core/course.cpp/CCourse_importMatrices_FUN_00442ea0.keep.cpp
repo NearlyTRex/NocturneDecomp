@@ -14,8 +14,6 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   int iVar2;
   CCourseFrame *pCVar3;
   int iVar4;
-  float local_e1;
-  float local_e2;
   CMatrix3x3f local_58;
   float local_34;
   float local_30;
@@ -31,8 +29,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   do {
     shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
               (g_CEditorToolsPtr,(float)iVar4,(float)this_ptr->len);
-    iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].x,&local_58.m[1].y,&local_58.m[2].z,
-                       local_e1,local_e2);
+    iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].x,&local_58.m[1].y,&local_58.m[2].z);
     if (iVar2 == 3) goto LAB_00442f35;
     do {
       do {
@@ -42,10 +39,9 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
           core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::importMatrices - file is corrupt on frame %d!",iVar4);
 LAB_00442f35:
           iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,
-                             &local_34,local_e1,local_e2);
+                             &local_34);
         } while (iVar2 != 3);
-        iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].z,&local_58.m[2].x,&local_30,
-                           local_e1,local_e2);
+        iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].z,&local_58.m[2].x,&local_30);
       } while (iVar2 != 3);
       iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[1].x,&local_58.m[2].y,&local_2c);
     } while (iVar2 != 3);

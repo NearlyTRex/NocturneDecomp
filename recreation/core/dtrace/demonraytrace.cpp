@@ -56,6 +56,9 @@ CDemonRaytrace::~CDemonRaytrace() = default;
 
 // nocedit could then write a converted old file back into its .POD; retail reads only version 4.
 // nocedit 0x00494de0
+// bw1 0x0048afa0
+// bw2 0x00472ab0
+// bw3 0x00473b20
 bool CDemonRaytrace::loadAndSyncWithGeoFile(std::string_view filename) {
     const std::optional<std::string> file = dosio_.readFile("data", filename);
     if (!file) {
@@ -69,6 +72,9 @@ bool CDemonRaytrace::loadAndSyncWithGeoFile(std::string_view filename) {
 // The original also quit on a read error, which bytes in memory can't have; a short file reads
 // as zeros.
 // nocedit 0x004947a0
+// bw1 0x0048adc0
+// bw2 0x004728d0
+// bw3 0x00473940
 void CDemonRaytrace::loadBinary(common::CBinaryReader &reader) {
     freeNewCubeList();
     const auto version = reader.read<std::int32_t>();
@@ -96,6 +102,9 @@ void CDemonRaytrace::loadBinary(common::CBinaryReader &reader) {
 }
 
 // nocedit 0x00494380
+// bw1 0x0048aa40
+// bw2 0x00472550
+// bw3 0x004735c0
 void CDemonRaytrace::allocNewCubeList() {
     const std::int32_t count = cubeCount(grid_coord_);
     if (count < 0) {
@@ -105,6 +114,9 @@ void CDemonRaytrace::allocNewCubeList() {
 }
 
 // nocedit 0x00494400
+// bw1 0x0048aab0
+// bw2 0x004725c0
+// bw3 0x00473630
 void CDemonRaytrace::freeNewCubeList() {
     cube_data_.clear();
     grid_coord_ = {};
@@ -126,6 +138,9 @@ const CDemonCube *CDemonRaytrace::getCubeAt(int grid_x, int grid_y, int grid_z) 
 }
 
 // nocedit 0x004997d0
+// bw1 0x0048ee90
+// bw2 0x004769a0
+// bw3 0x00477a10
 common::CVector3i
 CDemonRaytrace::worldPositionToGridCoords(const common::CVector3f &world_position) const {
     return {.x = cellOf(world_position.x, bbox_min_.x, cell_size_.x),
@@ -134,6 +149,9 @@ CDemonRaytrace::worldPositionToGridCoords(const common::CVector3f &world_positio
 }
 
 // nocedit 0x00499880
+// bw1 0x0048ef40
+// bw2 0x00476a50
+// bw3 0x00477ac0
 common::CVector3i
 CDemonRaytrace::worldPositionToVoxelCoords(const common::CVector3f &world_position) const {
     return {.x = cellOf(world_position.x, bbox_min_.x, adjusted_size_.x),
@@ -147,6 +165,9 @@ CDemonRaytrace::worldPositionToVoxelCoords(const common::CVector3f &world_positi
 // unverified: each sample's sums, the index's stride, then the corner, then the half stride, as
 //   read from the asm, not run against the original's code
 // nocedit 0x00499c20
+// bw1 0x0048f2e0
+// bw2 0x00476df0
+// bw3 0x00477e60
 void CDemonRaytrace::markShadowVoxels(const common::CVector3f &position,
                                       const common::CVector3f &rotation,
                                       const common::CVector3f &box_min,
@@ -194,6 +215,9 @@ void CDemonRaytrace::markShadowVoxels(const common::CVector3f &position,
 // A grid whose cube count wrapped has no cube at some of its places, which is fatal, as the
 // original's check of its cube is.
 // nocedit 0x0049a160
+// bw1 0x0048f920
+// bw2 0x00477430
+// bw3 0x004784a0
 void CDemonRaytrace::setVoxelShadowBit(const common::CVector3f &world_position) {
     const common::CVector3i grid = worldPositionToGridCoords(world_position);
     if (grid.x < 0 || grid.y < 0 || grid.z < 0 || grid.x >= grid_coord_.x ||
@@ -209,11 +233,17 @@ void CDemonRaytrace::setVoxelShadowBit(const common::CVector3f &world_position) 
 }
 
 // nocedit 0x00499b40
+// bw1 0x0048f210
+// bw2 0x00476d20
+// bw3 0x00477d90
 common::CVector3f CDemonRaytrace::getBBoxMin() const {
     return bbox_min_;
 }
 
 // nocedit 0x00499b70
+// bw1 0x0048f230
+// bw2 0x00476d40
+// bw3 0x00477db0
 common::CVector3f CDemonRaytrace::getBBoxMax() const {
     return bbox_max_;
 }

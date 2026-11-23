@@ -11,7 +11,7 @@ int __cdecl getFileStat(char *filename,WatcomStat *file_info);
 
 // Original: crt_io.c__chmod_FUN_005b99e0
 // Address: 005b99e0
-int __cdecl ::chmod(char *path,int mode);
+int __cdecl _chmod(char *path,int mode);
 
 // Original: crt_io.c_chdir_FUN_005ba2e0
 // Address: 005ba2e0

@@ -19,8 +19,8 @@
 ;   TerminatedCString s_CEventList_setTimerEvent_005bff12
 ;   TerminatedCString s_core_event_cpp_005bff4a
 ;   TerminatedCString s_CEventList_setTimerEvent_005bff5c
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findTimer_FUN_00494dd0
@@ -58,8 +58,8 @@ section .text
     MOV EDX,0x5bff00                    ; 00494a9f | = "..\\core\\event.cpp"
     MOV ECX,0xe66                       ; 00494aa4
     PUSH 0x5bff12                       ; 00494aa9 | = "CEventList::setTimerEvent - invalid d..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00494aae | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00494ab4 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00494aae | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00494ab4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00494aba
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x10                        ; 00494abf
@@ -145,8 +145,8 @@ section .text
     MOV ESI,0x5bff4a                    ; 00494b75 | = "..\\core\\event.cpp"
     MOV EDI,0xe87                       ; 00494b7a
     PUSH 0x5bff5c                       ; 00494b7f | = "CEventList::setTimerEvent - too many ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 00494b84 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00494b8a | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00494b84 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00494b8a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00494b90
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00494b95

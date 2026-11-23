@@ -292,8 +292,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     iVar2 = sound_mp3_cpp_calculateMainDataSize_FUN_00502190(frame_info_00);
     this_ptr->main_data_offset = this_ptr->main_data_offset + iVar2;
     if (local_78 < 0) {
-      g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-      g_INT_01d71de4 = 0x1029;
+      g_CurrentFilename = "..\\sound\\mp3.cpp";
+      g_CurrentLineNumber = 4137;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Not enough main data to decode frame %d.");
     }
     while (iVar2 = local_78, 0 < local_78) {

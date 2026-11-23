@@ -7,4 +7,4 @@
 
 // Original: crt_heap.c__heapwalk_FUN_005a5bd0
 // Address: 005a5bd0
-int __cdecl ::heapwalk(WatcomHeapInfo *heap_info);
+int __cdecl _heapwalk(WatcomHeapInfo *heap_info);

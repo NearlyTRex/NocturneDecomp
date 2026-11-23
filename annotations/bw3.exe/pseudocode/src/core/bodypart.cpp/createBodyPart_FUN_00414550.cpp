@@ -27,8 +27,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00414550(CVector3f *pos
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00414750(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\bodypart.cpp";
-    g_INT_01d71de4 = 0x32;
+    g_CurrentFilename = "..\\core\\bodypart.cpp";
+    g_CurrentLineNumber = 50;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;

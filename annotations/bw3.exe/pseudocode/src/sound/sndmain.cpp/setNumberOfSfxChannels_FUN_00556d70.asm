@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   int g_MaxSoundChannels = 0x20
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -33,8 +33,8 @@ section .text
     MOV ECX,0x5d38df                    ; 00556d82
     MOV EBX,0x1130                      ; 00556d87
     PUSH 0x5d38f4                       ; 00556d8c
-    MOV dword ptr [0x01d71de0],ECX      ; 00556d91 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00556d97 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00556d91 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00556d97 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00556d9d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00556da2

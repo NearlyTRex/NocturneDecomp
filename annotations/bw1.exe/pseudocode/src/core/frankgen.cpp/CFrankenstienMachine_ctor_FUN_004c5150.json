@@ -158,7 +158,7 @@
       "type": "negative_offset"
     },
     {
-      "description": "'(CKeyFramedModelInstance *)&pCVar1[1].location.area_id' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(location.area_id) (0x2c) + 0x0 = 0x184, which is exactly offsetof(CActorDestination, triggered). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->triggered (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[28], CBat::anim_frame, CBodyPart::faces also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(CKeyFramedModelInstance *)&pCVar1[1].location.area_id' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(location.area_id) (0x2c) + 0x0 = 0x184, which is exactly offsetof(CFrankenstienMachine, bed_model). Ghidra had no CFrankenstienMachine type here and reached the field by index arithmetic; write it as ((CFrankenstienMachine *)pCVar1)->bed_model (\u00a7de-pun/\u00a712).",
       "line": 11,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)&pCVar1[1].location.area_id);",

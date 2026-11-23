@@ -31,11 +31,11 @@ int __cdecl fprintf(_FILE *file,char *format,...) __attribute__((format(printf, 
 
 // Original: crt_stdio.c_getc_helper_FUN_005fe700
 // Address: 005fe700
-int __cdecl getc::helper(scanf_state_t *state);
+int __cdecl getc_helper(scanf_state_t *state);
 
 // Original: crt_stdio.c_ungetc_helper_FUN_005fe720
 // Address: 005fe720
-int __watcallStack ungetc::helper(int character,scanf_state_t *state);
+int __watcallStack ungetc_helper(int character,scanf_state_t *state);
 
 // Original: crt_stdio.c_vfscanf_FUN_005fe738
 // Address: 005fe738
@@ -75,11 +75,11 @@ int __watcallStack remove(char *filename);
 
 // Original: crt_stdio.c_seek_within_buffer_FUN_005ffa70
 // Address: 005ffa70
-int __cdecl seek::within_buffer(int offset,_FILE *file);
+int __cdecl seek_within_buffer(int offset,_FILE *file);
 
 // Original: crt_stdio.c_seek_within_buffer_FUN_005ffab4
 // Address: 005ffab4
-int __cdecl seek::within_buffer(_FILE *file);
+int __cdecl seek_within_buffer(_FILE *file);
 
 // Original: crt_stdio.c_fseek_FUN_005ffacc
 // Address: 005ffacc
@@ -87,11 +87,11 @@ int __cdecl fseek(_FILE *file,long offset,int whence);
 
 // Original: crt_stdio.c_string_getc_FUN_006000d0
 // Address: 006000d0
-int __cdecl string::getc(scanf_state_t *state);
+int __cdecl string_getc(scanf_state_t *state);
 
 // Original: crt_stdio.c_string_ungetc_FUN_006000f8
 // Address: 006000f8
-int __cdecl string::ungetc(int ch,scanf_state_t *state);
+int __cdecl string_ungetc(int ch,scanf_state_t *state);
 
 // Original: crt_stdio.c_vsscanf_FUN_00600100
 // Address: 00600100
@@ -155,7 +155,7 @@ int __cdecl fclose(_FILE *file_handle);
 
 // Original: crt_stdio.c___CClose_FUN_00601ee4
 // Address: 00601ee4
-int __cdecl ::_CClose(_FILE *file_handle,int close_flags);
+int __cdecl __CClose(_FILE *file_handle,int close_flags);
 
 // Original: crt_stdio.c_fclose_FUN_00601fd0
 // Address: 00601fd0
@@ -167,7 +167,7 @@ void __cdecl fprintf(_FILE *stream,char *format,...) __attribute__((format(print
 
 // Original: crt_stdio.c_stream_setup_FUN_00605f20
 // Address: 00605f20
-int __watcallStack stream::setup(_FILE *stream,int operation_type);
+int __watcallStack stream_setup(_FILE *stream,int operation_type);
 
 // Original: crt_stdio.c_fgetcInternal_FUN_00605fad
 // Address: 00605fad
@@ -179,11 +179,11 @@ void __cdecl reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
 
 // Original: crt_stdio.c_prepare_stream_for_write_FUN_00606055
 // Address: 00606055
-BOOL __cdecl prepare::stream_for_write(_FILE *stream);
+BOOL __cdecl prepare_stream_for_write(_FILE *stream);
 
 // Original: crt_stdio.c_stream_flush_FUN_006060bb
 // Address: 006060bb
-_FILE * __watcallStack stream::flush(_FILE *stream);
+_FILE * __watcallStack stream_flush(_FILE *stream);
 
 // Original: crt_stdio.c_remove_FUN_00606600
 // Address: 00606600
@@ -211,11 +211,11 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
 
 // Original: crt_stdio.c___allocfp_FUN_006092f0
 // Address: 006092f0
-_FILE * __cdecl ::_allocfp(int unused_param);
+_FILE * __cdecl __allocfp(int unused_param);
 
 // Original: crt_stdio.c___freefp_FUN_006093b0
 // Address: 006093b0
-void __cdecl ::_freefp(_FILE *file_handle);
+void __cdecl __freefp(_FILE *file_handle);
 
 // Original: crt_stdio.c_WideCharToSingleByte_FUN_0060acf0
 // Address: 0060acf0
@@ -247,7 +247,7 @@ void __watcallStack storeErrorState(uint *destination,uint error_state);
 
 // Original: crt_stdio.c_get_standard_file_handle_FUN_0060b7a0
 // Address: 0060b7a0
-_FILE * __cdecl get::standard_file_handle(int fd);
+_FILE * __cdecl get_standard_file_handle(int fd);
 
 // Original: crt_stdio.c_closeUnsupported_FUN_0060b9b7
 // Address: 0060b9b7
@@ -267,7 +267,7 @@ HANDLE __cdecl GetConsoleOutputHandle(void);
 
 // Original: crt_stdio.c_fgetc_buffered_FUN_0060d510
 // Address: 0060d510
-int __watcallStack fgetc::buffered(_FILE *stream);
+int __watcallStack fgetc_buffered(_FILE *stream);
 
 // Original: crt_stdio.c_fputs_FUN_0060ebb0
 // Address: 0060ebb0

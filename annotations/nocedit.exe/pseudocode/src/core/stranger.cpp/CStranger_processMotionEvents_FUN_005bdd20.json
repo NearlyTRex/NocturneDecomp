@@ -504,5 +504,27 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CStranger_processMotionEvents_FUN_005bdd20.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 11,
+          "line": 184,
+          "message": "Value stored to 'local_14' is never read",
+          "path_notes": [
+            {
+              "line": 184,
+              "message": "Value stored to 'local_14' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

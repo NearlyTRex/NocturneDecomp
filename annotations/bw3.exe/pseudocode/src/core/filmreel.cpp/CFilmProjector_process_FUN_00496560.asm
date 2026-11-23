@@ -12,8 +12,8 @@
 ;   CFilterFX* g_CFilterFXPtr = 01549a94
 ;   CEventList* g_CEventListPtr = 01c6e360
 ;   undefined4 g_CFilmReelClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5c043d                    ; 00496642
     MOV EDI,0x11d                       ; 00496647
     PUSH 0x5c0452                       ; 0049664c
-    MOV dword ptr [0x01d71de0],ECX      ; 00496651 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00496657 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00496651 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00496657 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0049665d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00496662

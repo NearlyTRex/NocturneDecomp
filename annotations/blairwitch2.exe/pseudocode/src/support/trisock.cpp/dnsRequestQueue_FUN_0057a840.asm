@@ -11,8 +11,8 @@
 ;   support_trisock.cpp_dnsRequestLookupHost_FUN_0057a750 at 0057a781
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   HANDLE g_HANDLE_0265363c
 ;   void* g_PTR_02653640
 ;   int g_INT_02653648
@@ -115,8 +115,8 @@ section .text
     MOV ECX,0x5ed31c                    ; 0057a918
     MOV ESI,0x70a                       ; 0057a91d
     PUSH 0x5ed333                       ; 0057a922
-    MOV dword ptr [0x01d046a0],ECX      ; 0057a927 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0057a92d | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0057a927 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0057a92d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0057a933
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0057a938

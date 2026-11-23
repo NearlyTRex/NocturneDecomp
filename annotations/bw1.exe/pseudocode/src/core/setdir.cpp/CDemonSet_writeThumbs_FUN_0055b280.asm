@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Can_t_create_s_005f1038
 ;   TerminatedCString s_core_setdir_cpp_005f1048
 ;   TerminatedCString s_Error_writing_s_005f105b
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -50,8 +50,8 @@ section .text
     MOV EDX,0x5f1025                    ; 0055b2a2 | = "..\\core\\setdir.cpp"
     MOV ECX,0x2b5                       ; 0055b2a7
     PUSH 0x5f1038                       ; 0055b2ac | = "Can't create %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0055b2b1 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0055b2b7 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0055b2b1 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0055b2b7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055b2bd
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0055b2c2
@@ -83,8 +83,8 @@ section .text
     MOV EBP,0x5f1048                    ; 0055b2f6 | = "..\\core\\setdir.cpp"
     MOV EAX,0x2b7                       ; 0055b2fb
     PUSH 0x5f105b                       ; 0055b300 | = "Error writing %s"
-    MOV dword ptr [0x01d1d400],EBP      ; 0055b305 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0055b30b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBP      ; 0055b305 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0055b30b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0055b310
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0055b315

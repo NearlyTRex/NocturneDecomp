@@ -22,8 +22,8 @@
 ;   TerminatedCString s_Can_t_open_s_005eb54d
 ;   TerminatedCString s_sound_mp3_cpp_005eb55b
 ;   TerminatedCString s_Error_preparing_to_decod_005eb56c
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -66,8 +66,8 @@ section .text
     MOV EAX,0x5eb53c                    ; 0052aeda | = "..\\sound\\mp3.cpp"
     MOV EDX,0xea8                       ; 0052aedf
     PUSH 0x5eb54d                       ; 0052aee4 | = "Can't open %s"
-    MOV [0x01d1d400],EAX                ; 0052aee9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0052aeee | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0052aee9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0052aeee | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052aef4
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052aef9
@@ -108,8 +108,8 @@ section .text
     MOV EDX,0x5eb514                    ; 0052af2b | = "..\\sound\\mp3.cpp"
     MOV ECX,0xea3                       ; 0052af30
     PUSH 0x5eb525                       ; 0052af35 | = "Can't open %s"
-    MOV dword ptr [0x01d1d400],EDX      ; 0052af3a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0052af40 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0052af3a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0052af40 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052af46
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052af4b
@@ -120,8 +120,8 @@ section .text
     MOV ECX,0x5eb55b                    ; 0052af54 | = "..\\sound\\mp3.cpp"
     MOV EBX,0xead                       ; 0052af59
     PUSH 0x5eb56c                       ; 0052af5e | = "Error preparing to decode %s"
-    MOV dword ptr [0x01d1d400],ECX      ; 0052af63 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0052af69 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0052af63 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0052af69 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052af6f
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0052af74

@@ -7,11 +7,18 @@
 namespace nocturne::shape {
 
 // nocedit 0x004a3b90
+// bw1 0x0049a620
+// bw2 0x00481fc0
+// bw3 0x004831c0
 CPickList::CPickList(const SPickListOwners &owners)
-    : owners_(owners), scrollbar_(owners.controls) {}
+    : owners_(owners), scrollbar_(owners.controls), ok_button_(owners.controls),
+      cancel_button_(owners.controls) {}
 
 // The original cleared the list and freed the enable array by hand.
 // nocedit 0x004a3c80
+// bw1 0x0049a710
+// bw2 0x004820b0
+// bw3 0x004832b0
 CPickList::~CPickList() = default;
 
 void CPickList::requireNoneEnabled(std::string_view message) const {
@@ -45,6 +52,9 @@ void CPickList::swap(int index1, int index2) {
 }
 
 // nocedit 0x004a5770
+// bw1 0x0049c370
+// bw2 0x00483d10
+// bw3 0x00484f10
 void CPickList::clear() {
     enabled_array_.clear();
     CStrList::clear();
@@ -79,6 +89,16 @@ void CPickList::setHotkeys(std::string_view hotkeys) {
 // Retail's callers set the field themselves.
 void CPickList::setForcedColumnCount(bool single_column) {
     forced_column_count_ = single_column;
+}
+
+// nocedit 0x004a3d20
+void CPickList::setOkButtonText(std::string_view text) {
+    ok_button_text_ = text;
+}
+
+// nocedit 0x004a3d90
+void CPickList::setCancelButtonText(std::string_view text) {
+    cancel_button_text_ = text;
 }
 
 int CPickList::getCurrentIndex() const {

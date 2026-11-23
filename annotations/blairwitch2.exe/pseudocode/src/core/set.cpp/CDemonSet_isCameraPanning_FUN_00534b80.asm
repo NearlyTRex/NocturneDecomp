@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e5cd5
 ;   TerminatedCString s_CDemonSet_isCameraPannin_005e5ce5
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -38,8 +38,8 @@ section .text
     MOV ECX,0x5e5cd5                    ; 00534ba2 | = "..\\core\\set.cpp"
     MOV ESI,0x149c                      ; 00534ba7
     PUSH 0x5e5ce5                       ; 00534bac | = "CDemonSet::isCameraPanning - no camer..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00534bb1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00534bb7 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00534bb1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00534bb7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00534bbd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00534bc2

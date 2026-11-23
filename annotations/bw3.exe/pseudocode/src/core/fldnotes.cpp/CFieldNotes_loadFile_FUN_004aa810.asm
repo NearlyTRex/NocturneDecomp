@@ -324,8 +324,8 @@ section .text
     MOV ECX,0x5c1203                    ; 004aaaad | = "..\\core\\fldnotes.cpp"
     MOV EBX,0x8ed                       ; 004aaab2
     PUSH 0x5c1218                       ; 004aaab7 | = "Can't open field notes file %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 004aaabc | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004aaac2 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004aaabc | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 004aaac2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aaac8
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004aaacd
@@ -1192,8 +1192,8 @@ section .text
     MOV EBX,0x5c13c0                    ; 004ab2b9 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x976                       ; 004ab2be
     PUSH 0x5c13d5                       ; 004ab2c3 | = "Hell froze!"
-    MOV dword ptr [0x01d71de0],EBX      ; 004ab2c8 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004ab2ce | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004ab2c8 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004ab2ce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab2d4
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab2d9
@@ -1343,8 +1343,8 @@ section .text
     MOV EBX,0x5c1474                    ; 004ab436 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x99a                       ; 004ab43b
     PUSH 0x5c1489                       ; 004ab440 | = "Hell froze!"
-    MOV dword ptr [0x01d71de0],EBX      ; 004ab445 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004ab44b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004ab445 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004ab44b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab451
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab456
@@ -1507,8 +1507,8 @@ section .text
     MOV EBX,0x5c1550                    ; 004ab5d6 | = "..\\core\\fldnotes.cpp"
     MOV ESI,0x9c6                       ; 004ab5db
     PUSH 0x5c1565                       ; 004ab5e0 | = "Hell froze!"
-    MOV dword ptr [0x01d71de0],EBX      ; 004ab5e5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004ab5eb | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004ab5e5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004ab5eb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004ab5f1
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004ab5f6

@@ -23,8 +23,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5f18
 ;   TerminatedCString s_CDemonSet_setRayType_use_005e5f2d
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x5e5f18                    ; 00537ec5 | = "..\\core\\setcolid.cpp"
     MOV EBX,0x49a                       ; 00537eca
     PUSH 0x5e5f2d                       ; 00537ecf | = "CDemonSet::setRayType - use setRayTyp..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00537ed4 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00537eda | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00537ed4 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00537eda | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00537ee0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00537ee5

@@ -14,8 +14,8 @@ void __cdecl engine_2d_c_unmapFrameBuffer_FUN_004036c0(void)
   byte *puVar3;
   
   if (g_StoredWindowWidth == 0) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\2d.c";
-    g_INT_01d1d404 = 0x9e5;
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2533;
     core_main_c_displayErrorAndQuit_FUN_005030e0("unmapFrameBuffer - frame buffer was not mapped!");
   }
   g_INT_0061b498 = g_StoredWindowWidth;

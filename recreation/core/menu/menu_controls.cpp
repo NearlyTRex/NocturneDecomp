@@ -7,6 +7,7 @@
 #include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "shape/edittool/editortools.h"
@@ -24,15 +25,6 @@ constexpr int kLeastSensitivity = 0x4000;
 constexpr int kMostSensitivity = 0x40000;
 constexpr int kSensitivitySpan = kMostSensitivity - kLeastSensitivity;
 constexpr int kSensitivityStep = 700;
-// Three quarters of the screen wide.
-constexpr int kSliderWidthShare = 3;
-constexpr int kSliderWidthParts = 4;
-constexpr int kSliderHeight = 0x2c;
-constexpr int kBarColor = 4;
-constexpr int kTroughColor = 0;
-constexpr int kBorderColor = 0xff;
-constexpr int kTextColor = 0xff;
-constexpr int kTextShadow = 0;
 constexpr int kTextHeightChar = 'A';
 constexpr double kFixedOne = 65536.0;
 
@@ -64,9 +56,10 @@ void CMenu::configureCustomKeys() {
 // window cancels it, as it ends every wait for input.
 // nocedit 0x005107c0
 void CMenu::adjustMouseSensitivity(int &sensitivity_value, std::string_view window_title) {
+    const engine::SMenuSlider &slider = getMenuLayout().slider;
     const int screen_width = owners_.screen.getWindowWidth();
-    owners_.editor_tools.createCenteredModal((screen_width * kSliderWidthShare) / kSliderWidthParts,
-                                             kSliderHeight, window_title, 0);
+    owners_.editor_tools.createCenteredModal(
+        (screen_width * slider.width_share) / slider.width_parts, slider.height, window_title, 0);
     sensitivity_value = std::clamp(sensitivity_value, kLeastSensitivity, kMostSensitivity);
     int value = sensitivity_value;
     owners_.two_d.clearInputAndWait();
@@ -92,14 +85,15 @@ void CMenu::adjustMouseSensitivity(int &sensitivity_value, std::string_view wind
         const int top = clip.top + 1;
         const int right = clip.right - 1;
         const int bottom = clip.bottom - 1;
-        owners_.two_d.fillRectWithBorder(left, top, right, bottom, kTroughColor, kBorderColor);
+        owners_.two_d.fillRectWithBorder(left, top, right, bottom, slider.trough_colour,
+                                         slider.border_colour);
         owners_.two_d.fillRectColor(left, top, left + toSliderOffset(value, right - left), bottom,
-                                    kBarColor);
+                                    slider.bar_colour);
         engine::CBitFont &font = *owners_.editor_tools.getEditorFont();
         font.drawTextCenterInBoundsF(
             clip.left, clip.right,
-            (clip.bottom + clip.top - font.getCharHeight(kTextHeightChar)) / 2, kTextColor,
-            kTextShadow, "{:4.2f}", value / kFixedOne);
+            (clip.bottom + clip.top - font.getCharHeight(kTextHeightChar)) / 2, slider.text_colour,
+            slider.text_shadow, "{:4.2f}", value / kFixedOne);
         owners_.screen.swapBuffers();
         if (owners_.menu_input.takeMenuAction(engine::EMenuAction::Cancel) ||
             input.getInputDisabled()) {

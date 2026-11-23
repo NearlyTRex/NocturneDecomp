@@ -1127,8 +1127,8 @@ section .text
     MOV EDI,0x5d0137                    ; 00533752 | = "..\\core\\set.cpp"
     MOV EAX,0x16a                       ; 00533757
     PUSH 0x5d0147                       ; 0053375c | = "CDemonSet::Unable to open %s"
-    MOV dword ptr [0x01d71de0],EDI      ; 00533761 | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00533767 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00533761 | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00533767 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0053376c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00533771

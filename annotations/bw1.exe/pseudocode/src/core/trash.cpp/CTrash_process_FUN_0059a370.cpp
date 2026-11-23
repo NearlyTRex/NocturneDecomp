@@ -314,9 +314,9 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_0059a370(CTrash *this_ptr,float d
       (this_ptr->base).location.position.z = fStack_144;
     }
   }
-  fVar2 = (this_ptr->acceleration).y * (float)"?333?CTrigger"._1_4_;
-  fVar3 = (this_ptr->acceleration).z * (float)"?333?CTrigger"._1_4_;
-  (this_ptr->acceleration).x = (this_ptr->acceleration).x * (float)"?333?CTrigger"._1_4_;
+  fVar2 = (this_ptr->acceleration).y * _DAT_005f8070;
+  fVar3 = (this_ptr->acceleration).z * _DAT_005f8070;
+  (this_ptr->acceleration).x = (this_ptr->acceleration).x * _DAT_005f8070;
   (this_ptr->acceleration).y = fVar2;
   (this_ptr->acceleration).z = fVar3;
 LAB_0059ab67:

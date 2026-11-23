@@ -1,4 +1,6 @@
+#include "common/error/error.h"
 #include "common/text/ascii.h"
+#include "core/frontend.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -22,19 +24,20 @@
 #include <span>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
 namespace {
 
 constexpr std::string_view kIniSection = "Game";
-constexpr int kLoadingFrames = 10;
-constexpr float kChapterTitleSeconds = 8.0F;
 constexpr int kNoSelection = -1;
 
 struct SChoice {
     std::size_t story;
     std::size_t chapter;
+    // The difficulty list's line, when the story select has one.
+    std::optional<std::size_t> difficulty;
 };
 
 // A story is open when nocturne.ini holds its code.
@@ -45,11 +48,13 @@ bool isUnlocked(const engine::CIniFile &file, const engine::SGameStory &story) {
 // What choosing a story and chapter reads, offers its lists with and remembers between them.
 class CChapterChooser {
 public:
+    // title is the stories list's.
     CChapterChooser(const SChapterSelectOwners &owners, const engine::CDosIo &dosio,
-                    std::span<const engine::SGameStory> stories, bool full_install,
-                    bool show_chapters)
-        : owners_(owners), dosio_(dosio), stories_(stories), full_install_(full_install),
-          show_chapters_(show_chapters) {
+                    std::span<const engine::SGameStory> stories,
+                    std::span<const engine::SStoryDifficulty> difficulties, bool full_install,
+                    bool show_chapters, std::string title)
+        : owners_(owners), dosio_(dosio), stories_(stories), difficulties_(difficulties),
+          full_install_(full_install), show_chapters_(show_chapters), title_(std::move(title)) {
         const engine::CIniFile file(owners.ini, kIniFilename, kIniSection);
         for (const engine::SGameStory &story : stories) {
             unlocked_.push_back(isUnlocked(file, story));
@@ -61,7 +66,7 @@ public:
         }
     }
 
-    // Backing out of a story's chapters offers the stories again.
+    // Backing out of a story's chapters or its difficulty offers the stories again.
     [[nodiscard]] std::optional<SChoice> choose() {
         for (;;) {
             shape::CPickList list(owners_.pick_list);
@@ -74,12 +79,22 @@ public:
             if (unlocked_[index]) {
                 show_chapters_ = true;
             }
-            if (!show_chapters_) {
-                return SChoice{.story = index, .chapter = 0};
+            std::size_t chapter = 0;
+            if (show_chapters_) {
+                const int picked = pickChapter(list, stories_[index]);
+                if (picked < 0) {
+                    continue;
+                }
+                chapter = static_cast<std::size_t>(picked);
             }
-            const int chapter = pickChapter(list, stories_[index]);
-            if (chapter >= 0) {
-                return SChoice{.story = index, .chapter = static_cast<std::size_t>(chapter)};
+            if (difficulties_.empty()) {
+                return SChoice{.story = index, .chapter = chapter, .difficulty = std::nullopt};
+            }
+            const int difficulty = pickDifficulty(list, stories_[index]);
+            if (difficulty >= 0) {
+                return SChoice{.story = index,
+                               .chapter = chapter,
+                               .difficulty = static_cast<std::size_t>(difficulty)};
             }
         }
     }
@@ -112,8 +127,7 @@ private:
                 list.enableItem(static_cast<int>(line), false);
             }
         }
-        return list.displayChoicesAndWaitForInput(
-            owners_.messages.getLocalizedString("Choose a story to play"), kNoSelection);
+        return list.displayChoicesAndWaitForInput(title_, kNoSelection);
     }
 
     // The chapter's index in the story, or -1. The original took the line for the index, which
@@ -137,11 +151,23 @@ private:
         return line < 0 ? line : static_cast<int>(offered[static_cast<std::size_t>(line)]);
     }
 
+    // The difficulty's line under the story's title, or -1.
+    int pickDifficulty(shape::CPickList &list, const engine::SGameStory &story) const {
+        list.clear();
+        for (const engine::SStoryDifficulty &difficulty : difficulties_) {
+            add(list, difficulty.label);
+        }
+        return list.displayChoicesAndWaitForInput(owners_.messages.getLocalizedString(story.title),
+                                                  kNoSelection);
+    }
+
     const SChapterSelectOwners &owners_;
     const engine::CDosIo &dosio_;
     std::span<const engine::SGameStory> stories_;
+    std::span<const engine::SStoryDifficulty> difficulties_;
     bool full_install_;
     bool show_chapters_;
+    std::string title_;
     std::vector<bool> unlocked_;
     // The stories the list offers, by index.
     std::vector<std::size_t> listed_;
@@ -168,14 +194,21 @@ int findLoadingPicture(const engine::SGameContent &content, std::string_view id)
 // deferred: clearing the events' game flags, with CEventList::resetGameFlags
 // deferred: loading the save a run asks to reload, then the editor's font as it was, with
 //   CGame::loadGame and the play loop
+// BW2's direct_start plays the first story's first chapter with no list, whichever modifier is
+// held but Control alone; its probe for a full install changed nothing.
+// bw2 0x004bc840
 // nocedit 0x004e1cb0
 void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode) {
     is_loading = false;
-    // Without enemy.pod the install is partial: every story offers its chapters, the stories
-    // aren't greyed for a missing first mission, and chapters needing a full install aren't
-    // listed.
-    const bool full_install =
-        owners_.dosio.getFile("", "enemy.pod", platform::EFileMode::Read) != nullptr;
+    const engine::SGameContent &content = owners_.content;
+    const bool direct =
+        requireFrontEndStyle("story select", content.front_end.story_select,
+                             {kStoryListSelect, kDirectStartSelect}) == kDirectStartSelect;
+    if (direct ? !content.direct_start : !content.story_select) {
+        common::displayErrorAndQuit("No package gives the story select's values");
+    }
+    const int loading_frames =
+        direct ? content.direct_start->loading_frames : content.story_select->loading_frames;
     std::string filename;
     // The browser's mission has no story, and the loading screen picks a picture for it.
     int picture = CLevelLoader::kRandomImage;
@@ -189,25 +222,49 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
         chapter_title_.clear();
         chapter_title_timer_ = 0.0F;
     } else {
-        const engine::SGameContent &content = owners_.content;
-        CChapterChooser chooser(owners, owners_.dosio, content.stories, full_install,
-                                select_mode != EChapterSelectMode::kStories || !full_install);
-        const std::optional<SChoice> choice = chooser.choose();
-        if (!choice) {
-            return;
+        const engine::SGameStory *chosen = nullptr;
+        std::size_t chapter = 0;
+        if (direct) {
+            if (content.stories.empty() || content.stories.front().chapters.empty()) {
+                common::displayErrorAndQuit("No package gives a story to start");
+            }
+            chosen = &content.stories.front();
+        } else {
+            const engine::SStorySelect &select = *content.story_select;
+            // Without the probe file the install is partial: every story offers its chapters,
+            // the stories aren't greyed for a missing first mission, and chapters needing a full
+            // install aren't listed.
+            const bool full_install = owners_.dosio.getFile("", select.full_install_probe,
+                                                            platform::EFileMode::Read) != nullptr;
+            CChapterChooser chooser(owners, owners_.dosio, content.stories, select.difficulties,
+                                    full_install,
+                                    select_mode != EChapterSelectMode::kStories || !full_install,
+                                    getLabel(content, owners.messages, "choose_story"));
+            const std::optional<SChoice> choice = chooser.choose();
+            if (!choice) {
+                return;
+            }
+            if (choice->difficulty) {
+                const engine::SStoryDifficulty &difficulty =
+                    select.difficulties[*choice->difficulty];
+                puzzle_difficulty_mode = difficulty.puzzle;
+                combat_difficulty_mode = difficulty.combat;
+            }
+            chosen = &content.stories[choice->story];
+            chapter = choice->chapter;
         }
-        const engine::SGameStory &chosen = content.stories[choice->story];
-        filename = chosen.chapters[choice->chapter].mission;
-        picture = findLoadingPicture(content, chosen.loading);
-        chapter_year_ = chosen.year;
-        chapter_title_ = owners.messages.getLocalizedString(chosen.title);
-        chapter_title_timer_ = kChapterTitleSeconds;
+        filename = chosen->chapters[chapter].mission;
+        picture = findLoadingPicture(content, chosen->loading);
+        chapter_year_ = chosen->year;
+        chapter_title_ = owners.messages.getLocalizedString(chosen->title);
+        chapter_title_timer_ =
+            content.chapter_title ? static_cast<float>(content.chapter_title->seconds) : 0.0F;
     }
     const bool keep_assets = common::equalsIgnoringAsciiCase(current_save_file_, filename);
     if (!keep_assets) {
         current_save_file_ = filename;
     }
-    owners.loading_screen.show(kLoadingFrames, false, picture);
+    owners.loading_screen.show(loading_frames, false, picture);
     owners.mission.load(filename, keep_assets);
     if (!owners.mission.createHeros(nullptr)) {
         return;

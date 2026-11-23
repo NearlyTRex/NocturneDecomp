@@ -22,8 +22,8 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00544310(CScript *th
       iVar2 = core_script_cpp_CScript_findLabelIndex_FUN_0054acc0
                         (this_ptr,"initSectionEnd");
       if (iVar2 < 0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
-        g_INT_01d1d404 = 0x42a;
+        g_CurrentFilename = "..\\core\\script.cpp";
+        g_CurrentLineNumber = 1066;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
       }
       local_10 = this_ptr->next_cmd;
@@ -34,15 +34,15 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00544310(CScript *th
         local_14 = 0.25;
         iVar3 = core_script_cpp_CScript_step_FUN_00544460(this_ptr,&local_14);
         if (iVar3 < 0) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
-          g_INT_01d1d404 = 0x446;
+          g_CurrentFilename = "..\\core\\script.cpp";
+          g_CurrentLineNumber = 1094;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n");
         }
         if (iVar2 == this_ptr->next_cmd) break;
         iVar1 = iVar1 + 1;
         if (10000 < iVar1) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\script.cpp";
-          g_INT_01d1d404 = 0x458;
+          g_CurrentFilename = "..\\core\\script.cpp";
+          g_CurrentLineNumber = 1112;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Infinite loop detected in initSection.\n");
         }
       }

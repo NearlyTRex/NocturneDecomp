@@ -16,8 +16,8 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_00538b30 at 00538cfd
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550
@@ -148,8 +148,8 @@ section .text
     MOV EAX,ESP                         ; 00537f0a
     MOV ECX,0x3b6                       ; 00537f0c
     PUSH EAX                            ; 00537f11
-    MOV dword ptr [0x01d1d400],EDX      ; 00537f12 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00537f18 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00537f12 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00537f18 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00537f1e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00537f23
@@ -197,8 +197,8 @@ section .text
         ;   Label: LAB_00537fad
     MOV ESI,0x37e                       ; 00537fb2
     PUSH 0x5ecdfe                       ; 00537fb7
-    MOV dword ptr [0x01d1d400],EBX      ; 00537fbc | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00537fc2 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 00537fbc | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00537fc2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00537fc8
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00537fcd

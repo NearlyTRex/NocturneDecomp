@@ -64,7 +64,6 @@ __asm {
         movq MM0,MM5
         jmp LAB_00472365
     LAB_004723d0:
-        pop EBP
         emms
 }
 }

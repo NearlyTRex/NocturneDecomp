@@ -38,8 +38,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     _fclose(file_handle);
     iVar6 = _chmod("stderr.txt",0x1c0);
     if (iVar6 != 0) {
-      g_CHAR_PTR_01d046a0 = "..\\core\\main.c";
-      g_INT_01d046a4 = 0x3b5;
+      g_CurrentFilename = "..\\core\\main.c";
+      g_CurrentLineNumber = 949;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Please copy Nocturne to your hard drive");
     }
   }
@@ -54,8 +54,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   support_newmsg_cpp_readMessageFile_FUN_0050f9e0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_004fd490();
   if (g_MMXSupported == 0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\main.c";
-    g_INT_01d046a4 = 0x3da;
+    g_CurrentFilename = "..\\core\\main.c";
+    g_CurrentLineNumber = 986;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("This CPU does not have an MMX unit.")
     ;
     core_main_c_displayErrorAndQuit_FUN_004e4500(pcVar5);
@@ -67,8 +67,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   wincore_winrun_cpp_initJoystick_FUN_0058ffd0();
   iVar6 = wincore_wddvmem_cpp_setScreenResolution_FUN_00588a50(0x280,0x1e0,0x20);
   if (iVar6 == 0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\main.c";
-    g_INT_01d046a4 = 0x3f2;
+    g_CurrentFilename = "..\\core\\main.c";
+    g_CurrentLineNumber = 1010;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_00447ea0();

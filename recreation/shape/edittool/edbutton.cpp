@@ -1,6 +1,7 @@
 #include "shape/edittool/edbutton.h"
 
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
@@ -14,6 +15,7 @@ constexpr int kLeftButton = 1;
 
 CEdButton::CEdButton(CEdControls &controls) : controls_(controls) {}
 
+// clearActiveButtonIfMatch, all the destructor did, is here.
 // nocedit 0x004a6510
 // nocedit 0x004a6530
 CEdButton::~CEdButton() {
@@ -50,7 +52,8 @@ void CEdButton::paint() {
     const int scale = tools.getScale();
     const int x = (right_ + left_ - font.getTextWidth(button_text_, scale)) / 2;
     const int y = (top_ + bottom_ - font.getTextHeight(button_text_, scale)) / 2;
-    font.drawText(button_text_, x, y, CEdControls::kMarkColor, engine::CBitFont::kNoShadow, scale);
+    font.drawText(button_text_, x, y, tools.getDialogLook().bevel_mark_colour,
+                  engine::CBitFont::kNoShadow, scale);
 }
 
 // The original also refused the click while a flag nothing sets was set.

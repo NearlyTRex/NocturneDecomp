@@ -68,6 +68,8 @@ constinit const CDemonActorType CGabriella::kType =
 //   is_wearing_gas_mask through 0, 1 and 2, and drawn in her hand or on her head (THE GAS MASK),
 //   with CGabriella::process and renderOpaque
 // nocedit 0x004d2b20
+// bw1 0x004c6270
+// bw2 0x004ad2c0
 CGabriella::CGabriella(CActor &classes)
     : CHero(classes), coat_(classes.getDosIo(), classes.getKeyFramedModels()) {
     getModel().init("gabriela.dfm");
@@ -78,6 +80,8 @@ const CCloth &CGabriella::getCoat() const {
 }
 
 // nocedit 0x004d7660
+// bw1 0x004cb760
+// bw2 0x004b2840
 CGabriella::~CGabriella() = default;
 
 // Her model is named again and found a third time. The original keeps the bones and motions for
@@ -111,6 +115,8 @@ const CDemonActorType &CGabriella::getActorType() const {
 // The original also stopped reading what Gabriella was on the way to from version 4, which is past
 // the latest a mission can hold.
 // nocedit 0x004d6090
+// bw1 0x004c9ef0
+// bw2 0x004b0fb0
 void CGabriella::archive(CActorArchive &actor_archive) {
     CHero::archive(actor_archive);
     const int saved_version = actor_archive.getSavedVersion(kType);
@@ -123,6 +129,8 @@ void CGabriella::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004d2ae0
+// bw1 0x004c6240
+// bw2 0x004ad290
 std::unique_ptr<CDemonActor> CGabriella::create(CActor &classes) {
     return std::make_unique<CGabriella>(classes);
 }

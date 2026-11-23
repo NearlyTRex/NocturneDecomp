@@ -19,7 +19,6 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   CBoundingBox3D local_40;
   CVector3f local_28;
   int local_18;
-  int iStack_14;
   uint uVar2;
   
   if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
@@ -67,7 +66,7 @@ LAB_00413b59:
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iStack_14);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_18);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
     pCVar2 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar2,-1,0x2e7,1,0);

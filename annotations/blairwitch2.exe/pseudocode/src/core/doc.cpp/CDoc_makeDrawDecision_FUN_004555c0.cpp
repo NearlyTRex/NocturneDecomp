@@ -64,8 +64,8 @@ void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc *this_ptr)
   bVar9 = 0;
   iVar15 = (this_ptr->base).base.layer_action_index;
   if ((iVar15 < 0) || (0xf < iVar15)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\doc.cpp";
-    g_INT_01d046a4 = 0xbe0;
+    g_CurrentFilename = "..\\core\\doc.cpp";
+    g_CurrentLineNumber = 3040;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDoc::makeDrawDecision - draw motion out of range!");
   }
   local_1c = 1.0;

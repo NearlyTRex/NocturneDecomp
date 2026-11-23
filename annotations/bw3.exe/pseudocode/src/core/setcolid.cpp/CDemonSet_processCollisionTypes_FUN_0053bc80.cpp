@@ -183,8 +183,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
                                           (SStack_200.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
-                    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
-                    g_INT_01d71de4 = 0xcb;
+                    g_CurrentFilename = "..\\core\\setcolid.cpp";
+                    g_CurrentLineNumber = 203;
                     core_main_c_displayErrorAndQuit_FUN_004e4330
                               ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
                   }
@@ -433,8 +433,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0053bc80(CDe
                   }
                   else {
 LAB_0053ca6d:
-                    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
-                    g_INT_01d71de4 = 299;
+                    g_CurrentFilename = "..\\core\\setcolid.cpp";
+                    g_CurrentLineNumber = 299;
                     core_main_c_displayErrorAndQuit_FUN_004e4330("Invalid collision type!");
                   }
                 }

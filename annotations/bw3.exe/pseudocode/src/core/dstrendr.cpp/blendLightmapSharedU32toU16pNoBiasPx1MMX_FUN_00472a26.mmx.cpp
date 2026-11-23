@@ -47,7 +47,6 @@ __asm {
         por MM0,MM3
         movd EAX,MM0
         mov word ptr [EDI],AX
-        pop EBP
         emms
 }
 }

@@ -10,8 +10,8 @@ void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerF
 
 {
   if (4 < g_NumSearchHandlers) {
-    g_CHAR_PTR_01d1d400 = "..\\engine\\dosio.c";
-    g_INT_01d1d404 = 0x6a;
+    g_CurrentFilename = "..\\engine\\dosio.c";
+    g_CurrentLineNumber = 106;
     core_main_c_displayErrorAndQuit_FUN_005030e0("addGetFileInfoHook - too many!");
   }
   g_SearchHandlers[g_NumSearchHandlers] = handler;

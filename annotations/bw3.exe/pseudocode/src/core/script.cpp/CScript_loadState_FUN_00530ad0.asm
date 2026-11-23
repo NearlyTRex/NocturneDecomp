@@ -296,8 +296,8 @@ section .text
         ;   Label: LAB_00530d75
     MOV EBX,0x10ec                      ; 00530d7a
     PUSH 0x5cfd0a                       ; 00530d7f | = "CScript::loadState - file version is ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 00530d84 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 00530d8a | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00530d84 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 00530d8a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00530d90
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00530d95

@@ -1,4 +1,5 @@
 # Imports
+import importlib
 import sys
 
 # Third-party imports
@@ -6,6 +7,7 @@ import pytest
 
 # Local imports
 from ghidra_annotations.util import log
+from patch_program import DisassembleCommand
 
 
 # Writes to whatever sys.stdout is now. pytest swaps the captured stream
@@ -32,3 +34,11 @@ def package_logger(monkeypatch, request):
     yield logger
     for handler in list(logger.handlers):
         logger.removeHandler(handler)
+
+
+# Ghidra's DisassembleCommand as the patch_program fake, which decodes into
+# the fake's own listing, for the tests that write bytes and redecode them
+@pytest.fixture(name = "commands")
+def fixture_commands(monkeypatch):
+    monkeypatch.setattr(importlib.import_module("ghidra.app.cmd.disassemble"), "DisassembleCommand",
+                        DisassembleCommand)

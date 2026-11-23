@@ -202,8 +202,8 @@ section .text
         ;   Label: LAB_0047e58f
     MOV EDX,0xf8                        ; 0047e594
     PUSH 0x5db005                       ; 0047e599 | = "Invalid bitsPerPixel in CDrawSurface:..."
-    MOV [0x01d1d400],EAX                ; 0047e59e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0047e5a3 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0047e59e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0047e5a3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0047e5a9
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0047e5ae

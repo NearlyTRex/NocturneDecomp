@@ -144,8 +144,8 @@ section .text
     MOV EDI,0x5d9639                    ; 004cab77 | = "..\\core\\ground.cpp"
     MOV EBP,0x44                        ; 004cab7c
     PUSH 0x5d964c                       ; 004cab81 | = "eopen - Cannot open file"
-    MOV dword ptr [0x01d046a0],EDI      ; 004cab86 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 004cab8c | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 004cab86 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 004cab8c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004cab92
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004cab97
@@ -257,8 +257,8 @@ section .text
     MOV EDX,0x5d960f                    ; 004cac7d | = "..\\core\\ground.cpp"
     MOV ECX,0x40                        ; 004cac82
     PUSH 0x5d9622                       ; 004cac87 | = "eopen - ext not found!"
-    MOV dword ptr [0x01d046a0],EDX      ; 004cac8c | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 004cac92 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 004cac8c | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 004cac92 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004cac98
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004cac9d
@@ -297,8 +297,8 @@ section .text
     MOV EBP,0x5d9639                    ; 004cace0 | = "..\\core\\ground.cpp"
     MOV EAX,0x44                        ; 004cace5
     PUSH 0x5d964c                       ; 004cacea | = "eopen - Cannot open file"
-    MOV dword ptr [0x01d046a0],EBP      ; 004cacef | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004cacf5 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 004cacef | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004cacf5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004cacfa
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004cacff
@@ -371,8 +371,8 @@ section .text
         ;   Label: LAB_004cada1
     MOV EAX,0x40                        ; 004cada6
     PUSH 0x5d9622                       ; 004cadab | = "eopen - ext not found!"
-    MOV dword ptr [0x01d046a0],ESI      ; 004cadb0 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 004cadb6 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 004cadb0 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 004cadb6 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004cadbb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004cadc0

@@ -65,6 +65,9 @@ void CDemonCube::load(common::CBinaryReader &reader) {
 
 // Both copies empty.
 // nocedit 0x004567b0
+// bw1 0x00457bc0
+// bw2 0x00446510
+// bw3 0x00453d10
 void CDemonCube::allocVoxelMemory() {
     voxel_buffer1_.emplace();
     voxel_buffer2_.emplace();
@@ -83,6 +86,9 @@ void CDemonCube::setShadowVoxel(const common::CVector3i &voxel) {
 }
 
 // nocedit 0x00456840
+// bw1 0x00457c40
+// bw2 0x00446590
+// bw3 0x00453d90
 void CDemonCube::allocGeometryMemory(int vertex_count, int triangle_count) {
     if (vertex_count < 0) {
         common::displayErrorAndQuit("CDemonCube::allocMemory - Out of vertex memory");

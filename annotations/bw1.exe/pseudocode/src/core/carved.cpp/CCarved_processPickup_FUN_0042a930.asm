@@ -34,7 +34,7 @@
 ;   CConsole* g_CConsolePtr = 007db5f0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CConsole g_CConsoleInstance
-;   char* g_CHAR_PTR_01d1d400
+;   char* g_CurrentFilename
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -586,8 +586,8 @@ section .text
         ;   Label: LAB_0042b00b
     MOV EDX,0x4d7                       ; 0042b010
     PUSH 0x5d556d                       ; 0042b015 | = "Invalid demon townsfolk object shape!"
-    MOV [0x01d1d400],EAX                ; 0042b01a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 0042b01f | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 0042b01a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 0042b01f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0042b025
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0042b02a

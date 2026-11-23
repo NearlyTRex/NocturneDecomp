@@ -67,6 +67,9 @@ void CHeroPlaceholder::archive(CActorArchive &actor_archive) {
 }
 
 // nocedit 0x004f3bc0
+// bw1 0x004ecb70
+// bw2 0x004d0910
+// bw3 0x004d4ab0
 std::unique_ptr<CDemonActor> CHeroPlaceholder::create(CActor & /*classes*/) {
     return std::make_unique<CHeroPlaceholder>();
 }

@@ -75,6 +75,9 @@ void CPlatform::setup() {
 
 // A param that isn't a number goes to the end, as the original's comparison sent it.
 // nocedit 0x0054cab0
+// bw1 0x00539660
+// bw2 0x00518310
+// bw3 0x00511340
 void CPlatform::evaluatePosition() {
     param_ = std::max(param_, 0.0F);
     if (!(param_ <= 1.0F)) {
@@ -113,6 +116,7 @@ void CPlatform::attachActor(CDemonActor *actor) {
 }
 
 // nocedit 0x00442380
+// bw2 0x00438920
 CPlatform::~CPlatform() = default;
 
 // nocedit 0x0054c840
@@ -121,6 +125,9 @@ const CDemonActorType &CPlatform::getActorType() const {
 }
 
 // nocedit 0x0054c810
+// bw1 0x005393d0
+// bw2 0x00518080
+// bw3 0x005110b0
 std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
     return std::make_unique<CPlatform>(classes);
 }
@@ -133,6 +140,9 @@ std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
 // deferred: the draw lit per pixel with the fog sampled at its place, while recomputeFog is set,
 //   with getFogValueAtPosition and the set's per-pixel lighting
 // nocedit 0x0054d9b0
+// bw1 0x0053a520
+// bw2 0x005191d0
+// bw3 0x00512200
 void CPlatform::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
     if (layer_flag == 0) {
         return;
@@ -158,6 +168,8 @@ void CPlatform::renderBackground(int layer_flag, const SActorRenderOwners &owner
 }
 
 // nocedit 0x0054dbc0
+// bw2 0x005193f0
+// bw3 0x00512420
 void CPlatform::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
@@ -242,6 +254,9 @@ int CPlatform::getBlockVirtualDirectorFlag() {
 }
 
 // nocedit 0x0054db70
+// bw1 0x0053a700
+// bw2 0x005193b0
+// bw3 0x005123e0
 CBoundingBox3D *CPlatform::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
     return out_box;

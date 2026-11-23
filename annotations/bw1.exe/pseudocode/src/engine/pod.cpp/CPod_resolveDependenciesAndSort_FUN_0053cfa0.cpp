@@ -117,8 +117,8 @@ LAB_0053d00e:
         }
         else {
           if (199 < iStack_1c) {
-            g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-            g_INT_01d1d404 = 0x633;
+            g_CurrentFilename = "..\\engine\\pod.cpp";
+            g_CurrentLineNumber = 1587;
             iStack_ab0 = 0x53d2b5;
             core_main_c_displayErrorAndQuit_FUN_005030e0("Too many POD dependency ordering rules");
           }
@@ -176,8 +176,8 @@ LAB_0053d00e:
         } while (iStack_34 < this_ptr->pod_file_count);
       }
       if (this_ptr->pod_file_count <= iStack_34) {
-        g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-        g_INT_01d1d404 = 0x685;
+        g_CurrentFilename = "..\\engine\\pod.cpp";
+        g_CurrentLineNumber = 1669;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Circular POD mount order dependency detected.");
       }
       pCVar2 = ((CPod *)(this_ptr->pod_files + iStack_34 + -1))->pod_files[0];

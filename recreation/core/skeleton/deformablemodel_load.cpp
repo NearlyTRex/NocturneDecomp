@@ -43,6 +43,9 @@ std::uint16_t toUv(int file_value) {
 } // namespace
 
 // nocedit 0x0059b8d0
+// bw1 0x00564e40
+// bw2 0x005427c0
+// bw3 0x005499d0
 void CDeformableModel::load(std::string_view filename) {
     model_filename_ = filename;
     const std::optional<std::string> file = owners_.dosio.readFile("models", filename);
@@ -58,6 +61,9 @@ void CDeformableModel::load(std::string_view filename) {
 // Each group of fields follows a comment line, which is passed over. The original also quit on a
 // read error, which reading the whole file first can't have.
 // nocedit 0x0059b970
+// bw1 0x00564ed0
+// bw2 0x00542850
+// bw3 0x00549a60
 void CDeformableModel::loadStream(common::CTextScanner &scanner) {
     scanner.skipLine();
     int version = 0;

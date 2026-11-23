@@ -11,8 +11,8 @@ void __cdecl engine_matrix_c_popViewport_FUN_004e6c50(void)
 {
   g_ViewportStackIndex = g_ViewportStackIndex + -1;
   if (g_ViewportStackIndex < 0) {
-    g_CHAR_PTR_01d71de0 = "..\\engine\\matrix.c";
-    g_INT_01d71de4 = 0x56c;
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 1388;
     core_main_c_displayErrorAndQuit_FUN_004e4330("3D Window unbalance");
   }
   g_CameraOriginX = g_ViewportStack_CameraX[g_ViewportStackIndex];

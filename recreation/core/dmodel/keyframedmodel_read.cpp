@@ -53,6 +53,9 @@ void scanLine(common::CTextScanner &scanner, std::initializer_list<int *> fields
 // reset.
 // Empty vertex or part blocks fail, as the original's zero-sized fread did.
 // nocedit 0x00476f20
+// bw1 0x004669f0
+// bw2 0x0044de20
+// bw3 0x004606a0
 void CKeyFramedModel::readBinaryModel(std::span<const std::byte> data) {
     common::CBinaryReader reader(data);
     const auto version = reader.read<std::int32_t>();
@@ -121,6 +124,9 @@ void CKeyFramedModel::readBinaryModel(std::span<const std::byte> data) {
 // Lines the file leaves out stay zero, where the original left them uninitialised. The original
 // also quit on a stream error, which reading from memory can't have.
 // nocedit 0x00477110
+// bw1 0x00466be0
+// bw2 0x0044e010
+// bw3 0x00460890
 void CKeyFramedModel::readTextModel(std::string_view text) {
     common::CTextScanner scanner(text);
     scanner.skipLine();

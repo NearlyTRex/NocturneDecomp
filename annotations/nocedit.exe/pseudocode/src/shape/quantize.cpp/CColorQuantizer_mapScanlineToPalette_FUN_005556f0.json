@@ -290,5 +290,119 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CColorQuantizer_mapScanlineToPalette_FUN_005556f0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 28,
+          "line": 106,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 19,
+              "message": "'best_index' declared without an initial value"
+            },
+            {
+              "line": 34,
+              "message": "Assuming 'end_x' is not equal to 'local_30'"
+            },
+            {
+              "line": 34,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 41,
+              "message": "Assuming 0 is >= field 'status'"
+            },
+            {
+              "line": 41,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 52,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 53,
+              "message": "Assuming 'local_58' is <= 255"
+            },
+            {
+              "line": 53,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Assuming 'local_50' is <= 255"
+            },
+            {
+              "line": 61,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 68,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 68,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 69,
+              "message": "Assuming 'local_54' is <= 255"
+            },
+            {
+              "line": 69,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 76,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 76,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 77,
+              "message": "Assuming 'local_4c' is <= 255"
+            },
+            {
+              "line": 77,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 87,
+              "message": "Assuming 'iVar7' is >= 'num_palette_entries'"
+            },
+            {
+              "line": 87,
+              "message": "Loop condition is false. Execution continues on line 106"
+            },
+            {
+              "line": 106,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

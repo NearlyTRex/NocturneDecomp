@@ -1,11 +1,14 @@
 #include "core/menu/graphicoptionspage.h"
 
+#include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "platform/antialias.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
+#include "shape/edittool/picklist.h"
 
 #include <algorithm>
 #include <array>
@@ -32,9 +35,9 @@ enum class EGraphicLine : std::uint8_t {
     Halo,
 };
 
-// By halo mode.
-constexpr std::array<std::string_view, 3> kHaloLabels{
-    "Flashlight halo : Off", "Flashlight halo : Simple", "Flashlight halo : Complex"};
+// By halo mode; the labels' ids, as the names below are.
+constexpr std::array<std::string_view, 3> kHaloLabels{"graphic_halo_off", "graphic_halo_simple",
+                                                      "graphic_halo_complex"};
 constexpr int kHaloModeCount = static_cast<int>(kHaloLabels.size());
 
 constexpr int kLowBitDepth = 16;
@@ -42,9 +45,12 @@ constexpr int kHighBitDepth = 32;
 
 // By EUpscaler.
 constexpr std::array<std::string_view, platform::kUpscalerCount> kUpscalerNames{
-    "Standard", "Nearest", "Smooth", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
+    "graphic_upscaler_standard", "graphic_upscaler_nearest", "graphic_upscaler_smooth",
+    "graphic_upscaler_fsr",      "graphic_upscaler_lanczos", "graphic_upscaler_gsr",
+    "graphic_upscaler_nis",      "graphic_upscaler_xbr"};
 // By EAntialias.
-constexpr std::array<std::string_view, platform::kAntialiasCount> kAntialiasNames{"Off", "FXAA"};
+constexpr std::array<std::string_view, platform::kAntialiasCount> kAntialiasNames{
+    "graphic_antialias_off", "graphic_antialias_fxaa"};
 constexpr int kSharpnessSteps =
     (platform::kUpscalerSharpnessMax / platform::kUpscalerSharpnessStep) + 1;
 // The most cards a renderer lists.
@@ -67,7 +73,11 @@ CGraphicOptionsPage::CGraphicOptionsPage(CMenu &menu, const SMenuOwners &owners)
 }
 
 std::optional<std::string> CGraphicOptionsPage::title() {
-    return localize("Graphic Options");
+    return label("graphic_title");
+}
+
+std::string_view CGraphicOptionsPage::getLayoutId() const {
+    return "graphic";
 }
 
 void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
@@ -75,26 +85,29 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
     const CGame &game = owners.game;
     recordResolution();
     addLine(lines, EGraphicLine::Acceleration,
-            localize(owners.special.getUseDirect3D() ? "Acceleration : On" : "Acceleration : Off"));
+            label(owners.special.getUseDirect3D() ? "graphic_acceleration_on"
+                                                  : "graphic_acceleration_off"));
     addLine(lines, EGraphicLine::Api, getApiText());
     addLine(lines, EGraphicLine::Card, getCardText());
     addLine(lines, EGraphicLine::Bits,
-            std::format("{}{}", localize("Bits per pixel : "), game.game_bpp));
+            std::format("{}{}", label("graphic_bits_per_pixel"), game.game_bpp));
     const platform::EUpscaler upscaler = owners.display.getUpscaler();
     addLine(lines, EGraphicLine::Upscaler,
-            std::format("Upscaler : {}", kUpscalerNames.at(static_cast<std::size_t>(upscaler))));
+            label("graphic_upscaler") +
+                label(kUpscalerNames.at(static_cast<std::size_t>(upscaler))));
     if (platform::getUpscalerSharpens(upscaler)) {
         addLine(lines, EGraphicLine::Sharpness,
-                std::format("Sharpness : {}%", owners.display.getUpscalerSharpness()));
+                std::format("{}{}%", label("graphic_sharpness"),
+                            owners.display.getUpscalerSharpness()));
     }
     // The pass runs over the hardware renderer's scene, which software has none of.
     if (owners.special.getUseDirect3D()) {
         addLine(lines, EGraphicLine::Antialias,
-                std::format("Anti-aliasing : {}", kAntialiasNames.at(static_cast<std::size_t>(
-                                                      owners.display.getAntialias()))));
+                label("graphic_antialias") + label(kAntialiasNames.at(static_cast<std::size_t>(
+                                                 owners.display.getAntialias()))));
     }
     addLine(lines, EGraphicLine::Halo,
-            localize(kHaloLabels.at(
+            label(kHaloLabels.at(
                 static_cast<std::size_t>(std::clamp(game.halo_mode, 0, kHaloModeCount - 1)))));
 }
 
@@ -108,7 +121,7 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
     case EGraphicLine::Api:
         break;
     case EGraphicLine::Card:
-        stepCard();
+        pickCard();
         break;
     case EGraphicLine::Bits:
         game.game_bpp = game.game_bpp == kLowBitDepth ? kHighBitDepth : kLowBitDepth;
@@ -131,19 +144,21 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
 
 std::string CGraphicOptionsPage::getApiText() const {
     if (driver_names_.empty()) {
-        return localize("3D API : None");
+        return label("graphic_api_none");
     }
     const auto board = static_cast<std::size_t>(getOwners().special.getCurrentGraphicsBoard());
-    return std::format("3D API : {}", driver_names_.at(board));
+    return label("graphic_api") + driver_names_.at(board);
 }
 
 std::string CGraphicOptionsPage::getCardText() const {
     if (card_names_.empty()) {
-        return localize("No 3D Hardware detected");
+        return label("graphic_no_card");
     }
     const int board = getOwners().special.getCurrentGraphicsBoard();
-    return std::format("{}{} ({})", localize("3D Card : "),
-                       card_names_.at(static_cast<std::size_t>(board)), board);
+    const auto length = static_cast<std::size_t>(getMenu().getMenuLayout().card_name_length);
+    return std::format("{}{} ({})", label("graphic_card"),
+                       shortenToLength(card_names_.at(static_cast<std::size_t>(board)), length),
+                       board);
 }
 
 void CGraphicOptionsPage::listCards() {
@@ -215,17 +230,25 @@ void CGraphicOptionsPage::stepAntialias(EMenuStep step) {
         platform::kAntialiasCount));
 }
 
-// Always on, whichever way.
-void CGraphicOptionsPage::stepCard() {
+// Whichever way, a list of the cards by their whole names, as the sound page lists its devices;
+// the original stepped to the next card, its name often too long to read beside the menu.
+void CGraphicOptionsPage::pickCard() {
     engine::CSpecial &special = getOwners().special;
     if (card_names_.empty()) {
         special.setCurrentGraphicsBoard(0);
         return;
     }
-    const auto next = static_cast<int>(
-        (static_cast<std::size_t>(special.getCurrentGraphicsBoard()) + 1) % card_names_.size());
-    special.setCurrentGraphicsBoard(next);
-    special.selectCard(next);
+    shape::CPickList list(getOwners().pick_list);
+    for (const std::string &name : card_names_) {
+        list.add(name);
+    }
+    const int chosen = list.displayChoicesAndWaitForInput(label("graphic_select_card"),
+                                                          special.getCurrentGraphicsBoard());
+    if (chosen < 0) {
+        return;
+    }
+    special.setCurrentGraphicsBoard(chosen);
+    special.selectCard(chosen);
 }
 
 } // namespace nocturne::core

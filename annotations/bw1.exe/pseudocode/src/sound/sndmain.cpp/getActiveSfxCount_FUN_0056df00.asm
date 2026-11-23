@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02c745ec[0].playback_state
 ;   int g_SoundLockCount
 ;
@@ -47,8 +47,8 @@ section .text
     MOV ECX,0x5f2c1d                    ; 0056df33
     MOV EBX,0x249                       ; 0056df38
     PUSH 0x5f2c32                       ; 0056df3d
-    MOV dword ptr [0x01d1d400],ECX      ; 0056df42 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0056df48 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056df42 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0056df48 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056df4e
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0056df53

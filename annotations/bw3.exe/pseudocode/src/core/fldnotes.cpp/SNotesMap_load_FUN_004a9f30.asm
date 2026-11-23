@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005c112b
 ;   TerminatedCString s_Out_of_memory_005c1140
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -162,8 +162,8 @@ section .text
         ;   Label: LAB_004aa088
     MOV EDX,0x77a                       ; 004aa08d
     PUSH 0x5c1140                       ; 004aa092 | = "Out of memory!"
-    MOV [0x01d71de0],EAX                ; 004aa097 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004aa09c | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004aa097 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004aa09c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004aa0a2
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004aa0a7

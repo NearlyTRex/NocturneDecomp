@@ -31,8 +31,8 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00517200(int total_entries,
   if ((file_header->_flag & 0x20) == 0) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
-  g_INT_01d046a4 = 0x556;
+  g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+  g_CurrentLineNumber = 1366;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Error writing PBG header");
   return;
 }

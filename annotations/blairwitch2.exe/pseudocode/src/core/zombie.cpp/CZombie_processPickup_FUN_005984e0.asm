@@ -34,7 +34,7 @@
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
-;   char* g_CHAR_PTR_01d046a0
+;   char* g_CurrentFilename
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -592,8 +592,8 @@ section .text
         ;   Label: LAB_00598bba
     MOV EDX,0x5d1                       ; 00598bbf
     PUSH 0x5ef252                       ; 00598bc4 | = "Invalid zombie object shape!"
-    MOV [0x01d046a0],EAX                ; 00598bc9 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00598bce | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00598bc9 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00598bce | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00598bd4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00598bd9

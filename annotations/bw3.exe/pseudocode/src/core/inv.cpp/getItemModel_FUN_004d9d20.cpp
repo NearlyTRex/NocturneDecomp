@@ -35,8 +35,8 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9d20(CDemonA
                          (actor_ptr,g_CHealthItemClassInfo.name_hash);
       return (CKeyFramedModelInstance *)(pCVar2 + 1);
     }
-    g_CHAR_PTR_01d71de0 = "..\\core\\inv.cpp";
-    g_INT_01d71de4 = 0xaf;
+    g_CurrentFilename = "..\\core\\inv.cpp";
+    g_CurrentLineNumber = 175;
     core_main_c_displayErrorAndQuit_FUN_004e4330("getModel - Can't classify : %s");
     return (CKeyFramedModelInstance *)0x0;
   }

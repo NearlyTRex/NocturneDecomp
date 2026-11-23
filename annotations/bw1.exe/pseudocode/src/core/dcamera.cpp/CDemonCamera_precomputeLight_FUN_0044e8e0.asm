@@ -45,8 +45,8 @@
 ;   undefined4 DAT_00857cd8
 ;   int g_LightBufferPoolIndex
 ;   SCoronaLightCache g_CoronaLightCache
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0
@@ -150,8 +150,8 @@ section .text
     MOV ESI,0x5d76ab                    ; 0044e9e7 | = "..\\core\\dcamera.cpp"
     MOV EDI,0x6ca                       ; 0044e9ec
     PUSH 0x5d76bf                       ; 0044e9f1 | = "CDemonCamera::precomputeLight - Too m..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0044e9f6 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0044e9fc | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0044e9f6 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0044e9fc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0044ea02
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 0044ea07

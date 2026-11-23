@@ -15,7 +15,7 @@
 ;   float g_FLOAT_005d65c7 = 0.1591549
 ;   double g_DOUBLE_005d65cf = 0.900000000000000
 ;   undefined4 DAT_005d65d7
-;   undefined4 s_s_333_CTrigger_005d65de+1
+;   undefined4 DAT_005d65df
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;
 ; Called Functions:
@@ -563,7 +563,7 @@ section .text
     MOV dword ptr [ESI + 0x8],EAX       ; 0056db30
     LEA EAX,[EBX + 0x2f4]               ; 0056db33
         ;   Label: LAB_0056db33
-    FLD float ptr [0x005d65df]          ; 0056db39 | s_s_333_CTrigger_005d65de+1
+    FLD float ptr [0x005d65df]          ; 0056db39 | DAT_005d65df
     FLD float ptr [EAX]                 ; 0056db3f
     FMUL ST1                            ; 0056db41
     FLD float ptr [EAX + 0x4]           ; 0056db43

@@ -36,8 +36,8 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004ac0b0(CSmokeParticle *th
     dVar3 = round((double)this_ptr->age);
     local_1c = (int)ROUND(dVar3);
     if ((local_1c < 0) || (0x27 < local_1c)) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\fire.cpp";
-      g_INT_01d1d404 = 0x11d;
+      g_CurrentFilename = "..\\core\\fire.cpp";
+      g_CurrentLineNumber = 285;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CSmokeParticle::render - Frame out of range");
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00

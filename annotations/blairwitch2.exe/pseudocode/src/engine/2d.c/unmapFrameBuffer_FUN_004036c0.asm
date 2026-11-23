@@ -81,8 +81,8 @@ section .text
     MOV ECX,0x5ca2d6                    ; 00403763
     MOV ESI,0x9cb                       ; 00403768
     PUSH 0x5ca2e5                       ; 0040376d
-    MOV dword ptr [0x01d046a0],ECX      ; 00403772 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00403778 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00403772 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00403778 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040377e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00403783

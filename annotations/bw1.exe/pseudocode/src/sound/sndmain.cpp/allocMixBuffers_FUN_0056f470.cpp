@@ -35,8 +35,8 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_0056f470(int requested_size,i
        realloc(g_TertiaryMixBuffer,iVar4 * g_AudioChannelCount);
   if (((g_PrimaryMixBuffer == (float *)0x0) || (g_SecondaryMixBuffer == (float *)0x0)) ||
      (g_TertiaryMixBuffer == (float *)0x0)) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x55f;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 1375;
     core_main_c_displayErrorAndQuit_FUN_005030e0("allocMixBuffers - out of memory");
   }
   iVar4 = 0;

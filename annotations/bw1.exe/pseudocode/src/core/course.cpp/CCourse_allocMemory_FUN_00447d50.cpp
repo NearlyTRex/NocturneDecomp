@@ -18,8 +18,8 @@ void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00447d50(CCourse *this_ptr,
   if (pCVar1 != (CCourseFrame *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\core\\course.cpp";
-  g_INT_01d1d404 = 0x6e;
+  g_CurrentFilename = "..\\core\\course.cpp";
+  g_CurrentLineNumber = 110;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CCourse::allocMemory - out of hunk!");
   return;
 }

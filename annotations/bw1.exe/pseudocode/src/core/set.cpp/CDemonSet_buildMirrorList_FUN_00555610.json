@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 150,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "memcpy_oversized_source",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_param",
@@ -98,13 +99,13 @@
     },
     {
       "addr": "01d1d400",
-      "name": "g_CHAR_PTR_01d1d400",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "g_INT_01d1d404",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -164,13 +165,13 @@
     "blairwitch2.exe": {
       "addr": "00534360",
       "by": "name",
-      "class": "operand-change",
+      "class": "layout-drift",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "0053afa0",
       "by": "name",
-      "class": "operand-change",
+      "class": "layout-drift",
       "ratio": 1.0
     },
     "nocedit.exe": {
@@ -278,6 +279,14 @@
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_28[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_28[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 33,
+      "match": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

@@ -1,7 +1,9 @@
 #include "core/sound/sound.h"
+#include "engine/package/gamecontent.h"
 #include "engine/pod/pod.h"
 #include "platform/filesystem.h"
 #include "tests/mocks/engine/podimage.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/shape/strlistitems.h"
 #include "tests/mocks/sound/sndmainfixture.h"
 #include "tests/mocks/sound/wavfile.h"
@@ -25,7 +27,7 @@ TEST(CSound, IsNeitherCopiedNorMoved) {
     static_assert(!std::is_copy_constructible_v<CSound>);
     static_assert(!std::is_move_constructible_v<CSound>);
     static_assert(std::is_constructible_v<CSound, sound::CSndMain &, engine::CPod &,
-                                          platform::IFileSystem &>);
+                                          platform::IFileSystem &, const engine::SGameContent &>);
 }
 
 TEST(CSound, PublicInterface) {
@@ -67,11 +69,13 @@ TEST(CSound, PublicInterface) {
 class CSoundTest : public sound::CSndMainFixture {
 protected:
     engine::CPod pod_{file_system_, dosio_};
+    // Nocturne's, with its splash music, unless a test changes it.
+    engine::SGameContent content_ = engine::getShippedGameContent();
 };
 
 TEST_F(CSoundTest, KeepsThreeChannelsAtFullVolumeAndTheListenerAtTheOrigin) {
     sound_.set3DListenerPos(5.0, 5.0, 5.0);
-    const CSound game_sound(sound_, pod_, file_system_);
+    const CSound game_sound(sound_, pod_, file_system_, content_);
     EXPECT_EQ(sound_.getSfxChannelVol(2), 1.0F);
     EXPECT_TRUE(sound_.isSfxChannelEnabled(31));
     EXPECT_EQ(sound_.getListenerPosition(), common::CVector3d{});
@@ -81,7 +85,7 @@ TEST_F(CSoundTest, GoingShutsTheSoundSystemDown) {
     givenSound("tone.wav", sound::makeConstantWav(100, 0));
     std::uint32_t handle = 0;
     {
-        const CSound game_sound(sound_, pod_, file_system_);
+        const CSound game_sound(sound_, pod_, file_system_, content_);
         sound_.initializeSoundDevice();
         ASSERT_TRUE(sound_.enableSoundSystem());
         handle = sound_.startSfx("tone.wav");
@@ -97,7 +101,7 @@ TEST_F(CSoundTest, FindingTheSoundFilesListsTheWavesThenTheMp3sOnceAndTakesUpThe
     pod_.mount("ACT1.POD");
     ON_CALL(file_system_, findFiles(std::string_view("sound\\*.mp3")))
         .WillByDefault(Return(std::vector<platform::SFileInfo>{{.name = "theme.mp3"}}));
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     game_sound.findAllSoundFiles();
     EXPECT_TRUE(sound_.isSoundSystemActive());
     EXPECT_CALL(file_system_, findFiles).Times(0);
@@ -108,7 +112,7 @@ TEST_F(CSoundTest, FindingTheSoundFilesListsTheWavesThenTheMp3sOnceAndTakesUpThe
 
 TEST_F(CSoundTest, ResettingStopsTheSoundsAndFreesTheSamples) {
     givenSound("tone.wav", sound::makeConstantWav(100, 0));
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     sound_.initializeSoundDevice();
     ASSERT_TRUE(sound_.enableSoundSystem());
     const std::uint32_t handle = sound_.startSfx("tone.wav");
@@ -120,7 +124,7 @@ TEST_F(CSoundTest, ResettingStopsTheSoundsAndFreesTheSamples) {
 }
 
 TEST_F(CSoundTest, ConfiguringTurnsTheChannelsDownToTheMenusLevel) {
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     sound_.setSfxChannelVol(CSound::kEffectsChannel, 1.0F);
     sound_.setSfxChannelVol(CSound::kMusicChannel, 0.1F);
     sound_.setSfxChannelVol(CSound::kDialogChannel, 1.0F);
@@ -144,7 +148,7 @@ protected:
         return expectInfo(sound_.getSfxSampleInfo(sound_.getFirstActiveSfx())).name;
     }
 
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, content_};
 };
 
 TEST_F(CSoundMusicTest, ConfiguringStopsTheSoundsAndPlaysTheMenuMusicFromTheOrigin) {
@@ -173,6 +177,22 @@ TEST_F(CSoundMusicTest, AboveThirtyThousandTheMusicIsTheFortyFourKilohertzOne) {
     EXPECT_EQ(playing(), "splash-music-44.wav");
 }
 
+// BW2's, the one sample at either rate; read as configure starts it.
+TEST_F(CSoundMusicTest, TheMusicIsTheGames) {
+    givenSound("XBLAIRMENU.wav", sound::makeConstantWav(100, 0));
+    content_.menu->music = {.low_rate = "XBLAIRMENU.wav", .high_rate = "XBLAIRMENU.wav"};
+    startOutput();
+    game_sound_.configure();
+    EXPECT_EQ(playing(), "XBLAIRMENU.wav");
+}
+
+TEST_F(CSoundMusicTest, WithoutMenusNoMusicPlays) {
+    content_.menu.reset();
+    startOutput();
+    game_sound_.configure();
+    EXPECT_EQ(sound_.countActiveSfx(), 0);
+}
+
 TEST_F(CSoundMusicTest, AtThirtyThousandTheMusicIsTheTwentyTwoKilohertzOne) {
     sound_.setAudioSampleRate(30000);
     startOutput();
@@ -199,7 +219,7 @@ protected:
     }
 
     std::vector<float> lengths_;
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, content_};
 };
 
 // Stopping every sound first is a stop of the music too.
@@ -221,7 +241,7 @@ TEST_F(CSoundMusicHandlerTest, ResettingStopsTheMusic) {
 
 TEST_F(CSoundTest, MusicThatIsntThereHasNoLength) {
     startOutput();
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     std::vector<float> lengths;
     game_sound.setMusicHandler([&](float seconds) { lengths.push_back(seconds); });
     game_sound.configure();
@@ -231,7 +251,7 @@ TEST_F(CSoundTest, MusicThatIsntThereHasNoLength) {
 TEST_F(CSoundTest, WithoutAHandlerConfiguringAndResettingStillRun) {
     givenSound("splash-music-22.wav", sound::makeConstantWav(100, 0));
     startOutput();
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     game_sound.configure();
     EXPECT_EQ(sound_.countActiveSfx(), 1);
     game_sound.reset();
@@ -242,26 +262,26 @@ TEST_F(CSoundTest, WithoutAHandlerConfiguringAndResettingStillRun) {
 
 TEST_F(CSoundTest, ASoundsDurationIsItsLengthInSeconds) {
     givenSound("tone.wav", sound::makeConstantWav(11025, 0));
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     EXPECT_FLOAT_EQ(game_sound.getSoundDuration("tone.wav"), 0.5F);
 }
 
 // What follows those in a name is for playing the sound, not finding it.
 TEST_F(CSoundTest, ADurationsNameEndsAtAnAtAStarOrWhitespace) {
     givenSound("tone.wav", sound::makeConstantWav(11025, 0));
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     for (const std::string_view name : {"tone.wav@2", "tone.wav*", "tone.wav 1", "tone.wav\t"}) {
         EXPECT_FLOAT_EQ(game_sound.getSoundDuration(name), 0.5F) << name;
     }
 }
 
 TEST_F(CSoundTest, AMissingSoundHasADurationOfMinusOne) {
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     EXPECT_EQ(game_sound.getSoundDuration("missing.wav"), -1.0F);
 }
 
 TEST_F(CSoundTest, WithNoSoundFilesTheSearchRunsEachTime) {
-    CSound game_sound(sound_, pod_, file_system_);
+    CSound game_sound(sound_, pod_, file_system_, content_);
     EXPECT_CALL(file_system_, findFiles).Times(4);
     game_sound.findAllSoundFiles();
     game_sound.findAllSoundFiles();

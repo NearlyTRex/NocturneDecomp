@@ -139,8 +139,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00558450(CDe
                 }
                 else {
 LAB_00558e17:
-                  g_CHAR_PTR_01d1d400 = "..\\core\\setcolid.cpp";
-                  g_INT_01d1d404 = 0x3f1;
+                  g_CurrentFilename = "..\\core\\setcolid.cpp";
+                  g_CurrentLineNumber = 1009;
                   core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid collision type!");
                 }
               }
@@ -252,8 +252,8 @@ LAB_00558e17:
               this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                                       (local_144.keyframed_model);
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
-                g_CHAR_PTR_01d1d400 = "..\\core\\setcolid.cpp";
-                g_INT_01d1d404 = 0x389;
+                g_CurrentFilename = "..\\core\\setcolid.cpp";
+                g_CurrentLineNumber = 905;
                 core_main_c_displayErrorAndQuit_FUN_005030e0("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
               }
               core_dtrace_cpp_initIntersectionCylinder_FUN_0048c230

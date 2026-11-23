@@ -9,8 +9,6 @@
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x10
         mov ECX,dword ptr [EBP + 0x18]
         mov EDX,dword ptr [EBP + 0x14]
         lea EAX,[EDX*0x4 + 0x0]
@@ -90,6 +88,5 @@ __asm {
         jg LAB_00440e66
     LAB_00440e7b:
         emms
-        mov ESP,EBP
 }
 }

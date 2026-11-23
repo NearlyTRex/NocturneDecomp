@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 658,
+    "complexity_score": 693,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 183,
-    "suspect_count": 44,
+    "suspect_count": 47,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_param",
       "stale_struct_offset_64bit",
+      "struct_field_overrun",
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
@@ -116,13 +117,13 @@
     },
     {
       "addr": "01d046a0",
-      "name": "g_CHAR_PTR_01d046a0",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01d046a4",
-      "name": "g_INT_01d046a4",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -505,6 +506,30 @@
       "severity": "moderate",
       "text": "((int)&this_ptr->accel_texture,iVar9,(int)pvVar4,(int)pcStack_24,(int)puStack_20);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "*(...)(pcVar10 + 0x25ec): the pointer is based on a field at offset 0x1b4 (size 3072 in CBitFont) but the +0x2638 byte offset lands in field char_uv_rects (offset 0x25e8). Ghidra anchored on the wrong field \u2014 rewrite as direct access to char_uv_rects (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 172,
+      "match": "*(...)(pcVar10 + 0x25ec)",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar10 + 0x25ec) = (float)iVar5 * fVar2;",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar10 + 0x25f0): the pointer is based on a field at offset 0x1b4 (size 3072 in CBitFont) but the +0x263c byte offset lands in field char_uv_rects (offset 0x25e8). Ghidra anchored on the wrong field \u2014 rewrite as direct access to char_uv_rects (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 173,
+      "match": "*(...)(pcVar10 + 0x25f0)",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar10 + 0x25f0) = (float)iStack_18 * fVar2;",
+      "type": "struct_field_overrun"
+    },
+    {
+      "description": "*(...)(pcVar10 + 0x25f4): the pointer is based on a field at offset 0x1b4 (size 3072 in CBitFont) but the +0x2640 byte offset lands in field char_uv_rects (offset 0x25e8). Ghidra anchored on the wrong field \u2014 rewrite as direct access to char_uv_rects (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 174,
+      "match": "*(...)(pcVar10 + 0x25f4)",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar10 + 0x25f4) = (float)(iVar9 + iVar5 + 1) * fVar2;",
+      "type": "struct_field_overrun"
     },
     {
       "description": "*(...)(pcVar3 + 0x35e8) reaches field char_widths (0x35e8) of CBitFont via a baked 32-bit offset. CBitFont is 64-bit-unstable (grows past its first pointer/unstable field at 0x194); on the 64-bit build field offsets at/after 0x194 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CBitFont * (\u00a7de-pun/\u00a712).",

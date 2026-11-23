@@ -104,8 +104,8 @@
 ;   TerminatedCString s_Out_of_bounds4_005eca70
 ;   int[9] g_PathfindingDeltaX
 ;   int[9] g_PathfindingDeltaZ
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_PathfindingCurrentX
 ;   int g_PathfindingCurrentZ
 ;   ... and 7 more
@@ -808,8 +808,8 @@ section .text
     MOV EAX,0x5eca3e                    ; 00534651 | = "..\\core\\path.cpp"
     MOV EDX,0x54a                       ; 00534656
     PUSH 0x5eca4f                       ; 0053465b | = "Out of bounds3!"
-    MOV [0x01d1d400],EAX                ; 00534660 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDX      ; 00534665 | g_INT_01d1d404
+    MOV [0x01d1d400],EAX                ; 00534660 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDX      ; 00534665 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053466b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534670
@@ -820,8 +820,8 @@ section .text
     MOV ECX,0x5eca5f                    ; 00534678 | = "..\\core\\path.cpp"
     MOV EAX,0x54b                       ; 0053467d
     PUSH 0x5eca70                       ; 00534682 | = "Out of bounds4!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00534687 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053468d | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00534687 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0053468d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00534692
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534697
@@ -961,8 +961,8 @@ section .text
         ;   Label: LAB_00534849
     MOV EAX,0x548                       ; 0053484e
     PUSH 0x5eca0d                       ; 00534853 | = "Out of bounds1!"
-    MOV dword ptr [0x01d1d400],ECX      ; 00534858 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053485e | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00534858 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0053485e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00534863
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534868
@@ -972,8 +972,8 @@ section .text
         ;   Label: LAB_00534870
     MOV ECX,0x549                       ; 00534875
     PUSH 0x5eca2e                       ; 0053487a | = "Out of bounds2!"
-    MOV dword ptr [0x01d1d400],EDX      ; 0053487f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00534885 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0053487f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00534885 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053488b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00534890

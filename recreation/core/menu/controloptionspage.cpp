@@ -5,9 +5,11 @@
 #include "core/game/game.h"
 #include "core/menu/menu.h"
 #include "engine/gamepadinput.h"
+#include "engine/package/gamecontent.h"
 #include "support/newmsg/newmsg.h"
 
-#include <array>
+#include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <format>
 #include <optional>
@@ -43,10 +45,6 @@ int stepTuning(int value, EMenuStep step, int least, int most) {
     return stepped < least ? most : stepped;
 }
 
-// By EControlMode.
-constexpr std::array<std::string_view, 3> kTypeLabels{
-    "Control : Keyboard", "Control : Keyboard/Mouse", "Control : Gamepad"};
-constexpr int kControlModeCount = static_cast<int>(kTypeLabels.size());
 // The sensitivities are 16.16.
 constexpr double kFixedOne = 65536.0;
 
@@ -60,35 +58,40 @@ CControlOptionsPage::CControlOptionsPage(CMenu &menu, const SMenuOwners &owners)
     : CMenuPage(menu), owners_(owners) {}
 
 std::optional<std::string> CControlOptionsPage::title() {
-    return localize("Control Options");
+    return label("controls_title");
 }
 
+std::string_view CControlOptionsPage::getLayoutId() const {
+    return "controls";
+}
+
+// The control modes' labels are already the game's, from its [[controls.mode]].
 void CControlOptionsPage::build(std::vector<SMenuLine> &lines) {
     const CGame &game = owners_.game;
     addLine(lines, EControlLine::Type,
-            localize(kTypeLabels.at(std::to_underlying(game.game_control))));
-    addLine(lines, EControlLine::Keys, localize("Customize Keys"));
+            std::string(owners_.messages.getLocalizedString(game.getControlMode().label)));
+    addLine(lines, EControlLine::Keys, label("controls_keys"));
     addLine(lines, EControlLine::XSensitivity,
-            getSensitivityText("X-axis sensitivity : ", game.x_mouse_sensitivity));
+            getSensitivityText("controls_x_sensitivity", game.x_mouse_sensitivity));
     addLine(lines, EControlLine::YSensitivity,
-            getSensitivityText("Y-axis sensitivity : ", game.y_mouse_sensitivity));
+            getSensitivityText("controls_y_sensitivity", game.y_mouse_sensitivity));
     if (game.game_control == EControlMode::CONTROL_MODE_MOUSE) {
-        addLine(
-            lines, EControlLine::InvertY,
-            localize(game.invert_mouse_y_axis != 0 ? "Invert Y Axis : ON" : "Invert Y Axis : OFF"));
+        addLine(lines, EControlLine::InvertY,
+                label(game.invert_mouse_y_axis != 0 ? "controls_invert_y_on"
+                                                    : "controls_invert_y_off"));
     }
     if (game.game_control == EControlMode::CONTROL_MODE_GAMEPAD) {
         const engine::SGamepadTuning &tuning = owners_.gamepad.tuning;
         addLine(lines, EControlLine::PadDeadzone,
-                std::format("{}{}%", localize("Stick deadzone : "), tuning.deadzone));
+                std::format("{}{}%", label("controls_pad_deadzone"), tuning.deadzone));
         addLine(lines, EControlLine::PadTurnRate,
-                std::format("{}{}", localize("Stick turn speed : "), tuning.turn_rate));
+                std::format("{}{}", label("controls_pad_turn_speed"), tuning.turn_rate));
         addLine(lines, EControlLine::PadLookRate,
-                std::format("{}{}", localize("Stick look speed : "), tuning.look_rate));
-        addLine(
-            lines, EControlLine::PadInvertLook,
-            localize(tuning.invert_look ? "Invert stick look : ON" : "Invert stick look : OFF"));
-        addLine(lines, EControlLine::Calibrate, localize("Calibrate"));
+                std::format("{}{}", label("controls_pad_look_speed"), tuning.look_rate));
+        addLine(lines, EControlLine::PadInvertLook,
+                label(tuning.invert_look ? "controls_pad_invert_look_on"
+                                         : "controls_pad_invert_look_off"));
+        addLine(lines, EControlLine::Calibrate, label("controls_calibrate"));
     }
 }
 
@@ -105,11 +108,11 @@ EMenuOutcome CControlOptionsPage::choose(int id, EMenuStep step) {
         break;
     case EControlLine::XSensitivity:
         getMenu().adjustMouseSensitivity(game.x_mouse_sensitivity,
-                                         localize("Adjust X-Axis sensitivity"));
+                                         label("controls_adjust_x_sensitivity"));
         break;
     case EControlLine::YSensitivity:
         getMenu().adjustMouseSensitivity(game.y_mouse_sensitivity,
-                                         localize("Adjust Y-Axis sensitivity"));
+                                         label("controls_adjust_y_sensitivity"));
         break;
     case EControlLine::InvertY:
         game.invert_mouse_y_axis = game.invert_mouse_y_axis == 0 ? 1 : 0;
@@ -144,22 +147,27 @@ EMenuOutcome CControlOptionsPage::endFrame() {
     return EMenuOutcome::Leave;
 }
 
-std::string CControlOptionsPage::localize(std::string_view key) const {
-    return std::string(owners_.messages.getLocalizedString(key));
+std::string CControlOptionsPage::label(std::string_view id) const {
+    return getLabel(owners_.content, owners_.messages, id);
 }
 
-std::string CControlOptionsPage::getSensitivityText(std::string_view label, int sensitivity) const {
-    return std::format("{}{:5.2f}", localize(label), sensitivity / kFixedOne);
+std::string CControlOptionsPage::getSensitivityText(std::string_view id, int sensitivity) const {
+    return std::format("{}{:5.2f}", label(id), sensitivity / kFixedOne);
 }
 
 // The original stepped on as well as back, but left the bindings as they were, so a type whose
-// defaults had never been applied took only Escape.
+// defaults had never been applied took only Escape. The types are the game's, in its order.
 void CControlOptionsPage::stepControlType(EMenuStep step) {
     CGame &game = owners_.game;
-    const int mode =
-        (std::to_underlying(game.game_control) + std::to_underlying(step) + kControlModeCount) %
-        kControlModeCount;
-    game.game_control = static_cast<EControlMode>(mode);
+    const std::vector<engine::SControlMode> &modes = game.getControls().modes;
+    const auto count = static_cast<int>(modes.size());
+    const auto current = static_cast<int>(
+        std::ranges::find(modes, game.getControlMode().id, &engine::SControlMode::id) -
+        modes.begin());
+    const int next = (current + std::to_underlying(step) + count) % count;
+    const std::string_view id = modes.at(static_cast<std::size_t>(next)).id;
+    game.game_control =
+        static_cast<EControlMode>(std::ranges::find(kControlModeIds, id) - kControlModeIds.begin());
     game.restoreDefaultControls();
 }
 

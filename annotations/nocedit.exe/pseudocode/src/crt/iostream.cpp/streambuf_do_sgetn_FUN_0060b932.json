@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 122,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "unresolved_funcptr",
       "unrolled_memcpy"
@@ -157,6 +158,13 @@
       "severity": "moderate",
       "text": "for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "'buffer[1].__b_lock + 0x10' walks 1 x sizeof(streambuf) (0x28) + offsetof(__b_lock) (0x0) + 0x10 = 0x38, which is exactly offsetof(filebuf, __unbuffered_get_area[4]). Ghidra had no filebuf type here and reached the field by index arithmetic; write it as ((filebuf *)buffer)->__unbuffered_get_area[4] (\u00a7de-pun/\u00a712). Ambiguous: strstreambuf::__minbuf_size also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 22,
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))(buffer);",
+      "type": "derived_field_index_pun"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0060b96d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

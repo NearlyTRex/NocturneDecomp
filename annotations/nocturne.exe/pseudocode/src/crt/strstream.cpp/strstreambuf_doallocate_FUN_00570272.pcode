@@ -179,7 +179,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5702c7,4)
 CALL (ram,0x564c18,4)
 
-@005702c7 [ESP:???](+4)!?  # ADD ESP, 0x4
+@005702c7 [ESP:-40](+4)?  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -190,10 +190,10 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005702ca [ESP:???]!?  # MOV EBP, EAX
+@005702ca [ESP:-40]  # MOV EBP, EAX
 COPY (register,0x14,4) /* EBP */ = (register,0x0,4) /* EAX */
 
-@005702cc [ESP:???]!?  # TEST EBP, EBP
+@005702cc [ESP:-40]  # TEST EBP, EBP
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0xae400,4) = (register,0x14,4) /* EBP */, (register,0x14,4) /* EBP */
@@ -204,7 +204,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@005702ce [ESP:???]!?  # JZ 0x00570377
+@005702ce [ESP:-40]  # JZ 0x00570377
 CBRANCH (ram,0x570377,4), (register,0x206,1)
 
 @005702d4 [ESP:-40]  # MOV EAX, dword ptr [ESP + 0x10]
@@ -619,7 +619,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x57036a,4)
 CALL (ram,0x564486,4)
 
-@0057036a [ESP:???](+4)!?  # ADD ESP, 0x4
+@0057036a [ESP:-40](+4)?  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -1053,5 +1053,4 @@ BRANCH (ram,0x57036a,4)
 
 # ============================================================================
 # Summary: 146 instructions, 743 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

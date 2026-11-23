@@ -51,6 +51,8 @@ CSndMain::~CSndMain() {
 
 // The original also picked the current device again; retail doesn't.
 // nocedit 0x005aae00
+// bw1 0x00574e00
+// bw2 0x005523d0
 void CSndMain::resetSoundSystemDefaults() {
     for (int channel = 0; channel < kMaxSfxChannels; ++channel) {
         setSfxChannelVol(channel, 1.0F);
@@ -70,6 +72,9 @@ void CSndMain::shutdownSoundSystem() {
 }
 
 // nocedit 0x005aaef0
+// bw1 0x00574ee0
+// bw2 0x005524b0
+// bw3 0x00558050
 bool CSndMain::enableSoundSystem() {
     if (!isSoundSystemActive()) {
         return false;
@@ -94,6 +99,9 @@ bool CSndMain::isSoundSystemActive() const {
 }
 
 // nocedit 0x005ab540
+// bw1 0x00575550
+// bw2 0x00552b20
+// bw3 0x005586c0
 bool CSndMain::isSoundBusy() const {
     return isSoundSystemActive() && sound_busy_flag_;
 }
@@ -107,6 +115,9 @@ void CSndMain::resetSoundDevice() {
 }
 
 // nocedit 0x005ab660
+// bw1 0x00575670
+// bw2 0x00552c40
+// bw3 0x005587e0
 void CSndMain::closeSoundDevice() {
     resetSoundDevice();
     for (CSfxSample &sample : sfx_samples_) {
@@ -200,16 +211,25 @@ bool CSndMain::setSoundOutputMode(int bits_per_sample, int channels, int sample_
 }
 
 // nocedit 0x005ab250
+// bw1 0x00575200
+// bw2 0x005527d0
+// bw3 0x00558370
 int CSndMain::getAudioBitDepth() const {
     return audio_bits_per_sample_;
 }
 
 // nocedit 0x005ab260
+// bw1 0x00575220
+// bw2 0x005527f0
+// bw3 0x00558390
 int CSndMain::getAudioSampleRate() const {
     return audio_sample_rate_;
 }
 
 // nocedit 0x005ab270
+// bw1 0x00575240
+// bw2 0x00552810
+// bw3 0x005583b0
 int CSndMain::getAudioChannelCount() const {
     return audio_channel_count_;
 }

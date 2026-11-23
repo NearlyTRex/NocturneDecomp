@@ -22,8 +22,8 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void)
   
   bVar10 = 0;
   if (g_WindowStackCount < 1) {
-    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-    g_INT_01d046a4 = 0x3b8;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 952;
     core_main_c_displayErrorAndQuit_FUN_004e4500("paintWindowBackground called but no window was opened!");
   }
   iVar1 = (g_WindowStackCount + -1) * 0x1f8;

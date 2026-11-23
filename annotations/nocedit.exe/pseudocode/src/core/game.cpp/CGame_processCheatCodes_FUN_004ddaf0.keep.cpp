@@ -266,7 +266,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             iVar6 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
           }
+#if NOCTURNE_AUTHENTIC_DEBUG_WINDOW
           core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(this_ptr_03,0,0,iVar6);
+#else
+          (void)this_ptr_03;
+          (void)iVar6;
+#endif
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }

@@ -7,11 +7,11 @@
 
 // Original: crt_signal.c__XcptFilter_FUN_1000a7b0
 // Address: 1000a7b0
-int __cdecl ::XcptFilter(uint xcpt_num,_EXCEPTION_POINTERS *pxcpt_ptrs);
+int __cdecl _XcptFilter(uint xcpt_num,_EXCEPTION_POINTERS *pxcpt_ptrs);
 
 // Original: crt_signal.c__xcptlookup_FUN_1000a900
 // Address: 1000a900
-void * __cdecl ::xcptlookup(void *table,int xcpt_num);
+void * __cdecl _xcptlookup(void *table,int xcpt_num);
 
 // Original: crt_signal.c_signal_FUN_1000b950
 // Address: 1000b950

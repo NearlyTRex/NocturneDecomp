@@ -43,8 +43,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3i[2000] g_MorphVertexBuffer
 ;   undefined4 g_MorphVertexBuffer[0].y
 ;   undefined4 g_MorphVertexBuffer[0].z
@@ -214,8 +214,8 @@ section .text
         ;   Label: LAB_004fa639
     MOV EBX,0x1f8                       ; 004fa63e
     PUSH 0x5c96bd                       ; 004fa643 | = "CMorphModel::rotatePoints - too many ..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004fa648 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 004fa64e | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004fa648 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 004fa64e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004fa654
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004fa659

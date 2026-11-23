@@ -14,23 +14,23 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00541250(CDeform
   
   core_skeleton_cpp_CDeformableModel_free_FUN_00541160(this_ptr);
   if (5 < num_texture_sets) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x270;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 624;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many texture sets in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (8 < num_textures) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x274;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 628;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many textures in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (0x1e < num_parts) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x278;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 632;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many parts in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   if (5 < num_lods) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\skeleton.cpp";
-    g_INT_01d046a4 = 0x27c;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 636;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.");
   }
   this_ptr->num_textures = num_textures;

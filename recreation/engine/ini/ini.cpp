@@ -75,6 +75,9 @@ std::optional<std::string> CIni::getProfileString(std::string_view section, std:
 // The original counted every line but the header, so a key just under a header on the first
 // line came back as line 0, which read as missing, and every write added another copy of it.
 // nocedit 0x004fb470
+// bw1 0x004f4550
+// bw2 0x004d8360
+// bw3 0x004d8470
 std::optional<CIni::SVariableLine>
 CIni::findLineNumberOfVariable(std::span<const std::string_view> lines, std::string_view section,
                                std::string_view key, std::string_view value) {
@@ -89,6 +92,9 @@ CIni::findLineNumberOfVariable(std::span<const std::string_view> lines, std::str
 // wrote a copy beside the file and renamed it over, and passed each copied line to fprintf as its
 // format.
 // nocedit 0x004fb660
+// bw1 0x004f4720
+// bw2 0x004d8530
+// bw3 0x004d8640
 // nocedit 0x004fba40
 void CIni::writeProfileString(std::string_view section, std::string_view key,
                               std::string_view value, std::string_view filename) {

@@ -6,10 +6,10 @@
 
 #include "nocturne.h"
 typedef struct editParameterValue_Ctx {
-    char *value_buffer;
-    int param_type;
-    CCmdParm *param;
-    CCmdParse *context;
+    char **value_buffer;
+    int *param_type;
+    CCmdParm **param;
+    CCmdParse **context;
     char cVar2;
     int iVar3;
     int iVar5;
@@ -24,15 +24,64 @@ typedef struct editParameterValue_Ctx {
     int iVar8;
     int iVar6;
     int iVar7;
+    char (*string_data) [30];
+    char *pcVar8;
+    char *pcVar9;
+    char *pcVar10;
+    byte bVar9;
+    uint uVar11;
+    float local_3758;
+    CPickList local_3754;
+    CPickList local_33ac;
+    CPickList local_3004;
+    CPickList local_2c5c;
+    CPickList local_28b4;
+    CPickList local_250c;
+    CPickList local_2164;
+    CPickList local_1dbc;
+    CPickList local_1a14;
+    CPickList local_166c;
+    CPickList local_12c4;
+    CPickList local_f1c;
+    CPickList local_b74;
+    char local_7cc[300];
+    char local_6a0[300];
+    char local_574[260];
+    char local_470[256];
+    char local_370[256];
+    char local_270[256];
+    char local_170[200];
+    uint local_a8[30];
+    int local_30;
+    CMotionList *local_2c;
+    int local_28;
+    char (*local_24) [30];
+    CDeformableModel *local_20;
+    char *local_1c;
+    char *local_18;
+    int local_14;
+    char cVar1;
+    uint uVar10;
+    int _retval;
 } editParameterValue_Ctx;
 
-// Chunk: check_pCVar6_0 (lines 448-477 of original)
+// Chunk return codes
+// 0 = normal continuation
+#define CHUNK_RETURN -1
+
+// Chunk: check_pCVar6_0 (lines 409-438 of original)
 static int editParameterValue_check_pCVar6_0(editParameterValue_Ctx *ctx) {
-    char *&value_buffer = ctx->value_buffer;
+    char *&value_buffer = *ctx->value_buffer;
     int &iVar5 = ctx->iVar5;
     CMotionList *&pCVar6 = ctx->pCVar6;
     SMotion *&str1 = ctx->str1;
     int &iVar8 = ctx->iVar8;
+    CPickList &local_3754 = ctx->local_3754;
+    auto &local_7cc = ctx->local_7cc;
+    auto &local_6a0 = ctx->local_6a0;
+    CMotionList *&local_2c = ctx->local_2c;
+    int &local_28 = ctx->local_28;
+    auto &local_24 = ctx->local_24;
 
       iVar5 = 0;
       local_2c = pCVar6;
@@ -57,19 +106,24 @@ static int editParameterValue_check_pCVar6_0(editParameterValue_Ctx *ctx) {
       if (-1 < iVar5) {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_3754.base,value_buffer,iVar5,0);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3754,0);
-        return 1;
+        { ctx->_retval = 1; return CHUNK_RETURN; }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3754,0);
-      return 0;
+      { ctx->_retval = 0; return CHUNK_RETURN; }
     return 0;
 }
 
-// Chunk: check_pCVar2_1 (lines 480-512 of original)
+// Chunk: check_pCVar2_1 (lines 441-473 of original)
 static int editParameterValue_check_pCVar2_1(editParameterValue_Ctx *ctx) {
-    char *&value_buffer = ctx->value_buffer;
+    char *&value_buffer = *ctx->value_buffer;
     char &cVar2 = ctx->cVar2;
     int &iVar5 = ctx->iVar5;
     CMotionList *&pCVar2 = ctx->pCVar2;
+    auto &string_data = ctx->string_data;
+    char *&pcVar9 = ctx->pcVar9;
+    uint &uVar11 = ctx->uVar11;
+    CPickList &local_1dbc = ctx->local_1dbc;
+    auto &local_7cc = ctx->local_7cc;
 
       iVar5 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1dbc);
@@ -87,7 +141,7 @@ static int editParameterValue_check_pCVar2_1(editParameterValue_Ctx *ctx) {
                         (&local_1dbc,local_7cc,iVar5,uVar11);
       if (iVar5 < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1dbc,0);
-        return 0;
+        { ctx->_retval = 0; return CHUNK_RETURN; }
       }
       pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1dbc.base,iVar5);
       do {
@@ -100,13 +154,13 @@ static int editParameterValue_check_pCVar2_1(editParameterValue_Ctx *ctx) {
         value_buffer = value_buffer + 2;
       } while (cVar2 != '\0');
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1dbc,0);
-      return 1;
+      { ctx->_retval = 1; return CHUNK_RETURN; }
     return 0;
 }
 
-// Chunk: check_character_2 (lines 620-709 of original)
+// Chunk: check_character_2 (lines 581-670 of original)
 static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
-    char *&value_buffer = ctx->value_buffer;
+    char *&value_buffer = *ctx->value_buffer;
     char &cVar2 = ctx->cVar2;
     int &iVar5 = ctx->iVar5;
     CCharacter *&character = ctx->character;
@@ -114,6 +168,18 @@ static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
     SPart *&pSVar5 = ctx->pSVar5;
     SPart *&pSVar7 = ctx->pSVar7;
     int &iVar8 = ctx->iVar8;
+    char *&pcVar8 = ctx->pcVar8;
+    char *&pcVar9 = ctx->pcVar9;
+    char *&pcVar10 = ctx->pcVar10;
+    byte &bVar9 = ctx->bVar9;
+    CPickList &local_2c5c = ctx->local_2c5c;
+    auto &local_7cc = ctx->local_7cc;
+    auto &local_170 = ctx->local_170;
+    auto &local_a8 = ctx->local_a8;
+    CDeformableModel *&local_20 = ctx->local_20;
+    char *&local_1c = ctx->local_1c;
+    int &local_14 = ctx->local_14;
+    char &cVar1 = ctx->cVar1;
 
       iVar5 = core_script_cpp_parseBodyPartMask_FUN_00559730(character,value_buffer,(int *)local_a8)
       ;
@@ -138,7 +204,7 @@ static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
                           (&local_2c5c,local_7cc,iVar5,0);
         if (iVar5 < 0) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
-          return 0;
+          { ctx->_retval = 0; return CHUNK_RETURN; }
         }
         iVar8 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_2c5c.base);
         if (iVar5 == iVar8 + -1) break;
@@ -153,7 +219,7 @@ static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
         iVar8 = core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(local_20);
         if (iVar8 <= iVar5) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
-          return 1;
+          { ctx->_retval = 1; return CHUNK_RETURN; }
         }
         if (*(int *)((int)local_a8 + local_14) != 0) {
           iVar8 = -1;
@@ -210,10 +276,10 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
 {
   editParameterValue_Ctx _ctx_storage = {};
   editParameterValue_Ctx *ctx = &_ctx_storage;
-  ctx->value_buffer = value_buffer;
-  ctx->param_type = param_type;
-  ctx->param = param;
-  ctx->context = context;
+  ctx->value_buffer = &value_buffer;
+  ctx->param_type = &param_type;
+  ctx->param = &param;
+  ctx->context = &context;
 
     char &cVar2 = ctx->cVar2;
     int &iVar3 = ctx->iVar3;
@@ -229,50 +295,45 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     int &iVar8 = ctx->iVar8;
     int &iVar6 = ctx->iVar6;
     int &iVar7 = ctx->iVar7;
-  // param value_buffer aliased into ctx above
-  // param param_type aliased into ctx above
-  // param param aliased into ctx above
-  // param context aliased into ctx above
+    auto &string_data = ctx->string_data;
+    char *&pcVar8 = ctx->pcVar8;
+    char *&pcVar9 = ctx->pcVar9;
+    char *&pcVar10 = ctx->pcVar10;
+    byte &bVar9 = ctx->bVar9;
+    uint &uVar11 = ctx->uVar11;
+    float &local_3758 = ctx->local_3758;
+    CPickList &local_3754 = ctx->local_3754;
+    CPickList &local_33ac = ctx->local_33ac;
+    CPickList &local_3004 = ctx->local_3004;
+    CPickList &local_2c5c = ctx->local_2c5c;
+    CPickList &local_28b4 = ctx->local_28b4;
+    CPickList &local_250c = ctx->local_250c;
+    CPickList &local_2164 = ctx->local_2164;
+    CPickList &local_1dbc = ctx->local_1dbc;
+    CPickList &local_1a14 = ctx->local_1a14;
+    CPickList &local_166c = ctx->local_166c;
+    CPickList &local_12c4 = ctx->local_12c4;
+    CPickList &local_f1c = ctx->local_f1c;
+    CPickList &local_b74 = ctx->local_b74;
+    auto &local_7cc = ctx->local_7cc;
+    auto &local_6a0 = ctx->local_6a0;
+    auto &local_574 = ctx->local_574;
+    auto &local_470 = ctx->local_470;
+    auto &local_370 = ctx->local_370;
+    auto &local_270 = ctx->local_270;
+    auto &local_170 = ctx->local_170;
+    auto &local_a8 = ctx->local_a8;
+    int &local_30 = ctx->local_30;
+    CMotionList *&local_2c = ctx->local_2c;
+    int &local_28 = ctx->local_28;
+    auto &local_24 = ctx->local_24;
+    CDeformableModel *&local_20 = ctx->local_20;
+    char *&local_1c = ctx->local_1c;
+    char *&local_18 = ctx->local_18;
+    int &local_14 = ctx->local_14;
+    char &cVar1 = ctx->cVar1;
+    uint &uVar10 = ctx->uVar10;
 
-  char (*string_data) [30];
-  char *pcVar8;
-  char *pcVar9;
-  char *pcVar10;
-  byte bVar9;
-  uint uVar11;
-  float local_3758;
-  CPickList local_3754;
-  CPickList local_33ac;
-  CPickList local_3004;
-  CPickList local_2c5c;
-  CPickList local_28b4;
-  CPickList local_250c;
-  CPickList local_2164;
-  CPickList local_1dbc;
-  CPickList local_1a14;
-  CPickList local_166c;
-  CPickList local_12c4;
-  CPickList local_f1c;
-  CPickList local_b74;
-  char local_7cc [300];
-  char local_6a0 [300];
-  char local_574 [260];
-  char local_470 [256];
-  char local_370 [256];
-  char local_270 [256];
-  char local_170 [200];
-  uint local_a8 [30];
-  int local_30;
-  CMotionList *local_2c;
-  int local_28;
-  char (*local_24) [30];
-  CDeformableModel *local_20;
-  char *local_1c;
-  char *local_18;
-  int local_14;
-  char cVar1;
-  uint uVar10;
-  
   bVar9 = 0;
   _sprintf(local_7cc,"Enter %s");
   switch(param_type) {
@@ -683,13 +744,15 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
   case 0x17:
     pCVar6 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar6 != (CMotionList *)0x0) {
-      editParameterValue_check_pCVar6_0(ctx);
+      int _rc = editParameterValue_check_pCVar6_0(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
     break;
   case 0x18:
     pCVar2 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar2 != (CMotionList *)0x0) {
-      editParameterValue_check_pCVar2_1(ctx);
+      int _rc = editParameterValue_check_pCVar2_1(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
     break;
   case 0x19:
@@ -800,7 +863,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
   case 0x1e:
     character = core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(param,context);
     if (character != (CCharacter *)0x0) {
-      editParameterValue_check_character_2(ctx);
+      int _rc = editParameterValue_check_character_2(ctx);
+      if (_rc == CHUNK_RETURN) return ctx->_retval;
     }
     break;
   case 0x20:

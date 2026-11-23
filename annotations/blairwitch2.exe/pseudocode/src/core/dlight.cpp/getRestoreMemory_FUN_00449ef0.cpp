@@ -12,8 +12,8 @@ void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_00449ef0(int pixel_count)
   int iVar1;
   
   if (0x300060U - pixel_count < g_ShadowRestoreAllocator) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dlight.cpp";
-    g_INT_01d046a4 = 0xa4;
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 164;
     core_main_c_displayErrorAndQuit_FUN_004e4500("getRestoreMemory - Need more static memory");
   }
   iVar1 = g_ShadowRestoreAllocator * 2;

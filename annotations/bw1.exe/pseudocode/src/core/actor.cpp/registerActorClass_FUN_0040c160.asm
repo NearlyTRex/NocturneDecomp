@@ -30,8 +30,8 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;   int g_NumActorClassTypes
 ;   CDemonActorType*[200] g_ActorClassRegistrations
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_0040c20f
     MOV EBX,0xa61                       ; 0040c214
     PUSH 0x5d2d75                       ; 0040c219 | = "Too many actor types!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0040c21e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 0040c224 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0040c21e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 0040c224 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040c22a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0040c22f

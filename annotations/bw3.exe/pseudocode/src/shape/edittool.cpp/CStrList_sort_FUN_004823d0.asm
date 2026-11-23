@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd54c
 ;   TerminatedCString s_CStrList_sort_invalid_ra_005bd562
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -45,8 +45,8 @@ section .text
     MOV ECX,0x5bd54c                    ; 004823eb | = "..\\shape\\edittool.cpp"
     MOV EDI,0xca6                       ; 004823f0
     PUSH 0x5bd562                       ; 004823f5 | = "CStrList::sort - invalid range!"
-    MOV dword ptr [0x01d71de0],ECX      ; 004823fa | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00482400 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004823fa | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00482400 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00482406
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0048240b

@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   int g_INT_01c50948
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_INT_01d224b4
 ;   int g_RenderedTriangleCount
 ;   void* g_PTR_02c8345c
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_005129aa
     MOV EBP,0x71f                       ; 005129af
     PUSH 0x5e8d28                       ; 005129b4
-    MOV dword ptr [0x01d1d400],EDI      ; 005129b9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 005129bf | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 005129b9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 005129bf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005129c5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005129ca

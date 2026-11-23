@@ -22,8 +22,8 @@
 ;   TerminatedCString s_Out_of_memory_005d29fa
 ;   TerminatedCString s_sound_005d2a09
 ;   float g_FLOAT_005e485c = 2
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastSampleAccessIndex
 ;   undefined4 g_SfxSamples[1].taken
 ;   undefined4 g_SfxSamples[1].ref_count
@@ -159,8 +159,8 @@ section .text
     MOV EAX,0x5d29e5                    ; 00552448 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x463                       ; 0055244d
     PUSH 0x5d29fa                       ; 00552452 | = "Out of memory."
-    MOV [0x01d71de0],EAX                ; 00552457 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0055245c | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00552457 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0055245c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552462
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00552467

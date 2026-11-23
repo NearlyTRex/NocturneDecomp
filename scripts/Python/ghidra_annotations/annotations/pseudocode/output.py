@@ -8,117 +8,11 @@ from ghidra_annotations.util import make_dirs, write_if_changed, with_generated_
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 from ghidra_annotations.annotations.pseudocode.functions import (
-    extract_virtual_filename, extract_cpp_function_name, generate_function_prototype
+    extract_cpp_function_name, generate_function_prototype
 )
 from ghidra_annotations.annotations.pseudocode.pcode import (
     generate_pcode_file_content, create_pcode_summary
 )
-
-
-def create_pseudocode_file_content(
-    func_name, func_addr, func_addr_range, func_convention,
-    func_signature, decompiled_code, assembly_code,
-    func_xrefs, func_globals, func_calls):
-    """Create the content for a combined pseudocode file (legacy format).
-
-    Args:
-        func_name: Function name
-        func_addr: Function address
-        func_addr_range: Function address range
-        func_convention: Calling convention
-        func_signature: Function signature
-        decompiled_code: Decompiled C code
-        assembly_code: Assembly code
-        func_xrefs: Cross-references
-        func_globals: Referenced globals
-        func_calls: Called functions
-
-    Returns:
-        File content as string
-    """
-    # Build XREFS section
-    xrefs_section = ""
-    if func_xrefs:
-        xrefs_section = "// Cross-references:\n"
-        for xref in func_xrefs:
-            xref_line = "//   %s (%s) at %s [%s]\n" % (
-                sanitize_string(xref['name']),
-                xref['addr'],
-                xref['from_addr'],
-                xref['type'])
-            xrefs_section += xref_line
-
-    # Build GLOBALS section
-    globals_section = ""
-    if func_globals:
-        globals_section = "// Globals:\n"
-        for global_ref in func_globals:
-            if global_ref.get('value') is not None:
-                global_line = "//   %s %s = %s\n" % (
-                    sanitize_string(global_ref['type']),
-                    sanitize_string(global_ref['name']),
-                    sanitize_string(global_ref['value']))
-            else:
-                global_line = "//   %s %s\n" % (
-                    sanitize_string(global_ref['type']),
-                    sanitize_string(global_ref['name']))
-            globals_section += global_line
-
-    # Build FUNCTION CALLS section
-    calls_section = ""
-    if func_calls:
-        calls_section = "// Function calls:\n"
-        for call in func_calls:
-            call_line = "//   %s\n" % sanitize_string(call['name'])
-            calls_section += call_line
-
-    # Function template - only include sections that have content
-    template_parts = [
-        "// Name: {func_name}",
-        "// Address: {func_addr}",
-        "// Address Range: {func_addr_range}",
-        "// Convention: {func_convention}",
-        "// Signature: {func_signature}"
-    ]
-
-    # Add sections only if they have content
-    if xrefs_section:
-        template_parts.append("{xrefs_section}")
-    if globals_section:
-        template_parts.append("{globals_section}")
-    if calls_section:
-        template_parts.append("{calls_section}")
-
-    # Add the rest of the template
-    template_parts.extend([
-        "",
-        "#include \"nocturne.h\"",
-        "{func_decomp_code}",
-        "// Assembly code:",
-        "{func_asm_code}"
-    ])
-    template = "\n".join(template_parts)
-
-    # Format from template
-    # Use sanitize_string with preserve_newlines=True for multi-line code blocks
-    safe_decompiled = sanitize_string(decompiled_code, preserve_newlines=True)
-    safe_assembly = sanitize_string(assembly_code, preserve_newlines=True)
-    # Use sanitize_string (default) for single-line metadata (escapes special chars)
-    safe_signature = sanitize_string(func_signature)
-    safe_func_name = sanitize_string(func_name)
-    safe_convention = sanitize_string(func_convention or "unknown")
-    safe_addr_range = sanitize_string(str(func_addr_range))
-    return template.format(
-        func_name=safe_func_name,
-        func_addr=func_addr,
-        func_addr_range=safe_addr_range,
-        func_convention=safe_convention,
-        func_signature=safe_signature,
-        xrefs_section=xrefs_section.rstrip(),
-        globals_section=globals_section.rstrip(),
-        calls_section=calls_section.rstrip(),
-        func_decomp_code=safe_decompiled,
-        func_asm_code=safe_assembly).strip()
 
 
 def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_convention,
@@ -163,16 +57,11 @@ def create_lean_cpp_content(func_name, func_addr, func_addr_range, func_conventi
         func_decomp_code=safe_decompiled).strip()
 
 
-def create_asm_content(func_name, func_addr, func_addr_range, func_signature, func_convention,
-                       assembly_code, stack_frame, func_xrefs, func_globals, func_calls):
+def create_asm_content(func_signature, assembly_code, stack_frame, func_xrefs, func_globals, func_calls):
     """Create richly annotated .asm file content.
 
     Args:
-        func_name: Function name
-        func_addr: Function address
-        func_addr_range: Function address range
         func_signature: Function signature
-        func_convention: Calling convention
         assembly_code: Assembly code
         stack_frame: Stack frame info
         func_xrefs: Cross-references
@@ -182,10 +71,8 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     Returns:
         File content as string
     """
-    safe_func_name = sanitize_string(func_name)
     # Use sanitize_string with preserve_newlines=True for multi-line assembly
     safe_assembly = sanitize_string(assembly_code, preserve_newlines=True)
-    safe_addr_range = sanitize_string(str(func_addr_range))
     safe_signature = sanitize_string(func_signature) if func_signature else "unknown"
     asm_lines = []
 
@@ -258,7 +145,8 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
     asm_lines.append("section .text")
     asm_lines.append("")
 
-    # Assembly Instructions
+    # Assembly Instructions: "// <addr>: <instruction>[  ; comments]" lines, each
+    # followed by its indented "//   XREF to: ..." and "//   Label: ..." notes
     for line in safe_assembly.split('\n'):
         line = line.strip()
         if not line:
@@ -271,35 +159,23 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
         elif line.startswith('//'):
             line = line[2:]
 
-        # Parse the line
-        if line.startswith('Label: '):
-            label_name = line[7:]
-            asm_lines.append("")
-            asm_lines.append("%s:" % label_name)
-        elif line.startswith('XREF to: '):
-            asm_lines.append("        ; %s" % line)
-        elif ':' in line and not line.startswith(' '):
-            colon_pos = line.find(': ')
-            if colon_pos > 0:
-                addr_part = line[:colon_pos].strip()
-                rest = line[colon_pos + 2:]
-
-                if '  ; ' in rest:
-                    instr_part, comment_part = rest.split('  ; ', 1)
-                    asm_lines.append("    %-35s ; %s | %s" % (instr_part.strip(), addr_part, comment_part))
-                else:
-                    asm_lines.append("    %-35s ; %s" % (rest.strip(), addr_part))
+        colon_pos = line.find(': ')
+        if colon_pos > 0 and not line.startswith(' '):
+            addr_part = line[:colon_pos].strip()
+            rest = line[colon_pos + 2:]
+            if '  ; ' in rest:
+                instr_part, comment_part = rest.split('  ; ', 1)
+                asm_lines.append("    %-35s ; %s | %s" % (instr_part.strip(), addr_part, comment_part))
             else:
-                asm_lines.append("    %s" % line)
+                asm_lines.append("    %-35s ; %s" % (rest.strip(), addr_part))
         else:
-            if line.strip():
-                asm_lines.append("        ; %s" % line)
+            asm_lines.append("        ; %s" % line)
 
     return "\n".join(asm_lines)
 
 
 def create_function_json(func_name, func_addr, func_addr_range, func_convention,
-                         func_signature, decompiled_code, assembly_code,
+                         func_signature,
                          func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
                          existing_replacements=None, stack_patterns=None, param_estimates=None,
                          vtable_info=None, existing_pcode_overrides=None, resolved_suspects=None,
@@ -314,8 +190,6 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         func_addr_range: Function address range
         func_convention: Calling convention
         func_signature: Function signature
-        decompiled_code: Decompiled C code
-        assembly_code: Assembly code
         func_xrefs: Cross-references
         func_globals: Referenced globals
         func_calls: Called functions
@@ -501,51 +375,19 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         'chunked_cpp_content': None
     }
 
-    # Generate lean .cpp content
-    try:
-        cpp_content = create_lean_cpp_content(
-            func_name, func_addr, func_addr_range, func_convention,
-            func_signature, decompiled_code)
-        result['cpp_content'] = cpp_content + "\n"
-    except Exception as e:
-        log_info("Failed to generate .cpp content for %s: %s" % (source_filename, str(e)))
-        return None
-
-    # Generate .mmx.cpp content if MMX inline asm version is provided
-    if mmx_decompiled_code:
-        try:
-            mmx_cpp_content = create_lean_cpp_content(
+    # Lean .cpp content, and the .mmx/.byval/.chunked variants that were made
+    for key, code in (('cpp_content', decompiled_code), ('mmx_cpp_content', mmx_decompiled_code),
+                      ('byval_cpp_content', byval_decompiled_code),
+                      ('chunked_cpp_content', chunked_decompiled_code)):
+        if key == 'cpp_content' or code:
+            result[key] = create_lean_cpp_content(
                 func_name, func_addr, func_addr_range, func_convention,
-                func_signature, mmx_decompiled_code)
-            result['mmx_cpp_content'] = mmx_cpp_content + "\n"
-        except Exception as e:
-            log_info("Failed to generate .mmx.cpp content for %s: %s" % (source_filename, str(e)))
-
-    # Generate .byval.cpp content if by-value struct passing inline asm version is provided
-    if byval_decompiled_code:
-        try:
-            byval_cpp_content = create_lean_cpp_content(
-                func_name, func_addr, func_addr_range, func_convention,
-                func_signature, byval_decompiled_code)
-            result['byval_cpp_content'] = byval_cpp_content + "\n"
-        except Exception as e:
-            log_info("Failed to generate .byval.cpp content for %s: %s" % (source_filename, str(e)))
-
-    # Generate .chunked.cpp content if chunked version is provided
-    if chunked_decompiled_code:
-        try:
-            chunked_cpp_content = create_lean_cpp_content(
-                func_name, func_addr, func_addr_range, func_convention,
-                func_signature, chunked_decompiled_code)
-            result['chunked_cpp_content'] = chunked_cpp_content + "\n"
-        except Exception as e:
-            log_info("Failed to generate .chunked.cpp content for %s: %s" % (source_filename, str(e)))
+                func_signature, code) + "\n"
 
     # Generate .asm content
     try:
         asm_content = create_asm_content(
-            func_name, func_addr, func_addr_range, func_signature, func_convention,
-            assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
+            func_signature, assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
         result['asm_content'] = asm_content + "\n"
     except Exception as e:
         log_info("Failed to generate .asm content for %s: %s" % (base_name + '.asm', str(e)))
@@ -554,7 +396,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     try:
         function_json = create_function_json(
             func_name, func_addr, func_addr_range, func_convention,
-            func_signature, decompiled_code, assembly_code,
+            func_signature,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns, param_estimates, vtable_info,
             existing_pcode_overrides, resolved_suspects, is_ebp_frame,
@@ -581,69 +423,6 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     return result
 
 
-def write_function_files(output_base_path, source_filename, func_name, func_addr,
-                         func_addr_range, func_convention, func_signature,
-                         decompiled_code, assembly_code, func_xrefs, func_globals,
-                         func_calls, stack_frame, suspects, complexity, stack_patterns=None):
-    """Write all three output files for a function (.cpp, .asm, .json).
-
-    Args:
-        output_base_path: Base directory for output
-        source_filename: Source file name
-        func_name: Function name
-        func_addr: Function address
-        func_addr_range: Function address range
-        func_convention: Calling convention
-        func_signature: Function signature
-        decompiled_code: Decompiled C code
-        assembly_code: Assembly code
-        func_xrefs: Cross-references
-        func_globals: Referenced globals
-        func_calls: Called functions
-        stack_frame: Stack frame info
-        suspects: Suspect patterns found
-        complexity: Complexity metrics
-        stack_patterns: Optional stack manipulation patterns that affect decompilation
-
-    Returns:
-        True on success, False on failure
-    """
-    # Generate contents
-    contents = generate_function_file_contents(
-        output_base_path, source_filename, func_name, func_addr,
-        func_addr_range, func_convention, func_signature,
-        decompiled_code, assembly_code, func_xrefs, func_globals,
-        func_calls, stack_frame, suspects, complexity, None, stack_patterns)
-
-    if not contents or not contents.get('cpp_content'):
-        return False
-
-    # Ensure directory exists
-    make_dirs(os.path.dirname(contents['cpp_path']))
-
-    # Write files — skip the write when bytes are unchanged so Ninja/ccache
-    # don't invalidate TUs after a no-op re-export.
-    try:
-        write_if_changed(contents['cpp_path'], contents['cpp_content'])
-    except Exception as e:
-        log_info("Failed to write .cpp file: %s" % str(e))
-        return False
-
-    if contents.get('asm_content'):
-        try:
-            write_if_changed(contents['asm_path'], contents['asm_content'])
-        except Exception as e:
-            log_info("Failed to write .asm file: %s" % str(e))
-
-    if contents.get('json_content'):
-        try:
-            write_if_changed(contents['json_path'], contents['json_content'])
-        except Exception as e:
-            log_info("Failed to write .json file: %s" % str(e))
-
-    return True
-
-
 def write_batched_files(file_list):
     """Write multiple files in a batch.
 
@@ -660,13 +439,12 @@ def write_batched_files(file_list):
         if not path or not content:
             continue
 
-        # Ensure directory exists (cache to avoid repeated checks)
-        dir_path = os.path.dirname(path)
-        if dir_path and dir_path not in dirs_created:
-            make_dirs(dir_path)
-            dirs_created.add(dir_path)
-
+        # A file whose directory cannot be made fails alone, like a failed write
         try:
+            dir_path = os.path.dirname(path)
+            if dir_path and dir_path not in dirs_created:
+                make_dirs(dir_path)
+                dirs_created.add(dir_path)
             write_if_changed(path, content)
             written += 1
         except Exception as e:
@@ -688,9 +466,6 @@ def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):
 
     headers_created = 0
     for virtual_filename, functions in function_groups.items():
-        if not virtual_filename:
-            continue
-
         # Create the directory structure
         header_path = os.path.join(prototypes_dir, virtual_filename)
         header_dir = os.path.dirname(header_path)

@@ -59,8 +59,8 @@
 ;   TerminatedCString s_core_skeleton_cpp_005f24d1
 ;   TerminatedCString s_Write_me_005f24e6
 ;   double g_DOUBLE_005f24f1 = 0.00100000000000000
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -563,8 +563,8 @@ section .text
         ;   Label: LAB_00568800
     MOV ESI,0xaa1                       ; 00568805
     PUSH 0x5f24e6                       ; 0056880a | = "Write me!"
-    MOV dword ptr [0x01d1d400],ECX      ; 0056880f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00568815 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0056880f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00568815 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0056881b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00568820

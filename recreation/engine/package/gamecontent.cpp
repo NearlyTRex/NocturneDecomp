@@ -54,14 +54,33 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
     SGameContent &content = merged.content;
     for (const SGameContent *from : in_order) {
         mergeValue(content.title, from->title);
-        mergeValue(content.front_end, from->front_end);
-        mergeValue(content.loading_indicator, from->loading_indicator);
+        mergeValue(content.front_end.title_backdrop, from->front_end.title_backdrop);
+        mergeValue(content.front_end.loading_indicator, from->front_end.loading_indicator);
+        mergeValue(content.front_end.credits, from->front_end.credits);
+        mergeValue(content.front_end.story_select, from->front_end.story_select);
         mergeValue(content.copyright, from->copyright);
         mergeValue(content.copyright_os_font, from->copyright_os_font);
         mergeValue(content.credits, from->credits);
         mergeValue(content.menu, from->menu);
+        mergeById(content.fonts, from->fonts);
+        mergeValue(content.controls, from->controls);
+        mergeValue(content.list, from->list);
+        mergeValue(content.dialog, from->dialog);
+        mergeValue(content.startup, from->startup);
+        mergeValue(content.sky_scene, from->sky_scene);
+        mergeValue(content.figure_scene, from->figure_scene);
+        mergeValue(content.tiled_scroll, from->tiled_scroll);
         mergeById(content.loading, from->loading);
+        mergeValue(content.moon_indicator, from->moon_indicator);
+        mergeValue(content.progress_bar_indicator, from->progress_bar_indicator);
+        mergeValue(content.icon_indicator, from->icon_indicator);
         mergeById(content.stories, from->stories);
+        mergeValue(content.story_select, from->story_select);
+        mergeValue(content.direct_start, from->direct_start);
+        mergeValue(content.chapter_title, from->chapter_title);
+        for (const auto &[english, text] : from->labels) {
+            content.labels.insert_or_assign(english, text);
+        }
         for (const auto &[language, table] : from->translations) {
             TranslationTable &into = content.translations[language];
             for (const auto &[english, translated] : table) {

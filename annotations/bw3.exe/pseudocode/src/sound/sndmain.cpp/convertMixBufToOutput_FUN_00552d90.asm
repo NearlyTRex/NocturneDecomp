@@ -32,8 +32,8 @@
 ;   float g_FLOAT_005d2b2e = 127
 ;   double g_DOUBLE_005d2b32 = -1
 ;   float g_FLOAT_005d2b3a = 128
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -184,8 +184,8 @@ section .text
     MOV EDI,0x5d2ae9                    ; 00552ede | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x619                       ; 00552ee3
     PUSH 0x5d2afe                       ; 00552ee8 | = "convertMixBufToOutput - invalid bits: %d"
-    MOV dword ptr [0x01d71de0],EDI      ; 00552eed | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00552ef3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00552eed | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00552ef3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00552ef9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00552efe

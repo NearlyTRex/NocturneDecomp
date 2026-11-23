@@ -66,6 +66,8 @@
 // | `NOCTURNE_AUTHENTIC_MODAL_FIT` | 0 | defect | a modal too wide for the screen is clamped, not pushed off both edges |
 // | `NOCTURNE_AUTHENTIC_BURN_BONE_COUNT` | 0 | defect | a burning character can reach fully-burned and die |
 // | `NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND` | 0 | defect | the on-fire loop stops when the fire does |
+// | `NOCTURNE_AUTHENTIC_SUCCUBUS` | 0 | defect | an explosion can kill the succubus, and her voice stops when she dies or is out of range |
+// | `NOCTURNE_AUTHENTIC_DESTROYED_HERO` | 0 | defect | a hero blown or torn apart is drawn as his parts, not frozen whole |
 // | `NOCTURNE_AUTHENTIC_GOD_MODE_FALL` | 0 | defect | god mode survives a lethal-height fall |
 // | `NOCTURNE_AUTHENTIC_FATAL_FALL_HEAL` | 0 | defect | an already-fatal fall does not spend a health item |
 // | `NOCTURNE_AUTHENTIC_STREAM_LENGTH` | 0 | defect | a streamed MP3 ends where the sample actually ends |
@@ -88,6 +90,7 @@
 // | `NOCTURNE_AUTHENTIC_MOTION_TWEEN_INIT` | 0 | defect | a new animation controller starts with no stale transition to reverse |
 // | `NOCTURNE_AUTHENTIC_HW_SFX_FALLOFF` | 0 | defect | hardware-mixed positional sounds fall off as the software mixer's do |
 // | `NOCTURNE_AUTHENTIC_CUE_RETRIGGER` | 0 | defect | a script music cue does not stack copies of itself while it plays |
+// | `NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS` | 0 | defect | listed defects in the shipped mission scripts are corrected as they run |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME` | 0 | defect | a cutscene that switches the goggles off does not flash the untextured room |
 // | `NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD` | 0 | defect | a script's timed camera hold runs out while the goggles are on |
 // | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
@@ -114,6 +117,7 @@
 // | `NOCTURNE_AUTHENTIC_PUSH_SOUND` | 0 | addition | a pushed box scrapes on every shove, not only the first |
 // | `NOCTURNE_AUTHENTIC_MENU` | 0 | addition | the front end's screens are shim pages, with every menu addition |
 // | `NOCTURNE_AUTHENTIC_CONSOLE` | 0 | addition | the console fills the window and keeps scrollback |
+// | `NOCTURNE_AUTHENTIC_DEBUG_WINDOW` | 0 | addition | the script and light debug views open in a window of their own |
 // | `NOCTURNE_AUTHENTIC_ATTRACT_MOVIES` | 0 | addition | the menu cycles NOC1..NOC4 after its music |
 // | `NOCTURNE_AUTHENTIC_ENVMAP_SHADING` | 0 | addition | reflections are shaded per pixel, not per facet |
 // | `NOCTURNE_AUTHENTIC_NETPLAY` | 0 | addition | netplay is reachable, with its fixes |
@@ -567,6 +571,25 @@
 #define NOCTURNE_AUTHENTIC_MENU_BAT_WRAP 0
 #endif
 
+// NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN
+//   Whether a looping platform is drawn on its way back to the start.
+//
+//   TRAIN.MSN streams scenery past the train with two CPlatforms whose
+//   toStartEvent and toEndEvent are both "true": PlatformExtTerrain1, the
+//   telephone pole, and PlatformExtTerrain2, the windmill. Each crosses the set
+//   in 10 s and returns in 0.1 s, and the return is drawn like any move: the
+//   pole sweeps back past the camera for a few frames, more of them the higher
+//   the frame rate.
+//
+//   1: the platform is drawn on the return, as shipped.
+//   0: a platform whose events are both "true" is not drawn while it moves along
+//      its shorter leg (nocturne_platform_loop_return).
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN=1.
+#ifndef NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN
+#define NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN 0
+#endif
+
 // NOCTURNE_AUTHENTIC_CAMERA_SHAKE_TRACE
 //   CDemonCamera::beginScene runs the camera-shake ADSR state machine once per
 //   rendered scene and traces the phase to the console on every one of them.
@@ -914,6 +937,58 @@
 #define NOCTURNE_AUTHENTIC_BURN_LOOP_SOUND 0
 #endif
 
+// NOCTURNE_AUTHENTIC_SUCCUBUS
+//   How the succubus dies, and what stops her voice. Both show in CASTLE1's
+//   easter egg room, where she is tied up and never morphs.
+//
+//   CSuccubus::processDamage zeroes every hit (005c776a) and CCharacter::
+//   processDamage returns at once on zero damage, before its dismember
+//   dispatch, so nothing but burning ends her: not even the dynamite blast
+//   CDemonSet::processActors deals as DAMAGE_TYPE_FALL_APART.
+//
+//   CSuccubus::process keeps her "succubus-horny-?.wav" voice in
+//   CSuccubus::sfx_handle (+0xe32c, 005c7574), apart from CCharacter::
+//   sfx_handle (+0xb7d4), and replays it 5-10 s after each line until
+//   "succubusShutUp", which only MANSION.SCR raises. The two engine paths that
+//   silence a character kill only CCharacter's handle: CCharacter::dismember
+//   (0042b9fb), the end of burning to death, and processCharacter's cut when
+//   no hero is within the character's detection range. Her line plays on
+//   after she burns, and walking away never cuts it.
+//
+//   1: shipped behaviour - every hit is zeroed, and only succubusShutUp and
+//      the morph stop the voice.
+//   0: DAMAGE_TYPE_FALL_APART keeps its damage and blows her apart: an
+//      explosion, a smiley's blast or a vehicle; every other hit is still
+//      zeroed. The voice is killed when she is destroyed and when
+//      processCharacter skips her, as CCharacter's own sound is.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SUCCUBUS=1.
+#ifndef NOCTURNE_AUTHENTIC_SUCCUBUS
+#define NOCTURNE_AUTHENTIC_SUCCUBUS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_DESTROYED_HERO
+//   Whether a hero who has been blown or torn apart is still drawn whole.
+//
+//   CCharacter::dismember detaches every body part and sets the hero
+//   ACTOR_DESTROYED, as the deleteActor command does without the parts; either
+//   drops him from the set's actor list, so he is never processed again.
+//   CDemonSet::buildDisplayList puts the local hero at the head of the draw
+//   list whatever his state, so the whole model stays drawn, frozen at its
+//   last pose, over his parts if he has any. TRAIN.SCR deletes a hero who
+//   falls from the train (see NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS): the werewolves
+//   come apart on the ground, the hero hangs in the air until the game-over
+//   screen.
+//
+//   1: shipped behaviour - the destroyed hero is drawn where he was.
+//   0: a destroyed hero is left off the draw list, as every other destroyed
+//      character is, and only his detached parts, if any, are drawn.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DESTROYED_HERO=1.
+#ifndef NOCTURNE_AUTHENTIC_DESTROYED_HERO
+#define NOCTURNE_AUTHENTIC_DESTROYED_HERO 0
+#endif
+
 // NOCTURNE_AUTHENTIC_GOD_MODE_FALL
 //   Whether a lethal-height fall kills the hero while god mode is on.
 //
@@ -1180,6 +1255,9 @@
 //                   she keeps ladder_to_climb and runs on without collision.
 //                   It takes a ladder only within 0.3 units of its centre
 //                   line, and her climb is about half the Stranger's speed.
+//     punch sounds  CHaystack::checkMeleeHit discards checkCylinderCollision-
+//                   World's result and plays nothing (004f1b36), where
+//                   CIcePick::performMeleeAttack plays a punch on a hit.
 //
 //   1: shipped behaviour — Scat and Moloch can interact with nothing, sheathed
 //      fire falls through to an attack, only the Stranger can break a grab
@@ -1244,7 +1322,9 @@
 //      (hero_colonel.h). A player hero killed while its DIE request has no
 //      route, or is overridden by locomotion, is put into DIE rather than left
 //      standing at zero hit points, and a player Svetlana does not regenerate
-//      while dead (hero_death.h).
+//      while dead (hero_death.h). Haystack's punch that lands plays his
+//      box-punch, except in SPAR, whose motions sound their own blows; and
+//      Moloch's plays IcePick's punch.
 //
 //      Not included: object pickup for classes other than Gabriella, using
 //      items other than health for classes other than Gabriella, and box
@@ -1757,6 +1837,57 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CUE_RETRIGGER=1.
 #ifndef NOCTURNE_AUTHENTIC_CUE_RETRIGGER
 #define NOCTURNE_AUTHENTIC_CUE_RETRIGGER 0
+#endif
+
+// NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
+//   Whether the table of corrections to the shipped mission scripts is applied.
+//
+//   An unbraced if covers one command: CScript::step answers a false test
+//   with skipCommands(next_cmd, 0), which passes one line, one {} block or
+//   one nested if. TRAIN.SCR's :FallOffTrain gives its werewolf branch three
+//   commands without braces, so a hero falling off the train skips only the
+//   kill, is removed whole by deleteactor(@whotokill), and the else then
+//   skips his own fallapart kill: he vanishes instead of coming apart. Of the
+//   456 unbraced if and else in the 28 shipped scripts it is the only body
+//   meant as more than one command; THEATER.SCR:456 and TOWN.SCR:1103 indent
+//   lines after a goto that are not part of the body, so the rule itself
+//   stays as shipped and each case is listed.
+//
+//   The dbSay lines MINE.SCR's gas room gives `$` are the Stranger's
+//   recordings, which in a network game may be said by another hero.
+//
+//   1: shipped behaviour - every if covers one command, and every line plays
+//      the voice and caption it was recorded with.
+//   0: the entries in shims/game/script_quirks.cpp apply: TRAIN.SCR's
+//      werewolf branch covers its three commands, and the gas room's lines
+//      said by another hero are captioned with that hero's name, without the
+//      Stranger's voice.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SCRIPT_QUIRKS=1.
+#ifndef NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS
+#define NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT
+//   How much of a state CMotionController::getStateBlendWeight reports during a
+//   tween between two motions of that same state.
+//
+//   Inside a tween it gives the target motion's state the tween's progress and
+//   the current motion's state the rest, testing the target first. When both
+//   motions are in the state asked about, only the target's share comes back, so
+//   the state's weight drops to near 0 at the start and end of the tween. The
+//   Stranger's "deadDrown" loops into itself through a 0.1 s tween, and
+//   CStranger::makeDrawDecision draws the guns-out pose at 1 minus the DIE and
+//   DEAD weights: each loop, a drowned Stranger with his guns out flashes upright
+//   with his aim beams on. 55 motions in the shipped skeletons tween into their
+//   own state (STAND, SPAR, BLIND, ...) and dip the same way.
+//
+//   1: shipped behaviour - the target motion's share alone.
+//   0: 1 when both motions are in the state.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT=1.
+#ifndef NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT
+#define NOCTURNE_AUTHENTIC_STATE_BLEND_WEIGHT 0
 #endif
 
 // NOCTURNE_AUTHENTIC_GOGGLES_OFF_FRAME
@@ -2501,6 +2632,30 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_DEBUG_WINDOW
+//   Where the script and light debug views are drawn.
+//
+//   The SCRIPT cheat, the typed "script" cheat and F5 turn on the script view
+//   and the light view together, and Ctrl+W the light view alone. Each reinits
+//   the camera at 240 lines (CDemonSet::reinitCamera -> CDemonCamera::init),
+//   leaving CScript::renderEditor the rows below and
+//   CDemonSet::renderLightDebugView the columns beside it, at the six screen
+//   places g_LightDebugScreenX/Y give, which were laid out for 640x480. At
+//   any other size only the 3D layer shrinks into the top-left corner while
+//   the static backgrounds keep the whole screen, and a seventh shadow map
+//   lands on the first.
+//
+//   1: shipped behaviour - the views share the game's frame, and the camera
+//      shrinks to make room.
+//   0: the camera keeps the screen, and the views open in a second, resizable
+//      window, the shadow maps in a grid; closing it turns them off.
+//      See shims/debug/debug_window.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_DEBUG_WINDOW=1.
+#ifndef NOCTURNE_AUTHENTIC_DEBUG_WINDOW
+#define NOCTURNE_AUTHENTIC_DEBUG_WINDOW 0
 #endif
 
 // NOCTURNE_AUTHENTIC_ATTRACT_MOVIES

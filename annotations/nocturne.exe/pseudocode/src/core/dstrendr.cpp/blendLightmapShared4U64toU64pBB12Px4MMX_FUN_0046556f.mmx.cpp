@@ -83,7 +83,6 @@ __asm {
         inc EBP
         sub ECX,0x4
         jg LAB_00465595
-        pop EBP
         emms
 }
 }

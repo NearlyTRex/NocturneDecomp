@@ -131,6 +131,95 @@ TEST_F(CPickListDialogTest, AShortListIsOneColumnInASnugWindow) {
     EXPECT_EQ(screen_.pixel(82, 67), kInside);
 }
 
+// BW's bindings lists: OK and cancel buttons along the window's foot, the cancel one at its
+// right, under the rows, which the window grows to fit.
+class CPickListButtonsTest : public CPickListDialogTest {
+protected:
+    CPickListButtonsTest() {
+        list_.add("A");
+        list_.add("B");
+        list_.add("C");
+    }
+
+    // A press and let-go at x, y, and what the frame of the let-go answers.
+    int clickButtonAt(int x, int y) {
+        clickAt(x, y);
+        EXPECT_EQ(list_.handleDialogInput(), CPickList::kStillOpen);
+        mouseAt(x, y, false);
+        return list_.handleDialogInput();
+    }
+};
+
+TEST_F(CPickListButtonsTest, TheButtonsTakeARowUnderTheList) {
+    list_.initializeDialog("", 0, 0);
+    const engine::SClipRect without = clip();
+    editor_tools_.restoreWindowAndCleanup();
+    list_.setOkButtonText("Select");
+    list_.setCancelButtonText("Close");
+    list_.initializeDialog("", 0, 0);
+    const engine::SClipRect with = clip();
+    EXPECT_GT(with.bottom - with.top, without.bottom - without.top);
+    list_.renderDialog();
+    // The rows keep their place above the buttons.
+    EXPECT_EQ(screen_.pixel(with.left, with.top), kSelection);
+}
+
+TEST_F(CPickListButtonsTest, TheCancelButtonCancels) {
+    list_.setOkButtonText("Select");
+    list_.setCancelButtonText("Close");
+    list_.initializeDialog("", 0, 0);
+    const engine::SClipRect inside = clip();
+    EXPECT_EQ(clickButtonAt(inside.right - 1, inside.bottom - 1), CPickList::kCancelled);
+}
+
+// It picks the item under the cursor, on the frame after, as Return does.
+TEST_F(CPickListButtonsTest, TheOkButtonPicksTheSelection) {
+    list_.setOkButtonText("Select");
+    list_.setCancelButtonText("Close");
+    list_.initializeDialog("", 1, 0);
+    const engine::SClipRect inside = clip();
+    // Each as wide as "Cancel", the widest, and a 128th of the screen apart.
+    const int width = controls_.calculateButtonWidth("Cancel");
+    const int ok_left = (inside.right + 1) - ((2 * width) + (kWidth / 128));
+    EXPECT_EQ(clickButtonAt(ok_left + 1, inside.bottom - 1), CPickList::kStillOpen);
+    EXPECT_EQ(list_.handleDialogInput(), 1);
+}
+
+// With a scroll bar, down the right or along the bottom, the buttons still take the foot.
+TEST_F(CPickListButtonsTest, AScrollingListKeepsItsButtonsAtTheFoot) {
+    for (const bool single_column : {true, false}) {
+        CPickList list({.controls = controls_,
+                        .keys = keys_,
+                        .menu_input = menu_input_,
+                        .three_d = three_d_,
+                        .screen = screen_});
+        for (int i = 0; i < (single_column ? 60 : 400); ++i) {
+            list.add("A");
+        }
+        list.setForcedColumnCount(single_column);
+        list.setOkButtonText("Select");
+        list.setCancelButtonText("Close");
+        list.initializeDialog("", 0, 0);
+        list.renderDialog();
+        const engine::SClipRect inside = clip();
+        clickAt(inside.right - 1, inside.bottom - 1);
+        EXPECT_EQ(list.handleDialogInput(), CPickList::kStillOpen);
+        mouseAt(inside.right - 1, inside.bottom - 1, false);
+        EXPECT_EQ(list.handleDialogInput(), CPickList::kCancelled) << single_column;
+        editor_tools_.restoreWindowAndCleanup();
+    }
+}
+
+TEST_F(CPickListButtonsTest, WithoutTextThereIsNoButton) {
+    list_.setOkButtonText("");
+    list_.setCancelButtonText("Close");
+    list_.initializeDialog("", 0, 0);
+    const engine::SClipRect inside = clip();
+    const int width = controls_.calculateButtonWidth("Cancel");
+    EXPECT_EQ(clickButtonAt(inside.right - width - 1, inside.bottom - 1), CPickList::kStillOpen);
+    EXPECT_EQ(list_.handleDialogInput(), CPickList::kStillOpen);
+}
+
 TEST_F(CPickListDialogTest, AClickBelowTheLastItemOrPastTheRowsMisses) {
     list_.add("A");
     list_.add("B");
@@ -184,11 +273,11 @@ TEST_F(CPickListDialogTest, ATrailingTabAddsNoField) {
     EXPECT_EQ(clip().left, 82);
 }
 
-TEST_F(CPickListDialogTest, TenFieldsFitAndElevenAreFatal) {
-    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10");
+TEST_F(CPickListDialogTest, SixteenFieldsFitAndSeventeenAreFatal) {
+    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15\t16");
     list_.initializeDialog("", 0, 0);
     editor_tools_.restoreWindowAndCleanup();
-    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11");
+    list_.add("1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15\t16\t17");
     EXPECT_THAT([this] { list_.initializeDialog("", 0, 0); },
                 ThrowsMessage<common::CFatalError>(StrEq("Too many picklist columns!")));
 }

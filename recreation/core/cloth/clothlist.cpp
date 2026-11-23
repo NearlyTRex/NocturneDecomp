@@ -20,6 +20,9 @@ CClothList::~CClothList() = default;
 
 // The original allowed ten pieces; any number are loaded here.
 // nocedit 0x0043bfa0
+// bw1 0x00441cc0
+// bw2 0x005b14a0
+// bw3 0x0043f920
 void CClothList::load() {
     cloths_.clear();
     for (const std::string &filename : filenames_) {

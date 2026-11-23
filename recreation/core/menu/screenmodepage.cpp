@@ -65,8 +65,8 @@ void CScreenModePage::recordResolution() {
     height_ = owners_.game.game_pixy;
 }
 
-std::string CScreenModePage::localize(std::string_view key) const {
-    return std::string(owners_.messages.getLocalizedString(key));
+std::string CScreenModePage::label(std::string_view id) const {
+    return getLabel(owners_.content, owners_.messages, id);
 }
 
 bool CScreenModePage::getHighResolutionAllowed() const {

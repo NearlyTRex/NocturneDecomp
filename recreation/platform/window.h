@@ -44,6 +44,8 @@ public:
     [[nodiscard]] virtual std::string getScancodeName(std::uint16_t scancode) = 0;
     // A warning box with an OK button, as MessageBoxA with MB_ICONWARNING.
     virtual void showMessageBox(std::string_view message, std::string_view title) = 0;
+    // The window's title bar.
+    virtual void setTitle(std::string_view title) = 0;
 };
 
 } // namespace nocturne::platform

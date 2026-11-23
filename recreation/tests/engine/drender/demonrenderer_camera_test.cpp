@@ -161,5 +161,24 @@ TEST_F(CDemonRendererCameraTest, AViewportClipsToItsWindowUntilItsPop) {
     EXPECT_EQ(two_d_.getClipRect(), (SClipRect{.left = 0, .top = 0, .right = 639, .bottom = 479}));
 }
 
+// A wide window shaped as 640x480 projects as the layout's, so the view stretches with it; the
+// pop, and the next window, take the clip's shape again.
+TEST_F(CDemonRendererCameraTest, AWindowsProjectionCanKeepAnotherShape) {
+    demon_renderer_.pushViewport(0, 0, 852, 479);
+    demon_renderer_.setupCameraAndProjection(rotationBy({}));
+    const int wide = matrix_.getTransformMatrix().m[1].y;
+    demon_renderer_.setProjectionShape(640, 480);
+    demon_renderer_.setupCameraAndProjection(rotationBy({}));
+    // (641 << 16) / 481, as a 640x480 window's.
+    EXPECT_EQ(matrix_.getTransformMatrix().m[1].y, 87335);
+    EXPECT_NE(wide, 87335);
+    demon_renderer_.pushViewport(0, 0, 852, 479);
+    EXPECT_FALSE(matrix_.getProjectionAspect().has_value());
+    demon_renderer_.popViewport();
+    EXPECT_TRUE(matrix_.getProjectionAspect().has_value());
+    demon_renderer_.popViewport();
+    EXPECT_FALSE(matrix_.getProjectionAspect().has_value());
+}
+
 } // namespace
 } // namespace nocturne::engine

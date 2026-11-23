@@ -4,6 +4,7 @@
 #include "core/menu/menu.h"
 #include "core/menu/soundoptionspage.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrgltexturebasic.h"
@@ -14,30 +15,25 @@
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
+#include <string>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
 namespace {
 
-// The counter runs through the eight flame frames 24 times a second, in 16.16 frames.
-constexpr int kVisualizationFramesPerSecond = 24;
-constexpr int kVisualizationFrameCount = 8;
+// The counter is in 16.16 frames.
 constexpr int kVisualizationFrameShift = 16;
-constexpr int kVisualizationWrap = kVisualizationFrameCount << kVisualizationFrameShift;
-// Bars 4 pixels apart, from 200Hz up to fifty times that, across each channel's share of the
-// width less a twentieth each side, a quarter of the height at full level.
-constexpr int kBarPitch = 4;
-constexpr int kMarginDivisor = 20;
+// From 200Hz up to fifty times that, across each channel's share of the width.
 constexpr double kLowestBandHz = 200.0;
 constexpr double kBandSpan = 50.0;
-constexpr float kFullLevelShare = 0.25F;
-constexpr int kBarHalfWidth = 16;
+constexpr float kPercent = 100.0F;
 // Texels 8 and 248 of a 256-texel frame, in 8.24.
 constexpr int kTexelShift = 16;
 constexpr int kTextureInsetLow = 8 << kTexelShift;
 constexpr int kTextureInsetHigh = 248 << kTexelShift;
-constexpr int kBarAlpha = 0x8000;
 constexpr int kFullAlpha = 0xffff;
 constexpr int kAddBlend = 1;
 constexpr int kNoBlend = 0;
@@ -65,9 +61,20 @@ void CMenu::configureSoundOptions() {
 // at the game's resolution, so the bars' pitch and width grow with its layout, and each picks
 // its frame by the column it would have had at 640x480.
 void CMenu::drawAudioSpectrum() {
-    audio_visualization_counter_ += owners_.game.getDeltaTimeInt() * kVisualizationFramesPerSecond;
-    if (audio_visualization_counter_ >= kVisualizationWrap) {
-        audio_visualization_counter_ -= kVisualizationWrap;
+    const std::optional<engine::SMenuSpectrum> &spectrum = getMenuLayout().spectrum;
+    if (!spectrum) {
+        return;
+    }
+    if (audio_spectrum_textures_.size() != spectrum->frames.size()) {
+        audio_spectrum_textures_.clear();
+        for (const std::string &frame : spectrum->frames) {
+            audio_spectrum_textures_.push_back({.texture_name = frame});
+        }
+    }
+    const int wrap = static_cast<int>(spectrum->frames.size()) << kVisualizationFrameShift;
+    audio_visualization_counter_ += owners_.game.getDeltaTimeInt() * spectrum->fps;
+    if (audio_visualization_counter_ >= wrap) {
+        audio_visualization_counter_ -= wrap;
     }
     sound::CSndMain &sound_main = owners_.sound_main;
     if (!sound_main.isSoundBusy()) {
@@ -75,13 +82,14 @@ void CMenu::drawAudioSpectrum() {
     }
     const float scale = getScreenLayout().scale;
     const int pitch =
-        std::max(1, static_cast<int>(std::lround(static_cast<float>(kBarPitch) * scale)));
-    const int half_width =
-        std::max(1, static_cast<int>(std::lround(static_cast<float>(kBarHalfWidth) * scale)));
+        std::max(1, static_cast<int>(std::lround(static_cast<float>(spectrum->pitch) * scale)));
+    const int half_width = std::max(
+        1, static_cast<int>(std::lround(static_cast<float>(spectrum->half_width) * scale)));
+    const float full_level_share = static_cast<float>(spectrum->height_percent) / kPercent;
     const int channels = sound_main.getAudioChannelCount();
     const int width = owners_.screen.getWindowWidth();
     const int height = owners_.screen.getWindowHeight();
-    const int margin = width / kMarginDivisor;
+    const int margin = width / spectrum->margin_divisor;
     const int per_channel = width / channels;
     const int bar_count = (per_channel - (2 * margin)) / pitch;
     const double band_ratio = std::pow(kBandSpan, 1.0 / bar_count);
@@ -96,32 +104,36 @@ void CMenu::drawAudioSpectrum() {
                 channel, static_cast<float>(band_hz), static_cast<float>(next_hz));
             const auto top = static_cast<int>(
                 std::lround(static_cast<float>(height) -
-                            (level * static_cast<float>(height) * kFullLevelShare)));
-            const auto column = static_cast<int>(std::lround(static_cast<float>(x) / scale));
-            bars.push_back({.x_center = x,
+                            (level * static_cast<float>(height) * full_level_share)));
+            // Mirrored, a bar right of the middle is as far left of the right edge.
+            const int drawn_x = spectrum->mirrored && x > width / 2 ? width - (x - (width / 2)) : x;
+            const auto column = static_cast<int>(std::lround(static_cast<float>(drawn_x) / scale));
+            bars.push_back({.x_center = drawn_x,
                             .half_width = half_width,
                             .height_half = bottom - top + 1,
                             .frame = getAudioSpectrumFrame(column)});
             band_hz = next_hz;
         }
     }
-    for (int frame = 0; frame < kVisualizationFrameCount; ++frame) {
+    for (int frame = 0; std::cmp_less(frame, spectrum->frames.size()); ++frame) {
         for (const SAudioSpectrumBar &bar : bars) {
             if (bar.frame == frame) {
-                renderAudioSpectrumBar(bar, bottom);
+                renderAudioSpectrumBar(bar, bottom, spectrum->alpha);
             }
         }
     }
 }
 
 int CMenu::getAudioSpectrumFrame(int column) const {
-    return ((audio_visualization_counter_ >> kVisualizationFrameShift) + column) &
-           (kVisualizationFrameCount - 1);
+    return ((audio_visualization_counter_ >> kVisualizationFrameShift) + column) %
+           static_cast<int>(audio_spectrum_textures_.size());
 }
 
-// Half transparent and added to what is under it.
+// Half transparent and added to what is under it. BW2's mirrored a bar right of the middle here;
+// drawAudioSpectrum does, where the frame is picked from the same column.
+// bw2 0x004eaf30
 // nocedit 0x0050fe70
-void CMenu::renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top) {
+void CMenu::renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top, int alpha) {
     const int height_half = bar.height_half;
     if (height_half <= 0) {
         return;
@@ -148,7 +160,7 @@ void CMenu::renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top) {
     buffer[3].projected_vertex.screen_y = top;
     buffer[3].u = kTextureInsetLow;
     buffer[3].v = kTextureInsetLow;
-    renderer.setRenderAlpha(kBarAlpha);
+    renderer.setRenderAlpha(alpha);
     renderer.setBlendMode(kAddBlend);
     renderer.captureTexture(audio_spectrum_textures_.at(static_cast<std::size_t>(bar.frame)));
     renderer.renderTexturedDirect({.surface_normal = {}, .vertex_indices = {0, 1, 2, 3}},

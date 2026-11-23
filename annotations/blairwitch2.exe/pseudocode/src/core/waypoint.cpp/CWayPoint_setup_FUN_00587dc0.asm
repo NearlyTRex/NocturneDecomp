@@ -10,8 +10,8 @@
 ;   core_hpatrol.cpp_CPatrolPoint_setup_FUN_0059c670 at 0059c675
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -95,8 +95,8 @@ section .text
     MOV EBP,0x5ee0c9                    ; 00587e5d
     MOV EAX,0x8b                        ; 00587e62
     PUSH 0x5ee0de                       ; 00587e67
-    MOV dword ptr [0x01d046a0],EBP      ; 00587e6c | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00587e72 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00587e6c | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00587e72 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00587e77
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00587e7c

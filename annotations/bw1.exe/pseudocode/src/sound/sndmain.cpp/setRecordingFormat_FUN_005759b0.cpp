@@ -13,8 +13,8 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005759b0(int bits_per_sampl
   
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_00575990();
   if (iVar1 != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-    g_INT_01d1d404 = 0x16ed;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 5869;
     core_main_c_displayErrorAndQuit_FUN_005030e0("setRecordingFormat - can't do this while recording active!");
   }
   g_RecordingBitsPerSample = bits_per_sample;

@@ -61,8 +61,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       puStack_20 = (byte *)malloc(uStack_1c);
       if (((pcVar3 == (char *)0x0) || (pvVar4 == (void *)0x0)) || (puStack_20 == (byte *)0x0))
       {
-        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
-        g_INT_01d71de4 = 0x184;
+        g_CurrentFilename = "..\\engine\\font.cpp";
+        g_CurrentLineNumber = 388;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::setAcceleration - Out of memory");
       }
       engine_dosio_cpp_splitPath_FUN_00465e50
@@ -73,8 +73,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                         ((CInStreamFile *)auStack_58,"art",acStack_258,1);
       if (iVar5 == 0) {
-        g_INT_01d71de4 = 0x1a3;
-        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
+        g_CurrentLineNumber = 419;
+        g_CurrentFilename = "..\\engine\\font.cpp";
         core_main_c_displayErrorAndQuit_FUN_004e4330("CBitFont::setAcceleration - No opacity file found: %s");
       }
       else {
@@ -148,8 +148,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       pvVar4 = malloc(0x7d20);
       in_stack_00000018->accel_vertex_alloc = pvVar4;
       if (pvVar4 == (void *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
-        g_INT_01d71de4 = 0x1e5;
+        g_CurrentFilename = "..\\engine\\font.cpp";
+        g_CurrentLineNumber = 485;
         uStack_458 = 0x4afea3;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading opacity mapped font : ");
       }
@@ -158,8 +158,8 @@ void __cdecl engine_font_cpp_CBitFont_setAcceleration_FUN_004afbf0(CBitFont *thi
       pvVar4 = malloc(2000);
       in_stack_00000018->accel_indices = pvVar4;
       if (pvVar4 == (void *)0x0) {
-        g_CHAR_PTR_01d71de0 = "..\\engine\\font.cpp";
-        g_INT_01d71de4 = 0x1ed;
+        g_CurrentFilename = "..\\engine\\font.cpp";
+        g_CurrentLineNumber = 493;
         uStack_458 = 0x4b0094;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory loading opacity mapped font : ");
       }

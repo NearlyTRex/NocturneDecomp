@@ -33,16 +33,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(CEd
   int local_14;
   
   if (g_CBitFont_PTR_01c5b0e0 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0xa7;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 167;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
   g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   if (g_WindowStackCount < 1) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0x94c;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2380;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CEditorTools::paintWindow() called but no window was opened!");
   }
   local_28 = g_INT_01c6b5c0;

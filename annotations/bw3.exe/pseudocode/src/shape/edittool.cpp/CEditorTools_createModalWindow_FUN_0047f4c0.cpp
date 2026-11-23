@@ -27,16 +27,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
   
   bVar11 = 0;
   if (g_CBitFont_PTR_01c5b0e0 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0xa7;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 167;
     core_main_c_displayErrorAndQuit_FUN_004e4330("gEdFont must be set by the application.");
   }
   g_EditorFontMaxCharWidth = g_CBitFont_PTR_01c5b0e0->max_char_width;
   g_INT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(g_CBitFont_PTR_01c5b0e0,0x6a)
   ;
   if (4 < g_WindowStackCount) {
-    g_CHAR_PTR_01d71de0 = "..\\shape\\edittool.cpp";
-    g_INT_01d71de4 = 0x867;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2151;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Can't open another window!");
   }
   iVar1 = g_WindowStackCount * 0x1f8;

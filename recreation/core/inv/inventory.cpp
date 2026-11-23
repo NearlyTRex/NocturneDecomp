@@ -73,6 +73,8 @@ void CInventory::initialize(common::CWatcomRandom &crt_random) {
 // loadItems; here each comes off as it is claimed.
 // deferred: showing the held weapon's ammo, with CAmmo
 // nocedit 0x004ff400
+// bw1 0x004f97a0
+// bw3 0x004dc750
 // nocedit 0x004ff740
 void CInventory::load(CActorArchive &actor_archive) {
     common::CTextScanner &scanner = actor_archive.getScanner();
@@ -101,7 +103,7 @@ void CInventory::load(CActorArchive &actor_archive) {
         std::string class_name;
         std::string actor_name;
         common::scanFormat(scanner, " %s \"%[^\"]\"\n", class_name, actor_name);
-        std::unique_ptr<CDemonActor> item = owners.actors.takeCarriedActor(actor_name);
+        std::unique_ptr<CDemonActor> item = owners.actors.getNextLoadedInventoryActor(actor_name);
         if (item == nullptr) {
             item = owners.actor_classes.createActorByName(class_name);
             item->setActorName(actor_name);

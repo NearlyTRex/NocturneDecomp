@@ -78,7 +78,7 @@ extern CVector3i g_NormalizedViewVector;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_01d1baac;
 
 // char*
-extern char* g_CHAR_PTR_01d1d400;
+extern char* g_CurrentFilename;
 extern char* g_CHAR_PTR_01d1ffe0;
 
 // char*[16]
@@ -110,7 +110,7 @@ extern int g_InventoryLightAngle;
 extern int g_LightDirectionX2;
 extern int g_LightDirectionY2;
 extern int g_LightDirectionZ2;
-extern int g_INT_01d1d404;
+extern int g_CurrentLineNumber;
 extern int g_INT_01d1d408;
 extern int g_INT_01d1dd18;
 extern int g_INT_01d1dd1c;

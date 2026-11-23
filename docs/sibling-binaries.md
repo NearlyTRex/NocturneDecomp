@@ -46,7 +46,10 @@ Function addresses differ between the binaries. **Never look up by address acros
    `by` is `name` (the same class and method) or `body` (no name pairs them, but the bodies are the
    same instructions and unique in both programs; this links the unnamed Blair Witch code the
    builds share). `class` is `diff_functions.py`'s: `identical`, `layout-drift` (only structure
-   offsets differ), `const-change`, `regalloc`, `operand-change` or `logic-change`.
+   offsets differ), `frame-change` (only the frame pointer's code and the stack slots' places
+   differ, as in the Blair Witch builds), `const-change`, `regalloc`, `operand-change` or
+   `logic-change`. A source line number stored to `g_CurrentLineNumber` for the error reporter is
+   no difference, so every build needs that global named.
    `sibling_identity.py` writes the key after every functions or pseudocode export. The recreation
    itinerary reads it to list each function's Blair Witch variants and the Blair Witch code nocedit
    lacks.

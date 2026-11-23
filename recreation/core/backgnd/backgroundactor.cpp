@@ -39,6 +39,8 @@ const CDemonActorType &CBackgroundActor::getActorType() const {
 }
 
 // nocedit 0x00412770
+// bw1 0x0040ee80
+// bw2 0x0040f300
 std::unique_ptr<CDemonActor> CBackgroundActor::create(CActor &classes) {
     return std::make_unique<CBackgroundActor>(classes);
 }
@@ -81,6 +83,8 @@ EGroundType CBackgroundActor::getGroundType() {
 }
 
 // nocedit 0x00412940
+// bw1 0x0040f010
+// bw2 0x0040f490
 CBoundingBox3D *CBackgroundActor::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
     return out_box;

@@ -945,8 +945,8 @@ LAB_00520ba3:
         goto LAB_0052083a;
       }
       if (fVar1 != 4.2039e-45) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\prye.cpp";
-        g_INT_01d71de4 = 0x1050;
+        g_CurrentFilename = "..\\core\\prye.cpp";
+        g_CurrentLineNumber = 4176;
         core_main_c_displayErrorAndQuit_FUN_004e4330("Don't know how to carry light %s");
         goto LAB_0052083a;
       }

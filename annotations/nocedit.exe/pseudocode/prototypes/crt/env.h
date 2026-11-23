@@ -11,7 +11,7 @@ char * __cdecl getenv(char *name);
 
 // Original: crt_env.c_putenv_internal_FUN_0060ee80
 // Address: 0060ee80
-int __cdecl putenv::internal(char *envstr);
+int __cdecl putenv_internal(char *envstr);
 
 // Original: crt_env.c_updateEnvironTable_FUN_0060f04c
 // Address: 0060f04c

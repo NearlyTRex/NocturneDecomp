@@ -381,8 +381,8 @@ section .text
     MOV EAX,0x5e5f5d                    ; 005391ce | = "..\\core\\setdir.cpp"
     MOV EDX,0x67                        ; 005391d3
     PUSH 0x5e5f70                       ; 005391d8 | = "saveZBufferTable - already saved!"
-    MOV [0x01d046a0],EAX                ; 005391dd | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 005391e2 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 005391dd | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 005391e2 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005391e8
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005391ed
@@ -444,8 +444,8 @@ section .text
     MOV EDX,0x5e5f92                    ; 005392ae | = "..\\core\\setdir.cpp"
     MOV ECX,0x70                        ; 005392b3
     PUSH 0x5e5fa5                       ; 005392b8 | = "saveZBufferTable - not saved!"
-    MOV dword ptr [0x01d046a0],EDX      ; 005392bd | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005392c3 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 005392bd | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 005392c3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005392c9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005392ce

@@ -565,5 +565,63 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_processWalking_FUN_0042ca70.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.NonNullParamChecker",
+          "column": 5,
+          "line": 42,
+          "message": "Forming reference to null pointer",
+          "path_notes": [
+            {
+              "line": 34,
+              "message": "Assuming field 'walk_to_target' is equal to null"
+            },
+            {
+              "line": 34,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 34,
+              "message": "Assuming field 'door_target' is not equal to null"
+            },
+            {
+              "line": 34,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 37,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 37,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 38,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 37,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 40,
+              "message": "Null pointer value stored to 'pCVar2'"
+            },
+            {
+              "line": 42,
+              "message": "Forming reference to null pointer"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

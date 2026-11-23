@@ -34,8 +34,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int local_14;
   
   if (g_EditorFont == (CBitFont *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-    g_INT_01d046a4 = 0xa0;
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 160;
     core_main_c_displayErrorAndQuit_FUN_004e4500("gEdFont must be set by the application.");
   }
   g_EditorFontMaxCharWidth = g_EditorFont->max_char_width;
@@ -69,8 +69,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
         pCVar8 = (CPickList *)&(pCVar8->base).capacity;
         if (*pcVar3 == '\0') break;
         if (0xf < iVar10) {
-          g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
-          g_INT_01d046a4 = 0xf9a;
+          g_CurrentFilename = "..\\shape\\edittool.cpp";
+          g_CurrentLineNumber = 3994;
           core_main_c_displayErrorAndQuit_FUN_004e4500("Too many picklist columns!");
         }
       }

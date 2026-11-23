@@ -35,6 +35,7 @@ constinit const CDemonActorType CLever::kType =
     makeActorType("CLever", &CDemonActor::kType, &CLever::create, kVersion);
 
 // nocedit 0x005047d0
+// bw2 0x004e1c20
 CLever::CLever(CActor &classes) : model_(classes.getKeyFramedModels()) {
     model_.setModelName("glever.kfm");
 }
@@ -48,6 +49,9 @@ const CDemonActorType &CLever::getActorType() const {
 }
 
 // nocedit 0x00504790
+// bw1 0x004ff010
+// bw2 0x004e1bf0
+// bw3 0x004e00d0
 std::unique_ptr<CDemonActor> CLever::create(CActor &classes) {
     return std::make_unique<CLever>(classes);
 }
@@ -64,6 +68,7 @@ void CLever::setup() {
 }
 
 // nocedit 0x00504e80
+// bw2 0x004e22e0
 void CLever::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
@@ -103,6 +108,9 @@ ECollisionType CLever::getCollisionType(SCollisionInfo * /*collision_info*/) {
 }
 
 // nocedit 0x00504d80
+// bw1 0x004ff670
+// bw2 0x004e21e0
+// bw3 0x004e0730
 CBoundingBox3D *CLever::getBoundingBox(CBoundingBox3D *out_box) {
     *out_box = model_.getModelPtr().getFrameBounds().front();
     return out_box;

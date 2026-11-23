@@ -65,8 +65,8 @@
 ;   TerminatedCString s_core_netgame_cpp_005e0d05
 ;   TerminatedCString s_Hell_froze_005e0d19
 ;   int g_NetLobbyStateChanged = 0x1
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_0050e043
     MOV EDI,0x7e6                       ; 0050e048
     PUSH 0x5e0cb9                       ; 0050e04d | = "CNetGame::applyNewGameSettings - shou..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0050e052 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0050e058 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0050e052 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0050e058 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050e05e
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050e063
@@ -230,8 +230,8 @@ section .text
     MOV EAX,0x5e0d05                    ; 0050e1e1 | = "..\\core\\netgame.cpp"
     MOV EDX,0x811                       ; 0050e1e6
     PUSH 0x5e0d19                       ; 0050e1eb | = "Hell froze"
-    MOV [0x01d046a0],EAX                ; 0050e1f0 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0050e1f5 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 0050e1f0 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0050e1f5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0050e1fb
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0050e200

@@ -16,8 +16,10 @@ how the two bodies compare and how the pair was found.
          program has that body (at least MIN_BODY_INSTRUCTIONS long). This pairs
          the unnamed Blair Witch code each build shares.
   class  diff_functions.py's class: identical, layout-drift (only structure
-         offsets differ), const-change, regalloc, operand-change, logic-change.
-         Absent when either body holds no instruction.
+         offsets differ), frame-change (only the frame pointer's code and the
+         stack slots' places differ), const-change, regalloc, operand-change,
+         logic-change. A changed source line number is no difference. Absent
+         when either body holds no instruction.
   ratio  the share of the instruction sequence the two have in common.
 
 A function with no twin has no `siblings` key. The pseudocode export writes these
@@ -103,7 +105,7 @@ def function_tokens(image, md, functions):
 def compute(programs=PROGRAMS, load=None, image_of=None):
     """{program: {addr: {other: entry}}} across `programs`."""
     load = load or (lambda p: sm._load_buckets(p, "functions"))  # pylint: disable=protected-access
-    image_of = image_of or (lambda p: df.Image(sm.find_program_exe(p)))
+    image_of = image_of or rss.program_image
     md = Cs(CS_ARCH_X86, CS_MODE_32)
     md.detail = True
     functions = {p: [f for f in load(p) if f.get("addr")] for p in programs}

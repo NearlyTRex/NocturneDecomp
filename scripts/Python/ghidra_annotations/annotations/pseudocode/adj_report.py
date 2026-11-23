@@ -10,13 +10,36 @@ from ghidra_annotations.util.log import log_info
 
 
 # Markers that identify sub-object construction/destruction calls
-SUBOBJ_MARKERS = ['_ctor_', '_dtor_', '__arrinit', '_arrdtor_']
-
-# Callee-saved registers (preserved across calls per cdecl)
-CALLEE_SAVED = {'EBX', 'ESI', 'EDI', 'EBP'}
+# (an array dtor is named for its extent, and maybe its owner: CFlame_arrdtor50,
+# SButtonStruct_arrdtor50Chem)
+SUBOBJ_RE = re.compile(r'_ctor_|_dtor_|__arrinit|_arrdtor[0-9A-Za-z]*_')
+_SHORT_NAME_PART_RE = re.compile(r'ctor|dtor|arrdtor[0-9A-Za-z]*')
 
 # All general-purpose registers we track
 ALL_REGS = {'EAX', 'EBX', 'ECX', 'EDX', 'ESI', 'EDI', 'EBP'}
+
+# A write to a 16- or 8-bit part leaves the whole register unknown
+SUB_REGISTERS = {
+    'AX': 'EAX', 'AL': 'EAX', 'AH': 'EAX', 'BX': 'EBX', 'BL': 'EBX', 'BH': 'EBX',
+    'CX': 'ECX', 'CL': 'ECX', 'CH': 'ECX', 'DX': 'EDX', 'DL': 'EDX', 'DH': 'EDX',
+    'SI': 'ESI', 'DI': 'EDI', 'BP': 'EBP',
+}
+
+# Mnemonics whose first operand is read, not written
+READ_ONLY = {'CMP', 'TEST', 'PUSH', 'CALL', 'RET', 'NOP'}
+
+# Registers an instruction writes without naming them
+IMPLICIT_WRITES = {
+    'CDQ': ('EDX',), 'MUL': ('EAX', 'EDX'), 'DIV': ('EAX', 'EDX'), 'IDIV': ('EAX', 'EDX'),
+    'STOSD': ('EDI', 'ECX'), 'MOVSD': ('ESI', 'EDI', 'ECX'), 'MOVSB': ('ESI', 'EDI', 'ECX'),
+}
+
+_HEX = r'(-?0x[0-9a-fA-F]+)'
+_INSTRUCTION_RE = re.compile(r'    (\w[\w.]*)\s+(.*?)\s*;\s*([0-9a-fA-F]+)')
+_STACK_LOAD_RE = re.compile(r'(\w+),dword ptr \[(ESP|EBP) \+ (0x[0-9a-fA-F]+)\]$')
+_REG_COPY_RE = re.compile(r'(\w+),(\w+)$')
+_REG_IMM_RE = re.compile(r'(\w+),' + _HEX + r'$')
+_LEA_RE = re.compile(r'(\w+),\[(\w+)(?:\s*\+\s*' + _HEX + r')?\]$')
 
 
 def signed32(val):
@@ -25,13 +48,13 @@ def signed32(val):
 
 
 def parse_hex(s):
-    """Parse a hex string (with or without 0x prefix)."""
+    """Parse a hex string (with or without 0x prefix, may be negative)."""
     return int(s, 16)
 
 
 def is_subobj_call(name):
     """Check if a CALL target is a sub-object ctor/dtor/array init."""
-    return any(m in name for m in SUBOBJ_MARKERS)
+    return SUBOBJ_RE.search(name) is not None
 
 
 def extract_info(filepath):
@@ -44,71 +67,150 @@ def extract_info(filepath):
 
 
 def parse_instructions(filepath):
-    """Parse an asm file into a list of (mnemonic, operands, address) tuples."""
+    """Parse an asm file into a list of (mnemonic, operands, address) tuples.
+
+    Lines read "    MOV EAX,dword ptr [ESP + 0x4]  ; 004d1720", or "    RET  ; 004d1789"
+    with no operands.
+    """
     instructions = []
     with open(filepath) as f:
         for line in f:
-            # Instructions with operands: "    MOV EAX,dword ptr [ESP + 0x4]  ; 004d1720"
-            m = re.match(r'    (\w[\w.]*)\s+(.*?)\s*;\s*([0-9a-fA-F]+)', line)
+            m = _INSTRUCTION_RE.match(line)
             if m:
                 mnemonic = m.group(1).upper().split('.')[0]  # Strip suffixes like .REP
                 instructions.append((mnemonic, m.group(2).strip(), m.group(3)))
-                continue
-            # Instructions without operands: "    RET  ; 004d1789"
-            m = re.match(r'    (\w+)\s*;\s*([0-9a-fA-F]+)', line)
-            if m:
-                instructions.append((m.group(1).upper(), '', m.group(2)))
     return instructions
 
 
 def compute_this_ptr_offsets(instructions):
-    """Determine where this_ptr lives on the stack.
+    """Where an EBP frame finds this_ptr, and whether ESP-relative loads can be trusted.
 
-    Returns a dict mapping access patterns to True if they reference this_ptr.
-    Handles both ESP-relative and EBP-frame-relative addressing.
+    Returns:
+        dict: has_frame, ebp_offset (this_ptr's [EBP + n], or None without a
+        frame), has_and_esp (ESP is realigned, so its offsets are unknown)
     """
-    # Count initial PUSH register saves
-    push_saves = 0
-    for mn, ops, _ in instructions:
-        if mn == 'PUSH' and ops.strip().upper() in ALL_REGS:
-            push_saves += 1
-        else:
-            break
-
-    # Check for SUB ESP allocation and MOV EBP,ESP frame pointer
     has_frame = False
-    frame_push_count = 0
-    sub_esp = 0
-
+    ebp_offset = None
     for i, (mn, ops, _) in enumerate(instructions):
-        if mn == 'MOV' and ops.strip() == 'EBP,ESP':
+        if mn == 'MOV' and ops == 'EBP,ESP':
             has_frame = True
-            frame_push_count = sum(
-                1 for mn2, ops2, _ in instructions[:i]
-                if mn2 == 'PUSH' and ops2.strip().upper() in ALL_REGS
-            )
+            pushes = sum(1 for mn2, ops2, _ in instructions[:i] if mn2 == 'PUSH' and ops2.upper() in ALL_REGS)
+            ebp_offset = pushes * 4 + 4
             break
-        if mn == 'SUB' and ops.strip().startswith('ESP,'):
-            m = re.match(r'ESP,(0x[0-9a-fA-F]+)', ops.strip())
-            if m:
-                sub_esp = parse_hex(m.group(1))
 
-    # Check for AND ESP alignment (makes ESP-relative detection unreliable)
-    has_and_esp = any(
-        mn == 'AND' and ops.strip().startswith('ESP,')
-        for mn, ops, _ in instructions
-    )
+    has_and_esp = any(mn == 'AND' and ops.startswith('ESP,') for mn, ops, _ in instructions)
+    return {'ebp_offset': ebp_offset, 'has_frame': has_frame, 'has_and_esp': has_and_esp}
 
-    esp_offset = 0x4 + push_saves * 4 + sub_esp
-    ebp_offset = frame_push_count * 4 + 4 if has_frame else None
 
-    return {
-        'esp_offset': esp_offset,
-        'ebp_offset': ebp_offset,
-        'has_frame': has_frame,
-        'has_and_esp': has_and_esp,
-        'push_saves': push_saves,
-    }
+def _destination(ops):
+    """The general register an instruction's first operand names, or None."""
+    first = ops.split(',')[0].strip().upper()
+    if first in ALL_REGS:
+        return first
+    return SUB_REGISTERS.get(first)
+
+
+class _Tracker:
+    """Each register's offset from this_ptr (None when unknown), and the pushed values."""
+
+    def __init__(self, stack_info):
+        self.stack_info = stack_info
+        self.regs = {r: None for r in ALL_REGS}
+        self.push_stack = []
+        self.esp_adjust = 0             # bytes pushed or reserved since entry
+
+    def stack_load(self, base, off):
+        """this_ptr's offset (0) when [base + off] holds the this_ptr argument, else None."""
+        if base == 'ESP':
+            hit = not self.stack_info['has_and_esp'] and off == 0x4 + self.esp_adjust
+        else:
+            hit = off == self.stack_info['ebp_offset']
+        return 0 if hit else None
+
+    def drop(self, nbytes):
+        """Release nbytes of stack, popping the pushed values they held."""
+        n = nbytes // 4
+        del self.push_stack[max(0, len(self.push_stack) - n):]
+        self.esp_adjust -= nbytes
+
+    def mov(self, ops):
+        m = _STACK_LOAD_RE.match(ops)
+        if m:
+            return self.stack_load(m.group(2), parse_hex(m.group(3)))
+        m = _REG_COPY_RE.match(ops)
+        if m and m.group(2).upper() in ALL_REGS:
+            return self.regs[m.group(2).upper()]
+        return None
+
+    def lea(self, ops):
+        m = _LEA_RE.match(ops)
+        if not m or m.group(2).upper() not in ALL_REGS or self.regs[m.group(2).upper()] is None:
+            return None
+        return self.regs[m.group(2).upper()] + (signed32(parse_hex(m.group(3)) & 0xFFFFFFFF) if m.group(3) else 0)
+
+    def add_sub(self, mn, dest, ops):
+        """ADD/SUB of an immediate moves a known offset; on ESP it pops or reserves."""
+        m = _REG_IMM_RE.match(ops)
+        if not m:
+            return None
+        val = signed32(parse_hex(m.group(2)) & 0xFFFFFFFF)
+        if mn == 'SUB':
+            val = -val
+        if m.group(1).upper() == 'ESP':
+            if val > 0:
+                self.drop(val)
+            else:
+                self.esp_adjust -= val
+            return None
+        return None if self.regs[dest] is None else self.regs[dest] + val
+
+    def step(self, mn, ops):
+        """Apply one instruction; returns (call target, this offset) for a sub-object call."""
+        dest = _destination(ops)
+        if mn == 'PUSH':
+            self.push_stack.append(self.regs.get(ops.upper()))
+            self.esp_adjust += 4
+        elif mn == 'POP':
+            popped = self.push_stack.pop() if self.push_stack else None
+            self.esp_adjust -= 4
+            if dest:
+                self.regs[dest] = popped
+        elif mn == 'CALL':
+            return self.call(ops.split(';')[0].strip())
+        elif mn in ('ADD', 'SUB') and (dest or ops.upper().startswith('ESP,')):
+            value = self.add_sub(mn, dest, ops)
+            if dest:
+                self.regs[dest] = value
+        elif mn == 'XCHG' and dest and _destination(ops.split(',', 1)[1]):
+            other = _destination(ops.split(',', 1)[1])
+            self.regs[dest], self.regs[other] = self.regs[other], self.regs[dest]
+        elif dest and mn not in READ_ONLY and not mn.startswith('J'):
+            exact = ops.split(',')[0].strip().upper() in ALL_REGS
+            if mn == 'MOV' and exact:
+                self.regs[dest] = self.mov(ops)
+            elif mn == 'LEA':
+                self.regs[dest] = self.lea(ops)
+            else:
+                self.regs[dest] = None
+        for reg in IMPLICIT_WRITES.get(mn, ()):
+            self.regs[reg] = None
+        return None
+
+    def call(self, target):
+        if '__STK' in target:
+            if self.push_stack:
+                self.drop(4)
+            return None
+        result = None
+        if is_subobj_call(target):
+            arg = self.push_stack[-1] if self.push_stack else None
+            result = (target, arg)
+        # cdecl: a call leaves EAX/ECX/EDX undefined, except that a ctor/dtor
+        # returns the this it was given
+        self.regs['EAX'] = result[1] if result else None
+        self.regs['ECX'] = None
+        self.regs['EDX'] = None
+        return result
 
 
 def analyze_asm(filepath):
@@ -118,159 +220,33 @@ def analyze_asm(filepath):
     offset_from_this is an int, or None if the offset couldn't be determined.
     """
     instructions = parse_instructions(filepath)
-    if not instructions:
-        return []
-
-    stack_info = compute_this_ptr_offsets(instructions)
-    esp_off = stack_info['esp_offset']
-    ebp_off = stack_info['ebp_offset']
-    has_frame = stack_info['has_frame']
-    has_and_esp = stack_info['has_and_esp']
-
-    # Register state: maps register name -> offset from this_ptr (or None)
-    regs = {r: None for r in ALL_REGS}
-
-    # Push stack: list of offset values (int or None)
-    push_stack = []
-
-    # Track dynamic ESP adjustment from function entry
-    esp_adjust = 0
-
+    tracker = _Tracker(compute_this_ptr_offsets(instructions))
     results = []
-
-    for i, (mn, ops, addr) in enumerate(instructions):
-        ops_stripped = ops.strip()
-        ops_upper = ops_stripped.upper()
-
-        # ---- Detect this_ptr loads ----
-        # MOV reg, dword ptr [ESP + offset]
-        m = re.match(r'(\w+),dword ptr \[ESP \+ (0x[0-9a-fA-F]+)\]', ops_stripped)
-        if mn == 'MOV' and m:
-            reg = m.group(1).upper()
-            off = parse_hex(m.group(2))
-            if reg in regs and not has_and_esp:
-                if off == 0x4 + esp_adjust:
-                    regs[reg] = 0
-
-        # MOV reg, dword ptr [EBP + offset]
-        if has_frame:
-            m = re.match(r'(\w+),dword ptr \[EBP \+ (0x[0-9a-fA-F]+)\]', ops_stripped)
-            if mn == 'MOV' and m:
-                reg = m.group(1).upper()
-                off = parse_hex(m.group(2))
-                if reg in regs and ebp_off is not None and off == ebp_off:
-                    regs[reg] = 0
-
-        # ---- MOV reg, reg ----
-        m = re.match(r'(\w+),(\w+)$', ops_stripped)
-        if mn == 'MOV' and m:
-            dst, src = m.group(1).upper(), m.group(2).upper()
-            if dst in regs and src in regs:
-                regs[dst] = regs[src]
-
-        # ---- ADD reg, imm ----
-        m = re.match(r'(\w+),(0x[0-9a-fA-F]+)$', ops_stripped)
-        if mn == 'ADD' and m:
-            reg = m.group(1).upper()
-            val = signed32(parse_hex(m.group(2)))
-            if reg in regs and reg != 'ESP' and regs[reg] is not None:
-                regs[reg] += val
-            if reg == 'ESP':
-                n = abs(val) // 4
-                if val > 0 and len(push_stack) >= n:
-                    push_stack = push_stack[:-n]
-                esp_adjust -= val
-
-        # ---- SUB reg, imm ----
-        if mn == 'SUB':
-            m_sub = re.match(r'(\w+),(0x[0-9a-fA-F]+)$', ops_stripped)
-            if m_sub:
-                reg = m_sub.group(1).upper()
-                val = parse_hex(m_sub.group(2))
-                if reg == 'ESP':
-                    esp_adjust += val
-                elif reg in regs and regs[reg] is not None:
-                    regs[reg] -= val
-
-        # ---- LEA reg, [reg2 + offset] ----
-        m = re.match(r'(\w+),\[(\w+)\s*\+\s*(0x[0-9a-fA-F]+)\]', ops_stripped)
-        if mn == 'LEA' and m:
-            dst = m.group(1).upper()
-            src = m.group(2).upper()
-            val = signed32(parse_hex(m.group(3)))
-            if dst in regs and src in regs and regs[src] is not None:
-                regs[dst] = regs[src] + val
-
-        # LEA reg, [reg2] (no offset)
-        m = re.match(r'(\w+),\[(\w+)\]$', ops_stripped)
-        if mn == 'LEA' and m:
-            dst = m.group(1).upper()
-            src = m.group(2).upper()
-            if dst in regs and src in regs:
-                regs[dst] = regs[src]
-
-        # ---- PUSH ----
-        if mn == 'PUSH':
-            tok = ops_stripped.upper()
-            if tok in regs:
-                push_stack.append(regs[tok])
-            elif re.match(r'0x[0-9a-fA-F]+$', ops_stripped):
-                push_stack.append(('imm', parse_hex(ops_stripped)))
-            else:
-                push_stack.append(None)
-            esp_adjust += 4
-
-        # ---- POP ----
-        if mn == 'POP':
-            if push_stack:
-                push_stack.pop()
-            esp_adjust -= 4
-
-        # ---- CALL ----
-        if mn == 'CALL':
-            call_target = ops_stripped.split(';')[0].strip()
-
-            if '__STK' in call_target:
-                if push_stack:
-                    push_stack.pop()
-                    esp_adjust -= 4
-
-            elif is_subobj_call(call_target):
-                arg_idx = -1
-                arg_offset = None
-                if len(push_stack) >= abs(arg_idx):
-                    val = push_stack[arg_idx]
-                    if isinstance(val, int):
-                        arg_offset = val
-
-                results.append((call_target, arg_offset))
-
-                if arg_offset is not None:
-                    regs['EAX'] = arg_offset
-                else:
-                    regs['EAX'] = None
-                regs['ECX'] = None
-                regs['EDX'] = None
-            else:
-                regs['EAX'] = None
-                regs['ECX'] = None
-                regs['EDX'] = None
-
+    for mn, ops, _ in instructions:
+        found = tracker.step(mn, ops)
+        if found:
+            results.append(found)
     return results
 
 
 def short_call_name(call_target):
-    """Shorten a call target for display."""
-    if '_FUN_' in call_target:
-        prefix = call_target.split('_FUN_')[0]
-        parts = prefix.split('_')
-        for j, p in enumerate(parts):
-            if p in ('ctor', 'dtor', 'arrdtor'):
-                return '_'.join(parts[max(0, j-1):j+1])
-            if p == 'arrinit' and j > 0 and parts[j-1] == '_':
-                return '__arrinit'
-        return '_'.join(parts[-2:]) if len(parts) >= 2 else prefix
-    return call_target
+    """Shorten a call target for display: Class_ctor out of a full ctor/dtor name."""
+    if '_FUN_' not in call_target:
+        return call_target
+    parts = call_target.split('_FUN_')[0].split('_')
+    for j, p in enumerate(parts):
+        if _SHORT_NAME_PART_RE.fullmatch(p):
+            return '_'.join(parts[max(0, j-1):j+1])
+    return '_'.join(parts[-2:])
+
+
+def _source_unit(path):
+    """The dir/unit.cpp a function file sits under, or "unknown"."""
+    parts = path.split(os.sep)
+    for j, p in enumerate(parts[:-1]):
+        if p.endswith('.cpp'):
+            return os.path.join(*parts[max(0, j-1):j+1])
+    return "unknown"
 
 
 def generate_adj_pointer_report(pseudocode_src_dir, reports_dir):
@@ -283,56 +259,33 @@ def generate_adj_pointer_report(pseudocode_src_dir, reports_dir):
     log_info("Generating ADJ pointer types report...")
 
     # Find all ctor/dtor asm files (skip CRT functions)
-    asm_files = []
+    asm_files = set()
     for pattern in ['**/*_ctor_*.asm', '**/*_dtor_*.asm']:
         for f in glob.glob(os.path.join(pseudocode_src_dir, pattern), recursive=True):
             if os.sep + 'crt' + os.sep not in f:
-                asm_files.append(f)
-    asm_files.sort()
+                asm_files.add(f)
+    asm_files = sorted(asm_files)
 
-    # Collect results
     needed_types = defaultdict(set)
     unknown_offsets = []
-    details = []
-
-    for path in asm_files:
-        class_name, func_type = extract_info(path)
-        if not class_name:
-            continue
-
-        calls = analyze_asm(path)
-
-        has_nonzero = False
-        has_unknown = False
-        for call_name, offset in calls:
-            if offset is not None and offset != 0:
-                needed_types[class_name].add(offset)
-                has_nonzero = True
-            elif offset is None:
-                unknown_offsets.append((path, call_name))
-                has_unknown = True
-
-        if has_nonzero or has_unknown:
-            details.append((path, class_name, func_type, calls))
-
-    # Check which .cpp files still need ADJ()
     unfinished = []
     finished = []
-
-    for path, class_name, func_type, calls in details:
-        cpp_path = path.replace('.asm', '.cpp')
-        has_adj = False
-        if os.path.isfile(cpp_path):
-            with open(cpp_path) as f:
-                has_adj = 'ADJ(' in f.read()
-
-        nonzero_calls = [(n, o) for n, o in calls if o is not None and o != 0]
-        unknown_calls = [(n, o) for n, o in calls if o is None]
-
-        if has_adj:
-            finished.append((path, class_name, func_type, calls))
-        elif nonzero_calls or unknown_calls:
-            unfinished.append((path, class_name, func_type, calls))
+    for path in asm_files:
+        class_name, _ = extract_info(path)
+        if not class_name:
+            continue
+        calls = analyze_asm(path)
+        nonzero = [(n, o) for n, o in calls if o]
+        unknown = [(n, o) for n, o in calls if o is None]
+        for _, offset in nonzero:
+            needed_types[class_name].add(offset)
+        unknown_offsets += [(path, n) for n, _ in unknown]
+        if not (nonzero or unknown):
+            continue
+        # Has the .cpp been finished with ADJ() yet?
+        with open(path[:-len('.asm')] + '.cpp') as f:
+            has_adj = 'ADJ(' in f.read()
+        (finished if has_adj else unfinished).append((path, class_name, nonzero, unknown))
 
     # Build report
     lines = []
@@ -344,34 +297,20 @@ def generate_adj_pointer_report(pseudocode_src_dir, reports_dir):
     lines.append("UNFINISHED CTORS/DTORS (%d files still need ADJ)" % len(unfinished))
     lines.append("=" * 70)
 
-    by_vfile = defaultdict(list)
-    for path, class_name, func_type, calls in unfinished:
-        parts = path.split(os.sep)
-        vfile = None
-        for j, p in enumerate(parts):
-            if p.endswith('.cpp') and j < len(parts) - 1:
-                vfile = os.path.join(*parts[j-1:j+1])
-                break
-        if not vfile:
-            vfile = "unknown"
-        by_vfile[vfile].append((path, class_name, func_type, calls))
+    by_unit = defaultdict(list)
+    for entry in unfinished:
+        by_unit[_source_unit(entry[0])].append(entry)
 
-    for vfile in sorted(by_vfile):
-        entries = by_vfile[vfile]
+    for unit in sorted(by_unit):
         lines.append("")
-        lines.append("  [%s]" % vfile)
-        for path, class_name, func_type, calls in entries:
-            basename = os.path.basename(path).replace('.asm', '')
-            nonzero = [(n, o) for n, o in calls if o is not None and o != 0]
-            unknown = [(n, o) for n, o in calls if o is None]
-            lines.append("    %s:" % basename)
+        lines.append("  [%s]" % unit)
+        for path, class_name, nonzero, unknown in by_unit[unit]:
+            lines.append("    %s:" % os.path.basename(path)[:-len('.asm')])
             for call_name, offset in nonzero:
-                short = short_call_name(call_name)
                 lines.append("      %s @ this+0x%x (%d) -> %s_ptr_%d" % (
-                    short, offset, offset, class_name, offset))
+                    short_call_name(call_name), offset, offset, class_name, offset))
             for call_name, _ in unknown:
-                short = short_call_name(call_name)
-                lines.append("      %s @ ??? (UNKNOWN)" % short)
+                lines.append("      %s @ ??? (UNKNOWN)" % short_call_name(call_name))
 
     # ---- Already-finished section ----
     if finished:
@@ -379,9 +318,8 @@ def generate_adj_pointer_report(pseudocode_src_dir, reports_dir):
         lines.append("=" * 70)
         lines.append("ALREADY FINISHED (%d files have ADJ)" % len(finished))
         lines.append("=" * 70)
-        for path, class_name, func_type, calls in finished:
-            basename = os.path.basename(path).replace('.asm', '')
-            lines.append("  %s" % basename)
+        for path, _, _, _ in finished:
+            lines.append("  %s" % os.path.basename(path)[:-len('.asm')])
 
     # ---- Full type summary ----
     lines.append("=" * 70)
@@ -403,9 +341,7 @@ def generate_adj_pointer_report(pseudocode_src_dir, reports_dir):
         lines.append("MANUAL REVIEW NEEDED (%d calls with unknown offset)" % len(unknown_offsets))
         lines.append("=" * 70)
         for path, call_name in unknown_offsets:
-            basename = os.path.basename(path)
-            short = short_call_name(call_name)
-            lines.append("  %s: %s" % (basename, short))
+            lines.append("  %s: %s" % (os.path.basename(path), short_call_name(call_name)))
 
     # Write report
     report_path = os.path.join(reports_dir, "adj_pointer_types.txt")

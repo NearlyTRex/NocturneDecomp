@@ -4,18 +4,18 @@ DAT_ GLOBALS ANALYSIS REPORT
 
 Total DAT_ globals found: 12
 Filtered out (inside named data): 3
+Outside the program image: 1
 Immediate constants (not real globals): 0
-Real globals remaining: 9
+Real globals remaining: 8
 
 Current type breakdown:
-  undefined4                     9
+  undefined4                     8
 
-DAT_ globals with type hints: 5 / 9
+DAT_ globals with type hints: 4 / 8
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (4)
+HIGH CONFIDENCE INFERENCES (3)
 --------------------------------------------------------------------------------
-  DAT_00002424                    addr=00002424    current=undefined4      likely=float           refs=21
   DAT_006700b8                    addr=006700b8    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_CKeyFramedModelPoolDestructorNode (WatcomStaticDestructorNode) at offset -40
   DAT_0068528c                    addr=0068528c    current=undefined4      likely=function_ptr    refs=1
@@ -44,7 +44,6 @@ NO TYPE HINTS (4)
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
-  DAT_00002424                    addr=00002424    refs=21    type=undefined4      likely=float
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
   DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
   DAT_006700b8                    addr=006700b8    refs=1     type=undefined4      likely=SMRGLTextureBasic *  nearby: g_CKeyFramedModelPoolDestructorNode(-40)
@@ -53,6 +52,14 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00665f3a                    addr=00665f3a    refs=1     type=undefined4      nearby: g_DaysInMonth_Normal(+2)
   DAT_00679d50                    addr=00679d50    refs=1     type=undefined4      nearby: switchdataD_00679d54(-4)
   DAT_0051a3f4                    addr=0051a3f4    refs=1     type=undefined4      nearby: PTR_caseD_5_0051a3ec(+8)
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (1)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_00002424
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (3)

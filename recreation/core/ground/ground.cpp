@@ -50,6 +50,9 @@ CGround::~CGround() = default;
 // A grid whose size in bytes doesn't fit an int is out of memory; the original's could wrap to
 // a short buffer it then wrote past. new can't fail quietly, so the second check is gone.
 // nocedit 0x004eef00
+// bw1 0x004e7240
+// bw2 0x004ca9c0
+// bw3 0x004cfbd0
 void CGround::init() {
     free();
     const std::int64_t cells = static_cast<std::int64_t>(width_) * height_;
@@ -62,12 +65,18 @@ void CGround::init() {
 }
 
 // nocedit 0x004eefb0
+// bw1 0x004e72e0
+// bw2 0x004caa60
+// bw3 0x004cfc70
 void CGround::free() {
     terrain_data_ = {};
     texture_list_ = CTextureList(dosio_);
 }
 
 // nocedit 0x004ef030
+// bw1 0x004e7340
+// bw2 0x004caac0
+// bw3 0x004cfcd0
 void CGround::load(std::string_view filename) {
     const std::string heights = openFileWithExtension(dosio_, "data", filename, "raw");
     for (std::size_t i = 0; i < terrain_data_.size(); ++i) {

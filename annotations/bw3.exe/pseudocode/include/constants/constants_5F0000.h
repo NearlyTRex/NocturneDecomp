@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "globals.h"
 #include "prototypes/prototypes_490000.h"
 
 // =============================================================================

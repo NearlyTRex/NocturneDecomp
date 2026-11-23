@@ -18,14 +18,16 @@ public:
     CControlOptionsPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     void build(std::vector<SMenuLine> &lines) override;
     EMenuOutcome choose(int id, EMenuStep step) override;
     // Cancel leaves, but a gamepad nobody has centred is calibrated first.
     EMenuOutcome endFrame() override;
 
 private:
-    [[nodiscard]] std::string localize(std::string_view key) const;
-    [[nodiscard]] std::string getSensitivityText(std::string_view label, int sensitivity) const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
+    [[nodiscard]] std::string getSensitivityText(std::string_view id, int sensitivity) const;
     // Either way, wrapping, with the new type's default bindings.
     void stepControlType(EMenuStep step);
 

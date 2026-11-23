@@ -9,13 +9,16 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::shape {
 
-// What the dialogs draw with, wait on, read the mouse and the clocks from, and copy to.
+// What the dialogs draw with, wait on, read the mouse and the clocks from, and copy to, and the
+// packages' content that gives their look.
 struct SEditorToolsOwners {
     engine::C2d &two_d;
     engine::CMatrix &matrix;
@@ -27,6 +30,7 @@ struct SEditorToolsOwners {
     engine::IGameClock &game_clock;
     platform::IClock &clock;
     platform::IClipboard &clipboard;
+    const engine::SGameContent &content;
 };
 
 // The dialog layer: a stack of modal windows drawn over whatever the screen holds, each saving
@@ -124,6 +128,9 @@ public:
     [[nodiscard]] int getScale() const;
     // The editor font; fatal when the application hasn't set one.
     [[nodiscard]] engine::CBitFont &requireEditorFont();
+    // The packages' look for the lists and the dialogs; without one, fatal.
+    [[nodiscard]] const engine::SListLook &getListLook() const;
+    [[nodiscard]] const engine::SDialogLook &getDialogLook() const;
 
 private:
     struct SWindow {
@@ -151,6 +158,9 @@ private:
     void drawCrossPointer(int x, int y, bool use_clipping);
     void drawIBeamPointer(int x, int y, bool use_clipping);
     void drawDiagonalPointer(int x, int y, bool use_clipping);
+    // The pointer's size as the last cursor set it, or the look's before one does.
+    [[nodiscard]] int getCursorWidth() const;
+    [[nodiscard]] int getCursorHeight() const;
     void pullExternalFrame();
 
     engine::C2d &two_d_;
@@ -163,6 +173,7 @@ private:
     engine::IGameClock &game_clock_;
     platform::IClock &clock_;
     platform::IClipboard &clipboard_;
+    const engine::SGameContent &content_;
     engine::CBitFont *editor_font_ = nullptr;
     int editor_font_max_char_width_ = 0;
     // The height of a 'j'.
@@ -170,18 +181,8 @@ private:
     std::array<SWindow, kMaxWindows> window_stack_;
     std::size_t window_stack_count_ = 0;
     EMouseCursorType mouse_cursor_type_ = EMouseCursorType::Cross;
-    int cursor_size_horizontal_ = 9;
-    int cursor_size_vertical_ = 9;
-    int window_content_color_ = 0;
-    int window_border_highlight_color_ = 0;
-    int title_bar_color_ = 0;
-    int window_font_color_ = 0;
-    int warning_text_color_ = 0;
-    int window_status_text_color_ = 0;
-    int status_text_color_ = 0;
-    int progress_bar_background_color_ = 0;
-    int progress_bar_border_color_ = 0;
-    int progress_bar_fill_color_ = 0;
+    // Across and down, once a cursor sets them.
+    std::optional<std::pair<int, int>> cursor_size_;
 };
 
 } // namespace nocturne::shape

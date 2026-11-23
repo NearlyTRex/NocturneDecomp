@@ -300,8 +300,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *t
   
   bVar21 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-    g_INT_01d046a4 = 0x47e;
+    g_CurrentFilename = "..\\core\\script.cpp";
+    g_CurrentLineNumber = 1150;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
   pcVar18 = "(no error message provided)";
@@ -340,8 +340,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *t
       }
       iVar5 = core_script_cpp_CScript_findLabelIndex_FUN_005299b0(this_ptr,local_1ec);
       if (iVar5 < 0) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\script.cpp";
-        g_INT_01d046a4 = 0x4b0;
+        g_CurrentFilename = "..\\core\\script.cpp";
+        g_CurrentLineNumber = 1200;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Internal script error checking for duplicate label.");
       }
       if (iVar5 != local_208) {
@@ -2632,9 +2632,9 @@ LAB_00526d4a:
                                                   if (actor_ptr != (CWeapon *)0x0) {
                                                     do {
                                                       if (actor_ptr == (CWeapon *)0x0) {
-                                                        g_CHAR_PTR_01d046a0 =
+                                                        g_CurrentFilename =
                                                              "..\\core\\script.cpp";
-                                                        g_INT_01d046a4 = 0xbae;
+                                                        g_CurrentLineNumber = 2990;
                                                         core_main_c_displayErrorAndQuit_FUN_004e4500
                                                                   (
                                                   "script selectWeapon() command - hell froze.");

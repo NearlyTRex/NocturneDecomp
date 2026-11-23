@@ -26,8 +26,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   TerminatedCString s_none_006182b0
 ;   uchar[257] g_CharacterClassificationTable
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -87,8 +87,8 @@ section .text
     MOV EAX,0x5de5a8                    ; 004fc0a6 | = "..\\core\\mission.cpp"
     MOV EDX,0x231                       ; 004fc0ab
     PUSH 0x5de5bc                       ; 004fc0b0 | = "Error reading actor pointer.\nOwner: ..."
-    MOV [0x01d046a0],EAX                ; 004fc0b5 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004fc0ba | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004fc0b5 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004fc0ba | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004fc0c0
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 004fc0c5

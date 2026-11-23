@@ -31,8 +31,8 @@
 ;   void* g_SoftwareZBuffer
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -141,8 +141,8 @@ section .text
     MOV ESI,0x5ee121                    ; 00588b40 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0xea                        ; 00588b45
     PUSH 0x5ee138                       ; 00588b4a | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01d046a0],ESI      ; 00588b4f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00588b55 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 00588b4f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00588b55 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588b5b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588b60
@@ -162,8 +162,8 @@ section .text
     MOV EAX,0x5ee164                    ; 00588b87 | = "..\\wincore\\wddvmem.cpp"
     MOV EDX,0xef                        ; 00588b8c
     PUSH 0x5ee17b                       ; 00588b91 | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV [0x01d046a0],EAX                ; 00588b96 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00588b9b | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00588b96 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00588b9b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588ba1
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588ba6
@@ -362,8 +362,8 @@ section .text
         ;   Label: LAB_00588db2
     MOV EBX,0x1bd                       ; 00588db7
     PUSH 0x5ee1ba                       ; 00588dbc | = "setScreenResolution - Create back buf..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00588dc1 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 00588dc7 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00588dc1 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 00588dc7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00588dcd
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588dd2

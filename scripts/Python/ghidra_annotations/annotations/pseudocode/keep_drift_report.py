@@ -40,7 +40,7 @@ def generate_keep_drift_report(pseudocode_src_dir, reports_dir, checker_path=CHE
         f.write("# Regenerated on every export; re-check by hand with\n")
         f.write("#   python3 scripts/Python/check_keep_drift.py\n\n")
         f.write(checker.format_report(rows, relative_to=pseudocode_src_dir))
-    redundant = sum(1 for r in rows if r["kind"] == "identical" and not r["shim"])
-    log_info("%d of %d .keep files are now identical to the export; see reports/%s"
+    redundant = sum(1 for r in rows if checker.is_redundant(r))
+    log_info("%d of %d .keep files are now redundant with the export; see reports/%s"
              % (redundant, len(rows), REPORT_NAME))
     return redundant

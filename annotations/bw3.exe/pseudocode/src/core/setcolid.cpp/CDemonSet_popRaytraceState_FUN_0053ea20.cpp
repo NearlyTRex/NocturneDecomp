@@ -16,8 +16,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_0053ea20(CDemonSet
   int iVar5;
   
   if (g_RaytraceStateStackDepth < 1) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\setcolid.cpp";
-    g_INT_01d71de4 = 0x42a;
+    g_CurrentFilename = "..\\core\\setcolid.cpp";
+    g_CurrentLineNumber = 1066;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::popRaytraceState - stack empty");
   }
   iVar5 = g_RaytraceStateStackDepth + -1;

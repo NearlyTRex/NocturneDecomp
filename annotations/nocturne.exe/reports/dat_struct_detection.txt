@@ -2,9 +2,10 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 169
+Total DAT_ globals found: 175
 Filtered out (inside named data): 6
-Immediate constants (not real globals): 3
+Outside the program image: 1
+Immediate constants (not real globals): 2
 Real globals remaining: 166
 Clusters detected: 31
 DAT_ globals in clusters: 158
@@ -18,7 +19,7 @@ Classification summary:
   byte_blob            1 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (3)
+LIKELY IMMEDIATE CONSTANTS (2)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -33,10 +34,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005c13cc  value=0x5C13CC (6034380)  refs=1
     CWaterActor_renderTransparent
       ADD EAX,0x5c13cc                    ; 00551c91 | DAT_005c13cc
-
-  DAT_80000002  value=0x80000002  refs=1
-    getRegistryStringValue
-      PUSH 0x80000002                     ; 00559d37 | DAT_80000002
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE (4 clusters)
@@ -400,6 +397,14 @@ ISOLATED DAT_ GLOBALS (8 - not part of any cluster)
   DAT_005a1548                    addr=005a1548    type=undefined4      refs=1  near: g_CScatVTable(-12)
   DAT_02080434                    addr=02080434    type=undefined4      refs=1  near: g_INT_02080430(+4)
   DAT_006b0298                    addr=006b0298    type=undefined4      refs=1  near: g_StoredZ(+4)
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (1)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_80000002
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (6)

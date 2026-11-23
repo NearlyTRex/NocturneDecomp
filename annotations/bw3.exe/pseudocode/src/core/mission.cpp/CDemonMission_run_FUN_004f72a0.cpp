@@ -15,13 +15,13 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004f72a0(CDemonMission *this
   
   while( true ) {
     if (g_HeroCount < 1) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
-      g_INT_01d71de4 = 0x520;
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 1312;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::run - hero list empty");
     }
     if (g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14] == (CHero *)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\core\\mission.cpp";
-      g_INT_01d71de4 = 0x521;
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 1313;
       core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004f6de0

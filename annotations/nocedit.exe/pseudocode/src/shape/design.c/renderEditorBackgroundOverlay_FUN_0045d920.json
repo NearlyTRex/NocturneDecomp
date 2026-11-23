@@ -163,5 +163,55 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "renderEditorBackgroundOverlay_FUN_0045d920.c",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.CallAndMessage",
+          "column": 7,
+          "line": 25,
+          "message": "2nd function call argument is an uninitialized value",
+          "path_notes": [
+            {
+              "line": 14,
+              "message": "'local_14' declared without an initial value"
+            },
+            {
+              "line": 16,
+              "message": "Assuming 'g_EditorTextureMode' is equal to 1"
+            },
+            {
+              "line": 16,
+              "message": "Left side of '||' is true"
+            },
+            {
+              "line": 17,
+              "message": "Assuming 'g_AntiAliasingEnabled' is equal to 0"
+            },
+            {
+              "line": 17,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 24,
+              "message": "Assuming 'local_18' is < 'g_PolygonCount'"
+            },
+            {
+              "line": 24,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 25,
+              "message": "2nd function call argument is an uninitialized value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

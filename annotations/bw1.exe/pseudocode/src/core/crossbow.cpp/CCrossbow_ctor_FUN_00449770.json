@@ -172,7 +172,7 @@
       "type": "negative_offset"
     },
     {
-      "description": "'pCVar2[1].base.actor_name + 4' walks 1 x sizeof(CWeapon) (0x578) + offsetof(base.actor_name) (0x0) + 0x4 = 0x57c, which is exactly offsetof(CCrossbow, bolt_flame). Ghidra had no CCrossbow type here and reached the field by index arithmetic; write it as ((CCrossbow *)pCVar2)->bolt_flame (\u00a7de-pun/\u00a712). Ambiguous: CDynamite::toss_velocity, CElephantGun::muzzle_flash_active, CFlameThrower::sfx_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].base.actor_name + 4' walks 1 x sizeof(CWeapon) (0x578) + offsetof(base.actor_name) (0x0) + 0x4 = 0x57c, which is exactly offsetof(CCrossbow, bolt_flame). Ghidra had no CCrossbow type here and reached the field by index arithmetic; write it as ((CCrossbow *)pCVar2)->bolt_flame (\u00a7de-pun/\u00a712).",
       "line": 10,
       "severity": "moderate",
       "text": "pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)(pCVar2[1].base.actor_name + 4));",

@@ -721,10 +721,6 @@
       "type":"struct"
     },
     {
-      "name":"CPodAuditRecord",
-      "type":"struct"
-    },
-    {
       "name":"CPodDependencyRecord",
       "type":"struct"
     },
@@ -1451,6 +1447,14 @@
     {
       "name":"EPlatformStateType",
       "type":"enum"
+    },
+    {
+      "name":"EPodAuditOperation",
+      "type":"enum"
+    },
+    {
+      "name":"CPodAuditRecord",
+      "type":"struct"
     },
     {
       "name":"EShadowBoundsMode",
@@ -6360,6 +6364,27 @@
         {
           "name":"PLATFORM_STATE_TYPE_MOVING_TO_START",
           "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EPodAuditOperation",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"POD_AUDIT_OPERATION_ADD",
+          "val":0
+        },
+        {
+          "name":"POD_AUDIT_OPERATION_REMOVE",
+          "val":1
+        },
+        {
+          "name":"POD_AUDIT_OPERATION_CHANGE",
+          "val":2
         }
       ]
     },
@@ -27373,7 +27398,7 @@
         },
         {
           "len":4,
-          "name":"clearKeyPresses",
+          "name":"clearKeypresses",
           "offset":8,
           "type":"CKeys_clearKeypresses*"
         }
@@ -30570,7 +30595,7 @@
       "fields":[
         {
           "len":32,
-          "name":"user_path",
+          "name":"user_name",
           "offset":0,
           "type":"char[32]"
         },
@@ -30584,7 +30609,7 @@
           "len":4,
           "name":"operation_type",
           "offset":36,
-          "type":"int"
+          "type":"EPodAuditOperation"
         },
         {
           "len":256,

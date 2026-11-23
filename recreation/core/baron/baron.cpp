@@ -24,6 +24,7 @@ constinit const CDemonActorType CBaron::kType =
 // deferred: naming the shell's model baronshell.kfm, and the defaults the constructor gives the
 //   head, target, attack, transparency and shell fields, with the steps that read them
 // nocedit 0x00412bc0
+// bw2 0x0040f690
 CBaron::CBaron(CActor &classes) : CHero(classes) {
     getModel().init("baron.dfm");
 }
@@ -37,6 +38,8 @@ const CDemonActorType &CBaron::getActorType() const {
 }
 
 // nocedit 0x00413a70
+// bw1 0x00410180
+// bw2 0x00410600
 void CBaron::archive(CActorArchive &actor_archive) {
     CHero::archive(actor_archive);
     if (actor_archive.getSavedVersion(kType) < kSummonVersion) {
@@ -60,6 +63,8 @@ bool CBaron::isSummoned() const {
 }
 
 // nocedit 0x00412b80
+// bw1 0x0040f1e0
+// bw2 0x0040f660
 std::unique_ptr<CDemonActor> CBaron::create(CActor &classes) {
     return std::make_unique<CBaron>(classes);
 }

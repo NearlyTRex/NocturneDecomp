@@ -62,7 +62,7 @@ extern CVector3i g_CachedViewPosition;
 extern CVector3i g_NormalizedViewVector;
 
 // char*
-extern char* g_CHAR_PTR_01d71de0;
+extern char* g_CurrentFilename;
 extern char* g_CHAR_PTR_01d74000;
 extern char* g_CHAR_PTR_01d74028;
 extern char* g_CHAR_PTR_01d74068;
@@ -199,7 +199,7 @@ extern int g_InventoryLightAngle;
 extern int g_LightDirectionX2;
 extern int g_LightDirectionY2;
 extern int g_LightDirectionZ2;
-extern int g_INT_01d71de4;
+extern int g_CurrentLineNumber;
 extern int g_INT_01d71de8;
 extern int g_INT_01d72644;
 extern int g_INT_01d72648;

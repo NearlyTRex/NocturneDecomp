@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 67,
+    "complexity_score": 82,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "mem_magic_size",
       "pointer_cast",
       "pointer_truncation"
     ],
@@ -209,6 +210,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&this_ptr->playback_position + 4) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "memset size hardcodes 0x8 == the whole userdata field (2 x void *), which the dest names. It is an array of pointers, so it grows once pointers are 8 bytes and memset covers only its leading 0x8 bytes. Use sizeof(<path>->userdata) (\u00a717/\u00a718).",
+      "line": 22,
+      "match": "memset(dest) size 0x8 == sizeof(void *[2])",
+      "severity": "moderate",
+      "text": "memset(this_ptr->userdata,0,8)",
+      "type": "mem_magic_size"
     }
   ]
 }

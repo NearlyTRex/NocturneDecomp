@@ -121,6 +121,9 @@ int CBitFont::calculateCharacterHeight(std::span<const std::uint8_t> char_bitmap
 // a band of glyphs that runs to the next such row, and each run of markers along it spans one
 // glyph, next character after next.
 // nocedit 0x004cd550
+// bw1 0x004c18c0
+// bw2 0x004a88e0
+// bw3 0x004b0510
 void CBitFont::parseCharacterMetrics(std::size_t bitmap, int bitmap_width, int bitmap_height,
                                      int first_char) {
     const SSheet &sheet = sheets_[bitmap];

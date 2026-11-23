@@ -97,8 +97,8 @@ section .text
     MOV EBX,0x5bb6a6                    ; 004608df | = "..\\core\\dmodel.cpp"
     MOV ESI,0x128                       ; 004608e4
     PUSH 0x5bb6b9                       ; 004608e9 | = "KFM file is invalid version %d"
-    MOV dword ptr [0x01d71de0],EBX      ; 004608ee | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004608f4 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 004608ee | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004608f4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004608fa
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 004608ff
@@ -324,8 +324,8 @@ section .text
     MOV EDX,0x5bb6d8                    ; 00460ad0 | = "..\\core\\dmodel.cpp"
     MOV ECX,0x12b                       ; 00460ad5
     PUSH 0x5bb6eb                       ; 00460ada | = "KFM file is version %d, this .exe can..."
-    MOV dword ptr [0x01d71de0],EDX      ; 00460adf | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ECX      ; 00460ae5 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDX      ; 00460adf | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ECX      ; 00460ae5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00460aeb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00460af0
@@ -542,8 +542,8 @@ section .text
     MOV EBX,0x5bb7b1                    ; 00460d06 | = "..\\core\\dmodel.cpp"
     MOV ESI,0x197                       ; 00460d0b
     PUSH 0x5bb7c4                       ; 00460d10 | = "Error reading KFM model"
-    MOV dword ptr [0x01d71de0],EBX      ; 00460d15 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 00460d1b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 00460d15 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 00460d1b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00460d21
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00460d26
@@ -618,8 +618,8 @@ section .text
         ;   Label: LAB_00460dc6
     MOV EDX,0x178                       ; 00460dcb
     PUSH 0x5bb77e                       ; 00460dd0 | = "Out of memory for envMapOpacList"
-    MOV [0x01d71de0],EAX                ; 00460dd5 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 00460dda | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00460dd5 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 00460dda | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00460de0
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00460de5

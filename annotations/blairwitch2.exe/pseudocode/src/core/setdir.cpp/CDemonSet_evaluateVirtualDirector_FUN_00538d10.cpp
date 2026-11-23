@@ -254,8 +254,8 @@ LAB_00538d7f:
   g_INT_0209393c = (int)piStack_30;
   g_VDIsActorAreaInvalid = (int)(piStack_30 == (int *)0xffffffff);
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-    g_INT_01d046a4 = 0x67;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - already saved!");
   }
   if (0 < iVar7) {
@@ -371,8 +371,8 @@ LAB_00538d7f:
     g_INT_02093938 = g_INT_02093938 + 1;
   }
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\setdir.cpp";
-    g_INT_01d046a4 = 0x70;
+    g_CurrentFilename = "..\\core\\setdir.cpp";
+    g_CurrentLineNumber = 112;
     core_main_c_displayErrorAndQuit_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < iVar7) {

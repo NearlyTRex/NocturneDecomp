@@ -9,8 +9,8 @@
 CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00408a20(CDemonActor *this_ptr)
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\core\\actor.cpp";
-  g_INT_01d046a4 = 0x231;
+  g_CurrentFilename = "..\\core\\actor.cpp";
+  g_CurrentLineNumber = 561;
   core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonActor::getActorType called.  Should never be called for this base class!");
   return (CDemonActorType *)0x0;
 }

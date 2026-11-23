@@ -13,6 +13,9 @@ namespace nocturne::support {
 CLZWDictionary::CLZWDictionary() = default;
 
 // nocedit 0x0043ee60
+// bw1 0x00442ff0
+// bw2 0x004342d0
+// bw3 0x00440c50
 void CLZWDictionary::init(int new_dict_size, int new_num_bits) {
     node_table_.resize(static_cast<std::size_t>(new_dict_size));
     num_bits_ = new_num_bits;

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_CHeroPlaceholder_createH_005c5102
 ;   CDemonMission* g_CDemonMission_PTR_00600530 = 01d81080
 ;   undefined4 g_CHeroClassInfo.name_hash
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -53,8 +53,8 @@ section .text
     MOV ECX,0x5c50f1                    ; 004d4c0d | = "..\\core\\hero.cpp"
     MOV EDI,0x75c                       ; 004d4c12
     PUSH 0x5c5102                       ; 004d4c17 | = "CHeroPlaceholder::createHero - failed."
-    MOV dword ptr [0x01d71de0],ECX      ; 004d4c1c | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 004d4c22 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004d4c1c | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 004d4c22 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004d4c28
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004d4c2d

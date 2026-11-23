@@ -68,6 +68,9 @@ void CDemonMission::prepareAllActors() {
 }
 
 // nocedit 0x00523e60
+// bw1 0x0051b420
+// bw2 0x004fc4c0
+// bw3 0x004f6bf0
 void CDemonMission::buildSetActorList() {
     std::vector<CDemonActor *> in_set;
     for (const std::unique_ptr<CDemonActor> &actor : actors_) {
@@ -85,6 +88,9 @@ void CDemonMission::buildSetActorList() {
 
 // An actor whose creation event is "none" in any case, or empty, needs only its chance.
 // nocedit 0x00524120
+// bw1 0x0051b7b0
+// bw2 0x004fc820
+// bw3 0x004f6f80
 void CDemonMission::buildActiveSetActorList() {
     std::vector<CDemonActor *> in_set;
     for (const std::unique_ptr<CDemonActor> &actor : actors_) {

@@ -8,8 +8,8 @@
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_MatrixStackIndex
 ;
 ; Called Functions:
@@ -41,8 +41,8 @@ section .text
     MOV EBX,0x5e7839                    ; 005094bf
     MOV ESI,0x5d9                       ; 005094c4
     PUSH 0x5e784c                       ; 005094c9
-    MOV dword ptr [0x01d1d400],EBX      ; 005094ce | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 005094d4 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 005094ce | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 005094d4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005094da
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005094df

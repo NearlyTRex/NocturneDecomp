@@ -1086,8 +1086,8 @@ section .text
     MOV EAX,0x5ca297                    ; 00501969 | = "..\\sound\\mp3.cpp"
     MOV EDX,0xa3a                       ; 0050196e
     PUSH 0x5ca2a8                       ; 00501973 | = "Error in streo processing.  File: %s"
-    MOV [0x01d71de0],EAX                ; 00501978 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0050197d | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 00501978 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0050197d | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00501983
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00501988

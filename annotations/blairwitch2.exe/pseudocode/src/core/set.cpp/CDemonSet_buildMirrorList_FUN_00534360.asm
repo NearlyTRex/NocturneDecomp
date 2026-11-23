@@ -20,8 +20,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
 ;   CDemonRenderer g_CDemonRenderer_01ba5c50
 ;   undefined4 g_CGlassClassInfo.name_hash
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -98,8 +98,8 @@ section .text
     MOV EDI,0x5e5b8a                    ; 00534419 | = "..\\core\\set.cpp"
     MOV EAX,0x12d6                      ; 0053441e
     PUSH 0x5e5b9a                       ; 00534423 | = "CDemonSet::buildMirrorList - Too many..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00534428 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 0053442e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00534428 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 0053442e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00534433
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00534438

@@ -23,8 +23,8 @@
 ;   int g_PVSDrawnCubeCount
 ;   int g_PVSReadyFlag
 ;   undefined4 g_PVSCubePointers[1]
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x5d1c24                    ; 00476161 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8ea                       ; 00476166
     PUSH 0x5d1c37                       ; 0047616b | = "CDemonRenderer::getPVS - PVS is not v..."
-    MOV dword ptr [0x01d046a0],ECX      ; 00476170 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00476176 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 00476170 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00476176 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047617c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00476181
@@ -70,8 +70,8 @@ section .text
     MOV EAX,0x5d1c62                    ; 004761a9 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x8f6                       ; 004761ae
     PUSH 0x5d1c75                       ; 004761b3 | = "CDemonRaytrace::getPVS - no cubes ren..."
-    MOV [0x01d046a0],EAX                ; 004761b8 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 004761bd | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 004761b8 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 004761bd | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004761c3
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004761c8
@@ -83,8 +83,8 @@ section .text
     MOV EBX,0x5d1ca3                    ; 004761d4 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8fa                       ; 004761d9
     PUSH 0x5d1cb6                       ; 004761de | = "CDemonRaytrace::getPVS - out of memory"
-    MOV dword ptr [0x01d046a0],EBX      ; 004761e3 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 004761e9 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 004761e3 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 004761e9 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 004761ef
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 004761f4
@@ -121,8 +121,8 @@ section .text
     MOV EAX,0x5d1cdd                    ; 00476236 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x907                       ; 0047623b
     PUSH 0x5d1cf0                       ; 00476240 | = "CDemonRenderer::savePVS - can't find ..."
-    MOV [0x01d046a0],EAX                ; 00476245 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 0047624a | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00476245 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 0047624a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00476250
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00476255

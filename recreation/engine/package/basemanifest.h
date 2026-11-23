@@ -10,11 +10,9 @@
 
 namespace nocturne::engine {
 
-// The game's own package.
-inline constexpr std::string_view kBasePackageId = "nocturne";
-
-// A base manifest written for an install, and how the install differs from the release it
-// matched: a POD missing, unreadable, or not the release's copy.
+// A game's manifest written for its install, its id the release's game (nocturne, blairwitch1),
+// and how the install differs from the release it matched: a POD missing, unreadable, or not the
+// release's copy.
 struct SBaseManifest {
     SPackageManifest manifest;
     std::vector<std::string> notes;

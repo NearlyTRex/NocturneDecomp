@@ -25,6 +25,7 @@ public:
     void warpMouse(int x, int y) override;
     [[nodiscard]] std::string getScancodeName(std::uint16_t scancode) override;
     void showMessageBox(std::string_view message, std::string_view title) override;
+    void setTitle(std::string_view title) override;
 
 private:
     struct SWindowDeleter {

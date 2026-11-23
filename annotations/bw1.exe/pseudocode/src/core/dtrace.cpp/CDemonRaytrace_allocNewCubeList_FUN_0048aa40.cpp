@@ -22,8 +22,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(CDemon
   if (pCVar1 != (CDemonCube *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\core\\dtrace.cpp";
-  g_INT_01d1d404 = 0xae;
+  g_CurrentFilename = "..\\core\\dtrace.cpp";
+  g_CurrentLineNumber = 174;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonRaytrace::allocNewCubeList - Out of memory!");
   return;
 }

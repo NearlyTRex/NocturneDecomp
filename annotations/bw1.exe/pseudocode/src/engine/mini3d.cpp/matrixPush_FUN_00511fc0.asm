@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   void* g_PTR_01d2257c
 ;   void* g_PTR_01d22580
 ;
@@ -46,8 +46,8 @@ section .text
     MOV EBX,0x5e8be9                    ; 00512000
     MOV ESI,0x4b7                       ; 00512005
     PUSH 0x5e8bfe                       ; 0051200a
-    MOV dword ptr [0x01d1d400],EBX      ; 0051200f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00512015 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EBX      ; 0051200f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00512015 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051201b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00512020

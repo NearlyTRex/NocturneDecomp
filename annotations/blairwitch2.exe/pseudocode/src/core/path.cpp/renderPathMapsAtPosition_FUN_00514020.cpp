@@ -32,8 +32,8 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00514020(CVector3f *posi
     iVar1 = 0;
     do {
       if (*(int *)((int)g_PathMapList + iVar1) == 0) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\path.cpp";
-        g_INT_01d046a4 = 0x6b5;
+        g_CurrentFilename = "..\\core\\path.cpp";
+        g_CurrentLineNumber = 1717;
         core_main_c_displayErrorAndQuit_FUN_004e4500("Global pathmap list corruption");
       }
       this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);

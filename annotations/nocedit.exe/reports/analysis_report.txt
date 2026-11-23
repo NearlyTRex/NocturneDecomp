@@ -10,7 +10,7 @@ Total functions: 6453
 Clean functions: 6453 (100.0%)
 Functions with suspects: 0 (0.0%)
 
-Total suspect patterns: 53
+Total suspect patterns: 55
 Average suspects per function: 0.01
 
 Virtual files: 216 total, 216 at 100%, 216 at 90%+
@@ -30,6 +30,8 @@ SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   warning_inlined_function  40
   warning_unreachable       13
+  warning_jumptable         1
+  warning_indirect_jump     1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -105,7 +107,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 857, suspects: 0, lines: 857)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 833, suspects: 0, lines: 833)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 809, suspects: 0, lines: 809)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 810, suspects: 0, lines: 810)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
@@ -141,3 +143,9 @@ FUNCTIONS BY SUSPECT TYPE
     004fd0e0: core_inv.cpp_CInventory_clear_FUN_004fd0e0
     00554880: core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
     005644e0: core_script.cpp_clearSelections_FUN_005644e0
+
+  warning_jumptable (1 functions):
+    005b5710: engine_special.cpp_renderScanline_FUN_005b5710
+
+  warning_indirect_jump (1 functions):
+    005b5710: engine_special.cpp_renderScanline_FUN_005b5710

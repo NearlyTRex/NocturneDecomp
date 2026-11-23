@@ -10,25 +10,25 @@ SUMMARY
 --------------------------------------------------
 Already patched (cave):    781 sites (excluded from counts below)
 
-Consecutive MOVSD groups:  122
+Consecutive MOVSD groups:  119
   1x MOVSD ( 4 bytes):   98 sites
-  2x MOVSD ( 8 bytes):   3 sites
-  3x MOVSD (12 bytes):   20 sites
+  2x MOVSD ( 8 bytes):   1 sites
+  3x MOVSD (12 bytes):   19 sites
   4x MOVSD (16 bytes):   1 sites
-  Fixable (cave patch):   8
-  No artifacts (OK):      28
+  Fixable (cave patch):   7
+  No artifacts (OK):      26
   Unfixable:              86
-  Est. cave space:        ~270 bytes
+  Est. cave space:        ~237 bytes
 
-REP MOVSD sites:           539
+REP MOVSD sites:           523
   Fixable (struct copy):  30
   No artifacts (OK):      33
   Too large (buffer):     179
-  Dynamic count:          290
+  Dynamic count:          274
   Pass-by-value:          7
 
   REP MOVSD by copy size:
-    unknown count:        291 sites
+    unknown count:        275 sites
       4 dwords (  16 bytes): 2 sites
       6 dwords (  24 bytes): 27 sites
       7 dwords (  28 bytes): 1 sites
@@ -75,7 +75,7 @@ REP MOVSD sites:           539
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         661
+Total MOVSD sites:         642
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 4x MOVSD SITES (16 bytes copy, 1 sites)
@@ -84,7 +84,7 @@ FIXABLE 4x MOVSD SITES (16 bytes copy, 1 sites)
     0x0041d839  4x MOVSD (16 bytes copy, 8 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 7 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 6 sites)
 ----------------------------------------------------------------------------------------------------
   CCurtain_setup_FUN_00449810                                              6 sites  ~198 bytes
     0x00449c9e  3x MOVSD (12 bytes copy, 6 bytes borrowable)
@@ -93,8 +93,6 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 7 sites)
     0x00449d5e  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00449d67  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x00449d76  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  buildFileInfoEnv_FUN_0060ffd0                                            1 sites  ~33 bytes
-    0x0061002f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
 NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 13 sites — decompiler handles OK)
@@ -127,12 +125,8 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 13 sites — decompiler handles OK)
     0x0050cd01  3x MOVSD (12 bytes copy)
 
 ----------------------------------------------------------------------------------------------------
-NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 3 sites — decompiler handles OK)
+NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 1 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
-  i64toa_FUN_0060ad40                                                      1 sites
-    0x0060ad66  2x MOVSD (8 bytes copy)
-  FUN_0060ade0                                                             1 sites
-    0x0060adfb  2x MOVSD (8 bytes copy)
   getTime_FUN_005f2dc0                                                     1 sites
     0x005f2dee  2x MOVSD (8 bytes copy)
 
@@ -668,7 +662,7 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (179 sites)
     0x005ac248  REP MOVSD 64 dwords (256 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — DYNAMIC COUNT (ECX not immediate) (290 sites)
+REP MOVSD — DYNAMIC COUNT (ECX not immediate) (274 sites)
 ----------------------------------------------------------------------------------------------------
   CDemonSet_showVdirBoxEditor_FUN_00583170                                24 sites
     0x00584174  REP MOVSD (dynamic count)
@@ -876,12 +870,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (290 sites)
   CDeformableModel_renderSkeleton_FUN_0059b640                             2 sites
     0x0059b723  REP MOVSD (dynamic count)
     0x0059b732  REP MOVSD (dynamic count)
-  putenv_internal_FUN_0060ee80                                             2 sites
-    0x0060ef06  REP MOVSD (dynamic count)
-    0x0060ef5e  REP MOVSD (dynamic count)
-  strstreambuf_doallocate_FUN_0060bc22                                     2 sites
-    0x0060bccd  REP MOVSD (dynamic count)
-    0x0060bd78  REP MOVSD (dynamic count)
   drawLineStrip2D_FUN_00404570                                             2 sites
     0x004045dd  REP MOVSD (dynamic count)
     0x004045f4  REP MOVSD (dynamic count)
@@ -996,30 +984,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (290 sites)
     0x005f50af  REP MOVSD (dynamic count)
   CZombie_getCarryObjToBodyXForm_FUN_005fb1f0                              1 sites
     0x005fb43a  REP MOVSD (dynamic count)
-  updateEnvironTable_FUN_0060f04c                                          1 sites
-    0x0060f159  REP MOVSD (dynamic count)
-  ostream_write_FUN_005ffcb3                                               1 sites
-    0x005ffd0f  REP MOVSD (dynamic count)
-  streambuf_do_sgetn_FUN_0060b932                                          1 sites
-    0x0060b96d  REP MOVSD (dynamic count)
-  streambuf_do_sputn_FUN_00606780                                          1 sites
-    0x006067cb  REP MOVSD (dynamic count)
-  realloc__FUN_00601e08                                                    1 sites
-    0x00601e75  REP MOVSD (dynamic count)
-  fread_FUN_005fd990                                                       1 sites
-    0x005fda3d  REP MOVSD (dynamic count)
-  fwrite_FUN_005fdc00                                                      1 sites
-    0x005fdd17  REP MOVSD (dynamic count)
-  memmove_FUN_005fe5e0                                                     1 sites
-    0x005fe626  REP MOVSD (dynamic count)
-  wcstombs_FUN_0060c0c0                                                    1 sites
-    0x0060c12e  REP MOVSD (dynamic count)
-  _strftime_FUN_006002d4                                                   1 sites
-    0x006006ff  REP MOVSD (dynamic count)
-  parse_timezone_spec_FUN_00607348                                         1 sites
-    0x0060739f  REP MOVSD (dynamic count)
-  getcwd_FUN_00608d20                                                      1 sites
-    0x00608db1  REP MOVSD (dynamic count)
   wrapTextToWidth_FUN_00401d80                                             1 sites
     0x00401e1b  REP MOVSD (dynamic count)
   CAlphaBitmap_copyRawToOpa_FUN_00410d20                                   1 sites

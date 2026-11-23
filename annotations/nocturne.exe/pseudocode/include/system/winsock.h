@@ -111,7 +111,8 @@ extern ulong ntohl(ulong netlong);
 // Winsock Initialization
 // ---------------------------------------------------------------------------
 
-extern int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData);
+struct WSADATA;
+extern int WSAStartup(WORD wVersionRequested, struct WSADATA* lpWSAData);
 extern int WSACleanup(void);
 
 // ---------------------------------------------------------------------------

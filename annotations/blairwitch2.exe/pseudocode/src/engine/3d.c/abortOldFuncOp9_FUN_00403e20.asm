@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_005ca351
 ;   TerminatedCString s_Old_func_005ca360
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_3d.c_abortOldFuncOp9_FUN_00403e20
     MOV ECX,0x343                       ; 00403e25
     PUSH 0x5ca360                       ; 00403e2a | = "Old func"
-    MOV dword ptr [0x01d046a0],EDX      ; 00403e2f | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00403e35 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00403e2f | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00403e35 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00403e3b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00403e40

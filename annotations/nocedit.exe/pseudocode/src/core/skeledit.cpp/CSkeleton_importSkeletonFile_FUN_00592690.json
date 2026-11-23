@@ -1849,7 +1849,7 @@
       "type": "unrolled_strlen"
     },
     {
-      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 89,
       "match": "CMatrix3x4f local_404; ... f(&local_404, ...);",
       "resolution_source": "keep",
@@ -1858,7 +1858,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 90,
       "match": "CMatrix3x4f local_3d4; ... f(&local_3d4, ...);",
       "resolution_source": "keep",
@@ -1867,7 +1867,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 92,
       "match": "CMatrix3x4f local_374; ... f(&local_374, ...);",
       "resolution_source": "keep",
@@ -1876,7 +1876,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 93,
       "match": "CMatrix3x4f local_344; ... f(&local_344, ...);",
       "resolution_source": "keep",
@@ -1885,7 +1885,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 94,
       "match": "CMatrix3x4f local_314; ... f(&local_314, ...);",
       "resolution_source": "keep",
@@ -1894,7 +1894,7 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies of its size that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 95,
       "match": "CMatrix3x3f local_2e4; ... f(&local_2e4, ...);",
       "resolution_source": "keep",
@@ -3388,97 +3388,235 @@
   },
   "static_analysis": {
     "analyzed_file": "CSkeleton_importSkeletonFile_FUN_00592690.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 11,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 199,
+          "message": "Value stored to 'bVar26' is never read",
+          "path_notes": [
+            {
+              "line": 199,
+              "message": "Value stored to 'bVar26' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 13,
+          "line": 395,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 395,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 13,
+          "line": 412,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 412,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 23,
+          "line": 585,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 585,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 29,
+          "line": 722,
+          "message": "Value stored to 'local_2c' is never read",
+          "path_notes": [
+            {
+              "line": 722,
+              "message": "Value stored to 'local_2c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 19,
+          "line": 1321,
+          "message": "Value stored to 'local_164' is never read",
+          "path_notes": [
+            {
+              "line": 1321,
+              "message": "Value stored to 'local_164' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 19,
+          "line": 1322,
+          "message": "Value stored to 'local_160' is never read",
+          "path_notes": [
+            {
+              "line": 1322,
+              "message": "Value stored to 'local_160' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1335,
+          "message": "Value stored to 'local_1a4' is never read",
+          "path_notes": [
+            {
+              "line": 1335,
+              "message": "Value stored to 'local_1a4' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1339,
+          "message": "Value stored to 'local_1a0' is never read",
+          "path_notes": [
+            {
+              "line": 1339,
+              "message": "Value stored to 'local_1a0' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 17,
+          "line": 1343,
+          "message": "Value stored to 'local_19c' is never read",
+          "path_notes": [
+            {
+              "line": 1343,
+              "message": "Value stored to 'local_19c' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 1757,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 1757,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
     "cppcheck_quick": {
       "diagnostic_count": 13,
       "diagnostics": [
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 496,
+          "line": 493,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 543,
+          "line": 540,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 23,
-          "line": 569,
+          "line": 566,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 27,
-          "line": 680,
+          "line": 677,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 706,
+          "line": 703,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 737,
+          "line": 734,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 34,
-          "line": 846,
+          "line": 843,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 33,
-          "line": 944,
+          "line": 941,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 45,
-          "line": 1144,
+          "line": 1141,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 11,
-          "line": 1626,
+          "line": 1623,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 22,
-          "line": 1669,
+          "line": 1666,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 15,
-          "line": 1706,
+          "line": 1703,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 16,
-          "line": 1730,
+          "line": 1727,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }

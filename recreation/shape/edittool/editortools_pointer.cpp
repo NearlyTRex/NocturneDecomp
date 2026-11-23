@@ -1,5 +1,6 @@
 #include "engine/2d/2d.h"
 #include "engine/gameclock.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "shape/edittool/editortools.h"
@@ -11,20 +12,25 @@
 namespace nocturne::shape {
 namespace {
 
-// The colour cube's black, white, green and magenta.
-constexpr std::array<std::size_t, 4> kCycleColors = {0, 0x7fff, 0x3e0, 0x7c1f};
-constexpr int kDefaultCursorHeight = 11;
-
 int roundUpToOdd(int size) {
     return size | 1;
 }
 
 } // namespace
 
+// BW1's and BW3's colours were palette indices as they are; Nocturne's the nearest to cube
+// colours.
+// bw3 0x004803d0
+// bw1 0x00497830
 // nocedit 0x004a1330
 int CEditorTools::getTimeCycledColorByte() {
     const auto phase = (static_cast<std::uint32_t>(game_clock_.getTime()) >> 16) & 3;
-    return two_d_.getColorCubeLookup()[kCycleColors[phase]];
+    const engine::SPointerLook &pointer = getListLook().pointer;
+    const int colour = pointer.colours.at(phase);
+    if (pointer.palette_indices) {
+        return colour;
+    }
+    return two_d_.getColorCubeLookup()[static_cast<std::size_t>(colour)];
 }
 
 // The original's clip test left out the clip's right column and bottom row.
@@ -47,7 +53,7 @@ void CEditorTools::drawMousePointer(bool use_clipping) {
 void CEditorTools::setMousePointerType(EMouseCursorType cursor_type, int height, int width) {
     mouse_cursor_type_ = cursor_type;
     if (height < 1) {
-        height = kDefaultCursorHeight;
+        height = getListLook().pointer.default_height;
     }
     if (cursor_type == EMouseCursorType::IBeam) {
         if (width < 1) {
@@ -59,8 +65,15 @@ void CEditorTools::setMousePointerType(EMouseCursorType cursor_type, int height,
         }
         height = roundUpToOdd(height);
     }
-    cursor_size_horizontal_ = roundUpToOdd(width);
-    cursor_size_vertical_ = height;
+    cursor_size_ = std::pair{roundUpToOdd(width), height};
+}
+
+int CEditorTools::getCursorWidth() const {
+    return cursor_size_ ? cursor_size_->first : getListLook().pointer.size;
+}
+
+int CEditorTools::getCursorHeight() const {
+    return cursor_size_ ? cursor_size_->second : getListLook().pointer.size;
 }
 
 void CEditorTools::plotPointerPixel(int x, int y, bool use_clipping) {
@@ -73,11 +86,11 @@ void CEditorTools::plotPointerPixel(int x, int y, bool use_clipping) {
 
 void CEditorTools::drawCrossPointer(int x, int y, bool use_clipping) {
     plotPointerPixel(x, y, use_clipping);
-    for (int offset = 1; offset <= cursor_size_horizontal_ / 2; ++offset) {
+    for (int offset = 1; offset <= getCursorWidth() / 2; ++offset) {
         plotPointerPixel(x - offset, y, use_clipping);
         plotPointerPixel(x + offset, y, use_clipping);
     }
-    for (int offset = 1; offset <= cursor_size_vertical_ / 2; ++offset) {
+    for (int offset = 1; offset <= getCursorHeight() / 2; ++offset) {
         plotPointerPixel(x, y - offset, use_clipping);
         plotPointerPixel(x, y + offset, use_clipping);
     }
@@ -86,12 +99,12 @@ void CEditorTools::drawCrossPointer(int x, int y, bool use_clipping) {
 // The original's stem stopped short of the serif rows, which skip the stem's column, so each
 // serif came apart from the stem.
 void CEditorTools::drawIBeamPointer(int x, int y, bool use_clipping) {
-    const int top = y - (cursor_size_vertical_ / 2);
-    const int bottom = top + cursor_size_vertical_ - 1;
+    const int top = y - (getCursorHeight() / 2);
+    const int bottom = top + getCursorHeight() - 1;
     for (int stem_y = top; stem_y <= bottom; ++stem_y) {
         plotPointerPixel(x, stem_y, use_clipping);
     }
-    for (int offset = 1; offset <= cursor_size_horizontal_ / 2; ++offset) {
+    for (int offset = 1; offset <= getCursorWidth() / 2; ++offset) {
         plotPointerPixel(x - offset, top, use_clipping);
         plotPointerPixel(x + offset, top, use_clipping);
         plotPointerPixel(x - offset, bottom, use_clipping);
@@ -101,7 +114,7 @@ void CEditorTools::drawIBeamPointer(int x, int y, bool use_clipping) {
 
 void CEditorTools::drawDiagonalPointer(int x, int y, bool use_clipping) {
     plotPointerPixel(x, y, use_clipping);
-    for (int offset = 1; offset <= cursor_size_horizontal_ / 2; ++offset) {
+    for (int offset = 1; offset <= getCursorWidth() / 2; ++offset) {
         plotPointerPixel(x - offset, y - offset, use_clipping);
         plotPointerPixel(x + offset, y - offset, use_clipping);
         plotPointerPixel(x - offset, y + offset, use_clipping);

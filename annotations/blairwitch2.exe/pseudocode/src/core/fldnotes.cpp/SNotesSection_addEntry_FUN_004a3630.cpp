@@ -19,8 +19,8 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a3630(SNot
   
   bVar6 = 0;
   if (99 < this_ptr->entry_count) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d046a4 = 0x6c6;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 1734;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Too many field note entries in section %s, adding entry %s");
   }
   pSVar2 = operator_new(0x15c);
@@ -30,8 +30,8 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a3630(SNot
     pSVar3 = extraout_EAX;
   }
   if (pSVar3 == (SNotesEntry *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d046a4 = 0x6cc;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 1740;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Out of memory!");
   }
   uVar4 = 0xffffffff;
@@ -44,8 +44,8 @@ SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a3630(SNot
   } while (cVar1 != '\0');
   pSVar2 = pSVar3;
   if (0x3f < ~uVar4 - 1) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\fldnotes.cpp";
-    g_INT_01d046a4 = 0x6d1;
+    g_CurrentFilename = "..\\core\\fldnotes.cpp";
+    g_CurrentLineNumber = 1745;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Entry name '%s' is too long");
   }
   do {

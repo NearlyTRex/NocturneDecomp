@@ -34,6 +34,9 @@ int fittingRows(int screen_height, int screen_y, int scale) {
 } // namespace
 
 // nocedit 0x00441810
+// bw1 0x004453a0
+// bw2 0x00436680
+// bw3 0x00441f60
 CConsole::CConsole(platform::IFileSystem &file_system, int width, int height, int screen_x,
                    int screen_y)
     : file_system_(file_system), console_width_(width), console_height_(height),
@@ -53,6 +56,9 @@ void CConsole::fitToScreen(int screen_width, int screen_height) {
 }
 
 // nocedit 0x00441890
+// bw1 0x00445430
+// bw2 0x00436710
+// bw3 0x00441ff0
 void CConsole::printf(std::string_view text) {
     for (const char character : text) {
         writeChar(character);
@@ -91,6 +97,9 @@ void CConsole::newLine() {
 }
 
 // nocedit 0x00441a80
+// bw1 0x00445610
+// bw2 0x004368f0
+// bw3 0x004421d0
 void CConsole::scrollUp() {
     std::ranges::shift_left(grid_, kMaxColumns);
     std::fill(grid_.end() - kMaxColumns, grid_.end(), '\0');

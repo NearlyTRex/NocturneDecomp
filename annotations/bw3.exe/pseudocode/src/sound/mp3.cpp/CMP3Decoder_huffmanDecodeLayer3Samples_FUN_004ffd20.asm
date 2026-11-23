@@ -303,8 +303,8 @@ section .text
     MOV ECX,0x5ca169                    ; 00500017 | = "..\\sound\\mp3.cpp"
     MOV ESI,0xdfb                       ; 0050001c
     PUSH 0x5ca17a                       ; 00500021 | = "wrong table number %u.  File: %s"
-    MOV dword ptr [0x01d71de0],ECX      ; 00500026 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050002c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 00500026 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0050002c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00500032
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 00500037
@@ -343,9 +343,9 @@ section .text
     MOV EDI,0x5ca19b                    ; 005000a5 | = "..\\sound\\mp3.cpp"
     MOV EAX,0xe06                       ; 005000aa
     PUSH 0x5ca1ac                       ; 005000af | = "wrong table %u reference.  File: %s"
-    MOV dword ptr [0x01d71de0],EDI      ; 005000b4 | g_CHAR_PTR_01d71de0
+    MOV dword ptr [0x01d71de0],EDI      ; 005000b4 | g_CurrentFilename
         ;   Label: LAB_005000b4
-    MOV [0x01d71de4],EAX                ; 005000ba | g_INT_01d71de4
+    MOV [0x01d71de4],EAX                ; 005000ba | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 005000bf
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 005000c4
@@ -367,8 +367,8 @@ section .text
     MOV EDI,0x5ca249                    ; 005000f7 | = "..\\sound\\mp3.cpp"
     MOV EBP,0xe32                       ; 005000fc
     PUSH 0x5ca25a                       ; 00500101 | = "decoder table read error.  File: %s"
-    MOV dword ptr [0x01d71de0],EDI      ; 00500106 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0050010c | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00500106 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 0050010c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00500112
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 00500117
@@ -396,8 +396,8 @@ section .text
     MOV ESI,0x5ca1d0                    ; 0050015f | = "..\\sound\\mp3.cpp"
     MOV EDI,0xe0e                       ; 00500164
     PUSH 0x5ca1e1                       ; 00500169 | = "MP3 Huffman tree overflow!  File: %s"
-    MOV dword ptr [0x01d71de0],ESI      ; 0050016e | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00500174 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0050016e | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00500174 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050017a
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0050017f

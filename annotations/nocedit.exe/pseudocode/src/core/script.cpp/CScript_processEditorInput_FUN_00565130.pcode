@@ -663,17 +663,17 @@ COPY (unique,0x87b00,4) = (const,0x8,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@0056525d [ESP:???](-4)!?  # PUSH EBP
+@0056525d [ESP:-72](-4)  # PUSH EBP
 COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0056525e [ESP:???](-4)!?  # CALL 0x00564820
+@0056525e [ESP:-72](-4)  # CALL 0x00564820
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x565263,4)
 CALL (ram,0x564820,4)
 
-@00565263 [ESP:???](+12)!?  # ADD ESP, 0xc
+@00565263 [ESP:-60](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -793,17 +793,17 @@ COPY (unique,0x87b00,4) = (const,0x9,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@00565295 [ESP:???](-4)!?  # PUSH EBP
+@00565295 [ESP:-72](-4)  # PUSH EBP
 COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@00565296 [ESP:???](-4)!?  # CALL 0x00564820
+@00565296 [ESP:-72](-4)  # CALL 0x00564820
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x56529b,4)
 CALL (ram,0x564820,4)
 
-@0056529b [ESP:???](+12)!?  # ADD ESP, 0xc
+@0056529b [ESP:-60](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -1106,17 +1106,17 @@ COPY (unique,0x87b00,4) = (const,0xc,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
 
-@00565322 [ESP:???](-4)!?  # PUSH EBP
+@00565322 [ESP:-72](-4)  # PUSH EBP
 COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@00565323 [ESP:???](-4)!?  # CALL 0x00564820
+@00565323 [ESP:-72](-4)  # CALL 0x00564820
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x565328,4)
 CALL (ram,0x564820,4)
 
-@00565328 [ESP:???](+12)!?  # ADD ESP, 0xc
+@00565328 [ESP:-60](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -1241,12 +1241,12 @@ COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
-@0056535b [ESP:???](-4)!?  # CALL 0x00564820
+@0056535b [ESP:-72](-4)  # CALL 0x00564820
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x565360,4)
 CALL (ram,0x564820,4)
 
-@00565360 [ESP:???](+12)!?  # ADD ESP, 0xc
+@00565360 [ESP:-60](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -4604,5 +4604,4 @@ BRANCH (ram,0x565a3f,4)
 
 # ============================================================================
 # Summary: 770 instructions, 3046 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

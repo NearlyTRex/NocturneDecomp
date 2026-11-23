@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CDemonMission_changeSetN_005e9762
 ;   TerminatedCString s_core_mission_cpp_005e979f
 ;   TerminatedCString s_Tried_to_change_the_set_005e97b3
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -46,8 +46,8 @@ section .text
     MOV ECX,0x5e974e                    ; 0051b51a | = "..\\core\\mission.cpp"
     MOV ESI,0x3be                       ; 0051b51f
     PUSH 0x5e9762                       ; 0051b524 | = "CDemonMission::changeSetName - invali..."
-    MOV dword ptr [0x01d1d400],ECX      ; 0051b529 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0051b52f | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051b529 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0051b52f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051b535
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 0051b53a
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_0051b56f
     MOV ECX,0x3c8                       ; 0051b574
     PUSH 0x5e97b3                       ; 0051b579 | = "Tried to change the set file for the ..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0051b57e | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0051b584 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0051b57e | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0051b584 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0051b58a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051b58f

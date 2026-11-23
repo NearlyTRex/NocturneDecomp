@@ -22,6 +22,8 @@ const float kSmashHitFrame = 15.0f;
 const float kClawDamage = 60.0f;
 // CIcePick::performMeleeAttack's radius; CHaystack's 0.5 is for a smaller man.
 const float kClawRadius = 1.0f;
+// The motions carry no sound of their own; IcePick's punch, from SOUND.POD.
+const char kClawSound[] = "icepick-punch?.wav";
 
 // Which attack each player hero throws next. Indexed by hero slot, which every
 // machine shares.
@@ -59,6 +61,7 @@ int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name) {
 
 void strike(CMoloch *moloch) {
     int i;
+    int landed = 0;
 
     for (i = 0; i < g_CDemonSetPtr->character_count; i++) {
         CCharacter *target = g_CDemonSetPtr->characters[i];
@@ -67,9 +70,15 @@ void strike(CMoloch *moloch) {
             continue;
         }
         // One blow per target, from whichever hand reaches it.
-        if (strike_from(moloch, target, "Bip01 R Hand") == 0) {
-            strike_from(moloch, target, "Bip01 L Hand");
+        if ((strike_from(moloch, target, "Bip01 R Hand") != 0) ||
+            (strike_from(moloch, target, "Bip01 L Hand") != 0)) {
+            landed = 1;
         }
+    }
+    // One sound however many it lands on, as CIcePick::performMeleeAttack plays.
+    if (landed != 0) {
+        (*((moloch->base).base.base.vtable._ub)->playSound)((CDemonActor *)moloch,
+                                                            (char *)kClawSound);
     }
 }
 

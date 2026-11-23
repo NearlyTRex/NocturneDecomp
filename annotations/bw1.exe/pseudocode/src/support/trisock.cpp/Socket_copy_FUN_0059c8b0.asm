@@ -8,8 +8,8 @@
 ; SSocket *        Stack[0x8]:4   other
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -22,8 +22,8 @@ section .text
         ;   Label: support_trisock.cpp_Socket_copy_FUN_0059c8b0
     MOV ECX,0x104                       ; 0059c8b5
     PUSH 0x5f83b2                       ; 0059c8ba
-    MOV dword ptr [0x01d1d400],EDX      ; 0059c8bf | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 0059c8c5 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0059c8bf | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 0059c8c5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0059c8cb
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0059c8d0

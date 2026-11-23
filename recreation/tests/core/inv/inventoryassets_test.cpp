@@ -55,7 +55,7 @@ protected:
 // 208 by 96 without invsize.txt; the ends are 96 square.
 TEST_F(CInventoryAssetsTest, ThePicturesAreReadAtTheirSizes) {
     givenArt();
-    assets_.load();
+    assets_.loadAssets();
     EXPECT_EQ(assets_.getScreenHeight(), 300);
     EXPECT_EQ(assets_.getWidth(), 208);
     EXPECT_EQ(assets_.getHeight(), 96);
@@ -71,7 +71,7 @@ TEST_F(CInventoryAssetsTest, ThePicturesAreReadAtTheirSizes) {
 TEST_F(CInventoryAssetsTest, InvsizeTxtGivesTheInventorysSize) {
     givenArt();
     givenFile("data\\invsize.txt", "100,50\n");
-    assets_.load();
+    assets_.loadAssets();
     EXPECT_EQ(assets_.getWidth(), 100);
     EXPECT_EQ(pixels(EInventoryBitmap::kWeaponBackground), 100U * 50);
     EXPECT_EQ(pixels(EInventoryBitmap::kWeaponBackgroundEnd), 50U * 50);
@@ -81,7 +81,7 @@ TEST_F(CInventoryAssetsTest, InvsizeTxtGivesTheInventorysSize) {
 TEST_F(CInventoryAssetsTest, ASmallScreenHalvesMostPictures) {
     givenArt();
     game_parts_.getGame().game_pixy = 383;
-    assets_.load();
+    assets_.loadAssets();
     EXPECT_EQ(pixels(EInventoryBitmap::kInventoryBackground), 208U * 96);
     EXPECT_EQ(pixels(EInventoryBitmap::kInventoryBackgroundEnd), 48U * 48);
     EXPECT_EQ(pixels(EInventoryBitmap::kBattery), 16U * 32);
@@ -91,8 +91,9 @@ TEST_F(CInventoryAssetsTest, ASmallScreenHalvesMostPictures) {
 
 TEST_F(CInventoryAssetsTest, AMissingPictureIsFatal) {
     givenArt("hbar2");
-    EXPECT_THAT([this] { assets_.load(); }, ThrowsMessage<common::CFatalError>(StrEq(
-                                                "CAlphaBitmap::load - Can't open hbar2.raw")));
+    EXPECT_THAT(
+        [this] { assets_.loadAssets(); },
+        ThrowsMessage<common::CFatalError>(StrEq("CAlphaBitmap::load - Can't open hbar2.raw")));
 }
 
 // The list stops at its first line that isn't three quoted strings, and is read afresh each
@@ -101,8 +102,8 @@ TEST_F(CInventoryAssetsTest, TheItemsAreReadFromTheItemList) {
     givenArt();
     givenFile("itemlist.txt", "\"key.kfm\", \"Key\", \"A brass key\"\n"
                               "\"gun.kfm\", \"Gun\", \"A gun\"\nbroken\n\"x\", \"y\", \"z\"\n");
-    assets_.load();
-    assets_.load();
+    assets_.loadAssets();
+    assets_.loadAssets();
     ASSERT_EQ(assets_.getItems().size(), 2U);
     EXPECT_EQ(assets_.getItems()[0],
               (SInventoryItemInfo{
@@ -113,14 +114,14 @@ TEST_F(CInventoryAssetsTest, TheItemsAreReadFromTheItemList) {
 TEST_F(CInventoryAssetsTest, AListOfWholeLinesIsReadToItsEnd) {
     givenArt();
     givenFile("itemlist.txt", "\"a.kfm\", \"A\", \"An a\"\n\"b.kfm\", \"B\", \"A b\"\n");
-    assets_.load();
+    assets_.loadAssets();
     ASSERT_EQ(assets_.getItems().size(), 2U);
     EXPECT_EQ(assets_.getItems()[1].model_name, "b.kfm");
 }
 
 TEST_F(CInventoryAssetsTest, WithoutAnItemListThereAreNoItems) {
     givenArt();
-    assets_.load();
+    assets_.loadAssets();
     EXPECT_TRUE(assets_.getItems().empty());
 }
 

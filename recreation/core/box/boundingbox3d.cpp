@@ -96,6 +96,9 @@ void CBoundingBox3D::expand(const common::CVector3f &point) {
 }
 
 // nocedit 0x004202b0
+// bw1 0x00420570
+// bw2 0x0041a600
+// bw3 0x0041d8b0
 common::CVector3f CBoundingBox3D::getCorner(std::uint32_t corner_index) const {
     return {.x = (corner_index & kCornerMaxX) != 0 ? max.x : min.x,
             .y = (corner_index & kCornerMaxY) != 0 ? max.y : min.y,
@@ -103,6 +106,9 @@ common::CVector3f CBoundingBox3D::getCorner(std::uint32_t corner_index) const {
 }
 
 // nocedit 0x00420940
+// bw1 0x00420ee0
+// bw2 0x0041af70
+// bw3 0x0041e220
 float CBoundingBox3D::doesRayIntersect(const common::CVector3f &ray_origin,
                                        const common::CVector3f &ray_direction,
                                        common::CVector3f *out_normal) const {

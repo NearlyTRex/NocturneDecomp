@@ -24,11 +24,17 @@ CFilterCache::CFilterCache(const engine::CDosIo &dosio) : dosio_(dosio) {}
 CFilterCache::~CFilterCache() = default;
 
 // nocedit 0x00470000
+// bw1 0x0045d770
+// bw2 0x00447610
+// bw3 0x004596c0
 void CFilterCache::free() {
     filters_.clear();
 }
 
 // nocedit 0x00470060
+// bw1 0x0045d7c0
+// bw2 0x00447660
+// bw3 0x00459710
 CDemonFilter *CFilterCache::getFilter(std::string_view filter_name, int blend_filter) {
     if (CDemonFilter *found = findFilter(filter_name)) {
         return found;

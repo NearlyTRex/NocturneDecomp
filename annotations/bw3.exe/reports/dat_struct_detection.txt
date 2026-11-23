@@ -2,15 +2,16 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 294
+Total DAT_ globals found: 381
 Filtered out (inside named data): 86
-Immediate constants (not real globals): 25
-Real globals remaining: 269
-Clusters detected: 53
-DAT_ globals in clusters: 244
+Outside the program image: 2
+Immediate constants (not real globals): 22
+Real globals remaining: 271
+Clusters detected: 54
+DAT_ globals in clusters: 247
 
 Classification summary:
-  unknown              18 clusters
+  unknown              19 clusters
   struct               16 clusters
   struct_array         6 clusters
   char_array           4 clusters
@@ -19,7 +20,7 @@ Classification summary:
   byte_blob            2 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (25)
+LIKELY IMMEDIATE CONSTANTS (22)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -85,12 +86,6 @@ Consider removing the Ghidra label and leaving the raw number.
     CConstruct_process
       PUSH 0x5f16f4                       ; 00442e2b | DAT_005f16f4
 
-  DAT_005fd804  value=0x5FD804 (6281220)  refs=2
-    CFireEffect_preloadGunFlameStyle
-      MOV EAX,0x5fd804                    ; 004a4264 | DAT_005fd804
-    CGunFlame_render
-      ADD EAX,0x5fd804                    ; 0049e55c | DAT_005fd804
-
   DAT_005fd8dc  value=0x5FD8DC (6281436)  refs=2
     CFireEffect_preloadGunFlameStyle
       MOV EAX,0x5fd8dc                    ; 004a4253 | DAT_005fd8dc
@@ -142,14 +137,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_006004c8  value=0x6004C8 (6292680)  refs=1
     fillRect
       PUSH 0x6004c8                       ; 004f3a08 | DAT_006004c8
-
-  DAT_00000065  value=0x65 (101)  refs=1
-    winMain
-      PUSH 0x65                           ; 005811ee | DAT_00000065
-
-  DAT_00007f00  value=0x7F00 (32512)  refs=1
-    winMain
-      PUSH 0x7f00                         ; 0058120e | DAT_00007f00
 
   DAT_02d22618  value=0x2D22618  refs=1
     winMain
@@ -371,22 +358,22 @@ MEDIUM CONFIDENCE (14 clusters)
       0x01c59e94  DAT_01c59e94  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (35 clusters)
+LOW CONFIDENCE (36 clusters)
 --------------------------------------------------------------------------------
 
-  0x005fd7ec - 0x005fdb4c  (13 items, 864 bytes span)
+  0x005fd7ec - 0x005fdb4c  (14 items, 864 bytes span)
     Classification: struct
-    Likely type: struct (864 bytes span, 13 fields)
+    Likely type: struct (864 bytes span, 14 fields)
     Reason: mixed strides, shared by 6 functions
     Referenced by: 6 functions
      near: g_FireEffectLightningBoltTextures[1].base.type (undefined4) at +456
       0x005fd7ec  DAT_005fd7ec  undefined4
+      0x005fd804  DAT_005fd804  undefined4
       0x005fd81c  DAT_005fd81c  undefined4
       0x005fd834  DAT_005fd834  undefined4
       0x005fd84c  DAT_005fd84c  undefined4
       0x005fd864  DAT_005fd864  undefined4
-      0x005fd8f4  DAT_005fd8f4  undefined4
-      ... +7 more
+      ... +8 more
 
   0x01d73d00 - 0x01d73f03  (12 items, 515 bytes span)
     Classification: struct_array
@@ -654,6 +641,15 @@ LOW CONFIDENCE (35 clusters)
       0x02d25908  DAT_02d25908  undefined4
       0x02d2590c  DAT_02d2590c  undefined4
 
+  0x005d65d7 - 0x005d65df  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_DOUBLE_005d65cf (double) at +8
+      0x005d65d7  DAT_005d65d7  undefined4 [double]
+      0x005d65df  DAT_005d65df  undefined4 [float]
+
   0x005f1368 - 0x005f1468  (2 items, 256 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -753,7 +749,7 @@ LOW CONFIDENCE (35 clusters)
       0x02d26184  DAT_02d26184  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (25 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (24 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_01d22c6c                    addr=01d22c6c    type=undefined4      refs=3  near: g_CHAR_ARRAY_01d22c6f+1(-4)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
@@ -763,7 +759,7 @@ ISOLATED DAT_ GLOBALS (25 - not part of any cluster)
   DAT_005f2a20                    addr=005f2a20    type=undefined4      refs=1  near: g_CZombieDogClassVersion(-60)
   DAT_005df358                    addr=005df358    type=undefined4      refs=1  near: g_CEmitterTypeInfo(+56)
   DAT_005fcb2c                    addr=005fcb2c    type=undefined4      refs=1  near: g_SMRGLTextureBasic_005fcb14(+24)
-  DAT_005c4425                    addr=005c4425    type=undefined4      refs=1 [likely double]  near: s_darkPoint_005c442c+1(-8)
+  DAT_005c4425                    addr=005c4425    type=undefined4      refs=1 [likely double]  near: s_darkPoint_005c442d(-8)
   DAT_005e0a34                    addr=005e0a34    type=undefined4      refs=1  near: g_FLOAT_005e0a30(+4)
   DAT_005e785c                    addr=005e785c    type=undefined4      refs=1  near: g_FLOAT_005e7860(-4)
   DAT_02d24c54                    addr=02d24c54    type=undefined4      refs=1  near: g_INT_02d24c4c(+8)
@@ -771,7 +767,6 @@ ISOLATED DAT_ GLOBALS (25 - not part of any cluster)
   DAT_005cd53f                    addr=005cd53f    type=undefined4      refs=1 [likely double]  near: g_DOUBLE_005cd537(+8)
   DAT_0207faf8                    addr=0207faf8    type=undefined4      refs=1  near: g_INT_0207faf4(+4)
   DAT_005e434c                    addr=005e434c    type=undefined4      refs=1  near: g_FLOAT_005e4350(-4)
-  DAT_005d65d7                    addr=005d65d7    type=undefined4      refs=1 [likely double]  near: g_DOUBLE_005d65cf(+8)
   DAT_005e65dc                    addr=005e65dc    type=undefined4      refs=1  near: g_FLOAT_005e65e0(-4)
   DAT_005e704c                    addr=005e704c    type=undefined4      refs=1  near: g_FLOAT_005e7050(-4)
   DAT_00607de0                    addr=00607de0    type=undefined4      refs=1  near: g_ARRAY_PTR_00607dd8[1](+4)
@@ -780,6 +775,15 @@ ISOLATED DAT_ GLOBALS (25 - not part of any cluster)
   DAT_005c20be                    addr=005c20be    type=undefined1      refs=1 [likely byte]  near: s_engine_font_cpp_005c20bf(-1)
   DAT_02cfd0c8                    addr=02cfd0c8    type=undefined4      refs=1  near: g_INT_02cfd0cc(-4)
   DAT_005d3f92                    addr=005d3f92    type=undefined4      refs=1 [likely double]  near: g_FLOAT_005d3f8e(+4)
+
+--------------------------------------------------------------------------------
+OUTSIDE THE PROGRAM IMAGE (2)
+--------------------------------------------------------------------------------
+No global lives at these addresses: they are constants, or addresses Ghidra
+computed from a register value.
+
+  DAT_00000065
+  DAT_00007f00
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (86)

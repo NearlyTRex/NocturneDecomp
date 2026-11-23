@@ -56,6 +56,9 @@ void waitForMovie(const SMovieOwners &owners) {
 // The original also raised the thread's priority while the movie played. Its sound is at the
 // enhanced game's movie volume, and silent while muted; MCI played it at the desktop's.
 // nocedit 0x005f4a00
+// bw1 0x005b4cd0
+// bw2 0x00591190
+// bw3 0x00582eb0
 bool playMovie(const SMovieOwners &owners, std::string_view directory_path,
                std::string_view movie_filename) {
     const std::string path = std::format("{}\\{}", directory_path, movie_filename);

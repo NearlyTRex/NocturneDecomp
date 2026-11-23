@@ -96,6 +96,9 @@ bool CDosIo::setFileAttributes(std::string_view filename, std::uint8_t flags) {
 
 // reopenFileStream did the same for an iostream; both are this.
 // nocedit 0x00481a50
+// bw1 0x00479180
+// bw2 0x00460c70
+// bw3 0x004659c0
 // nocedit 0x00481b50
 std::unique_ptr<platform::IFile> CDosIo::getFile(std::string_view directory,
                                                  std::string_view filename,

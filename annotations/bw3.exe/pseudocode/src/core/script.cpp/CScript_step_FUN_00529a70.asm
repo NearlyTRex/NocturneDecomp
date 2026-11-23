@@ -292,8 +292,8 @@ section .text
         ;   Label: LAB_00529a8e
     MOV EDI,0x47c                       ; 00529a93
     PUSH 0x5ce031                       ; 00529a98 | = "CScript::step - Invalid instruction p..."
-    MOV dword ptr [0x01d71de0],ESI      ; 00529a9d | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDI      ; 00529aa3 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 00529a9d | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDI      ; 00529aa3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529aa9
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00529aae
@@ -450,8 +450,8 @@ section .text
         ;   Label: LAB_00529c3c
     MOV EAX,0x4ae                       ; 00529c41
     PUSH 0x5ce116                       ; 00529c46 | = "Internal script error checking for du..."
-    MOV dword ptr [0x01d71de0],EDI      ; 00529c4b | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00529c51 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 00529c4b | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00529c51 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00529c56
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 00529c5b
@@ -6849,8 +6849,8 @@ section .text
     MOV EAX,0x5cf31a                    ; 0052e69d | = "..\\core\\script.cpp"
     MOV EDX,0xbcf                       ; 0052e6a2
     PUSH 0x5cf32d                       ; 0052e6a7 | = "script selectWeapon() command - hell ..."
-    MOV [0x01d71de0],EAX                ; 0052e6ac | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0052e6b1 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0052e6ac | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0052e6b1 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0052e6b7
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0052e6bc

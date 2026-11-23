@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 967,
-    "complexity_score": 2002,
+    "complexity_score": 2017,
     "cross_reference_count": 8,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 472,
-    "suspect_count": 148,
+    "suspect_count": 149,
     "suspect_types": [
+      "memcpy_oversized_source",
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
@@ -217,13 +218,13 @@
     },
     {
       "addr": "01d1d400",
-      "name": "g_CHAR_PTR_01d1d400",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01d1d404",
-      "name": "g_INT_01d1d404",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -1567,6 +1568,14 @@
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_1d0[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_1d0[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 219,
+      "match": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "memcpy_oversized_source"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",

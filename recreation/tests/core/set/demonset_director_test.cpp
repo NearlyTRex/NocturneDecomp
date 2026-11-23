@@ -258,6 +258,17 @@ TEST_F(CDemonSetDirectorTest, TheSceneCameraTakesTheCameraShownAndItsFog) {
     EXPECT_EQ(set_.getActiveFog().color_index, (CColor3i{.r = 10, .g = 20, .b = 30}));
 }
 
+// The scene camera is made again at the height given, still showing the camera shown.
+TEST_F(CDemonSetDirectorTest, ReinitingTheCameraKeepsTheCameraShownAtTheNewHeight) {
+    givenCameras(cameraAt("sees", "0,0,-10", kWideBox) + cameraAt("other", "5,0,0", kWideBox), 2);
+    set_.setCameraView(1);
+    set_.reinitCamera(kFrameHeight / 2);
+    const CDemonCamera &scene = *set_parts_.camera;
+    EXPECT_EQ(scene.getFramebufferHeight(), kFrameHeight / 2);
+    EXPECT_EQ(scene.getCameraName(), "other");
+    EXPECT_TRUE(scene.getPosition().equals({.x = 5.0F, .y = 0.0F, .z = 0.0F}));
+}
+
 // The external renderer is turned off while the cameras are scored, then back on.
 TEST_F(CDemonSetDirectorTest, TheExternalRendererIsLeftAsItWas) {
     givenCameras(cameraAt("sees", "0,0,-10", kWideBox), 1);

@@ -421,8 +421,8 @@ LAB_00569a2a:
     }
     break;
   default:
-    g_CHAR_PTR_01d046a0 = "..\\core\\stranger.cpp";
-    g_INT_01d046a4 = 0xd2d;
+    g_CurrentFilename = "..\\core\\stranger.cpp";
+    g_CurrentLineNumber = 3373;
     core_main_c_displayErrorAndQuit_FUN_004e4500("Hell froze - invalid pickUpType: %d");
     goto LAB_00569dc5;
   }

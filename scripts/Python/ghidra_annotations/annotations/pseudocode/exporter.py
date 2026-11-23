@@ -27,8 +27,8 @@ from ghidra_annotations.annotations.pseudocode.decompiler import (
 )
 from ghidra_annotations.annotations.pseudocode.assembly import build_global_symbols_map
 from ghidra_annotations.annotations.pseudocode.globals import (
-    extract_globals_and_constants, generate_constants_file,
-    generate_globals_file, generate_globals_header_file,
+    extract_globals_and_constants, generate_constants_file, constant_range_dependencies,
+    generate_globals_header_file,
     split_data_by_address_range, generate_globals_cpp_file,
     build_write_xref_addresses, generate_prototypes_header_file,
     extract_function_references_from_constants, get_function_address_ranges,
@@ -308,12 +308,8 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
 
         # Try to get signature from decompile result first (includes calling convention)
         signature = None
-        used_decompiled_sig = False
         if func_addr in result_by_addr:
-            result = result_by_addr[func_addr]
-            signature = result.func_signature
-            if signature:
-                used_decompiled_sig = True
+            signature = result_by_addr[func_addr].func_signature
 
         # Fall back to getPrototypeString if no decompile result
         if not signature:
@@ -326,15 +322,14 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
             c_signature = "void %s(void)" % c_name
 
         # Normalize prototype for C compatibility
-        if c_signature:
-            # Remove __unknown calling convention if present
-            c_signature = c_signature.replace('__unknown ', '')
-            # Normalize empty parameter list to (void) for proper C declaration
-            c_signature = re.sub(r'(\w+)\(\)$', r'\1(void)', c_signature)
-            c_signature = re.sub(r'(\w+)\(\);$', r'\1(void);', c_signature)
+        # Remove __unknown calling convention if present
+        c_signature = c_signature.replace('__unknown ', '')
+        # Normalize empty parameter list to (void) for proper C declaration
+        c_signature = re.sub(r'(\w+)\(\)$', r'\1(void)', c_signature)
+        c_signature = re.sub(r'(\w+)\(\);$', r'\1(void);', c_signature)
 
         # Always insert calling convention (Ghidra omits the default convention)
-        if calling_convention and c_signature:
+        if calling_convention:
             c_signature = insert_calling_convention(c_signature, calling_convention)
 
         functions_list.append({
@@ -415,22 +410,8 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
     # Replace constant references with their actual values
     decompiled_code = replace_constants_in_code(decompiled_code, constants_map)
 
-    # Build var_info dict for safe partial access transforms
-    # Maps variable names to {'size': int, 'is_array': bool}
-    var_info = {}
-    if result.stack_frame and result.stack_frame.get('variables'):
-        for var in result.stack_frame['variables']:
-            var_name = var.get('name')
-            var_size = var.get('size')
-            var_type = var.get('type', '')
-            if var_name and var_size:
-                # Detect array types by checking for '[' in type name (e.g., "byte[24]")
-                is_array = '[' in var_type
-                var_info[var_name] = {'size': var_size, 'is_array': is_array}
-
     # Apply post-processing transforms
-    decompiled_code = apply_all_transforms(
-        decompiled_code, var_info=var_info, func_name=func_name)
+    decompiled_code = apply_all_transforms(decompiled_code, func_name=func_name)
 
     # Generate MMX inline assembly version (kept separate from original pseudocode)
     from ghidra_annotations.annotations.pseudocode.asm_transform import generate_mmx_asm_cpp, generate_byval_asm_cpp
@@ -731,22 +712,24 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             # (head bytes, dword bulk, tail bytes, MMX chunks). All of them
             # serve the one logical copy. Suppress all asm-side memcpy/memset
             # suspects in that case rather than matching 1:1 by count.
+            def _code_only(text):
+                """`text` without comments, and with string and char literals
+                emptied, so neither can pass for a call or a brace."""
+                text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
+                text = re.sub(r'//[^\n]*', '', text)
+                text = re.sub(r'"[^"]*"', '""', text)
+                return re.sub(r"'[^']*'", "''", text)
+
             def _count_calls(text, fn_name):
-                if not text:
-                    return 0
                 pat = re.compile(
                     r'(?<![A-Za-z0-9_])' + re.escape(fn_name) + r'\s*\(')
-                return len(pat.findall(text))
+                return len(pat.findall(_code_only(text)))
 
             def _is_trivial_call_wrapper(text, fn_name):
                 """True if `text` (a keep source) is a single-statement
                 wrapper whose body is essentially one fn_name() call.
                 Rejects bodies with control flow or other function calls."""
-                if not text:
-                    return False
-                # Strip C and C++ comments.
-                stripped = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
-                stripped = re.sub(r'//[^\n]*', '', stripped)
+                stripped = _code_only(text)
                 # Find outermost function body via balanced braces.
                 open_idx = stripped.find('{')
                 if open_idx < 0:
@@ -765,10 +748,6 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
                 if close_idx < 0:
                     return False
                 body = stripped[open_idx + 1:close_idx]
-                # Neutralize string and char literals so they can't smuggle
-                # control-flow keywords.
-                body = re.sub(r'"[^"]*"', '""', body)
-                body = re.sub(r"'[^']*'", "''", body)
                 # Reject any control flow.
                 if re.search(r'\b(for|while|do|if|else|switch|case|goto)\b',
                              body):
@@ -1081,14 +1060,14 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
     proto_overrides_json_path = generate_proto_overrides_file(pseudocode_dir)
 
     # Register proto overrides for variadic/ambiguous calls
-    proto_override_count = register_proto_overrides(proto_overrides_json_path)
+    proto_override_count = register_proto_overrides(proto_overrides_json_path, proto_cache.function_entries())
     apply_proto_overrides(currentProgram)
     if proto_override_count > 0:
         has_proto_overrides = HighFunction.hasRegisteredProtoOverrides()
         log_info("Java hasRegisteredProtoOverrides() returns: %s" % has_proto_overrides)
 
     # Generate the decompiler_fixes.json file AFTER cleanup (using cached data)
-    decompiler_fixes_json_path = generate_decompiler_fixes_file(pseudocode_dir)
+    generate_decompiler_fixes_file(pseudocode_dir)
 
     # Export header files first
     timer.start_phase("Export header files")
@@ -1374,6 +1353,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
         main_constants_content.append("// CONSTANTS - Master Include")
         main_constants_content.append("// =============================================================================")
         main_constants_content.append("")
+        const_range_deps = constant_range_dependencies(const_ranges)
         for range_key in sorted(const_ranges.keys()):
             range_filename = "constants_%s.h" % range_key.replace("0x", "")
             main_constants_content.append("#include \"constants/%s\"" % range_filename)
@@ -1387,7 +1367,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
 
             # Generate individual range file in constants/
             range_content = generate_constants_file(
-                const_ranges[range_key], type_to_path_map, needed_proto_ranges)
+                const_ranges[range_key], type_to_path_map, needed_proto_ranges, const_range_deps[range_key])
             range_path = os.path.join(constants_dir, range_filename)
             write_header_file(range_path, range_content)
             log_info("Created constants range file: %s with %d constants" % (range_filename, len(const_ranges[range_key])))
@@ -1533,7 +1513,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
                 total_suspects += processed['suspect_count']
                 if processed['suspect_count'] == 0:
                     zero_suspect_count += 1
-                elif processed['suspect_count'] > 0:
+                else:
                     log_info("  Found %d suspect patterns in %s" % (
                         processed['suspect_count'], processed['func_name']))
 

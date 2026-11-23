@@ -9,8 +9,8 @@
 int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_0057e330(COutStreamDebug *this_ptr,int offset,int origin)
 
 {
-  g_CHAR_PTR_01d046a0 = "..\\support\\trstream.cpp";
-  g_INT_01d046a4 = 0xa88;
+  g_CurrentFilename = "..\\support\\trstream.cpp";
+  g_CurrentLineNumber = 2696;
   core_main_c_displayErrorAndQuit_FUN_004e4500("COutStreamDebug::seek - invalid operation");
   return 0;
 }

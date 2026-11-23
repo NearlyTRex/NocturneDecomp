@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   vertex_index
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -73,8 +73,8 @@ section .text
     MOV EAX,0x5b928c                    ; 0043fdd1
     MOV EDX,0xab4                       ; 0043fdd6
     PUSH 0x5b929e                       ; 0043fddb
-    MOV [0x01d71de0],EAX                ; 0043fde0 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 0043fde5 | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 0043fde0 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 0043fde5 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0043fdeb
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x8                         ; 0043fdf0

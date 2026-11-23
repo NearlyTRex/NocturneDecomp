@@ -17,8 +17,8 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr)
   if (piVar1 != (int *)0x0) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\cloth.cpp";
-  g_INT_01d71de4 = 0x77;
+  g_CurrentFilename = "..\\core\\cloth.cpp";
+  g_CurrentLineNumber = 119;
   core_main_c_displayErrorAndQuit_FUN_004e4330("CCloth::allocMemory - Out of memory");
   return;
 }

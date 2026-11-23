@@ -201,10 +201,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // Gated by NOCTURNE_AUTHENTIC_CUE_RETRIGGER.
 #include "game/script_cue.h"
 
-// Caption and sound replacements for dialogue lines spoken by a hero they were
-// not recorded for (nocturne_dialogue_*), reached from script.cpp's
-// startDialogLine. Gated by NOCTURNE_AUTHENTIC_NETPLAY.
-#include "game/dialogue_override.h"
+// Corrections to the shipped mission scripts (nocturne_script_quirk_*): an
+// unbraced if with a multi-command body, reached from script.cpp's step, and
+// a dialogue line spoken by a hero it was not recorded for, reached from
+// startDialogLine. Gated by NOCTURNE_AUTHENTIC_SCRIPT_QUIRKS.
+#include "game/script_quirks.h"
 
 // The detailed sound error console lines (nocturne_sound_report_*), reached
 // from snddx.cpp's allocateSfx. Gated by NOCTURNE_AUTHENTIC_SOUND_ERROR_LOG.
@@ -229,6 +230,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // CGame::processFrame after the HUD. Inert under NOCTURNE_AUTHENTIC_CHEAT_MENU.
 #include "debug/perf_overlay.h"
 
+// The script and light debug views in a window of their own
+// (nocturne_debug_window_*), drawn from CGame::processFrame. Gated by
+// NOCTURNE_AUTHENTIC_DEBUG_WINDOW.
+#include "debug/debug_window.h"
+
 // The HQ missions' refusal of the draw and flashlight keys
 // (nocturne_hq_filter_input), applied in CGame::playerControls. Gated by
 // NOCTURNE_AUTHENTIC_FLASHLIGHT_DRAW.
@@ -243,6 +249,11 @@ void nocturne_trigl_envmap_pass_end(void);
 // The forward-step scale for scripted walks (nocturne_walk_turn_scale), reached
 // from CCharacter::walkToPoint and gated there by NOCTURNE_AUTHENTIC_WALK_TURN.
 #include "game/walk_turn.h"
+
+// Whether a looping platform is on its way back (nocturne_platform_loop_return),
+// reached from CPlatform::renderOpaque and gated there by
+// NOCTURNE_AUTHENTIC_PLATFORM_LOOP_RETURN.
+#include "game/platform_loop.h"
 
 // The pause menu's WARPS entry (nocturne_warps_*): the developer warps the
 // shipped mission scripts already listen for, raised the way RAISE raises them.

@@ -375,6 +375,42 @@
       "severity": "moderate",
       "text": "local_44 = (CDeformableModel *)(local_44->tri_count + 3);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(iVar2 + 0x7178) reaches field parts (0x7144) of CDeformableModel via a baked 32-bit offset. CDeformableModel is 64-bit-unstable (grows past its first pointer/unstable field at 0x40); on the 64-bit build field offsets at/after 0x40 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDeformableModel * (\u00a7de-pun/\u00a712).",
+      "line": 78,
+      "match": "*(...)(iVar2 + 0x7178)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x7178) = 0;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar2 + 0x7164) reaches field parts (0x7144) of CDeformableModel via a baked 32-bit offset. CDeformableModel is 64-bit-unstable (grows past its first pointer/unstable field at 0x40); on the 64-bit build field offsets at/after 0x40 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDeformableModel * (\u00a7de-pun/\u00a712).",
+      "line": 79,
+      "match": "*(...)(iVar2 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x7164) = 0;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar2 + 0x7164) reaches field parts (0x7144) of CDeformableModel via a baked 32-bit offset. CDeformableModel is 64-bit-unstable (grows past its first pointer/unstable field at 0x40); on the 64-bit build field offsets at/after 0x40 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDeformableModel * (\u00a7de-pun/\u00a712).",
+      "line": 133,
+      "match": "*(...)(iVar2 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + *(int *)(iVar2 + 0x7164);",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(iVar2 + 0x7178) reaches field parts (0x7144) of CDeformableModel via a baked 32-bit offset. CDeformableModel is 64-bit-unstable (grows past its first pointer/unstable field at 0x40); on the 64-bit build field offsets at/after 0x40 shift, so this reads/writes the wrong bytes. De-pun to named field access on a CDeformableModel * (\u00a7de-pun/\u00a712).",
+      "line": 134,
+      "match": "*(...)(iVar2 + 0x7178)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar20 = iVar20 + *(int *)(iVar2 + 0x7178);",
+      "type": "stale_struct_offset_64bit"
     }
   ],
   "stack_frame": {
@@ -591,6 +627,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_extractLodLevel_FUN_0058d790.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 3,
+          "line": 39,
+          "message": "Value stored to 'bVar8' is never read",
+          "path_notes": [
+            {
+              "line": 39,
+              "message": "Value stored to 'bVar8' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

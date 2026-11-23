@@ -24,8 +24,8 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecP
   if (iVar1 < 0x33) {
     return;
   }
-  g_CHAR_PTR_01d71de0 = "..\\core\\bmppuzzl.cpp";
-  g_INT_01d71de4 = 0x290;
+  g_CurrentFilename = "..\\core\\bmppuzzl.cpp";
+  g_CurrentLineNumber = 656;
   core_main_c_displayErrorAndQuit_FUN_004e4330("Too damn many buttons");
   return;
 }

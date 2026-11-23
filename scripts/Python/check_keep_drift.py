@@ -20,7 +20,10 @@ not count. Each .keep gets the share of lines the two have in common:
 
 A .keep that uses a shim or AUTHENTIC switch carries behaviour, not decompiler
 fixes, so it is never listed as redundant whatever its ratio; those are listed
-in their own section. The report lists every .keep exactly once.
+in their own section. Nor is an identical .keep that drops a Ghidra warning the
+suspect scan counts (type propagation not settling, say): it records that the
+code was checked and found right, so it is listed as reviewed. The report lists
+every .keep exactly once.
 
 Read-only, and informational: the exit status is 0. The pseudocode export writes
 the same report to reports/keep_drift.txt.
@@ -48,6 +51,10 @@ LITERAL_OR_COMMENT_RE = re.compile(r'''"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*'|/
 TOKEN_RE = re.compile(r'''"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*'|\w+'''
                       r'''|<<=|>>=|\.\.\.|->|\+\+|--|<<|>>|&&|\|\||::|##|[-+*/%&|^!=<>]=|\S''')
 SHIM_RE = re.compile(r"\bSHIM_|AUTHENTIC|shims/")
+WARNING_RE = re.compile(r"/\*\s*WARNING:\s*(.*?)\s*\*/", re.S)
+# The warnings the suspect scan never counts (suspects/_common.py BENIGN_WARNINGS),
+# so a .keep gains nothing by dropping them
+BENIGN_WARNING_RE = re.compile(r"Inlined function|This is an inlined function|Removing unreachable block")
 KEEP_RE = re.compile(r"(.*)\.keep\.(cpp|c)$")
 
 
@@ -95,6 +102,17 @@ def compare(keep_text, export_text):
     return round(matcher.ratio(), 4), changed
 
 
+def cleared_warnings(keep_text, export_text):
+    """The counted Ghidra warnings in the export that the .keep no longer carries."""
+    kept = set(WARNING_RE.findall(keep_text))
+    return sorted({w for w in WARNING_RE.findall(export_text)
+                   if w not in kept and not BENIGN_WARNING_RE.match(w)})
+
+
+def is_redundant(row):
+    return row["kind"] == "identical" and not row["shim"] and not row["clears"]
+
+
 def find_keeps(src_root):
     """(keep path, export path or None) for each .keep under src_root."""
     for dirpath, _dirs, filenames in os.walk(src_root):
@@ -108,17 +126,19 @@ def find_keeps(src_root):
 
 
 def collect(src_root):
-    """[{keep, ratio, changed, kind, shim}] for every .keep under src_root."""
+    """[{keep, ratio, changed, kind, shim, clears}] for every .keep under src_root."""
     rows = []
     for keep, export in find_keeps(src_root):
         text = read(keep)
         if export is None:
-            ratio, changed, kind = 0.0, len(code_lines(text)), NO_EXPORT
+            ratio, changed, kind, clears = 0.0, len(code_lines(text)), NO_EXPORT, []
         else:
-            ratio, changed = compare(text, read(export))
+            export_text = read(export)
+            ratio, changed = compare(text, export_text)
             kind = kind_of(ratio)
+            clears = cleared_warnings(text, export_text)
         rows.append({"keep": keep, "ratio": ratio, "changed": changed,
-                     "kind": kind, "shim": bool(SHIM_RE.search(text))})
+                     "kind": kind, "shim": bool(SHIM_RE.search(text)), "clears": clears})
     return rows
 
 
@@ -140,7 +160,10 @@ def format_report(rows, relative_to=ROOT):
     def plain(kind):
         return [r for r in rows if r["kind"] == kind and not r["shim"]]
 
-    listing("REDUNDANT: identical code, no shim switch - can be deleted", plain("identical"))
+    listing("REDUNDANT: identical code, no shim switch - can be deleted",
+            [r for r in rows if is_redundant(r)])
+    listing("REVIEWED: identical code, drops a counted Ghidra warning - kept",
+            [r for r in plain("identical") if r["clears"]])
     listing("NEAR: a few lines from the export - finish in Ghidra, then delete", plain("near"))
     listing("PARTIAL: most lines shared with the export", plain("partial"))
     listing("REWRITTEN: under 80% shared with the export", plain("rewritten"))

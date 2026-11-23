@@ -17,8 +17,8 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004478d0(CDemonFilter *this_
   
   p_Var2 = engine_dosio_cpp_getFile_FUN_00460c70("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dfilter.cpp";
-    g_INT_01d046a4 = 0xab;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 171;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::load - Bad filename : %s");
   }
   _fclose(p_Var2);
@@ -27,25 +27,25 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004478d0(CDemonFilter *this_
   this_ptr->size = (int)ROUND(dVar5);
   this_ptr->count = iVar3 / this_ptr->size;
   if (this_ptr->size != this_ptr->count) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dfilter.cpp";
-    g_INT_01d046a4 = 0xb7;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 183;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::load - Non-square filter %dx%d");
   }
   if ((this_ptr->size < 0x40) || (0x100 < this_ptr->size)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dfilter.cpp";
-    g_INT_01d046a4 = 0xb9;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 185;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::load - Bad filter size %d");
   }
   if ((this_ptr->count < 0x40) || (0x100 < this_ptr->count)) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dfilter.cpp";
-    g_INT_01d046a4 = 0xbc;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 188;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::load - Bad filter size %d");
   }
   core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00447860(this_ptr);
   p_Var2 = engine_dosio_cpp_getFile_FUN_00460c70("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\dfilter.cpp";
-    g_INT_01d046a4 = 0xc6;
+    g_CurrentFilename = "..\\core\\dfilter.cpp";
+    g_CurrentLineNumber = 198;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDemonFilter::load - Bad filename");
   }
   _fread(this_ptr->data_buffer,this_ptr->size,this_ptr->count,p_Var2);

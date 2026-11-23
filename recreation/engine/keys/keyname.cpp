@@ -130,6 +130,7 @@ constexpr std::string_view kInvalidKey = "(invalid key)";
 // The original asked Windows for a key's name first, and fell back on these; the enhanced game
 // names keys from these alone, whatever the keyboard's layout.
 // nocedit 0x005f3980
+// bw3 0x00581360
 std::string_view getKeyName(EInputCodeType keycode) {
     const auto *found = std::ranges::lower_bound(kKeyNames, keycode, {}, &SKeyName::code);
     if (found == kKeyNames.end() || found->code != keycode) {

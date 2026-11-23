@@ -109,8 +109,8 @@ section .text
     MOV EBX,0x5e57a8                    ; 0052de1a | = "..\\core\\set.cpp"
     MOV ESI,0x477                       ; 0052de1f
     PUSH 0x5e57b8                       ; 0052de24 | = "CDemonSet::setCameraView - invalid in..."
-    MOV dword ptr [0x01d046a0],EBX      ; 0052de29 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0052de2f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 0052de29 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0052de2f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052de35
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0052de3a
@@ -698,8 +698,8 @@ section .text
     MOV EDX,0x5e57ec                    ; 0052e645 | = "..\\core\\set.cpp"
     MOV ECX,0x501                       ; 0052e64a
     PUSH 0x5e57fc                       ; 0052e64f | = "CDemonSet::setCameraView - Too many o..."
-    MOV dword ptr [0x01d046a0],EDX      ; 0052e654 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 0052e65a | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 0052e654 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 0052e65a | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0052e660
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0052e665

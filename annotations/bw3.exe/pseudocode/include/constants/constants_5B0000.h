@@ -4,8 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "globals.h"
-#include "constants.h"
 
 // =============================================================================
 // CONSTANTS
@@ -1166,7 +1164,7 @@ static TerminatedCString s_CCourse_load_can_t_open_005b9857 = "CCourse::load - c
 static TerminatedCString s_d_005b987a = "%d\n";
 static TerminatedCString s_d_d_005b987e = "%d,%d\n";
 static TerminatedCString s_f_f_f_f_f_f_f_005b9885 = "%f,%f,%f, %f,%f,%f,%f\n";
-static TerminatedCString s_MbP_CZombieCow_005b98a1 = "MbP?CZombieCow";
+static TerminatedCString s_CZombieCow_005b98a5 = "CZombieCow";
 static TerminatedCString s_cow_dfm_005b98b0 = "cow.dfm";
 static TerminatedCString s_Bip01_Spine2_005b98b8 = "Bip01 Spine2";
 static TerminatedCString s_Bip01_Head_005b98c5 = "Bip01 Head";

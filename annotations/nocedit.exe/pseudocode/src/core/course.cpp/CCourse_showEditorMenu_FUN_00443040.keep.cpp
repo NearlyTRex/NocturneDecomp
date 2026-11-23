@@ -134,6 +134,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           local_44.z = local_2c.y;
           local_44.y = local_2c.z;
           core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_44,&local_84);
+          local_74 = local_84;
           for (local_14 = 0; local_14 < this_ptr->len; local_14 = local_14 + 1) {
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
                       (&local_74,&this_ptr->frames[local_14].orient,&local_54);

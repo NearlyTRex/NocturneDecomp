@@ -7,8 +7,8 @@
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_dpart.cpp_CDemonPart_load_FUN_00479b40
     MOV ECX,0x128                       ; 00479b45
     PUSH 0x5dab94                       ; 00479b4a
-    MOV dword ptr [0x01d1d400],EDX      ; 00479b4f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00479b55 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00479b4f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00479b55 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00479b5b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00479b60

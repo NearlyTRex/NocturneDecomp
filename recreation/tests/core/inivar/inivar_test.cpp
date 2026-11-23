@@ -23,6 +23,7 @@
 #include "tests/mocks/engine/mockgameclock.h"
 #include "tests/mocks/engine/mockrawinput.h"
 #include "tests/mocks/engine/mockscreendevice.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
 #include "tests/mocks/platform/mockdisplay.h"
@@ -68,10 +69,13 @@ protected:
                 return true;
             });
         ON_CALL(file_system_, setReadOnly(kIni, false)).WillByDefault(Return(true));
+        ON_CALL(file_system_, getFileInfo(kIni))
+            .WillByDefault(Return(platform::SFileInfo{.name = "nocturne.ini"}));
     }
 
     void read() {
         readIniData(ini_, file_system_, owners_);
+        readIniControls(ini_, owners_);
     }
 
     std::string text_ = "[Graphics]\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
@@ -98,11 +102,14 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = editor_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = engine::getShippedGameContent()}};
     engine::CFontColors colors_;
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,       two_d_,
+                  three_d_,  colors_,       os_fonts_,
+                  messages_, editor_tools_, engine::getShippedGameContent()};
     ::testing::StrictMock<engine::MockGameClock> game_clock_;
     CGameParts game_parts_{game_clock_};
     CGame &game_ = game_parts_.getGame();
@@ -431,6 +438,21 @@ TEST_F(CInivarTest, AnIniThatCantBeWrittenMeansTheGameIsOnTheCd) {
                                         "Please copy Nocturne to your hard drive")));
 }
 
+// A game's folder that ships none, as Blair Witch's empty SYSTEM, writing the defaults makes it.
+TEST_F(CInivarTest, AGameWithoutAnIniStartsFromTheDefaults) {
+    std::optional<std::string> held;
+    ON_CALL(file_system_, getFileInfo(kIni)).WillByDefault([&held](std::string_view) {
+        return held ? std::optional(platform::SFileInfo{.name = "nocturne.ini"}) : std::nullopt;
+    });
+    ON_CALL(file_system_, readFile(kIni)).WillByDefault([&held](std::string_view) { return held; });
+    EXPECT_CALL(file_system_, writeFile(kIni, std::string_view(""))).WillOnce([&held] {
+        held = "";
+        return true;
+    });
+    EXPECT_NO_THROW(read());
+    EXPECT_EQ(game_.game_pixx, 640);
+}
+
 TEST_F(CInivarTest, WritesEverySettingBackToItsSection) {
     game_.game_pixx = 1024;
     game_.hero_number = EHeroType::HERO_TYPE_SVETLANA;
@@ -487,6 +509,7 @@ TEST_F(CInivarTest, WhatIsWrittenReadsBackTheSame) {
                                 .messages = copy_messages,
                                 .pod = copy_pod};
     readIniData(ini_, file_system_, reread);
+    readIniControls(ini_, reread);
     EXPECT_EQ(copy_messages.getLanguage(), "de");
     EXPECT_EQ(copy.game_control, EControlMode::CONTROL_MODE_GAMEPAD);
     EXPECT_EQ(copy.controls.formatBindings(EGameAction::Fire),

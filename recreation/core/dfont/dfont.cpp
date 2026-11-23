@@ -1,41 +1,33 @@
 #include "core/dfont/dfont.h"
 
+#include "common/error/error.h"
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "engine/winfont/winfont.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 
+#include <algorithm>
 #include <array>
 #include <cmath>
 #include <cstddef>
+#include <format>
+#include <optional>
+#include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
 
-// The small sheets share one size.
-constexpr int kSmallSheetWidth = 0x94;
-constexpr int kSmallSheetHeight = 0xec;
-// The console sheet's transparent index; the others' is 0.
-constexpr int kConsoleTransparent = 0xff;
-
-// An OS font's pixel height and its two vertical offsets.
-struct SOsFontSize {
-    int height;
-    int y_offset1;
-    int y_offset2;
-};
-
-// The medium, theme, tiny and debug fonts', in that order.
-constexpr std::array<SOsFontSize, 4> kOsFontSizes{{
-    {.height = 14, .y_offset1 = 2, .y_offset2 = 2},
-    {.height = 18, .y_offset1 = 0, .y_offset2 = 0},
-    {.height = 12, .y_offset1 = 0, .y_offset2 = 0},
-    {.height = 10, .y_offset1 = 0, .y_offset2 = 0},
-}};
-constexpr std::size_t kMediumOsFont = 0;
-constexpr std::size_t kThemeOsFont = 1;
-constexpr std::size_t kTinyOsFont = 2;
-constexpr std::size_t kDebugOsFont = 3;
+// The roles the game's code asks for its fonts by, in the order they load.
+constexpr std::string_view kMediumId = "medium";
+constexpr std::string_view kTinyId = "tiny";
+constexpr std::string_view kThemeId = "theme";
+constexpr std::string_view kSmallEditorId = "small_editor";
+constexpr std::string_view kConsoleId = "console";
+constexpr std::string_view kMicroId = "micro";
+constexpr std::array<std::string_view, 6> kFontIds{kMediumId,      kTinyId,    kThemeId,
+                                                   kSmallEditorId, kConsoleId, kMicroId};
 // A scale this close to 1 needs no fonts of its own.
 constexpr float kUnscaledTolerance = 0.001F;
 
@@ -55,19 +47,43 @@ void finishFont(engine::CBitFont &font, int space_width, int shadow_offset_x) {
 CDFont::CDFont(const engine::CDosIo &dosio, engine::IScreenDevice &screen, const engine::C2d &two_d,
                const engine::C3d &three_d, const engine::CFontColors &colors,
                platform::IOsFontFactory &os_fonts, const support::CNewMsg &messages,
-               shape::CEditorTools &editor_tools)
+               shape::CEditorTools &editor_tools, const engine::SGameContent &content)
     : dosio_(dosio), screen_(screen), two_d_(two_d), three_d_(three_d), colors_(colors),
-      os_fonts_(os_fonts), messages_(messages), editor_tools_(editor_tools) {}
+      os_fonts_(os_fonts), messages_(messages), editor_tools_(editor_tools), content_(content) {}
 
 CDFont::~CDFont() {
     freeFonts();
 }
 
-std::unique_ptr<engine::CBitFont> CDFont::loadFont(const char *filename, int width, int height,
-                                                   int load_flags) const {
+const engine::SFontSpec &CDFont::getSpec(std::string_view id) const {
+    const auto found = std::ranges::find(content_.fonts, id, &engine::SFontSpec::id);
+    if (found == content_.fonts.end()) {
+        common::displayErrorAndQuit(std::format("No package gives the {} font", id));
+    }
+    return *found;
+}
+
+// A grey-level font takes the text colour; its runs of characters sit as low as the spec says.
+std::unique_ptr<engine::CBitFont> CDFont::loadFont(const engine::SFontSpec &spec) const {
     auto font = std::make_unique<engine::CBitFont>(dosio_, screen_, two_d_, three_d_, colors_);
-    font->openFontFile(filename, width, height, load_flags);
+    font->openFontFile(spec.file.c_str(), spec.width, spec.height, spec.transparent);
+    if (!spec.own_colours) {
+        font->setInitializedFlag();
+    }
+    for (const engine::SFontYOffset &offset : spec.y_offsets) {
+        font->setCharYOffsetRange(offset.offset, offset.first, offset.last);
+    }
+    finishFont(*font, spec.space_width, spec.shadow_x);
     return font;
+}
+
+std::unique_ptr<engine::CWinFont> CDFont::makeOsFont(std::string_view id, float scale) const {
+    const std::optional<engine::SOsFontSize> &size = getSpec(id).os_font;
+    if (!size) {
+        return nullptr;
+    }
+    return makeOsFont(scaleLength(size->height, scale), scaleLength(size->y_offset1, scale),
+                      scaleLength(size->y_offset2, scale));
 }
 
 std::unique_ptr<engine::CWinFont> CDFont::makeOsFont(int font_height, int y_offset1,
@@ -84,69 +100,48 @@ void CDFont::initFonts() {
     use_os_fonts_ = os_font_choice_ == EOsFontChoice::Auto
                         ? messages_.getUseOSFonts()
                         : os_font_choice_ == EOsFontChoice::System;
+    // A font no role takes is the game's own, as BW3's menu fonts, drawn by what names it.
+    extra_fonts_.clear();
+    for (const engine::SFontSpec &spec : content_.fonts) {
+        if (!std::ranges::contains(kFontIds, spec.id)) {
+            extra_fonts_.insert_or_assign(spec.id, loadFont(spec));
+        }
+    }
 
-    medium_font_ = loadFont("nocfont.raw", 0x136, 0x1ae, 0);
-    medium_font_->setInitializedFlag();
-    medium_font_->setCharYOffsetRange(3, 0x20, 0x7e);
-    medium_font_->setCharYOffsetRange(1, 0xc0, 0xdf);
-    finishFont(*medium_font_, 8, 2);
-
-    tiny_font_ = loadFont("nocsmall.raw", 0xf8, 0x158, 0);
-    tiny_font_->setInitializedFlag();
-    tiny_font_->setCharYOffsetRange(2, 0x20, 0x7e);
-    finishFont(*tiny_font_, 5, 2);
-
-    theme_font_ = loadFont("menufont.raw", 0xfa, 0x23f, 0);
-    theme_font_->setInitializedFlag();
-    theme_font_->setCharYOffsetRange(3, 0x20, 0x7e);
-    theme_font_->setCharYOffsetRange(0, 0xc0, 0xdf);
-    theme_font_->setCharYOffsetRange(1, 0xe0, 0xff);
-    finishFont(*theme_font_, 8, 2);
-
-    small_editor_font_ = loadFont("fnte_pfd.RAW", kSmallSheetWidth, kSmallSheetHeight, 0);
-    small_editor_font_->setInitializedFlag();
-    small_editor_font_->setCharYOffsetRange(3, 0x20, 0x7e);
-    finishFont(*small_editor_font_, 4, 1);
+    medium_font_ = loadFont(getSpec(kMediumId));
+    tiny_font_ = loadFont(getSpec(kTinyId));
+    theme_font_ = loadFont(getSpec(kThemeId));
+    small_editor_font_ = loadFont(getSpec(kSmallEditorId));
     editor_tools_.setEditorFont(small_editor_font_.get());
-
-    console_font_ =
-        loadFont("fnte_f.RAW", kSmallSheetWidth, kSmallSheetHeight, kConsoleTransparent);
-    console_font_->setCharYOffsetRange(3, 0x20, 0x7e);
-    finishFont(*console_font_, 4, 1);
-
-    micro_font_ = loadFont("micro.raw", kSmallSheetWidth, kSmallSheetHeight, 0);
-    micro_font_->setInitializedFlag();
-    micro_font_->setCharYOffsetRange(1, 0x20, 0x7e);
-    finishFont(*micro_font_, 4, 1);
+    console_font_ = loadFont(getSpec(kConsoleId));
+    micro_font_ = loadFont(getSpec(kMicroId));
 
     if (!use_os_fonts_) {
         return;
     }
-    const auto make = [this](std::size_t font) {
-        const SOsFontSize &size = kOsFontSizes.at(font);
-        return makeOsFont(size.height, size.y_offset1, size.y_offset2);
+    // The medium, theme, tiny and small editor fonts take OS text, made in that order.
+    const auto give = [this](engine::CBitFont &font, std::unique_ptr<engine::CWinFont> &win_font,
+                             std::string_view id) {
+        win_font = makeOsFont(id, 1.0F);
+        if (win_font) {
+            font.setWinFont(*win_font);
+        }
     };
-    medium_win_font_ = make(kMediumOsFont);
-    medium_font_->setWinFont(*medium_win_font_);
-    theme_win_font_ = make(kThemeOsFont);
-    theme_font_->setWinFont(*theme_win_font_);
-    tiny_win_font_ = make(kTinyOsFont);
-    tiny_font_->setWinFont(*tiny_win_font_);
-    debug_win_font_ = make(kDebugOsFont);
-    small_editor_font_->setWinFont(*debug_win_font_);
+    give(*medium_font_, medium_win_font_, kMediumId);
+    give(*theme_font_, theme_win_font_, kThemeId);
+    give(*tiny_font_, tiny_win_font_, kTinyId);
+    give(*small_editor_font_, debug_win_font_, kSmallEditorId);
 }
 
 void CDFont::setOsFontScale(float scale) {
     const std::array<engine::CBitFont *, 4> fonts{medium_font_.get(), theme_font_.get(),
                                                   tiny_font_.get(), small_editor_font_.get()};
+    constexpr std::array<std::string_view, 4> kIds{kMediumId, kThemeId, kTinyId, kSmallEditorId};
     const bool scaled = use_os_fonts_ && std::fabs(scale - 1.0F) >= kUnscaledTolerance;
     for (std::size_t i = 0; i < fonts.size(); ++i) {
         std::unique_ptr<engine::CWinFont> &win_font = scaled_win_fonts_.at(i);
         if (scaled) {
-            const SOsFontSize &size = kOsFontSizes.at(i);
-            win_font =
-                makeOsFont(scaleLength(size.height, scale), scaleLength(size.y_offset1, scale),
-                           scaleLength(size.y_offset2, scale));
+            win_font = makeOsFont(kIds.at(i), scale);
         } else {
             win_font.reset();
         }
@@ -166,6 +161,7 @@ void CDFont::freeFonts() {
     console_font_.reset();
     editor_tools_.setEditorFont(nullptr);
     micro_font_.reset();
+    extra_fonts_.clear();
     medium_win_font_.reset();
     tiny_win_font_.reset();
     theme_win_font_.reset();
@@ -196,8 +192,11 @@ void CDFont::setMenuFontChoice(EMenuFontChoice choice) {
 }
 
 engine::CBitFont *CDFont::getMenuFont() const {
-    return menu_font_choice_ == EMenuFontChoice::Small ? small_editor_font_.get()
-                                                       : theme_font_.get();
+    if (!content_.menu) {
+        common::displayErrorAndQuit("No package gives the menus' layout");
+    }
+    return &findFont(menu_font_choice_ == EMenuFontChoice::Small ? content_.menu->text_font_small
+                                                                 : content_.menu->text_font_large);
 }
 
 engine::CBitFont *CDFont::getMediumFont() const {
@@ -222,6 +221,24 @@ engine::CBitFont *CDFont::getConsoleFont() const {
 
 engine::CBitFont *CDFont::getMicroFont() const {
     return micro_font_.get();
+}
+
+engine::CBitFont &CDFont::findFont(std::string_view id) const {
+    const std::array fonts{std::pair{kMediumId, medium_font_.get()},
+                           std::pair{kTinyId, tiny_font_.get()},
+                           std::pair{kThemeId, theme_font_.get()},
+                           std::pair{kSmallEditorId, small_editor_font_.get()},
+                           std::pair{kConsoleId, console_font_.get()},
+                           std::pair{kMicroId, micro_font_.get()}};
+    for (const auto &[name, font] : fonts) {
+        if (id == name && font != nullptr) {
+            return *font;
+        }
+    }
+    if (const auto extra = extra_fonts_.find(id); extra != extra_fonts_.end()) {
+        return *extra->second;
+    }
+    common::displayErrorAndQuit(std::format("No font {} is loaded", id));
 }
 
 } // namespace nocturne::core

@@ -104,8 +104,8 @@ CVector3f * __stack3_esi core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor 
     }
     break;
   default:
-    g_CHAR_PTR_01d71de0 = "..\\core\\door.cpp";
-    g_INT_01d71de4 = 0x37e;
+    g_CurrentFilename = "..\\core\\door.cpp";
+    g_CurrentLineNumber = 894;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDoor::getOpenStandPos - invalid doorType");
   }
   local_90[3] = (this_ptr->base).location.position.y;

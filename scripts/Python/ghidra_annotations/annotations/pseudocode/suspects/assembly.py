@@ -4,7 +4,7 @@ level, unrolled rep-movs/stos block reconstruction, and cave-copy detection."""
 
 import bisect
 import re
-from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALLEES
+from ghidra_annotations.annotations.pseudocode.pass_by_value import byvalue_callee
 from ._common import (
     SUSPECT_SEVERITY, _find_global_at, _find_global_in_range, _normalize_addr
 )
@@ -12,6 +12,19 @@ from ._structtypes import (
     _SFO_SIG_RE, _sfo_resolve_var_types, resolve_access_path_type
 )
 
+
+# These detectors read two forms of the same listing. The export hands them
+# `generate_assembly_code_rich` text, where an instruction is `// ADDR: INSTR`
+# and its notes follow it as `//   XREF to: ...` and `//   Label: ...` lines.
+# The on-disk `.asm` writes the instruction as `INSTR ; ADDR` and the notes as
+# `;   XREF to: ...` lines. A note is never an instruction in either form.
+_RICH_INSTR_RE = re.compile(r'//\s*[0-9a-fA-F]{6,8}:')
+
+
+def _is_asm_note(line):
+    """True for a note line of either listing form (see _RICH_INSTR_RE)."""
+    s = line.strip()
+    return s.startswith(';') or (s.startswith('//') and not _RICH_INSTR_RE.match(s))
 
 
 
@@ -62,8 +75,7 @@ def identify_assembly_suspects(assembly_code, func_calls=None):
     mmx_instructions = set()
 
     for line_num, line in enumerate(lines, 1):
-        line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
+        if not line.strip() or _is_asm_note(line):
             continue
 
         # Check for MMX instructions
@@ -75,15 +87,14 @@ def identify_assembly_suspects(assembly_code, func_calls=None):
                 first_mmx_line = line_num
 
         # Also check for MM register usage
-        if mm_reg_pattern.search(line) and not mmx_found:
+        if not mmx_found and mm_reg_pattern.search(line):
             mmx_found = True
-            if first_mmx_line is None:
-                first_mmx_line = line_num
+            first_mmx_line = line_num
 
     # Add a single suspect for MMX usage (not one per instruction)
     if mmx_found:
         suspects.append({
-            'line': first_mmx_line or 1,
+            'line': first_mmx_line,
             'type': 'mmx_assembly',
             'match': ', '.join(sorted(mmx_instructions)[:5]) if mmx_instructions else 'MMX',
             'text': 'Function uses MMX instructions',
@@ -96,8 +107,7 @@ def identify_assembly_suspects(assembly_code, func_calls=None):
     first_cpuid_line = None
 
     for line_num, line in enumerate(lines, 1):
-        line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
+        if not line.strip() or _is_asm_note(line):
             continue
 
         if cpuid_pattern.search(line):
@@ -114,21 +124,17 @@ def identify_assembly_suspects(assembly_code, func_calls=None):
         if eflags_manip:
             desc += ' with EFLAGS manipulation'
         suspects.append({
-            'line': first_cpuid_line or 1,
+            'line': first_cpuid_line,
             'type': 'cpuid_assembly',
             'match': 'CPUID',
             'text': 'Function uses CPUID instruction',
             'description': desc + ' - expected unusual decompilation patterns'
         })
 
-    # Check for by-value struct passing by matching called function addresses
+    # Check for by-value struct passing by matching called function names
     # against BYVALUE_CALLEES (pass_by_value.py).
     if func_calls:
-        matched_callees = []
-        for call in func_calls:
-            addr = call.get('addr', '').lower().lstrip('0') or '0'
-            if addr in BYVALUE_CALLEES:
-                matched_callees.append(BYVALUE_CALLEES[addr])
+        matched_callees = [name for name in map(byvalue_callee, func_calls) if name]
         if matched_callees:
             suspects.append({
                 'line': 1,
@@ -186,24 +192,17 @@ def identify_displaced_global_access(assembly_code, global_interval_map=None):
 
     for line_num, line in enumerate(lines, 1):
         line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
+        if not line_stripped or _is_asm_note(line):
             continue
 
-        # Extract instruction address if present (format: "INSTR ... ; 0xADDR")
-        instr_addr = ''
-        semi_idx = line.rfind(';')
-        if semi_idx >= 0:
-            addr_part = line[semi_idx + 1:].strip().split()[0] if line[semi_idx + 1:].strip() else ''
-            if addr_part and all(c in '0123456789abcdefABCDEF' for c in addr_part):
-                instr_addr = addr_part
+        # The instruction's address, in either listing form
+        addr_m = _ASM_LINE_ADDR_RE.search(line)
+        instr_addr = addr_m.group(1) if addr_m else ''
 
         for m in _SIB_PATTERN.finditer(line):
-            scale_str, disp_str = m.group(1), m.group(2)
-            try:
-                scale = int(scale_str, 16)
-                disp = int(disp_str, 16)
-            except ValueError:
-                continue
+            # Both groups are hex digits only, so neither int() can fail
+            scale = int(m.group(1), 16)
+            disp = int(m.group(2), 16)
 
             # Skip tiny scales (not array indexing) or unreasonable ones
             if scale < 2 or scale > 64:
@@ -303,7 +302,7 @@ _UNREF_STRUCT_SIZES = {
 
 
 _UNREF_DECL_RE = re.compile(
-    r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*;\s*$")
+    r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*(\[\s*\d+\s*\])?\s*;\s*$")
 
 
 _CAVE_SRC_RE = re.compile(r"MOV\s+ECX,\s*dword ptr\s*\[ESI")
@@ -356,11 +355,12 @@ def _matrix_is_produced(code, name):
     of a buildMatrix* call or the third (output) arg of multiplyMatrix3x4.
     Distinguishes a *stale* read (produced earlier — flagged by the tertiary
     pass) from an *uninitialised* read (never produced — already covered by the
-    primary/secondary passes). `\\s` spans newlines so wrapped calls match."""
+    primary/secondary passes). Both patterns span newlines, so wrapped calls
+    match."""
     n = re.escape(name)
     return bool(
         re.search(r"buildMatrix\w*\s*\(\s*&\s*" + n + r"\b", code)
-        or re.search(r"multiplyMatrix3x4\w*\([^;\n]*,\s*&\s*" + n + r"\s*\)",
+        or re.search(r"multiplyMatrix3x4\w*\([^;]*,\s*&\s*" + n + r"\s*\)",
                      code))
 
 
@@ -390,10 +390,10 @@ def _find_cave_copy_blocks(asm_code):
     consec = 0
     sizes = []
     for line in asm_code.split("\n"):
-        # Comment-only lines (`; Label: LAB_...` after a jump target's first
+        # Note lines (the `Label: LAB_...` after a jump target's first
         # instruction, XREF notes) do not break a run. A cave is always a jump
         # target, so without this every 12-byte cave copy splits at 1 + 5 lines.
-        if line.lstrip().startswith(';'):
+        if _is_asm_note(line):
             continue
         if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
             consec += 1
@@ -408,22 +408,12 @@ def _find_cave_copy_blocks(asm_code):
 
 
 
-def _count_cave_copy_blocks(asm_code):
-    """Backwards-compatible wrapper: count of 48-byte (CMatrix3x4f) cave
-    blocks. Kept for any external callers; new code should use
-    `_find_cave_copy_blocks` and inspect the returned sizes directly.
-    """
-    return sum(1 for s in _find_cave_copy_blocks(asm_code) if s >= 48)
-
-
-
-
 _OUT_PARAM_NAME_RE = re.compile(r"(?:^|_)(out|dst|dest|result)",
                                 re.IGNORECASE)
 
 
 _CALLEE_SIG_RE = re.compile(
-    r";\s*([A-Za-z_][\w:]*(?:\s*\*)?)\s+([\w.]*_FUN_[0-9a-fA-F]+)\s*\((.*)\)\s*$")
+    r";\s*([A-Za-z_][\w:]*(?:\s*\*)?)\s+[\w.]*_FUN_([0-9a-fA-F]+)\s*\((.*)\)\s*$")
 
 
 
@@ -465,12 +455,9 @@ def _parse_callee_signatures(assembly_code):
         m = _CALLEE_SIG_RE.search(line)
         if not m:
             continue
-        rettype, name, params = m.group(1), m.group(2), m.group(3)
+        rettype, fun_addr, params = m.group(1), m.group(2), m.group(3)
         ret_base = rettype.replace(" ", "")
         if "*" not in ret_base:
-            continue
-        am = re.search(r"_FUN_([0-9a-fA-F]+)", name)
-        if not am:
             continue
         parsed = []  # (base_type, name)
         for p in _split_top_level(params):
@@ -481,20 +468,80 @@ def _parse_callee_signatures(assembly_code):
             parsed.append(("".join(toks[:-1]), toks[-1]))
         ptr_idx = [i for i, (t, _n) in enumerate(parsed) if t == ret_base]
         if len(ptr_idx) == 1:
-            sigs[am.group(1)] = ptr_idx[0]
+            sigs[fun_addr] = ptr_idx[0]
         elif len(ptr_idx) > 1:
             named = [i for i in ptr_idx if _OUT_PARAM_NAME_RE.search(parsed[i][1])]
             if len(named) == 1:
-                sigs[am.group(1)] = named[0]
+                sigs[fun_addr] = named[0]
     return sigs
 
 
 
 
-def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
+def _statement_at(lines, idx):
+    """(first line, last line, joined text) of the statement lines[idx] is in.
+
+    Walks back to the line after the previous statement's end (`;`, a brace, a
+    label's `:` or a blank line) and forward to the terminating `;`, so a call
+    whose arguments wrap across lines is whole.
+    """
+    start, end = idx, idx
+    while start > 0:
+        prev = lines[start - 1].rstrip()
+        if not prev or prev.endswith((';', '{', '}', ':')):
+            break
+        start -= 1
+    while end < len(lines) - 1 and ';' not in lines[end]:
+        end += 1
+    return start, end, " ".join(lines[k].strip() for k in range(start, end + 1))
+
+
+def _returned_output_capture(lines, idx, arg_re, callee_out_arg):
+    """True when the statement at lines[idx] is `LHS = callee(...)` with the
+    argument arg_re matches at the callee's returned-output position, and LHS
+    is read outside that statement."""
+    start, end, stmt = _statement_at(lines, idx)
+    m = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*[\w:]*_FUN_([0-9a-fA-F]+)\s*\(",
+                 stmt)
+    if not m:
+        return False
+    lhs = m.group(1)
+    out_arg = callee_out_arg.get(m.group(2))
+    if out_arg is None:
+        return False
+    # Locate the argument's position in the call; the match ends on its
+    # opening parenthesis.
+    open_paren = m.end() - 1
+    close_paren = stmt.rfind(")")
+    if close_paren < open_paren:
+        return False
+    args = _split_top_level(stmt[open_paren + 1:close_paren])
+    arg_idx = next((i for i, a in enumerate(args) if arg_re.search(a)), None)
+    if arg_idx != out_arg:
+        return False
+    lhs_re = re.compile(r"\b" + re.escape(lhs) + r"\b")
+    return any(lhs_re.search(line) for j, line in enumerate(lines)
+               if not start <= j <= end)
+
+
+def _passed_as_argument(stmt, arg_re):
+    """True when some call in stmt has a top-level argument matching arg_re."""
+    for m in _CALL_RE.finditer(stmt):
+        depth, start = 0, m.end()
+        for k in range(m.end() - 1, len(stmt)):
+            depth += {'(': 1, ')': -1}.get(stmt[k], 0)
+            if depth == 0:
+                if any(arg_re.match(a) for a in _split_top_level(stmt[start:k])):
+                    return True
+                break
+    return False
+
+
+def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg, arg_re=None):
     """True when `var_name`'s single use is `LHS = callee(... &var_name ...)`,
     `&var_name` sits at the callee's returned-output argument position, and the
-    captured return `LHS` is read elsewhere.
+    captured return `LHS` is read elsewhere. A use `p = &var_name;` counts when
+    some `LHS = callee(... p ...)` passes `p` there instead.
 
     Such a local is an output buffer the callee fills and returns; the result
     is read via the `LHS` alias, so the local only LOOKS unreferenced — it is
@@ -502,41 +549,20 @@ def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
     arg (a different, non-output position → not excluded here) or a dead OUTPUT
     whose return is never captured/used (no live `LHS` → not excluded here), so
     this exclusion leaves both halves of a real bug flagged.
+
+    arg_re, when given, is how the argument is written (an array's bare name);
+    by default `&var_name`.
     """
-    start, end = use_idx, use_idx
-    # Reconstruct the whole statement: walk back to its start and forward to
-    # the terminating `;` so a call whose args wrap across lines is complete.
-    while start > 0:
-        prev = lines[start - 1].rstrip()
-        if (not prev or prev.endswith((';', '{', '}', ':'))):
-            break
-        start -= 1
-    while end < len(lines) - 1 and ';' not in lines[end]:
-        end += 1
-    stmt = " ".join(lines[k].strip() for k in range(start, end + 1))
-    m = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*([\w:]*_FUN_[0-9a-fA-F]+)\s*\(",
-                 stmt)
-    if not m:
-        return False
-    lhs, callee = m.group(1), m.group(2)
-    am = re.search(r"_FUN_([0-9a-fA-F]+)", callee)
-    out_arg = callee_out_arg.get(am.group(1)) if am else None
-    if out_arg is None:
-        return False
-    # Locate `&var_name`'s argument position in the call.
-    open_paren = stmt.find("(", m.end() - 1)
-    close_paren = stmt.rfind(")")
-    if open_paren < 0 or close_paren < open_paren:
-        return False
-    args = _split_top_level(stmt[open_paren + 1:close_paren])
-    var_re = re.compile(r"&\s*" + re.escape(var_name) + r"\b")
-    arg_idx = next((i for i, a in enumerate(args) if var_re.search(a)), None)
-    if arg_idx != out_arg:
-        return False
-    lhs_re = re.compile(r"\b" + re.escape(lhs) + r"\b")
-    stmt_idx = set(range(start, end + 1))
-    return any(lhs_re.search(line) for j, line in enumerate(lines)
-               if j not in stmt_idx)
+    if arg_re is not None:
+        return _returned_output_capture(lines, use_idx, arg_re, callee_out_arg)
+    alias = _ADDR_ALIAS_RE.match(_statement_at(lines, use_idx)[2])
+    if not alias:
+        return _returned_output_capture(
+            lines, use_idx, re.compile(r"&\s*" + re.escape(var_name) + r"\b"), callee_out_arg)
+    alias_re = re.compile(r"^\s*" + re.escape(alias.group(1)) + r"\s*$")
+    word_re = re.compile(r"\b" + re.escape(alias.group(1)) + r"\b")
+    return any(_returned_output_capture(lines, j, alias_re, callee_out_arg)
+               for j, line in enumerate(lines) if j != use_idx and word_re.search(line))
 
 
 
@@ -550,6 +576,15 @@ def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
 # → local_60.x/.y left garbage → every world position wrong → env lighting dead.
 _PARTIAL_FIELD_COPY_RE = re.compile(
     r"^\s*(\w+)\.(\w+)\s*=\s*(\w+)\.(\w+)\s*;\s*$")
+
+
+# A call: a name then its argument list. A cast's `(` follows no name, and a
+# control keyword's or sizeof's is not a call.
+_CALL_RE = re.compile(r"\b(?!(?:if|while|for|switch|return|sizeof)\b)\w+\s*\(")
+
+
+# `p = &local;` or `p = (T *)&local;`: the address kept in a pointer.
+_ADDR_ALIAS_RE = re.compile(r"\s*([A-Za-z_]\w*)\s*=\s*(?:\([^()]*\)\s*)?&\s*\w+\s*;\s*$")
 
 
 def identify_missing_cave_copy(decompiled_code, assembly_code):
@@ -598,7 +633,8 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         return suspects
     callee_out_arg = _parse_callee_signatures(assembly_code)
     lines = decompiled_code.split('\n')
-    decls = []
+    decls = []          # scalar struct locals, which every pass uses
+    array_decls = []    # struct arrays, only candidates for the pair below
     for i, line in enumerate(lines):
         m = _UNREF_DECL_RE.match(line)
         if not m:
@@ -606,31 +642,51 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         type_name, var_name = m.group(1), m.group(2)
         if type_name not in eligible_types:
             continue
-        decls.append((i, type_name, var_name))
+        (array_decls if m.group(3) else decls).append((i, type_name, var_name))
     candidates = []
-    for decl_line, type_name, var_name in decls:
+    arrays = {v for _, _, v in array_decls}
+    for decl_line, type_name, var_name in sorted(decls + array_decls):
+        is_array = var_name in arrays
         pattern = re.compile(r"\b" + re.escape(var_name) + r"\b")
         uses = []
         for j, line in enumerate(lines):
             if j == decl_line:
                 continue
-            if pattern.search(line):
-                uses.append((j, line))
+            # Every mention counts: `f(&a), a.z` on one line is two uses
+            uses.extend((j, line) for _ in pattern.findall(line))
         if len(uses) != 1:
             continue
         use_line_idx, use_line = uses[0]
-        if not re.search(r"&\s*" + re.escape(var_name) + r"\b", use_line):
-            continue
-        if '(' not in use_line and (use_line_idx == 0
-                                    or '(' not in lines[use_line_idx - 1]):
-            continue
+        stmt = _statement_at(lines, use_line_idx)[2]
+        if is_array:
+            # An array decays to its address: `f(..., local_5c)` hands the
+            # callee the whole array, and the cave copies an element out of it
+            # (msnedit screenToWorldPosition: `local_38 = local_5c[0];`).
+            arg_re = re.compile(r"^\s*(?:&\s*)?" + re.escape(var_name)
+                                + r"(?:\s*\[\s*0\s*\])?\s*$")
+            if not _CALL_RE.search(stmt) or not _passed_as_argument(stmt, arg_re):
+                continue
+        else:
+            if not re.search(r"&\s*" + re.escape(var_name) + r"\b", use_line):
+                continue
+            # Passed to a call, wrapped or not, or kept in a pointer that is (the
+            # `pCVar3 = &local_10c;` Ghidra writes before passing pCVar3).
+            if not (_CALL_RE.search(stmt) or _ADDR_ALIAS_RE.match(stmt)):
+                continue
+            arg_re = None
         # Skip output buffers the callee fills and returns (result read via the
         # captured-return alias, not a dropped cave copy). See helper docstring.
         if _is_returned_output_buffer(lines, use_line_idx, var_name,
-                                      callee_out_arg):
+                                      callee_out_arg, arg_re):
             continue
         candidates.append((decl_line, type_name, var_name))
-    cave_blocks = sum(1 for s in _find_cave_copy_blocks(assembly_code) if s >= 48)
+    block_sizes = _find_cave_copy_blocks(assembly_code)
+
+    def cave_blocks(type_name):
+        """How many of the .asm's cave copies are this type's size."""
+        size = 48 if type_name == 'CMatrix3x3f' else _UNREF_STRUCT_SIZES[type_name]
+        return block_sizes.count(size)
+
     # Primary pass: two-or-more declared struct locals, each passed once by
     # address with no other reference — the classic dead-output / uninit-input
     # pair. Requires ≥2 to avoid flagging an ordinary single output-param local.
@@ -639,19 +695,20 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
             suspects.append({
                 'line': decl_line + 1,
                 'type': 'missing_cave_copy',
-                'match': "{type} {var}; ... f(&{var}, ...);".format(
+                'match': ("{type} {var}[]; ... f({var}, ...);" if var_name in arrays
+                          else "{type} {var}; ... f(&{var}, ...);").format(
                     type=type_name, var=var_name),
                 'text': lines[decl_line].strip()[:120],
                 'description': (
                     "Struct-type local `{var}` ({type}) is declared and passed "
                     "once by address with no other reference; the `.asm` has "
-                    "{blocks} cave-block struct copies that the decompile "
+                    "{blocks} cave-block struct copies of its size that the decompile "
                     "doesn't reflect. Ghidra dropped a post-call memcpy "
                     "(`local_dst = local_src;`) leaving one local uninitialized "
                     "at runtime. See §20 — typical fix is to pass the real "
                     "source local directly instead of the uninitialized "
                     "scratch.").format(
-                        var=var_name, type=type_name, blocks=cave_blocks),
+                        var=var_name, type=type_name, blocks=cave_blocks(type_name)),
                 'severity': 'moderate',
             })
     # Secondary pass: stack0x-orphaned cave source. Ghidra sometimes emits the
@@ -720,9 +777,9 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
     # Tertiary pass: "stale matrix" read by an orientation consumer (an
     # overwrite-dropped cave copy whose destination was pre-written). See the
     # comment on `_MULT_OUT_RE` above. Gated on a 48-byte (CMatrix3x4f) cave
-    # block so it only fires where Watcom emitted a matrix copy.
+    # block so it only fires where Watcom emitted a matrix copy. It flags a
+    # consumer call, which the passes above (they flag declarations) never do.
     if 48 in cave_sizes:
-        flagged_lines = {s['line'] for s in suspects}
         consumers = []  # (line_idx, stale_matrix_name)
         for j, line in enumerate(lines):
             mc = _ORIENT_CONSUMER_RE.search(line)
@@ -740,15 +797,11 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
             # fresh matrix's orientation IS taken and there is no stale read.
             if any(stale == out for _, stale in consumers):
                 continue
-            # First orientation consumer shortly after the multiply.
-            stale, cons_idx = None, None
-            for j, st in consumers:
-                if i < j <= i + 25:
-                    stale, cons_idx = st, j
-                    break
-            if stale is None or stale == out:
-                continue
-            if (cons_idx + 1) in flagged_lines:
+            # First orientation consumer shortly after the multiply. It is not
+            # OUT, which feeds no consumer (checked above).
+            stale, cons_idx = next(((st, j) for j, st in consumers if i < j <= i + 25),
+                                   (None, None))
+            if stale is None:
                 continue
             # STALE must be a real, earlier-produced matrix (stale, not uninit;
             # the uninit case is the primary/secondary passes' job).
@@ -781,8 +834,8 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
     # eligible struct type (size matches a cave block), A is passed by address to
     # a call, A has NO OTHER field assignment (only the one truncated field), and
     # B is a distinct struct that was itself filled by a call (`&B` appears) —
-    # keeping this a struct-copy shape, not a scalar extraction.
-    flagged_lines = {s['line'] for s in suspects}
+    # keeping this a struct-copy shape, not a scalar extraction. The earlier
+    # passes flag declarations and consumer calls, never an `A.F = B.F;` line.
     eligible_decl = {v: (dl, t) for dl, t, v in decls}
     for i, line in enumerate(lines):
         m = _PARTIAL_FIELD_COPY_RE.match(line)
@@ -792,8 +845,6 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         if dst == src or dfield != sfield or dst not in eligible_decl:
             continue
         decl_line, type_name = eligible_decl[dst]
-        if (i + 1) in flagged_lines:
-            continue
         dst_addr_re = re.compile(r"&\s*" + re.escape(dst) + r"\b")
         src_addr_re = re.compile(r"&\s*" + re.escape(src) + r"\b")
         dst_field_write_re = re.compile(r"\b" + re.escape(dst) + r"\.\w+\s*=(?!=)")
@@ -836,6 +887,8 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
     if len(candidates) == 1:
         flagged_lines = {s['line'] for s in suspects}
         src_line, src_type, src_var = candidates[0]
+        if src_var in arrays:
+            src_var += '[0]'
         for decl_line, type_name, var_name in decls:
             if (type_name != src_type or var_name == src_var
                     or (decl_line + 1) in flagged_lines):
@@ -875,15 +928,7 @@ def _is_read_only_struct_local(lines, decl_line, var_name, callee_out_arg):
     for idx, line in enumerate(lines):
         if idx == decl_line or not var_re.search(line):
             continue
-        start, end = idx, idx
-        while start > 0:
-            prev = lines[start - 1].rstrip()
-            if not prev or prev.endswith((';', '{', '}', ':')):
-                break
-            start -= 1
-        while end < len(lines) - 1 and ';' not in lines[end]:
-            end += 1
-        stmt = " ".join(lines[k].strip() for k in range(start, end + 1))
+        stmt = _statement_at(lines, idx)[2]
         occurrences = len(var_re.findall(stmt))
         read_only = 0
         for cm in call_re.finditer(stmt):
@@ -1066,14 +1111,12 @@ _ASM_LINE_ADDR_RE = re.compile(r'(?:^\s*//\s*|;\s*)([0-9a-fA-F]{6,8})\b')
 def _collect_rep_sites(assembly_code, rep_re):
     """Return a list of (line_index, size_letter, raw_line) for each
     `.REP`-suffixed string instruction matched by `rep_re`. Skips comments
-    and blanks. line_index is 0-based into the .split('\\n') list.
+    and blanks. line_index is 0-based into the .split('\\n') list. The
+    callers return early on an empty listing.
     """
     sites = []
-    if not assembly_code:
-        return sites
     for i, line in enumerate(assembly_code.split('\n')):
-        stripped = line.strip()
-        if not stripped or stripped.startswith(';'):
+        if _is_asm_note(line):
             continue
         m = rep_re.search(line)
         if not m:
@@ -1108,8 +1151,7 @@ def _suppress_byte_tails(sites, lines, max_intervening=5):
             continue
         intervening = 0
         for j in range(cur_line_idx + 1, nxt_line_idx):
-            s = lines[j].strip()
-            if s and not s.startswith(';'):
+            if lines[j].strip() and not _is_asm_note(lines[j]):
                 intervening += 1
         if intervening <= max_intervening:
             paired.add(i + 1)
@@ -1255,7 +1297,7 @@ def _walkback_finds_edi_esp(lines, start_idx, max_instrs):
     j = start_idx - 1
     while j >= 0 and count < max_instrs:
         s = lines[j].strip()
-        if s and not s.startswith(';'):
+        if s and not _is_asm_note(s):
             count += 1
             if _RE_MOV_EDI_FROM_ESP.search(s):
                 return True
@@ -1458,7 +1500,8 @@ def identify_dropped_fyl2x(decompiled_code, assembly_code):
         m = _FYL2X_MUL_RE.search(line)
         if not m:
             continue
-        operand = m.group(3) or m.group(4) or '?'
+        # Whichever side matched names a non-empty operand
+        operand = m.group(3) or m.group(4)
         suspects.append({
             'line': idx,
             'type': 'dropped_fyl2x',

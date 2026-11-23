@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_icepick_cpp_005e53cf
 ;   TerminatedCString s_CIcePick_getCarryObjToBo_005e53e3
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -117,8 +117,8 @@ section .text
         ;   Label: LAB_004f1b21
     MOV ESI,0x289                       ; 004f1b26
     PUSH 0x5e53e3                       ; 004f1b2b | = "CIcePick::getCarryObjToBodyXForm - wr..."
-    MOV dword ptr [0x01d1d400],ECX      ; 004f1b30 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 004f1b36 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 004f1b30 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 004f1b36 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004f1b3c
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 004f1b41

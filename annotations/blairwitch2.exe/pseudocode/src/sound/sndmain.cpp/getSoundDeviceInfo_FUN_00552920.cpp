@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_00552920(int device_id,SSo
   bVar3 = 0;
   iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00552890();
   if ((device_id < 0) || (iVar1 <= device_id)) {
-    g_CHAR_PTR_01d046a0 = "..\\sound\\sndmain.cpp";
-    g_INT_01d046a4 = 0x1519;
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 5401;
     core_main_c_displayErrorAndQuit_FUN_004e4500("getSoundDeviceInfo - invalid index");
   }
   pSVar2 = g_SoundDevices + device_id;

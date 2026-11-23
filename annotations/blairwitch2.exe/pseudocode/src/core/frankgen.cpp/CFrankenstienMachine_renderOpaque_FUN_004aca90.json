@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 169,
+    "complexity_score": 184,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "bit_int_float_compare",
       "derived_field_index_pun",
+      "memcpy_oversized_source",
       "stack_param",
       "unrolled_memcpy"
     ],
@@ -252,6 +253,14 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_44[4]` (declared size 4) \u2014 overruns by 2. Likely Ghidra dropped explicit `auStack_44[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 31,
+      "match": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "memcpy_oversized_source"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x4400c000 is the IEEE 754 bit pattern of 515f. Rewrite in a .keep as a plain float compare against 515f.",
       "line": 42,
       "match": "(int)fVar1 < 0x4400c000",
@@ -284,7 +293,7 @@
       "type": "bit_int_float_compare"
     },
     {
-      "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x4 = 0x2b8, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBackgroundActor::model, CBat::course_filename[4], CBodyPart::bounding_box also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar2[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x4 = 0x2b8, which is exactly offsetof(CFrankenstienMachine, master_frame). Ghidra had no CFrankenstienMachine type here and reached the field by index arithmetic; write it as ((CFrankenstienMachine *)pCVar2)->master_frame (\u00a7de-pun/\u00a712).",
       "line": 24,
       "severity": "moderate",
       "text": "this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);",

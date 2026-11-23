@@ -430,5 +430,27 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSvetlana_processAI_FUN_005d9260.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 5,
+          "line": 102,
+          "message": "Value stored to 'fStack_18' is never read",
+          "path_notes": [
+            {
+              "line": 102,
+              "message": "Value stored to 'fStack_18' is never read"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -92,7 +92,7 @@ LAB_004bd3c3:
         pCVar6 = &local_33c;
         puVar9 = local_5ac;
         for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar9 = *(uint *)pCVar6->user_path;
+          *puVar9 = *(uint *)pCVar6->user_name;
           pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
           puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
         }
@@ -104,7 +104,7 @@ LAB_004bd3c3:
           puVar7 = local_474;
           for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-            *puVar7 = *(uint *)pCVar6->user_path;
+            *puVar7 = *(uint *)pCVar6->user_name;
             pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
             puVar7 = puVar7;
           }
@@ -124,7 +124,7 @@ LAB_004bd3c3:
           for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
             pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);
             puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-            *(uint *)pCVar8->user_path = *puVar5;
+            *(uint *)pCVar8->user_name = *puVar5;
             puVar5 = puVar5;
             pCVar8 = pCVar8;
           }

@@ -1259,5 +1259,111 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CMP3Decoder_decodeFrame_FUN_00534d40.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 24,
+          "line": 328,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 24,
+              "message": "'local_60d0' declared without an initial value"
+            },
+            {
+              "line": 65,
+              "message": "Assuming field 'error_flag' is equal to 0"
+            },
+            {
+              "line": 65,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "Assuming 'uVar10' is equal to 0"
+            },
+            {
+              "line": 67,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 71,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 71,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 75,
+              "message": "Assuming field 'error_flag' is equal to 0"
+            },
+            {
+              "line": 75,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming field 'channel_mode' is equal to 3"
+            },
+            {
+              "line": 81,
+              "message": "Assuming field 'layer' is not equal to 2"
+            },
+            {
+              "line": 81,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 115,
+              "message": "Field 'channel_mode' is not equal to 1"
+            },
+            {
+              "line": 115,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 126,
+              "message": "Assuming field 'mpeg_version' is equal to 0"
+            },
+            {
+              "line": 128,
+              "message": "Assuming field 'layer' is < 2"
+            },
+            {
+              "line": 128,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 129,
+              "message": "Assuming field 'layer' is not equal to 1"
+            },
+            {
+              "line": 129,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 326,
+              "message": "Assuming 0 is < field 'bitrate_index'"
+            },
+            {
+              "line": 326,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 328,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

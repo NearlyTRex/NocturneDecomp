@@ -424,7 +424,7 @@ LAB_004cfbd7:
   core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00415c80();
   core_game_cpp_freeCursorBitmaps_FUN_004dc180();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(this_ptr);
-  (*g_CKeys_PTR_0061f2a4->vtable->clearKeyPresses)(g_CKeys_PTR_0061f2a4);
+  (*g_CKeys_PTR_0061f2a4->vtable->clearKeypresses)(g_CKeys_PTR_0061f2a4);
   core_set_cpp_CDemonSet_clearLights_FUN_00551b90(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_0049c370(&g_CPickList);

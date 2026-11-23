@@ -19,8 +19,8 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_INT_01c50948
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   int g_INT_02c9931c
 ;   int g_INT_02c99328
@@ -81,8 +81,8 @@ section .text
     MOV ESI,0x5f9674                    ; 005acb6b | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x262                       ; 005acb70
     PUSH 0x5f968b                       ; 005acb75 | = "openScreenDevice - Unable to lock scr..."
-    MOV dword ptr [0x01d1d400],ESI      ; 005acb7a | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005acb80 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 005acb7a | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 005acb80 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005acb86
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005acb8b

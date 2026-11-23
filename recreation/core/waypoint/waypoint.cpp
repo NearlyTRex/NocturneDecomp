@@ -42,6 +42,9 @@ const CDemonActorType &CWayPoint::getActorType() const {
 }
 
 // nocedit 0x005ebe30
+// bw1 0x005ab990
+// bw2 0x00587d40
+// bw3 0x00579240
 std::unique_ptr<CDemonActor> CWayPoint::create(CActor & /*classes*/) {
     return std::make_unique<CWayPoint>();
 }

@@ -155,13 +155,13 @@
     "bw1.exe": {
       "addr": "0047f1b0",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "00468870",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     },
     "nocturne.exe": {
@@ -256,6 +256,384 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDrawSurface_clipLine_FUN_00487e20.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 11,
+          "line": 108,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 17,
+              "message": "'local_e2' declared without an initial value"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 28,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 28,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 35,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 35,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 38,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 41,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 48,
+              "message": "'bVar4' is not equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 57,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 60,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 98,
+              "message": "Assuming 'iVar6' is equal to 0"
+            },
+            {
+              "line": 98,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 107,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 107,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 108,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 11,
+          "line": 109,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 13,
+              "message": "'local_e1' declared without an initial value"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 28,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 28,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 35,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 35,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 38,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 41,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 48,
+              "message": "'bVar4' is not equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 57,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 62,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 74,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 74,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 107,
+              "message": "'bVar3' is equal to 0"
+            },
+            {
+              "line": 107,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 109,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        },
+        {
+          "checker": "core.uninitialized.Assign",
+          "column": 11,
+          "line": 123,
+          "message": "Assigned value is garbage or undefined",
+          "path_notes": [
+            {
+              "line": 13,
+              "message": "'local_e1' declared without an initial value"
+            },
+            {
+              "line": 24,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 25,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 28,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 28,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 31,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 31,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 34,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 35,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 35,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 38,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 38,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 41,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 41,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 48,
+              "message": "'bVar3' is not equal to 0"
+            },
+            {
+              "line": 48,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "'bVar3' is not equal to 0"
+            },
+            {
+              "line": 57,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 61,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 62,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 74,
+              "message": "Assuming 'iVar4' is equal to 0"
+            },
+            {
+              "line": 74,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 107,
+              "message": "'bVar3' is not equal to 0"
+            },
+            {
+              "line": 107,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 123,
+              "message": "Assigned value is garbage or undefined"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
   },
   "suspects": []
 }

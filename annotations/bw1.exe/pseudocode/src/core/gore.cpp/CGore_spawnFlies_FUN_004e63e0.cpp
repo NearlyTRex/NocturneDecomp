@@ -20,8 +20,8 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004e63e0(CGore *this_ptr,CVe
     this_ptr_01 = core_flies_cpp_CFlies_ctor_FUN_004bfa60(this_ptr_00);
   }
   if (this_ptr_01 == (CFlies *)0x0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\gore.cpp";
-    g_INT_01d1d404 = 0x67d;
+    g_CurrentFilename = "..\\core\\gore.cpp";
+    g_CurrentLineNumber = 1661;
     core_main_c_displayErrorAndQuit_FUN_005030e0("Can't create flies!");
   }
   fVar2 = (float)60;

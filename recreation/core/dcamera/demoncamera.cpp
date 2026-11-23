@@ -117,6 +117,9 @@ void CDemonCamera::initLookupTable() {
 
 // The original left 4 KB spare past each buffer, and 16 bytes to align it.
 // nocedit 0x0044c190
+// bw1 0x0044cc30
+// bw2 0x0043b570
+// bw3 0x00448d70
 void CDemonCamera::init(int screen_height) {
     free();
     owners_.tables.screen_width = (screen_height * kAspectWidth) / kAspectHeight;
@@ -141,6 +144,9 @@ void CDemonCamera::init(int screen_height) {
 
 // deferred: forgetting the dirty rectangles, with pushRect and restoreZBufferRectArray
 // nocedit 0x0044c360
+// bw1 0x0044cdf0
+// bw2 0x0043b730
+// bw3 0x00448f30
 void CDemonCamera::free() {
     framebuffer_.clear();
     zbuffer_.clear();

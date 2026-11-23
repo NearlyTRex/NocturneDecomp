@@ -36,12 +36,18 @@ CCourse::CCourse(const engine::CDosIo &dosio) : dosio_(dosio) {}
 CCourse::~CCourse() = default;
 
 // nocedit 0x004426c0
+// bw1 0x00447ee0
+// bw2 0x00438c20
+// bw3 0x00444aa0
 void CCourse::free() {
     frames_.clear();
 }
 
 // A negative count asked the original for an impossible block, which was fatal.
 // nocedit 0x00442500
+// bw1 0x00447d50
+// bw2 0x00438a90
+// bw3 0x00444910
 void CCourse::allocMemory(int count) {
     free();
     frames_.assign(static_cast<std::size_t>(std::max(count, 0)), {});
@@ -49,6 +55,9 @@ void CCourse::allocMemory(int count) {
 
 // Fields a line doesn't hold are left zero; the original left them uninitialised.
 // nocedit 0x00442580
+// bw1 0x00447db0
+// bw2 0x00438af0
+// bw3 0x00444970
 void CCourse::load(std::string_view filename) {
     free();
     const std::optional<std::string> text = dosio_.readFile("data", filename);
@@ -81,6 +90,9 @@ void CCourse::load(std::string_view filename) {
 }
 
 // nocedit 0x00442710
+// bw1 0x00447f00
+// bw2 0x00438c40
+// bw3 0x00444ac0
 void CCourse::evaluate(float time, common::CVector3f &out_pos, common::CVector3f &out_euler) const {
     common::CQuaternion4f orient;
     interpolate(time, out_pos, orient);
@@ -91,6 +103,9 @@ void CCourse::evaluate(float time, common::CVector3f &out_pos, common::CVector3f
 // read through a null pointer for an empty course, and past the end when rounding wrapped time
 // up to exactly the length.
 // nocedit 0x004427a0
+// bw1 0x00447fb0
+// bw2 0x00438cf0
+// bw3 0x00444b70
 void CCourse::interpolate(float time, common::CVector3f &out_pos,
                           common::CQuaternion4f &out_orient) const {
     if (frames_.empty()) {

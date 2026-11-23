@@ -64,6 +64,8 @@ constinit const CDemonActorType CZombie::kType =
 //   rand, so netplay agrees on it (the decomp's nocturne_rng_sim), with
 //   CZombie::processDismemberment
 // nocedit 0x005f8fe0
+// bw1 0x005bab10
+// bw2 0x00595a90
 CZombie::CZombie(CActor &classes)
     : CEnemy(classes), classes_(classes),
       pickup_range_factor_(classes.getRandomFloatFromRange(kNearestReach, kFarthestReach)),
@@ -72,6 +74,9 @@ CZombie::CZombie(CActor &classes)
 }
 
 // nocedit 0x005fcc50
+// bw1 0x005bedf0
+// bw2 0x00599d70
+// bw3 0x0058d230
 CZombie::~CZombie() = default;
 
 // newzomb1.dfm's arms are named the other way about. A miner is drawn as transparent.
@@ -81,6 +86,7 @@ CZombie::~CZombie() = default;
 // deferred: no bleeding out, whether newzchik.dfm, zombho1.dfm or zombho2.dfm makes it female,
 //   and no sounds playing, with CZombie::process
 // nocedit 0x005f9140
+// bw1 0x005bac80
 void CZombie::setup() {
     CDeformableModelInstance &model = getModel();
     model.preCache();
@@ -111,12 +117,17 @@ const CDemonActorType &CZombie::getActorType() const {
 }
 
 // nocedit 0x005f8fa0
+// bw1 0x005baae0
+// bw2 0x00595a60
+// bw3 0x005888a0
 std::unique_ptr<CDemonActor> CZombie::create(CActor &classes) {
     return std::make_unique<CZombie>(classes);
 }
 
 // The speed is saved again after CEnemy's.
 // nocedit 0x005fbfd0
+// bw1 0x005be1e0
+// bw2 0x00599160
 void CZombie::archive(CActorArchive &actor_archive) {
     CEnemy::archive(actor_archive);
     archiveSpeed(actor_archive);

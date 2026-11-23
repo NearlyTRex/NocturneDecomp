@@ -18,8 +18,8 @@ between consecutive fixed points are then resolved two ways:
 
 Both are conjectures from *layout*.  Every candidate is then corroborated against
 raw PE bytes by diff_functions.py, which is independent evidence: a pair whose
-reloc-masked bodies come back identical / layout-drift / operand-change /
-const-change is almost certainly the same function.  Pairs that fail that check are
+reloc-masked bodies come back identical / layout-drift / frame-change /
+operand-change / const-change is almost certainly the same function.  Pairs that fail that check are
 written to a separate review file rather than into the mapping.
 
 Output is `sibling_manual_pairs.json` schema, so the pairs flow through the normal
@@ -42,7 +42,7 @@ from collections import Counter
 FUN = re.compile(r"(?:^|_)FUN_([0-9a-fA-F]+)$")
 # Body shapes that corroborate a layout conjecture. logic-change is deliberately
 # excluded: it is exactly what a WRONG pairing also looks like.
-PROVEN = ("identical", "layout-drift", "operand-change", "const-change")
+PROVEN = ("identical", "layout-drift", "frame-change", "operand-change", "const-change")
 
 
 def tu_map(root):

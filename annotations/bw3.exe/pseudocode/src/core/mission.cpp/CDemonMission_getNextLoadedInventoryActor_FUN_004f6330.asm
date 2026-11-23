@@ -15,8 +15,8 @@
 ;   TerminatedCString s_CDemonMission_getNextLoa_005c8716
 ;   TerminatedCString s_core_mission_cpp_005c874c
 ;   TerminatedCString s_CDemonMission_getNextLoa_005c8760
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -38,8 +38,8 @@ section .text
     MOV ECX,0x5c8702                    ; 004f6341 | = "..\\core\\mission.cpp"
     MOV ESI,0x18d                       ; 004f6346
     PUSH 0x5c8716                       ; 004f634b | = "CDemonMission::getNextLoadedInventory..."
-    MOV dword ptr [0x01d71de0],ECX      ; 004f6350 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 004f6356 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 004f6350 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 004f6356 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f635c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 004f6361
@@ -70,8 +70,8 @@ section .text
     MOV EAX,0x5c874c                    ; 004f639b | = "..\\core\\mission.cpp"
     MOV EDX,0x192                       ; 004f63a0
     PUSH 0x5c8760                       ; 004f63a5 | = "CDemonMission::getNextLoadedInventory..."
-    MOV [0x01d71de0],EAX                ; 004f63aa | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EDX      ; 004f63af | g_INT_01d71de4
+    MOV [0x01d71de0],EAX                ; 004f63aa | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EDX      ; 004f63af | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 004f63b5
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 004f63ba

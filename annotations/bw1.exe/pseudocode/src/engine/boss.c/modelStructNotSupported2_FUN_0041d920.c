@@ -9,8 +9,8 @@
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041d920(char *filename)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\engine\\boss.c";
-  g_INT_01d1d404 = 0x3a;
+  g_CurrentFilename = "..\\engine\\boss.c";
+  g_CurrentLineNumber = 58;
   core_main_c_displayErrorAndQuit_FUN_005030e0("modelStruct not supported");
   return (SMRGLHeaderExtended *)0x0;
 }

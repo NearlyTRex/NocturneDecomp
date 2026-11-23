@@ -49,6 +49,9 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
 
   iVar9 = core_charactr_cpp_CCharacter_processCharacter_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
+#if !NOCTURNE_AUTHENTIC_SUCCUBUS
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
+#endif
     return;
   }
   (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
@@ -264,6 +267,11 @@ LAB_005c6fd0:
   }
   iVar12 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                      (g_CEventListPtr,"succubusShutUp");
+#if !NOCTURNE_AUTHENTIC_SUCCUBUS
+  if ((this_ptr->base).base.base.lifecycle_state == ACTOR_DESTROYED) {
+    iVar12 = 1;
+  }
+#endif
   if (iVar12 == 0) {
     iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if ((iVar12 == 0) &&

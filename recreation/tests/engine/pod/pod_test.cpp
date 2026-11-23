@@ -73,6 +73,26 @@ TEST_F(CPodTest, InitLoadsOnlyWhileNothingIsMounted) {
     EXPECT_EQ(pod.loads, 1);
 }
 
+// The base chooses none, so its game is the install's; one already chosen isn't chosen again.
+TEST_F(CPodTest, InitWithoutAChoiceRunsTheInstallsGame) {
+    std::vector<SChosenGame> chosen;
+    pod_.setGameChosenHandler([&chosen](const SChosenGame &game) { chosen.push_back(game); });
+    pod_.init();
+    ASSERT_EQ(chosen.size(), 1U);
+    EXPECT_EQ(chosen[0].folder, "");
+    EXPECT_EQ(chosen[0].id, "");
+    pod_.init();
+    EXPECT_EQ(chosen.size(), 1U);
+}
+
+TEST_F(CPodTest, InitWithPodsMountedStillChoosesTheGame) {
+    int chosen = 0;
+    pod_.mount("ACT1.POD");
+    pod_.setGameChosenHandler([&chosen](const SChosenGame &) { ++chosen; });
+    pod_.init();
+    EXPECT_EQ(chosen, 1);
+}
+
 TEST_F(CPodTest, MountsInOrder) {
     pod_.mount("ACT1.POD");
     pod_.mount("ACT2.POD");

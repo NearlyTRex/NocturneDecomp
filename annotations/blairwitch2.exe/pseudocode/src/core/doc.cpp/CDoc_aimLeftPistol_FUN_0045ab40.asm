@@ -12,8 +12,8 @@
 ;   float g_FLOAT_005f5160 = 1.221730
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   int g_INT_01b4d264
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408d70
@@ -364,8 +364,8 @@ section .text
         ;   Label: LAB_0045afef
     MOV ESI,0x12a4                      ; 0045aff4
     PUSH 0x5d0577                       ; 0045aff9
-    MOV dword ptr [0x01d046a0],ECX      ; 0045affe | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 0045b004 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0045affe | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 0045b004 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0045b00a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0045b00f

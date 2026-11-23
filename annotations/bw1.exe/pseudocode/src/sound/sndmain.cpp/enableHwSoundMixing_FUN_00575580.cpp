@@ -16,8 +16,8 @@ void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_00575580(int enable)
     g_INT_00623300 = enable;
     return;
   }
-  g_CHAR_PTR_01d1d400 = "..\\sound\\sndmain.cpp";
-  g_INT_01d1d404 = 0x158f;
+  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+  g_CurrentLineNumber = 5519;
   core_main_c_displayErrorAndQuit_FUN_005030e0("enableHwSoundMixing - Can't do this while the device is open.");
   g_INT_00623300 = enable;
   return;

@@ -309,8 +309,8 @@ section .text
         ;   Label: default
     MOV EAX,0x183                       ; 00512094
     PUSH 0x5e16e0                       ; 00512099 | = "CPathMap::getDirection - Should never..."
-    MOV dword ptr [0x01d046a0],EDI      ; 0051209e | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 005120a4 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 0051209e | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 005120a4 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005120a9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005120ae

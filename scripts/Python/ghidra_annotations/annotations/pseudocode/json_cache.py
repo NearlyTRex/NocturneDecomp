@@ -151,6 +151,10 @@ class JsonCacheManager:
         """
         self._cache[json_path] = data
 
+    def function_entries(self):
+        """Every entry preloaded from the per-function files, in path order (list data only)."""
+        return [entry for path in sorted(self._cache) for entry in self._cache[path]]
+
     def get_global_cache(self):
         """Get global cache contents.
 

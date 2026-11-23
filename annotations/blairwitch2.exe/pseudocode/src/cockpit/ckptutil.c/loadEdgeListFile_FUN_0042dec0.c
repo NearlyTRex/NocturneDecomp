@@ -21,21 +21,21 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042dec0(char *filename,SEd
   p_Stack_14 = engine_dosio_cpp_getFile_FUN_00460c70("art",filename,"rb");
   if (p_Stack_14 == (_FILE *)0x0) {
     _sprintf(&stack0xffffff98,"Unable to open edge list file (%s).");
-    g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-    g_INT_01d046a4 = 0x4b4;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 1204;
     core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
   }
   SVar1 = _fread(&iStack_18,4,1,p_Stack_14);
   if (SVar1 != 1) {
     _sprintf(&stack0xffffff98,"Unable to read number of edge lists (%s).");
-    g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-    g_INT_01d046a4 = 0x4bd;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 1213;
     core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
   }
   if (iStack_18 != expected_count) {
     _sprintf(&stack0xffffff98,"Invalid number of edge lists in file (%s).");
-    g_INT_01d046a4 = 0x4c6;
-    g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 1222;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
   }
   iVar3 = 0;
@@ -45,8 +45,8 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042dec0(char *filename,SEd
       SVar1 = _fread(buffer,4,1,p_Stack_14);
       if (SVar1 != 1) {
         _sprintf(&stack0xffffff98,"Unable to read number of edges (%s).");
-        g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-        g_INT_01d046a4 = 0x4d1;
+        g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+        g_CurrentLineNumber = 1233;
         core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
       }
       if (edge_lists->edge_data != (SEdge *)0x0) {
@@ -58,15 +58,15 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042dec0(char *filename,SEd
         edge_lists->edge_data = pSVar2;
         if (pSVar2 == (SEdge *)0x0) {
           printf("\nUnable to allocate memory for edge list.\n");
-          g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d046a4 = 0x4e7;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 1255;
           core_main_c_displayErrorAndQuit_FUN_004e4500(acStack_64);
         }
         SVar1 = _fread(edge_lists->edge_data,size,1,p_Stack_14);
         if (SVar1 != 1) {
           _sprintf(&stack0xffffff98,"Unable to read edge list (%s).");
-          g_CHAR_PTR_01d046a0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d046a4 = 0x4ee;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 1262;
           core_main_c_displayErrorAndQuit_FUN_004e4500(&stack0xffffff98);
         }
       }

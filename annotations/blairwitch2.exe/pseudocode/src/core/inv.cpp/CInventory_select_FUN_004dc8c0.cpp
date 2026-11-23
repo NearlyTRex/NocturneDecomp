@@ -59,8 +59,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDe
                  core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (actor_ptr,g_CHealthItemClassInfo.name_hash);
       if (local_18 == (CHealthItem *)0x0) {
-        g_CHAR_PTR_01d046a0 = "..\\core\\inv.cpp";
-        g_INT_01d046a4 = 0x6c2;
+        g_CurrentFilename = "..\\core\\inv.cpp";
+        g_CurrentLineNumber = 1730;
         core_main_c_displayErrorAndQuit_FUN_004e4500("CInventory::select - Catch 22");
       }
       if ((float)98 < (g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).hit_points)
@@ -133,8 +133,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDe
   local_14 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0
                                 (actor_ptr,g_CAmmoClassInfo.name_hash);
   if (local_14 == (CAmmo *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\inv.cpp";
-    g_INT_01d046a4 = 0x6a3;
+    g_CurrentFilename = "..\\core\\inv.cpp";
+    g_CurrentLineNumber = 1699;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CInventory::select - Catch 22");
   }
   iVar2 = (*(((g_CHero_PTR_ARRAY_01cedee4[g_INT_01cedef4]->base).base.vtable._uh)->_uh).

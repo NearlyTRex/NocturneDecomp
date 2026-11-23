@@ -493,7 +493,7 @@
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'(SMRGLPrimitivePoly *)&in_stack_0000000c[5].location.position.y' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x6dc, which is exactly offsetof(CBoxActor, fade_timer). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)in_stack_0000000c)->fade_timer (\u00a7de-pun/\u00a712). Ambiguous: CGlass::broken_quads also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'(SMRGLPrimitivePoly *)&in_stack_0000000c[5].location.position.y' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x6dc, which is exactly offsetof(CGlass, broken_quads). Ghidra had no CGlass type here and reached the field by index arithmetic; write it as ((CGlass *)in_stack_0000000c)->broken_quads (\u00a7de-pun/\u00a712).",
       "line": 74,
       "severity": "moderate",
       "text": "poly = (SMRGLPrimitivePoly *)&in_stack_0000000c[5].location.position.y;",

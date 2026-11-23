@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 706,
+    "complexity_score": 707,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 416,
+    "pseudocode_lines": 417,
     "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_unreachable"
     ],
-    "total_lines": 1501
+    "total_lines": 1502
   },
   "cross_references": [
     {
@@ -670,7 +670,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 356,
+      "line": 357,
       "match": "(uint *)((int)g_SimFrameHistory",
       "severity": "moderate",
       "text": "if (local_2c == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc)) {",
@@ -678,7 +678,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 358,
+      "line": 359,
       "match": "(SSimFrame *)((int)g_SimFrameHistory",
       "severity": "moderate",
       "text": "dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar4 + -0xc);",
@@ -686,7 +686,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 393,
+      "line": 394,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -694,7 +694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 394,
+      "line": 395,
       "match": "(SPlayerInput *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -702,7 +702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 414,
+      "line": 415,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -718,7 +718,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 393,
+      "line": 394,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -726,7 +726,7 @@
     },
     {
       "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 394,
+      "line": 395,
       "match": "(int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SPlayerInput *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -734,7 +734,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 414,
+      "line": 415,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -782,7 +782,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 391,
+      "line": 392,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -790,7 +790,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 411,
+      "line": 412,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -798,7 +798,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 397,
+      "line": 398,
       "match": "local_18 = (T *)((local_18->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);",

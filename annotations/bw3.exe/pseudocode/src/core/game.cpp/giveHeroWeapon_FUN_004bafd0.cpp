@@ -17,8 +17,8 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004bafd0(char *class_name)
   (*((actor->vtable)._ub)->setup)(actor);
   pCVar1 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c840(actor,g_CWeaponClassInfo.name_hash);
   if (pCVar1 == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\game.cpp";
-    g_INT_01d71de4 = 0xc18;
+    g_CurrentFilename = "..\\core\\game.cpp";
+    g_CurrentLineNumber = 3096;
     core_main_c_displayErrorAndQuit_FUN_004e4330("giveHeroWeapon - This is not a weapon");
   }
   pCVar1[4].actor_name[8] = -0xc;

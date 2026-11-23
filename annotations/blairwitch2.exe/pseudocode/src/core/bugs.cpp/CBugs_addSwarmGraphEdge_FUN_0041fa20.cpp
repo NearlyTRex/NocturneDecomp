@@ -18,8 +18,8 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_0041fa20(CBugs *this_ptr,
     this_ptr->swarm_vertex_count = vertex_index + 1;
   }
   if (700 < this_ptr->swarm_vertex_count) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\bugs.cpp";
-    g_INT_01d046a4 = 0x1bd;
+    g_CurrentFilename = "..\\core\\bugs.cpp";
+    g_CurrentLineNumber = 445;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
   pSVar3 = this_ptr->swarm_vertices + vertex_index;

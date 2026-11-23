@@ -9,8 +9,8 @@
 int __cdecl support_codec_cpp_CInStreamPipe_tell_FUN_00443e70(CInStreamPipe *this_ptr)
 
 {
-  g_CHAR_PTR_01d1d400 = "..\\support\\codec.cpp";
-  g_INT_01d1d404 = 0x831;
+  g_CurrentFilename = "..\\support\\codec.cpp";
+  g_CurrentLineNumber = 2097;
   core_main_c_displayErrorAndQuit_FUN_005030e0("CInStreamPipe::tell - not allowed");
   return -1;
 }

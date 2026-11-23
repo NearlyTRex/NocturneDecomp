@@ -133,7 +133,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
         } while (iVar2 < this_ptr->collide_bone_count);
       }
     }
-    (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
+    (*g_CKeysPtr->vtable->clearKeypresses)(g_CKeysPtr);
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
     engine_special_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);

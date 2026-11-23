@@ -20,8 +20,8 @@
 ;   int g_WindowStackCount
 ;   int g_EditorFontMaxCharWidth
 ;   int g_INT_01c5bae4
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -47,8 +47,8 @@ section .text
     MOV ECX,0x5bcd25                    ; 0047ed61 | = "..\\shape\\edittool.cpp"
     MOV EBX,0xa7                        ; 0047ed66
     PUSH 0x5bcd3b                       ; 0047ed6b | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d71de0],ECX      ; 0047ed70 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBX      ; 0047ed76 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ECX      ; 0047ed70 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBX      ; 0047ed76 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0047ed7c
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0047ed81

@@ -457,8 +457,8 @@ LAB_00588fbb:
     else if (uVar10 < 0xc) {
       iVar8 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_0058bd50(this_ptr,2);
       if (iVar8 < 0) {
-        g_CHAR_PTR_01d71de0 = "..\\core\\zombie.cpp";
-        g_INT_01d71de4 = 0x21b;
+        g_CurrentFilename = "..\\core\\zombie.cpp";
+        g_CurrentLineNumber = 539;
         core_main_c_displayErrorAndQuit_FUN_004e4330("WTF!");
       }
       if ((this_ptr->base).base.carry_hands[iVar8].carry_actor != (CDemonActor *)0x0) {
@@ -478,8 +478,8 @@ LAB_00588fbb:
       if (uVar10 == 0xc) {
         iStack_7c = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_0058bd50(this_ptr,3);
         if (iStack_7c < 0) {
-          g_CHAR_PTR_01d71de0 = "..\\core\\zombie.cpp";
-          g_INT_01d71de4 = 0x232;
+          g_CurrentFilename = "..\\core\\zombie.cpp";
+          g_CurrentLineNumber = 562;
           core_main_c_displayErrorAndQuit_FUN_004e4330("WTF!");
         }
         pcStack_bc = (this_ptr->base).base.base.actor_name + iStack_7c * 0x78;

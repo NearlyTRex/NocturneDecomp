@@ -20,8 +20,8 @@
 ;   int g_INT_006141c0 = 0x8
 ;   void* g_PTR_00622010
 ;   void* g_SoftwareZBuffer
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -76,8 +76,8 @@ section .text
     MOV EDI,0x5ee164                    ; 005887f0 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0xef                        ; 005887f5
     PUSH 0x5ee17b                       ; 005887fa | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV dword ptr [0x01d046a0],EDI      ; 005887ff | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00588805 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 005887ff | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 00588805 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0058880b
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00588810
@@ -154,8 +154,8 @@ section .text
         ;   Label: LAB_005888b7
     MOV EBX,0xea                        ; 005888bc
     PUSH 0x5ee138                       ; 005888c1 | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01d046a0],ECX      ; 005888c6 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 005888cc | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 005888c6 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 005888cc | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005888d2
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 005888d7

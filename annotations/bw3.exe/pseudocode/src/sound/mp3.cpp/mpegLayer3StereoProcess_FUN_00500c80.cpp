@@ -443,8 +443,8 @@ LAB_00500e7c:
             }
             goto LAB_00500e7c;
           }
-          g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-          g_INT_01d71de4 = 0xa3a;
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 2618;
           core_main_c_displayErrorAndQuit_FUN_004e4330("Error in streo processing.  File: %s");
         }
         iVar10 = iVar10 + 1;

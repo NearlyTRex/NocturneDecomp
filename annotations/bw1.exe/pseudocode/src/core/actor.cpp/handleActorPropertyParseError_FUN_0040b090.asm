@@ -30,8 +30,8 @@
 ;   TerminatedCString s_Error_sing_actor_propert_005d29b9
 ;   int g_ActorReadingMode
 ;   CDemonActor* g_CurrentActorBeingProcessed
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
@@ -75,8 +75,8 @@ section .text
     MOV EDI,0x5d29a7                    ; 0040b0d3 | = "..\\core\\actor.cpp"
     MOV EBP,0x843                       ; 0040b0d8
     PUSH 0x5d29b9                       ; 0040b0dd | = "Error %sing actor property.\nActor na..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0040b0e2 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBP      ; 0040b0e8 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0040b0e2 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBP      ; 0040b0e8 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0040b0ee
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x18                        ; 0040b0f3

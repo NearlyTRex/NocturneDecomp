@@ -168,7 +168,7 @@
       "type": "negative_offset"
     },
     {
-      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x7d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x7d8, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar1)->light (\u00a7de-pun/\u00a712). Ambiguous: CSpiritMine::unused_7d8 also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x7d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x7d8, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar1)->light (\u00a7de-pun/\u00a712).",
       "line": 10,
       "severity": "moderate",
       "text": "((CDemonLight *)(pCVar1[1].base.actor_name + 4),0x100,0x100);",

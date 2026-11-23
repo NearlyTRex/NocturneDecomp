@@ -23,8 +23,8 @@
 ;   int g_AudioBitsPerSample = 0x10
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00575160
     MOV ECX,0x1479                      ; 00575165
     PUSH 0x5f41c9                       ; 0057516a | = "setSoundOutputMode - can't do this wh..."
-    MOV dword ptr [0x01d1d400],EDX      ; 0057516f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00575175 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 0057516f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00575175 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0057517b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00575180

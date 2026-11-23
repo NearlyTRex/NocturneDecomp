@@ -103,7 +103,7 @@ float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00520a60(CScat *this_ptr,CD
         }
       }
       (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                ((CDemonActor *)this_ptr,SUB84(in_stack_fffffea4,0));
+                ((CDemonActor *)this_ptr,SUB84(__BITCAST_UINT64(in_stack_fffffea4),0));
       puVar4 = auStack_b8;
       puVar5 = auStack_d8;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {

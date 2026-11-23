@@ -21,6 +21,9 @@ CWinRun::CWinRun(platform::IWindow &window, platform::IClock &clock, engine::CGa
 // clearInputUntilTick's is, saw the clock stand still for seconds; the fraction is carried to the
 // next call. A step too long for an int adds the x87's integer indefinite.
 // nocedit 0x005f2dc0
+// bw1 0x005b2420
+// bw2 0x0058e9e0
+// bw3 0x005806a0
 int CWinRun::getTime() {
     const std::uint64_t previous_counter = performance_counter_;
     performance_counter_ = clock_.getCounter();
@@ -33,10 +36,18 @@ int CWinRun::getTime() {
 
 // The quit is main's: it returns 1 once the box is closed.
 // nocedit 0x005f3920
+// bw1 0x005b3080
+// bw2 0x0058f5d0
+// bw3 0x00581300
 void CWinRun::displayMessageBoxAndQuit(const common::CFatalError &error) {
     window_.showMessageBox(
         std::format("{}\n\nFile: {}\nLine: {}", error.what(), error.getFile(), error.getLine()),
-        kApplicationTitle);
+        title_);
+}
+
+void CWinRun::setTitle(std::string_view title) {
+    title_ = title;
+    window_.setTitle(title);
 }
 
 } // namespace nocturne::wincore

@@ -14,8 +14,9 @@
 # of an already-defined string, so an integer constant cannot be mistaken for a
 # pointer unless it collides exactly with a string start.
 #
-# Report-first; --apply mutates + saves. Verify afterwards by re-running
-# audit_ghidra_fixups.py -- the MISSING-STRING-REF count should drop to 0.
+# Report-first; --apply snapshots the project, then mutates + saves. Verify
+# afterwards by re-running audit_ghidra_fixups.py -- the MISSING-STRING-REF
+# count should drop to 0.
 #
 # Usage (PyGhidra headless):
 #   python add_missing_string_references.py <project_dir> <project_name> [program_name]
@@ -29,34 +30,21 @@
 #@category Annotations
 
 import os
+import subprocess
 import sys
 import argparse
+import traceback
 from collections import Counter, defaultdict
 
-# Immediates below this are far more likely to be plain integers that happen to
-# collide with an address than real pointers.
-MIN_PLAUSIBLE_ADDR = 0x1000
+from audit_ghidra_fixups import collect_strings, unreferenced_string_immediates
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Only these mnemonics take an address as an immediate in normal compiler output
 # (load-address / push-address). Anything else scoring a hit is far more likely
 # to be arithmetic that collided with a string start, so it is reported under
 # UNEXPECTED-MNEMONIC and left alone unless --any-mnemonic is passed.
 ADDRESS_TAKING_MNEMONICS = {"MOV", "PUSH", "LEA"}
-
-
-def collect_strings(program):
-    """Map string start offset -> string value, for every defined string."""
-    out = {}
-    for data in program.getListing().getDefinedData(True):
-        if not data.hasStringValue():
-            continue
-        try:
-            value = data.getValue()
-        except Exception:
-            continue
-        if value is not None:
-            out[data.getAddress().getOffset()] = str(value)
-    return out
 
 
 def plan(program, strings, any_mnemonic):
@@ -67,49 +55,36 @@ def plan(program, strings, any_mnemonic):
       UNEXPECTED-MNEMONIC - immediate matched, but the mnemonic does not take
                             addresses; almost certainly a numeric coincidence
     """
-    from ghidra.program.model.scalar import Scalar
-
-    listing = program.getListing()
     fm = program.getFunctionManager()
-
+    sites, n_sites = unreferenced_string_immediates(program, strings)
     rows = []
-    n_sites = 0
-    for instr in listing.getInstructions(True):
+    for instr, op_index, val in sites:
         mnemonic = instr.getMnemonicString().upper()
-        for op_index in range(instr.getNumOperands()):
-            for obj in instr.getOpObjects(op_index):
-                if not isinstance(obj, Scalar):
-                    continue
-                val = obj.getUnsignedValue()
-                if val < MIN_PLAUSIBLE_ADDR or val not in strings:
-                    continue
-                n_sites += 1
-                if any(r.getToAddress() is not None
-                       and r.getToAddress().getOffset() == val
-                       for r in instr.getReferencesFrom()):
-                    continue  # already referenced
-                func = fm.getFunctionContaining(instr.getAddress())
-                eligible = any_mnemonic or mnemonic in ADDRESS_TAKING_MNEMONICS
-                rows.append({
-                    "at": str(instr.getAddress()),
-                    "op_index": op_index,
-                    "target": "%08x" % val,
-                    "mnemonic": mnemonic,
-                    "instr": str(instr),
-                    "func": func.getName() if func else "(no function)",
-                    "text": strings[val],
-                    "action": "ADD" if eligible else "UNEXPECTED-MNEMONIC",
-                })
-    rows.sort(key=lambda r: int(r["at"], 16))
+        func = fm.getFunctionContaining(instr.getAddress())
+        eligible = any_mnemonic or mnemonic in ADDRESS_TAKING_MNEMONICS
+        rows.append({
+            "at": str(instr.getAddress()),
+            "op_index": op_index,
+            "target": "%08x" % val,
+            "mnemonic": mnemonic,
+            "instr": str(instr),
+            "func": func.getName() if func else "(no function)",
+            "text": strings[val][0],
+            "action": "ADD" if eligible else "UNEXPECTED-MNEMONIC",
+        })
     return rows, n_sites
 
 
 def apply(program, rows):
-    """Create the missing references. Returns count actually added."""
+    """Create the missing references in one transaction. Returns the count added, or
+    None when the transaction failed and was rolled back.
+
+    Ghidra makes a new reference primary when its operand has no other, so an
+    existing hand-made reference keeps its display.
+    """
     from ghidra.program.model.symbol import RefType, SourceType
 
     ref_mgr = program.getReferenceManager()
-    listing = program.getListing()
     space = program.getAddressFactory().getDefaultAddressSpace()
 
     added = 0
@@ -119,29 +94,17 @@ def apply(program, rows):
         for r in rows:
             if r["action"] != "ADD":
                 continue
-            from_addr = space.getAddress(int(r["at"], 16))
-            to_addr = space.getAddress(int(r["target"], 16))
-            instr = listing.getInstructionAt(from_addr)
-            if instr is None:
-                r["action"] = "NO-INSTRUCTION"  # raced since planning
-                continue
-            # Only make it the primary reference when the operand has none,
-            # so an existing hand-made reference keeps its display.
-            had_ref = bool(instr.getReferencesFrom())
-            ref = ref_mgr.addMemoryReference(
-                from_addr, to_addr, RefType.DATA, SourceType.USER_DEFINED,
-                r["op_index"])
-            if not had_ref and ref is not None:
-                ref_mgr.setPrimary(ref, True)
+            ref_mgr.addMemoryReference(
+                space.getAddress(int(r["at"], 16)), space.getAddress(int(r["target"], 16)),
+                RefType.DATA, SourceType.USER_DEFINED, r["op_index"])
             added += 1
     except Exception as e:
         ok = False
         print("ERROR during apply: %s" % e)
-        import traceback
         traceback.print_exc()
     finally:
         program.endTransaction(tx, ok)
-    return added if ok else 0
+    return added if ok else None
 
 
 def write_report(out_path, program_name, rows, n_sites, applied):
@@ -170,7 +133,7 @@ def write_report(out_path, program_name, rows, n_sites, applied):
         lines.append("  %-56s %d site(s)" % (fname, len(sub)))
     lines.append("")
 
-    for action in ("UNEXPECTED-MNEMONIC", "NO-INSTRUCTION", "ADD"):
+    for action in ("UNEXPECTED-MNEMONIC", "ADD"):
         sub = [r for r in rows if r["action"] == action]
         if not sub:
             continue
@@ -186,7 +149,49 @@ def write_report(out_path, program_name, rows, n_sites, applied):
     return counts
 
 
-def main():
+def run(program, args, out_path):
+    """Report, and with --apply add the references and save. Returns the exit code."""
+    print("Collecting defined strings...")
+    strings = collect_strings(program)
+    print("  %d string(s)" % len(strings))
+
+    print("Scanning instructions...")
+    rows, n_sites = plan(program, strings, args.any_mnemonic)
+    counts = write_report(out_path, args.program_name, rows, n_sites, args.apply)
+
+    print("\n=== plan ===")
+    print("  scanned  %d site(s)" % n_sites)
+    for k, v in sorted(counts.items()):
+        print("  %-20s %d" % (k, v))
+    print("Report written to: %s" % out_path)
+
+    n_add = counts["ADD"]
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to execute.")
+        return 0
+    if not n_add:
+        print("\nNothing to add.")
+        return 0
+    print("\n[apply] adding %d reference(s)..." % n_add)
+    added = apply(program, rows)
+    if added is None:
+        print("Rolled back; nothing saved.")
+        return 1
+    from ghidra.util.task import ConsoleTaskMonitor
+    print("Added %d. Saving program database..." % added)
+    program.getDomainFile().save(ConsoleTaskMonitor())
+    print("Saved.")
+    return 0
+
+
+def snapshot(args):
+    cmd = [sys.executable, os.path.join(THIS_DIR, "snapshot_project.py"),
+           os.path.abspath(args.project_path), args.project_name, "--tag", "pre-string-refs"]
+    print("Snapshot: %s" % " ".join(cmd))
+    return subprocess.call(cmd) == 0
+
+
+def main(argv=None):
     p = argparse.ArgumentParser(
         description="Add missing Ghidra references for string addresses loaded as immediates.")
     p.add_argument("project_path")
@@ -197,54 +202,32 @@ def main():
                         "take an address immediate (default: report them only)")
     p.add_argument("--apply", action="store_true",
                    help="Create the references + save the program (default: report only)")
+    p.add_argument("--no-snapshot", action="store_true", help="--apply without a .gar snapshot first")
     p.add_argument("--out", default=None)
-    args = p.parse_args()
+    args = p.parse_args(argv)
 
     project_path = os.path.abspath(args.project_path)
     out_path = args.out or ("%s_string_references.txt" % args.program_name)
+
+    if args.apply and not args.no_snapshot and not snapshot(args):
+        print("Snapshot failed - refusing to mutate.", flush=True)
+        os._exit(1)
 
     import pyghidra
     print("Starting PyGhidra...")
     pyghidra.start()
     print("Opening %s/%s :: %s" % (project_path, args.project_name, args.program_name))
 
-    code = 0
+    code = 1
+    project = pyghidra.open_project(project_path, args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as program:
-            print("Collecting defined strings...")
-            strings = collect_strings(program)
-            print("  %d string(s)" % len(strings))
-
-            print("Scanning instructions...")
-            rows, n_sites = plan(program, strings, args.any_mnemonic)
-            counts = write_report(out_path, args.program_name, rows, n_sites, args.apply)
-
-            print("\n=== plan ===")
-            print("  scanned  %d site(s)" % n_sites)
-            for k, v in sorted(counts.items()):
-                print("  %-20s %d" % (k, v))
-            print("Report written to: %s" % out_path)
-
-            n_add = counts["ADD"]
-            if args.apply and n_add:
-                print("\n[apply] adding %d reference(s)..." % n_add)
-                added = apply(program, rows)
-                if added:
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    print("Added %d. Saving program database..." % added)
-                    program.getDomainFile().save(ConsoleTaskMonitor())
-                    print("Saved.")
-            elif args.apply:
-                print("\nNothing to add.")
-            else:
-                print("\n[dry-run] re-run with --apply to execute.")
-        project.close()
+            code = run(program, args, out_path)
     except Exception as e:
-        print("ERROR: %s" % str(e))
-        import traceback
+        print("ERROR: %s" % e)
         traceback.print_exc()
-        code = 1
+    finally:
+        project.close()
 
     sys.stdout.flush()
     sys.stderr.flush()

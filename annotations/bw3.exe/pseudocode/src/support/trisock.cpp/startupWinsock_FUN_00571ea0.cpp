@@ -19,8 +19,8 @@ int __cdecl support_trisock_cpp_startupWinsock_FUN_00571ea0(void)
     pvVar1 = wincore_winrun_cpp_createMutex_FUN_00581920();
     g_HANDLE_02cfd8a8 = pvVar1;
     if (pvVar1 == (HANDLE)0x0) {
-      g_CHAR_PTR_01d71de0 = "..\\support\\trisock.cpp";
-      g_INT_01d71de4 = 0x927;
+      g_CurrentFilename = "..\\support\\trisock.cpp";
+      g_CurrentLineNumber = 2343;
       core_main_c_displayErrorAndQuit_FUN_004e4330("Can't create mutex");
       return extraout_EAX;
     }

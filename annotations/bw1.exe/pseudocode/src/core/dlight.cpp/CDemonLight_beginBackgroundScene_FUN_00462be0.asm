@@ -23,8 +23,8 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_ScreenBufferArray[1]+1
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -68,8 +68,8 @@ section .text
     MOV EDX,0x5d90ca                    ; 00462c37 | = "..\\core\\dlight.cpp"
     MOV ECX,0x1bc                       ; 00462c3c
     PUSH 0x5d90dd                       ; 00462c41 | = "CDemonLight::beginBackgroundScene - N..."
-    MOV dword ptr [0x01d1d400],EDX      ; 00462c46 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ECX      ; 00462c4c | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDX      ; 00462c46 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ECX      ; 00462c4c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462c52
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462c57
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_00462ca6
     MOV ESI,0x1af                       ; 00462cab
     PUSH 0x5d9097                       ; 00462cb0 | = "CDemonLight::beginBackgroundScene - S..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00462cb5 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00462cbb | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00462cb5 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00462cbb | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00462cc1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00462cc6

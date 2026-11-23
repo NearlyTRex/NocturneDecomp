@@ -114,8 +114,8 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00438070(SEdgeList *e
         iVar17 = iVar16 + -1;
         if (0x1ff < (int)uVar12) {
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
-          g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d71de4 = 0x87d;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 2173;
           core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_1f4);
         }
         uVar8 = (ushort)iVar14;
@@ -248,8 +248,8 @@ LAB_00438376:
         }
         if (0x1ff < (int)uVar12) {
           _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
-          g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
-          g_INT_01d71de4 = 0x8b7;
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 2231;
           core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_1f4);
         }
         if (iVar17 < iStack_48) {
@@ -338,8 +338,8 @@ LAB_00438376:
   pSVar7 = (SEdge *)realloc(existing_edges,*max_x * 8 + uVar12 * 8);
   if (pSVar7 == (SEdge *)0x0) {
     _sprintf(acStack_1f4,"Unable to allocate %u bytes for edge list.");
-    g_CHAR_PTR_01d71de0 = "..\\cockpit\\ckptutil.c";
-    g_INT_01d71de4 = 0x8f6;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 2294;
     core_main_c_displayErrorAndQuit_FUN_004e4330(acStack_1f4);
   }
   puVar15 = (uint *)0x7e2e84;

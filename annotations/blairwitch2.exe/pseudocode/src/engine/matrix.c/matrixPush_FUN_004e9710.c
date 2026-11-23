@@ -28,8 +28,8 @@ void __cdecl engine_matrix_c_matrixPush_FUN_004e9710(void)
   if (g_MatrixStackIndex < 10) {
     return;
   }
-  g_CHAR_PTR_01d046a0 = "..\\engine\\matrix.c";
-  g_INT_01d046a4 = 0x34b;
+  g_CurrentFilename = "..\\engine\\matrix.c";
+  g_CurrentLineNumber = 843;
   core_main_c_displayErrorAndQuit_FUN_004e4500("Matrix unbalance");
   return;
 }

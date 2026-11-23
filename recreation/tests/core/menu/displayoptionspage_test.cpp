@@ -168,14 +168,14 @@ TEST_F(CDisplayOptionsPageTest, WithAccelerationTheResolutionStepsByWidthThenHei
     setResolution(1024, 768);
     CDisplayOptionsPage page(menu_, menu_owners_);
     std::vector<std::string> stepped;
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 13; ++i) {
         EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
         stepped.push_back(resolution());
     }
-    EXPECT_EQ(stepped,
-              (std::vector<std::string>{"1200x900", "1280x720", "1280x1024", "1440x1080",
-                                        "1600x900", "1600x1200", "1920x1080", "1920x1440",
-                                        "2560x1440", "2880x2160", "3840x2160", "320x240"}));
+    EXPECT_EQ(stepped, (std::vector<std::string>{"1200x900", "1280x720", "1280x960", "1280x1024",
+                                                 "1440x1080", "1600x900", "1600x1200", "1920x1080",
+                                                 "1920x1440", "2560x1440", "2880x2160", "3840x2160",
+                                                 "320x240"}));
     EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
     EXPECT_EQ(resolution(), "3840x2160");
 }

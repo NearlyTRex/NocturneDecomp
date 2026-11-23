@@ -87,8 +87,8 @@ section .text
     MOV EDI,0x5e69b0                    ; 00540aef | = "..\\core\\skeleton.cpp"
     MOV EBP,0x118                       ; 00540af4
     PUSH 0x5e69c5                       ; 00540af9 | = "Invalid skeleton version"
-    MOV dword ptr [0x01d046a0],EDI      ; 00540afe | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00540b04 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00540afe | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 00540b04 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540b0a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00540b0f
@@ -101,8 +101,8 @@ section .text
     MOV EDX,0x5e69de                    ; 00540b1b | = "..\\core\\skeleton.cpp"
     MOV ECX,0x119                       ; 00540b20
     PUSH 0x5e69f3                       ; 00540b25 | = "Old skeleton version %d not supported"
-    MOV dword ptr [0x01d046a0],EDX      ; 00540b2a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 00540b30 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 00540b2a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 00540b30 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540b36
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 00540b3b
@@ -353,8 +353,8 @@ section .text
     MOV EBP,0x5e6ab2                    ; 00540d8a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x14f                       ; 00540d8f
     PUSH 0x5e6ac7                       ; 00540d94 | = "CSkeleton::loadStream - error reading..."
-    MOV dword ptr [0x01d046a0],EBP      ; 00540d99 | g_CHAR_PTR_01d046a0
-    MOV [0x01d046a4],EAX                ; 00540d9f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBP      ; 00540d99 | g_CurrentFilename
+    MOV [0x01d046a4],EAX                ; 00540d9f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540da4
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00540da9
@@ -423,8 +423,8 @@ section .text
     MOV EDI,0x5e6a19                    ; 00540e21 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x11a                       ; 00540e26
     PUSH 0x5e6a2e                       ; 00540e2b | = "Skeleton version %d is newer than .EX..."
-    MOV dword ptr [0x01d046a0],EDI      ; 00540e30 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBP      ; 00540e36 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDI      ; 00540e30 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBP      ; 00540e36 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540e3c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0xc                         ; 00540e41
@@ -434,8 +434,8 @@ section .text
         ;   Label: LAB_00540e49
     MOV ESI,0x16a                       ; 00540e4e
     PUSH 0x5e6b08                       ; 00540e53 | = "CSkeleton::loadStream - error reading..."
-    MOV dword ptr [0x01d046a0],EBX      ; 00540e58 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ESI      ; 00540e5e | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EBX      ; 00540e58 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ESI      ; 00540e5e | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00540e64
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00540e69

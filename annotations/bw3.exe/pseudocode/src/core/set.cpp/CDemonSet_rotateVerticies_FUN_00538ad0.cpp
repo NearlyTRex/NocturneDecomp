@@ -14,8 +14,8 @@ void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0(CDemonSet *this
   int local_14;
   
   if (25000 < vertex_count) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\set.cpp";
-    g_INT_01d71de4 = 0xea9;
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 3753;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d");
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(g_CDemonRenderer_PTR_005f2afc,1);

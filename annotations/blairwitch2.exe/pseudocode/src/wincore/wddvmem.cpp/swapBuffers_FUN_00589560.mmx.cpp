@@ -9,8 +9,6 @@
 void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)
 {
 __asm {
-        mov EBP,ESP
-        sub ESP,0x7c
         cmp dword ptr [g_WindowActive],0x0
         jz LAB_00589632
         mov ECX,dword ptr [g_INT_01c37788]
@@ -177,8 +175,8 @@ __asm {
         mov EDI,0x5ee43c
         mov EAX,0x356
         push 0x5ee453
-        mov dword ptr [g_CHAR_PTR_01d046a0],EDI
-        mov [g_INT_01d046a4],EAX
+        mov dword ptr [g_CurrentFilename],EDI
+        mov [g_CurrentLineNumber],EAX
         call core_main_c_displayErrorAndQuit_FUN_004e4500
         add ESP,0x4
         xor EDI,EDI

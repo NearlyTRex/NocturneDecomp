@@ -240,8 +240,8 @@
 ;   double g_DOUBLE_005da0ec = 0.700000000000000
 ;   double g_DOUBLE_005da0f4 = 0.300000000000000
 ;   undefined4 g_CLightActorClassInfo.name_hash
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -1369,8 +1369,8 @@ section .text
     MOV EDI,0x5da0b4                    ; 004706d2 | = "..\\core\\doc.cpp"
     MOV EAX,0xe3d                       ; 004706d7
     PUSH 0x5da0c4                       ; 004706dc | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01d1d400],EDI      ; 004706e1 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 004706e7 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 004706e1 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 004706e7 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 004706ec
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x8                         ; 004706f1

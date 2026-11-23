@@ -1049,5 +1049,203 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_renderScene_FUN_0056c1a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 5,
+          "line": 53,
+          "message": "Value stored to 'iVar7' is never read",
+          "path_notes": [
+            {
+              "line": 53,
+              "message": "Value stored to 'iVar7' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 34,
+          "line": 202,
+          "message": "The left operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 20,
+              "message": "'local_44' declared without an initial value"
+            },
+            {
+              "line": 33,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 33,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 36,
+              "message": "Assuming 'skip_prerender' is not equal to 0"
+            },
+            {
+              "line": 36,
+              "message": "Left side of '&&' is true"
+            },
+            {
+              "line": 37,
+              "message": "Assuming 'iVar3' is equal to 0"
+            },
+            {
+              "line": 36,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 40,
+              "message": "'skip_prerender' is not equal to 0"
+            },
+            {
+              "line": 40,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 47,
+              "message": "Assuming field 'mirror_camera_dirty' is equal to 0"
+            },
+            {
+              "line": 47,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 52,
+              "message": "Assuming 'g_RenderingShadows' is equal to 0"
+            },
+            {
+              "line": 52,
+              "message": "Left side of '||' is false"
+            },
+            {
+              "line": 52,
+              "message": "Assuming field 'shadow_flag' is equal to 0"
+            },
+            {
+              "line": 52,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 104,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 104,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 111,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 111,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 120,
+              "message": "Assuming 0 is >= field 'mirror_glass_actor_count'"
+            },
+            {
+              "line": 120,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 128,
+              "message": "Assuming field 'wave_animation_enabled' is equal to 0"
+            },
+            {
+              "line": 128,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 132,
+              "message": "Assuming field 'player_on_train' is equal to 0"
+            },
+            {
+              "line": 132,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 137,
+              "message": "Assuming 0 is >= field 'mirror_glass_actor_count'"
+            },
+            {
+              "line": 137,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 146,
+              "message": "Assuming 'local_2c' is >= 'g_DynamicLightCount'"
+            },
+            {
+              "line": 146,
+              "message": "Loop condition is false. Execution continues on line 160"
+            },
+            {
+              "line": 163,
+              "message": "Assuming field 'wave_animation_enabled' is not equal to 0"
+            },
+            {
+              "line": 163,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 166,
+              "message": "Assuming 'iVar3' is >= field 'actor_count'"
+            },
+            {
+              "line": 166,
+              "message": "Loop condition is false. Execution continues on line 174"
+            },
+            {
+              "line": 175,
+              "message": "Assuming 'local_30' is >= 'g_DynamicLightCount'"
+            },
+            {
+              "line": 175,
+              "message": "Loop condition is false. Execution continues on line 189"
+            },
+            {
+              "line": 189,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 189,
+              "message": "Left side of '&&' is false"
+            },
+            {
+              "line": 194,
+              "message": "Assuming 'iVar3' is >= 'g_SpotLightCount'"
+            },
+            {
+              "line": 194,
+              "message": "Loop condition is false. Execution continues on line 197"
+            },
+            {
+              "line": 197,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 197,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 202,
+              "message": "The left operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

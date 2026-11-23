@@ -128,6 +128,8 @@ shipped", but it is not a bug in the retail game.
 | `MODAL_FIT` | a modal too wide for the screen is clamped rather than pushed off both edges |
 | `BURN_BONE_COUNT` | a burning character can reach fully-burned and die instead of burning forever |
 | `BURN_LOOP_SOUND` | the on-fire crackle stops when the fire does |
+| `SUCCUBUS` | an explosion blows the succubus apart instead of leaving her unharmed, and her voice stops when she dies or no hero is in range |
+| `DESTROYED_HERO` | a hero blown or torn apart is drawn as his parts instead of hanging frozen and whole where he died |
 | `GOD_MODE_FALL` | god mode survives a lethal-height fall |
 | `FATAL_FALL_HEAL` | a fall that was already fatal does not spend a health item to no effect |
 | `STREAM_LENGTH` | a streamed MP3 ends where the sample actually ends |
@@ -145,6 +147,7 @@ shipped", but it is not a bug in the retail game.
 | `MOTION_TWEEN_INIT` | a new animation controller starts with no stale transition to reverse |
 | `HW_SFX_FALLOFF` | hardware-mixed positional sounds fall off as the software mixer's do |
 | `CUE_RETRIGGER` | a script music cue does not stack copies of itself while it plays, as ACT1's river drowning did |
+| `SCRIPT_QUIRKS` | listed defects in the shipped mission scripts are corrected as they run: a hero falling off the train comes apart instead of vanishing, and the gas room's lines take the speaking hero's name |
 | `GOGGLES_OFF_FRAME` | a cutscene that switches the goggles off draws its first frame instead of presenting the untextured background bake |
 | `GOGGLES_CAMERA_HOLD` | a script's timed camera hold (a scare cut such as CASTLE1's ghoul spook) runs out while the goggles are on, instead of cutting the view away when they next come off |
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
@@ -186,6 +189,7 @@ shipped", but it is not a bug in the retail game.
 | `PUSH_SOUND` | a pushed box scrapes on every shove of a long push, not only the first |
 | `MENU` | the front end's screens are shim pages carrying every menu addition: titles below the logo, a Gameplay page beside Graphic Options, PLAY and MULTIPLAYER, window mode, the resolution table applied at once with 16:9 modes and a 4:3 mode at each of their heights up to 3840x2160, widescreen pillarbox or pan-and-scan, a choice of upscaling filters (FSR, Lanczos, GSR, NIS, xBR), FXAA anti-aliasing, system text, Movie Vol, the gamepad's tuning, tank or camera movement, bindings that follow the control type, and the build's version in the corner |
 | `CONSOLE` | the console fills the window and keeps scrollback |
+| `DEBUG_WINDOW` | the script and light debug views open in a resizable window of their own, and the game's camera keeps the whole screen |
 | `ATTRACT_MOVIES` | the menu cycles NOC1..NOC4 after its splash music |
 | `ENVMAP_SHADING` | reflections are shaded per pixel rather than flat per facet |
 | `NETPLAY` | netplay is reachable, with its fixes |

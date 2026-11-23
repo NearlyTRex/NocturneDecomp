@@ -20,15 +20,15 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004fa1c0(CM
   int local_14;
   
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\morph.cpp";
-    g_INT_01d71de4 = 0x191;
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 401;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CMorphModel::setFaceList - invalid part index");
   }
   iVar2 = this_ptr->parts[part_index].start_face;
   iVar5 = start_face + iVar2;
   if (iVar2 + this_ptr->parts[part_index].face_count < face_count + iVar5) {
-    g_CHAR_PTR_01d71de0 = "..\\core\\morph.cpp";
-    g_INT_01d71de4 = 0x198;
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 408;
     core_main_c_displayErrorAndQuit_FUN_004e4330("CMorphModel::setFaceList - invalid vertex range");
   }
   local_1c = 0;

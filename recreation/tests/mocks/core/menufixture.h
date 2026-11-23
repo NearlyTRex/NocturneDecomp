@@ -21,6 +21,7 @@
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/moonfixture.h"
+#include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
@@ -127,18 +128,21 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = clock_,
                                        .clock = wall_clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = engine::getShippedGameContent()}};
     engine::CFontColors colors_;
     ::testing::NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,       two_d_,
+                  three_d_,  colors_,       os_fonts_,
+                  messages_, editor_tools_, engine::getShippedGameContent()};
     engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     ::testing::NiceMock<platform::MockAudioDevice> audio_device_;
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_};
+    CSound sound_{sound_main_, pod_, file_system_, game_parts_.getContent()};
     // What nocturne.ini holds, and what Options writes to it.
     std::string ini_text_ = "[Graphics]\r\n[Sound]\r\n[Control]\r\n[Debug]\r\n";
     engine::CIni ini_{file_system_};

@@ -116,6 +116,8 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
 //   CSvetlana::renderOpaque
 // deferred: packed and triangle face lists, with the callers that pass them
 // nocedit 0x0056eac0
+// bw1 0x00553440
+// bw2 0x00532190
 void CDemonSet::lightVerticies(int vertex_count,
                                std::span<const platform::SMRGLPrimitiveQuad> polygons,
                                std::span<const CVector3i> vertex_normals) {
@@ -164,6 +166,9 @@ void CDemonSet::lightVerticies(int vertex_count,
 //   perspective setup
 // deferred: the spatial lighting outside quick light, with the scene's lights
 // nocedit 0x0056ddb0
+// bw1 0x00552710
+// bw2 0x00531460
+// bw3 0x005380a0
 void CDemonSet::lightVertexColor(const CVector3i &surface_normal, SRenderVertex &vertex) const {
     const int facing = wrappingSubtract(
         0, wrappingAdd(wrappingAdd(common::fixedMultiply(light_direction_.x, surface_normal.x),

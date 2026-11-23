@@ -670,7 +670,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x497742,4)
 CALL (ram,0x5182e0,4)
 
-@00497742 [ESP:???](+12)!?  # ADD ESP, 0xc
+@00497742 [ESP:-20](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -681,10 +681,10 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00497745 [ESP:???]!?  # MOV EBP, dword ptr [0x01c3f550]
+@00497745 [ESP:-20]  # MOV EBP, dword ptr [0x01c3f550]
 COPY (register,0x14,4) /* EBP */ = (ram,0x1c3f550,4)
 
-@0049774b [ESP:???]!?  # CMP EBP, dword ptr [0x01c3f54c]
+@0049774b [ESP:-20]  # CMP EBP, dword ptr [0x01c3f54c]
 COPY (unique,0x67600,4) = (ram,0x1c3f54c,4)
 INT_LESS (register,0x200,1) = (register,0x14,4) /* EBP */, (unique,0x67600,4)
 INT_SBORROW (register,0x20b,1) = (register,0x14,4) /* EBP */, (unique,0x67600,4)
@@ -696,7 +696,7 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@00497751 [ESP:???]!?  # JZ 0x0049778c
+@00497751 [ESP:-20]  # JZ 0x0049778c
 CBRANCH (ram,0x49778c,4), (register,0x206,1)
 
 @00497753 [ESP:-20]  # MOV EDX, dword ptr [0x01c3f544]
@@ -800,7 +800,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x497789,4)
 CALL (ram,0x5182e0,4)
 
-@00497789 [ESP:???](+12)!?  # ADD ESP, 0xc
+@00497789 [ESP:-20](+12)?  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -1187,5 +1187,4 @@ BRANCH (ram,0x497789,4)
 
 # ============================================================================
 # Summary: 139 instructions, 891 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

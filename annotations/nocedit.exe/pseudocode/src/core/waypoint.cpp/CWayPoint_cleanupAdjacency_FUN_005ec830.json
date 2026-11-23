@@ -121,6 +121,15 @@
       "severity": "moderate",
       "text": "pCVar2 = (CWayPoint *)((pCVar2->base).base.actor_name + 8);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(pcVar3 + 0x374): the pointer is based on a field at offset 0x0 (size 32 in CWayPoint) but the +0x37c byte offset lands in field adjacency (offset 0x374). Ghidra anchored on the wrong field \u2014 rewrite as direct access to adjacency (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 24,
+      "match": "*(...)(pcVar3 + 0x374)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(CWayPoint **)(pcVar3 + 0x374) == pCVar2->adjacency[0].waypoint) {",
+      "type": "struct_field_overrun"
     }
   ],
   "stack_frame": {

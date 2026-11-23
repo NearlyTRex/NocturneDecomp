@@ -762,5 +762,507 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_processActors_FUN_0056b810.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "checker": "core.uninitialized.ArraySubscript",
+          "column": 19,
+          "line": 82,
+          "message": "Array subscript is undefined",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "'local_20' declared without an initial value"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar9' is >= field 'actor_count'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is false. Execution continues on line 44"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is < field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is >= field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 60"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "0 is < field 'actor_count'"
+            },
+            {
+              "line": 67,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Assuming field 'process_disabled' is equal to 0"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 'local_24'"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 75,
+              "message": "Assuming field 'profile_mode' is equal to 2"
+            },
+            {
+              "line": 75,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming field 'profile_mode' is equal to 2"
+            },
+            {
+              "line": 80,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 82,
+              "message": "Array subscript is undefined"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 57,
+          "line": 82,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 28,
+              "message": "'local_3c' declared without an initial value"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar9' is >= field 'actor_count'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is false. Execution continues on line 44"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is < field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is >= field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 60"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "0 is < field 'actor_count'"
+            },
+            {
+              "line": 67,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Assuming field 'process_disabled' is equal to 0"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 'local_24'"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 75,
+              "message": "Assuming field 'profile_mode' is not equal to 2"
+            },
+            {
+              "line": 75,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming field 'profile_mode' is equal to 2"
+            },
+            {
+              "line": 80,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 82,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 39,
+          "line": 86,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "'local_20' declared without an initial value"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar9' is >= field 'actor_count'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is false. Execution continues on line 44"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is < field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is true.  Entering loop body"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is >= field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 60"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is true"
+            },
+            {
+              "line": 60,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 67,
+              "message": "0 is < field 'actor_count'"
+            },
+            {
+              "line": 67,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 70,
+              "message": "Assuming field 'process_disabled' is equal to 0"
+            },
+            {
+              "line": 70,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 72,
+              "message": "Assuming 'iVar3' is equal to 'local_24'"
+            },
+            {
+              "line": 72,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 75,
+              "message": "Assuming field 'profile_mode' is not equal to 2"
+            },
+            {
+              "line": 75,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 80,
+              "message": "Assuming field 'profile_mode' is not equal to 2"
+            },
+            {
+              "line": 80,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 85,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 85,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 86,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "deadcode.DeadStores",
+          "column": 9,
+          "line": 121,
+          "message": "Value stored to 'local_34' is never read",
+          "path_notes": [
+            {
+              "line": 121,
+              "message": "Value stored to 'local_34' is never read"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 29,
+          "line": 178,
+          "message": "The left operand of '+' is a garbage value",
+          "path_notes": [
+            {
+              "line": 33,
+              "message": "'local_20' declared without an initial value"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar9' is >= field 'actor_count'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is false. Execution continues on line 44"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is >= field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 60"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 60,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 116,
+              "message": "0 is >= field 'actor_count'"
+            },
+            {
+              "line": 116,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 176,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 176,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 177,
+              "message": "Assuming field 'profile_mode' is equal to 2"
+            },
+            {
+              "line": 177,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 178,
+              "message": "The left operand of '+' is a garbage value"
+            }
+          ]
+        },
+        {
+          "checker": "core.UndefinedBinaryOperatorResult",
+          "column": 25,
+          "line": 204,
+          "message": "The right operand of '-' is a garbage value",
+          "path_notes": [
+            {
+              "line": 27,
+              "message": "'local_40' declared without an initial value"
+            },
+            {
+              "line": 40,
+              "message": "Assuming 'iVar9' is >= field 'actor_count'"
+            },
+            {
+              "line": 40,
+              "message": "Loop condition is false. Execution continues on line 44"
+            },
+            {
+              "line": 44,
+              "message": "Assuming field 'profile_mode' is equal to 0"
+            },
+            {
+              "line": 44,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 51,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 51,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 57,
+              "message": "Assuming 'iVar2' is >= field 'actor_count'"
+            },
+            {
+              "line": 57,
+              "message": "Loop condition is false. Execution continues on line 60"
+            },
+            {
+              "line": 60,
+              "message": "Assuming the condition is false"
+            },
+            {
+              "line": 60,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 116,
+              "message": "0 is >= field 'actor_count'"
+            },
+            {
+              "line": 116,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 176,
+              "message": "Assuming field 'profile_mode' is not equal to 0"
+            },
+            {
+              "line": 176,
+              "message": "Taking true branch"
+            },
+            {
+              "line": 177,
+              "message": "Assuming field 'profile_mode' is not equal to 2"
+            },
+            {
+              "line": 177,
+              "message": "Taking false branch"
+            },
+            {
+              "line": 204,
+              "message": "The right operand of '-' is a garbage value"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

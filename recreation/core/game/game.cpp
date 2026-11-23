@@ -2,6 +2,7 @@
 
 #include "common/math/fixed.h"
 #include "engine/gameclock.h"
+#include "engine/package/gamecontent.h"
 
 #include <algorithm>
 
@@ -15,8 +16,12 @@ constexpr double kDeltaTimeToSeconds = 1.0 / 65536.0;
 
 } // namespace
 
+// The defaults are the packages', which startup loads after the game is made and reads the
+// controls once it has; until then there are none to restore.
 CGame::CGame(const SGameOwners &owners) : owners_(owners) {
-    restoreDefaultControls();
+    if (owners.content.controls) {
+        restoreDefaultControls();
+    }
 }
 
 // nocedit 0x004d7d80

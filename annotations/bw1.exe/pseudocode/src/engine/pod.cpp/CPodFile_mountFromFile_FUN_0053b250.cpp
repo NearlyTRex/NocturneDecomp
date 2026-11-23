@@ -186,8 +186,8 @@ LAB_0053b65d:
               pcVar2 = (char *)realloc(this_ptr->file_data_buffer,uVar9);
               this_ptr->file_data_buffer = pcVar2;
               if (pcVar2 == (char *)0x0) {
-                g_CHAR_PTR_01d1d400 = "..\\engine\\pod.cpp";
-                g_INT_01d1d404 = 0x2d5;
+                g_CurrentFilename = "..\\engine\\pod.cpp";
+                g_CurrentLineNumber = 725;
                 core_main_c_displayErrorAndQuit_FUN_005030e0("realloc returns NULL shrinking filenameBlockSize to fit.");
               }
             }

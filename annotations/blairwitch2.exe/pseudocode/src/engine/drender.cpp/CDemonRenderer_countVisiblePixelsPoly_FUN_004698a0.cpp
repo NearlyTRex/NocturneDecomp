@@ -41,8 +41,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a
       g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ef35;
     }
     else {
-      g_CHAR_PTR_01d046a0 = "..\\engine\\drender.cpp";
-      g_INT_01d046a4 = 0x29d;
+      g_CurrentFilename = "..\\engine\\drender.cpp";
+      g_CurrentLineNumber = 669;
       core_main_c_displayErrorAndQuit_FUN_004e4500("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590

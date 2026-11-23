@@ -11,8 +11,8 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0050fe10 at 0050fe33
 ;
 ; Referenced Globals:
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4330
@@ -97,8 +97,8 @@ section .text
         ;   Label: LAB_0050ff32
     MOV ESI,0x49e                       ; 0050ff37
     PUSH 0x5cbd5e                       ; 0050ff3c
-    MOV dword ptr [0x01d71de0],EBX      ; 0050ff41 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],ESI      ; 0050ff47 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EBX      ; 0050ff41 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],ESI      ; 0050ff47 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0050ff4d
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0050ff52

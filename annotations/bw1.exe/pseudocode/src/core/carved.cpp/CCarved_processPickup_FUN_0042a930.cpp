@@ -356,8 +356,8 @@ LAB_0042af2f:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_0042b00b:
-      g_CHAR_PTR_01d1d400 = "..\\core\\carved.cpp";
-      g_INT_01d1d404 = 0x4d7;
+      g_CurrentFilename = "..\\core\\carved.cpp";
+      g_CurrentLineNumber = 1239;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Invalid demon townsfolk object shape!");
       return 1;
     }

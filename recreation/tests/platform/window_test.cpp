@@ -19,6 +19,8 @@ TEST(IWindow, PublicInterface) {
                                  std::string (IWindow::*)(std::uint16_t)>);
     static_assert(std::is_same_v<decltype(&IWindow::showMessageBox),
                                  void (IWindow::*)(std::string_view, std::string_view)>);
+    static_assert(
+        std::is_same_v<decltype(&IWindow::setTitle), void (IWindow::*)(std::string_view)>);
 }
 
 TEST(SWindowEvent, DefaultsToAnEmptyQuit) {

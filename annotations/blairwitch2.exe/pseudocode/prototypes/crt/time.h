@@ -7,8 +7,8 @@
 
 // Original: crt_time.c__localtime_FUN_005ba358
 // Address: 005ba358
-_tm * __cdecl ::localtime(time_t *timer);
+_tm * __cdecl _localtime(time_t *timer);
 
 // Original: crt_time.c__strftime_FUN_005ba3a4
 // Address: 005ba3a4
-uint __cdecl ::strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);
+uint __cdecl _strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);

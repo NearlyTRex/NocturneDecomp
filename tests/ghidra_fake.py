@@ -62,6 +62,9 @@ class Address:
     def isMemoryAddress(self):
         return self.memory
 
+    def isExternalAddress(self):
+        return self.space_name == "EXTERNAL"
+
     def getAddressSpace(self):
         return self.space_name
 
@@ -73,6 +76,10 @@ class Address:
 
     def subtract(self, displacement):
         return Address(self.offset - displacement, self.size)
+
+    # An address at another offset in the same space
+    def getNewAddress(self, offset):
+        return Address(offset, self.size)
 
     # Negative, zero or positive, as Java's Comparable
     def compareTo(self, other):
@@ -138,6 +145,9 @@ class AddressSet(JavaObject):
     def getAddressRanges(self):
         return [AddressRange(Address(lo), Address(hi)) for lo, hi in self.ranges]
 
+    def getNumAddresses(self):
+        return sum(hi - lo + 1 for lo, hi in self.ranges)
+
     def __iter__(self):
         return iter(self.getAddressRanges())
 
@@ -156,6 +166,11 @@ class AddressSet(JavaObject):
 
     def contains(self, address):
         return self.getRangeContaining(address) is not None
+
+    def union(self, other):
+        out = AddressSet()
+        out.ranges = self.ranges + other.ranges
+        return out
 
 
 # --- ghidra.program.model.data -----------------------------------------------------

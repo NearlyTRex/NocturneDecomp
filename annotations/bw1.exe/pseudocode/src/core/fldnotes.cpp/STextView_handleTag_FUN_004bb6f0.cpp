@@ -65,8 +65,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004bb6f0(STextView *this_p
                                   (this_ptr_01,local_220);
         }
         if (resource_00 == (SPageResourceTwanaEntry *)0x0) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-          g_INT_01d1d404 = 0x620;
+          g_CurrentFilename = "..\\core\\fldnotes.cpp";
+          g_CurrentLineNumber = 1568;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
         }
         iVar1 = core_fldnotes_cpp_STextView_ensureSpace_FUN_004bbad0
@@ -93,8 +93,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004bb6f0(STextView *this_p
           resource_00 = core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(this_ptr_02);
         }
         if (resource_00 == (SPageResourceTwanaEntry *)0x0) {
-          g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-          g_INT_01d1d404 = 0x638;
+          g_CurrentFilename = "..\\core\\fldnotes.cpp";
+          g_CurrentLineNumber = 1592;
           core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
         }
         iVar1 = core_fldnotes_cpp_STextView_ensureSpace_FUN_004bbad0
@@ -128,8 +128,8 @@ int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004bb6f0(STextView *this_p
                              (this_ptr_00,local_120,local_20,local_1c);
       }
       if (resource == (SPageResourceBitmap *)0x0) {
-        g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-        g_INT_01d1d404 = 0x60a;
+        g_CurrentFilename = "..\\core\\fldnotes.cpp";
+        g_CurrentLineNumber = 1546;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Out of memory");
       }
       (resource->base).x = this_ptr->cursor_x;

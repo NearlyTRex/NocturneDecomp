@@ -11,8 +11,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(CDemonSet *this_ptr
 {
   if ((actor != (CDemonActor *)0x0) && (-1 < this_ptr->ignore_list_count)) {
     if (9 < this_ptr->ignore_list_count) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\setcolid.cpp";
-      g_INT_01d1d404 = 0x473;
+      g_CurrentFilename = "..\\core\\setcolid.cpp";
+      g_CurrentLineNumber = 1139;
       core_main_c_displayErrorAndQuit_FUN_005030e0("CDemonSet::ignore - ignore list is full");
     }
     this_ptr->ignore_list[this_ptr->ignore_list_count] = actor;

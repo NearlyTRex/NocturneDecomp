@@ -4,6 +4,7 @@
 #include "engine/gameclock.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/edcontrols.h"
 #include "shape/edittool/editortools.h"
@@ -20,7 +21,6 @@ constexpr int kLeftButton = 1;
 constexpr int kBackspace = 8;
 // The original's buffer held 99 characters and its terminator.
 constexpr std::size_t kMaxSearchLength = 99;
-constexpr int kDoubleClickTicks = engine::IGameClock::kTicksPerSecond / 4;
 
 } // namespace
 
@@ -161,6 +161,13 @@ int CPickList::handleDialogInput() {
     takeScrollBar();
     const int page_end = (rows_per_column_ * column_count_) + scroll_top_;
     current_index_ = std::max(std::min(current_index_, page_end - 1), scroll_top_);
+    // The OK button picks as a double click does; the cancel button cancels.
+    if (!ok_button_text_.empty() && ok_button_.wasClicked()) {
+        confirmed_flag_ = true;
+    }
+    if (!cancel_button_text_.empty() && cancel_button_.wasClicked()) {
+        return kCancelled;
+    }
     readMouse();
     return kStillOpen;
 }
@@ -207,7 +214,8 @@ void CPickList::readMouse() {
         const int now = controls.clock.getTime();
         const int elapsed = common::wrappingSubtract(now, last_click_timestamp_);
         last_click_timestamp_ = now;
-        if (elapsed > 0 && elapsed < kDoubleClickTicks && last_click_item_index_ == item) {
+        if (elapsed > 0 && elapsed < controls.editor_tools.getListLook().double_click_ticks &&
+            last_click_item_index_ == item) {
             confirmed_flag_ = true;
         }
     }
@@ -217,6 +225,9 @@ void CPickList::readMouse() {
 // Columns run down, then across. The mouse is inside the clip, so the original's tests for a
 // negative row, column and index are gone.
 // nocedit 0x004a53a0
+// bw1 0x0049bfb0
+// bw2 0x00483950
+// bw3 0x00484b50
 int CPickList::getItemAtMousePosition(int mouse_x, int mouse_y) const {
     const engine::SClipRect clip = owners_.controls.getOwners().two_d.getClipRect();
     const int row = (mouse_y - clip.top) / row_height_;

@@ -21,6 +21,7 @@
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/dosio/gamefolders.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/font.h"
@@ -199,10 +200,12 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = game_clock_,
                                        .clock = clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     engine::SGamepadInputParts gamepad_;
     engine::CMenuInput menu_input_{keys_, gamepad_.input};
     // What the packages give, the shipped game's until a test changes it.
@@ -237,7 +240,7 @@ protected:
                                .screen = screen_,
                                .special = special_,
                                .current_texture = current_texture_}};
-    CSound game_sound_{sound_, pod_, file_system_};
+    CSound game_sound_{sound_, pod_, file_system_, content_};
     std::array<CDemonFilter, 8> global_filters_;
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};
@@ -335,8 +338,15 @@ protected:
                      .set = set_,
                      .sound = game_sound_}};
     std::vector<std::string> movies_;
+    std::vector<std::string> titles_;
+    void addTitle(std::string_view title) {
+        titles_.emplace_back(title);
+    }
+    // The test's game is the install's, so its files are the disk's as given.
+    engine::CGameFolders game_folders_{file_system_};
     SGameSystemOwners owners_{.ini = ini_,
                               .file_system = file_system_,
+                              .game_folders = game_folders_,
                               .ini_owners = ini_owners_,
                               .dosio = dosio_,
                               .pod = pod_,
@@ -352,6 +362,7 @@ protected:
                                       movies_.push_back(std::format("{}\\{}", directory, filename));
                                       return true;
                                   },
+                              .set_title = [this](std::string_view title) { addTitle(title); },
                               .sound = game_sound_,
                               .mission = mission_,
                               .global_filters = global_filters_,
@@ -453,6 +464,19 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
 }
 
 // In the theme font, centred in a band an X tall; this sheet's characters are solid.
+TEST_F(CInitializeGameSystemsTest, TheOpeningMovieIsTheGamesOwn) {
+    content_.startup->movie_directory = "films";
+    content_.startup->movie = "intro.avi";
+    start();
+    EXPECT_EQ(movies_, std::vector<std::string>{"films\\intro.avi"});
+}
+
+TEST_F(CInitializeGameSystemsTest, WithoutAStartupScreenStartingIsFatal) {
+    content_.startup.reset();
+    EXPECT_THAT([this] { start(); }, ::testing::ThrowsMessage<common::CFatalError>(
+                                         ::testing::StrEq("No package gives the startup screen")));
+}
+
 TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysLoadingInTheMiddle) {
     givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
         givenFile(name, contents);
@@ -597,6 +621,30 @@ TEST_F(CInitializeGameSystemsTest, TheLanguagesTranslationsAreAdded) {
     EXPECT_EQ(messages_.getLocalizedString("Yes"), "Yes");
 }
 
+// The loading screen's words are the game's loading label; one the message file hasn't is drawn
+// as it is.
+TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysTheGamesLoadingLabel) {
+    givenMenuFontFiles([this](const std::string &name, const std::string &contents) {
+        givenFile(name, contents);
+    });
+    two_d_.setupViewportAndClipping(0, 0, kWidth - 1, kHeight - 1);
+    content_.labels.at("loading") = "Wait";
+    start();
+    int left = kWidth;
+    int right = -1;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            if (screen_.pixel(x, y) != 0x636363U) {
+                left = std::min(left, x);
+                right = std::max(right, x);
+            }
+        }
+    }
+    const int width = fonts_.getThemeFont()->getTextWidth("Wait");
+    EXPECT_EQ(left, (kWidth / 2) - (width / 2));
+    EXPECT_EQ(right, left + width - 1);
+}
+
 TEST_F(CInitializeGameSystemsTest, ALanguageNoPackageTranslatesKeepsTheMessageFile) {
     content_.translations["de"] = {{"Loading...", "Laden..."}};
     start();
@@ -620,14 +668,39 @@ TEST_P(CFrontEndCheckTest, WhatTheBuildCantRunIsFatalBeforeTheScreenIsSet) {
 
 INSTANTIATE_TEST_SUITE_P(
     Content, CFrontEndCheckTest,
-    ::testing::Values(SFrontEndCase{[](engine::SGameContent &c) { c.front_end.reset(); },
-                                    "No package names the game's front end"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.front_end = "bw1"; },
-                                    "The front end bw1 isn't in this build"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator.reset(); },
-                                    "No package names the loading indicator"},
-                      SFrontEndCase{[](engine::SGameContent &c) { c.loading_indicator = "bar"; },
-                                    "The loading indicator bar isn't in this build"}));
+    ::testing::Values(
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop.reset(); },
+                      "No package names the title backdrop"},
+        SFrontEndCase{[](engine::SGameContent &c) { c.front_end.title_backdrop = "no_such_style"; },
+                      "The title backdrop no_such_style isn't in this build"}));
+
+TEST_F(CInitializeGameSystemsTest, AFigureSceneBackdropStarts) {
+    content_.front_end.title_backdrop = "figure_scene";
+    start();
+    EXPECT_NE(screen_.requested_width, 0);
+}
+
+// The other parts are checked as they are used, so a game whose credits or loading look aren't
+// built yet still reaches its menu.
+TEST_F(CInitializeGameSystemsTest, ThePartsAfterTheMenuDontStopStartup) {
+    content_.front_end.loading_indicator = "progress_bar";
+    content_.front_end.credits.reset();
+    content_.front_end.story_select = "direct_start";
+    start();
+    EXPECT_NE(screen_.requested_width, 0);
+}
+
+TEST_F(CInitializeGameSystemsTest, TheWindowTakesTheGamesTitle) {
+    content_.title = "Blair Witch Volume I";
+    start();
+    EXPECT_THAT(titles_, ::testing::ElementsAre("Blair Witch Volume I"));
+}
+
+TEST_F(CInitializeGameSystemsTest, WithoutATitleTheWindowKeepsItsOwn) {
+    content_.title.reset();
+    start();
+    EXPECT_THAT(titles_, ::testing::IsEmpty());
+}
 
 } // namespace
 } // namespace nocturne::core

@@ -42,8 +42,8 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_00522b90(CMorphModel *t
   
   bVar4 = 0;
   if (2000 < this_ptr->num_points) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\morph.cpp";
-    g_INT_01d1d404 = 0x1f8;
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 504;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CMorphModel::rotatePoints - too many points!");
   }
   local_28 = 0;

@@ -81,8 +81,8 @@
 ;   TerminatedCString s_realloc_returns_NULL_shr_005ed6f0
 ;   TerminatedCString s_Unknown_error_00622840
 ;   undefined4 s_Unknown_error_00622840+4
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -1110,8 +1110,8 @@ section .text
     MOV EDI,0x5ed6de                    ; 0053be03 | = "..\\engine\\pod.cpp"
     MOV EAX,0x2d5                       ; 0053be08
     PUSH 0x5ed6f0                       ; 0053be0d | = "realloc returns NULL shrinking filena..."
-    MOV dword ptr [0x01d1d400],EDI      ; 0053be12 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0053be18 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 0053be12 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0053be18 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0053be1d
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0053be22

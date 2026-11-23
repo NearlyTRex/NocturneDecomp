@@ -48,8 +48,9 @@ bool CDemonMission::startMission() {
 //   nocturne_net_respawn_world_area), with CNetGame's sessions
 // deferred: after the session, taking the hero off the list and resetting it, clearing the
 //   mission, and going on to the mission the session asked for, with its act's stats, a loading
-//   screen and a key to continue away from headquarters, or finishing the act, with the play
-//   loop, CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
+//   screen and a key to continue away from headquarters, its prompt placed by the front end's
+//   layout (the decomp's nocturne_continue_prompt), or finishing the act, with the play loop,
+//   CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
 // deferred: netplay agreeing on the next mission and skipping the key to continue (the decomp's
 //   nocturne_net_mission_*), with CNetGame's sessions
 // nocedit 0x00524420

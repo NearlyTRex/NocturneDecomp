@@ -62,8 +62,8 @@ int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *thi
     local_50 = engine_dosio_cpp_getFile_FUN_00479180
                          ("world",this_ptr->file_name,"rt");
     if (local_50 == (_FILE *)0x0) {
-      g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-      g_INT_01d1d404 = 0x8ee;
+      g_CurrentFilename = "..\\core\\fldnotes.cpp";
+      g_CurrentLineNumber = 2286;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Can't open field notes file %s");
     }
     lVar4 = _ftell(local_50);
@@ -423,8 +423,8 @@ LAB_004bd3d9:
                       goto LAB_004bcdae;
                     }
                     if (g_INT_01cc55cc < 1) {
-                      g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-                      g_INT_01d1d404 = 0x969;
+                      g_CurrentFilename = "..\\core\\fldnotes.cpp";
+                      g_CurrentLineNumber = 2409;
                       core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze!");
                     }
                     iVar11 = g_INT_01cc55cc + -1;
@@ -482,8 +482,8 @@ LAB_004bd503:
                         goto LAB_004bcdae;
                       }
                       if (g_INT_01cc55cc < 1) {
-                        g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-                        g_INT_01d1d404 = 0x98d;
+                        g_CurrentFilename = "..\\core\\fldnotes.cpp";
+                        g_CurrentLineNumber = 2445;
                         core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze!");
                       }
                       iVar6 = g_INT_01cc55cc + -1;
@@ -544,8 +544,8 @@ LAB_004bd681:
                           goto LAB_004bcdae;
                         }
                         if (g_INT_01cc55cc < 1) {
-                          g_CHAR_PTR_01d1d400 = "..\\core\\fldnotes.cpp";
-                          g_INT_01d1d404 = 0x9b9;
+                          g_CurrentFilename = "..\\core\\fldnotes.cpp";
+                          g_CurrentLineNumber = 2489;
                           core_main_c_displayErrorAndQuit_FUN_005030e0("Hell froze!");
                         }
                         iVar6 = g_INT_01cc55cc + -1;

@@ -26,8 +26,8 @@
 ;   TerminatedCString s_Cannot_read_or_write_mor_005eb178
 ;   uint[18] g_MpegBitMaskTableMultiBit
 ;   undefined4 g_MpegBitMaskTableMultiBit[8]
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -103,8 +103,8 @@ section .text
     MOV ECX,0x5eb167                    ; 00525d50 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x2ab                       ; 00525d55
     PUSH 0x5eb178                       ; 00525d5a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00525d5f | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 00525d65 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00525d5f | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 00525d65 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00525d6b
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0xc                         ; 00525d70

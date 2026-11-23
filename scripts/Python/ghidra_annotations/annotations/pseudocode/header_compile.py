@@ -4,146 +4,105 @@
 import os
 import subprocess
 import tempfile
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.compiler_config import (
     DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
 )
 
-def find_header_files(include_dir, skip_dirs=None, skip_files=None):
-    """Find all .h files in the include directory.
+# The aggregate every compiled unit includes; checking it alone adds nothing
+SKIP_HEADERS = ['nocturne.h']
 
-    Args:
-        include_dir: Base include directory
-        skip_dirs: List of directory names to skip
-        skip_files: List of file names to skip
 
-    Returns:
-        List of header file paths
-    """
-    if skip_dirs is None:
-        skip_dirs = []
-    if skip_files is None:
-        skip_files = []
-    headers = []
-    for root, dirs, files in os.walk(include_dir):
-        rel_root = os.path.relpath(root, include_dir)
-        skip_this = False
-        for skip_dir in skip_dirs:
-            if rel_root == skip_dir or rel_root.startswith(skip_dir + os.sep):
-                skip_this = True
-                break
-        if skip_this:
+def _walk_files(base_dir, suffix, skip_dirs, skip_files):
+    """(root, file names) for each directory under base_dir that is not skipped,
+    keeping the names that end in suffix and are not skipped."""
+    for root, _, files in os.walk(base_dir):
+        rel_root = os.path.relpath(root, base_dir)
+        if any(rel_root == d or rel_root.startswith(d + os.sep) for d in skip_dirs):
             continue
-        for f in files:
-            if f.endswith('.h'):
-                if f in skip_files:
-                    continue
-                headers.append(os.path.join(root, f))
-    return sorted(headers)
+        yield root, [f for f in files if f.endswith(suffix) and f not in skip_files]
 
-def compile_header(header_path, include_dir, compiler=DEFAULT_COMPILER):
-    """Try to compile a single header file.
 
-    Args:
-        header_path: Path to the header file
-        include_dir: Base include directory for -I flag
-        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
+def find_header_files(include_dir, skip_dirs=(), skip_files=()):
+    """All .h files under include_dir, sorted, leaving out skipped directories and names."""
+    return sorted(os.path.join(root, f)
+                  for root, files in _walk_files(include_dir, '.h', skip_dirs, skip_files)
+                  for f in files)
 
-    Returns:
-        Tuple of (success, error_message)
-    """
-    # Create a temporary C++ file that includes the header
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.cpp', delete=False) as f:
-        rel_path = os.path.relpath(header_path, include_dir)
 
-        # For files in subdirectories (constants/, globals/, prototypes/),
-        # include the master header first to ensure all dependencies are available.
-        # This allows symbols from other address-range files to be resolved.
-        if rel_path.startswith('constants/') and rel_path != 'constants.h':
-            f.write('#include "constants.h"\n')
-        elif rel_path.startswith('globals/') and rel_path != 'globals.h':
-            f.write('#include "globals.h"\n')
-        elif rel_path.startswith('prototypes/') and rel_path != 'prototypes.h':
-            f.write('#include "prototypes.h"\n')
-
-        f.write('#include "%s"\n' % rel_path)
-        f.write('int main(void) { return 0; }\n')
-        temp_file = f.name
+def _run_compiler(cmd, timeout, compiler):
+    """(success, error text) for one compiler run."""
     try:
-        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir]
-        shims_dir = _shims_include_for(include_dir)
-        if shims_dir:
-            cmd += ['-I', shims_dir]
-        cmd += [temp_file]
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
-        if result.returncode == 0:
-            return (True, None)
-        else:
-            return (False, result.stderr.strip())
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         return (False, "Compilation timed out")
     except FileNotFoundError:
         return (False, "Compiler '%s' not found" % compiler)
+    except OSError as e:
+        return (False, "Compiler '%s' could not run: %s" % (compiler, e))
+    if result.returncode == 0:
+        return (True, None)
+    return (False, result.stderr.strip())
+
+
+def _compile_command(compiler, include_dir, source):
+    cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir]
+    shims_dir = _shims_include_for(include_dir)
+    if shims_dir:
+        cmd += ['-I', shims_dir]
+    return cmd + [source]
+
+
+def compile_header(header_path, include_dir, compiler=DEFAULT_COMPILER):
+    """Try to compile a single header file on its own.
+
+    A range header (constants/, globals/, prototypes/) must include what it
+    uses itself: putting its master header first would hide a missing include,
+    and one broken range would fail every sibling the master pulls in.
+
+    Returns:
+        Tuple of (success, error_message)
+    """
+    rel_path = os.path.relpath(header_path, include_dir)
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.cpp', delete=False) as f:
+        f.write('#include "%s"\n' % rel_path)
+        f.write('int main(void) { return 0; }\n')
+        temp_file = f.name
+    try:
+        return _run_compiler(_compile_command(compiler, include_dir, temp_file), 30, compiler)
     finally:
-        try:
-            os.unlink(temp_file)
-        except:
-            pass
+        os.unlink(temp_file)
 
-def verify_headers(include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
+
+def _verify_all(paths, base_dir, compile_one, max_workers):
+    """(passed, failed, [(rel_path, error)]) with the failures in path order,
+    whatever order the parallel compiles finish in."""
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(executor.map(compile_one, paths))
+    failures = [(os.path.relpath(path, base_dir), error)
+                for path, (success, error) in zip(paths, results) if not success]
+    return (len(paths) - len(failures), len(failures), failures)
+
+
+def verify_headers(include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=(), skip_files=()):
     """Verify all headers in the include directory compile successfully.
-
-    Args:
-        include_dir: Path to include directory
-        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
-        max_workers: Number of parallel compilation jobs
-        skip_dirs: List of directories to skip
-        skip_files: List of files to skip
 
     Returns:
         Tuple of (passed_count, failed_count, failed_headers)
         where failed_headers is a list of (rel_path, error_message) tuples
     """
-    if skip_dirs is None:
-        skip_dirs = []
-    if skip_files is None:
-        skip_files = []
     headers = find_header_files(include_dir, skip_dirs, skip_files)
-    if not headers:
-        return (0, 0, [])
-    passed = 0
-    failed = 0
-    failed_headers = []
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {
-            executor.submit(compile_header, h, include_dir, compiler): h
-            for h in headers
-        }
-        for future in as_completed(futures):
-            header = futures[future]
-            rel_path = os.path.relpath(header, include_dir)
-            try:
-                success, error = future.result()
-            except Exception as e:
-                success, error = False, str(e)
-            if success:
-                passed += 1
-            else:
-                failed += 1
-                failed_headers.append((rel_path, error))
-    return (passed, failed, failed_headers)
+    return _verify_all(headers, include_dir, lambda h: compile_header(h, include_dir, compiler), max_workers)
+
 
 def make_path_relative(path, base_dir):
     """Make a path relative to base_dir if it's under base_dir."""
-    if base_dir and path.startswith(base_dir):
-        rel = os.path.relpath(path, base_dir)
-        return rel
+    if not base_dir:
+        return path
+    abs_path, abs_base = os.path.abspath(path), os.path.abspath(base_dir)
+    if os.path.commonpath([abs_path, abs_base]) == abs_base:
+        return os.path.relpath(abs_path, abs_base)
     return path
 
 
@@ -157,10 +116,58 @@ def strip_paths_from_error(error_text, base_dir):
     return error_text.replace(base_with_slash, '').replace(base_dir, '')
 
 
+def _compiler_available(compiler, what):
+    try:
+        result = subprocess.run([compiler, '--version'], capture_output=True, timeout=5)
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        result = None
+    if result is None or result.returncode != 0:
+        log_info("%s verification: compiler '%s' not available, skipping" % (what, compiler))
+        return False
+    return True
+
+
+def _write_report(report_path, title, compiler, dirs, passed, failed, failures, repo_dir, all_ok):
+    """The full compilation report: summary, then each failure's error with repo paths stripped."""
+    total = passed + failed
+    with open(report_path, 'w') as f:
+        f.write("=" * 80 + "\n")
+        f.write("%s COMPILATION REPORT\n" % title)
+        f.write("=" * 80 + "\n\n")
+        f.write("Compiler: %s\n" % compiler)
+        for label, path in dirs:
+            f.write("%s: %s\n" % (label, make_path_relative(path, repo_dir)))
+        f.write("\nSummary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
+            passed, failed, total, passed * 100.0 / total))
+        if failed:
+            f.write("-" * 80 + "\n")
+            f.write("FAILED %s (%d)\n" % ("HEADERS" if title == "HEADER" else "FILES", failed))
+            f.write("-" * 80 + "\n\n")
+            for rel_path, error in failures:
+                f.write("FILE: %s\n" % rel_path)
+                f.write("-" * 40 + "\n")
+                f.write("%s\n" % (strip_paths_from_error(error, repo_dir) or "(no error output)"))
+                f.write("\n")
+        else:
+            f.write("%s\n" % all_ok)
+    log_info("  Full compilation report written to: %s" % report_path)
+
+
+def _log_failures(kind, failures):
+    """The first ten failures and their first error lines, trimmed for the console."""
+    log_info("  FAILED %s (%d):" % (kind, len(failures)))
+    for rel_path, error in failures[:10]:
+        log_info("    - %s" % rel_path)
+        for err_line in extract_error_lines(error, max_lines=3):
+            if len(err_line) > 120:
+                err_line = err_line[:117] + "..."
+            log_info("      %s" % err_line)
+    if len(failures) > 10:
+        log_info("    ... and %d more (see report for full list)" % (len(failures) - 10))
+
+
 def verify_headers_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4, reports_dir=None, repo_dir=None):
     """Verify headers after export, called from the export process.
-
-    This is the main entry point for integration with export_pseudocode.
 
     Args:
         pseudocode_dir: Base pseudocode directory (contains include/)
@@ -172,151 +179,51 @@ def verify_headers_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_w
     Returns:
         True if all headers compiled successfully, False otherwise
     """
-
-    # Get include dir
     include_dir = os.path.join(pseudocode_dir, "include")
     if not os.path.isdir(include_dir):
         log_info("Header verification: include directory not found at %s" % include_dir)
         return True  # Not an error if no headers
-
-    # Check if compiler is available
-    try:
-        result = subprocess.run([compiler, '--version'], capture_output=True, timeout=5)
-        if result.returncode != 0:
-            log_info("Header verification: compiler '%s' not available, skipping" % compiler)
-            return True
-    except (FileNotFoundError, subprocess.TimeoutExpired):
-        log_info("Header verification: compiler '%s' not available, skipping" % compiler)
+    if not _compiler_available(compiler, "Header"):
         return True
 
-    # Verify headers
     log_info("Verifying headers compile with %s..." % compiler)
-    skip_files = ['nocturne.h']
     passed, failed, failed_headers = verify_headers(
-        include_dir,
-        compiler=compiler,
-        max_workers=max_workers,
-        skip_files=skip_files
-    )
+        include_dir, compiler=compiler, max_workers=max_workers, skip_files=SKIP_HEADERS)
     total = passed + failed
     if total == 0:
         log_info("  No headers found to verify")
         return True
-    log_info("  Header verification: %d/%d passed (%.1f%%)" % (
-        passed, total, (passed * 100.0 / total) if total > 0 else 0))
+    log_info("  Header verification: %d/%d passed (%.1f%%)" % (passed, total, passed * 100.0 / total))
 
-    # Write full compilation report if reports_dir provided
     if reports_dir:
-        report_path = os.path.join(reports_dir, "header_compilation.txt")
-        # Make paths relative for report
-        include_dir_display = make_path_relative(include_dir, repo_dir)
-        with open(report_path, 'w') as f:
-            f.write("=" * 80 + "\n")
-            f.write("HEADER COMPILATION REPORT\n")
-            f.write("=" * 80 + "\n\n")
-            f.write("Compiler: %s\n" % compiler)
-            f.write("Include directory: %s\n\n" % include_dir_display)
-            f.write("Summary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
-                passed, failed, total, (passed * 100.0 / total) if total > 0 else 0))
-            if failed > 0:
-                f.write("-" * 80 + "\n")
-                f.write("FAILED HEADERS (%d)\n" % failed)
-                f.write("-" * 80 + "\n\n")
-                for rel_path, error in failed_headers:
-                    f.write("FILE: %s\n" % rel_path)
-                    f.write("-" * 40 + "\n")
-                    if error:
-                        # Strip absolute paths from error output
-                        error_display = strip_paths_from_error(error, repo_dir)
-                        f.write("%s\n" % error_display)
-                    else:
-                        f.write("(no error output)\n")
-                    f.write("\n")
-            else:
-                f.write("All headers compiled successfully.\n")
-        log_info("  Full compilation report written to: %s" % report_path)
-
-    # Show failed headers (trimmed for console)
-    if failed > 0:
-        log_info("  FAILED headers (%d):" % failed)
-        for rel_path, error in failed_headers[:10]:
-            log_info("    - %s" % rel_path)
-            if error:
-                error_lines = extract_error_lines(error, max_lines=3)
-                for err_line in error_lines:
-                    if len(err_line) > 120:
-                        err_line = err_line[:117] + "..."
-                    log_info("      %s" % err_line)
-        if len(failed_headers) > 10:
-            log_info("    ... and %d more (see report for full list)" % (len(failed_headers) - 10))
+        _write_report(os.path.join(reports_dir, "header_compilation.txt"), "HEADER", compiler,
+                      [("Include directory", include_dir)], passed, failed, failed_headers, repo_dir,
+                      "All headers compiled successfully.")
+    if failed:
+        _log_failures("headers", failed_headers)
     return failed == 0
 
-def get_failed_headers_report(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4):
-    """Get a detailed report of failed header compilations.
-
-    Args:
-        pseudocode_dir: Base pseudocode directory
-        compiler: Compiler to use
-        max_workers: Number of parallel jobs
-
-    Returns:
-        List of dictionaries with 'path' and 'error' keys for each failed header
-    """
-    include_dir = os.path.join(pseudocode_dir, "include")
-    if not os.path.isdir(include_dir):
-        return []
-    skip_files = ['nocturne.h']
-    _, _, failed_headers = verify_headers(
-        include_dir,
-        compiler=compiler,
-        max_workers=max_workers,
-        skip_files=skip_files
-    )
-    return [{'path': path, 'error': error} for path, error in failed_headers]
 
 # =============================================================================
 # CPP File Compilation
 # =============================================================================
 
-def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
-    """Find all .cpp files in the source directory.
+def find_cpp_files(src_dir, skip_dirs=(), skip_files=()):
+    """All .cpp files under src_dir, sorted.
 
-    Args:
-        src_dir: Base source directory
-        skip_dirs: List of directory names to skip
-        skip_files: List of file names to skip
-
-    Returns:
-        List of cpp file paths
+    .mmx/.byval variants are generated but not compiled, and a .keep.cpp
+    stands in for the .cpp beside it.
     """
-    if skip_dirs is None:
-        skip_dirs = []
-    if skip_files is None:
-        skip_files = []
     cpp_files = []
-    for root, dirs, files in os.walk(src_dir):
-        rel_root = os.path.relpath(root, src_dir)
-        skip_this = False
-        for skip_dir in skip_dirs:
-            if rel_root == skip_dir or rel_root.startswith(skip_dir + os.sep):
-                skip_this = True
-                break
-        if skip_this:
-            continue
+    for root, files in _walk_files(src_dir, '.cpp', skip_dirs, skip_files):
         for f in files:
-            if f.endswith('.cpp'):
-                if f in skip_files:
-                    continue
-                # Skip .mmx/.byval variants - generated but not compiled
-                if '.mmx.' in f or '.byval.' in f:
-                    continue
-                # Prefer .keep.cpp: skip regular .cpp if a .keep.cpp exists
-                if not '.keep.' in f:
-                    keep_version = f.replace('.cpp', '.keep.cpp')
-                    if keep_version in files:
-                        continue
-                cpp_files.append(os.path.join(root, f))
+            if '.mmx.' in f or '.byval.' in f:
+                continue
+            if '.keep.' not in f and f[:-len('.cpp')] + '.keep.cpp' in files:
+                continue
+            cpp_files.append(os.path.join(root, f))
     return sorted(cpp_files)
+
 
 def _shims_include_for(include_dir):
     """Return the sibling shims/ dir if it exists, else None.
@@ -332,34 +239,10 @@ def _shims_include_for(include_dir):
 def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single cpp file.
 
-    Args:
-        cpp_path: Path to the cpp file
-        include_dir: Include directory for -I flag
-        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
-
     Returns:
         Tuple of (success, error_message)
     """
-    try:
-        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir]
-        shims_dir = _shims_include_for(include_dir)
-        if shims_dir:
-            cmd += ['-I', shims_dir]
-        cmd += [cpp_path]
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
-        if result.returncode == 0:
-            return (True, None)
-        else:
-            return (False, result.stderr.strip())
-    except subprocess.TimeoutExpired:
-        return (False, "Compilation timed out")
-    except FileNotFoundError:
-        return (False, "Compiler '%s' not found" % compiler)
+    return _run_compiler(_compile_command(compiler, include_dir, cpp_path), 60, compiler)
 
 
 def extract_error_lines(error_output, max_lines=5):
@@ -370,66 +253,35 @@ def extract_error_lines(error_output, max_lines=5):
         max_lines: Maximum number of error lines to return
 
     Returns:
-        List of error line strings
+        List of error line strings; the first line when none looks like an error
     """
     if not error_output:
         return []
     lines = error_output.split('\n')
     error_lines = []
     for line in lines:
+        lower = line.lower()
         # Skip warning-only lines
-        if 'warning:' in line.lower() and 'error:' not in line.lower():
+        if 'warning:' in lower and 'error:' not in lower:
             continue
         # Include lines with 'error:' or lines that look like error context
-        if 'error:' in line.lower() or (line.strip() and not line.startswith(' ') and ':' in line):
+        if 'error:' in lower or (line.strip() and not line.startswith(' ') and ':' in line):
             error_lines.append(line.strip())
             if len(error_lines) >= max_lines:
                 break
-    return error_lines if error_lines else [lines[0].strip()] if lines else []
+    return error_lines or [lines[0].strip()]
 
-def verify_cpp_files(src_dir, include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=None, skip_files=None):
+
+def verify_cpp_files(src_dir, include_dir, compiler=DEFAULT_COMPILER, max_workers=4, skip_dirs=(), skip_files=()):
     """Verify all cpp files in the source directory compile successfully.
-
-    Args:
-        src_dir: Path to source directory
-        include_dir: Path to include directory for -I flag
-        compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
-        max_workers: Number of parallel compilation jobs
-        skip_dirs: List of directories to skip
-        skip_files: List of files to skip
 
     Returns:
         Tuple of (passed_count, failed_count, failed_files)
         where failed_files is a list of (rel_path, error_message) tuples
     """
-    if skip_dirs is None:
-        skip_dirs = []
-    if skip_files is None:
-        skip_files = []
     cpp_files = find_cpp_files(src_dir, skip_dirs, skip_files)
-    if not cpp_files:
-        return (0, 0, [])
-    passed = 0
-    failed = 0
-    failed_files = []
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {
-            executor.submit(compile_cpp_file, f, include_dir, compiler): f
-            for f in cpp_files
-        }
-        for future in as_completed(futures):
-            cpp_file = futures[future]
-            rel_path = os.path.relpath(cpp_file, src_dir)
-            try:
-                success, error = future.result()
-            except Exception as e:
-                success, error = False, str(e)
-            if success:
-                passed += 1
-            else:
-                failed += 1
-                failed_files.append((rel_path, error))
-    return (passed, failed, failed_files)
+    return _verify_all(cpp_files, src_dir, lambda f: compile_cpp_file(f, include_dir, compiler), max_workers)
+
 
 def verify_globals_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_workers=4, reports_dir=None, repo_dir=None):
     """Verify globals cpp files after export.
@@ -444,8 +296,6 @@ def verify_globals_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_w
     Returns:
         True if all globals compiled successfully, False otherwise
     """
-
-    # Get directories
     include_dir = os.path.join(pseudocode_dir, "include")
     globals_src_dir = os.path.join(pseudocode_dir, "src", "globals")
     if not os.path.isdir(globals_src_dir):
@@ -454,76 +304,22 @@ def verify_globals_after_export(pseudocode_dir, compiler=DEFAULT_COMPILER, max_w
     if not os.path.isdir(include_dir):
         log_info("Globals verification: include directory not found")
         return True
-
-    # Check if compiler is available
-    try:
-        result = subprocess.run([compiler, '--version'], capture_output=True, timeout=5)
-        if result.returncode != 0:
-            log_info("Globals verification: compiler '%s' not available, skipping" % compiler)
-            return True
-    except (FileNotFoundError, subprocess.TimeoutExpired):
-        log_info("Globals verification: compiler '%s' not available, skipping" % compiler)
+    if not _compiler_available(compiler, "Globals"):
         return True
 
-    # Verify globals
     log_info("Verifying globals compile with %s..." % compiler)
     passed, failed, failed_files = verify_cpp_files(
-        globals_src_dir,
-        include_dir,
-        compiler=compiler,
-        max_workers=max_workers
-    )
+        globals_src_dir, include_dir, compiler=compiler, max_workers=max_workers)
     total = passed + failed
     if total == 0:
         log_info("  No globals cpp files found to verify")
         return True
-    log_info("  Globals verification: %d/%d passed (%.1f%%)" % (
-        passed, total, (passed * 100.0 / total) if total > 0 else 0))
+    log_info("  Globals verification: %d/%d passed (%.1f%%)" % (passed, total, passed * 100.0 / total))
 
-    # Write full compilation report if reports_dir provided
     if reports_dir:
-        report_path = os.path.join(reports_dir, "globals_compilation.txt")
-        # Make paths relative for report
-        globals_src_dir_display = make_path_relative(globals_src_dir, repo_dir)
-        include_dir_display = make_path_relative(include_dir, repo_dir)
-        with open(report_path, 'w') as f:
-            f.write("=" * 80 + "\n")
-            f.write("GLOBALS COMPILATION REPORT\n")
-            f.write("=" * 80 + "\n\n")
-            f.write("Compiler: %s\n" % compiler)
-            f.write("Source directory: %s\n" % globals_src_dir_display)
-            f.write("Include directory: %s\n\n" % include_dir_display)
-            f.write("Summary: %d passed, %d failed out of %d total (%.1f%% success)\n\n" % (
-                passed, failed, total, (passed * 100.0 / total) if total > 0 else 0))
-            if failed > 0:
-                f.write("-" * 80 + "\n")
-                f.write("FAILED FILES (%d)\n" % failed)
-                f.write("-" * 80 + "\n\n")
-                for rel_path, error in failed_files:
-                    f.write("FILE: %s\n" % rel_path)
-                    f.write("-" * 40 + "\n")
-                    if error:
-                        # Strip absolute paths from error output
-                        error_display = strip_paths_from_error(error, repo_dir)
-                        f.write("%s\n" % error_display)
-                    else:
-                        f.write("(no error output)\n")
-                    f.write("\n")
-            else:
-                f.write("All globals compiled successfully.\n")
-        log_info("  Full compilation report written to: %s" % report_path)
-
-    # Show failed globals (trimmed for console)
-    if failed > 0:
-        log_info("  FAILED globals (%d):" % failed)
-        for rel_path, error in failed_files[:10]:
-            log_info("    - %s" % rel_path)
-            if error:
-                error_lines = extract_error_lines(error, max_lines=3)
-                for err_line in error_lines:
-                    if len(err_line) > 120:
-                        err_line = err_line[:117] + "..."
-                    log_info("      %s" % err_line)
-        if len(failed_files) > 10:
-            log_info("    ... and %d more (see report for full list)" % (len(failed_files) - 10))
+        _write_report(os.path.join(reports_dir, "globals_compilation.txt"), "GLOBALS", compiler,
+                      [("Source directory", globals_src_dir), ("Include directory", include_dir)],
+                      passed, failed, failed_files, repo_dir, "All globals compiled successfully.")
+    if failed:
+        _log_failures("globals", failed_files)
     return failed == 0

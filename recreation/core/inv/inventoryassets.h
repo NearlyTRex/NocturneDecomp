@@ -59,7 +59,7 @@ public:
 
     // Reads the inventory's size, its pictures, most halved below 384 lines, and itemlist.txt's
     // items. A missing picture is fatal; a missing size or item list leaves the defaults or none.
-    void load();
+    void loadAssets();
 
     // The window's height as the inventory was loaded.
     [[nodiscard]] int getScreenHeight() const;

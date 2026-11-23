@@ -31,8 +31,8 @@
 ;   int g_ClipRight
 ;   int g_INT_01c35e54
 ;   int g_INT_01c35e60
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004e4500
@@ -147,8 +147,8 @@ section .text
         ;   Label: LAB_00403012
     MOV EDX,0x887                       ; 00403017
     PUSH 0x5ca165                       ; 0040301c | = "hLine - invalid bitsPerPixel"
-    MOV [0x01d046a0],EAX                ; 00403021 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDX      ; 00403026 | g_INT_01d046a4
+    MOV [0x01d046a0],EAX                ; 00403021 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDX      ; 00403026 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040302c
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 00403031

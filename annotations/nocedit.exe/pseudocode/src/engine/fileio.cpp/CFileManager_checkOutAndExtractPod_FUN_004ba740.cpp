@@ -27,13 +27,14 @@ int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CF
   char *pcVar8;
   CCheckOutItem *pCVar11;
   byte bVar12;
+  CFileManager *in_stack_00000010;
   char *filename;
   CCheckOutItem local_4a8;
   char local_340 [8];
   char acStack_338 [252];
   char local_23c [260];
   char local_138 [264];
-  byte auStack_30 [8];
+  byte auStack_2c [4];
   CCheckOutList local_28;
   CStrList_vtable *local_20;
   CCheckOutItem *local_1c;
@@ -294,17 +295,17 @@ LAB_004baa7f:
     return 1;
   }
   this_ptr->batch_mode = 1;
-  (*this_ptr->vtable->extractPodFile)(this_ptr,local_340);
-  *(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_30);
+  (*this_ptr->vtable->extractPodFile)(this_ptr,local_340,0);
+  in_stack_00000010->batch_mode = 0;
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_2c);
   engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
-            ((CFileManager *)optional_pod_file,(CStrList *)auStack_30);
+            (in_stack_00000010,(CStrList *)auStack_2c);
   iVar4 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
-                    ((CFileManager *)optional_pod_file,(CStrList *)auStack_30,acStack_338);
+                    (in_stack_00000010,(CStrList *)auStack_2c,acStack_338 + 4);
   if (-1 < iVar4) {
-    shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0((CStrList *)auStack_30,iVar4);
+    shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0((CStrList *)auStack_2c,iVar4);
     engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620
-              ((CFileManager *)optional_pod_file,(CStrList *)auStack_30);
+              (in_stack_00000010,(CStrList *)auStack_2c);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -312,6 +313,6 @@ LAB_004baa7f:
     engine_pod_cpp_CPod_cleanup_FUN_00550c80(&g_CDemonPodPtr->base);
     (*((g_CDemonPodPtr->base).vtable)->load)(&g_CDemonPodPtr->base);
   }
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)(auStack_30 + 4),0);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&local_28,0);
   return 1;
 }

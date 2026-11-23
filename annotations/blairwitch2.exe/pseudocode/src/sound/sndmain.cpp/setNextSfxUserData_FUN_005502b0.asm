@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8b99
 ;   TerminatedCString s_setNextSfxUserData_inval_005e8bae
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_SfxLastSlot
 ;
 ; Called Functions:
@@ -47,8 +47,8 @@ section .text
     MOV EDX,0x5e8b99                    ; 005502de | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xe6b                       ; 005502e3
     PUSH 0x5e8bae                       ; 005502e8 | = "setNextSfxUserData - invalid user dat..."
-    MOV dword ptr [0x01d046a0],EDX      ; 005502ed | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],ECX      ; 005502f3 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],EDX      ; 005502ed | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],ECX      ; 005502f3 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 005502f9
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 005502fe

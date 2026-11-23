@@ -23,8 +23,8 @@
 ;   TerminatedCString s_core_netgame_cpp_005ec0fb
 ;   TerminatedCString s_CNetGame_sendMyStateChan_005ec10f
 ;   int g_NetLobbyStateChanged = 0x1
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_UINT_01d51da0
 ;
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_0052fd96
     MOV EDI,0x8d0                       ; 0052fd9b
     PUSH 0x5ec10f                       ; 0052fda0 | = "CNetGame::sendMyStateChanged - should..."
-    MOV dword ptr [0x01d1d400],ESI      ; 0052fda5 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 0052fdab | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 0052fda5 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 0052fdab | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 0052fdb1
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0052fdb6

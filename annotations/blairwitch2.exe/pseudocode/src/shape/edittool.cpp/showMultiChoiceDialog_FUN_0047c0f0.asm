@@ -85,8 +85,8 @@ section .text
     MOV ECX,0x5d1e6f                    ; 0047c102 | = "..\\shape\\edittool.cpp"
     MOV EBX,0xa0                        ; 0047c107
     PUSH 0x5d1e85                       ; 0047c10c | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01d046a0],ECX      ; 0047c111 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EBX      ; 0047c117 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ECX      ; 0047c111 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EBX      ; 0047c117 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0047c11d
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0047c122

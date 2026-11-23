@@ -18,6 +18,7 @@ public:
     CSoundOptionsPage(CMenu &menu, const SMenuOwners &owners);
 
     [[nodiscard]] std::optional<std::string> title() override;
+    [[nodiscard]] std::string_view getLayoutId() const override;
     void build(std::vector<SMenuLine> &lines) override;
     void decorate() override;
     EMenuOutcome choose(int id, EMenuStep step) override;
@@ -31,7 +32,8 @@ private:
         std::string_view off_label;
     };
 
-    [[nodiscard]] std::string localize(std::string_view key) const;
+    // The game's text for a label id.
+    [[nodiscard]] std::string label(std::string_view id) const;
     [[nodiscard]] std::string getChannelText(const SChannel &channel) const;
     [[nodiscard]] std::string getMovieText() const;
     // Off is below the lowest step: back from it is full, on from it the lowest.

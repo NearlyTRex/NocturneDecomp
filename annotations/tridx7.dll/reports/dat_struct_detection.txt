@@ -2,12 +2,13 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 221
+Total DAT_ globals found: 226
 Filtered out (inside named data): 5
-Immediate constants (not real globals): 27
-Real globals remaining: 194
+Outside the program image: 0
+Immediate constants (not real globals): 26
+Real globals remaining: 195
 Clusters detected: 12
-DAT_ globals in clusters: 190
+DAT_ globals in clusters: 191
 
 Classification summary:
   vector_groups        6 clusters
@@ -17,7 +18,7 @@ Classification summary:
   unknown              1 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (27)
+LIKELY IMMEDIATE CONSTANTS (26)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -50,12 +51,6 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x10012770                     ; 1000c109 | DAT_10012770
     _crtGetStringTypeA
       PUSH 0x10012770                     ; 1000bffa | DAT_10012770
-
-  DAT_100170a8  value=0x100170A8  refs=2
-    _flsbuf
-      CMP ESI,0x100170a8                  ; 1000747e | DAT_100170a8
-    _stbuf
-      CMP ESI,0x100170a8                  ; 10005e7b | DAT_100170a8
 
   DAT_100170c8  value=0x100170C8  refs=2
     _flsbuf
@@ -174,7 +169,7 @@ HIGH CONFIDENCE (1 clusters)
 MEDIUM CONFIDENCE (7 clusters)
 --------------------------------------------------------------------------------
 
-  0x10016c60 - 0x100170b8  (51 items, 1112 bytes span)
+  0x10016c60 - 0x100170b8  (52 items, 1112 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 8 groups of 3 consecutive ints found
@@ -186,7 +181,7 @@ MEDIUM CONFIDENCE (7 clusters)
       0x10016c74  DAT_10016c74  undefined4
       0x10016c78  DAT_10016c78  undefined4
       0x10016d38  DAT_10016d38  undefined4
-      ... +45 more
+      ... +46 more
 
   0x1001768c - 0x10017960  (47 items, 724 bytes span)
     Classification: vector_groups

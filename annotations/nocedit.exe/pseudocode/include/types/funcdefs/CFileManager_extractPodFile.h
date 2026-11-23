@@ -9,5 +9,5 @@
 struct CFileManager;
 
 // Function Definition: CFileManager_extractPodFile
-typedef void CFileManager_extractPodFile(struct CFileManager* this_ptr, char* pod_filename);
+typedef void CFileManager_extractPodFile(struct CFileManager* this_ptr, char* pod_filename, int offer_dismount);
 

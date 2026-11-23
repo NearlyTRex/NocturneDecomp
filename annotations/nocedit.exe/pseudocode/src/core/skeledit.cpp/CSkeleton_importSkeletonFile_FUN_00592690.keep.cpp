@@ -47,11 +47,8 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   int aiStack_2720 [120];
   int local_2540 [120];
   char local_2360 [400];
-  char local_21d0 [6];
-  char local_21ca [294];
-  char local_20a4 [2];
-  char local_20a2 [15];
-  byte local_2093 [283];
+  char local_21d0 [300];
+  char local_20a4 [300];
   char local_1f78 [260];
   char local_1e74 [260];
   char local_1d70 [256];
@@ -465,7 +462,7 @@ LAB_00592a67:
                 core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);
                 iVar16 = _strnicmp(local_20a4,"fps",3);
                 if (iVar16 == 0) {
-                  pcVar18 = local_20a2;
+                  pcVar18 = (local_20a4 + 2);
                   do {
                     pcVar18 = pcVar18 + 1;
                   } while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0);
@@ -488,7 +485,7 @@ LAB_00592a67:
                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
                       goto LAB_005927ee;
                     }
-                    local_a4 = local_20a2;
+                    local_a4 = (local_20a4 + 2);
                     do {
                       local_a4 = local_a4 + 1;
                     } while ((g_CharacterClassificationTable[(byte)(*local_a4 + 1)] & 2) != 0);
@@ -652,7 +649,7 @@ LAB_00592a67:
                   else {
                     iVar16 = _strnicmp(local_20a4,"->",2);
                     if (iVar16 == 0) {
-                      pcVar18 = local_20a2;
+                      pcVar18 = (local_20a4 + 2);
                       while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                         pcVar18 = pcVar18 + 1;
                       }
@@ -832,7 +829,7 @@ LAB_00592a67:
                     else {
                       iVar16 = _strnicmp(local_20a4,"signal",6);
                       if (iVar16 == 0) {
-                        pcVar18 = local_20a2 + 4;
+                        pcVar18 = (local_20a4 + 2) + 4;
                         while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                           pcVar18 = pcVar18 + 1;
                         }
@@ -887,7 +884,7 @@ LAB_00592a67:
                             iVar16 = _strnicmp
                                                (local_20a4,"cancel",6);
                             if (iVar16 == 0) {
-                              pbVar8 = (byte *)(local_20a2 + 4);
+                              pbVar8 = (byte *)((local_20a4 + 2) + 4);
                               while ((g_CharacterClassificationTable[(byte)(*pbVar8 + 1)] & 2) != 0)
                               {
                                 pbVar8 = pbVar8 + 1;
@@ -935,7 +932,7 @@ LAB_005949a6:
                               iVar16 = _strnicmp
                                                  (local_20a4,"bias",4);
                               if (iVar16 == 0) {
-                                pcVar18 = local_20a2 + 2;
+                                pcVar18 = (local_20a4 + 2) + 2;
                                 while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) !=
                                        0) {
                                   pcVar18 = pcVar18 + 1;
@@ -1007,7 +1004,7 @@ LAB_005949a6:
                                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
                                     goto LAB_005927ee;
                                   }
-                                  pcVar18 = local_20a2 + 5;
+                                  pcVar18 = (local_20a4 + 2) + 5;
                                   while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2)
                                          != 0) {
                                     pcVar18 = pcVar18 + 1;
@@ -1065,7 +1062,7 @@ LAB_005949a6:
                                   iVar16 = _strnicmp
                                                      (local_20a4,"displace",8);
                                   if (iVar16 == 0) {
-                                    pcVar18 = local_20a2 + 6;
+                                    pcVar18 = (local_20a4 + 2) + 6;
                                     while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2
                                            ) != 0) {
                                       pcVar18 = pcVar18 + 1;
@@ -1087,7 +1084,7 @@ LAB_005949a6:
                                                        (local_20a4,"totaldisplacement",0x11
                                                        );
                                     if (iVar16 == 0) {
-                                      pbVar8 = local_2093;
+                                      pbVar8 = (byte *)(local_20a4 + 0x11);
 LAB_00594f2a:
                                       do {
                                         str = pbVar8;
@@ -1218,7 +1215,7 @@ LAB_0059518b:
                                                     (&local_2ca8,0);
                                           goto LAB_005927ee;
                                         }
-                                        pcVar18 = local_20a2 + 4;
+                                        pcVar18 = (local_20a4 + 2) + 4;
                                         while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)]
                                                & 2) != 0) {
                                           pcVar18 = pcVar18 + 1;
@@ -1623,7 +1620,7 @@ LAB_00595eb8:
       if (iVar16 != 0) {
         iVar16 = _strnicmp(local_21d0,"checkout",8);
         if (iVar16 == 0) {
-          sscanf(local_21ca + 2,"%s",acStack_851 + 1);
+          sscanf((local_21d0 + 6) + 2,"%s",acStack_851 + 1);
           n = strlen(acStack_851 + 1);
           if (0 < (int)n) {
             pcVar18 = acStack_851 + 1 + n;
@@ -1662,7 +1659,7 @@ LAB_00595eb8:
           iVar4 = _strnicmp(local_21d0,"filename",8);
           pacVar22 = g_MotionFilenames + iVar16;
           if (iVar4 == 0) {
-            pcVar18 = local_21ca + 2;
+            pcVar18 = (local_21d0 + 6) + 2;
             while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
               pcVar18 = pcVar18 + 1;
             }
@@ -1698,7 +1695,7 @@ LAB_00595eb8:
           else {
             iVar16 = _strnicmp(local_21d0,"frames",6);
             if (iVar16 == 0) {
-              pcVar18 = local_21ca;
+              pcVar18 = (local_21d0 + 6);
               while ((g_CharacterClassificationTable[(byte)(*pcVar18 + 1)] & 2) != 0) {
                 pcVar18 = pcVar18 + 1;
               }
@@ -1727,7 +1724,7 @@ LAB_00595eb8:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
         goto LAB_005927ee;
       }
-      iVar16 = sscanf(local_21ca + 3," \"%[^\"]\" : %s",local_1f78,local_724);
+      iVar16 = sscanf((local_21d0 + 6) + 3," \"%[^\"]\" : %s",local_1f78,local_724);
       if (iVar16 != 2) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't parse %s.  I don't understand this line:\n%s",filename,local_21d0);

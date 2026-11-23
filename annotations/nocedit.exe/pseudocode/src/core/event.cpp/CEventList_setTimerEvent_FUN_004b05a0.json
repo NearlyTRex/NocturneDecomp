@@ -192,19 +192,19 @@
     "blairwitch2.exe": {
       "addr": "00491280",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     },
     "bw1.exe": {
       "addr": "004a9bf0",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     },
     "bw3.exe": {
       "addr": "00494a70",
       "by": "name",
-      "class": "const-change",
+      "class": "identical",
       "ratio": 1.0
     },
     "nocturne.exe": {
@@ -274,6 +274,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CEventList_setTimerEvent_FUN_004b05a0.keep.cpp",
+    "clang_analyzer_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "checker": "security.insecureAPI.strcpy",
+          "column": 7,
+          "line": 34,
+          "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119",
+          "path_notes": [
+            {
+              "line": 34,
+              "message": "Call to function 'strcpy' is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as 'strlcpy'. CWE-119"
+            }
+          ]
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

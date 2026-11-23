@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 93,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "memcpy_oversized_source",
       "unaffected_reg",
       "unrolled_memcpy"
     ],
@@ -220,6 +221,14 @@
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Unrolled-memcpy loop reads 6 elements from local array `auStack_14[3]` (declared size 3) \u2014 overruns by 3. Likely Ghidra dropped explicit `auStack_14[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
+      "line": 38,
+      "match": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "memcpy_oversized_source"
     }
   ],
   "vtable_info": {

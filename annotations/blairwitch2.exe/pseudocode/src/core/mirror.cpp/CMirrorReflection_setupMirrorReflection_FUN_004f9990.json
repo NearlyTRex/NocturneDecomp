@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 973,
-    "complexity_score": 1758,
+    "complexity_score": 1813,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 493,
-    "suspect_count": 124,
+    "suspect_count": 129,
     "suspect_types": [
+      "derived_field_index_pun",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
@@ -2457,6 +2458,41 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&local_90 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'(SClipPlane *)&this_ptr[1].corner1.y' walks 1 x sizeof(CMirrorReflection) (0x94) + offsetof(corner1.y) (0x4) + 0x0 = 0x98, which is exactly offsetof(CMirror, clip_planes). Ghidra had no CMirror type here and reached the field by index arithmetic; write it as ((CMirror *)this_ptr)->clip_planes (\u00a7de-pun/\u00a712).",
+      "line": 485,
+      "severity": "moderate",
+      "text": "((SClipPlane *)&this_ptr[1].corner1.y,&local_d8,&local_54,&local_78);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(SClipPlane *)&this_ptr[1].corner2.z' walks 1 x sizeof(CMirrorReflection) (0x94) + offsetof(corner2.z) (0x14) + 0x0 = 0xa8, which is exactly offsetof(CMirror, clip_planes[1]). Ghidra had no CMirror type here and reached the field by index arithmetic; write it as ((CMirror *)this_ptr)->clip_planes[1] (\u00a7de-pun/\u00a712).",
+      "line": 487,
+      "severity": "moderate",
+      "text": "((SClipPlane *)&this_ptr[1].corner2.z,&local_84,&local_d8,&local_54);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(SClipPlane *)&this_ptr[1].corner4' walks 1 x sizeof(CMirrorReflection) (0x94) + offsetof(corner4) (0x24) + 0x0 = 0xb8, which is exactly offsetof(CMirror, clip_planes[2]). Ghidra had no CMirror type here and reached the field by index arithmetic; write it as ((CMirror *)this_ptr)->clip_planes[2] (\u00a7de-pun/\u00a712).",
+      "line": 489,
+      "severity": "moderate",
+      "text": "((SClipPlane *)&this_ptr[1].corner4,&local_84,&local_54,&local_78);",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[0].x' walks 1 x sizeof(CMirrorReflection) (0x94) + offsetof(mirror_transform_matrix.m[0].x) (0x34) + 0x0 = 0xc8, which is exactly offsetof(CMirror, clip_planes[3]). Ghidra had no CMirror type here and reached the field by index arithmetic; write it as ((CMirror *)this_ptr)->clip_planes[3] (\u00a7de-pun/\u00a712).",
+      "line": 491,
+      "severity": "moderate",
+      "text": "((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[0].x,&local_84,&local_78,",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[1].x' walks 1 x sizeof(CMirrorReflection) (0x94) + offsetof(mirror_transform_matrix.m[1].x) (0x44) + 0x0 = 0xd8, which is exactly offsetof(CMirror, clip_planes[4]). Ghidra had no CMirror type here and reached the field by index arithmetic; write it as ((CMirror *)this_ptr)->clip_planes[4] (\u00a7de-pun/\u00a712).",
+      "line": 494,
+      "severity": "moderate",
+      "text": "((SClipPlane *)&this_ptr[1].mirror_transform_matrix.m[1].x,&local_84,&local_234,",
+      "type": "derived_field_index_pun"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 004f9ebf, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

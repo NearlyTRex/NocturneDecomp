@@ -5,8 +5,9 @@
 import bisect
 import re
 from ._common import (
-    SUSPECT_SEVERITY, _extract_balanced_parens, _find_format_string_index, _find_global_at,
-    _find_neighbor_after, _parse_call_arguments, call_after, count_format_specifiers
+    JUMP_WARNINGS, SUSPECT_SEVERITY, _extract_balanced_parens, _find_format_string_index,
+    _find_global_at, _find_neighbor_after, _parse_call_arguments, call_after,
+    count_format_specifiers, is_pointer_tail_call
 )
 from ._structtypes import (
     _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_DEREF_START_RE, _SFO_LOCAL_ASSIGN_RE,
@@ -302,6 +303,9 @@ def identify_suspect_lines(decompiled_code):
                 if issue_type == 'warning_noreturn':
                     # is_safe_suspect clears it when the call is to a real exit function
                     suspect['callee'] = call_after(lines, line_num - 1)
+                elif issue_type in JUMP_WARNINGS:
+                    # is_safe_suspect clears it when the body is one call through a typed pointer
+                    suspect['tail_call'] = is_pointer_tail_call(lines, line_num - 1)
                 suspects.append(suspect)
     return suspects
 
@@ -583,7 +587,6 @@ def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
         # trailing field/element access of an address is still address-typed.
         return True
 
-    has_subscript = steps.rstrip().endswith(']')
     last = _PTR_TRUNC_LAST_STEP_RE.search(steps) if steps else None
 
     if not steps:
@@ -594,18 +597,17 @@ def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
         return root in ptr_vars
 
     if last is None:
-        # Steps are only subscripts on the root, e.g. `g_PtrArray[i]`.
-        if has_subscript:
-            if root in global_arr_ptr:
-                # `T* arr[N]`: ONE subscript yields the pointer element
-                # (`arr[i]` -> `T*`, a real truncation target). A SECOND
-                # subscript dereferences that element into a scalar
-                # (`arr[i][j]` -> `T`, e.g. a z-buffer depth value), which is
-                # not a pointer — so only a single subscript flags here.
-                return len(re.findall(r'\[[^\]]*\]', steps)) == 1
-            # element of a pointer-to-scalar (`int *p; p[i]`) is NOT a pointer
-            return False
-        return root in ptr_vars or root in global_ptr
+        # Steps end in a subscript the last field does not own, e.g.
+        # `g_PtrArray[i]` (a step list that does not end in `]` ends in a field).
+        if root in global_arr_ptr:
+            # `T* arr[N]`: ONE subscript yields the pointer element
+            # (`arr[i]` -> `T*`, a real truncation target). A SECOND
+            # subscript dereferences that element into a scalar
+            # (`arr[i][j]` -> `T`, e.g. a z-buffer depth value), which is
+            # not a pointer — so only a single subscript flags here.
+            return len(re.findall(r'\[[^\]]*\]', steps)) == 1
+        # element of a pointer-to-scalar (`int *p; p[i]`) is NOT a pointer
+        return False
 
     # Path ends in `->field` / `.field`, optionally with a trailing `[i]`.
     fname = last.group(1)
@@ -683,7 +685,6 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
             amp, root, steps, ptr_vars, var_struct,
             global_ptr, global_arr_ptr, layout)
 
-    seen = set()
     _lines = decompiled_code.split('\n')
     for line_no, line in enumerate(_lines, 1):
         stripped = line.strip()
@@ -766,10 +767,6 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
                     continue
                 operand = (amp + root + steps).strip()
             cast_type = cm.group(1)
-            key = (line_no, cm.start())
-            if key in seen:
-                continue
-            seen.add(key)
             suspects.append({
                 'line': line_no,
                 'type': 'pointer_truncation',
@@ -817,7 +814,6 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
     if not decompiled_code or not address_interval_map:
         return suspects
 
-    seen = set()
     for line_no, line in enumerate(decompiled_code.split('\n'), 1):
         stripped = line.strip()
         if (stripped.startswith('//') or stripped.startswith('#') or
@@ -830,10 +826,7 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
             continue
 
         for m in _RAW_ADDR_RE.finditer(line):
-            try:
-                addr = int(m.group(1), 16)
-            except ValueError:
-                continue
+            addr = int(m.group(1), 16)
             # Skip very low values (unlikely to be real addresses in this
             # binary's layout) and absurdly high ones (likely bitmasks).
             if addr < 0x400000 or addr >= 0x10000000:
@@ -892,11 +885,6 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
                 continue
 
             gname, gtype, gstart = hit
-            key = (line_no, m.start())
-            if key in seen:
-                continue
-            seen.add(key)
-
             offset = addr - gstart
             offset_note = '' if offset == 0 else ' (+%d bytes into)' % offset
             desc = ('Raw hex literal 0x%x matches address of %s%s (type %s). '
@@ -1027,10 +1015,7 @@ def identify_raw_address_in_local(decompiled_code):
         m = _INT_ADDR_ASSIGN_RE.match(line)
         if not m:
             continue
-        try:
-            addr = int(m.group(2), 16)
-        except ValueError:
-            continue
+        addr = int(m.group(2), 16)
         if not _looks_like_pointer_address(addr):
             continue
         ident = m.group(1)
@@ -2079,8 +2064,6 @@ def _resolve_pointer_aliases(decompiled_code):
     inside each line may change — so suspect line numbers remain
     meaningful.
     """
-    if not decompiled_code:
-        return decompiled_code
     lines = decompiled_code.split('\n')
     # name -> replacement string (no trailing `.`). For form A this is
     # `BASE[N]`; for form B it's the captured EXPR text.
@@ -2144,8 +2127,6 @@ def _resolve_scalar_index_aliases(decompiled_code):
     is confined to bracketed subscripts (`[IDENT]`) so non-index uses are
     untouched. Output has the same line count as the input.
     """
-    if not decompiled_code:
-        return decompiled_code
     lines = decompiled_code.split('\n')
     aliases = {}  # ident -> replacement ident
     out = []
@@ -2354,6 +2335,8 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
             continue
         lhs_root = get_root(m.group(1))
         rhs_root = get_root(m.group(3))
+        # `(&local_122c)[i]` is a pure path with no leading identifier; every
+        # such root would compare equal, so it cannot anchor a run.
         if not lhs_root or not rhs_root:
             i += 1
             continue
@@ -2654,8 +2637,8 @@ def identify_partial_struct_copy(decompiled_code, struct_layout_map=None):
         plain_amp = re.compile(
             r'(?<=[(,])\s*&\s*' + re.escape(dst) + r'\s*(?=[,)])')
         any_amp = re.compile(r'&\s*' + re.escape(dst) + r'\b')
-        if any(len(any_amp.findall(l)) != len(plain_amp.findall(l))
-               for l in lines):
+        if any(len(any_amp.findall(line)) != len(plain_amp.findall(line))
+               for line in lines):
             continue
         # `dst` must be CONSUMED as a whole struct after the truncated copy...
         if not any(any_amp.search(lines[j]) for j in range(first + 1, len(lines))):
@@ -2999,9 +2982,6 @@ def identify_cascade_constant_fill(decompiled_code):
         anchor_path = normalize(m_anchor.group(1))
         anchor_field = m_anchor.group(2)
         constant = m_anchor.group(3)
-        if not anchor_path:
-            i += 1
-            continue
         seen_fields = {anchor_field}
         prev_field = anchor_field
         run_len = 1
@@ -3020,9 +3000,7 @@ def identify_cascade_constant_fill(decompiled_code):
                     save_var = m_save.group(1)
                     save_path = normalize(m_save.group(2))
                     save_field = m_save.group(3)
-                    if (save_path == anchor_path
-                            and save_field == prev_field
-                            and save_var != anchor_path):
+                    if save_path == anchor_path and save_field == prev_field:
                         bounce_var = save_var
                         j += 1
                         continue
@@ -3509,7 +3487,8 @@ def identify_signed_shift_global_idiom(decompiled_code):
 
 # Local-array declaration of the form `T NAME[N];`. Accepts multi-word
 # types (`unsigned int`, `struct CFoo`) and optional pointer asterisks.
-_LOCAL_ARRAY_DECL_RE = re.compile(
+# Captures the element type too, unlike `_LOCAL_ARRAY_DECL_RE` above.
+_TYPED_LOCAL_ARRAY_DECL_RE = re.compile(
     r'^\s+([A-Za-z_][\w\s\*]*?)\s+([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]\s*;\s*$'
 )
 
@@ -3572,15 +3551,14 @@ def identify_sibling_array_undersized(decompiled_code):
         if (stripped.startswith('//') or stripped.startswith('/*') or
                 stripped.startswith('* ')):
             continue
-        m = _LOCAL_ARRAY_DECL_RE.match(line)
+        m = _TYPED_LOCAL_ARRAY_DECL_RE.match(line)
         if not m:
             continue
-        elem_type = ' '.join(m.group(1).split())  # collapse whitespace
+        elem_type =' '.join(m.group(1).split())  # collapse whitespace
+        # Pointer-of-T arrays (jump tables / vtables, with intentional varied
+        # sizes) never get here: Ghidra writes `T *name [N]`, and the decl
+        # regex needs whitespace before the name.
         if elem_type in _SIBLING_ARRAY_PRIMITIVE_TYPES:
-            continue
-        # Skip pointer-of-T arrays — they're typically jump tables /
-        # vtables with intentional varied sizes.
-        if '*' in elem_type:
             continue
         decls.append((line_no, elem_type, m.group(2), int(m.group(3))))
 
@@ -3665,18 +3643,11 @@ def identify_pointer_cast_multiline(decompiled_code):
         # per-line regex pass in identify_suspect_lines.
         if '\n' not in decompiled_code[m.start():m.end()]:
             continue
-        # Locate the line where the match starts.
-        line_no = 1
-        for i, start in enumerate(line_starts):
-            if start > m.start():
-                line_no = i
-                break
-        else:
-            line_no = len(line_starts)
+        # Locate the line where the match starts. The match spans a
+        # newline, so that line always ends in one.
+        line_no = bisect.bisect_right(line_starts, m.start())
         line_start = line_starts[line_no - 1]
-        line_end = decompiled_code.find('\n', line_start)
-        if line_end == -1:
-            line_end = len(decompiled_code)
+        line_end = decompiled_code.index('\n', line_start)
         text = decompiled_code[line_start:line_end].strip()
         suspects.append({
             'line': line_no,
@@ -3850,12 +3821,11 @@ def identify_int_address_arithmetic_multiline(decompiled_code):
         # Single-line matches are already handled by the per-line pass.
         if '\n' not in decompiled_code[m.start():m.end()]:
             continue
-        # Map the match start to a 1-based line number.
+        # Map the match start to a 1-based line number. The match spans a
+        # newline, so that line always ends in one.
         line_no = bisect.bisect_right(line_starts, m.start())
         line_start = line_starts[line_no - 1]
-        line_end = decompiled_code.find('\n', line_start)
-        if line_end == -1:
-            line_end = len(decompiled_code)
+        line_end = decompiled_code.index('\n', line_start)
         first_line = decompiled_code[line_start:line_end]
         stripped = first_line.lstrip()
         # Skip comment lines, mirroring the per-line pass.
@@ -4745,11 +4715,9 @@ def identify_shadow_pointer_walk(decompiled_code):
             m = re_obj.match(line)
             if not m:
                 continue
+            # TMP is never IDENT here: that shape is a single-line
+            # self-update, matched (and `continue`d) by the passes above.
             tmp_ident, base_ident = m.group(1), m.group(2)
-            if tmp_ident == base_ident:
-                # Already a single-line self-update — handled by the
-                # backref-matching passes above. Don't double-flag.
-                continue
             if not has_rebind(line_no - 1, base_ident, tmp_ident):
                 continue
             suspects.append({
@@ -4954,7 +4922,7 @@ def identify_subfield_vector_pun(decompiled_code, struct_layout_map=None,
             cast_type = m.group(1)
             base = m.group(2)
             path = tuple(p.strip() for p in m.group(3).split('.') if p.strip())
-            if not path or (line_no, base, path) in seen:
+            if (line_no, base, path) in seen:
                 continue
             # The field path continues into an array subscript
             # (`&local.arr[7].field.z`), so what matched is only its prefix.
@@ -5137,13 +5105,7 @@ def identify_baked_self_address(decompiled_code):
         if not m:
             continue
         for pm in _ADDR_RANGE_PAIR_RE.finditer(m.group(1)):
-            try:
-                start = int(pm.group(1), 16)
-                end = int(pm.group(2), 16)
-            except ValueError:
-                continue
-            if start <= end:
-                ranges.append((start, end))
+            ranges.append((int(pm.group(1), 16), int(pm.group(2), 16)))
         break
     if not ranges:
         return suspects
@@ -5172,17 +5134,11 @@ def identify_baked_self_address(decompiled_code):
         if stripped.startswith('case '):
             continue
         for m in _BAKED_HEX_RE.finditer(line):
-            try:
-                v = int(m.group(1), 16)
-            except ValueError:
-                continue
+            v = int(m.group(1), 16)
             if in_range(v) and not is_dead_store_context(line, m.start()):
                 suspects.append(_baked_self_address_suspect(line_no, line, '0x%x' % v, v))
         for m in _BAKED_FLOAT_RE.finditer(line):
-            try:
-                v = int(m.group(1))
-            except ValueError:
-                continue
+            v = int(m.group(1))
             if in_range(v) and not is_dead_store_context(line, m.start()):
                 suspects.append(_baked_self_address_suspect(
                     line_no, line, m.group(0), v))
@@ -5300,7 +5256,9 @@ def identify_unrolled_strlen_loops(decompiled_code):
         return suspects
     lines = decompiled_code.split('\n')
     n = len(lines)
-    for i in range(n - 4):
+    # The shortest loop is the anchor, its decrement, one walk line and the
+    # closer, so an anchor three lines from the end still counts.
+    for i in range(n - 3):
         # Anchor: `if (<v> == 0) break;` followed by `<v> = <v> - 1;` or
         # `<v> = <v> + -1;` (Ghidra emits both forms).
         break_m = _UNROLLED_STRLEN_ECX_BREAK_RE.match(lines[i])
@@ -5546,23 +5504,19 @@ def _strchr_literal_value(tok):
     Accepts a C char literal ('X', '\\n', '\\x2e') or a numeric byte
     constant (0x2e, 46). Returns the int value, or None if unparseable.
     """
-    if tok.startswith("'") and tok.endswith("'"):
+    if tok.startswith("'"):
         inner = tok[1:-1]
-        if inner[:2] in ('\\x', '\\X'):
-            try:
-                return int(inner[2:], 16)
-            except ValueError:
-                return None
+        hex_m = re.fullmatch(r'\\x([0-9a-fA-F]+)', inner)
+        if hex_m:
+            return int(hex_m.group(1), 16)
         if len(inner) == 2 and inner[0] == '\\':
             return {'n': 10, 't': 9, 'r': 13, '0': 0, 'b': 8, 'f': 12,
                     'v': 11, '\\': 92, "'": 39, '"': 34}.get(inner[1])
         if len(inner) == 1:
             return ord(inner)
         return None
-    try:
-        return int(tok, 0)
-    except ValueError:
-        return None
+    # The hit regex only admits `0x..` or decimal digits.
+    return int(tok, 16) if tok.startswith('0x') else int(tok)
 
 
 
@@ -6909,8 +6863,8 @@ def _mem_split_top_args(arglist):
             cur = ''
         else:
             cur += ch
-    if cur.strip():
-        out.append(cur)
+    # An empty last piece (`f()`, `f(a,)`) is kept; callers need 3+ real args.
+    out.append(cur)
     return out
 
 
@@ -6925,35 +6879,29 @@ def _struct_grows_at_64bit(layout):
     64-bit, so a hardcoded byte count over it stays correct — those are NOT
     flagged. Resolved from build_struct_layout_map's per-field `is_ptr`/`type`.
     """
-    if not layout:
-        return set()
     cached = _UNSTABLE_STRUCT_CACHE.get(id(layout))
     if cached is not None:
         return cached
     memo = {}
 
-    def unstable(name, stack):
+    # No cycle guard: a struct cannot contain itself by value, and a pointer
+    # field answers True before any recursion.
+    def unstable(name):
         if name in memo:
             return memo[name]
-        if name in stack:
-            return False  # cycle guard; resolved by the outer frame
-        fields = layout.get(name)
-        if not fields:
-            memo[name] = False
-            return False
         res = False
-        for fl in fields:
+        for fl in layout[name]:
             if fl.get('is_ptr'):
                 res = True
                 break
             nested = fl.get('type')
-            if nested and nested in layout and unstable(nested, stack | {name}):
+            if nested and nested in layout and unstable(nested):
                 res = True
                 break
         memo[name] = res
         return res
 
-    result = {n for n in layout if unstable(n, frozenset())}
+    result = {n for n in layout if unstable(n)}
     _UNSTABLE_STRUCT_CACHE[id(layout)] = result
     return result
 
@@ -6974,21 +6922,15 @@ def _struct_divergence_offset_64bit(layout):
     pointer widening (4->8) and re-alignment shift the true 64-bit offset, so a
     baked 32-bit offset there is stale. Only unstable structs get an entry.
     """
-    if not layout:
-        return {}
     cached = _DIVERGENCE_OFFSET_CACHE.get(id(layout))
     if cached is not None:
         return cached
     unstable = _struct_grows_at_64bit(layout)
-    result = {}
-    for name in unstable:
-        best = None
-        for fl in layout.get(name, ()):
-            if fl.get('is_ptr') or fl.get('type') in unstable:
-                if best is None or fl['offset'] < best:
-                    best = fl['offset']
-        if best is not None:
-            result[name] = best
+    # Every unstable struct has a pointer field or an unstable nested field.
+    result = {
+        name: min(fl['offset'] for fl in layout[name]
+                  if fl.get('is_ptr') or fl.get('type') in unstable)
+        for name in unstable}
     _DIVERGENCE_OFFSET_CACHE[id(layout)] = result
     return result
 
@@ -7121,8 +7063,8 @@ def identify_stale_struct_offset_64bit(code, struct_layout_map=None):
             if const < flen:
                 continue
             accessed = base_off + const
-            dvg = div.get(owner)
-            if dvg is None or accessed < dvg:
+            dvg = div[owner]
+            if accessed < dvg:
                 continue
             # Require the offset to land on a real field of the 32-bit layout —
             # a genuine field access, not past-struct pointer math.
@@ -7394,7 +7336,7 @@ def identify_derived_field_index_pun(code, struct_layout_map=None,
                 alt = (' Ambiguous: %s also has a field there — confirm the '
                        'real class from the .asm before rewriting.'
                        % ', '.join('%s::%s' % (o, fn)
-                                   for o, f, fn in hits[1:4]))
+                                   for o, f, fn in hits[1:]))
 
             suspects.append({
                 'type': 'derived_field_index_pun',

@@ -15,8 +15,8 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0055bd50(CDirec
   if ((((buffer_id < 1) || (0x40 < buffer_id)) ||
       (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6] == (IDirectSoundBuffer *)0x0)) ||
      ((int)g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 2] < 1)) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\snddx.cpp";
-    g_INT_01d71de4 = 0x45c;
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 1116;
     core_main_c_displayErrorAndQuit_FUN_004e4330("DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d");
   }
   if (g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[buffer_id * 6 + 4] != (IDirectSoundBuffer *)0x0) {

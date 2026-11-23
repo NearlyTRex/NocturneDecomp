@@ -61,8 +61,8 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   float g_FLOAT_005e4760 = 0.00390625
 ;   CFireEffect* g_CFireEffect_PTR_005fc5a0 = 01c73654
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f[3000] g_ShatterVertexArray
 ;   undefined4 g_ShatterVertexArray[0].y
 ;   undefined4 g_ShatterVertexArray[0].z
@@ -112,8 +112,8 @@ section .text
     MOV EDI,0x5d1eda                    ; 0054b006 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x75e                       ; 0054b00b
     PUSH 0x5d1eef                       ; 0054b010 | = "CDeformableModel::shatter - too many ..."
-    MOV dword ptr [0x01d71de0],EDI      ; 0054b015 | g_CHAR_PTR_01d71de0
-    MOV dword ptr [0x01d71de4],EBP      ; 0054b01b | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],EDI      ; 0054b015 | g_CurrentFilename
+    MOV dword ptr [0x01d71de4],EBP      ; 0054b01b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 0054b021
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0x4                         ; 0054b026

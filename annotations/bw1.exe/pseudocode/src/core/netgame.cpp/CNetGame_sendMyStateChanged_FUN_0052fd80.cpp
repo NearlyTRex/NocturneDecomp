@@ -23,8 +23,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0052fd80(CNetGame 
   
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
-    g_INT_01d1d404 = 0x8d0;
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2256;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CNetGame::sendMyStateChanged - should only call this in client lobby mode");
   }
   iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();

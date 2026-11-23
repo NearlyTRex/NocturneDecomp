@@ -22,8 +22,8 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_INT_01c37788
-;   char* g_CHAR_PTR_01d046a0
-;   int g_INT_01d046a4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   int g_FlipPending
 ;   ... and 1 more
@@ -91,8 +91,8 @@ section .text
     MOV ESI,0x5ee2f1                    ; 0058920b | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x265                       ; 00589210
     PUSH 0x5ee308                       ; 00589215 | = "closeScreenDevice - Unable to unlock"
-    MOV dword ptr [0x01d046a0],ESI      ; 0058921a | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 00589220 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0058921a | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 00589220 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 00589226
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x4                         ; 0058922b

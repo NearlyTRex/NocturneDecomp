@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "common/math/vector3i.h"
 #include "core/color3i.h"
 #include "core/dfont/dfont.h"
@@ -157,11 +158,13 @@ protected:
                                        .raw_input = raw_input_,
                                        .game_clock = clock_,
                                        .clock = platform_clock_,
-                                       .clipboard = clipboard_}};
+                                       .clipboard = clipboard_,
+                                       .content = content_}};
     engine::CFontColors colors_;
     NiceMock<platform::MockOsFontFactory> os_fonts_;
     support::CNewMsg messages_{dosio_};
-    CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
+    CDFont fonts_{dosio_,    screen_,   two_d_,        three_d_, colors_,
+                  os_fonts_, messages_, editor_tools_, content_};
     engine::CConsole console_{file_system_, 80, 50, 0, 0};
     // The shipped game's pictures, until a test changes them.
     engine::SGameContent content_ = engine::getShippedGameContent();
@@ -283,6 +286,37 @@ TEST_F(CLevelLoaderTest, AWindowPutsTheMoonInTheTopRightCornerWithNoStatus) {
     EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kBackground);
 }
 
+// A game's own corner window, tint and ambient.
+TEST_F(CLevelLoaderTest, TheCornerWindowTintAndAmbientAreTheGamesOwn) {
+    std::optional<engine::SMoonIndicator> &look = content_.moon_indicator;
+    ASSERT_TRUE(look.has_value());
+    look->corner_x = 10;
+    look->corner_y = 20;
+    look->corner_size = 100;
+    look->default_tint = {0x1000, 0x2000, 0x3000};
+    look->ambient = 0x123;
+    loader_.show(4, true, CLevelLoader::kRandomImage);
+    loader_.update("X", false);
+    ASSERT_EQ(moons_.size(), 1U);
+    EXPECT_EQ(moons_[0].clip, (SClipRect{.left = 10, .top = 20, .right = 110, .bottom = 120}));
+    EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x1000, .g = 0x2000, .b = 0x3000}));
+    EXPECT_EQ(set_.getAmbientBaseQuick(), 0x123);
+}
+
+TEST_F(CLevelLoaderTest, AnIndicatorThisBuildDoesntDrawIsFatal) {
+    content_.front_end.loading_indicator = "hourglass";
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("The loading indicator hourglass isn't in this build")));
+}
+
+TEST_F(CLevelLoaderTest, WithoutTheMoonsLookShowingIsFatal) {
+    content_.moon_indicator.reset();
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the moon loading indicator's look")));
+}
+
 // The CRT's first draw from seed 1 is 16838, which picks the third of the shipped game's three.
 TEST_F(CLevelLoaderTest, ARandomPictureIsOneMarkedRandomWithTheMoonInItsWindow) {
     loader_.show(4, false, CLevelLoader::kRandomImage);
@@ -378,6 +412,86 @@ TEST_F(CLevelLoaderTest, OnAWideScreenTheCornerWindowMovesWithTheLayout) {
 }
 
 // The text is centred in the box, its middle at x 320 and the box's middle row.
+// BW2's: across the top, the bar grows from a pixel inside the trough, as far as the frames done
+// before this update are of all of them; no moon or glow, and the status line still at the foot.
+TEST_F(CLevelLoaderTest, TheProgressBarGrowsAcrossTheTopWithTheFrames) {
+    constexpr std::uint32_t kBar = 0x123456;
+    color_table32_[4] = kBar;
+    content_.front_end.loading_indicator = "progress_bar";
+    content_.progress_bar_indicator =
+        engine::getShippedGameContent("blairwitch2").progress_bar_indicator;
+    loader_.show(4, false, CLevelLoader::kNoImage);
+    std::ranges::fill(pixels_, kBackground);
+    loader_.update("XX", false);
+    // None done: the trough, empty, inside the frame.
+    EXPECT_EQ(pixel(0, 0), 0U);
+    EXPECT_EQ(pixel(100, 10), 0U);
+    EXPECT_EQ(pixel(100, 21), kBackground);
+    loader_.update("XX", false);
+    // A quarter done: 638 across a quarter is 159.5, so to 160.
+    EXPECT_EQ(pixel(1, 10), 0U);
+    EXPECT_EQ(pixel(2, 10), kBar);
+    EXPECT_EQ(pixel(160, 10), kBar);
+    EXPECT_EQ(pixel(161, 10), 0U);
+    EXPECT_EQ(pixel(100, 1), 0U);
+    EXPECT_EQ(pixel(100, 2), kBar);
+    EXPECT_EQ(pixel(100, 18), kBar);
+    EXPECT_EQ(pixel(100, 19), 0U);
+    EXPECT_TRUE(moons_.empty());
+    EXPECT_TRUE(glows_.empty());
+    EXPECT_EQ(pixel(kBoxLeft, kBoxTop), 0U);
+}
+
+// A picture's moon window, which the bar draws no moon in, keeps the status line off it.
+TEST_F(CLevelLoaderTest, APicturesWindowKeepsTheProgressBarsStatusOff) {
+    content_.front_end.loading_indicator = "progress_bar";
+    content_.progress_bar_indicator =
+        engine::getShippedGameContent("blairwitch2").progress_bar_indicator;
+    loader_.show(4, false, 0);
+    std::ranges::fill(pixels_, kBackground);
+    loader_.update("XX", false);
+    EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kBackground);
+}
+
+TEST_F(CLevelLoaderTest, WithoutTheProgressBarsLookShowingIsFatal) {
+    content_.front_end.loading_indicator = "progress_bar";
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "No package gives the progress_bar loading indicator's look")));
+}
+
+// BW3's: a random picture whatever was asked for, its icon at 75, 298 fading in over BW3's own
+// count of updates, and no status line.
+TEST_F(CLevelLoaderTest, TheIconFadesInOverItsPictureWithNoStatus) {
+    givenImage("icon", std::string(std::size_t{128} * 128, '\x80'));
+    content_.front_end.loading_indicator = "icon";
+    content_.icon_indicator = engine::getShippedGameContent("blairwitch3").icon_indicator;
+    for (engine::SLoadingPicture &picture : content_.loading) {
+        picture.icon = "icon";
+        picture.random = true;
+    }
+    loader_.show(4, false, CLevelLoader::kNoImage);
+    std::vector<std::uint32_t> blues;
+    for (int i = 0; i < 12; ++i) {
+        loader_.update("XX", false);
+        blues.push_back(pixel(100, 320) & 0xffU);
+    }
+    // From most of the picture's 0x40 to all of the icon's 0x80, never back.
+    EXPECT_LT(blues.front(), 0x50U);
+    EXPECT_TRUE(std::ranges::is_sorted(blues));
+    EXPECT_EQ(blues.back(), 0x80U);
+    EXPECT_EQ(pixel(74, 320), kPicture);
+    EXPECT_EQ(pixel(203, 320), kPicture);
+    EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kPicture);
+}
+
+TEST_F(CLevelLoaderTest, WithoutTheIconsLookShowingIsFatal) {
+    content_.front_end.loading_indicator = "icon";
+    EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the icon loading indicator's look")));
+}
+
 TEST_F(CLevelLoaderTest, TheStatusIsCentredInABlackBoxNearTheBottom) {
     loader_.show(4, false, 99);
     std::ranges::fill(pixels_, kBackground);

@@ -15,8 +15,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_00569
   int *texture_set_indices;
   
   if (this_ptr->cached_skinned_lod_index < 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\skeleton.cpp";
-    g_INT_01d1d404 = 0xd42;
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 3394;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CDeformableModelInstance::renderPolygons called but LOD is not set!");
   }
   texture_set_indices = (this_ptr->part_data).texture_set_indices;

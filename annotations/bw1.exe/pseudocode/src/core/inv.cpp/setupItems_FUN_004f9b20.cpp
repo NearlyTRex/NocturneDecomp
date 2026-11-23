@@ -16,8 +16,8 @@ void __cdecl core_inv_cpp_setupItems_FUN_004f9b20(CInventory *this_ptr)
   int iVar4;
   
   if (this_ptr->preserve_items != 0) {
-    g_CHAR_PTR_01d1d400 = "..\\core\\inv.cpp";
-    g_INT_01d1d404 = 0x6c0;
+    g_CurrentFilename = "..\\core\\inv.cpp";
+    g_CurrentLineNumber = 1728;
     core_main_c_displayErrorAndQuit_FUN_005030e0("CInventory::setupItems - we should own the items at this point!");
   }
   iVar4 = 0;

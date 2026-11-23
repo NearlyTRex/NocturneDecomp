@@ -214,36 +214,32 @@ def _resolve_cpp_path(json_path, analyzed_file):
     return candidate if os.path.exists(candidate) else None
 
 
-def _read_line(cpp_path, line_no):
-    """Return the source-line text at line_no (1-based), or '' on failure."""
-    if not cpp_path or line_no <= 0:
-        return ''
+def _read_source(cpp_path):
+    """The analyzed source's lines, or [] when there is none or it can't be read."""
+    if not cpp_path:
+        return []
     try:
         with open(cpp_path, 'r', errors='replace') as f:
-            lines = f.readlines()
+            return f.read().split('\n')
     except OSError:
-        return ''
-    if line_no > len(lines):
-        return ''
-    return lines[line_no - 1].rstrip('\n').strip()
+        return []
 
 
-def _is_sanctioned_bitcast_helper(cpp_path):
+def _line_text(source_lines, line_no):
+    """The stripped source line at line_no (1-based), or '' when out of range."""
+    if 0 < line_no <= len(source_lines):
+        return source_lines[line_no - 1].strip()
+    return ''
+
+
+def _is_sanctioned_bitcast_helper(source_lines):
     """True if the analyzed source is a sanctioned fast-(inv-)sqrt bit-cast helper.
 
     Identified by use of the fast-sqrt magic globals; their float<->int
     reinterpret casts are intentional, so cppcheck's invalidPointerCast on
-    those lines should not be promoted to a suspect. Returns False if the
-    source can't be read.
+    those lines should not be promoted to a suspect.
     """
-    if not cpp_path:
-        return False
-    try:
-        with open(cpp_path, 'r', errors='replace') as f:
-            src = f.read()
-    except OSError:
-        return False
-    return any(tok in src for tok in _SANCTIONED_BITCAST_GLOBALS)
+    return any(tok in line for line in source_lines for tok in _SANCTIONED_BITCAST_GLOBALS)
 
 
 # x87 FPU compare mnemonics. A genuine floating-point loop tests its induction
@@ -256,9 +252,10 @@ _FPU_COMPARE_MNEMONICS = frozenset((
     'FICOM', 'FICOMP', 'FCOMI', 'FCOMIP', 'FUCOMI', 'FUCOMIP', 'FTST',
 ))
 
-# Matches an exported asm line: `    MNEMONIC operands    ; 004e3bed`.
+# Matches an exported asm line: `    MNEMONIC operands    ; 004e3bed`, which
+# may end in the exporter's `| g_name` annotations of what the operands point at.
 # group(1)=mnemonic, group(2)=operands, group(3)=this instruction's address.
-_ASM_LINE_RE = re.compile(r'^\s*([A-Z][A-Z0-9]*)\b(.*?);\s*([0-9a-fA-F]{4,8})\s*$')
+_ASM_LINE_RE = re.compile(r'^\s*([A-Z][A-Z0-9]*)\b(.*?);\s*([0-9a-fA-F]{4,8})\s*(?:\|.*)?$')
 # First hex immediate in a branch operand (the jump target).
 _ASM_TARGET_RE = re.compile(r'0x([0-9a-fA-F]+)')
 
@@ -319,8 +316,6 @@ def _float_loop_is_genuine(asm_path):
                 if target < addr:
                     back_edges.append((target, addr))
 
-    if not fp_addrs or not back_edges:
-        return False
     return any(
         any(target <= a <= branch for a in fp_addrs)
         for target, branch in back_edges
@@ -371,37 +366,84 @@ def _candidate_checks(diag):
     return seen
 
 
-def synthesize_suspect(tool, diag, cpp_path):
+def synthesize_suspect(tool, diag, source_lines):
     """Convert a single static-analysis diagnostic into a suspect entry.
 
     Returns None if none of the diagnostic's check identifiers are whitelisted.
     """
-    spec = None
-    for check in _candidate_checks(diag):
-        spec = WHITELIST.get((tool, check))
-        if spec:
-            break
+    spec = next((WHITELIST[(tool, check)] for check in _candidate_checks(diag)
+                 if (tool, check) in WHITELIST), None)
     if not spec:
         return None
-    line_no = diag.get('line', 0) or 0
-    # Strip any stranded `[check,...]` tag so the description matches what a
-    # parser-fixed re-export would store.
-    description = _TIDY_TAG_RE.sub('', diag.get('message', '') or '').strip()
+    line_no = diag.get('line') or 0
+    message = diag.get('message') or ''
+    # Strip a stranded clang-tidy `[check,...]` tag so the description matches
+    # what a parser-fixed re-export would store. A cppcheck message ending in an
+    # index such as `[i]` keeps it.
+    if tool == 'clang_tidy':
+        message = _TIDY_TAG_RE.sub('', message)
     return {
         'type': spec['type'],
         'match': spec['match'],
-        'description': description,
+        'description': message.strip(),
         'line': line_no,
         'severity': spec['severity'],
-        'text': _read_line(cpp_path, line_no),
+        'text': _line_text(source_lines, line_no),
     }
+
+
+def _is_managed(suspect):
+    """True for a suspect this module synthesized on an earlier run."""
+    return (isinstance(suspect, dict) and isinstance(suspect.get('type'), str)
+            and suspect['type'].startswith(SUSPECT_TYPE_PREFIX))
+
+
+def synthesize_suspects(data, json_path):
+    """The suspects a function JSON should hold: its other suspects, then the
+    static_* ones its current static_analysis findings promote."""
+    sa = data.get('static_analysis') or {}
+    cpp_path = _resolve_cpp_path(json_path, sa.get('analyzed_file'))
+    source_lines = _read_source(cpp_path)
+    existing = data.get('suspects')
+    kept = [s for s in existing if not _is_managed(s)] if isinstance(existing, list) else []
+
+    flp_genuine = None       # lazily computed on first cert-flp30-c diag
+    synthesized = []
+    for sa_key, sa_val in sa.items():
+        diags = sa_val.get('diagnostics') if isinstance(sa_val, dict) else None
+        if not isinstance(diags, list):
+            continue
+        tool = _tool_from_key(sa_key)
+        for diag in diags:
+            if not isinstance(diag, dict):
+                continue
+            # Don't promote invalidPointerCast on the sanctioned fast-(inv-)sqrt
+            # bit-cast helpers — their reinterpret casts are intentional (§21).
+            if (tool == 'cppcheck' and diag.get('check_id') == 'invalidPointerCast'
+                    and _is_sanctioned_bitcast_helper(source_lines)):
+                continue
+            # Don't promote a cert-flp30-c float-loop finding when the asm shows
+            # the loop is genuinely float-controlled (an FPU compare inside a
+            # back-edge). Those are faithful to Watcom; only a float-typed
+            # counter the binary actually drives with integer ops stays flagged.
+            if tool == 'clang_tidy' and 'cert-flp30-c' in _candidate_checks(diag):
+                if flp_genuine is None:
+                    flp_genuine = _float_loop_is_genuine(_asm_path_for(cpp_path))
+                if flp_genuine:
+                    continue
+            suspect = synthesize_suspect(tool, diag, source_lines)
+            if suspect:
+                synthesized.append(suspect)
+    return kept, synthesized
 
 
 def apply_to_json(json_path):
     """Synthesize static-analysis suspects for one function JSON.
 
     Drops any existing suspects with the `static_` prefix and replaces them
-    with synthesized ones from the current static_analysis findings.
+    with synthesized ones from the current static_analysis findings. The file
+    is written only when its suspects change; a JSON that held none keeps no
+    `suspects` key, and one that held only static ones keeps an empty list.
 
     Returns a (synthesized_count, was_rewritten) tuple, or (-1, False) on
     read/parse/write error.
@@ -412,76 +454,17 @@ def apply_to_json(json_path):
     except (OSError, ValueError):
         return (-1, False)
 
-    sa = data.get('static_analysis') or {}
-    cpp_path = _resolve_cpp_path(json_path, sa.get('analyzed_file'))
-
-    existing = data.get('suspects') or []
-    if not isinstance(existing, list):
-        existing = []
-
-    # Drop previously synthesized static_* suspects.
-    kept = [
-        s for s in existing
-        if not (
-            isinstance(s, dict)
-            and isinstance(s.get('type'), str)
-            and s['type'].startswith(SUSPECT_TYPE_PREFIX)
-        )
-    ]
-
-    # Synthesize fresh ones from current diagnostics.
-    suppress_bitcast = None  # lazily computed on first invalidPointerCast diag
-    flp_genuine = None       # lazily computed on first cert-flp30-c diag
-    synthesized = []
-    for sa_key, sa_val in sa.items():
-        if not isinstance(sa_val, dict):
-            continue
-        diags = sa_val.get('diagnostics')
-        if not isinstance(diags, list):
-            continue
-        tool = _tool_from_key(sa_key)
-        for diag in diags:
-            if not isinstance(diag, dict):
-                continue
-            # Don't promote invalidPointerCast on the sanctioned fast-(inv-)sqrt
-            # bit-cast helpers — their reinterpret casts are intentional (§21).
-            if tool == 'cppcheck' and diag.get('check_id') == 'invalidPointerCast':
-                if suppress_bitcast is None:
-                    suppress_bitcast = _is_sanctioned_bitcast_helper(cpp_path)
-                if suppress_bitcast:
-                    continue
-            # Don't promote a cert-flp30-c float-loop finding when the asm shows
-            # the loop is genuinely float-controlled (an FPU compare inside a
-            # back-edge). Those are faithful to Watcom; only a float-typed
-            # counter the binary actually drives with integer ops stays flagged.
-            if tool == 'clang_tidy' and 'cert-flp30-c' in _candidate_checks(diag):
-                if flp_genuine is None:
-                    flp_genuine = _float_loop_is_genuine(_asm_path_for(cpp_path))
-                if flp_genuine:
-                    continue
-            suspect = synthesize_suspect(tool, diag, cpp_path)
-            if suspect:
-                synthesized.append(suspect)
-
+    kept, synthesized = synthesize_suspects(data, json_path)
     new_suspects = kept + synthesized
-
-    # Only write if changed (avoid touching mtime needlessly).
-    rewritten = False
-    if new_suspects != existing:
-        if new_suspects:
-            data['suspects'] = new_suspects
-        elif 'suspects' in data:
-            # Preserve an empty list rather than deleting; some downstream
-            # tooling distinguishes absent vs. empty.
-            data['suspects'] = []
-        try:
-            with open(json_path, 'w') as f:
-                json.dump(data, f, indent=2, sort_keys=True)
-            rewritten = True
-        except OSError:
-            return (-1, False)
-
-    return (len(synthesized), rewritten)
+    if new_suspects == (data.get('suspects') or []):
+        return (len(synthesized), False)
+    data['suspects'] = new_suspects
+    try:
+        with open(json_path, 'w') as f:
+            json.dump(data, f, indent=2, sort_keys=True)
+    except OSError:
+        return (-1, False)
+    return (len(synthesized), True)
 
 
 def apply_to_all_json(src_dir, skip_dirs=None):

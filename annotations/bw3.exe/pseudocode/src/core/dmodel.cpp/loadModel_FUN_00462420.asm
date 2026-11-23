@@ -17,8 +17,8 @@
 ;   TerminatedCString s_core_dmodel_cpp_005bbabf
 ;   TerminatedCString s_Can_t_load_s_because_key_005bbad2
 ;   int g_KeyframeModelCount
-;   char* g_CHAR_PTR_01d71de0
-;   int g_INT_01d71de4
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00461860
@@ -67,8 +67,8 @@ section .text
     MOV ESI,0x5bbabf                    ; 0046246b | = "..\\core\\dmodel.cpp"
     MOV EAX,0x4cd                       ; 00462470
     PUSH 0x5bbad2                       ; 00462475 | = "Can't load %s because keyFrame model ..."
-    MOV dword ptr [0x01d71de0],ESI      ; 0046247a | g_CHAR_PTR_01d71de0
-    MOV [0x01d71de4],EAX                ; 00462480 | g_INT_01d71de4
+    MOV dword ptr [0x01d71de0],ESI      ; 0046247a | g_CurrentFilename
+    MOV [0x01d71de4],EAX                ; 00462480 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4330 ; 00462485
         ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4330(char * format)
     ADD ESP,0xc                         ; 0046248a

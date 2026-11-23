@@ -52,6 +52,9 @@ CAlphaBitmap::~CAlphaBitmap() = default;
 
 // The original kept the size, so drawing a freed image read freed memory.
 // nocedit 0x00410560
+// bw1 0x0040d1c0
+// bw2 0x0040d540
+// bw3 0x0040d400
 void CAlphaBitmap::free() {
     raw_.clear();
     opa_.clear();
@@ -69,6 +72,8 @@ int CAlphaBitmap::getWidth() const {
 }
 
 // nocedit 0x004105d0
+// bw1 0x0040d220
+// bw3 0x0040d460
 void CAlphaBitmap::load(std::string_view filename, int width, int height) {
     free();
     width_ = width;

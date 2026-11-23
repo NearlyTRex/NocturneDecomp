@@ -20,18 +20,39 @@
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
-# - files_progress.svg - Top files by completion bar chart
 # - suspect_breakdown.svg - Suspect types pie chart
 
-import os
-import json
 import csv
+import glob
+import io
+import json
 import math
+import os
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.suspects import has_only_safe_suspects
 from ghidra_annotations.annotations.pseudocode.struct_report import generate_struct_report
+
+
+def _write_report(path, text, what, detail='', newline=None):
+    """Write a report and log it; a failed write is logged, not raised."""
+    try:
+        with open(path, 'w', newline=newline) as f:
+            f.write(text)
+        log_info("Wrote %s: %s%s" % (what, path, detail))
+    except Exception as e:
+        log_info("Failed to write %s: %s" % (what, str(e)))
+
+
+def _pseudocode_base(path):
+    """The nearest directory named 'pseudocode' at or above `path`, or None."""
+    while path and os.path.basename(path) != 'pseudocode':
+        parent = os.path.dirname(path)
+        if parent == path:
+            return None
+        path = parent
+    return path or None
 
 
 # =============================================================================
@@ -154,113 +175,7 @@ def create_pie_chart_svg(data, title, filename, output_path, colors=None):
 
     svg_parts.append('</svg>')
 
-    # Write file
-    svg_path = os.path.join(output_path, filename)
-    try:
-        with open(svg_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote SVG pie chart: %s" % svg_path)
-    except Exception as e:
-        log_info("Failed to write SVG pie chart: %s" % str(e))
-
-
-def create_progress_bar_svg(data, title, filename, output_path, show_percent=True):
-    """Generate an SVG horizontal bar chart.
-
-    Args:
-        data: List of (label, value, max_value) tuples for progress bars
-              or (label, value) tuples for simple bars
-        title: Chart title
-        filename: Output filename (without path)
-        output_path: Directory to write to
-        show_percent: Whether to show percentage labels
-    """
-    if not data:
-        return
-
-    # Limit to top 20 items
-    data = data[:20]
-
-    # Chart dimensions
-    bar_height = 22
-    bar_spacing = 6
-    label_width = 180
-    bar_max_width = 250
-    padding = 40
-
-    height = padding * 2 + len(data) * (bar_height + bar_spacing) + 30
-    width = label_width + bar_max_width + padding * 2 + 60
-
-    # Build SVG
-    svg_parts = []
-    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
-    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (width, height, width, height))
-    svg_parts.append('  <style>')
-    svg_parts.append('    .title { font: bold 14px sans-serif; }')
-    svg_parts.append('    .label { font: 11px sans-serif; }')
-    svg_parts.append('    .value { font: bold 11px sans-serif; fill: white; }')
-    svg_parts.append('    .percent { font: 11px sans-serif; }')
-    svg_parts.append('  </style>')
-
-    # Background
-    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
-
-    # Title
-    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">%s</text>' % (width // 2, title))
-
-    # Draw bars
-    y = padding + 20
-    for item in data:
-        if len(item) == 3:
-            label, value, max_value = item
-            percentage = (value / max_value * 100) if max_value > 0 else 0
-        else:
-            label, value = item
-            max_value = max(v for _, v in data) if data else 1
-            percentage = (value / max_value * 100) if max_value > 0 else 0
-
-        # Truncate long labels
-        display_label = label[:25] + '...' if len(label) > 25 else label
-
-        # Label
-        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
-            label_width, y + bar_height - 6, display_label))
-
-        # Background bar (gray)
-        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="3"/>' % (
-            label_width + 10, y, bar_max_width, bar_height))
-
-        # Progress bar (green gradient based on percentage)
-        bar_width = int(percentage / 100 * bar_max_width)
-        if bar_width > 0:
-            # Color based on percentage: red -> yellow -> green
-            if percentage >= 90:
-                color = '#4CAF50'  # Green
-            elif percentage >= 50:
-                color = '#FFC107'  # Amber
-            else:
-                color = '#FF5722'  # Deep Orange
-
-            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
-                label_width + 10, y, bar_width, bar_height, color))
-
-        # Percentage text
-        if show_percent:
-            svg_parts.append('  <text x="%d" y="%d" class="percent">%.1f%%</text>' % (
-                label_width + bar_max_width + 15, y + bar_height - 6, percentage))
-
-        y += bar_height + bar_spacing
-
-    svg_parts.append('</svg>')
-
-    # Write file
-    svg_path = os.path.join(output_path, filename)
-    try:
-        with open(svg_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote SVG bar chart: %s" % svg_path)
-    except Exception as e:
-        log_info("Failed to write SVG bar chart: %s" % str(e))
+    _write_report(os.path.join(output_path, filename), '\n'.join(svg_parts), "SVG pie chart")
 
 
 def create_overall_progress_svg(functions, compilation_results, output_path):
@@ -289,18 +204,16 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
         if _is_effectively_clean(f):
             clean_funcs.add(f.get('function', {}).get('name', ''))
 
-    # Calculate compilation stats
+    # Calculate compilation stats, over the same functions as `total`: the
+    # results also hold the CRT/entry functions filtered out above
+    in_scope = set(f.get('function', {}).get('name', '') for f in functions)
     compiled_funcs = set()
     if compilation_results:
         for func_name, result in compilation_results.items():
-            if result.get('success', False):
+            if result.get('success', False) and func_name in in_scope:
                 compiled_funcs.add(func_name)
 
-    # Calculate combined stats
     fully_complete = clean_funcs & compiled_funcs  # Both clean AND compiles
-    clean_only = clean_funcs - compiled_funcs      # Clean but doesn't compile
-    compiles_only = compiled_funcs - clean_funcs   # Compiles but has suspects
-    neither = total - len(clean_funcs | compiled_funcs)  # Neither clean nor compiles
 
     decompiled_count = len(clean_funcs)
     compiled_count = len(compiled_funcs)
@@ -400,13 +313,7 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
 
     svg_parts.append('</svg>')
 
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote overall progress SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write overall progress SVG: %s" % str(e))
+    _write_report(output_path, '\n'.join(svg_parts), "overall progress SVG")
 
 
 def create_all_files_decompilation_svg(files, output_path):
@@ -534,13 +441,7 @@ def create_all_files_decompilation_svg(files, output_path):
 
     svg_parts.append('</svg>')
 
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote all files decompilation SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write all files decompilation SVG: %s" % str(e))
+    _write_report(output_path, '\n'.join(svg_parts), "all files decompilation SVG")
 
 
 def create_all_files_compilation_svg(results, src_dir, output_path):
@@ -690,13 +591,7 @@ def create_all_files_compilation_svg(results, src_dir, output_path):
 
     svg_parts.append('</svg>')
 
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote all files compilation SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write all files compilation SVG: %s" % str(e))
+    _write_report(output_path, '\n'.join(svg_parts), "all files compilation SVG")
 
 
 def create_compilation_overview_svg(results, output_path):
@@ -879,177 +774,7 @@ def create_compilation_overview_svg(results, output_path):
 
     svg_parts.append('</svg>')
 
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote compilation progress SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write compilation progress SVG: %s" % str(e))
-
-
-def create_compilation_by_file_svg(results, src_dir, output_path):
-    """Generate SVG visualization of compilation status per virtual file.
-
-    Groups functions by their parent directory (virtual source file) and shows
-    a horizontal bar chart of compilation success rates.
-
-    Args:
-        results: Dict from compile_all_functions() mapping func_name -> result dict
-        src_dir: Source directory to calculate relative paths
-        output_path: Path to write virtual_file_compilation.svg
-    """
-    if not results:
-        return
-
-    # Group results by virtual file (parent directory of cpp file)
-    virtual_files = {}
-    for func_name, result in results.items():
-        cpp_path = result.get('cpp_path', '')
-        if not cpp_path:
-            continue
-
-        # Get relative path from src_dir
-        try:
-            rel_path = os.path.relpath(os.path.dirname(cpp_path), src_dir)
-        except ValueError:
-            rel_path = os.path.dirname(cpp_path)
-
-        if rel_path not in virtual_files:
-            virtual_files[rel_path] = {'success': 0, 'failed': 0, 'total': 0}
-
-        virtual_files[rel_path]['total'] += 1
-        if result.get('success', False):
-            virtual_files[rel_path]['success'] += 1
-        else:
-            virtual_files[rel_path]['failed'] += 1
-
-    # Filter out CRT and entry files
-    virtual_files = {k: v for k, v in virtual_files.items() if not _is_crt_or_entry(k)}
-
-    if not virtual_files:
-        return
-
-    # Sort by success rate (descending), then by name
-    sorted_files = sorted(
-        virtual_files.items(),
-        key=lambda x: (-x[1]['success'] / max(x[1]['total'], 1), x[0])
-    )
-
-    # Limit to top 30 files for readability
-    display_files = sorted_files[:30]
-
-    # SVG dimensions
-    bar_height = 20
-    bar_spacing = 4
-    label_width = 280
-    bar_max_width = 300
-    count_width = 80
-    margin_top = 50
-    margin_bottom = 40
-    margin_left = 20
-    margin_right = 20
-
-    height = margin_top + len(display_files) * (bar_height + bar_spacing) + margin_bottom
-    width = margin_left + label_width + bar_max_width + count_width + margin_right
-
-    # Color palette
-    success_color = '#4CAF50'  # Green
-    failed_color = '#F44336'   # Red
-
-    # Build SVG
-    svg_parts = []
-    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
-    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (
-        width, height, width, height))
-    svg_parts.append('  <style>')
-    svg_parts.append('    .title { font: bold 14px sans-serif; }')
-    svg_parts.append('    .label { font: 11px monospace; }')
-    svg_parts.append('    .count { font: 10px sans-serif; fill: #666; }')
-    svg_parts.append('  </style>')
-
-    # Background
-    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
-
-    # Title
-    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">Virtual File Compilation Status</text>' % (
-        width // 2))
-
-    # Legend
-    legend_y = 40
-    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
-        width // 2 - 100, legend_y - 10, success_color))
-    svg_parts.append('  <text x="%d" y="%d" class="count">Success</text>' % (
-        width // 2 - 85, legend_y))
-    svg_parts.append('  <rect x="%d" y="%d" width="12" height="12" fill="%s"/>' % (
-        width // 2 + 20, legend_y - 10, failed_color))
-    svg_parts.append('  <text x="%d" y="%d" class="count">Failed</text>' % (
-        width // 2 + 35, legend_y))
-
-    # Bars
-    for i, (vfile, stats) in enumerate(display_files):
-        y = margin_top + i * (bar_height + bar_spacing)
-        total = stats['total']
-        success = stats['success']
-        failed = stats['failed']
-
-        success_rate = success / total if total > 0 else 0
-        failed_rate = failed / total if total > 0 else 0
-
-        success_width = int(success_rate * bar_max_width)
-        failed_width = int(failed_rate * bar_max_width)
-
-        # Truncate label if too long
-        display_label = vfile
-        if len(display_label) > 38:
-            display_label = '...' + display_label[-35:]
-
-        # File label
-        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
-            margin_left + label_width - 5, y + bar_height - 5, display_label))
-
-        bar_x = margin_left + label_width
-
-        # Background bar
-        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="2"/>' % (
-            bar_x, y, bar_max_width, bar_height))
-
-        # Success portion
-        if success_width > 0:
-            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="2"/>' % (
-                bar_x, y, success_width, bar_height, success_color))
-
-        # Failed portion (stacked after success)
-        if failed_width > 0:
-            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s"/>' % (
-                bar_x + success_width, y, failed_width, bar_height, failed_color))
-
-        # Count label
-        svg_parts.append('  <text x="%d" y="%d" class="count">%s/%s (%.0f%%)</text>' % (
-            bar_x + bar_max_width + 5, y + bar_height - 5, fmt_num(success), fmt_num(total), success_rate * 100))
-
-    # Summary at bottom
-    total_funcs = sum(s['total'] for s in virtual_files.values())
-    total_success = sum(s['success'] for s in virtual_files.values())
-    overall_rate = (total_success * 100.0 / total_funcs) if total_funcs > 0 else 0
-
-    summary_y = height - 15
-    svg_parts.append('  <text x="%d" y="%d" class="count" text-anchor="middle">' % (width // 2, summary_y))
-    svg_parts.append('    %s virtual files | %s/%s functions compile (%.1f%%)' % (
-        fmt_num(len(virtual_files)), fmt_num(total_success), fmt_num(total_funcs), overall_rate))
-    if len(sorted_files) > 30:
-        svg_parts.append(' | Showing top 30')
-    svg_parts.append('  </text>')
-
-    svg_parts.append('</svg>')
-
-    # Write SVG
-    try:
-        with open(output_path, 'w') as f:
-            f.write('\n'.join(svg_parts))
-        log_info("Wrote virtual file compilation SVG: %s" % output_path)
-    except Exception as e:
-        log_info("Failed to write virtual file compilation SVG: %s" % str(e))
+    _write_report(output_path, '\n'.join(svg_parts), "compilation progress SVG")
 
 
 def generate_graphs(functions, files, output_path):
@@ -1154,7 +879,7 @@ def load_function_data(pseudocode_src_dir):
                             data['_cpp_path'] = base_path + '.c'
                         else:
                             data['_cpp_path'] = base_path + '.cpp'  # Default
-                        data['_asm_path'] = json_path.replace('.json', '.asm')
+                        data['_asm_path'] = base_path + '.asm'
                         functions.append(data)
                 except Exception as e:
                     log_info("Warning: Failed to load %s: %s" % (json_path, str(e)))
@@ -1336,13 +1061,8 @@ def generate_virtual_file_report(files, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "virtual_file_completion.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote virtual file completion report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write virtual file completion report: %s" % str(e))
+    _write_report(os.path.join(output_path, "virtual_file_completion.txt"), report_text,
+                  "virtual file completion report")
 
     return report_text
 
@@ -1420,13 +1140,8 @@ def generate_function_breakdown(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "function_suspect_breakdown.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote function breakdown report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write function breakdown report: %s" % str(e))
+    _write_report(os.path.join(output_path, "function_suspect_breakdown.txt"), report_text,
+                  "function breakdown report")
 
     return report_text
 
@@ -1495,13 +1210,8 @@ def generate_suspect_type_analysis(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "suspect_type_analysis.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote suspect type analysis: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write suspect type analysis: %s" % str(e))
+    _write_report(os.path.join(output_path, "suspect_type_analysis.txt"), report_text,
+                  "suspect type analysis")
 
     return report_text
 
@@ -1559,11 +1269,10 @@ def generate_easy_wins_list(functions, files, output_path):
     ]
     small_one_suspect.sort(key=lambda x: x.get('complexity', {}).get('pseudocode_lines', 0))
 
+    # A function that is not effectively clean has at least one suspect listed
     by_type = defaultdict(list)
     for func in small_one_suspect:
-        suspects = func.get('suspects', [])
-        if suspects:
-            by_type[suspects[0].get('type', 'unknown')].append(func)
+        by_type[func['suspects'][0].get('type', 'unknown')].append(func)
 
     for stype in sorted(by_type.keys(), key=lambda x: -len(by_type[x])):
         funcs = by_type[stype]
@@ -1613,13 +1322,7 @@ def generate_easy_wins_list(functions, files, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "easy_wins.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote easy wins list: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write easy wins list: %s" % str(e))
+    _write_report(os.path.join(output_path, "easy_wins.txt"), report_text, "easy wins list")
 
     return report_text
 
@@ -1725,13 +1428,8 @@ def generate_stack_pattern_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "stack_pattern_analysis.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote stack pattern analysis: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write stack pattern analysis: %s" % str(e))
+    _write_report(os.path.join(output_path, "stack_pattern_analysis.txt"), report_text,
+                  "stack pattern analysis")
 
     return report_text
 
@@ -1786,8 +1484,7 @@ def generate_param_mismatch_report(functions, output_path):
             sites = param_est.get('call_sites', [])
             est_stack_bytes_list = [s.get('stack_bytes', 0) for s in sites if s.get('stack_bytes')]
             if est_stack_bytes_list:
-                from collections import Counter as _Counter
-                est_stack_bytes = _Counter(est_stack_bytes_list).most_common(1)[0][0]
+                est_stack_bytes = Counter(est_stack_bytes_list).most_common(1)[0][0]
             else:
                 est_stack_bytes = estimated * 4
 
@@ -1941,13 +1638,8 @@ def generate_param_mismatch_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "param_mismatch_analysis.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote parameter mismatch analysis: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write parameter mismatch analysis: %s" % str(e))
+    _write_report(os.path.join(output_path, "param_mismatch_analysis.txt"), report_text,
+                  "parameter mismatch analysis")
 
     return report_text
 
@@ -1971,13 +1663,8 @@ def generate_compilation_summary_report(functions, output_path):
         lines.append("No compilation status data available.")
         lines.append("Run export with compilation verification enabled to generate this data.")
         report_text = "\n".join(lines)
-        report_path = os.path.join(output_path, "compilation_summary.txt")
-        try:
-            with open(report_path, 'w') as f:
-                f.write(report_text)
-            log_info("Wrote compilation summary report: %s" % report_path)
-        except Exception as e:
-            log_info("Failed to write compilation summary report: %s" % str(e))
+        _write_report(os.path.join(output_path, "compilation_summary.txt"), report_text,
+                      "compilation summary report")
         return report_text
 
     # Calculate statistics
@@ -2077,13 +1764,8 @@ def generate_compilation_summary_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "compilation_summary.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote compilation summary report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write compilation summary report: %s" % str(e))
+    _write_report(os.path.join(output_path, "compilation_summary.txt"), report_text,
+                  "compilation summary report")
 
     return report_text
 
@@ -2106,13 +1788,8 @@ def generate_compilation_detailed_report(functions, output_path):
         lines.append("No compilation status data available.")
         lines.append("Run export with compilation verification enabled to generate this data.")
         report_text = "\n".join(lines)
-        report_path = os.path.join(output_path, "compilation_detailed.txt")
-        try:
-            with open(report_path, 'w') as f:
-                f.write(report_text)
-            log_info("Wrote compilation detailed report: %s" % report_path)
-        except Exception as e:
-            log_info("Failed to write compilation detailed report: %s" % str(e))
+        _write_report(os.path.join(output_path, "compilation_detailed.txt"), report_text,
+                      "compilation detailed report")
         return report_text
 
     total = len(funcs_with_status)
@@ -2178,13 +1855,8 @@ def generate_compilation_detailed_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "compilation_detailed.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote compilation detailed report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write compilation detailed report: %s" % str(e))
+    _write_report(os.path.join(output_path, "compilation_detailed.txt"), report_text,
+                  "compilation detailed report")
 
     return report_text
 
@@ -2207,13 +1879,8 @@ def generate_compilation_by_function_report(functions, output_path):
         lines.append("No compilation status data available.")
         lines.append("Run export with compilation verification enabled to generate this data.")
         report_text = "\n".join(lines)
-        report_path = os.path.join(output_path, "compilation_by_function.txt")
-        try:
-            with open(report_path, 'w') as f:
-                f.write(report_text)
-            log_info("Wrote compilation by-function report: %s" % report_path)
-        except Exception as e:
-            log_info("Failed to write compilation by-function report: %s" % str(e))
+        _write_report(os.path.join(output_path, "compilation_by_function.txt"), report_text,
+                      "compilation by-function report")
         return report_text
 
     total = len(funcs_with_status)
@@ -2262,13 +1929,8 @@ def generate_compilation_by_function_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "compilation_by_function.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote compilation by-function report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write compilation by-function report: %s" % str(e))
+    _write_report(os.path.join(output_path, "compilation_by_function.txt"), report_text,
+                  "compilation by-function report")
 
     return report_text
 
@@ -2339,13 +2001,8 @@ def generate_suspect_by_function_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "suspect_by_function.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote suspect by-function report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write suspect by-function report: %s" % str(e))
+    _write_report(os.path.join(output_path, "suspect_by_function.txt"), report_text,
+                  "suspect by-function report")
 
     return report_text
 
@@ -2354,43 +2011,37 @@ def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
     # Virtual files CSV
-    csv_path = os.path.join(output_path, "virtual_files.csv")
-    try:
-        with open(csv_path, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['virtual_file', 'total_functions', 'clean_functions', 'remaining',
-                             'clean_percent', 'total_lines', 'total_suspects'])
-            for vfile, data in sorted(files.items()):
-                writer.writerow([
-                    vfile, data['total_count'], data['clean_count'], data['remaining'],
-                    "%.1f" % data['clean_percent'], data['total_lines'], data['suspect_count']
-                ])
-        log_info("Wrote virtual files CSV: %s" % csv_path)
-    except Exception as e:
-        log_info("Failed to write virtual files CSV: %s" % str(e))
+    out = io.StringIO()
+    writer = csv.writer(out)
+    writer.writerow(['virtual_file', 'total_functions', 'clean_functions', 'remaining',
+                     'clean_percent', 'total_lines', 'total_suspects'])
+    for vfile, data in sorted(files.items()):
+        writer.writerow([
+            vfile, data['total_count'], data['clean_count'], data['remaining'],
+            "%.1f" % data['clean_percent'], data['total_lines'], data['suspect_count']
+        ])
+    _write_report(os.path.join(output_path, "virtual_files.csv"), out.getvalue(),
+                  "virtual files CSV", newline='')
 
     # Functions CSV
-    csv_path = os.path.join(output_path, "functions.csv")
-    try:
-        with open(csv_path, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['name', 'address', 'virtual_file', 'lines', 'suspect_count',
-                             'suspect_types', 'complexity_score'])
-            for func in functions:
-                func_info = func.get('function', {})
-                complexity = func.get('complexity', {})
-                writer.writerow([
-                    func_info.get('name', ''),
-                    func_info.get('address', ''),
-                    func.get('_virtual_file', ''),
-                    complexity.get('pseudocode_lines', 0),
-                    complexity.get('suspect_count', 0),
-                    '|'.join(complexity.get('suspect_types', [])),
-                    complexity.get('complexity_score', 0)
-                ])
-        log_info("Wrote functions CSV: %s" % csv_path)
-    except Exception as e:
-        log_info("Failed to write functions CSV: %s" % str(e))
+    out = io.StringIO()
+    writer = csv.writer(out)
+    writer.writerow(['name', 'address', 'virtual_file', 'lines', 'suspect_count',
+                     'suspect_types', 'complexity_score'])
+    for func in functions:
+        func_info = func.get('function', {})
+        complexity = func.get('complexity', {})
+        writer.writerow([
+            func_info.get('name', ''),
+            func_info.get('address', ''),
+            func.get('_virtual_file', ''),
+            complexity.get('pseudocode_lines', 0),
+            complexity.get('suspect_count', 0),
+            '|'.join(complexity.get('suspect_types', [])),
+            complexity.get('complexity_score', 0)
+        ])
+    _write_report(os.path.join(output_path, "functions.csv"), out.getvalue(),
+                  "functions CSV", newline='')
 
 
 def generate_summary_report(functions, files, output_path):
@@ -2520,14 +2171,8 @@ def generate_summary_report(functions, files, output_path):
         if len(funcs_with_type) > 10:
             report_lines.append("    ... and %d more" % (len(funcs_with_type) - 10))
 
-    # Write text report
-    report_path = os.path.join(output_path, "analysis_report.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write("\n".join(report_lines))
-        log_info("Wrote analysis report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write analysis report: %s" % str(e))
+    _write_report(os.path.join(output_path, "analysis_report.txt"), "\n".join(report_lines),
+                  "analysis report")
 
     # Generate file lists
     # Find the git repo root
@@ -2545,29 +2190,16 @@ def generate_summary_report(functions, files, output_path):
         return abs_path
 
     # List of clean function .cpp paths (sorted by name for consistency)
-    zero_suspect_list_path = os.path.join(output_path, "zero_suspect_functions.txt")
-    try:
-        clean_funcs_sorted = sorted(clean_funcs,
-            key=lambda x: x.get('function', {}).get('name', ''))
-        with open(zero_suspect_list_path, 'w') as f:
-            for func in clean_funcs_sorted:
-                rel_path = make_relative(func.get('_cpp_path', ''))
-                f.write(rel_path + '\n')
-        log_info("Wrote zero-suspect function list: %s" % zero_suspect_list_path)
-    except Exception as e:
-        log_info("Failed to write zero-suspect list: %s" % str(e))
+    clean_funcs_sorted = sorted(clean_funcs, key=lambda x: x.get('function', {}).get('name', ''))
+    _write_report(os.path.join(output_path, "zero_suspect_functions.txt"),
+                  ''.join(make_relative(func.get('_cpp_path', '')) + '\n' for func in clean_funcs_sorted),
+                  "zero-suspect function list")
 
     # List of all functions sorted by complexity (easiest first)
     functions_sorted = sorted(functions, key=lambda x: x.get('complexity', {}).get('complexity_score', 0))
-    all_funcs_list_path = os.path.join(output_path, "functions_by_complexity.txt")
-    try:
-        with open(all_funcs_list_path, 'w') as f:
-            for func in functions_sorted:
-                rel_path = make_relative(func.get('_cpp_path', ''))
-                f.write(rel_path + '\n')
-        log_info("Wrote functions-by-complexity list: %s" % all_funcs_list_path)
-    except Exception as e:
-        log_info("Failed to write functions-by-complexity list: %s" % str(e))
+    _write_report(os.path.join(output_path, "functions_by_complexity.txt"),
+                  ''.join(make_relative(func.get('_cpp_path', '')) + '\n' for func in functions_sorted),
+                  "functions-by-complexity list")
 
 
 def generate_pass_by_value_report(functions, output_path):
@@ -2603,13 +2235,8 @@ def generate_pass_by_value_report(functions, output_path):
 
     report_text = format_report(all_call_sites, total_movsd, pbv_count)
 
-    report_path = os.path.join(output_path, "pass_by_value_report.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote pass-by-value report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write pass-by-value report: %s" % str(e))
+    _write_report(os.path.join(output_path, "pass_by_value_report.txt"), report_text,
+                  "pass-by-value report")
 
     return report_text
 
@@ -2622,7 +2249,6 @@ def _get_function_display_name(func):
     """
     name = func.get('function', {}).get('name', '')
     # Strip trailing _FUN_XXXXXXXX
-    import re
     m = re.match(r'^(.+?)(_FUN_[0-9a-fA-F]+)$', name)
     if not m:
         return name
@@ -2650,7 +2276,6 @@ def _is_unnamed_function(func):
     where only the class name is known but the method name is still auto-generated
     (file_prefix_ClassName_FUN_XXXX).
     """
-    import re
     name = func.get('function', {}).get('name', '')
     vfile = func.get('_virtual_file', '')
     if not vfile:
@@ -2664,15 +2289,12 @@ def _is_unnamed_function(func):
 
     # Also detect class methods with no real method name:
     # e.g. core_gabriela_cpp_CGabriella_FUN_004d4890
-    # The part after file_prefix must be a single PascalCase identifier (no underscores)
-    # followed by _FUN_XXXX. This avoids matching real names like CGabriella_process_FUN_XXXX.
+    # The part after file_prefix must be a single class name (C/S + PascalCase,
+    # no underscores) followed by _FUN_XXXX. This avoids matching real names like
+    # CGabriella_process_FUN_XXXX, and named functions that merely start with a
+    # capital, like tridx7's APIDLLkill_FUN_10002460.
     stripped = name[len(file_prefix) + 1:] if name.startswith(file_prefix + '_') else None
-    if stripped:
-        m2 = re.match(r'^([A-Z][A-Za-z0-9]+)_FUN_([0-9a-fA-F]+)$', stripped)
-        if m2:
-            return True
-
-    return False
+    return bool(stripped and re.match(r'^[CS][A-Z][A-Za-z0-9]*_FUN_[0-9a-fA-F]+$', stripped))
 
 
 def _build_caller_counts(functions):
@@ -2698,8 +2320,6 @@ def generate_annotation_quality_report(functions, output_path):
         functions: List of function data dicts (from load_function_data)
         output_path: Directory to write report
     """
-    import re
-
     # Filter out CRT/entry functions
     non_crt = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
 
@@ -3198,9 +2818,13 @@ def generate_annotation_quality_report(functions, output_path):
     # =========================================================================
     # Section: Duplicate Function Names
     # =========================================================================
-    # Find functions that share the same base name (minus virtual file prefix and FUN_ suffix)
+    # Find functions that share the same base name (minus virtual file prefix and FUN_ suffix).
+    # Unnamed functions are listed above; without a name, every unit's would
+    # share the unit's prefix as their "name".
     name_groups = defaultdict(list)
     for func in non_crt:
+        if _is_unnamed_function(func):
+            continue
         func_info = func.get('function', {})
         name = func_info.get('name', '')
         addr = func_info.get('address', '')
@@ -3243,13 +2867,8 @@ def generate_annotation_quality_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "annotation_quality.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote annotation quality report: %s" % report_path)
-    except Exception as e:
-        log_info("Failed to write annotation quality report: %s" % str(e))
+    _write_report(os.path.join(output_path, "annotation_quality.txt"), report_text,
+                  "annotation quality report")
 
     return report_text
 
@@ -3269,15 +2888,13 @@ def _extract_json_globals(json_path):
     Returns:
         Set of global base names found in the JSON
     """
-    import json as _json
-
     globals_found = set()
     if not os.path.isfile(json_path):
         return globals_found
 
     try:
         with open(json_path) as f:
-            data = _json.load(f)
+            data = json.load(f)
         for g in data.get('globals', []):
             name = g.get('name', '')
             if name:
@@ -3298,8 +2915,6 @@ def _extract_cpp_globals(cpp_path):
     Returns:
         Dict mapping global_name -> list of line numbers where used
     """
-    import re
-
     globals_found = {}
     if not os.path.isfile(cpp_path):
         return globals_found
@@ -3351,8 +2966,6 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
         pseudocode_src_dir: Directory containing pseudocode src/ tree
         output_path: Directory to write the report
     """
-    import glob as _glob
-
     lines = []
     lines.append("=" * 100)
     lines.append("WRONG GLOBAL SYMBOL RESOLUTION REPORT")
@@ -3365,7 +2978,7 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
     lines.append("")
 
     # Find all function directories by looking for .json files
-    json_files = sorted(_glob.glob(
+    json_files = sorted(glob.glob(
         os.path.join(pseudocode_src_dir, '**', '*.json'), recursive=True
     ))
 
@@ -3403,14 +3016,9 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
         # These are potential wrong resolutions
         suspicious = {}
         for global_name, line_nos in cpp_globals.items():
-            if global_name not in json_globals:
-                # Filter out common false positives:
-                # - String literals (s_*) won't have base-shift issues
-                # - Constants/doubles are resolved by value, not address
-                if global_name.startswith('s_'):
-                    continue
-                if global_name.startswith(('FLOAT_', 'DOUBLE_')):
-                    continue
+            # Constants/doubles are resolved by value, not address. (String
+            # literals, s_*, never match the global pattern at all.)
+            if global_name not in json_globals and not global_name.startswith(('FLOAT_', 'DOUBLE_')):
                 suspicious[global_name] = line_nos
 
         if suspicious:
@@ -3421,9 +3029,8 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
             # Load function name from JSON
             func_name = os.path.basename(base_path)
             try:
-                import json as _json
                 with open(json_path) as f:
-                    data = _json.load(f)
+                    data = json.load(f)
                 func_name = data.get('function', {}).get('name', func_name)
             except Exception:
                 pass
@@ -3499,11 +3106,8 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
                 lines.append("    NOT found in function reference list")
                 lines.append("")
 
-    report_text = '\n'.join(lines)
-    report_path = os.path.join(output_path, "wrong_global_resolution.txt")
-    with open(report_path, 'w') as f:
-        f.write(report_text)
-    log_info("Wrote wrong global resolution report: %s" % report_path)
+    _write_report(os.path.join(output_path, "wrong_global_resolution.txt"), '\n'.join(lines),
+                  "wrong global resolution report")
 
 
 # =============================================================================
@@ -3512,9 +3116,8 @@ def generate_wrong_global_report(pseudocode_src_dir, output_path):
 
 def _build_class_hierarchy_from_headers(headers_dir):
     """Parse struct definitions to find inheritance via 'base' member at offset 0x0."""
-    import re, glob as _glob
     hierarchy = {}
-    for h in _glob.glob(os.path.join(headers_dir, '*.h')):
+    for h in glob.glob(os.path.join(headers_dir, '*.h')):
         basename = os.path.basename(h)
         if '_vtable' in basename or '_full_vtable' in basename:
             continue
@@ -3550,7 +3153,6 @@ def _get_vtable_valid_union_members(class_name, hierarchy):
 
 def _parse_vtable_header_methods(vtable_header_path):
     """Parse a _vtable.h file to extract method names and their offsets."""
-    import re
     methods = {}
     with open(vtable_header_path) as f:
         for line in f:
@@ -3568,6 +3170,11 @@ _UNION_MEMBER_NAMES = {
     '_uw': 'CWeapon_vtable',
 }
 
+# Where each union member's sub-vtable starts in the full vtable: CCharacter and
+# CWeapon extend CDemonActor's 0xec bytes, CEnemy and CHero extend CCharacter's.
+_UNION_MEMBER_BASES = {'_ub': 0, '_uc': 0xec, '_uw': 0xec, '_ue': 0x154, '_uh': 0x154}
+_UNION_MEMBER_DEPTH_ORDER = ['_ue', '_uh', '_uc', '_uw', '_ub']
+
 
 def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
     """Detect wrong vtable union member accesses in pseudocode .cpp files.
@@ -3579,8 +3186,6 @@ def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
         pseudocode_src_dir: Directory containing pseudocode src/ tree
         output_path: Directory to write the report
     """
-    import re, glob as _glob
-
     # Derive paths from pseudocode_src_dir
     # pseudocode_src_dir is like .../pseudocode/src
     pseudocode_base = os.path.dirname(pseudocode_src_dir)
@@ -3618,7 +3223,7 @@ def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
     base_method_re = re.compile(r'\)->(\w+)\)')
 
     # Scan all .cpp pseudocode files
-    cpp_files = [f for f in _glob.glob(
+    cpp_files = [f for f in glob.glob(
         os.path.join(pseudocode_src_dir, '**', '*.cpp'), recursive=True
     ) if os.path.isfile(f)]
 
@@ -3684,21 +3289,19 @@ def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
                     if sm:
                         method_name = sm.group(1)
 
-                # Find correct member and method
-                correct = None
-                for pref in ['_ue', '_uh', '_uc', '_uw']:
-                    if pref in valid:
-                        correct = pref
-                        break
-                if not correct:
-                    correct = '_ub'
-
+                # Find correct member and method: the deepest member the class
+                # has, unless the slot's absolute offset says which one holds it
+                prefs = [p for p in _UNION_MEMBER_DEPTH_ORDER if p in valid]
+                correct = prefs[0]
                 correct_method = None
-                if method_name and union_member in method_maps and correct in method_maps:
-                    used_methods = method_maps[union_member]
-                    for off, name in used_methods.items():
-                        if name == method_name:
-                            correct_method = method_maps[correct].get(off)
+                used_methods = method_maps.get(union_member, {})
+                slot = next((off for off, name in used_methods.items() if name == method_name), None)
+                if slot is not None:
+                    abs_off = _UNION_MEMBER_BASES[union_member] + slot
+                    for pref in prefs:
+                        rel = abs_off - _UNION_MEMBER_BASES[pref]
+                        if rel in method_maps.get(pref, {}):
+                            correct, correct_method = pref, method_maps[pref][rel]
                             break
 
                 all_issues.append({
@@ -3826,15 +3429,8 @@ def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
     else:
         lines.append("  No mismatches detected.")
 
-    report_text = '\n'.join(lines)
-    report_path = os.path.join(output_path, "vtable_union_mismatches.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote vtable union mismatch report: %s (%d issues)" % (
-            report_path, len(all_issues)))
-    except Exception as e:
-        log_info("Failed to write vtable union mismatch report: %s" % str(e))
+    _write_report(os.path.join(output_path, "vtable_union_mismatches.txt"), '\n'.join(lines),
+                  "vtable union mismatch report", " (%d issues)" % len(all_issues))
 
 
 def generate_double_usage_report(functions, output_path):
@@ -3888,11 +3484,12 @@ def generate_double_usage_report(functions, output_path):
                 double_params.append(var.get('name', '?'))
 
         # Also check signature string for double params (catches cases
-        # where stack_frame might not list them properly)
+        # where stack_frame might not list them properly). A double * is a
+        # pointer, passed in one stack slot like any other.
         paren_idx = signature.find('(')
         if paren_idx >= 0:
             param_str = signature[paren_idx:]
-            if 'double ' in param_str and not has_double_param:
+            if re.search(r'\bdouble\b(?!\s*\*)', param_str):
                 has_double_param = True
 
         # Count suspects related to double splitting
@@ -3971,14 +3568,9 @@ def generate_double_usage_report(functions, output_path):
 
     report_text = "\n".join(lines)
 
-    report_path = os.path.join(output_path, "double_usage_analysis.txt")
-    try:
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote double usage analysis: %s (%d return, %d param)" % (
-            report_path, len(returns_double), len(takes_double)))
-    except Exception as e:
-        log_info("Failed to write double usage analysis: %s" % str(e))
+    _write_report(os.path.join(output_path, "double_usage_analysis.txt"), report_text,
+                  "double usage analysis",
+                  " (%d return, %d param)" % (len(returns_double), len(takes_double)))
 
     return report_text
 
@@ -4075,14 +3667,8 @@ def generate_code_cave_report(annotations_dir, output_path):
 
     lines.append("")
 
-    report_path = os.path.join(output_path, 'code_cave_analysis.txt')
-    try:
-        with open(report_path, 'w') as f:
-            f.write('\n'.join(lines) + '\n')
-        log_info("Wrote code cave report: %s (%d caves)" % (
-            report_path, len(caves)))
-    except Exception as e:
-        log_info("Failed to write code cave report: %s" % e)
+    _write_report(os.path.join(output_path, 'code_cave_analysis.txt'), '\n'.join(lines) + '\n',
+                  "code cave report", " (%d caves)" % len(caves))
 
 
 def generate_movsd_report(pseudocode_src_dir, output_path):
@@ -4096,7 +3682,6 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     For consecutive groups, checks whether each site has enough adjacent
     borrowable instructions to fit a 5-byte JMP for a code cave patch.
     """
-    import glob as _glob
     from collections import OrderedDict
 
     RE_ASM_INSN = re.compile(
@@ -4120,29 +3705,45 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     RE_MOV_ECX_IMM = re.compile(r'^MOV\s+ECX\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
     RE_MOV_EDI_ESP = re.compile(r'^MOV\s+EDI\s*,\s*ESP$', re.IGNORECASE)
 
-    def estimate_insn_size(text, addr, next_addr):
-        if next_addr is not None:
-            return next_addr - addr
-        return 0
+    def estimate_insn_size(addr, next_addr):
+        """The instruction's size from the next one's address, or 0 when unknown.
+
+        A function with several address ranges lists them one after another, so
+        the next listed instruction can be in another range: a gap is not a size.
+        An x86 instruction is at most 15 bytes.
+        """
+        if next_addr is None or not 0 < next_addr - addr <= 15:
+            return 0
+        return next_addr - addr
 
     def _parse_int(s):
         return int(s, 16) if s.startswith('0x') else int(s)
 
+    def has_bvar_artifacts(func_name, asm_path):
+        """Whether the function's pseudocode has the bVar*-N pointer arithmetic."""
+        if func_name not in _bvar_cache:
+            has_bvar = False
+            for ext in ('.cpp', '.c'):
+                cpp_path = asm_path[:-len('.asm')] + ext
+                if os.path.isfile(cpp_path):
+                    with open(cpp_path, 'r') as f:
+                        has_bvar = bool(re.search(r'\bbVar\w*\s*\*\s*-', f.read()))
+                    break
+            _bvar_cache[func_name] = has_bvar
+        return _bvar_cache[func_name]
+
     asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
-    all_files = sorted(_glob.glob(asm_pattern, recursive=True))
+    all_files = sorted(glob.glob(asm_pattern, recursive=True))
 
     # Load already-patched addresses from code_caves.json
     patched_addrs = set()
-    annotations_base = pseudocode_src_dir
-    while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
-        annotations_base = os.path.dirname(annotations_base)
+    annotations_base = _pseudocode_base(pseudocode_src_dir)
     if annotations_base:
         caves_path = os.path.join(os.path.dirname(annotations_base), 'code_caves.json')
         if os.path.isfile(caves_path):
             try:
-                import json as _json
                 with open(caves_path, 'r') as f:
-                    caves_data = _json.load(f)
+                    caves_data = json.load(f)
                 for cave in caves_data.get('caves', []):
                     for alloc in cave.get('allocations', []):
                         m = re.search(r'movsd_([0-9a-f]+)', alloc.get('name', ''))
@@ -4169,9 +3770,10 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     _bvar_cache = {}
 
     for asm_path in all_files:
-        # Skip CRT library functions — not game code
+        # Skip CRT library functions — not game code. The path is relative to
+        # pseudocode/src, so a CRT unit is crt/<unit>/<function>.asm.
         rel_path = os.path.relpath(asm_path, pseudocode_src_dir)
-        if rel_path.startswith(os.path.join('src', 'crt') + os.sep):
+        if _is_crt_or_entry(os.path.dirname(rel_path).replace(os.sep, '/')):
             continue
 
         instructions = []
@@ -4226,7 +3828,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     if RE_UNSAFE.match(text):
                         break
                     next_addr = instructions[after_idx + 1][0] if after_idx + 1 < len(instructions) else None
-                    sz = estimate_insn_size(text, addr, next_addr)
+                    sz = estimate_insn_size(addr, next_addr)
                     if sz == 0:
                         break
                     total_size += sz
@@ -4240,8 +3842,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                         break
                     if RE_UNSAFE.match(text):
                         break
-                    next_addr = instructions[before_idx + 1][0]
-                    sz = estimate_insn_size(text, addr, next_addr)
+                    sz = estimate_insn_size(addr, instructions[before_idx + 1][0])
                     if sz == 0:
                         break
                     total_size += sz
@@ -4259,17 +3860,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                             func_name, group_addr, run, total_size, cave_est,
                             'unfixable', 'branch target inside patch range'))
                     else:
-                        # Check if function has bVar_mul artifacts
-                        if func_name not in _bvar_cache:
-                            has_bvar = False
-                            for ext in ('.cpp', '.c'):
-                                cpp_path = asm_path.replace('.asm', ext)
-                                if os.path.isfile(cpp_path):
-                                    with open(cpp_path, 'r') as f:
-                                        has_bvar = bool(re.search(r'\bbVar\w*\s*\*\s*-', f.read()))
-                                    break
-                            _bvar_cache[func_name] = has_bvar
-                        if _bvar_cache[func_name]:
+                        if has_bvar_artifacts(func_name, asm_path):
                             consecutive_sites.append((
                                 func_name, group_addr, run, total_size, cave_est,
                                 'fixable', '%d bytes borrowable' % total_size))
@@ -4299,7 +3890,6 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
             ecx_val = None
             has_edi_esp = False
             has_sub_esp = False
-            sub_esp_val = None
 
             for j in range(idx - 1, max(idx - 9, -1), -1):
                 jtext = instructions[j][1]
@@ -4308,10 +3898,8 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     ecx_val = _parse_int(m.group(1))
                 if RE_MOV_EDI_ESP.match(jtext):
                     has_edi_esp = True
-                m = RE_SUB_ESP_IMM.match(jtext)
-                if m and not has_sub_esp:
+                if RE_SUB_ESP_IMM.match(jtext):
                     has_sub_esp = True
-                    sub_esp_val = _parse_int(m.group(1))
 
             dword_count = ecx_val if ecx_val is not None else 0
             copy_bytes = dword_count * 4
@@ -4331,21 +3919,10 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                 status = 'dynamic'
             elif dword_count > MAX_REP_DWORDS:
                 status = 'too_large'
+            elif has_bvar_artifacts(func_name, asm_path):
+                status = 'fixable'
             else:
-                # Check if function has bVar_mul artifacts
-                if func_name not in _bvar_cache:
-                    has_bvar = False
-                    for ext in ('.cpp', '.c'):
-                        cpp_path = asm_path.replace('.asm', ext)
-                        if os.path.isfile(cpp_path):
-                            with open(cpp_path, 'r') as f:
-                                has_bvar = bool(re.search(r'\bbVar\w*\s*\*\s*-', f.read()))
-                            break
-                    _bvar_cache[func_name] = has_bvar
-                if _bvar_cache[func_name]:
-                    status = 'fixable'
-                else:
-                    status = 'no_artifacts'
+                status = 'no_artifacts'
 
             rep_sites.append((func_name, addr, dword_count, copy_bytes, rep_type, cave_est, status))
 
@@ -4371,7 +3948,6 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     rep_no_artifacts = [s for s in rep_sites if s[6] == 'no_artifacts']
     rep_too_large = [s for s in rep_sites if s[6] == 'too_large']
     rep_dynamic = [s for s in rep_sites if s[6] == 'dynamic']
-    rep_general = [s for s in rep_sites if s[4] == 'general']
     total_cave = sum(s[4] for s in consec_fixable)
 
     lines.append("SUMMARY")
@@ -4529,16 +4105,12 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     _emit_rep_section("REP MOVSD — DYNAMIC COUNT (ECX not immediate)", rep_dynamic)
     _emit_rep_section("REP MOVSD — PASS-BY-VALUE", rep_byval)
 
-    report_path = os.path.join(output_path, 'movsd_analysis.txt')
-    try:
-        with open(report_path, 'w') as f:
-            f.write('\n'.join(lines) + '\n')
-        log_info("Wrote MOVSD analysis: %s (%d consecutive [%d fixable], %d REP [%d fixable, %d no-artifact, %d too-large, %d dynamic, %d byval])" % (
-            report_path, len(consecutive_sites), len(consec_fixable),
+    _write_report(
+        os.path.join(output_path, 'movsd_analysis.txt'), '\n'.join(lines) + '\n', "MOVSD analysis",
+        " (%d consecutive [%d fixable], %d REP [%d fixable, %d no-artifact, %d too-large, %d dynamic, %d byval])" % (
+            len(consecutive_sites), len(consec_fixable),
             len(rep_sites), len(rep_fixable), len(rep_no_artifacts),
             len(rep_too_large), len(rep_dynamic), len(rep_byval)))
-    except Exception as e:
-        log_info("Failed to write MOVSD analysis: %s" % e)
 
 
 def generate_analysis_report(pseudocode_src_dir, output_path):
@@ -4589,9 +4161,8 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     # Derive data_types.json path from pseudocode src dir
     # pseudocode_src_dir is like .../pseudocode/src/core/... but we walk it,
     # so the base is the annotations/nocedit.exe dir
-    annotations_base = pseudocode_src_dir
-    while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
-        annotations_base = os.path.dirname(annotations_base)
+    annotations_base = _pseudocode_base(pseudocode_src_dir)
+    exe_dir = None
     if annotations_base:
         exe_dir = os.path.dirname(annotations_base)
         data_types_path = os.path.join(exe_dir, 'data_types', 'data_types.json')
@@ -4604,7 +4175,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
 
     # Generate code cave report
     log_info("Generating code cave report...")
-    generate_code_cave_report(exe_dir if annotations_base else None, output_path)
+    generate_code_cave_report(exe_dir, output_path)
 
     # Generate MOVSD analysis
     log_info("Generating MOVSD analysis...")
@@ -4771,11 +4342,8 @@ def generate_static_analysis_summary_report(functions, output_path):
         lines.append("  No static analysis results found.")
         lines.append("  Run static analysis tools first (see static_analysis.py).")
         lines.append("")
-        report_text = '\n'.join(lines)
-        report_path = os.path.join(output_path, "static_analysis_summary.txt")
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote static analysis summary report: %s" % report_path)
+        _write_report(os.path.join(output_path, "static_analysis_summary.txt"), '\n'.join(lines),
+                      "static analysis summary report")
         return
 
     # Per-tool summary
@@ -4805,20 +4373,16 @@ def generate_static_analysis_summary_report(functions, output_path):
 
         sorted_checks = sorted(stats['check_counts'].items(), key=lambda x: -x[1])
         for check_id, count in sorted_checks[:15]:
-            # Flag likely decompiler artifacts
+            # Flag likely decompiler artifacts. A check is counted only from an
+            # analyzed file, so files_analyzed is never 0 here.
             artifact_flag = ''
-            if stats['files_analyzed'] > 0:
-                pct = count * 100.0 / stats['files_analyzed']
-                if pct > 50:
-                    artifact_flag = '  [likely decompiler artifact]'
+            if count * 100.0 / stats['files_analyzed'] > 50:
+                artifact_flag = '  [likely decompiler artifact]'
             lines.append("  %-55s %5d%s" % (check_id, count, artifact_flag))
         lines.append("")
 
-    report_text = '\n'.join(lines)
-    report_path = os.path.join(output_path, "static_analysis_summary.txt")
-    with open(report_path, 'w') as f:
-        f.write(report_text)
-    log_info("Wrote static analysis summary report: %s" % report_path)
+    _write_report(os.path.join(output_path, "static_analysis_summary.txt"), '\n'.join(lines),
+                  "static analysis summary report")
 
 
 def generate_static_analysis_detailed_report(functions, output_path):
@@ -4900,11 +4464,8 @@ def generate_static_analysis_detailed_report(functions, output_path):
         lines.append("  No static analysis results found.")
         lines.append("")
 
-    report_text = '\n'.join(lines)
-    report_path = os.path.join(output_path, "static_analysis_detailed.txt")
-    with open(report_path, 'w') as f:
-        f.write(report_text)
-    log_info("Wrote static analysis detailed report: %s" % report_path)
+    _write_report(os.path.join(output_path, "static_analysis_detailed.txt"), '\n'.join(lines),
+                  "static analysis detailed report")
 
 
 def generate_static_analysis_by_function_report(functions, output_path):
@@ -4966,11 +4527,8 @@ def generate_static_analysis_by_function_report(functions, output_path):
     if not func_data:
         lines.append("  No static analysis findings.")
         lines.append("")
-        report_text = '\n'.join(lines)
-        report_path = os.path.join(output_path, "static_analysis_by_function.txt")
-        with open(report_path, 'w') as f:
-            f.write(report_text)
-        log_info("Wrote static analysis by-function report: %s" % report_path)
+        _write_report(os.path.join(output_path, "static_analysis_by_function.txt"), '\n'.join(lines),
+                      "static analysis by-function report")
         return
 
     # Sort by total diagnostics descending
@@ -5011,13 +4569,9 @@ def generate_static_analysis_by_function_report(functions, output_path):
         fd['diagnostics'].sort(key=lambda d: d['line'])
 
         for diag in fd['diagnostics']:
-            tool_short = _get_tool_display_name(diag['tool'])
             lines.append("  Line %4d: [%s] %s" % (diag['line'], diag['check_id'], diag['message']))
 
         lines.append("")
 
-    report_text = '\n'.join(lines)
-    report_path = os.path.join(output_path, "static_analysis_by_function.txt")
-    with open(report_path, 'w') as f:
-        f.write(report_text)
-    log_info("Wrote static analysis by-function report: %s" % report_path)
+    _write_report(os.path.join(output_path, "static_analysis_by_function.txt"), '\n'.join(lines),
+                  "static analysis by-function report")

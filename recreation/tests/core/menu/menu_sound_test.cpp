@@ -111,6 +111,17 @@ TEST_F(CAudioSpectrumTest, WhileNothingPlaysThereAreNoBarsButTheFramesTurn) {
     expectFramesFromCounter(6);
 }
 
+// A game whose sound page has no spectrum draws no bars, whatever plays.
+TEST_F(CAudioSpectrumTest, WithoutASpectrumThereAreNoBars) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->spectrum.reset();
+    playMusic();
+    game_.updateDT();
+    menu_.drawAudioSpectrum();
+    EXPECT_TRUE(bars_.empty());
+}
+
 TEST_F(CAudioSpectrumTest, SilenceHasNoBars) {
     givenFile("sound\\splash-music-22.wav", sound::makeConstantWav(44100, 0));
     playMusic();
@@ -130,6 +141,26 @@ TEST_F(CAudioSpectrumTest, EachChannelHasABarEveryFourColumnsAcrossItsHalf) {
         }
     }
     EXPECT_EQ(sortedCentres(), expected);
+}
+
+// BW2's: the right channel's bars are as far left of the right edge as they were right of the
+// middle, each in the frame its new column picks.
+TEST_F(CAudioSpectrumTest, AMirroredSpectrumRunsItsRightHalfBackwards) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->spectrum->mirrored = true;
+    playMusic();
+    menu_.drawAudioSpectrum();
+    std::vector<int> expected;
+    for (int x = 32; x < 32 + 256; x += 4) {
+        expected.push_back(x);
+    }
+    for (int x = 352; x < 352 + 256; x += 4) {
+        expected.push_back(640 - (x - 320));
+    }
+    std::ranges::sort(expected);
+    EXPECT_EQ(sortedCentres(), expected);
+    expectFramesFromCounter(0);
 }
 
 // At twice the layout the bars are twice as far apart and as wide, as many as at 640x480, and

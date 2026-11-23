@@ -24,8 +24,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005f3b6e
 ;   TerminatedCString s_SfxSlot_updatePlaybackPo_005f3b83
 ;   double g_DOUBLE_005f3bd0 = 0.00100000000000000
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_005030e0
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_00572057
     MOV EAX,0xd3a                       ; 0057205c
     PUSH 0x5f3b39                       ; 00572061 | = "SfxSlot::updatePlaybackPos - invalid ..."
-    MOV dword ptr [0x01d1d400],EDI      ; 00572066 | g_CHAR_PTR_01d1d400
-    MOV [0x01d1d404],EAX                ; 0057206c | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],EDI      ; 00572066 | g_CurrentFilename
+    MOV [0x01d1d404],EAX                ; 0057206c | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572071
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572076
@@ -93,12 +93,12 @@ section .text
     MOV EDX,0x5f3b6e                    ; 005720b8 | = "..\\sound\\sndmain.cpp"
     PUSH EDI                            ; 005720bd
     MOV EAX,dword ptr [ESP + 0xc]       ; 005720be
-    MOV dword ptr [0x01d1d400],EDX      ; 005720c2 | g_CHAR_PTR_01d1d400
+    MOV dword ptr [0x01d1d400],EDX      ; 005720c2 | g_CurrentFilename
     PUSH EAX                            ; 005720c8
     MOV EDX,dword ptr [ESP + 0xc]       ; 005720c9
     MOV ECX,0xd48                       ; 005720cd
     PUSH EDX                            ; 005720d2
-    MOV dword ptr [0x01d1d404],ECX      ; 005720d3 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d404],ECX      ; 005720d3 | g_CurrentLineNumber
     MOV ECX,dword ptr [EBX + 0x110]     ; 005720d9
     PUSH ECX                            ; 005720df
     MOV ESI,dword ptr [EBX + 0x10c]     ; 005720e0
@@ -157,8 +157,8 @@ section .text
         ;   Label: LAB_00572166
     MOV ESI,0xd34                       ; 0057216b
     PUSH 0x5f3afa                       ; 00572170 | = "SfxSlot::updatePlaybackPos - no sampl..."
-    MOV dword ptr [0x01d1d400],ECX      ; 00572175 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],ESI      ; 0057217b | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 00572175 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],ESI      ; 0057217b | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00572181
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 00572186

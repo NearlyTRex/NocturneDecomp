@@ -10,15 +10,18 @@
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/font/bitfont.h"
 #include "engine/font/uiscale.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "platform/display.h"
 
 #include <algorithm>
 #include <cmath>
+#include <cstddef>
 #include <format>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -37,9 +40,8 @@ constexpr double kDyingBelow = 0.35;
 constexpr int kMeasureChar = 'X';
 constexpr int kMaxMessageLines = 10;
 constexpr int kMessageLineWidth = 0x100;
-// Below these heights the overlay takes smaller fonts.
+// Below this framebuffer width the messages take a smaller font.
 constexpr int kShortScreen = 0x1e0;
-constexpr int kSmallScreen = 0x180;
 // Above these widths the bars take larger fonts.
 constexpr int kTinyFontWidth = 0x280;
 constexpr int kMediumFontWidth = 800;
@@ -69,14 +71,32 @@ int getFadeAlpha(float timer) {
     return kFullAlpha;
 }
 
-engine::CBitFont &getChapterTitleFont(const CDFont &fonts, int screen_height) {
-    if (screen_height < kSmallScreen) {
-        return *fonts.getSmallEditorFont();
+// The first of the title's fonts whose height the screen is under, or the last.
+engine::CBitFont &getChapterTitleFont(const CDFont &fonts, const engine::SChapterTitle &title,
+                                      int screen_height) {
+    for (const engine::SChapterTitleFont &font : title.fonts) {
+        if (font.below_height == 0 || screen_height < font.below_height) {
+            return fonts.findFont(font.font);
+        }
     }
-    if (screen_height < kShortScreen) {
-        return *fonts.getTinyFont();
+    return fonts.findFont(title.fonts.back().font);
+}
+
+// The title's format with the story's year and title in it; without a year, the title alone.
+std::string formatChapterTitle(std::string_view format, int year, std::string_view title) {
+    if (year == 0) {
+        return std::string(title);
     }
-    return *fonts.getMediumFont();
+    std::string text(format);
+    for (const auto &[placeholder, value] :
+         {std::pair{std::string_view("{year}"), std::to_string(year)},
+          std::pair{std::string_view("{title}"), std::string(title)}}) {
+        for (std::size_t at = text.find(placeholder); at != std::string::npos;
+             at = text.find(placeholder, at + value.size())) {
+            text.replace(at, placeholder.size(), value);
+        }
+    }
+    return text;
 }
 
 engine::CBitFont &getStatusBarFont(const CDFont &fonts, int frame_width) {
@@ -104,6 +124,9 @@ int getBarColor(float value) {
 // The original copied the message into 256 bytes unchecked, where the script's display command
 // takes up to 1024.
 // nocedit 0x004d7f20
+// bw1 0x004cc190
+// bw2 0x004b31a0
+// bw3 0x004b46b0
 void CGame::displayMessage(std::string_view message, float duration) {
     if (message.empty()) {
         message_timer_ = 0.0F;
@@ -157,6 +180,8 @@ void CGame::setStatusDisplay(std::string_view name, float value, float duration)
 //   clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with
 //   CCharacter::processCharacter and processDamage, which record it
 // nocedit 0x004d8040
+// bw1 0x004cc2b0
+// bw2 0x004b32c0
 void CGame::renderOverlay(const SGameSessionOwners &session) {
     const common::SViewport frame =
         getHudFrame(session.display.getWidescreen(), owners_.screen.getWindowWidth(),
@@ -190,19 +215,24 @@ void CGame::renderMessageLine(const SGameSessionOwners &session, const common::S
     }
 }
 
-// The story's year and title at the frame's bottom left.
+// The story's year and title at the frame's bottom left, as the packages' chapter title gives
+// them; a game without one shows none.
 void CGame::renderChapterTitle(const common::SViewport &frame) {
-    if (!(chapter_title_timer_ > 0.0F)) {
+    const std::optional<engine::SChapterTitle> &title = owners_.content.chapter_title;
+    if (!(chapter_title_timer_ > 0.0F) || !title) {
         return;
     }
-    engine::CBitFont &font = getChapterTitleFont(owners_.fonts, owners_.screen.getWindowHeight());
+    engine::CBitFont &font =
+        getChapterTitleFont(owners_.fonts, *title, owners_.screen.getWindowHeight());
     const float scale = engine::getUiTextScale(frame.height);
     const int height = font.getCharHeightScaled(kMeasureChar, scale);
     const auto gap =
         static_cast<int>(std::lround(static_cast<float>(font.getCharWidth(kMeasureChar)) * scale));
-    owners_.three_d.setRenderAlpha(kFullAlpha);
-    font.drawTextScaled(std::format("{} - {}", chapter_year_, chapter_title_), frame.x + (gap * 2),
-                        frame.y + frame.height - height - gap, kTextColor, kShadowColor, scale);
+    owners_.three_d.setRenderAlpha(title->alpha);
+    font.drawTextScaled(formatChapterTitle(title->format, chapter_year_, chapter_title_),
+                        frame.x + (gap * title->inset_across),
+                        frame.y + frame.height - height - (gap * title->inset_up), title->colour,
+                        title->shadow, scale);
 }
 
 // Stacked up from the frame's bottom left, each named over its fill.

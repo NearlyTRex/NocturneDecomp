@@ -35,7 +35,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c1980(CGhoul *this_pt
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840
-                            (PTR_s_darkPoint_005d9266_1_00616780,this_ptr_00->actor_name,0),
+                            (PTR_s_darkPoint_005d9267_00616780,this_ptr_00->actor_name,0),
          iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;
@@ -54,8 +54,8 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c1980(CGhoul *this_pt
             this_ptr_01 = core_path_cpp_getPathMap_FUN_00513ea0(&this_ptr_00->location);
           }
           if (this_ptr_01 == (CPathMap *)0x0) {
-            g_CHAR_PTR_01d046a0 = "..\\core\\ghoul.cpp";
-            g_INT_01d046a4 = 0x12d;
+            g_CurrentFilename = "..\\core\\ghoul.cpp";
+            g_CurrentLineNumber = 301;
             core_main_c_displayErrorAndQuit_FUN_004e4500("CGhoul::findDarkWayPoint - Can't get temp path map");
           }
           CStack_30.x = 0.0;

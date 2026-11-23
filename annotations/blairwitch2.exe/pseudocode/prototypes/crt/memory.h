@@ -11,15 +11,15 @@ void * __cdecl memset(void *dest,int value,ulong count);
 
 // Original: crt_memory.c___arrinit_FUN_005b7f5f
 // Address: 005b7f5f
-void * __cdecl ::_arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_delete_FUN_005b7fa7
 // Address: 005b7fa7
-void * __cdecl ::_vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
+void * __cdecl __vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___arrfini_FUN_005b854f
 // Address: 005b854f
-void * __cdecl ::_arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
+void * __cdecl __arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c_malloc_FUN_005b8580
 // Address: 005b8580
@@ -27,7 +27,7 @@ void * __cdecl malloc(ulong size);
 
 // Original: crt_memory.c_operator_new_FUN_005b8be2
 // Address: 005b8be2
-void * __cdecl operator::new(uint size);
+void * __cdecl operator_new(uint size);
 
 // Original: crt_memory.c_realloc_FUN_005b8ce0
 // Address: 005b8ce0
@@ -35,7 +35,7 @@ void * __cdecl realloc(void *ptr,ulong new_size);
 
 // Original: crt_memory.c_operator_new_array_FUN_005b8df8
 // Address: 005b8df8
-void * __cdecl operator::new_array(uint size);
+void * __cdecl operator_new_array(uint size);
 
 // Original: crt_memory.c_calloc_FUN_005b98d0
 // Address: 005b98d0
@@ -43,8 +43,8 @@ void * __cdecl calloc(uint count,uint size);
 
 // Original: crt_memory.c___vec_new_FUN_005ba29a
 // Address: 005ba29a
-void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_new_FUN_005ba2b4
 // Address: 005ba2b4
-void * __cdecl ::_vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl __vec_new(void *array_memory,int element_count,WatcomTypeInfo *type_info);

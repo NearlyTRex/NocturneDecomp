@@ -14,6 +14,7 @@
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/dosio/dosio.h"
 #include "engine/dosio/foundfileinfo.h"
+#include "engine/dosio/gamefolders.h"
 #include "engine/font/bitfont.h"
 #include "engine/ncursfx/mouse.h"
 #include "engine/package/gamecontent.h"
@@ -26,6 +27,8 @@
 
 #include <cstddef>
 #include <format>
+#include <optional>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -34,13 +37,18 @@ namespace {
 constexpr int kWidth = 640;
 constexpr int kHeight = 480;
 constexpr int kBitsPerPixel = 32;
-constexpr int kLoadingAlpha = 0x8000;
 constexpr int kPlayerFilterSize = 0x100;
-constexpr std::string_view kLoadingScreenArt = "fangs";
-constexpr std::string_view kLoadingText = "Loading...";
+// "Loading..." in every game.
+constexpr std::string_view kLoadingLabel = "loading";
 // The original measured the text's height by this character's.
 constexpr int kLoadingHeightChar = 'X';
-constexpr int kLoadingTextColor = 0xf8;
+
+const engine::SStartup &getStartup(const SGameSystemOwners &owners) {
+    if (!owners.content.startup) {
+        displayErrorAndQuit("No package gives the startup screen");
+    }
+    return *owners.content.startup;
+}
 
 common::SExtent getStartingFrontEndMode(const SGameSystemOwners &owners) {
     const CGame &game = owners.ini_owners.game;
@@ -56,6 +64,11 @@ bool setStartingFrontEndMode(const SGameSystemOwners &owners) {
 
 SFrontEndLayout getScreenLayout(const SGameSystemOwners &owners) {
     return getFrontEndLayout(owners.screen.getWindowWidth(), owners.screen.getWindowHeight());
+}
+
+SPictureArea getStartupPicture(const SGameSystemOwners &owners) {
+    return getPictureArea(owners.screen.getWindowWidth(), owners.screen.getWindowHeight(),
+                          getStartup(owners).fit);
 }
 
 // The first run starts in 640x480 without acceleration and shows the calibration screens once,
@@ -74,24 +87,27 @@ void showFirstRunCalibration(const SGameSystemOwners &owners) {
 }
 
 void showFangs(const SGameSystemOwners &owners) {
+    const engine::SStartup &startup = getStartup(owners);
     owners.special.clearScreen();
     engine::CAlphaBitmap loading(owners.dosio, owners.screen, owners.special);
-    loading.load(kLoadingScreenArt, kWidth, kHeight);
-    displayInLayout(loading, getScreenLayout(owners),
-                    {.x = 0, .y = 0, .width = kWidth, .height = kHeight}, kLoadingAlpha,
-                    owners.ini_owners.display.getUpscaler());
+    loading.load(startup.picture, kWidth, kHeight);
+    displayInPicture(loading, getStartupPicture(owners),
+                     {.x = 0, .y = 0, .width = kWidth, .height = kHeight}, startup.picture_alpha,
+                     owners.ini_owners.display.getUpscaler());
 }
 
-// The original measured its "Loading..." to centre it, then never drew it.
+// The original measured its "Loading..." to centre it, then never drew it; every game draws it.
 void showLoadingScreen(const SGameSystemOwners &owners) {
     showFangs(owners);
-    const std::string_view text = owners.messages.getLocalizedString(kLoadingText);
-    engine::CBitFont &font = *owners.ini_owners.fonts.getThemeFont();
-    const SFrontEndLayout layout = getScreenLayout(owners);
+    const engine::SStartup &startup = getStartup(owners);
+    const std::string text = getLabel(owners.content, owners.messages, kLoadingLabel);
+    engine::CBitFont &font = owners.ini_owners.fonts.findFont(startup.label_font);
+    const SPictureArea picture = getStartupPicture(owners);
+    const float scale = picture.getScale();
     font.drawTextScaled(
-        text, layout.getX(kWidth / 2) - (font.getTextWidthScaled(text, layout.scale) / 2),
-        layout.getY(kHeight / 2) - (font.getCharHeightScaled(kLoadingHeightChar, layout.scale) / 2),
-        kLoadingTextColor, engine::CBitFont::kNoShadow, layout.scale);
+        text, picture.getX(startup.label_x) - (font.getTextWidthScaled(text, scale) / 2),
+        picture.getY(startup.label_y) - (font.getCharHeightScaled(kLoadingHeightChar, scale) / 2),
+        startup.label_colour, engine::CBitFont::kNoShadow, scale);
     owners.screen.swapBuffers();
 }
 
@@ -104,29 +120,11 @@ void unpackArchives(const SGameSystemOwners &owners) {
         return;
     }
     if (setStartingFrontEndMode(owners) &&
-        owners.dosio.readFile("art", std::format("{}.raw", kLoadingScreenArt))) {
+        owners.dosio.readFile("art", std::format("{}.raw", getStartup(owners).picture))) {
         showFangs(owners);
         owners.screen.swapBuffers();
     }
     owners.pod.unpackArchives();
-}
-
-// The packages choose the game's menus and loading indicator.
-void checkFrontEnd(const engine::SGameContent &content) {
-    if (!content.front_end) {
-        displayErrorAndQuit("No package names the game's front end");
-    }
-    if (*content.front_end != kNocturneFrontEnd) {
-        displayErrorAndQuit(
-            std::format("The front end {} isn't in this build", *content.front_end));
-    }
-    if (!content.loading_indicator) {
-        displayErrorAndQuit("No package names the loading indicator");
-    }
-    if (*content.loading_indicator != kMoonLoadingIndicator) {
-        displayErrorAndQuit(std::format("The loading indicator {} isn't in this build",
-                                        *content.loading_indicator));
-    }
 }
 
 // Eight spots growing an eighth brighter each, and a larger one per player growing a quarter.
@@ -155,7 +153,11 @@ void initFilters(const SGameSystemOwners &owners) {
 //   nocturne_save_slots_prewarm, SAVE_SLOTS), with the save and load pickers
 // nocedit 0x00507a60
 void initializeGameSystems(const SGameSystemOwners &owners) {
-    readIniData(owners.ini, owners.file_system, owners.ini_owners);
+    // The ini is the game's, read before its pods mount, since it sets the checks they mount with.
+    owners.pod.setGameChosenHandler([&owners](const engine::SChosenGame &game) {
+        owners.game_folders.useGame(game.folder);
+        readIniData(owners.ini, owners.file_system, owners.ini_owners);
+    });
     owners.pod.init();
     owners.dosio.addGetFileInfoHook(
         [&pod = owners.pod](engine::SFoundFileInfo &info) { return pod.findFile(info); });
@@ -163,7 +165,15 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
         return dosio.findFileNormally(info);
     });
     unpackArchives(owners);
-    checkFrontEnd(owners.content);
+    owners.pod.setGameChosenHandler({});
+    // Every package is loaded now, so the control defaults the ini binds over are there.
+    readIniControls(owners.ini, owners.ini_owners);
+    // The menus are drawn over the title backdrop, so without it nothing can start.
+    requireFrontEndStyle("title backdrop", owners.content.front_end.title_backdrop,
+                         {kSkySceneBackdrop, kFigureSceneBackdrop, kTiledScrollBackdrop});
+    if (owners.content.title) {
+        owners.set_title(*owners.content.title);
+    }
     owners.messages.readMessageFile("msglist.txt");
     if (const auto translations = owners.content.translations.find(owners.messages.getLanguage());
         translations != owners.content.translations.end()) {
@@ -181,7 +191,9 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     owners.ini_owners.fonts.initFonts();
     owners.ini_owners.fonts.setOsFontScale(getScreenLayout(owners).scale);
     showFirstRunCalibration(owners);
-    owners.attract_movies.setOpeningPlayed(owners.play_movie("video", "opening.avi"));
+    const engine::SStartup &startup = getStartup(owners);
+    owners.attract_movies.setOpeningPlayed(
+        owners.play_movie(startup.movie_directory, startup.movie));
     showLoadingScreen(owners);
     owners.sound.findAllSoundFiles();
     owners.mission.reset();

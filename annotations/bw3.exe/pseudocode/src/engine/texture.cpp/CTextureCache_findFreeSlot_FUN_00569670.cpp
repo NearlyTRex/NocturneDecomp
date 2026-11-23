@@ -24,8 +24,8 @@ int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00569670(CTextureC
       iVar4 = g_INT_02cfd0d4;
       this_ptr->current_texture_count = 0x400;
       if (iVar4 != 0) {
-        g_CHAR_PTR_01d71de0 = "..\\engine\\texture.cpp";
-        g_INT_01d71de4 = 0xbc;
+        g_CurrentFilename = "..\\engine\\texture.cpp";
+        g_CurrentLineNumber = 188;
         core_main_c_displayErrorAndQuit_FUN_004e4330("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
       }
     }

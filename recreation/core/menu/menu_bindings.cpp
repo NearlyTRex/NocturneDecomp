@@ -10,6 +10,7 @@
 #include "engine/keys/keyname.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -41,65 +42,33 @@ struct SBindingRow {
     std::string_view label;
 };
 
-// The original's list, in its order, and the map after it.
-constexpr auto kBindingRows = std::to_array<SBindingRow>({
-    {.action = EGameAction::Walk, .label = "Forward"},
-    {.action = EGameAction::Backup, .label = "Back"},
-    {.action = EGameAction::Run, .label = "Run"},
-    {.action = EGameAction::Strafe, .label = "Strafe on"},
-    {.action = EGameAction::StrafeLeft, .label = "Strafe left"},
-    {.action = EGameAction::StrafeRight, .label = "Strafe right"},
-    {.action = EGameAction::Left, .label = "Turn left"},
-    {.action = EGameAction::Right, .label = "Turn right"},
-    {.action = EGameAction::Fire, .label = "Fire / Action"},
-    {.action = EGameAction::UseItem, .label = "Use item"},
-    {.action = EGameAction::Light, .label = "Light"},
-    {.action = EGameAction::Infrared, .label = "Night Vision"},
-    {.action = EGameAction::Draw, .label = "Draw"},
-    {.action = EGameAction::PointUp, .label = "Point up"},
-    {.action = EGameAction::PointDown, .label = "Point down"},
-    {.action = EGameAction::Jump, .label = "Jump"},
-    {.action = EGameAction::Weapon1, .label = "Select pistol weapons"},
-    {.action = EGameAction::Weapon2, .label = "Select assault weapons"},
-    {.action = EGameAction::Weapon3, .label = "Select flame weapons"},
-    {.action = EGameAction::Weapon4, .label = "Select grenade weapons"},
-    {.action = EGameAction::Weapon5, .label = "Select melee weapons"},
-    {.action = EGameAction::NextWeapon, .label = "Next weapon"},
-    {.action = EGameAction::PrevWeapon, .label = "Previous weapon"},
-    {.action = EGameAction::NextItem, .label = "Next item"},
-    {.action = EGameAction::PrevItem, .label = "Previous item"},
-    {.action = EGameAction::ItemDesc, .label = "Item description"},
-    {.action = EGameAction::NextAmmo, .label = "Next ammo"},
-    {.action = EGameAction::Map, .label = "Map"},
-});
-
-// The original's hotkeys, its developers' after the rest.
+// The original's hotkeys, its developers' after the rest; the labels' ids.
 constexpr auto kHotkeyRows = std::to_array<SBindingRow>({
-    {.action = EGameAction::Mute, .label = "Mute sound"},
-    {.action = EGameAction::SaveGame, .label = "Save game"},
-    {.action = EGameAction::LoadGame, .label = "Load game"},
-    {.action = EGameAction::QuickSave, .label = "Quick save"},
-    {.action = EGameAction::QuickLoad, .label = "Quick load"},
-    {.action = EGameAction::KeysHelp, .label = "Keys help"},
-    {.action = EGameAction::GammaDown, .label = "Gamma down"},
-    {.action = EGameAction::GammaUp, .label = "Gamma up"},
-    {.action = EGameAction::MotionDebug, .label = "Motion debug"},
-    {.action = EGameAction::EditMode, .label = "Edit mode"},
-    {.action = EGameAction::Pause, .label = "Pause"},
-    {.action = EGameAction::CameraDebug, .label = "Camera debug"},
-    {.action = EGameAction::ScriptView, .label = "Script view"},
-    {.action = EGameAction::DebugDisplay, .label = "Debug display"},
-    {.action = EGameAction::Console, .label = "Console"},
-    {.action = EGameAction::CameraToggle, .label = "Camera on/off"},
-    {.action = EGameAction::AmbientUp, .label = "Ambient light up"},
-    {.action = EGameAction::AmbientDown, .label = "Ambient light down"},
-    {.action = EGameAction::NextCamera, .label = "Next camera (edit mode)"},
-    {.action = EGameAction::PrevCamera, .label = "Previous camera (edit mode)"},
-    {.action = EGameAction::ScriptRun, .label = "Run or stop script (script debug)"},
-    {.action = EGameAction::ScriptResume, .label = "Resume script (script debug)"},
-    {.action = EGameAction::ScriptResetDialog, .label = "Reset dialog (script debug)"},
+    {.action = EGameAction::Mute, .label = "hotkey_mute"},
+    {.action = EGameAction::SaveGame, .label = "hotkey_save_game"},
+    {.action = EGameAction::LoadGame, .label = "hotkey_load_game"},
+    {.action = EGameAction::QuickSave, .label = "hotkey_quick_save"},
+    {.action = EGameAction::QuickLoad, .label = "hotkey_quick_load"},
+    {.action = EGameAction::KeysHelp, .label = "hotkey_keys_help"},
+    {.action = EGameAction::GammaDown, .label = "hotkey_gamma_down"},
+    {.action = EGameAction::GammaUp, .label = "hotkey_gamma_up"},
+    {.action = EGameAction::MotionDebug, .label = "hotkey_motion_debug"},
+    {.action = EGameAction::EditMode, .label = "hotkey_edit_mode"},
+    {.action = EGameAction::Pause, .label = "hotkey_pause"},
+    {.action = EGameAction::CameraDebug, .label = "hotkey_camera_debug"},
+    {.action = EGameAction::ScriptView, .label = "hotkey_script_view"},
+    {.action = EGameAction::DebugDisplay, .label = "hotkey_debug_display"},
+    {.action = EGameAction::Console, .label = "hotkey_console"},
+    {.action = EGameAction::CameraToggle, .label = "hotkey_camera_toggle"},
+    {.action = EGameAction::AmbientUp, .label = "hotkey_ambient_up"},
+    {.action = EGameAction::AmbientDown, .label = "hotkey_ambient_down"},
+    {.action = EGameAction::NextCamera, .label = "hotkey_next_camera"},
+    {.action = EGameAction::PrevCamera, .label = "hotkey_prev_camera"},
+    {.action = EGameAction::ScriptRun, .label = "hotkey_script_run"},
+    {.action = EGameAction::ScriptResume, .label = "hotkey_script_resume"},
+    {.action = EGameAction::ScriptResetDialog, .label = "hotkey_script_reset_dialog"},
 });
-static_assert(kBindingRows.size() + kHotkeyRows.size() == kGameActionCount);
+static_assert(kHotkeyRows.size() == kGameActionCount - static_cast<std::size_t>(kFirstHotkey));
 
 struct SDeviceName {
     EInputCodeType code;
@@ -130,8 +99,6 @@ constexpr std::array<SDeviceName, 20> kDeviceNames{{
     {.code = EInputCodeType::DIJ_DOWN, .name = "Left Stick Back"},
 }};
 
-constexpr std::string_view kInvalidBindings =
-    "One or more keys not valid.  Restoring default controls.";
 constexpr std::string_view kNameSeparator = ", ";
 constexpr auto kFirstCode = static_cast<std::size_t>(EInputCodeType::DIK_ESCAPE);
 
@@ -186,6 +153,11 @@ std::string CMenu::getKeyDisplayName(EInputCodeType key_code) const {
     return std::string(engine::getKeyName(key_code));
 }
 
+void CMenu::setBindingButtons(shape::CPickList &list) const {
+    list.setOkButtonText(label("bindings_select"));
+    list.setCancelButtonText(label("bindings_close"));
+}
+
 std::string CMenu::getChordDisplayName(const SKeyChord &chord) const {
     std::string name;
     for (const SChordModifier &modifier : kChordModifiers) {
@@ -229,18 +201,22 @@ void CMenu::configureCustomKeyBindings() {
         owners_.screen.swapBuffers();
         shape::CPickList list(owners_.pick_list);
         list.setForcedColumnCount(true);
-        list.add(owners_.messages.getLocalizedString("Restore defaults"));
-        std::vector<std::string_view> labels;
-        labels.reserve(kBindingRows.size());
-        for (const SBindingRow &row : kBindingRows) {
-            const bool walks = row.action == EGameAction::Run && game.always_run != 0;
-            labels.push_back(owners_.messages.getLocalizedString(walks ? "Walk" : row.label));
-            list.add(std::format("{}\t{}", labels.back(), getBindingNames(row.action)));
+        setBindingButtons(list);
+        list.add(label("bindings_restore_defaults"));
+        std::vector<SBindingRow> rows;
+        // The rows' own labels are the game's, from its [[controls.binding]].
+        std::vector<std::string> labels;
+        for (const engine::SBindingRowSpec &spec : game.getControls().bindings) {
+            const EGameAction action = findGameAction(spec.action).value();
+            rows.push_back({.action = action, .label = spec.label});
+            const bool walks = action == EGameAction::Run && game.always_run != 0;
+            labels.push_back(walks ? label("bindings_walk")
+                                   : std::string(owners_.messages.getLocalizedString(spec.label)));
+            list.add(std::format("{}\t{}", labels.back(), getBindingNames(action)));
         }
-        list.add(owners_.messages.getLocalizedString("Hotkeys"));
-        const int choice = list.displayChoicesAndWaitForInput(
-            owners_.messages.getLocalizedString("Edit key settings"), cursor);
-        const auto hotkeys = static_cast<int>(kBindingRows.size()) + 1;
+        list.add(label("bindings_hotkeys"));
+        const int choice = list.displayChoicesAndWaitForInput(label("bindings_title"), cursor);
+        const auto hotkeys = static_cast<int>(rows.size()) + 1;
         if (choice == hotkeys) {
             cursor = choice;
             configureHotkeyBindings();
@@ -249,7 +225,7 @@ void CMenu::configureCustomKeyBindings() {
         if (choice > 0) {
             cursor = choice;
             const auto row = static_cast<std::size_t>(choice - 1);
-            editActionBindings(kBindingRows.at(row).action, labels.at(row));
+            editActionBindings(rows.at(row).action, labels.at(row));
             continue;
         }
         if (choice == 0) {
@@ -272,18 +248,17 @@ void CMenu::configureHotkeyBindings() {
     while (true) {
         shape::CPickList list(owners_.pick_list);
         list.setForcedColumnCount(true);
+        setBindingButtons(list);
         for (const SBindingRow &row : rows) {
-            list.add(std::format("{}\t{}", owners_.messages.getLocalizedString(row.label),
-                                 getBindingNames(row.action)));
+            list.add(std::format("{}\t{}", label(row.label), getBindingNames(row.action)));
         }
-        const int choice = list.displayChoicesAndWaitForInput(
-            owners_.messages.getLocalizedString("Hotkeys"), cursor);
+        const int choice = list.displayChoicesAndWaitForInput(label("bindings_hotkeys"), cursor);
         if (choice < 0) {
             return;
         }
         cursor = choice;
         const SBindingRow &row = rows.at(static_cast<std::size_t>(choice));
-        editActionBindings(row.action, owners_.messages.getLocalizedString(row.label));
+        editActionBindings(row.action, label(row.label));
     }
 }
 
@@ -309,7 +284,7 @@ void CMenu::editActionBindings(EGameAction action, std::string_view label) {
         for (const SKeyChord &chord : codes) {
             list.add(getChordDisplayName(chord));
         }
-        list.add(owners_.messages.getLocalizedString("Add binding"));
+        list.add(this->label("bindings_add"));
         const int choice = list.displayChoicesAndWaitForInput(label, cursor);
         if (list.getDeletePressed()) {
             cursor = list.getCurrentIndex();
@@ -357,8 +332,7 @@ std::optional<SKeyChord> CMenu::captureChord(std::string_view label) {
     engine::CKeys &keys = owners_.pick_list.keys;
     const engine::IRawInput &input = owners_.raw_input;
     shape::CEditorTools &tools = owners_.editor_tools;
-    const std::string_view release =
-        owners_.messages.getLocalizedString("OK - you can release the key now...");
+    const std::string release = this->label("bindings_release_key");
     while (readHeldKeys().any) {
         tools.displayCenteredStatusMessage(release);
         if (keys.getKeyState(EInputCodeType::DIK_ESCAPE) != 0 || input.getInputDisabled()) {
@@ -367,8 +341,8 @@ std::optional<SKeyChord> CMenu::captureChord(std::string_view label) {
         }
         owners_.screen.swapBuffers();
     }
-    tools.displayCenteredStatusMessage(std::format(
-        "{}{}", owners_.messages.getLocalizedString("Press new key or button for "), label));
+    tools.displayCenteredStatusMessage(
+        std::format("{}{}", this->label("bindings_press_key"), label));
     keys.toggleInputMask(true);
     std::optional<SKeyChord> captured;
     std::optional<SKeyChord> modifier_alone;
@@ -441,7 +415,7 @@ void CMenu::validateBindings() {
         return;
     }
     owners_.game.restoreDefaultControls();
-    owners_.editor_tools.showError(kInvalidBindings);
+    owners_.editor_tools.showError(label("bindings_invalid"));
 }
 
 } // namespace nocturne::core

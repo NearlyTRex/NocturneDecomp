@@ -32,6 +32,9 @@ double dot(const std::array<double, 3> &row, const CVector3f &v) {
 
 // The original stores sin x, sin y, sin z, cos y and cos z to floats before most of their uses.
 // nocedit 0x00471d30
+// bw1 0x0045f3e0
+// bw2 0x00449280
+// bw3 0x0045b550
 void CMatrix3x3f::buildRotationMatrix(const CVector3f &euler_angles) {
     const double sx = std::sin(static_cast<double>(euler_angles.x));
     const double sz = std::sin(static_cast<double>(euler_angles.z));
@@ -52,12 +55,18 @@ void CMatrix3x3f::buildRotationMatrix(const CVector3f &euler_angles) {
 }
 
 // nocedit 0x00471fd0
+// bw1 0x0045f690
+// bw2 0x00449530
+// bw3 0x0045b800
 CVector3f CMatrix3x3f::transformVector(const CVector3f &input) const {
     const Rows3x3d rows = widen(m);
     return narrow(dot(rows[0], input), dot(rows[1], input), dot(rows[2], input));
 }
 
 // nocedit 0x00472030
+// bw1 0x0045f700
+// bw2 0x004495a0
+// bw3 0x0045b870
 CVector3f CMatrix3x3f::transformVectorTranspose(const CVector3f &input) const {
     const Rows3x3d rows = widen(m);
     const std::array<double, 3> column_x = {rows[0][0], rows[1][0], rows[2][0]};
@@ -67,6 +76,9 @@ CVector3f CMatrix3x3f::transformVectorTranspose(const CVector3f &input) const {
 }
 
 // nocedit 0x00472160
+// bw1 0x0045f840
+// bw2 0x004496e0
+// bw3 0x0045b9b0
 CVector3f CMatrix3x3f::getEulerAngles() const {
     return eulerAnglesFromRows(widen(m));
 }

@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 783,
-    "complexity_score": 1014,
+    "complexity_score": 1029,
     "cross_reference_count": 6,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 399,
-    "suspect_count": 58,
+    "suspect_count": 59,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
+      "struct_field_overrun",
       "unrolled_memcpy",
       "unrolled_memset"
     ],
@@ -1390,6 +1391,14 @@
       "severity": "moderate",
       "text": "pCVar21 = (CCloth *)&(pCVar21->model).env_map_opac_list;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "*(...)(local_34 + 0x39e7c): the pointer is based on a field at offset 0x0 (size 256 in CCloth) but the +0x39e7c byte offset lands in field locked_vertex_indices (offset 0x39cec). Ghidra anchored on the wrong field \u2014 rewrite as direct access to locked_vertex_indices (#15 base-shift; forms an out-of-array pointer, trips UBSan).",
+      "line": 378,
+      "match": "*(...)(local_34 + 0x39e7c)",
+      "severity": "moderate",
+      "text": "*(int *)(local_34 + 0x39e7c) = local_70;",
+      "type": "struct_field_overrun"
     }
   ]
 }

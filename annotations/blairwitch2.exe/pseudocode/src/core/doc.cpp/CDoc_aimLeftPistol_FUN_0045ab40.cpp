@@ -63,8 +63,8 @@ void __cdecl core_doc_cpp_CDoc_aimLeftPistol_FUN_0045ab40(CDoc *this_ptr)
   
   bVar4 = 0;
   if (this_ptr->weapon == (CWeapon *)0x0) {
-    g_CHAR_PTR_01d046a0 = "..\\core\\doc.cpp";
-    g_INT_01d046a4 = 0x12a4;
+    g_CurrentFilename = "..\\core\\doc.cpp";
+    g_CurrentLineNumber = 4772;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CDoc::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)

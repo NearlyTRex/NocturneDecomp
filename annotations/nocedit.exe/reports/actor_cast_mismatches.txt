@@ -14,7 +14,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Total resolution calls found:  338
-  Type mismatches found:         1
+  Type mismatches found:         0
   Unresolved (indirect variable): 17
 
   Calls by function:
@@ -22,24 +22,6 @@ SUMMARY
     createActorByName              7 calls
     getActor                       35 calls
     resolveActorByName             31 calls
-
-  Mismatches by expected class:
-    CMelee                    1 mismatches
-
-  Mismatches by actual cast type:
-    CDemonActor               1 times (should be: CMelee)
-
-====================================================================================================
-DETAILED FINDINGS
-====================================================================================================
-
---------------------------------------------------------------------------------
-  core/inv.cpp/CInventory_addItem_FUN_004fd600.keep.cpp
---------------------------------------------------------------------------------
-
-  Line 313: castToClassHash()
-    Expected class: CMelee               (CMelee -> CWeapon -> CDemonActor)
-    Actual cast:    CDemonActor          (CDemonActor)
 
 ====================================================================================================
 UNRESOLVED CALLS (class identity passed via variable)
@@ -53,13 +35,13 @@ Manual inspection is needed to determine the expected class.
   core/event.cpp/CEventList_executeCommand_FUN_004aacc0.chunked.cpp
 --------------------------------------------------------------------------------
 
-  Line 277: castToClassHash()
-    275:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
-    276:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
-    277:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
-    278:             if (pCVar6 != (CBoxActor *)0x0) {
-    279:               pCVar6->loop_wav_name[0] = '\0';
-    280:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
+  Line 394: castToClassHash()
+    392:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
+    393:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
+    394:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
+    395:             if (pCVar6 != (CBoxActor *)0x0) {
+    396:               pCVar6->loop_wav_name[0] = '\0';
+    397:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
 
 --------------------------------------------------------------------------------
   core/event.cpp/CEventList_executeCommand_FUN_004aacc0.keep.cpp

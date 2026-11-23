@@ -28,8 +28,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_004fd3c0(CFileBitStream *this
   pcVar2 = (char *)malloc(buffer_size);
   this_ptr->buffer = pcVar2;
   if (pcVar2 == (char *)0x0) {
-    g_CHAR_PTR_01d71de0 = "..\\sound\\mp3.cpp";
-    g_INT_01d71de4 = 0x23d;
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 573;
     core_main_c_displayErrorAndQuit_FUN_004e4330("Out of memory.  File: %s");
   }
   _fseek(this_ptr->file_handle,this_ptr->stream_start_position,0);

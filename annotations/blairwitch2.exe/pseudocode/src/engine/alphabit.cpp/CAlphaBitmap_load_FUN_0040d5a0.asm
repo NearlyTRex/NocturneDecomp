@@ -254,20 +254,20 @@ section .text
     MOV ESI,0x5cb02e                    ; 0040d80a | = "..\\engine\\alphabit.cpp"
     MOV EDI,0xe1                        ; 0040d80f
     PUSH 0x5cb045                       ; 0040d814 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01d046a0],ESI      ; 0040d819 | g_CHAR_PTR_01d046a0
-    MOV dword ptr [0x01d046a4],EDI      ; 0040d81f | g_INT_01d046a4
+    MOV dword ptr [0x01d046a0],ESI      ; 0040d819 | g_CurrentFilename
+    MOV dword ptr [0x01d046a4],EDI      ; 0040d81f | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d825
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040d82a
     JMP 0x0040d60a                      ; 0040d82d
         ;   XREF to: 0040d60a (UNCONDITIONAL_JUMP)  ; LAB_0040d60a
-    MOV dword ptr [0x01d046a0],0x5cb076 ; 0040d832 | g_CHAR_PTR_01d046a0 | = "..\\engine\\alphabit.cpp"
+    MOV dword ptr [0x01d046a0],0x5cb076 ; 0040d832 | g_CurrentFilename | = "..\\engine\\alphabit.cpp"
         ;   Label: LAB_0040d832
     MOV EAX,ESP                         ; 0040d83c
     PUSH EAX                            ; 0040d83e
     MOV EDX,0xe7                        ; 0040d83f
     PUSH 0x5cb08d                       ; 0040d844 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01d046a4],EDX      ; 0040d849 | g_INT_01d046a4
+    MOV dword ptr [0x01d046a4],EDX      ; 0040d849 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_004e4500 ; 0040d84f
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004e4500(char * format)
     ADD ESP,0x8                         ; 0040d854

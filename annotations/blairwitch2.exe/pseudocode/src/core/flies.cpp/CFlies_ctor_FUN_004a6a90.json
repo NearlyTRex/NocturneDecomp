@@ -398,7 +398,7 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "'pCVar1[1].actor_name + 0x10' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x10 = 0x2c4, which is exactly offsetof(CActorDestination, dest_class[12]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[12] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list, CBat::course_filename[16], CEmitter::emitter_state also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "description": "'pCVar1[1].actor_name + 0x10' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x10 = 0x2c4, which is exactly offsetof(CFlies, flies). Ghidra had no CFlies type here and reached the field by index arithmetic; write it as ((CFlies *)pCVar1)->flies (\u00a7de-pun/\u00a712).",
       "line": 10,
       "severity": "moderate",
       "text": "pvVar2 = __arrinit(pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo);",

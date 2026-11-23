@@ -24,8 +24,8 @@
 ;   int g_INT_01c51d74
 ;   int g_INT_01c51d78
 ;   int g_INT_01c51d7c
-;   char* g_CHAR_PTR_01d1d400
-;   int g_INT_01d1d404
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   float g_FLOAT_01d224ec
 ;   float g_FLOAT_01d224f0
 ;   float g_FLOAT_01d224f4
@@ -214,8 +214,8 @@ section .text
     MOV ECX,0x5e8fab                    ; 0051787d
     MOV EBX,0x14e5                      ; 00517882
     PUSH 0x5e8fc0                       ; 00517887
-    MOV dword ptr [0x01d1d400],ECX      ; 0051788c | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EBX      ; 00517892 | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ECX      ; 0051788c | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EBX      ; 00517892 | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 00517898
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 0051789d
@@ -231,8 +231,8 @@ section .text
     MOV ESI,0x5e8fea                    ; 005178ba
     MOV EDI,0x14e9                      ; 005178bf
     PUSH 0x5e8fff                       ; 005178c4
-    MOV dword ptr [0x01d1d400],ESI      ; 005178c9 | g_CHAR_PTR_01d1d400
-    MOV dword ptr [0x01d1d404],EDI      ; 005178cf | g_INT_01d1d404
+    MOV dword ptr [0x01d1d400],ESI      ; 005178c9 | g_CurrentFilename
+    MOV dword ptr [0x01d1d404],EDI      ; 005178cf | g_CurrentLineNumber
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005178d5
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_005030e0(char * format)
     ADD ESP,0x4                         ; 005178da

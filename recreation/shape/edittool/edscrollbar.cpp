@@ -4,8 +4,10 @@
 #include "common/math/fixed.h"
 #include "engine/2d/2d.h"
 #include "engine/gameclock.h"
+#include "engine/package/gamecontent.h"
 #include "engine/rawinput.h"
 #include "shape/edittool/edcontrols.h"
+#include "shape/edittool/editortools.h"
 
 #include <algorithm>
 
@@ -14,12 +16,7 @@ namespace {
 
 constexpr int kLeftButton = 1;
 constexpr int kLineStep = 1;
-// A quarter second before a held press repeats, then a thirtieth between repeats.
-constexpr int kFirstRepeatDelay = 0x48000;
-constexpr int kRepeatDelay = 0x9999;
 constexpr int kMinimumSide = 3;
-constexpr int kTrackFillColor = 0;
-constexpr int kTrackBorderColor = 7;
 
 } // namespace
 
@@ -27,6 +24,7 @@ constexpr int kTrackBorderColor = 7;
 // nocedit 0x004a5ae0
 CEdScrollBar::CEdScrollBar(CEdControls &controls) : controls_(controls) {}
 
+// clearActiveButtonIfMatch, all the destructor did, is here.
 // nocedit 0x004a5b20
 // nocedit 0x004a5b40
 CEdScrollBar::~CEdScrollBar() {
@@ -172,7 +170,7 @@ void CEdScrollBar::startPress() {
         scroll_position_ += page_size_;
     }
     scroll_timer_ = controls_.getOwners().clock.getTime();
-    scroll_delay_ = kFirstRepeatDelay;
+    scroll_delay_ = controls_.getOwners().editor_tools.getListLook().scroll_bar.first_repeat_ticks;
 }
 
 // A page repeats until the thumb reaches the mouse, then lets go of the button.
@@ -183,7 +181,7 @@ void CEdScrollBar::repeatAction() {
     if (scroll_delay_ >= 1) {
         return;
     }
-    scroll_delay_ = kRepeatDelay;
+    scroll_delay_ = controls_.getOwners().editor_tools.getListLook().scroll_bar.repeat_ticks;
     if (scroll_action_ == EScrollAction::LineBack) {
         scroll_position_ -= kLineStep;
         return;
@@ -239,9 +237,11 @@ bool CEdScrollBar::isActing(EScrollAction action) const {
 // nocedit 0x004a5c10
 void CEdScrollBar::render() {
     computeThumb();
-    controls_.getOwners().two_d.fillRectWithBorder(bounds_left_ + 1, bounds_top_ + 1,
-                                                   bounds_right_ - 2, bounds_bottom_ - 2,
-                                                   kTrackFillColor, kTrackBorderColor);
+    const engine::SScrollBarLook &look =
+        controls_.getOwners().editor_tools.getListLook().scroll_bar;
+    controls_.getOwners().two_d.fillRectWithBorder(
+        bounds_left_ + 1, bounds_top_ + 1, bounds_right_ - 2, bounds_bottom_ - 2,
+        look.track_fill_colour, look.track_border_colour);
     const int left = bounds_left_ + 1;
     const int right = bounds_right_ - 1;
     const int top = bounds_top_ + 1;
