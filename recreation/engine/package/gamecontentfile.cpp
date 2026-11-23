@@ -778,23 +778,30 @@ TomlResult<SMenuMusic> readMenuMusic(const toml::table &table) {
 
 TomlResult<SPointerLook> readPointerLook(const toml::table &table) {
     constexpr std::string_view kWhere = "list: pointer: ";
-    if (TomlResult<void> keys =
-            rejectUnknownKeys(table, kWhere, {"cube_colours", "size", "default_height"});
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere, {"cube_colours", "palette_colours", "size", "default_height"});
         !keys) {
         return std::unexpected(keys.error());
     }
     SPointerLook pointer;
-    const toml::array *colours = table.get_as<toml::array>("cube_colours");
-    if (colours == nullptr || colours->size() != pointer.cube_colours.size()) {
-        return std::unexpected(std::format("{}cube_colours: not a list of four", kWhere));
+    // Cube colours or palette indices, one or the other.
+    pointer.palette_indices = table.contains("palette_colours");
+    if (pointer.palette_indices && table.contains("cube_colours")) {
+        return std::unexpected(
+            std::format("{}palette_colours: cube_colours are given as well", kWhere));
     }
-    for (std::size_t i = 0; i < pointer.cube_colours.size(); ++i) {
+    const std::string_view key = pointer.palette_indices ? "palette_colours" : "cube_colours";
+    const int most = pointer.palette_indices ? kMaxColour : kMaxCubeColour;
+    const toml::array *colours = table.get_as<toml::array>(key);
+    if (colours == nullptr || colours->size() != pointer.colours.size()) {
+        return std::unexpected(std::format("{}{}: not a list of four", kWhere, key));
+    }
+    for (std::size_t i = 0; i < pointer.colours.size(); ++i) {
         const std::optional<std::int64_t> value = (*colours)[i].value_exact<std::int64_t>();
-        if (!value || *value < 0 || *value > kMaxCubeColour) {
-            return std::unexpected(
-                std::format("{}cube_colours: not from 0 to 0x{:x}", kWhere, kMaxCubeColour));
+        if (!value || *value < 0 || *value > most) {
+            return std::unexpected(std::format("{}{}: not from 0 to 0x{:x}", kWhere, key, most));
         }
-        pointer.cube_colours.at(i) = static_cast<int>(*value);
+        pointer.colours.at(i) = static_cast<int>(*value);
     }
     if (TomlResult<void> read =
             readIntegers(table, kWhere,
@@ -2212,11 +2219,11 @@ TomlResult<T> readMenuPart(const toml::table &table, std::string_view key, Read 
 
 TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: ";
-    if (TomlResult<void> keys =
-            rejectUnknownKeys(table, kWhere,
-                              {"left", "align", "top", "titled_top", "trademark", "page_tops",
-                               "title", "item", "footer", "calibration", "options", "sound",
-                               "slider", "attract", "features", "music"});
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, kWhere,
+            {"left", "align", "top", "titled_top", "animate_titled_backdrop", "text_fonts",
+             "trademark", "page_tops", "title", "item", "footer", "calibration", "options", "sound",
+             "slider", "attract", "features", "music"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -2306,6 +2313,28 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(music.error());
     }
     menu.music = std::move(*music);
+    const TomlResult<bool> animate = readRequiredBoolean(table, kWhere, "animate_titled_backdrop");
+    if (!animate) {
+        return std::unexpected(animate.error());
+    }
+    menu.animate_titled_backdrop = *animate;
+    constexpr std::string_view kFontsWhere = "menu: text_fonts: ";
+    const TomlResult<const toml::table *> fonts = readRequiredTable(table, kWhere, "text_fonts");
+    if (!fonts) {
+        return std::unexpected(fonts.error());
+    }
+    if (TomlResult<void> keys = rejectUnknownKeys(**fonts, kFontsWhere, {"large", "small"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    for (const auto &[key, field] :
+         {std::pair{"large", &menu.text_font_large}, std::pair{"small", &menu.text_font_small}}) {
+        TomlResult<std::string> value = readRequiredString(**fonts, kFontsWhere, key);
+        if (!value) {
+            return std::unexpected(value.error());
+        }
+        *field = std::move(*value);
+    }
     return menu;
 }
 
@@ -2594,7 +2623,10 @@ std::string formatMenu(const SMenuLayout &menu) {
     if (menu.align != EMenuAlign::Left) {
         text += std::format("align = {}\n", quoteToml(getKeywordName(menu.align, kMenuAligns)));
     }
-    text += std::format("top = {}\ntitled_top = {}\n", menu.top, menu.titled_top);
+    text += std::format("top = {}\ntitled_top = {}\nanimate_titled_backdrop = {}\n"
+                        "text_fonts = {{ large = {}, small = {} }}\n",
+                        menu.top, menu.titled_top, menu.animate_titled_backdrop,
+                        quoteToml(menu.text_font_large), quoteToml(menu.text_font_small));
     if (menu.trademark) {
         text += std::format("trademark = {{ x = {}, y = {}, glyph = 0x{:x}, alpha = 0x{:x} }}\n",
                             menu.trademark->x, menu.trademark->y, menu.trademark->glyph,
@@ -2695,10 +2727,11 @@ std::string formatList(const SListLook &list) {
         list.margin_height, list.field_gap_divisor, list.row_extra, list.reserved_lines,
         list.width_share, list.width_parts, list.double_click_ticks);
     const SPointerLook &pointer = list.pointer;
-    text += std::format("\n[list.pointer]\ncube_colours = [0x{:x}, 0x{:x}, 0x{:x}, 0x{:x}]\n"
+    text += std::format("\n[list.pointer]\n{} = [0x{:x}, 0x{:x}, 0x{:x}, 0x{:x}]\n"
                         "size = {}\ndefault_height = {}\n",
-                        pointer.cube_colours[0], pointer.cube_colours[1], pointer.cube_colours[2],
-                        pointer.cube_colours[3], pointer.size, pointer.default_height);
+                        pointer.palette_indices ? "palette_colours" : "cube_colours",
+                        pointer.colours[0], pointer.colours[1], pointer.colours[2],
+                        pointer.colours[3], pointer.size, pointer.default_height);
     const SScrollBarLook &bar = list.scroll_bar;
     text += std::format("\n[list.scroll_bar]\nfirst_repeat_ticks = 0x{:x}\nrepeat_ticks = 0x{:x}\n"
                         "track_fill_colour = 0x{:x}\ntrack_border_colour = 0x{:x}\n",

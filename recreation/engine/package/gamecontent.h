@@ -758,6 +758,12 @@ struct SMenuLayout {
     // A list without a title, the main menu's among them.
     int top = 0;
     int titled_top = 0;
+    // The title backdrop moves on behind a titled page, the options and theirs, as Nocturne's
+    // and BW2's; BW1's and BW3's only drew it there, so it held still.
+    bool animate_titled_backdrop = false;
+    // The [[font]] ids the Menu text setting picks between for the menus' lists and dialogs.
+    std::string text_font_large;
+    std::string text_font_small;
     // Beside the title art, or none.
     std::optional<SMenuTrademark> trademark;
     // A titled page's own top, by its id; a page not listed takes titled_top.
@@ -802,8 +808,10 @@ struct SFrontEndParts {
 // The pointer the dialogs draw: it cycles through four colours, a phase each 65536 game-clock
 // ticks.
 struct SPointerLook {
-    // Colour-cube entries.
-    std::array<int, 4> cube_colours{};
+    // Colour-cube entries, the nearest palette colours to these 5-5-5 colours, as Nocturne's
+    // and BW2's; or palette indices as they are, as BW1's and BW3's.
+    std::array<int, 4> colours{};
+    bool palette_indices = false;
     // Its size before any cursor sets one, and a cursor's height that gives none.
     int size = 0;
     int default_height = 0;

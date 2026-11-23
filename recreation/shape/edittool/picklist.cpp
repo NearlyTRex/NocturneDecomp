@@ -11,7 +11,8 @@ namespace nocturne::shape {
 // bw2 0x00481fc0
 // bw3 0x004831c0
 CPickList::CPickList(const SPickListOwners &owners)
-    : owners_(owners), scrollbar_(owners.controls) {}
+    : owners_(owners), scrollbar_(owners.controls), ok_button_(owners.controls),
+      cancel_button_(owners.controls) {}
 
 // The original cleared the list and freed the enable array by hand.
 // nocedit 0x004a3c80
@@ -88,6 +89,16 @@ void CPickList::setHotkeys(std::string_view hotkeys) {
 // Retail's callers set the field themselves.
 void CPickList::setForcedColumnCount(bool single_column) {
     forced_column_count_ = single_column;
+}
+
+// nocedit 0x004a3d20
+void CPickList::setOkButtonText(std::string_view text) {
+    ok_button_text_ = text;
+}
+
+// nocedit 0x004a3d90
+void CPickList::setCancelButtonText(std::string_view text) {
+    cancel_button_text_ = text;
 }
 
 int CPickList::getCurrentIndex() const {

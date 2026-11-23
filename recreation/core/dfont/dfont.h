@@ -59,7 +59,8 @@ public:
     [[nodiscard]] bool getUseOSFonts() const;
     [[nodiscard]] EMenuFontChoice getMenuFontChoice() const;
     void setMenuFontChoice(EMenuFontChoice choice);
-    // The theme font for Large, the small editor font for Small.
+    // The menu's large text font, Nocturne's theme font, or its small one, the small editor
+    // font; without the menus' layout, fatal.
     [[nodiscard]] engine::CBitFont *getMenuFont() const;
 
     [[nodiscard]] engine::CBitFont *getMediumFont() const;

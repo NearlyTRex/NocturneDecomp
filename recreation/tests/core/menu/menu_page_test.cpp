@@ -125,8 +125,8 @@ TEST_F(CMenuPageTest, EachFrameRunsTheHooksInOrderWithTheSwapBeforeTheChoice) {
     };
     menu_.runPage(page_);
     EXPECT_EQ(events, (std::vector<std::string>{
-                          "begin", "build", "decorate", "title", "before swap", "swap", "end",
-                          "begin", "build", "decorate", "title", "before swap", "swap", "choose"}));
+                          "begin", "title", "build", "decorate", "before swap", "swap", "end",
+                          "begin", "title", "build", "decorate", "before swap", "swap", "choose"}));
 }
 
 TEST_F(CMenuPageTest, APageThatStaysRunsOnAfterAChoice) {

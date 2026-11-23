@@ -73,9 +73,8 @@ text and drawn by what names it, as BW3's `menu` and `small_menu` (BW3_font.raw,
 the theme font's size with palette index 2 clear). A later package's font replaces an earlier
 one's with the same id.
 
-Not built: BW1-3's `hand` (dochand.raw), which nothing draws yet, and a `[fonts]` table naming the
-Menu text setting's two choices (`menu_large = "theme"`, `menu_small = "small_editor"` in
-Nocturne).
+Not built: BW1-3's `hand` font (dochand.raw), which only the field notes draw with; it comes
+with them as a `[[font]]`. The Menu text setting's two fonts are `[menu]`'s `text_fonts`.
 
 ## Menus
 
@@ -84,6 +83,9 @@ Nocturne).
 left = 160
 top = 250
 titled_top = 225
+animate_titled_backdrop = true    # the backdrop moves on behind the options pages (Nocturne, BW2);
+                                  # BW1's and BW3's only drew it there, so it held still
+text_fonts = { large = "theme", small = "small_editor" }  # the Menu text setting's fonts
 align = "left"                    # optional: left | centre (BW2's: each line about x 320)
 trademark = { x = 518, y = 99, glyph = 0x99, alpha = 0x8000 }
 
@@ -136,11 +138,6 @@ y = 1
 [menu.music]                      # what configure plays, by the output's rate (30000 and under)
 low_rate = "splash-music-22.wav"  # BW2: XBLAIRMENU.wav for both
 high_rate = "splash-music-44.wav"
-
-[menu.flat_set]                   # not built, optional: BW's flat-lit set behind each page
-colour = [50000, 50000, 0x10000]
-ambient = 0xdac
-animate_backdrop = false
 
 [menu.features]
 difficulty = false                # BW1's puzzle and combat difficulty lines, on the Gameplay page
@@ -228,7 +225,8 @@ game's together.
 Not built: BW's actions (`sps`, `compass`, `journal`, `voodoo_doll`, `drop`, `action`, ...), the
 `point_and_click` (BW1, BW3) and `mouse_only` (BW2) modes, a row shown only in some modes (BW1's
 point & click leaves out its first 11 rows, Fire / Action to Quick turn), the point & click
-mouse-button lock, and the bindings list's Select/Close button texts. BW1's joystick defaults
+mouse-button lock. The bindings lists' buttons are the `bindings_select` and `bindings_close`
+labels, empty for none (Nocturne's), "Select" and "Close" in BW1-3. BW1's joystick defaults
 (`DIJ_BUTTON1`-`4`) are codes the recreation's pad never sends, so its gamepad mode takes
 Nocturne's pad table.
 
@@ -291,8 +289,9 @@ prompt_padding_lines = 2
 ```
 
 The prompts' titles ("Message", "Warning", "Error") are editor text the message file translates. The list's font is the editor
-font, `small_editor`. Not built: BW1 and BW3 cycle the pointer through palette indices
-(`palette_colours = [0, 0xff, 2, 0xfd]`) in place of `cube_colours`.
+font, `small_editor`. `[list.pointer]` takes `cube_colours`, the nearest palette entries to four
+5-5-5 colours (Nocturne, BW2), or `palette_colours`, the entries themselves (BW1 and BW3's
+`[0, 0xff, 2, 0xfd]`).
 
 ## Credits
 

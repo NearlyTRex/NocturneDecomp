@@ -192,8 +192,11 @@ void CDFont::setMenuFontChoice(EMenuFontChoice choice) {
 }
 
 engine::CBitFont *CDFont::getMenuFont() const {
-    return menu_font_choice_ == EMenuFontChoice::Small ? small_editor_font_.get()
-                                                       : theme_font_.get();
+    if (!content_.menu) {
+        common::displayErrorAndQuit("No package gives the menus' layout");
+    }
+    return &findFont(menu_font_choice_ == EMenuFontChoice::Small ? content_.menu->text_font_small
+                                                                 : content_.menu->text_font_large);
 }
 
 engine::CBitFont *CDFont::getMediumFont() const {

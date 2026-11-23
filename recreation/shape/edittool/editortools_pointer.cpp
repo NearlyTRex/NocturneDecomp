@@ -18,11 +18,19 @@ int roundUpToOdd(int size) {
 
 } // namespace
 
+// BW1's and BW3's colours were palette indices as they are; Nocturne's the nearest to cube
+// colours.
+// bw3 0x004803d0
+// bw1 0x00497830
 // nocedit 0x004a1330
 int CEditorTools::getTimeCycledColorByte() {
     const auto phase = (static_cast<std::uint32_t>(game_clock_.getTime()) >> 16) & 3;
-    return two_d_.getColorCubeLookup()[static_cast<std::size_t>(
-        getListLook().pointer.cube_colours.at(phase))];
+    const engine::SPointerLook &pointer = getListLook().pointer;
+    const int colour = pointer.colours.at(phase);
+    if (pointer.palette_indices) {
+        return colour;
+    }
+    return two_d_.getColorCubeLookup()[static_cast<std::size_t>(colour)];
 }
 
 // The original's clip test left out the clip's right column and bottom row.

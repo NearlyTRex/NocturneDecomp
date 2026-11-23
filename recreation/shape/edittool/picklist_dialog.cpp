@@ -104,6 +104,12 @@ void CPickList::calculateLayoutAndCreateComponents(std::string_view dialog_title
     } else if (scroll_mode_ == EScrollMode::Horizontal) {
         height += owners_.controls.calculateGridHeight();
     }
+    const SButtonRow buttons = measureButtons();
+    if (buttons.count > 0) {
+        width = std::max(width, buttons.total_width);
+        height += buttons.gap + buttons.height +
+                  (scroll_mode_ == EScrollMode::Horizontal ? buttons.gap : 0);
+    }
     controls.editor_tools.createCenteredModal(width, height, dialog_title, window_flags);
     fitInsideWindow();
     controls.two_d.clearInputAndWait();
@@ -158,20 +164,72 @@ void CPickList::sizeColumns(int line_height) {
     }
 }
 
-// The scroll bar takes a strip along the right or the bottom, and the rows and columns are
-// fitted again to what is left.
+// The buttons are each as wide as the widest of their texts and "Cancel", a 128th of the screen
+// apart, a 96th of it below the list.
+CPickList::SButtonRow CPickList::measureButtons() {
+    SButtonRow row;
+    for (const std::string &text : {ok_button_text_, cancel_button_text_}) {
+        if (!text.empty()) {
+            ++row.count;
+            row.button_width =
+                std::max(row.button_width, owners_.controls.calculateButtonWidth(text));
+        }
+    }
+    if (row.count == 0) {
+        return row;
+    }
+    row.button_width = std::max(row.button_width, owners_.controls.calculateButtonWidth("Cancel"));
+    row.height = owners_.controls.calculateButtonHeight(std::nullopt);
+    constexpr int kGapShare = 96;
+    constexpr int kSpacingShare = 128;
+    row.gap = owners_.screen.getWindowHeight() / kGapShare;
+    row.spacing = owners_.screen.getWindowWidth() / kSpacingShare;
+    row.total_width = (row.count * row.button_width) + ((row.count - 1) * row.spacing);
+    return row;
+}
+
+// Along the window's foot, at its right: the OK button, then the cancel button last.
+void CPickList::placeButtons(const SButtonRow &row) {
+    const engine::SClipRect clip = owners_.controls.getOwners().two_d.getClipRect();
+    const int top = (clip.bottom - row.height) + 1;
+    const int bottom = (top + row.height) - 1;
+    if (!ok_button_text_.empty()) {
+        const int left = (clip.right + 1) - row.total_width;
+        ok_button_.setBoundsAndText(left, top, (left + row.button_width) - 1, bottom,
+                                    ok_button_text_);
+    }
+    if (!cancel_button_text_.empty()) {
+        const int left = (clip.right + 1) - row.button_width;
+        cancel_button_.setBoundsAndText(left, top, (left + row.button_width) - 1, bottom,
+                                        cancel_button_text_);
+    }
+}
+
+// The scroll bar takes a strip along the right or the bottom, above the buttons, and the rows
+// and columns are fitted again to what is left.
 void CPickList::fitInsideWindow() {
     const engine::SClipRect clip = owners_.controls.getOwners().two_d.getClipRect();
     int width = (clip.right - clip.left) + 1;
     int height = (clip.bottom - clip.top) + 1;
+    const SButtonRow buttons = measureButtons();
+    const int buttons_height =
+        buttons.count == 0 ? 0
+                           : buttons.gap + buttons.height +
+                                 (scroll_mode_ == EScrollMode::Horizontal ? buttons.gap : 0);
     if (scroll_mode_ == EScrollMode::Vertical) {
         const int bar = owners_.controls.calculateGridWidth();
         width -= bar;
-        scrollbar_.setPosition((clip.right - bar) + 1, clip.top, clip.right, clip.bottom);
+        const int above = buttons.count == 0 ? 0 : buttons.height + buttons.gap;
+        scrollbar_.setPosition((clip.right - bar) + 1, clip.top, clip.right, clip.bottom - above);
     } else if (scroll_mode_ == EScrollMode::Horizontal) {
         const int bar = owners_.controls.calculateGridHeight();
         height -= bar;
-        scrollbar_.setPosition(clip.left, (clip.bottom - bar) + 1, clip.right, clip.bottom);
+        scrollbar_.setPosition(clip.left, (clip.bottom - bar - buttons_height) + 1, clip.right,
+                               clip.bottom - buttons_height);
+    }
+    if (buttons.count > 0) {
+        placeButtons(buttons);
+        height -= buttons_height;
     }
     rows_per_column_ = height / row_height_;
     column_count_ = std::max(std::min(width / column_width_, getColumnsNeeded()), 1);
@@ -234,6 +292,12 @@ void CPickList::renderDialog() {
     if (scroll_mode_ != EScrollMode::None) {
         syncScrollBar();
         scrollbar_.render();
+    }
+    if (!ok_button_text_.empty()) {
+        ok_button_.paint();
+    }
+    if (!cancel_button_text_.empty()) {
+        cancel_button_.paint();
     }
     controls.editor_tools.drawMousePointer(true);
 }

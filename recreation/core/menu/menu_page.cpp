@@ -52,7 +52,8 @@ void CMenu::runPage(CMenuPage &page) {
     std::optional<int> selected_id;
     while (true) {
         page.beginFrame();
-        drawMenuBackdrop();
+        const std::optional<std::string> title = page.title();
+        drawMenuBackdrop(!title || getMenuLayout().animate_titled_backdrop);
         lines.clear();
         page.build(lines);
         page.decorate();
@@ -64,7 +65,6 @@ void CMenu::runPage(CMenuPage &page) {
         }
         const auto count = static_cast<int>(lines.size());
         selected_index = std::min(selected_index, count - 1);
-        const std::optional<std::string> title = page.title();
         const engine::SMenuLayout &layout = getMenuLayout();
         const auto own_top = layout.page_tops.find(page.getLayoutId());
         const int titled_top =
@@ -97,9 +97,12 @@ bool CMenu::takeMenuCancel() {
            owners_.raw_input.getInputDisabled();
 }
 
-void CMenu::drawMenuBackdrop() {
+// The clock runs on while the backdrop holds still, so it moves on from where it stopped.
+void CMenu::drawMenuBackdrop(bool animate) {
     owners_.game.updateDT();
-    moon_.update(owners_.game.getDeltaTimeFloat());
+    if (animate) {
+        moon_.update(owners_.game.getDeltaTimeFloat());
+    }
     moon_.render();
 }
 

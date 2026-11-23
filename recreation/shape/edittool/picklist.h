@@ -1,6 +1,7 @@
 #pragma once
 
 #include "engine/fwd.h"
+#include "shape/edittool/edbutton.h"
 #include "shape/edittool/edscrollbar.h"
 #include "shape/edittool/strlist.h"
 #include "shape/fwd.h"
@@ -65,6 +66,11 @@ public:
     void setHotkeys(std::string_view hotkeys);
     // Lays the list out in one column, however many would fit.
     void setForcedColumnCount(bool single_column);
+    // A button under the list, at its right, that picks the item under the cursor, and one
+    // after it that cancels; empty text is no button, as a new list has. The original was fatal
+    // past 99 characters.
+    void setOkButtonText(std::string_view text);
+    void setCancelButtonText(std::string_view text);
     // The item under the cursor.
     [[nodiscard]] int getCurrentIndex() const;
 
@@ -98,8 +104,26 @@ private:
     void drawItem(int index, int left, int top);
     void requireNoneEnabled(std::string_view message) const;
 
+    // The buttons' row: how many there are, each one's width, all of theirs with the gaps, and
+    // its height, without the gap above it.
+    struct SButtonRow {
+        int count = 0;
+        int button_width = 0;
+        int total_width = 0;
+        int height = 0;
+        // Between the list and the buttons, and between the buttons.
+        int gap = 0;
+        int spacing = 0;
+    };
+    [[nodiscard]] SButtonRow measureButtons();
+    void placeButtons(const SButtonRow &row);
+
     SPickListOwners owners_;
     CEdScrollBar scrollbar_;
+    std::string ok_button_text_;
+    std::string cancel_button_text_;
+    CEdButton ok_button_;
+    CEdButton cancel_button_;
     // One column, whatever fits.
     bool forced_column_count_ = false;
     std::string hotkeys_;

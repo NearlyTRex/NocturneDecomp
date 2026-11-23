@@ -147,6 +147,23 @@ TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getSmallEditorFont());
 }
 
+// The game's menus name the two; either can be any [[font]].
+TEST_F(CDFontTest, TheMenuFontsAreTheOnesTheMenusName) {
+    fonts_.initFonts();
+    content_.menu->text_font_large = "tiny";
+    content_.menu->text_font_small = "theme";
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getTinyFont());
+    fonts_.setMenuFontChoice(EMenuFontChoice::Small);
+    EXPECT_EQ(fonts_.getMenuFont(), fonts_.getThemeFont());
+}
+
+TEST_F(CDFontTest, WithoutTheMenusTheMenuFontIsFatal) {
+    content_.menu.reset();
+    EXPECT_THAT([this] { static_cast<void>(fonts_.getMenuFont()); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives the menus' layout")));
+}
+
 TEST_F(CDFontTest, AManifestFindsEachFontByItsId) {
     fonts_.initFonts();
     EXPECT_EQ(&fonts_.findFont("medium"), fonts_.getMediumFont());

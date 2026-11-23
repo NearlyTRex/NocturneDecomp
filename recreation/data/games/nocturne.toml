@@ -97,6 +97,10 @@ movie = "opening.avi"
 left = 160
 top = 250
 titled_top = 225
+# The backdrop moves on behind the options pages
+animate_titled_backdrop = true
+# The Menu text setting's fonts for the menus' lists and dialogs
+text_fonts = { large = "theme", small = "small_editor" }
 # The trademark sign beside the title art, at the build line's alpha
 trademark = { x = 518, y = 99, glyph = 0x99, alpha = 0x8000 }
 
@@ -919,6 +923,9 @@ bindings_add = "Add binding"
 bindings_release_key = "OK - you can release the key now..."
 bindings_press_key = "Press new key or button for "
 bindings_invalid = "One or more keys not valid.  Restoring default controls."
+# The bindings lists' buttons; empty is none, as Nocturne's lists have
+bindings_select = ""
+bindings_close = ""
 
 # The hotkeys' rows, the engine's in every game
 hotkey_mute = "Mute sound"

@@ -161,6 +161,13 @@ int CPickList::handleDialogInput() {
     takeScrollBar();
     const int page_end = (rows_per_column_ * column_count_) + scroll_top_;
     current_index_ = std::max(std::min(current_index_, page_end - 1), scroll_top_);
+    // The OK button picks as a double click does; the cancel button cancels.
+    if (!ok_button_text_.empty() && ok_button_.wasClicked()) {
+        confirmed_flag_ = true;
+    }
+    if (!cancel_button_text_.empty() && cancel_button_.wasClicked()) {
+        return kCancelled;
+    }
     readMouse();
     return kStillOpen;
 }

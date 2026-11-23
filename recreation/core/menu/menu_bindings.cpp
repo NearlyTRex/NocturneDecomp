@@ -153,6 +153,11 @@ std::string CMenu::getKeyDisplayName(EInputCodeType key_code) const {
     return std::string(engine::getKeyName(key_code));
 }
 
+void CMenu::setBindingButtons(shape::CPickList &list) const {
+    list.setOkButtonText(label("bindings_select"));
+    list.setCancelButtonText(label("bindings_close"));
+}
+
 std::string CMenu::getChordDisplayName(const SKeyChord &chord) const {
     std::string name;
     for (const SChordModifier &modifier : kChordModifiers) {
@@ -196,6 +201,7 @@ void CMenu::configureCustomKeyBindings() {
         owners_.screen.swapBuffers();
         shape::CPickList list(owners_.pick_list);
         list.setForcedColumnCount(true);
+        setBindingButtons(list);
         list.add(label("bindings_restore_defaults"));
         std::vector<SBindingRow> rows;
         // The rows' own labels are the game's, from its [[controls.binding]].
@@ -242,6 +248,7 @@ void CMenu::configureHotkeyBindings() {
     while (true) {
         shape::CPickList list(owners_.pick_list);
         list.setForcedColumnCount(true);
+        setBindingButtons(list);
         for (const SBindingRow &row : rows) {
             list.add(std::format("{}\t{}", label(row.label), getBindingNames(row.action)));
         }

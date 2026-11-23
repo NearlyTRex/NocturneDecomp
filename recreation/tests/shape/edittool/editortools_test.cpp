@@ -169,8 +169,15 @@ TEST_F(CEditorToolsTest, WithoutAPackagesLookTheDialogsAndPointerAreFatal) {
 
 // A game's pointer cycles through the colours its packages give.
 TEST_F(CEditorToolsTest, ThePointerCyclesThroughTheLooksColours) {
-    content_.list->pointer.cube_colours = {0x1f, 0x1f, 0x1f, 0x1f};
+    content_.list->pointer.colours = {0x1f, 0x1f, 0x1f, 0x1f};
     EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), two_d_.getColorCubeLookup()[0x1f]);
+}
+
+// BW1's and BW3's are palette entries as they are.
+TEST_F(CEditorToolsTest, APointersPaletteColoursAreTheEntriesThemselves) {
+    content_.list->pointer.colours = {0xfd, 0xfd, 0xfd, 0xfd};
+    content_.list->pointer.palette_indices = true;
+    EXPECT_EQ(editor_tools_.getTimeCycledColorByte(), 0xfd);
 }
 
 TEST_F(CEditorToolsTest, WithoutAnEditorFontEveryDialogIsFatal) {

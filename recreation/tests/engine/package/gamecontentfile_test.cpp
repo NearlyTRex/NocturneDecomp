@@ -112,7 +112,10 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     EXPECT_THAT(formatGameContentTables(content),
                 ::testing::StartsWith("\n[credits]\ntext = 'c.txt'\nfit = 'keep_aspect'\n"
                                       "image = 'i'\n\n[menu]\n"
-                                      "left = 160\ntop = 250\ntitled_top = 225\n\n[menu.title]\n"));
+                                      "left = 160\ntop = 250\ntitled_top = 225\n"
+                                      "animate_titled_backdrop = true\n"
+                                      "text_fonts = { large = 'theme', small = 'small_editor' }"
+                                      "\n\n[menu.title]\n"));
     EXPECT_EQ(parseGameContent(formatGameContentTables(content)), content);
 }
 
@@ -272,7 +275,9 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[menu]\nleft = 1\ntop = 1\ntitled_top = 1", "menu: title: missing"}));
 
 // A [menu] whole but for the part a case changes.
-constexpr std::string_view kMenuTop = "[menu]\nleft = 1\ntop = 1\ntitled_top = 1\n";
+constexpr std::string_view kMenuTop =
+    "[menu]\nleft = 1\ntop = 1\ntitled_top = 1\nanimate_titled_backdrop = false\n"
+    "text_fonts = { large = 'theme', small = 'small_editor' }\n";
 constexpr std::string_view kMenuTitle = "[menu.title]\ncolour = 7\nshadow = 0\ngap_lines = 2\n";
 constexpr std::string_view kMenuItem =
     "[menu.item]\nfont = 'theme'\ncolour = 1\nselected_colour = 2\nalpha = 3\nshadow = -1\n"
@@ -363,6 +368,13 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{
             std::format("{}{}", kListTop, "[list.pointer]\ncube_colours = [0, 1, 2, 0x8000]\n"),
             "list: pointer: cube_colours: not from 0 to 0x7fff"},
+        SBadCase{
+            std::format("{}{}", kListTop, "[list.pointer]\npalette_colours = [0, 1, 2, 256]\n"),
+            "list: pointer: palette_colours: not from 0 to 0xff"},
+        SBadCase{std::format("{}{}", kListTop,
+                             "[list.pointer]\npalette_colours = [0, 1, 2, 3]\n"
+                             "cube_colours = [0, 1, 2, 3]\n"),
+                 "list: pointer: palette_colours: cube_colours are given as well"},
         SBadCase{std::format("{}{}", kListTop, "[list.pointer]\nwidth = 1\n"),
                  "list: pointer: width: not a key this file takes"},
         SBadCase{std::format("{}{}", kListTop, "[list.pointer]\ncube_colours = [0, 1, 2, 3]\n"),
@@ -388,7 +400,8 @@ TEST(GameContentFile, AWholeListReads) {
     const std::expected<SGameContent, std::string> content =
         parseGameContent(std::format("{}{}{}", kListTop, kListPointer, kListScrollBar));
     ASSERT_TRUE(content.has_value()) << content.error();
-    EXPECT_EQ(content->list->pointer.cube_colours, (std::array<int, 4>{0, 1, 2, 3}));
+    EXPECT_EQ(content->list->pointer.colours, (std::array<int, 4>{0, 1, 2, 3}));
+    EXPECT_FALSE(content->list->pointer.palette_indices);
     EXPECT_EQ(content->list->scroll_bar.track_border_colour, 7);
 }
 

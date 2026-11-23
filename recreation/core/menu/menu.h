@@ -135,6 +135,8 @@ private:
     void configureCustomKeys();
     // The hotkeys as Customize Keys lists the play actions, the developers' in developer mode.
     void configureHotkeyBindings();
+    // The game's buttons under a bindings list, as BW's Select and Close; Nocturne's has none.
+    void setBindingButtons(shape::CPickList &list) const;
     // An action's chords' names, or (none).
     [[nodiscard]] std::string getBindingNames(EGameAction action) const;
     // The codes of one action, as a list with Add binding after them, until Cancel.
@@ -167,7 +169,8 @@ private:
     // An untitled page of the localized items from the main menu's top: the item chosen, or
     // nothing for Cancel.
     [[nodiscard]] std::optional<int> showSubmenu(std::span<const std::string_view> items);
-    void drawMenuBackdrop();
+    // The title backdrop, moved on first when animate.
+    void drawMenuBackdrop(bool animate);
     // `top`, raised where `rows` lines of the items' font would run off the layout's 480 rows,
     // and never above them.
     [[nodiscard]] int fitMenuTop(int top, int rows) const;

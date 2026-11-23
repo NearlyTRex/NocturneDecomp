@@ -85,6 +85,10 @@ movie = "opening.avi"
 left = 175
 top = 200
 titled_top = 200
+# The backdrop holds still behind the options pages: BW3 drew it there without moving it on
+animate_titled_backdrop = false
+# The Menu text setting's fonts for the menus' lists and dialogs
+text_fonts = { large = "theme", small = "small_editor" }
 
 [menu.title]
 colour = 0x9a
@@ -320,6 +324,9 @@ bindings_add = "Add binding"
 bindings_release_key = "OK - you can release the key now..."
 bindings_press_key = "Press new key or button for "
 bindings_invalid = "One or more keys not valid.  Restoring default controls."
+# The bindings lists' buttons
+bindings_select = "Select"
+bindings_close = "Close"
 
 hotkey_mute = "Mute sound"
 hotkey_save_game = "Save game"
@@ -664,8 +671,9 @@ double_click_ticks = 0x48000
 
 # BW3 cycles palette indices 0, 0xff, 2 and 0xfd; until a key takes indices, the cube colours
 # nearest the same black, white, green and magenta
+# BW3's pointer cycles through palette entries as they are, as BW1's
 [list.pointer]
-cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
+palette_colours = [0x00, 0xff, 0x02, 0xfd]
 size = 9
 default_height = 11
 
