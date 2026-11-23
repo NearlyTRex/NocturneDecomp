@@ -2,6 +2,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/charactr/deathstate.h"
 #include "core/stranger/stranger.h"
+#include "tests/mocks/common/vector3fequal.h"
 #include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/testactor.h"
@@ -171,6 +172,18 @@ TEST(CStranger, WhileStrangerCannotDieHoldsHeLivesThroughAnything) {
     EXPECT_EQ(hero.getDeathState(), EDeathState::DEATH_STATE_ALIVE);
 }
 
+// Only the heading is taken; the hero is stood upright, the turn passed in left alone.
+TEST(CStranger, PlacingTheHeroKeepsOnlyItsHeading) {
+    CTestClasses classes;
+    CStranger hero(classes.get());
+    common::CVector3f place{.x = 4.0F, .y = 5.0F, .z = 6.0F};
+    common::CVector3f turn{.x = 0.5F, .y = 1.5F, .z = -0.5F};
+    hero.setPositionAndOrientation(&place, &turn);
+    EXPECT_TRUE(common::isSameVector(hero.getLocation().position, place));
+    EXPECT_TRUE(common::isSameVector(hero.getOrientation(), {.x = 0.0F, .y = 1.5F, .z = 0.0F}));
+    EXPECT_EQ(turn.x, 0.5F);
+}
+
 TEST(CStranger, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CStranger hero(classes.get());
@@ -178,7 +191,6 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"process", [&] { hero.process(0.0F); }},
         {"renderOpaque", [&] { static_cast<void>(hero.renderOpaque()); }},
         {"renderTransparent", [&] { static_cast<void>(hero.renderTransparent()); }},
-        {"setPositionAndOrientation", [&] { hero.setPositionAndOrientation(nullptr, nullptr); }},
         {"drop", [&] { hero.drop(nullptr, nullptr); }},
         {"getGrabbed", [&] { static_cast<void>(hero.getGrabbed(nullptr, 0)); }},
         {"processDamage", [&] { hero.processDamage(nullptr); }},
@@ -189,7 +201,7 @@ TEST(CStranger, TheFunctionsNotPortedYetQuit) {
         {"isWeaponDrawn", [&] { static_cast<void>(hero.isWeaponDrawn()); }},
         {"reset", [&] { hero.reset(); }},
     };
-    EXPECT_EQ(calls.size(), 12U);
+    EXPECT_EQ(calls.size(), 11U);
     expectEachQuitsNotPorted("CStranger", calls);
 }
 

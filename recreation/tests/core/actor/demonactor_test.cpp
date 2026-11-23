@@ -10,6 +10,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/box/boundingbox3d.h"
 #include "core/game/game.h"
+#include "tests/mocks/common/vector3fequal.h"
 #include "tests/mocks/core/gameparts.h"
 #include "tests/mocks/core/mockactorlookup.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
@@ -312,6 +313,29 @@ TEST(CDemonActor, ALocalPointIsTurnedAsLastUpdatedThenMovedToTheActor) {
     EXPECT_NEAR(std::abs(turned.y), 1.0F, 1e-6F);
 }
 
+// The area is kept; the turn is brought within pi and taken at once.
+TEST(CDemonActor, PlacingAnActorMovesAndTurnsIt) {
+    CTestActor actor(kTestLeafType);
+    actor.setLocation({.position = {}, .area_id = 3});
+    common::CVector3f place{.x = 1.0F, .y = 2.0F, .z = 3.0F};
+    common::CVector3f turn{.x = 0.5F, .y = 4.0F, .z = -0.25F};
+    actor.setPositionAndOrientation(&place, &turn);
+    EXPECT_TRUE(common::isSameVector(actor.getLocation().position, place));
+    EXPECT_EQ(actor.getLocation().area_id, 3);
+    EXPECT_EQ(actor.getOrientation().x, 0.5F);
+    EXPECT_EQ(actor.getOrientation().y, normalizeAngleToPi(4.0F));
+    EXPECT_EQ(actor.getOrientation().z, -0.25F);
+    common::CVector3f local{.x = 1.0F};
+    common::CVector3f world;
+    actor.localToWorldPoint(&world, &local);
+    common::CMatrix3x3f matrix;
+    matrix.buildRotationMatrix(actor.getOrientation());
+    const common::CVector3f turned = matrix.transformVector(local);
+    EXPECT_EQ(world.x, turned.x + 1.0F);
+    EXPECT_EQ(world.y, turned.y + 2.0F);
+    EXPECT_EQ(world.z, turned.z + 3.0F);
+}
+
 TEST(CDemonActor, AnActorWithNoShapeIsAnEightUnitBoxOnItsFeet) {
     CTestActor actor(kTestLeafType);
     CBoundingBox3D box;
@@ -350,7 +374,6 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"evaluateTriggerCondition",
          [&] { static_cast<void>(actor.evaluateTriggerCondition(nullptr, nullptr)); }},
         {"processActionButton", [&] { static_cast<void>(actor.processActionButton()); }},
-        {"setPositionAndOrientation", [&] { actor.setPositionAndOrientation(nullptr, nullptr); }},
         {"onPickup", [&] { actor.onPickup(nullptr); }},
         {"shouldIgnoreForTargeting", [&] { static_cast<void>(actor.shouldIgnoreForTargeting()); }},
         {"getAllowedMeleeAttackTypes",
@@ -382,7 +405,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 45U);
+    EXPECT_EQ(calls.size(), 44U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

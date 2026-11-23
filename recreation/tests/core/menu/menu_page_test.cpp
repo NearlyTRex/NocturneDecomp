@@ -243,6 +243,33 @@ TEST_F(CMenuPageTest, ATitledPageStartsUnderTheLogo) {
     EXPECT_EQ(row, letterRow(225));
 }
 
+// Behind a titled page the backdrop holds still unless the game's layout animates it; a quarter
+// second a frame takes the title animation past its first half in three seconds.
+TEST_F(CMenuPageTest, ATitledPagesBackdropAnimatesOnlyWhenTheLayoutSays) {
+    int now = 0;
+    ON_CALL(clock_, getTime()).WillByDefault([&] {
+        now += 18 * 0x4000;
+        return now;
+    });
+    page_.page_title = "XXX";
+    const auto halves = [&](bool animate, int frames) {
+        game_parts_.getContent().menu->animate_titled_backdrop = animate;
+        menu_.getMoon().init();
+        const int start = frames_;
+        std::vector<int> seen;
+        on_frame_ = [&, start, frames](int frame) {
+            seen.push_back(menu_.getMoon().isAnimationFirstHalf());
+            if (frame - start == frames) {
+                press(EInputCodeType::DIK_ESCAPE);
+            }
+        };
+        menu_.runPage(page_);
+        return seen;
+    };
+    EXPECT_THAT(halves(false, 8), ::testing::Each(1));
+    EXPECT_THAT(halves(true, 11), ::testing::Contains(0));
+}
+
 // A page the layout lists sits at its own top; one it doesn't list, at the titled pages' top.
 TEST_F(CMenuPageTest, APageTheLayoutListsTakesItsOwnTop) {
     std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;

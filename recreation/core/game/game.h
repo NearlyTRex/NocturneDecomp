@@ -68,6 +68,8 @@ struct SGameSessionOwners {
     CSound &sound;
     // Whose widescreen framing the HUD keeps to.
     const platform::IDisplay &display;
+    // What each frame's 3D is drawn through.
+    engine::CDemonRenderer &renderer;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -131,6 +133,8 @@ public:
     // The message, chapter title and status bars, in the scene's picture. Public as
     // playerControls is.
     void renderOverlay(const SGameSessionOwners &session);
+    // One frame of play, drawn. Public as playerControls is.
+    void processFrame(const SGameSessionOwners &session);
     void loadGame(char *save_filename, int load_mode);
     // A story to play, or a chapter of one, then the mission it starts with is loaded and its
     // heroes made.
@@ -203,6 +207,8 @@ public:
     int camera_view_index = 0;
     // The scene shown in the screen's top 240 lines, the script below it.
     bool script_view = false;
+    // The developers' pause: the game stands still and the slew keys fly the hero.
+    bool is_paused = false;
 
     // The gamma a session plays at is held between a half and one, 16.16.
     static constexpr int kMinGamma = 0x8000;
@@ -217,6 +223,8 @@ private:
     };
 
     void clearOverlay();
+    void slewLocalHero(const SGameSessionOwners &session);
+    void renderFrame(const SGameSessionOwners &session);
     // The frame is the scene's picture: its 4:3 column when pillarboxed, else the whole screen.
     void renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame);
     void renderChapterTitle(const common::SViewport &frame);
@@ -226,6 +234,7 @@ private:
     [[nodiscard]] bool takeAction(EGameAction action);
     [[nodiscard]] bool isOutranked(const SKeyChord &chord, EGameAction action) const;
     void stepGamma(const SGameSessionOwners &session, int step);
+    void togglePause();
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);

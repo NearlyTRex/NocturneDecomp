@@ -68,15 +68,14 @@ std::uint8_t cloudTexel(std::span<const std::uint8_t> texels, std::uint32_t x, s
 //   setRenderingMode
 // nocedit 0x00529ed0
 void CMoon::render() {
-    switch (getStyle()) {
-    case EStyle::Figure:
+    const EStyle style = getStyle();
+    if (style == EStyle::Figure) {
         renderFigure();
         return;
-    case EStyle::Tiled:
+    }
+    if (style == EStyle::Tiled) {
         renderTiled();
         return;
-    case EStyle::Sky:
-        break;
     }
     const engine::SSkyScene &sky = getSky();
     CDemonSet &set = owners_.set;
@@ -164,15 +163,10 @@ CMoon::ELayoutScene CMoon::beginLayoutScene(const SPictureArea &picture) {
 }
 
 void CMoon::endLayoutScene(ELayoutScene placed) {
-    switch (placed) {
-    case ELayoutScene::Overlay:
+    if (placed == ELayoutScene::Overlay) {
         endWideScene();
-        return;
-    case ELayoutScene::Viewport:
+    } else if (placed == ELayoutScene::Viewport) {
         owners_.renderer.popViewport();
-        return;
-    case ELayoutScene::Screen:
-        return;
     }
 }
 

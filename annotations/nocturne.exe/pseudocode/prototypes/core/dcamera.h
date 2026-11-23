@@ -41,9 +41,9 @@ void __cdecl CDemonCamera::initLookupTable(CDemonCamera *this_ptr);
 // Address: 00440010
 void __cdecl CDemonCamera::init(CDemonCamera *this_ptr,int screen_height);
 
-// Original: core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0
+// Original: core_dcamera.cpp_CDemonCamera_setViewportOrigin_FUN_004401b0
 // Address: 004401b0
-void __cdecl CDemonCamera::setFramebufferSize(CDemonCamera *this_ptr,int width,int height);
+void __cdecl CDemonCamera::setViewportOrigin(CDemonCamera *this_ptr,int viewport_x,int viewport_y);
 
 // Original: core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
 // Address: 004401d0

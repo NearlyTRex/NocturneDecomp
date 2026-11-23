@@ -80,8 +80,8 @@ void CLevelLoader::update(std::string_view text, bool clear_screen) {
     if (clear_screen) {
         owners_.two_d.fillRectColor(0, 0, window_width - 1, window_height - 1, kBlack);
     }
-    switch (getIndicator()) {
-    case EIndicator::Moon:
+    const EIndicator indicator = getIndicator();
+    if (indicator == EIndicator::Moon) {
         if (use_custom_viewport_) {
             owners_.renderer.pushViewport(viewport_x_, viewport_y_, viewport_width_,
                                           viewport_height_);
@@ -94,18 +94,15 @@ void CLevelLoader::update(std::string_view text, bool clear_screen) {
         if (!use_custom_viewport_) {
             drawStatus(getMoonIndicator().status, text, window_width, window_height);
         }
-        break;
-    case EIndicator::ProgressBar:
+    } else if (indicator == EIndicator::ProgressBar) {
         drawProgressBar(window_width);
         current_frame_ = std::min(current_frame_ + 1, total_frames_);
         if (!use_custom_viewport_) {
             drawStatus(getProgressBarIndicator().status, text, window_width, window_height);
         }
-        break;
-    case EIndicator::Icon:
+    } else {
         current_frame_ = std::min(current_frame_ + 1, total_frames_);
         drawIcon();
-        break;
     }
     owners_.screen.swapBuffers();
 }

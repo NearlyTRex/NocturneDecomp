@@ -2,11 +2,11 @@
 // Address: 005353b0
 // Address Range: [[005353b0, 005353d6]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height)
+// Signature: void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height)
+void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height)
 
 {
   core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(&g_CDemonCameraInstance,screen_height);

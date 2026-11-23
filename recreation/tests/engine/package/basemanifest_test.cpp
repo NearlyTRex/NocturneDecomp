@@ -124,6 +124,16 @@ TEST_F(CBaseManifestTest, AMissingRequiredPodKeepsItsName) {
     EXPECT_EQ(make().manifest.required, std::vector<std::string>{"A.POD"});
 }
 
+// A required POD the release didn't ship is found by its name alone.
+TEST_F(CBaseManifestTest, ARequiredPodTheReleaseDidntShipIsFoundByName) {
+    releases_.front().required = {"EXTRA.POD"};
+    files_.givenFile("A.POD", "POD one");
+    EXPECT_EQ(make(std::vector<std::string>{"A.POD", "pods/extra.pod"}).manifest.required,
+              std::vector<std::string>{"pods/extra.pod"});
+    EXPECT_EQ(make(std::vector<std::string>{"A.POD"}).manifest.required,
+              std::vector<std::string>{"EXTRA.POD"});
+}
+
 TEST_F(CBaseManifestTest, TheReleaseMatchedIsTheOneWithTheMostPodsThere) {
     files_.givenFile("A.POD", "POD one");
     files_.givenFile("C.POD", "POD two");

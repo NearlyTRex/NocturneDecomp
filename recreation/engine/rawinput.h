@@ -27,6 +27,8 @@ public:
     [[nodiscard]] virtual int getMouseButtonFlags() const = 0;
     // Counts the left button up until it is next pressed.
     virtual void releaseLeftMouseButton() = 0;
+    // Every button counted up until it is next pressed.
+    virtual void clearMouseClicks() = 0;
     // Moves the pointer there, in the game's coordinates.
     virtual void setCursorPosition(int x, int y) = 0;
     // Wheel notches since the last take, positive away from the user.

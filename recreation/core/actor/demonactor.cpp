@@ -108,6 +108,18 @@ void CDemonActor::setup() {
     updateOrientationMatrix();
 }
 
+// The editor build also checked the actor for corruption first; retail doesn't.
+// nocedit 0x00409fb0
+// bw1 0x00409cc0
+// bw2 0x00409e70
+// bw3 0x00409d00
+void CDemonActor::setPositionAndOrientation(common::CVector3f *new_position,
+                                            common::CVector3f *new_orientation) {
+    location_.position = *new_position;
+    orientation_ = *new_orientation;
+    updateOrientationMatrix();
+}
+
 // nocedit 0x00408c10
 void CDemonActor::updateOrientationMatrix() {
     orientation_ = {.x = normalizeAngleToPi(orientation_.x),

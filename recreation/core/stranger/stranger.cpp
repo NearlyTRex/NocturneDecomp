@@ -181,6 +181,16 @@ const CKeyFramedModelInstance &CStranger::getHat() const {
     return hat_;
 }
 
+// Only the heading is kept; the hero stands upright.
+// nocedit 0x005bfb10
+// bw1 0x0058a320
+// bw2 0x00567840
+void CStranger::setPositionAndOrientation(common::CVector3f *new_position,
+                                          common::CVector3f *new_orientation) {
+    common::CVector3f heading{.x = 0.0F, .y = new_orientation->y, .z = 0.0F};
+    CCharacter::setPositionAndOrientation(new_position, &heading);
+}
+
 int CStranger::getHeadPart() const {
     return head_part_;
 }

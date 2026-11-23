@@ -21,6 +21,7 @@ namespace {
 
 using ::testing::_;
 using ::testing::AnyNumber;
+using ::testing::Return;
 using ::testing::Truly;
 
 constexpr int kBackdropGrey = 0x40;
@@ -234,6 +235,62 @@ TEST_F(CMoonFigureTest, WithoutACheatModelTheCheatLoadsTheFigures) {
     expectOpens("models\\figure.kfm", 3);
     moon_.init();
     EXPECT_EQ(game_.head_of_horror_cheat, 0);
+}
+
+// With no figures there is no first figure for the cheat's head to replace.
+TEST_F(CMoonFigureTest, WithoutFiguresTheCheatLoadsNothing) {
+    content_.figure_scene->models.clear();
+    game_.head_of_horror_cheat = 666;
+    EXPECT_CALL(file_system_, openFile(_, _)).Times(AnyNumber());
+    EXPECT_CALL(file_system_, openFile(endsWith("taylor_head.kfm"), _)).Times(0);
+    moon_.init();
+    EXPECT_EQ(game_.head_of_horror_cheat, 0);
+}
+
+// A timer run back before the first frame shows the first.
+TEST_F(CMoonFigureTest, ATimerBeforeTheFirstFrameShowsTheFirst) {
+    givenBackdrop(0);
+    moon_.init();
+    moon_.render();
+    const std::uint32_t at_zero = pixel(10, 10);
+    moon_.update(-1.0F);
+    moon_.render();
+    EXPECT_EQ(pixel(10, 10), at_zero);
+}
+
+// Just short of the wrap the timer rounds to one past the last frame, which shows the first.
+TEST_F(CMoonFigureTest, ATimerRoundingPastTheLastFrameShowsTheFirst) {
+    givenBackdrop(0);
+    moon_.init();
+    moon_.render();
+    const std::uint32_t at_zero = pixel(10, 10);
+    moon_.update(2.47F);
+    moon_.render();
+    EXPECT_EQ(pixel(10, 10), at_zero);
+}
+
+// Through the hardware renderer, off 640x480, the figures go in its pass over the picture; a pass
+// it can't begin leaves them on the screen as they are.
+TEST_F(CMoonFigureTest, WithTheRendererTheFiguresGoInItsPass) {
+    startRenderer();
+    givenWideScreen();
+    moon_.init();
+    EXPECT_CALL(renderer_, beginOverlay(_)).WillOnce(Return(true));
+    EXPECT_CALL(renderer_, endOverlay());
+    moon_.render();
+    ::testing::Mock::VerifyAndClearExpectations(&renderer_);
+    EXPECT_CALL(renderer_, beginOverlay(_)).WillOnce(Return(false));
+    EXPECT_CALL(renderer_, endOverlay()).Times(0);
+    moon_.render();
+}
+
+// 640 wide is not 640x480: a shorter screen takes the pass too.
+TEST_F(CMoonFigureTest, AShorterScreenOf640ColumnsTakesThePass) {
+    startRenderer();
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(400));
+    moon_.init();
+    EXPECT_CALL(renderer_, beginOverlay(_)).WillOnce(Return(false));
+    moon_.render();
 }
 
 // Thirty frames at 12 a second take two and a half seconds, which bring the first back.

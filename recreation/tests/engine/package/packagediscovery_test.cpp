@@ -284,6 +284,34 @@ TEST_F(CTwoGamesTest, TwoGamesInOneFolderKeepTheSecondOut) {
                                  "pods/BW.POD isn't in a package's manifest, so it isn't loaded"));
 }
 
+// A game's PODs spread under a folder holding a mod's manifest would share that folder, so the
+// game gets no manifest there; its PODs' folders are then packages of their own.
+TEST_F(CMovedInstallTest, AGamesPodsUnderAModsManifestGetNoGameManifest) {
+    files_.givenFile("games/x/STARTUP.POD", "POD one");
+    files_.givenFile("games/y/A.POD", "POD two");
+    files_.givenFile("games/nocturne.toml", manifestText("mymod"));
+    const SPackageDiscovery found = discover();
+    EXPECT_TRUE(std::ranges::none_of(found.packages, &SPackage::isGame));
+    EXPECT_TRUE(std::ranges::contains(found.packages, std::string("mymod"),
+                                      [](const SPackage &p) { return p.manifest.id; }));
+    EXPECT_THAT(found.notes,
+                ::testing::Contains("English's PODs are in games, which has a package's "
+                                    "manifest already; give each game a folder of its own"));
+}
+
+// With no releases known, PODs no manifest names are only noted.
+TEST_F(CMovedInstallTest, WithoutReleasesStrayPodsAreOnlyNoted) {
+    releases_.clear();
+    files_.givenFile("game/STARTUP.POD", "POD one");
+    files_.givenFile("game/nocturne.toml", "id = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
+                                           "[[pod]]\npath = \"STARTUP.POD\"\n");
+    files_.givenFile("A.POD", "POD two");
+    const SPackageDiscovery found = discover();
+    ASSERT_EQ(found.packages.size(), 1U);
+    EXPECT_EQ(found.notes,
+              std::vector<std::string>{"A.POD isn't in a package's manifest, so it isn't loaded"});
+}
+
 TEST_F(CMovedInstallTest, WithoutTheReleasesRequiredPodsNoBaseManifestIsWritten) {
     files_.givenFile("A.POD", "POD two");
     EXPECT_CALL(files_.file_system_, writeFile).Times(0);

@@ -51,10 +51,6 @@ CMoon::EStyle CMoon::getStyle() const {
     return style == kTiledScrollBackdrop ? EStyle::Tiled : EStyle::Sky;
 }
 
-bool CMoon::isFigureScene() const {
-    return getStyle() == EStyle::Figure;
-}
-
 const engine::STiledScroll &CMoon::getTiled() const {
     if (!owners_.content.tiled_scroll) {
         common::displayErrorAndQuit("No package gives the tiled_scroll title backdrop's look");
@@ -229,15 +225,14 @@ void CMoon::free() {
 // tiled_scroll's timer only ever kept the glow on; it steps here, where BW3 stepped as it drew.
 // bw3 0x004f9600
 void CMoon::update(float delta_time) {
-    switch (getStyle()) {
-    case EStyle::Figure:
+    const EStyle style = getStyle();
+    if (style == EStyle::Figure) {
         updateFigure(delta_time);
         return;
-    case EStyle::Tiled:
+    }
+    if (style == EStyle::Tiled) {
         moveTiled(delta_time);
         return;
-    case EStyle::Sky:
-        break;
     }
     const engine::SSkyScene &sky = getSky();
     const CExtendedFloat step(delta_time);

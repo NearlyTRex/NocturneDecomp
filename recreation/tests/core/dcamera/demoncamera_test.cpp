@@ -143,7 +143,9 @@ protected:
                           .special = special_,
                           .crt_random = crt_,
                           .renderer = demon_renderer_,
-                          .dosio = dosio_}};
+                          .dosio = dosio_,
+                          .matrix = matrix_,
+                          .two_d = two_d_}};
 };
 
 TEST_F(CDemonCameraTest, ACameraStartsWithNoBuffersAndItsLens) {
@@ -374,7 +376,9 @@ TEST_F(CDemonCameraTest, ASceneClearsTheHardwareRendererUnlessToldNotTo) {
                            .special = special_,
                            .crt_random = crt_,
                            .renderer = demon_renderer_,
-                           .dosio = dosio_}};
+                           .dosio = dosio_,
+                           .matrix = matrix_,
+                           .two_d = two_d_}};
     skipping.init(48);
     EXPECT_CALL(renderer_, beginScene()).Times(0);
     EXPECT_CALL(renderer_, clear()).Times(0);

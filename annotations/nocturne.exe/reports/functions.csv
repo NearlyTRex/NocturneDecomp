@@ -1088,14 +1088,14 @@ core_dcamera.cpp_CDemonCamera_ctor_FUN_0043fee0,0043fee0,core/dcamera.cpp,11,0,,
 core_dcamera.cpp_CDemonCamera_dtor_FUN_0043ff30,0043ff30,core/dcamera.cpp,5,0,,5
 core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50,0043ff50,core/dcamera.cpp,41,0,,41
 core_dcamera.cpp_CDemonCamera_init_FUN_00440010,00440010,core/dcamera.cpp,42,2,pointer_cast,67
-core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0,004401b0,core/dcamera.cpp,6,0,,6
+core_dcamera.cpp_CDemonCamera_setViewportOrigin_FUN_004401b0,004401b0,core/dcamera.cpp,6,0,,6
 core_dcamera.cpp_CDemonCamera_free_FUN_004401d0,004401d0,core/dcamera.cpp,15,0,,15
 core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240,00440240,core/dcamera.cpp,10,0,,10
 core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270,00440270,core/dcamera.cpp,6,0,,6
 core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290,00440290,core/dcamera.cpp,118,0,,118
 core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0,004405d0,core/dcamera.cpp,15,0,,15
 core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_00440610,00440610,core/dcamera.cpp,29,3,pointer_cast|pointer_truncation,69
-core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710,00440710,core/dcamera.cpp,139,17,pointer_cast|pointer_truncation,319
+core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710,00440710,core/dcamera.cpp,138,17,pointer_cast|pointer_truncation,318
 core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20,00440a20,core/dcamera.cpp,37,1,pointer_cast,52
 core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20,00440b20,core/dcamera.cpp,50,8,pointer_cast|pointer_truncation|unrolled_memcpy,145
 core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00440c50,00440c50,core/dcamera.cpp,48,7,pointer_cast|pointer_truncation|unrolled_memcpy,133
@@ -1110,7 +1110,7 @@ core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610,00441610
 core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_004418d0,004418d0,core/dcamera.cpp,50,0,,50
 core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10,00441a10,core/dcamera.cpp,75,15,pointer_cast|pointer_truncation|stack_alignment_array|stack_ref,245
 core_dcamera.cpp_CDemonCamera_allocLight_FUN_00441c20,00441c20,core/dcamera.cpp,10,0,,10
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50,00441c50,core/dcamera.cpp,201,32,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|stack_ref|struct_field_overrun|suspect_float,556
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50,00441c50,core/dcamera.cpp,201,31,pointer_cast|pointer_truncation|shadow_pointer_walk|stack_alignment_array|stack_ref|struct_field_overrun,541
 core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0,004421b0,core/dcamera.cpp,166,45,fnstsw_flag_artifact|pointer_cast|pointer_truncation|raw_address_constant|stack_alignment_array,641
 core_dcamera.cpp_shadeScreenPixel_FUN_004425d0,004425d0,core/dcamera.cpp,6,4,pointer_cast|pointer_truncation,56
 core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0,004425f0,core/dcamera.cpp,201,8,pointer_cast|pointer_truncation,291
@@ -1119,7 +1119,7 @@ core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d90,00442d90,core/dca
 core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_00443050,00443050,core/dcamera.cpp,23,3,unrolled_memcpy,58
 core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100,00443100,core/dcamera.cpp,29,1,pointer_cast,44
 core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180,00443180,core/dcamera.cpp,63,19,pointer_cast|pointer_truncation|unrolled_memcpy,268
-core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250,00443250,core/dcamera.cpp,475,32,flattened_array_index|pointer_cast|pointer_truncation|suspect_float|unrolled_memcpy|unrolled_strchr|unrolled_strcpy,830
+core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250,00443250,core/dcamera.cpp,474,30,flattened_array_index|pointer_cast|pointer_truncation|unrolled_memcpy|unrolled_strchr|unrolled_strcpy,804
 core_dcamera.cpp_initializeCoronaBuffers_FUN_00444140,00444140,core/dcamera.cpp,14,2,pointer_cast,39
 core_dcamera.cpp_renderCoronaDepthScanline_FUN_00444180,00444180,core/dcamera.cpp,48,0,,48
 core_dcamera.cpp_renderVolumetricLightScanline_FUN_004442a0,004442a0,core/dcamera.cpp,72,3,pointer_cast|pointer_truncation,112
@@ -1147,11 +1147,11 @@ core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00446800,00446800,core/dcamera
 core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00446810,00446810,core/dcamera.cpp,219,15,flattened_array_index|pointer_cast|pointer_truncation|raw_address_constant|unaffected_reg,394
 core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0,00446ea0,core/dcamera.cpp,47,4,flattened_array_index|pointer_cast|pointer_truncation,102
 core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0,00446fe0,core/dcamera.cpp,37,2,pointer_cast|pointer_truncation,67
-core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0,004470f0,core/dcamera.cpp,146,18,pointer_cast|pointer_truncation,336
+core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0,004470f0,core/dcamera.cpp,151,18,pointer_cast|pointer_truncation,341
 core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0,004474e0,core/dcamera.cpp,33,0,,33
 core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0,004475a0,core/dcamera.cpp,21,0,,21
 core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670,00447670,core/dcamera.cpp,33,0,,33
-core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760,00447760,core/dcamera.cpp,21,2,pointer_cast|unrolled_memset,51
+core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760,00447760,core/dcamera.cpp,22,2,pointer_cast|unrolled_memset,52
 core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0,004477f0,core/dcamera.cpp,33,5,pointer_cast|pointer_truncation,93
 core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00447910,00447910,core/dcamera.cpp,43,0,,43
 core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70,00447a70,core/dcamera.cpp,34,1,pointer_cast,49
@@ -1163,7 +1163,7 @@ core_dcamera.cpp_saveCameraFog_FUN_00447dd0,00447dd0,core/dcamera.cpp,12,0,,12
 core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80,00447e80,core/dcamera.cpp,32,0,,32
 core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20,00447f20,core/dcamera.cpp,154,29,pointer_cast|pointer_truncation|stack_alignment_array,459
 core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310,00448310,core/dcamera.cpp,19,1,pointer_cast,34
-core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380,00448380,core/dcamera.cpp,18,1,pointer_cast,33
+core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380,00448380,core/dcamera.cpp,19,1,pointer_cast,34
 core_dcamera.cpp_CVector3f_arrdtor77120_FUN_004483f0,004483f0,core/dcamera.cpp,6,0,,6
 core_dcube.cpp_staticInit_FUN_00448410,00448410,core/dcube.cpp,11,0,,11
 core_dcube.cpp_copyVector3_FUN_004484a0,004484a0,core/dcube.cpp,10,1,unrolled_memcpy,25
@@ -2362,7 +2362,7 @@ core_game.cpp_dampControlAxis_FUN_0049edc0,0049edc0,core/game.cpp,20,0,,20
 core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30,0049ee30,core/game.cpp,266,0,,266
 core_game.cpp_CGame_processMouseControls_FUN_0049f710,0049f710,core/game.cpp,51,0,,51
 core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0,0049f8c0,core/game.cpp,15,0,,15
-core_game.cpp_CGame_processHotkeys_FUN_0049f930,0049f930,core/game.cpp,281,6,stack_param|stack_ref|unrolled_strcpy,356
+core_game.cpp_CGame_processHotkeys_FUN_0049f930,0049f930,core/game.cpp,280,6,stack_param|stack_ref|unrolled_strcpy,355
 core_game.cpp_checkCheatCode_FUN_004a0260,004a0260,core/game.cpp,32,1,unrolled_strlen,47
 core_game.cpp_giveHeroWeapon_FUN_004a02e0,004a02e0,core/game.cpp,18,1,suspect_float,33
 core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0,004a03a0,core/game.cpp,21,0,,21

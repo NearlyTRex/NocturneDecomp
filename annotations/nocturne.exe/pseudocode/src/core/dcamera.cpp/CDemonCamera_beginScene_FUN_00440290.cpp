@@ -10,7 +10,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
 
 {
   int iVar1;
-  float fVar2;
+  int iVar2;
   CDemonRenderer *this_ptr_00;
   int iVar3;
   uint uVar4;
@@ -77,7 +77,7 @@ switchD_004402a8_caseD_3:
     }
   }
   g_INT_012ceb74 = uVar5;
-  if (((int)this_ptr->max_distance < 0x1e0) || (g_CameraShakeState == 3)) {
+  if ((this_ptr->framebuffer_height < 0x1e0) || (g_CameraShakeState == 3)) {
     g_INT_012ceb70 = 0;
     g_INT_012ceb74 = 0;
   }
@@ -91,19 +91,19 @@ switchD_004402a8_caseD_3:
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(this_ptr,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
-            (g_CDemonRenderer_PTR_005ae704,this_ptr->framebuffer_width,this_ptr->framebuffer_height,
-             this_ptr->screen_width + -1,(int)this_ptr->max_distance + -1);
-  iVar6 = this_ptr->framebuffer_width;
-  iVar1 = this_ptr->screen_width;
-  fVar2 = this_ptr->max_distance;
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->viewport_x,this_ptr->viewport_y,
+             this_ptr->framebuffer_width + -1,this_ptr->framebuffer_height + -1);
+  iVar6 = this_ptr->viewport_x;
+  iVar1 = this_ptr->framebuffer_width;
+  iVar2 = this_ptr->framebuffer_height;
   this_ptr->rect_array_count = 0;
-  (this_ptr->viewport_rect).x_min = this_ptr->framebuffer_width;
-  (this_ptr->viewport_rect).x_max = this_ptr->framebuffer_height;
+  (this_ptr->viewport_rect).x_min = this_ptr->viewport_x;
+  (this_ptr->viewport_rect).x_max = this_ptr->viewport_y;
   iVar3 = g_INT_012ceb70;
   (this_ptr->viewport_rect).y_min = iVar6 + iVar1 + -1;
   g_Projection.center_x_fixed = g_Projection.center_x_fixed + iVar3 * 0x10000;
   g_Projection.center_y_fixed = g_Projection.center_y_fixed + g_INT_012ceb74 * -0x10000;
-  (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + (int)fVar2 + -1;
+  (this_ptr->viewport_rect).y_max = this_ptr->viewport_y + iVar2 + -1;
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700

@@ -220,6 +220,16 @@ TEST_F(CPickListButtonsTest, WithoutTextThereIsNoButton) {
     EXPECT_EQ(list_.handleDialogInput(), CPickList::kStillOpen);
 }
 
+// The OK button alone takes the row's right end, where it picks the selection.
+TEST_F(CPickListButtonsTest, AnOkButtonAloneTakesTheRightEnd) {
+    list_.setOkButtonText("Select");
+    list_.setCancelButtonText("");
+    list_.initializeDialog("", 0, 0);
+    const engine::SClipRect inside = clip();
+    EXPECT_EQ(clickButtonAt(inside.right - 1, inside.bottom - 1), CPickList::kStillOpen);
+    EXPECT_EQ(list_.handleDialogInput(), 0);
+}
+
 TEST_F(CPickListDialogTest, AClickBelowTheLastItemOrPastTheRowsMisses) {
     list_.add("A");
     list_.add("B");

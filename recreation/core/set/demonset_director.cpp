@@ -431,7 +431,8 @@ bool CDemonSet::wasLastSwitchAreaInvalid() const {
     return last_switch_area_invalid_;
 }
 
-// The original also took two flags it never read.
+// The original also took a viewport origin it never read; retail's places the camera's viewport
+// there.
 // nocedit 0x0056b7e0
 void CDemonSet::reinitCamera(int screen_height) {
     owners_.camera.init(screen_height);

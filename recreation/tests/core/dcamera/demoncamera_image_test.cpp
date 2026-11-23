@@ -101,7 +101,9 @@ protected:
                           .special = special_,
                           .crt_random = crt_,
                           .renderer = demon_renderer_,
-                          .dosio = dosio_}};
+                          .dosio = dosio_,
+                          .matrix = matrix_,
+                          .two_d = two_d_}};
 };
 
 TEST_F(CDemonCameraImageTest, ANameWithoutAnExtensionIsFatal) {

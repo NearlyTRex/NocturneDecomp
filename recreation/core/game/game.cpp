@@ -1,5 +1,6 @@
 #include "core/game/game.h"
 
+#include "common/error/error.h"
 #include "common/math/fixed.h"
 #include "engine/gameclock.h"
 #include "engine/package/gamecontent.h"
@@ -13,6 +14,7 @@ namespace {
 constexpr int kTicksPerDeltaUnit = 18;
 constexpr int kMaxDeltaTimeInt = 0x4000;
 constexpr double kDeltaTimeToSeconds = 1.0 / 65536.0;
+constexpr double kSecondsToDeltaTime = 65536.0;
 
 } // namespace
 
@@ -48,6 +50,16 @@ void CGame::updateDT() {
                                             static_cast<double>(time_scale_factor));
     delta_time_float_ =
         static_cast<float>(static_cast<double>(delta_time_int_) * kDeltaTimeToSeconds);
+}
+
+// The frame's time set outright, in seconds; a negative one is fatal.
+// nocedit 0x004e3080
+void CGame::slamDT(float delta_time) {
+    if (delta_time < 0.0F) {
+        common::displayErrorAndQuit("CGame::slamDT - invalid dt!");
+    }
+    delta_time_float_ = delta_time;
+    delta_time_int_ = common::truncateToInt(static_cast<double>(delta_time) * kSecondsToDeltaTime);
 }
 
 int CGame::getDeltaTimeInt() const {

@@ -175,38 +175,75 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"menu = 1", "menu: not a [menu] table"},
         SBadCase{"loading = 1", "loading: not a list of [[loading]] tables"},
         SBadCase{"story = 1", "story: not a list of [[story]] tables"},
-        SBadCase{"translation = 1", "translation: not a [translation] table"}));
+        SBadCase{"translation = 1", "translation: not a [translation] table"},
+        SBadCase{"controls = 1", "controls: not a [controls] table"}));
+
+// Each credits style's keys before its markers, all in range.
+constexpr std::string_view kColumnScrollKeys =
+    "[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\nfont = 'theme'\n"
+    "end_line = 'end'\ncolumn_left = 1\ntop_strip_bottom = 1\nbottom_strip_top = 1\n"
+    "strip_colour = 0\ntext_colour = 0\nheading_colour = 0\nshadow_colour = 0\nscroll_speed = 1\n"
+    "start_y = 1\n";
+constexpr std::string_view kFadeLoopKeys =
+    "[credits]\ntext = 't'\n[credits.fade_loop]\nfont = 'theme'\nend_line = 'end'\nimage_x = 10\n"
+    "image_y = 7\ntext_colour = 0\nheading_colour = 0\nshadow_colour = 0\nscroll_speed = 32\n"
+    "start_y = 480\nloop_below = -2500\nrestart_y = 500\nfade_centre = 240\nfade_reach = 240\n";
+constexpr std::string_view kTwoColumnKeys =
+    "[credits]\ntext = 't'\n[credits.two_column]\nfont = 'theme'\nend_line = 'end'\n"
+    "centre_left = 100\ncentre_right = 400\nleft_x = 100\nright_x = 300\ntop_strip_bottom = 30\n"
+    "bottom_strip_top = 439\nstrip_colour = 0\ntext_colour = 0\nheading_colour = 0\n"
+    "shadow_colour = 0\nscroll_speed = 32\nstart_y = 480\n";
 
 INSTANTIATE_TEST_SUITE_P(
     Credits, CGameContentErrorTest,
-    ::testing::Values(SBadCase{"[credits]\nfont = 1", "credits: font: not a key this file takes"},
-                      SBadCase{"[credits]\nimage = \"i\"", "credits: text: missing"},
-                      SBadCase{"[credits]\ntext = \"t\"\nimage = 1",
-                               "credits: image: not a string"},
-                      SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nfont = 'f'",
-                               "credits: two_column: end_line: missing"},
-                      SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nwidth = 1",
-                               "credits: two_column: width: not a key this file takes"},
-                      SBadCase{"[credits]\ntext = \"t\"\nimage = \"i\"\nmusic = 1",
-                               "credits: music: not a string"},
-                      SBadCase{"[credits]\ntext = 't'\nimage = 'i'\ncolumn_scroll = 1",
-                               "credits: column_scroll: not a [column_scroll] table"},
-                      SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
-                               "speed = 1",
-                               "credits: column_scroll: speed: not a key this file takes"},
-                      SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
-                               "end_line = 'end'",
-                               "credits: column_scroll: font: missing"},
-                      SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
-                               "font = 'theme'\nend_line = 'end'\ncolumn_left = 640",
-                               "credits: column_scroll: column_left: not from 0 to 639"},
-                      SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
-                               "font = 'theme'\nend_line = 'end'\ncolumn_left = 1\n"
-                               "top_strip_bottom = 1\nbottom_strip_top = 1\nstrip_colour = 0\n"
-                               "text_colour = 0\nheading_colour = 0\nshadow_colour = 0\n"
-                               "scroll_speed = 1\nstart_y = 1\nmarker = 'ab'\nheading = 'b'",
-                               "credits: column_scroll: marker: not one character"},
-                      SBadCase{"front_end.credits = ''", "front_end: credits: missing"}));
+    ::testing::Values(
+        SBadCase{"[credits]\nfont = 1", "credits: font: not a key this file takes"},
+        SBadCase{"[credits]\nimage = \"i\"", "credits: text: missing"},
+        SBadCase{"[credits]\ntext = \"t\"\nimage = 1", "credits: image: not a string"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nfont = 'f'",
+                 "credits: two_column: end_line: missing"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nwidth = 1",
+                 "credits: two_column: width: not a key this file takes"},
+        SBadCase{"[credits]\ntext = \"t\"\nimage = \"i\"\nmusic = 1",
+                 "credits: music: not a string"},
+        SBadCase{"[credits]\ntext = 't'\nimage = 'i'\ncolumn_scroll = 1",
+                 "credits: column_scroll: not a [column_scroll] table"},
+        SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
+                 "speed = 1",
+                 "credits: column_scroll: speed: not a key this file takes"},
+        SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
+                 "end_line = 'end'",
+                 "credits: column_scroll: font: missing"},
+        SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
+                 "font = 'theme'\nend_line = 'end'\ncolumn_left = 640",
+                 "credits: column_scroll: column_left: not from 0 to 639"},
+        SBadCase{"[credits]\ntext = 't'\nimage = 'i'\n[credits.column_scroll]\n"
+                 "font = 'theme'\nend_line = 'end'\ncolumn_left = 1\n"
+                 "top_strip_bottom = 1\nbottom_strip_top = 1\nstrip_colour = 0\n"
+                 "text_colour = 0\nheading_colour = 0\nshadow_colour = 0\n"
+                 "scroll_speed = 1\nstart_y = 1\nmarker = 'ab'\nheading = 'b'",
+                 "credits: column_scroll: marker: not one character"},
+        SBadCase{std::string(kColumnScrollKeys), "credits: column_scroll: marker: missing"},
+        SBadCase{std::format("{}marker = 'a'\nheading = 'b'\n", kColumnScrollKeys),
+                 "credits: column_scroll: column_to_screen_edge: missing"},
+        SBadCase{"[credits]\ntext = 't'\nfade_loop = 1",
+                 "credits: fade_loop: not a [fade_loop] table"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.fade_loop]\nsize = 1",
+                 "credits: fade_loop: size: not a key this file takes"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.fade_loop]\nimage_x = 1",
+                 "credits: fade_loop: font: missing"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.fade_loop]\nfont = 'theme'\n"
+                 "end_line = 'end'\nimage_x = 640",
+                 "credits: fade_loop: image_x: not from 0 to 639"},
+        SBadCase{std::string(kFadeLoopKeys), "credits: fade_loop: marker: missing"},
+        SBadCase{"[credits]\ntext = 't'\ntwo_column = 1",
+                 "credits: two_column: not a [two_column] table"},
+        SBadCase{"[credits]\ntext = 't'\n[credits.two_column]\nfont = 'theme'\n"
+                 "end_line = 'end'\ncentre_left = 640",
+                 "credits: two_column: centre_left: not from 0 to 639"},
+        SBadCase{std::string(kTwoColumnKeys), "credits: two_column: marker: missing"},
+        SBadCase{"[credits]\ntext = 't'", "credits: fit: missing"},
+        SBadCase{"front_end.credits = ''", "front_end: credits: missing"}));
 
 INSTANTIATE_TEST_SUITE_P(
     StorySelectAndChapterTitle, CGameContentErrorTest,
@@ -251,6 +288,13 @@ INSTANTIATE_TEST_SUITE_P(
                  "alpha = 0\ninset_across = 2\ninset_up = 1\n[[chapter_title.font]]\n"
                  "font = 'tiny'\nbelow_height = 5000\n[[chapter_title.font]]\nfont = 'medium'",
                  "chapter_title: font 1: below_height: not from 1 to 2160"},
+        SBadCase{"[chapter_title]\nformat = 'f'\nseconds = 8\ncolour = 0\nshadow = 0\n"
+                 "alpha = 0\ninset_across = 2\ninset_up = 1\nfont = 1",
+                 "chapter_title: font: not a list of [[font]] tables"},
+        SBadCase{"[story_select]\nstory_list = 1",
+                 "story_select: story_list: not a [story_list] table"},
+        SBadCase{"[story_select]\ndirect_start = 1",
+                 "story_select: direct_start: not a [direct_start] table"},
         SBadCase{"front_end.story_select = ''", "front_end: story_select: missing"}));
 
 INSTANTIATE_TEST_SUITE_P(
@@ -326,6 +370,28 @@ std::string menuKeyed(std::string_view key) {
                        kMenuFeatures);
 }
 
+// The whole menu's tables under [menu] keys of the case's own.
+std::string menuTopped(std::string_view top) {
+    return std::format("{}{}{}{}{}{}{}{}{}{}", top, kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+                       kMenuCalibration, kMenuOptions, kMenuSound, kMenuSlider, kMenuFeatures);
+}
+
+constexpr std::string_view kMenuPosition = "[menu]\nleft = 1\ntop = 1\ntitled_top = 1\n";
+
+// The whole menu with keys added to [menu.item].
+std::string menuItemWith(std::string_view keys) {
+    return menuWith(kMenuTitle, std::format("{}{}\n", kMenuItem, keys), kMenuGlow, kMenuFooter,
+                    kMenuCalibration);
+}
+
+// The whole menu with [menu.footer.version] the case's own.
+std::string menuFooterVersion(std::string_view version) {
+    return menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                    std::format("{}{}[menu.footer.version]\n{}\n", kMenuFooterKeys,
+                                kMenuFooterCopyright, version),
+                    kMenuCalibration);
+}
+
 TEST(GameContentFile, AMenusOptionalTablesAndPageTopsRead) {
     const std::expected<SGameContent, std::string> content = parseGameContent(
         menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration) +
@@ -371,6 +437,11 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{
             std::format("{}{}", kListTop, "[list.pointer]\npalette_colours = [0, 1, 2, 256]\n"),
             "list: pointer: palette_colours: not from 0 to 0xff"},
+        SBadCase{std::format("{}{}", kListTop, "[list.pointer]\ncube_colours = [0, 1, 2, 'a']\n"),
+                 "list: pointer: cube_colours: not from 0 to 0x7fff"},
+        SBadCase{std::format("{}{}", kListTop, "[list.pointer]\ncube_colours = [-1, 1, 2, 3]\n"),
+                 "list: pointer: cube_colours: not from 0 to 0x7fff"},
+        SBadCase{std::format("{}pointer = 1\n", kListTop), "list: pointer: not a [pointer] table"},
         SBadCase{std::format("{}{}", kListTop,
                              "[list.pointer]\npalette_colours = [0, 1, 2, 3]\n"
                              "cube_colours = [0, 1, 2, 3]\n"),
@@ -518,7 +589,55 @@ INSTANTIATE_TEST_SUITE_P(
                  "menu: footer: version: edge: not one of screen, layout, backdrop"},
         SBadCase{menuWith(std::format("{}drop = {{ x = 9, y = 0, colour = 2 }}\n", kMenuTitle),
                           kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration),
-                 "menu: title: drop: x: not from -8 to 8"}));
+                 "menu: title: drop: x: not from -8 to 8"},
+        SBadCase{menuKeyed("align = 1"), "menu: align: not a string"},
+        SBadCase{menuFooterVersion("corner = 1\nedge = 'screen'\nx = 0\ny = 0"),
+                 "menu: footer: version: corner: not a string"},
+        SBadCase{menuFooterVersion("corner = 'top_left'\nedge = 1\nx = 0\ny = 0"),
+                 "menu: footer: version: edge: not a string"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          std::format("{}[menu.footer.copyright]\nz = 1\n{}", kMenuFooterKeys,
+                                      kMenuFooterVersion),
+                          kMenuCalibration),
+                 "menu: footer: copyright: z: not a key this file takes"},
+        SBadCase{menuItemWith("untitled_positions = 1"),
+                 "menu: item: untitled_positions: not a list of points"},
+        SBadCase{menuItemWith("untitled_positions = [1]"),
+                 "menu: item: untitled_positions 1: not a table"},
+        SBadCase{menuItemWith("untitled_positions = [{ z = 1 }]"),
+                 "menu: item: untitled_positions 1: z: not a key this file takes"},
+        SBadCase{menuItemWith("untitled_positions = [{ x = 640, y = 1 }]"),
+                 "menu: item: untitled_positions 1: x: not from 0 to 639"},
+        SBadCase{menuItemWith("untitled_font = 1"), "menu: item: untitled_font: not a string"},
+        SBadCase{menuItemWith("drop = 1"), "menu: item: drop: not a [drop] table"},
+        SBadCase{menuWith(std::format("{}drop = {{ z = 1 }}\n", kMenuTitle), kMenuItem, kMenuGlow,
+                          kMenuFooter, kMenuCalibration),
+                 "menu: title: drop: z: not a key this file takes"},
+        SBadCase{menuWith(std::format("{}drop = 1\n", kMenuTitle), kMenuItem, kMenuGlow,
+                          kMenuFooter, kMenuCalibration),
+                 "menu: title: drop: not a [drop] table"},
+        SBadCase{menuThen(std::format("{}{}[menu.sound.spectrum]\nframes = ['a']\nfps = 24\n"
+                                      "pitch = 4\nhalf_width = 16\nmargin_divisor = 20\n"
+                                      "height_percent = 25\nalpha = 1\nmirrored = 1\n",
+                                      kMenuOptions, kMenuSound)),
+                 "menu: sound: spectrum: mirrored: not true or false"},
+        SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n"
+                                      "[menu.music]\ntempo = 1\n",
+                                      kMenuOptions, kMenuSound, kMenuSlider)),
+                 "menu: music: tempo: not a key this file takes"},
+        SBadCase{menuTopped(std::format("{}text_fonts = {{ large = 'a', small = 'b' }}\n",
+                                        kMenuPosition)),
+                 "menu: animate_titled_backdrop: missing"},
+        SBadCase{menuTopped(std::format("{}animate_titled_backdrop = false\n", kMenuPosition)),
+                 "menu: text_fonts: missing"},
+        SBadCase{menuTopped(std::format("{}animate_titled_backdrop = false\n"
+                                        "text_fonts = {{ z = 'a' }}\n",
+                                        kMenuPosition)),
+                 "menu: text_fonts: z: not a key this file takes"},
+        SBadCase{menuTopped(std::format("{}animate_titled_backdrop = false\n"
+                                        "text_fonts = {{ small = 'b' }}\n",
+                                        kMenuPosition)),
+                 "menu: text_fonts: large: missing"}));
 
 // The moon indicator's table whole but for what a case adds after its strings.
 constexpr std::string_view kMoonStrings =
@@ -552,7 +671,24 @@ INSTANTIATE_TEST_SUITE_P(
                  "controls: mode 2: id: keyboard is another mode's"},
         SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
                  "[controls.mode.defaults]\n[[controls.binding]]\nlabel = 'Forward'",
-                 "controls: binding 1: action: missing"}));
+                 "controls: binding 1: action: missing"},
+        SBadCase{"[[controls.mode]]\nz = 1", "controls: mode 1: z: not a key this file takes"},
+        SBadCase{"[controls]\nmode = 1", "controls: mode: not a list of [[mode]] tables"},
+        SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
+                 "[controls.mode.defaults]\nwalk = ['a']",
+                 "controls: mode 1: defaults: walk: not codes from 0 to 65535"},
+        SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
+                 "[controls.mode.defaults]\nwalk = [-1]",
+                 "controls: mode 1: defaults: walk: not codes from 0 to 65535"},
+        SBadCase{"[controls]\nbinding = 1\n[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\n"
+                 "manual_aim = false\n[controls.mode.defaults]",
+                 "controls: binding: not a list of [[binding]] tables"},
+        SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
+                 "[controls.mode.defaults]\n[[controls.binding]]\nz = 1",
+                 "controls: binding 1: z: not a key this file takes"},
+        SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
+                 "[controls.mode.defaults]\n[[controls.binding]]\naction = 'fire'",
+                 "controls: binding 1: label: missing"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Fonts, CGameContentErrorTest,
@@ -584,7 +720,17 @@ INSTANTIATE_TEST_SUITE_P(
                  "space_width = 1\nshadow_x = 1\nown_colours = false\ny_offsets = []\n"
                  "[[font]]\nid = 'tiny'\nfile = 'g.raw'\nwidth = 1\nheight = 1\ntransparent = 0\n"
                  "space_width = 1\nshadow_x = 1\nown_colours = false\ny_offsets = []",
-                 "font 2: id: tiny is another font's"}));
+                 "font 2: id: tiny is another font's"},
+        SBadCase{"[[font]]\nid = 'tiny'\nfile = 'f.raw'\nwidth = 1\nheight = 1\ntransparent = 0\n"
+                 "space_width = 1\nshadow_x = 1\nown_colours = false\ny_offsets = [{ z = 1 }]",
+                 "font 1: y_offsets 1: z: not a key this file takes"},
+        SBadCase{"[[font]]\nid = 'tiny'\nfile = 'f.raw'\nwidth = 1\nheight = 1\ntransparent = 0\n"
+                 "space_width = 1\nshadow_x = 1\nown_colours = false\ny_offsets = []\nos_font = 1",
+                 "font 1: os_font: not a [os_font] table"},
+        SBadCase{"[[font]]\nid = 'tiny'\nfile = 'f.raw'\nwidth = 1\nheight = 1\ntransparent = 0\n"
+                 "space_width = 1\nshadow_x = 1\nown_colours = false\ny_offsets = []\n"
+                 "os_font = { z = 1 }",
+                 "font 1: os_font: z: not a key this file takes"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Startup, CGameContentErrorTest,
@@ -594,9 +740,16 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[startup]\nlabel_font = 'theme'", "startup: picture: missing"},
         SBadCase{"[startup]\npicture = 'fangs'\nlabel_font = 'theme'\nmovie_directory = 'video'\n"
                  "movie = 'opening.avi'\npicture_alpha = 0x10000",
-                 "startup: picture_alpha: not from 0 to 65535"}));
+                 "startup: picture_alpha: not from 0 to 65535"},
+        SBadCase{"[startup]\npicture = 'fangs'\nlabel_font = 'theme'\nmovie_directory = 'video'\n"
+                 "movie = 'opening.avi'\npicture_alpha = 0\nlabel_x = 0\nlabel_y = 0\n"
+                 "label_colour = 0",
+                 "startup: fit: missing"}));
 
 // The sky scene's strings and whole numbers, before its real numbers.
+constexpr std::string_view kSkyStrings =
+    "[title_backdrop.sky_scene]\nmodel = 'moon.kfm'\ncheat_model = 'head.kfm'\n"
+    "bat_model = 'bat.kfm'\ncloud_image = 'cloud'\nframe_prefix = 'noc'\n";
 constexpr std::string_view kSkyWhole =
     "[title_backdrop.sky_scene]\nmodel = 'moon.kfm'\ncheat_model = 'head.kfm'\n"
     "bat_model = 'bat.kfm'\ncloud_image = 'cloud'\nframe_prefix = 'noc'\n"
@@ -633,6 +786,22 @@ INSTANTIATE_TEST_SUITE_P(
                  "frame_alpha = 0\nprojection = 1\nframe_rate = 1\nframe_wrap = 1\n"
                  "camera_rotation = [2, 0, 0, 0, 0, 0, 0, 0, 0]",
                  "title_backdrop: figure_scene: camera_rotation: not from -1 to 1"},
+        SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\n"
+                 "frame_prefix = 'f'\nmodels = [{ file = 'a.kfm', frame_wrap = 1 }]\n"
+                 "steps_per_second = 1\n"
+                 "backdrop_alpha = 0\ncheat_code = 0\nambient = 0\nframe_digits = 1\n"
+                 "frame_count = 1\nframe_x = 0\nframe_y = 0\nframe_width = 1\nframe_height = 1\n"
+                 "frame_alpha = 0\nprojection = 1\nframe_rate = 1\nframe_wrap = 1\n"
+                 "camera_rotation = [nan, 0, 0, 0, 0, 0, 0, 0, 0]",
+                 "title_backdrop: figure_scene: camera_rotation: not from -1 to 1"},
+        SBadCase{"[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\n"
+                 "frame_prefix = 'f'\nmodels = [{ file = 'a.kfm', frame_wrap = 1 }]\n"
+                 "steps_per_second = 1\n"
+                 "backdrop_alpha = 0\ncheat_code = 0\nambient = 0\nframe_digits = 1\n"
+                 "frame_count = 1\nframe_x = 0\nframe_y = 0\nframe_width = 1\nframe_height = 1\n"
+                 "frame_alpha = 0\nprojection = 1\nframe_rate = 1\nframe_wrap = 1\n"
+                 "camera_rotation = [1, 0, 0, 0, 1, 0, 0, 0, 1]\ncamera_origin = [nan, 0, 0]",
+                 "title_backdrop: figure_scene: camera_origin: not from -65536 to 65536"},
         SBadCase{"[title_backdrop.sky_scene]\nstars = 1",
                  "title_backdrop: sky_scene: stars: not a key this file takes"},
         SBadCase{"[title_backdrop.sky_scene]\ncheat_model = 'h'",
@@ -646,7 +815,115 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{std::format("{}start_phase = 1.5\n", kSkyWhole),
                  "title_backdrop: sky_scene: start_phase: not from 0 to 1"},
         SBadCase{std::format("{}start_phase = nan\n", kSkyWhole),
-                 "title_backdrop: sky_scene: start_phase: not from 0 to 1"}));
+                 "title_backdrop: sky_scene: start_phase: not from 0 to 1"},
+        SBadCase{std::format("{}start_phase = -0.5\n", kSkyWhole),
+                 "title_backdrop: sky_scene: start_phase: not from 0 to 1"},
+        SBadCase{std::format("{}bat_courses = 1", kSkyStrings),
+                 "title_backdrop: sky_scene: bat_courses: not a list"},
+        SBadCase{std::format("{}bat_courses = ['a']\ncheat_code = -1", kSkyStrings),
+                 "title_backdrop: sky_scene: cheat_code: not from 0 to 99999"},
+        SBadCase{std::format("{}start_phase = 0.25\nturn_per_second = 0.0125\nrest_phase = 0.58\n"
+                             "projection = 112\nswing = 48\ndepth = 72\nbat_speed = 20\n"
+                             "bat_animation_speed = 30\nbat_scatter = 5\nframe_rate = 12\n"
+                             "frame_wrap = 60\n",
+                             kSkyWhole),
+                 "title_backdrop: sky_scene: moon_light: not a list of 3"},
+        SBadCase{"[title_backdrop]\ntiled_scroll = 1",
+                 "title_backdrop: tiled_scroll: not a [tiled_scroll] table"},
+        SBadCase{"[title_backdrop]\nsky_scene = 1",
+                 "title_backdrop: sky_scene: not a [sky_scene] table"},
+        SBadCase{"[title_backdrop]\nfigure_scene = 1",
+                 "title_backdrop: figure_scene: not a [figure_scene] table"}));
+
+// A figure scene's keys in their read order, each part whole.
+constexpr std::string_view kFigureStrings =
+    "[title_backdrop.figure_scene]\nbackdrop = 'b'\ncheat_model = 'c'\nframe_prefix = 'f'\n";
+constexpr std::string_view kFigureIntegers =
+    "backdrop_alpha = 0\nsteps_per_second = 1\ncheat_code = 0\nambient = 0\nframe_digits = 1\n"
+    "frame_count = 1\nframe_x = 0\nframe_y = 0\nframe_width = 1\nframe_height = 1\n"
+    "frame_alpha = 0\n";
+constexpr std::string_view kFigureReals = "projection = 1\nframe_rate = 1\nframe_wrap = 1\n";
+constexpr std::string_view kFigureRotation = "camera_rotation = [1, 0, 0, 0, 1, 0, 0, 0, 1]\n";
+constexpr std::string_view kFigureOrigin = "camera_origin = [0, 0, 0]\n";
+
+// The figure scene whole up to its camera, then the case's keys.
+std::string figureCamera(std::string_view keys) {
+    return std::format("{}{}{}{}", kFigureStrings, kFigureIntegers, kFigureReals, keys);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    FigureScene, CGameContentErrorTest,
+    ::testing::Values(
+        SBadCase{std::format("{}models = [1]", kFigureStrings),
+                 "title_backdrop: figure_scene: models 1: not a table"},
+        SBadCase{std::format("{}models = [{{ z = 1 }}]", kFigureStrings),
+                 "title_backdrop: figure_scene: models 1: z: not a key this file takes"},
+        SBadCase{std::format("{}models = [{{ frame_wrap = 1 }}]", kFigureStrings),
+                 "title_backdrop: figure_scene: models 1: file: missing"},
+        SBadCase{"[title_backdrop.figure_scene]\nframe_prefix = 'f'\nbackdrop = 1",
+                 "title_backdrop: figure_scene: backdrop: not a string"},
+        SBadCase{std::format("{}backdrop_alpha = 0\nsteps_per_second = 0", kFigureStrings),
+                 "title_backdrop: figure_scene: steps_per_second: not from 1 to 1000"},
+        SBadCase{std::format("{}{}", kFigureStrings, kFigureIntegers),
+                 "title_backdrop: figure_scene: projection: missing"},
+        SBadCase{figureCamera(""),
+                 "title_backdrop: figure_scene: camera_rotation: not a list of 9"},
+        SBadCase{figureCamera("camera_rotation = [0]"),
+                 "title_backdrop: figure_scene: camera_rotation: not a list of 9"},
+        SBadCase{figureCamera("camera_rotation = ['a', 0, 0, 0, 0, 0, 0, 0, 0]"),
+                 "title_backdrop: figure_scene: camera_rotation: not from -1 to 1"},
+        SBadCase{figureCamera("camera_rotation = [-2, 0, 0, 0, 0, 0, 0, 0, 0]"),
+                 "title_backdrop: figure_scene: camera_rotation: not from -1 to 1"},
+        SBadCase{figureCamera(kFigureRotation),
+                 "title_backdrop: figure_scene: camera_origin: not a list of 3"},
+        SBadCase{figureCamera(std::format("{}camera_origin = [0]", kFigureRotation)),
+                 "title_backdrop: figure_scene: camera_origin: not a list of 3"},
+        SBadCase{figureCamera(std::format("{}camera_origin = ['a', 0, 0]", kFigureRotation)),
+                 "title_backdrop: figure_scene: camera_origin: not from -65536 to 65536"},
+        SBadCase{figureCamera(std::format("{}camera_origin = [-70000, 0, 0]", kFigureRotation)),
+                 "title_backdrop: figure_scene: camera_origin: not from -65536 to 65536"},
+        SBadCase{figureCamera(std::format("{}camera_origin = [70000, 0, 0]", kFigureRotation)),
+                 "title_backdrop: figure_scene: camera_origin: not from -65536 to 65536"},
+        SBadCase{figureCamera(std::format("{}{}", kFigureRotation, kFigureOrigin)),
+                 "title_backdrop: figure_scene: light: not a list of 3"},
+        SBadCase{figureCamera(std::format("{}{}light = [0, 0, 0]\nflat = [0, 0, 0]\n",
+                                          kFigureRotation, kFigureOrigin)),
+                 "title_backdrop: figure_scene: fit: missing"}));
+
+// A tiled scroll's names and tile lists, then its whole numbers but the hand's alpha range.
+constexpr std::string_view kTiledNames =
+    "[title_backdrop.tiled_scroll]\ntile = 't'\nhand = 'h'\noverlay = 'o'\n";
+constexpr std::string_view kTiledLists = "columns = [320, -320]\nrows = [0, 480]\n";
+constexpr std::string_view kTiledSteps =
+    "step_x = 2\nstep_y = -1\nsteps_per_second = 60\nwrap_x_above = 639\nwrap_x_to = -640\n"
+    "wrap_y_below = -479\nwrap_y_to = 479\nhand_x = 64\nhand_y = 64\nhand_width = 512\n"
+    "hand_height = 512\nhand_alpha_start = 0x10000\nhand_alpha_step = 500\n";
+
+INSTANTIATE_TEST_SUITE_P(
+    TiledScroll, CGameContentErrorTest,
+    ::testing::Values(SBadCase{"[title_backdrop.tiled_scroll]\nsize = 1",
+                               "title_backdrop: tiled_scroll: size: not a key this file takes"},
+                      SBadCase{"[title_backdrop.tiled_scroll]\nhand = 'h'",
+                               "title_backdrop: tiled_scroll: tile: missing"},
+                      SBadCase{std::string(kTiledNames),
+                               "title_backdrop: tiled_scroll: columns: not a list of 2"},
+                      SBadCase{std::format("{}columns = [1]", kTiledNames),
+                               "title_backdrop: tiled_scroll: columns: not a list of 2"},
+                      SBadCase{std::format("{}columns = ['a', 0]", kTiledNames),
+                               "title_backdrop: tiled_scroll: columns: not from -640 to 640"},
+                      SBadCase{std::format("{}columns = [-641, 0]", kTiledNames),
+                               "title_backdrop: tiled_scroll: columns: not from -640 to 640"},
+                      SBadCase{std::format("{}columns = [641, 0]", kTiledNames),
+                               "title_backdrop: tiled_scroll: columns: not from -640 to 640"},
+                      SBadCase{std::format("{}{}step_x = 640", kTiledNames, kTiledLists),
+                               "title_backdrop: tiled_scroll: step_x: not from -639 to 639"},
+                      SBadCase{
+                          std::format("{}{}{}hand_alpha_low = 2\nhand_alpha_high = 1", kTiledNames,
+                                      kTiledLists, kTiledSteps),
+                          "title_backdrop: tiled_scroll: hand_alpha_low: above hand_alpha_high"},
+                      SBadCase{std::format("{}{}{}hand_alpha_low = 1\nhand_alpha_high = 2",
+                                           kTiledNames, kTiledLists, kTiledSteps),
+                               "title_backdrop: tiled_scroll: fit: missing"}));
 
 INSTANTIATE_TEST_SUITE_P(
     LoadingIndicator, CGameContentErrorTest,
@@ -683,7 +960,32 @@ INSTANTIATE_TEST_SUITE_P(
                  "loading_indicator: moon: default_tint: not from 0 to 65280"},
         SBadCase{std::format("{}{}default_tint = [0, 0, 0]\nstatus_box = [1, 2, 3]\n", kMoonStrings,
                              kMoonIntegers),
-                 "loading_indicator: moon: status_box: not a list of 4"}));
+                 "loading_indicator: moon: status_box: not a list of 4"},
+        SBadCase{std::format("{}{}default_tint = [0, 0]\n", kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: default_tint: not a list of 3"},
+        SBadCase{std::format("{}{}default_tint = ['a', 0, 0]\n", kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: default_tint: not from 0 to 65280"},
+        SBadCase{std::format("{}{}default_tint = [-1, 0, 0]\n", kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: default_tint: not from 0 to 65280"},
+        SBadCase{std::format("{}{}default_tint = [0, 0, 0]\n", kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: status_box: not a list of 4"},
+        SBadCase{std::format("{}{}default_tint = [0, 0, 0]\nstatus_box = ['a', 0, 0, 0]\n",
+                             kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: status_box: not from 0 to 640"},
+        SBadCase{std::format("{}{}default_tint = [0, 0, 0]\nstatus_box = [-1, 0, 0, 0]\n",
+                             kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: status_box: not from 0 to 640"},
+        SBadCase{std::format("{}{}default_tint = [0, 0, 0]\nstatus_box = [641, 0, 0, 0]\n",
+                             kMoonStrings, kMoonIntegers),
+                 "loading_indicator: moon: status_box: not from 0 to 640"},
+        SBadCase{"[loading_indicator.progress_bar]\nheight = 20\nframe_colour = 0\n"
+                 "trough_colour = 0\nbar_colour = 4\nstatus_font = 'theme'\n"
+                 "status_box_colour = 256",
+                 "loading_indicator: progress_bar: status_box_colour: not from 0 to 255"},
+        SBadCase{"[loading_indicator]\nicon = 1", "loading_indicator: icon: not a [icon] table"},
+        SBadCase{"[loading_indicator]\nmoon = 1", "loading_indicator: moon: not a [moon] table"},
+        SBadCase{"[loading_indicator]\nprogress_bar = 1",
+                 "loading_indicator: progress_bar: not a [progress_bar] table"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Difficulties, CGameContentErrorTest,
@@ -825,6 +1127,16 @@ TEST(GameContentFile, EachGamesFrontEndWritesBack) {
     }
 }
 
+TEST(GameContentFile, ALeftEdgedPointAndAManyCodedDefaultWriteBack) {
+    SGameContent content = fullContent();
+    content.menu->item.untitled_positions = {{.x = 5, .y = 6, .centred = false}};
+    ASSERT_TRUE(content.controls.has_value());
+    ASSERT_FALSE(content.controls->modes.empty());
+    ASSERT_FALSE(content.controls->modes.front().defaults.empty());
+    content.controls->modes.front().defaults.front().codes = {1, 2};
+    EXPECT_EQ(parseGameContent(format(content)), content);
+}
+
 TEST(GameContentFile, AWholeMenuReads) {
     const std::expected<SGameContent, std::string> content =
         parseGameContent(menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter, kMenuCalibration));
@@ -903,7 +1215,21 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
                           "[menu.calibration]\nimage = 'b'\ntitle = 't'\nprompt = 'p'\n"
                           "font = 'f'\nsteps = ['s']\ncolour = 1\ntitle_lines = 41\n"),
-                 "menu: calibration: title_lines: not from 0 to 40"}));
+                 "menu: calibration: title_lines: not from 0 to 40"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow, kMenuFooter,
+                          "[menu.calibration]\nimage = 'b'\nsteps = ['one']\ntitle = 't'\n"
+                          "prompt = 'p'\nfont = 'small_editor'\ncolour = 1\ntitle_lines = 2\n"
+                          "prompt_lines = 3\n"),
+                 "menu: calibration: fit: missing"},
+        SBadCase{menuWith(std::format("{}font = 1\n", kMenuTitle), kMenuItem, kMenuGlow,
+                          kMenuFooter, kMenuCalibration),
+                 "menu: title: font: not a string"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, std::format("{}item_colour = 256\n", kMenuGlow),
+                          kMenuFooter, kMenuCalibration),
+                 "menu: item: glow: item_colour: not from 0 to 255"},
+        SBadCase{menuWith(kMenuTitle, kMenuItem, kMenuGlow,
+                          "[menu.footer]\nfont = 'small_editor'\ncolour = 256\n", kMenuCalibration),
+                 "menu: footer: colour: not from 0 to 255"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Loading, CGameContentErrorTest,
@@ -936,7 +1262,10 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[[loading]]\nid = \"a\"\nfit = 'keep_aspect'\nanchor = 'top'",
                  "loading 1: anchor: not one of centre, left, right"},
         SBadCase{"[[loading]]\nid = \"a\"\nfit = 'stretch'\nanchor = 'left'",
-                 "loading 1: anchor: a stretched picture has none"}));
+                 "loading 1: anchor: a stretched picture has none"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 1", "loading 1: fit: not a string"},
+        SBadCase{"[[loading]]\nid = \"a\"\nfit = 'keep_aspect'\nanchor = 1",
+                 "loading 1: anchor: not a string"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Story, CGameContentErrorTest,

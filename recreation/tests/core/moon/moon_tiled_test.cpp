@@ -165,6 +165,34 @@ TEST_F(CMoonTiledTest, TheHandFadesAndComesBack) {
     EXPECT_LT(blue[4], blue[5]);
 }
 
+// Rising past its highest it holds there and fades again: 45000, 65000, then 65535 and 45535.
+TEST_F(CMoonTiledTest, TheHandHoldsAtItsHighestAndFadesAgain) {
+    content_.tiled_scroll->step_x = 0;
+    content_.tiled_scroll->step_y = 0;
+    content_.tiled_scroll->hand_alpha_step = 20000;
+    moon_.init();
+    std::vector<std::uint32_t> blue;
+    for (int i = 0; i < 9; ++i) {
+        drawFrame();
+        blue.push_back(pixel(100, 100) & 0xffU);
+    }
+    EXPECT_LT(blue[5], blue[6]);
+    EXPECT_LE(blue[6], blue[7]);
+    EXPECT_GT(blue[7], blue[8]);
+}
+
+// Rising past the top, a row comes back from the bottom, so the tiles stay edge to edge and the
+// screen stays covered.
+TEST_F(CMoonTiledTest, ARowPastTheTopComesBackFromTheBottom) {
+    content_.tiled_scroll->step_x = 0;
+    content_.tiled_scroll->step_y = -160;
+    moon_.init();
+    drawFrames(4);
+    for (int y = kOpenRow; y < kHeight; ++y) {
+        ASSERT_NE(pixel(330, y), 0U) << y;
+    }
+}
+
 // The timer only kept the glow on.
 TEST_F(CMoonTiledTest, TheTitleIsAlwaysInItsFirstHalf) {
     moon_.init();

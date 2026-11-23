@@ -135,13 +135,13 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
         iVar3 = 1;
         local_18 = local_1c;
         do {
-          iVar4 = g_CDemonCameraInstance.screen_width * iVar3 >> 0x1f;
-          iVar5 = (int)g_CDemonCameraInstance.max_distance * local_18 >> 0x1f;
+          iVar4 = g_CDemonCameraInstance.framebuffer_width * iVar3 >> 0x1f;
+          iVar5 = g_CDemonCameraInstance.framebuffer_height * local_18 >> 0x1f;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
                     (&g_CDemonCameraInstance,
-                     (int)((g_CDemonCameraInstance.screen_width * iVar3 + iVar4 * -0x20) -
+                     (int)((g_CDemonCameraInstance.framebuffer_width * iVar3 + iVar4 * -0x20) -
                           (uint)(iVar4 << 4 < 0)) >> 5,
-                     (int)(((int)g_CDemonCameraInstance.max_distance * local_18 + iVar5 * -0x20) -
+                     (int)((g_CDemonCameraInstance.framebuffer_height * local_18 + iVar5 * -0x20) -
                           (uint)(iVar5 << 4 < 0)) >> 5,&local_3c);
           local_e4.x = local_3c.x;
           *(uint *)((int)&local_e4 + (uint)bVar9 * -8 + 4) =

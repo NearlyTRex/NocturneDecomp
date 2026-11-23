@@ -48,13 +48,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   }
   if (g_BitsPerPixel == 0x10) {
     uVar8 = 1;
-    while ((int)uVar8 < (int)this_ptr->max_distance + -1) {
+    while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
       output_buffer =
-           (uint *)((int)g_ScreenBufferArray
-                         [(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74] +
-                   g_INT_012ceb70 * 2 + this_ptr->framebuffer_width * 2);
+           (uint *)((int)g_ScreenBufferArray[(this_ptr->viewport_y + uVar8) - g_INT_012ceb74] +
+                   g_INT_012ceb70 * 2 + this_ptr->viewport_x * 2);
       puVar6 = (ulonglong *)
-               ((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
+               ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
       iVar4 = (int)uVar8 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
       pacVar5 = g_SFogImagePlane_012ceb78.pixels + iVar4;
       pacVar7 = g_CoronaBlurWorkBuffer + iVar4;
@@ -62,21 +61,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
                     (output_buffer,(uint *)puVar6,(byte *)pacVar7,(byte *)pacVar5,
-                     this_ptr->screen_width);
+                     this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
-                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,this_ptr->screen_width);
+                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,
+                     this_ptr->framebuffer_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
-                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,this_ptr->screen_width);
+                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,
+                     this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
-                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,this_ptr->screen_width);
+                    (output_buffer,puVar6,(byte *)pacVar7,(byte *)pacVar5,
+                     this_ptr->framebuffer_width);
         }
       }
       iVar4 = iVar9 * 0xc;
@@ -101,12 +103,13 @@ LAB_0044729d:
   }
   else {
     uVar8 = 1;
-    while ((int)uVar8 < (int)this_ptr->max_distance + -1) {
+    while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
       puVar6 = (ulonglong *)
-               ((int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74] +
-               g_INT_012ceb70 * 4 + this_ptr->framebuffer_width * 4);
+               ((int)g_ScreenBufferArray[(this_ptr->viewport_y + uVar8) - g_INT_012ceb74] +
+               g_INT_012ceb70 * 4 + this_ptr->viewport_x * 4);
       texture_buffer =
-           (ulonglong *)((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
+           (ulonglong *)
+           ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
       iVar4 = (int)uVar8 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
       pacVar5 = g_CoronaBlurWorkBuffer + iVar4;
       pacVar7 = g_SFogImagePlane_012ceb78.pixels + iVar4;
@@ -114,22 +117,24 @@ LAB_0044729d:
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
                     ((uint *)puVar6,(uint *)texture_buffer,(byte *)pacVar5,(byte *)pacVar7,
-                     this_ptr->screen_width);
+                     this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
-                    (puVar6,texture_buffer,(byte *)pacVar5,(byte *)pacVar7,this_ptr->screen_width);
+                    (puVar6,texture_buffer,(byte *)pacVar5,(byte *)pacVar7,
+                     this_ptr->framebuffer_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
                     ((uint *)puVar6,texture_buffer,(byte *)pacVar5,(byte *)pacVar7,
-                     this_ptr->screen_width);
+                     this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
-                    (puVar6,texture_buffer,(byte *)pacVar5,(byte *)pacVar7,this_ptr->screen_width);
+                    (puVar6,texture_buffer,(byte *)pacVar5,(byte *)pacVar7,
+                     this_ptr->framebuffer_width);
         }
       }
       iVar4 = iVar9 * 0xc;

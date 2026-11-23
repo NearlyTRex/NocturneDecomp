@@ -198,8 +198,6 @@ const std::string &CDemonCamera::getCameraName() const {
 //   still until a shake starts, with initCameraShake
 // deferred: the dirty rectangles and the viewport rectangle, with pushRect and
 //   restoreZBufferRectArray
-// deferred: the camera's copies of the transform, origin and projection and their inverse, with
-//   updateTransformMatrices' readers
 // nocedit 0x0044c430
 void CDemonCamera::beginScene(int skip_clear_buffers) {
     if (scene_open_) {
@@ -213,9 +211,13 @@ void CDemonCamera::beginScene(int skip_clear_buffers) {
     renderer.setCameraOriginFromScaledPoint(getPosition());
     renderer.setProjectionScale(getFocalLength());
     renderer.setupCameraAndProjection(getRotationMatrix());
-    if (skip_clear_buffers != 0) {
-        return;
+    if (skip_clear_buffers == 0) {
+        clearSceneBuffers();
     }
+    updateTransformMatrices();
+}
+
+void CDemonCamera::clearSceneBuffers() {
     engine::CSpecial &special = owners_.special;
     if (special.getUseDirect3D()) {
         static_cast<void>(special.beginScene());

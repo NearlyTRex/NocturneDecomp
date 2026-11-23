@@ -606,11 +606,40 @@ TEST_F(CMenuTest, AnItemTooWideForTheRoomToTheRightIsShortened) {
     ASSERT_TRUE(menu.has_value());
     menu->left = 560;
     int selected = 1;
-    choose({std::string(40, 'X'), "XX"}, selected);
+    choose({std::string(200, 'X'), "XX"}, selected);
     const int row = letterRow(100);
     EXPECT_EQ(firstLit(row), 560);
     EXPECT_LT(lastLit(row), kWidth - 1);
     EXPECT_GT(lastLit(row), 600);
+}
+
+// Words and spaces, shortened where a space falls before the dots.
+[[nodiscard]] std::string spacedItem() {
+    std::string spaced;
+    for (int i = 0; i < 100; ++i) {
+        spaced += "X ";
+    }
+    return spaced;
+}
+
+// Shortened at a space, the space goes before the dots, so it still ends short of the edge.
+TEST_F(CMenuTest, AShortenedItemDropsTheSpaceBeforeItsDots) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 560;
+    int selected = 1;
+    choose({spacedItem(), "XX"}, selected);
+    EXPECT_LT(lastLit(letterRow(100)), kWidth - 1);
+}
+
+// With no room even for the dots, the dots alone are drawn.
+TEST_F(CMenuTest, NoRoomLeavesTheDotsAlone) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->left = 638;
+    int selected = 1;
+    choose({spacedItem(), "XX"}, selected);
+    EXPECT_EQ(firstLit(letterRow(100)), 638);
 }
 
 TEST_F(CMenuTest, AnItemThatFitsIsDrawnWhole) {
@@ -675,6 +704,23 @@ TEST_F(CMenuTest, ATitledListTakesNoPoints) {
     choose({"XX"}, selected, "XXX");
     EXPECT_EQ(firstLit(letterRow(100)), 160);
     EXPECT_EQ(firstLit(letterRow(100 + (menu->title.gap_lines * lineHeight()))), 160);
+}
+
+// BW3's: a list without a title takes a font of its own, a titled one the items' font, and a
+// title can have its own too; each is looked for as the list draws.
+TEST_F(CMenuTest, TheUntitledListAndTheTitleCanTakeFontsOfTheirOwn) {
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->item.untitled_font = "gothic";
+    int selected = 0;
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected)); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font gothic is loaded")));
+    EXPECT_NO_THROW(static_cast<void>(choose({"XX"}, selected, "XX")));
+    menu->title.font = "script";
+    EXPECT_THAT([&] { static_cast<void>(choose({"XX"}, selected, "XX")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No font script is loaded")));
 }
 
 // A copy one row down makes every line reach a row further.

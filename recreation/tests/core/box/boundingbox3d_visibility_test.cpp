@@ -49,7 +49,9 @@ private:
 class CBoundingBox3DVisibilityTest : public CActorRenderFixture {
 protected:
     [[nodiscard]] SDemonCameraOwners cameraOwners() {
-        return set_parts_.light_parts.owners(screen_, special_, demon_renderer_, dosio_).camera;
+        return set_parts_.light_parts
+            .owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_)
+            .camera;
     }
 
     // Untextured, a polygon goes to the geometry clip only with face capture on.

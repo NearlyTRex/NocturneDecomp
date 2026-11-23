@@ -313,7 +313,7 @@ section .text
         ;   Label: LAB_0052cd1e
     MOV EBX,0x1                         ; 0052cd25
     MOV dword ptr [ESP + 0x158],EAX     ; 0052cd2a
-    MOV EDX,dword ptr [0x01fb8644]      ; 0052cd31 | g_CDemonCameraInstance.screen_width
+    MOV EDX,dword ptr [0x01fb8644]      ; 0052cd31 | g_CDemonCameraInstance.framebuffer_width
         ;   Label: LAB_0052cd31
     IMUL EDX,EBX                        ; 0052cd37
     MOV EAX,EDX                         ; 0052cd3a
@@ -322,7 +322,7 @@ section .text
     SBB EAX,EDX                         ; 0052cd42
     SAR EAX,0x5                         ; 0052cd44
     MOV EDI,dword ptr [ESP + 0x158]     ; 0052cd47
-    MOV EDX,dword ptr [0x01fb8648]      ; 0052cd4e | g_CDemonCameraInstance.max_distance
+    MOV EDX,dword ptr [0x01fb8648]      ; 0052cd4e | g_CDemonCameraInstance.framebuffer_height
     IMUL EDX,EDI                        ; 0052cd54
     MOV ESI,EAX                         ; 0052cd57
     MOV EAX,EDX                         ; 0052cd59

@@ -316,7 +316,9 @@ private:
                                                      .special = special_,
                                                      .crt_random = crt_random_,
                                                      .renderer = demon_renderer_,
-                                                     .dosio = dosio_},
+                                                     .dosio = dosio_,
+                                                     .matrix = matrix_,
+                                                     .two_d = two_d_},
                                           .global_filters = global_filters_,
                                           .player_filters = player_filters_,
                                           .glow = light_glow_};
@@ -452,7 +454,8 @@ private:
                                              .mission = mission_,
                                              .environment = environment_,
                                              .sound = sound_,
-                                             .display = display_};
+                                             .display = display_,
+                                             .renderer = demon_renderer_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

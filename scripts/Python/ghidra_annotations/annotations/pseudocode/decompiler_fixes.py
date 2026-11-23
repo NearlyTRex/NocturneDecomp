@@ -373,8 +373,10 @@ def preload_per_function_decompiler_fixes(base_dir):
         return
 
     loaded_count = 0
-    for root, _dirs, files in os.walk(base_dir):
-        for filename in files:
+    # Sorted, so the warnings come in the same order on every filesystem.
+    for root, dirs, files in os.walk(base_dir):
+        dirs.sort()
+        for filename in sorted(files):
             if not filename.endswith('.json'):
                 continue
             json_path = os.path.join(root, filename)

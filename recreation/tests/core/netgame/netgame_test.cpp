@@ -101,6 +101,15 @@ TEST_F(CNetGameTest, TheNetworkClockStepsAtMostTwoSecondsAndNeverBack) {
     EXPECT_EQ(net_game_.getCurrentGameTime(), 1U + 0x20100U);
 }
 
+// Outside a client's game there is no host's frame: neither the clock nor the CRT moves.
+TEST_F(CNetGameTest, AClientFrameWithoutAHostDoesNothing) {
+    startAt(0x10000);
+    common::CWatcomRandom expected_crt;
+    net_game_.processClientFrame();
+    EXPECT_EQ(net_game_.getCurrentGameTime(), 1U);
+    EXPECT_EQ(crt_random_.rand(), expected_crt.rand());
+}
+
 // Without a network game the frame's seed is the CRT's next draw.
 TEST_F(CNetGameTest, AServerFrameSeedsTheSimStreamFromTheCrt) {
     common::CWatcomRandom expected_crt;

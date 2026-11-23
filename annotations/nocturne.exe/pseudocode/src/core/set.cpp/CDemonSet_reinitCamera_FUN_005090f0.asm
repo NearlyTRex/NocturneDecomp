@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height)
+; void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   clear_enabled
-; int              Stack[0xc]:4   is_clearing
+; int              Stack[0x8]:4   viewport_x
+; int              Stack[0xc]:4   viewport_y
 ; int              Stack[0x10]:4   screen_height
 ;
 ; XREF[2]:
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
-;   core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0
+;   core_dcamera.cpp_CDemonCamera_setViewportOrigin_FUN_004401b0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00509109
     PUSH EBX                            ; 0050910d
     PUSH 0x1fb8508                      ; 0050910e
-    CALL core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0 ; 00509113
-        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0(CDemonCamera * this_ptr, int width, int height)
+    CALL core_dcamera.cpp_CDemonCamera_setViewportOrigin_FUN_004401b0 ; 00509113
+        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setViewportOrigin_FUN_004401b0(CDemonCamera * this_ptr, int viewport_x, int viewport_y)
     ADD ESP,0xc                         ; 00509118
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050911b
     MOV ESI,dword ptr [EAX + 0x15aabc]  ; 0050911f

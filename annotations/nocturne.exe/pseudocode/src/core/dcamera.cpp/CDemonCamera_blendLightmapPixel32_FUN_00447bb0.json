@@ -181,7 +181,7 @@
       "line": 11,
       "match": "(uint *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "((uint *)((int)g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y] +",
+      "text": "((uint *)((int)g_ScreenBufferArray[this_ptr->viewport_y + screen_y] +",
       "type": "pointer_cast"
     },
     {
@@ -193,11 +193,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `g_ScreenBufferArray[this_ptr->viewport_y + screen_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y]",
+      "match": "(int)g_ScreenBufferArray[this_ptr->viewport_y + screen_y]",
       "severity": "moderate",
-      "text": "((uint *)((int)g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y] +",
+      "text": "((uint *)((int)g_ScreenBufferArray[this_ptr->viewport_y + screen_y] +",
       "type": "pointer_truncation"
     }
   ]

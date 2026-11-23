@@ -1,8 +1,11 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/matrix3x3i.h"
+#include "common/math/vector3i.h"
 #include "core/dlight/cameraview.h"
 #include "core/fwd.h"
+#include "engine/2d/2d.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 
@@ -26,6 +29,9 @@ struct SDemonCameraOwners {
     engine::CDemonRenderer &renderer;
     // Where the backdrops are read from.
     const engine::CDosIo &dosio;
+    // Whose transform and projection a scene's begin copies, to map the screen back to the world.
+    const engine::CMatrix &matrix;
+    const engine::C2d &two_d;
 };
 
 // The software renderer's camera: a frame and depth buffer at most 480 lines tall, and the
@@ -69,8 +75,14 @@ public:
     void endBackgroundScene(int restore_zbuffer);
     void pushRect(int left, int top, int right, int bottom);
     void restoreZBufferRectArray();
+    // The renderer's transform, camera origin and projection as the scene began, and the
+    // transform's inverse.
     void updateTransformMatrices();
+    // The screen point with its depth, in 16.16 on screen, 0x7fffffff where nothing was drawn;
+    // returns the depth.
     int screenToWorldCoord(int screen_x, int screen_y, common::CVector3i *output_ptr);
+    // A screenToWorldCoord point back to the world, in 24.8, through the scene's projection and
+    // inverse transform.
     common::CVector3i *screenToWorldTransform(common::CVector3i *input_ptr,
                                               common::CVector3i *output_ptr);
     common::CVector3i *worldToScreenWithFrustumCull(common::CVector3i *input_ptr,
@@ -130,6 +142,10 @@ private:
 
     // Fills the camera tables' fog grid afresh from the CRT stream.
     void generateFogGrid();
+    // inverted_matrix_ from source_matrix_, in 16.16.
+    void calculateInverseTransform();
+    // The screen and depth buffers cleared for a scene, the hardware renderer's too.
+    void clearSceneBuffers();
     // The .fog's grid, and its planes, for a camera whose fog has a density.
     void loadFog(std::string_view filename);
     // Each colour as the screen's pixels have it.
@@ -152,6 +168,10 @@ private:
     std::vector<std::uint32_t> framebuffer_;
     std::vector<std::uint32_t> zbuffer_;
     int corona_blend_factor_ = 0;
+    common::CMatrix3x3i source_matrix_;
+    common::CMatrix3x3i inverted_matrix_;
+    common::CVector3i camera_origin_;
+    engine::SProjectionParams cached_projection_;
     bool scene_open_ = false;
     bool skip_clear_buffers_ = false;
 };

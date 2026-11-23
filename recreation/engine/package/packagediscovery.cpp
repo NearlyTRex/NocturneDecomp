@@ -306,7 +306,6 @@ private:
         folders_.back().has_manifest = false;
     }
 
-    // In the folder holding the release's PODs, from the PODs no manifest has; not written
     // The PODs no manifest has, in folders without one.
     [[nodiscard]] std::vector<std::string> findUnlistedPods() {
         std::vector<std::string> unlisted;

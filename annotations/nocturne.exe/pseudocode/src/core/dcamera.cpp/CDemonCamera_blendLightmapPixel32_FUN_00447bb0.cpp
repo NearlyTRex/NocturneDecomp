@@ -15,10 +15,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00447bb0(CDe
   iVar1 = screen_y / this_ptr->scale_factor;
   iVar2 = screen_x / this_ptr->scale_factor;
   core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0
-            ((uint *)((int)g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y] +
-                     screen_x * 4 + this_ptr->framebuffer_width * 4),
+            ((uint *)((int)g_ScreenBufferArray[this_ptr->viewport_y + screen_y] +
+                     screen_x * 4 + this_ptr->viewport_x * 4),
              (uint *)((int)this_ptr->framebuffer_aligned +
-                     screen_x * 4 + this_ptr->screen_width * screen_y * 4),
+                     screen_x * 4 + this_ptr->framebuffer_width * screen_y * 4),
              (byte *)(g_CoronaBlurWorkBuffer[iVar1] + offset + iVar2),
              (byte *)(g_SFogImagePlane_012ceb78.pixels[iVar1] + offset + iVar2));
   return;

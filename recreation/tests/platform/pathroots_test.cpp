@@ -154,6 +154,32 @@ TEST_F(CPathRootsTest, TheGameIsAnyPodInTheDataDirectoryOrAFolderInIt) {
     EXPECT_TRUE(hasGameData(disk_.host_, choose({})));
 }
 
+// A folder whose name starts with a dot isn't looked in, though the host doesn't call it hidden.
+TEST_F(CPathRootsTest, ADotFolderIsntLookedInEvenWhenNotHidden) {
+    ON_CALL(disk_.host_, findFiles(std::string_view("/games/*")))
+        .WillByDefault(Return(std::vector<SFileInfo>{{.name = ".cache",
+                                                      .size = 0,
+                                                      .modified = 0,
+                                                      .is_directory = true,
+                                                      .is_hidden = false}}));
+    ON_CALL(disk_.host_, findFiles(std::string_view("/games/.cache/*")))
+        .WillByDefault(Return(std::vector<SFileInfo>{{.name = "X.POD", .size = 1, .modified = 0}}));
+    EXPECT_FALSE(hasGameData(disk_.host_, choose({"--data-dir=/games"})));
+}
+
+// The root keeps its one slash.
+TEST_F(CPathRootsTest, TheRootStaysTheRoot) {
+    EXPECT_EQ(choose({"--data-dir=/"}).data, "/");
+}
+
+// With only a user directory, the data is the working directory's.
+TEST_F(CPathRootsTest, AUserDirectoryAloneKeepsTheDataInTheWorkingDirectory) {
+    const SPathRoots roots = choose({"--user-dir=/home/me"});
+    EXPECT_THAT(
+        describePathRoots(roots),
+        Optional(std::string("data directory (working directory), user directory /home/me")));
+}
+
 TEST_F(CPathRootsTest, MissingGameDataSaysWhereToPutIt) {
     disk_.givenFile("/home/me/data_dir.txt", "\n");
     std::string message = describeMissingGameData(disk_.host_, choose({"--user-dir=/home/me"}));

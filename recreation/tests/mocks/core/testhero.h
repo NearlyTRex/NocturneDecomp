@@ -31,9 +31,6 @@ public:
         return 0;
     }
 
-    void setPositionAndOrientation(common::CVector3f * /*new_position*/,
-                                   common::CVector3f * /*new_orientation*/) override {}
-
     void setWalkTarget(CDemonActor * /*target*/, float /*min_distance*/,
                        float /*max_distance*/) override {}
 

@@ -10,38 +10,37 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
 
 {
   byte bVar1;
-  float fVar2;
-  uint uVar3;
-  ulonglong uVar4;
-  char cVar5;
-  _FILE *p_Var6;
-  int iVar7;
-  byte *pbVar8;
+  uint uVar2;
+  ulonglong uVar3;
+  char cVar4;
+  _FILE *p_Var5;
+  int iVar6;
+  byte *pbVar7;
+  uint uVar8;
   uint uVar9;
   uint uVar10;
   uint uVar11;
-  uint uVar12;
-  int iVar13;
-  uint *puVar14;
+  int iVar12;
+  uint *puVar13;
+  int iVar14;
   int iVar15;
   int iVar16;
-  int iVar17;
-  uint uVar18;
-  int iVar19;
+  uint uVar17;
+  int iVar18;
+  uint uVar19;
   uint uVar20;
-  uint uVar21;
+  char *pcVar21;
   char *pcVar22;
-  char *pcVar23;
-  uint uVar24;
-  SRGBColorPalette *pSVar25;
-  char *pcVar26;
-  uint uVar27;
-  int *piVar28;
-  uint *puVar29;
-  SRGBColorPalette *pSVar30;
+  uint uVar23;
+  SRGBColorPalette *pSVar24;
+  char *pcVar25;
+  uint uVar26;
+  int *piVar27;
+  uint *puVar28;
+  SRGBColorPalette *pSVar29;
+  uint uVar30;
   uint uVar31;
-  uint uVar32;
-  byte bVar33;
+  byte bVar32;
   char local_144 [80];
   char local_f4 [80];
   int local_a4;
@@ -82,92 +81,92 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   int iStack_18;
   _FILE *local_14;
   
-  bVar33 = 0;
-  pcVar26 = local_144;
-  pcVar22 = filename;
+  bVar32 = 0;
+  pcVar25 = local_144;
+  pcVar21 = filename;
   do {
-    cVar5 = *pcVar22;
-    *pcVar26 = cVar5;
-    pcVar23 = local_144;
-    if (cVar5 == '\0') break;
-    cVar5 = pcVar22[1];
-    pcVar22 = pcVar22 + 2;
-    pcVar26[1] = cVar5;
-    pcVar26 = pcVar26 + 2;
-    pcVar23 = local_144;
-  } while (cVar5 != '\0');
+    cVar4 = *pcVar21;
+    *pcVar25 = cVar4;
+    pcVar22 = local_144;
+    if (cVar4 == '\0') break;
+    cVar4 = pcVar21[1];
+    pcVar21 = pcVar21 + 2;
+    pcVar25[1] = cVar4;
+    pcVar25 = pcVar25 + 2;
+    pcVar22 = local_144;
+  } while (cVar4 != '\0');
   do {
-    pcVar22 = pcVar23;
-    if (*pcVar23 == '.') goto LAB_00443299;
-    if (*pcVar23 == '\0') break;
-    pcVar22 = pcVar23 + 1;
+    pcVar21 = pcVar22;
     if (*pcVar22 == '.') goto LAB_00443299;
-    pcVar23 = pcVar23 + 2;
-  } while (*pcVar22 != '\0');
-  pcVar22 = (char *)0x0;
+    if (*pcVar22 == '\0') break;
+    pcVar21 = pcVar22 + 1;
+    if (*pcVar21 == '.') goto LAB_00443299;
+    pcVar22 = pcVar22 + 2;
+  } while (*pcVar21 != '\0');
+  pcVar21 = (char *)0x0;
 LAB_00443299:
-  if (pcVar22 == (char *)0x0) {
+  if (pcVar21 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 2434;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
-  pcVar26 = ".ACT";
+  pcVar25 = ".ACT";
   do {
-    cVar5 = *pcVar26;
-    *pcVar22 = cVar5;
-    if (cVar5 == '\0') break;
-    cVar5 = pcVar26[1];
-    pcVar26 = pcVar26 + 2;
-    pcVar22[1] = cVar5;
-    pcVar22 = pcVar22 + 2;
-  } while (cVar5 != '\0');
-  p_Var6 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_144,"rb");
-  if ((p_Var6 != (_FILE *)0x0) ||
-     (p_Var6 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_144,"rb"),
-     p_Var6 != (_FILE *)0x0)) {
-    _fread(&g_CameraImagePaletteData,0x100,3,p_Var6);
-    _fclose(p_Var6);
-    pcVar22 = local_f4;
-    pcVar26 = filename;
+    cVar4 = *pcVar25;
+    *pcVar21 = cVar4;
+    if (cVar4 == '\0') break;
+    cVar4 = pcVar25[1];
+    pcVar25 = pcVar25 + 2;
+    pcVar21[1] = cVar4;
+    pcVar21 = pcVar21 + 2;
+  } while (cVar4 != '\0');
+  p_Var5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_144,"rb");
+  if ((p_Var5 != (_FILE *)0x0) ||
+     (p_Var5 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_144,"rb"),
+     p_Var5 != (_FILE *)0x0)) {
+    _fread(&g_CameraImagePaletteData,0x100,3,p_Var5);
+    _fclose(p_Var5);
+    pcVar21 = local_f4;
+    pcVar25 = filename;
     do {
-      cVar5 = *pcVar26;
-      *pcVar22 = cVar5;
-      if (cVar5 == '\0') break;
-      cVar5 = pcVar26[1];
-      pcVar26 = pcVar26 + 2;
-      pcVar22[1] = cVar5;
-      pcVar22 = pcVar22 + 2;
-    } while (cVar5 != '\0');
-    pcVar22 = local_f4;
+      cVar4 = *pcVar25;
+      *pcVar21 = cVar4;
+      if (cVar4 == '\0') break;
+      cVar4 = pcVar25[1];
+      pcVar25 = pcVar25 + 2;
+      pcVar21[1] = cVar4;
+      pcVar21 = pcVar21 + 2;
+    } while (cVar4 != '\0');
+    pcVar21 = local_f4;
     do {
-      pcVar26 = pcVar22;
-      if (*pcVar22 == '.') goto LAB_00443363;
-      if (*pcVar22 == '\0') break;
-      pcVar26 = pcVar22 + 1;
-      if (*pcVar26 == '.') goto LAB_00443363;
-      pcVar22 = pcVar22 + 2;
-    } while (*pcVar26 != '\0');
-    pcVar26 = (char *)0x0;
+      pcVar25 = pcVar21;
+      if (*pcVar21 == '.') goto LAB_00443363;
+      if (*pcVar21 == '\0') break;
+      pcVar25 = pcVar21 + 1;
+      if (*pcVar25 == '.') goto LAB_00443363;
+      pcVar21 = pcVar21 + 2;
+    } while (*pcVar25 != '\0');
+    pcVar25 = (char *)0x0;
 LAB_00443363:
-    if (pcVar26 == (char *)0x0) {
+    if (pcVar25 == (char *)0x0) {
       g_CurrentFilename = "..\\core\\dcamera.cpp";
       g_CurrentLineNumber = 2453;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no ext");
     }
-    pcVar22 = ".fog";
+    pcVar21 = ".fog";
     do {
-      cVar5 = *pcVar22;
-      *pcVar26 = cVar5;
-      if (cVar5 == '\0') break;
-      cVar5 = pcVar22[1];
-      pcVar22 = pcVar22 + 2;
-      pcVar26[1] = cVar5;
-      pcVar26 = pcVar26 + 2;
-    } while (cVar5 != '\0');
+      cVar4 = *pcVar21;
+      *pcVar25 = cVar4;
+      if (cVar4 == '\0') break;
+      cVar4 = pcVar21[1];
+      pcVar21 = pcVar21 + 2;
+      pcVar25[1] = cVar4;
+      pcVar25 = pcVar25 + 2;
+    } while (cVar4 != '\0');
     local_14 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
       _fread(&g_CameraFogGrid,0x1000,1,local_14);
-      p_Var6 = local_14;
+      p_Var5 = local_14;
       if (g_CameraFogGrid.density_multiplier == 0) {
         memset(g_CameraImageDecompressBuffer,0,0x12c000);
       }
@@ -179,11 +178,11 @@ LAB_00443363:
         }
         _fread(local_a0,3,1,local_14);
         local_9d = 0;
-        iVar7 = _strcmp(local_a0,"LZW");
-        if ((iVar7 == 0) ||
-           (iVar7 = _strcmp(local_a0,"EFD"), iVar7 == 0)) {
-          iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
-          local_9c = iVar7 - 0x1003;
+        iVar6 = _strcmp(local_a0,"LZW");
+        if ((iVar6 == 0) ||
+           (iVar6 = _strcmp(local_a0,"EFD"), iVar6 == 0)) {
+          iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
+          local_9c = iVar6 - 0x1003;
           if ((int)local_9c < 1) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2485;
@@ -198,10 +197,10 @@ LAB_00443363:
           _fread(g_CHAR_ARRAY_0077d250,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompressInstance);
           local_98 = g_ImageBytesPerPixel * 0x12c00;
-          iVar7 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
+          iVar6 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
                             (&g_CLZWDecompressInstance,g_CHAR_ARRAY_0077d250,(int *)&local_9c,
                              (char *)g_CameraImageDecompressBuffer,&local_98,1);
-          if (iVar7 == 0) {
+          if (iVar6 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2500;
             core_main_c_displayErrorAndQuit_FUN_004c8440("Error decompressing %s",local_f4);
@@ -217,20 +216,20 @@ LAB_00443363:
               local_40 = local_34;
               local_3c = local_38;
               do {
-                iVar15 = 0;
-                iVar19 = 0;
-                iVar7 = local_40;
+                iVar14 = 0;
+                iVar18 = 0;
+                iVar6 = local_40;
                 do {
-                  iVar19 = (*(int *)(g_SFogImagePlane_012ceb78.pixels[0xef] +
-                                    iVar15 + local_48 + 0x13d) >> 0x18) + iVar19;
-                  cVar5 = (char)iVar19 * '\x04';
+                  iVar18 = (*(int *)(g_SFogImagePlane_012ceb78.pixels[0xef] +
+                                    iVar14 + local_48 + 0x13d) >> 0x18) + iVar18;
+                  cVar4 = (char)iVar18 * '\x04';
                   if (0 < local_a4) {
-                    cVar5 = cVar5 + g_CameraImageDecompressBuffer[0].pixels[0][local_44 + iVar15];
+                    cVar4 = cVar4 + g_CameraImageDecompressBuffer[0].pixels[0][local_44 + iVar14];
                   }
-                  iVar15 = iVar15 + 1;
-                  g_CameraImageDecompressBuffer[0].pixels[0][iVar7] = cVar5;
-                  iVar7 = iVar7 + 1;
-                } while (iVar15 < 0x140);
+                  iVar14 = iVar14 + 1;
+                  g_CameraImageDecompressBuffer[0].pixels[0][iVar6] = cVar4;
+                  iVar6 = iVar6 + 1;
+                } while (iVar14 < 0x140);
                 local_44 = local_44 + 0x140;
                 local_40 = local_40 + 0x140;
                 local_48 = local_48 + 0x140;
@@ -243,211 +242,211 @@ LAB_00443363:
           }
         }
         else {
-          _fseek(p_Var6,-3,1);
-          _fread(g_CameraImageDecompressBuffer,0x12c00,g_ImageBytesPerPixel,p_Var6);
+          _fseek(p_Var5,-3,1);
+          _fread(g_CameraImageDecompressBuffer,0x12c00,g_ImageBytesPerPixel,p_Var5);
         }
       }
       _fclose(local_14);
     }
-    p_Var6 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",filename,"rb");
-    if ((p_Var6 != (_FILE *)0x0) ||
-       (p_Var6 = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb"),
-       p_Var6 != (_FILE *)0x0)) {
-      iVar19 = 0;
-      iVar7 = 0;
+    p_Var5 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",filename,"rb");
+    if ((p_Var5 != (_FILE *)0x0) ||
+       (p_Var5 = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb"),
+       p_Var5 != (_FILE *)0x0)) {
+      iVar18 = 0;
+      iVar6 = 0;
       do {
-        uVar24 = (uint)(&g_CameraImagePaletteData.colors[0].b)[iVar19];
-        uVar27 = (uint)(&g_CameraImagePaletteData.colors[0].r)[iVar19];
-        uVar9 = (uint)(&g_CameraImagePaletteData.colors[0].g)[iVar19];
+        uVar23 = (uint)(&g_CameraImagePaletteData.colors[0].b)[iVar18];
+        uVar26 = (uint)(&g_CameraImagePaletteData.colors[0].r)[iVar18];
+        uVar8 = (uint)(&g_CameraImagePaletteData.colors[0].g)[iVar18];
         if (g_BitsPerPixel == 0x20) {
-          uVar24 = uVar24 << (g_BlueBitPosition.bytes[0] & 0x1f) |
-                   uVar9 << (g_GreenBitPosition.bytes[0] & 0x1f) |
-                   uVar27 << (g_RedBitPosition.bytes[0] & 0x1f);
+          uVar23 = uVar23 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                   uVar8 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                   uVar26 << (g_RedBitPosition.bytes[0] & 0x1f);
         }
         else {
-          uVar24 = uVar9 << 8 | uVar27 << 0x10 | uVar24;
+          uVar23 = uVar8 << 8 | uVar26 << 0x10 | uVar23;
         }
-        iVar15 = iVar7 + 4;
-        iVar19 = iVar19 + 3;
-        *(uint *)((int)g_CameraConvertedPalette + iVar7) = uVar24;
-        iVar7 = iVar15;
-      } while (iVar15 != 0x400);
-      _fread(g_CameraIndexedImageData,0x280,0x1e0,p_Var6);
-      _fclose(p_Var6);
-      fVar2 = this_ptr->max_distance;
-      if (fVar2 == 3.36312e-43) {
+        iVar14 = iVar6 + 4;
+        iVar18 = iVar18 + 3;
+        *(uint *)((int)g_CameraConvertedPalette + iVar6) = uVar23;
+        iVar6 = iVar14;
+      } while (iVar14 != 0x400);
+      _fread(g_CameraIndexedImageData,0x280,0x1e0,p_Var5);
+      _fclose(p_Var5);
+      iVar6 = this_ptr->framebuffer_height;
+      if (iVar6 == 0xf0) {
         local_20 = 0;
         do {
           local_94 = 0;
-          pbVar8 = (byte *)(g_CameraIndexedImageData + local_20);
-          piVar28 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
+          pbVar7 = (byte *)(g_CameraIndexedImageData + local_20);
+          piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
           do {
             local_94 = local_94 + 1;
-            *piVar28 = ((g_CameraConvertedPalette[*pbVar8] & 0xfcfcfc) >> 2) +
-                       ((g_CameraConvertedPalette[pbVar8[1]] & 0xfcfcfc) >> 2) +
-                       ((g_CameraConvertedPalette[pbVar8[0x280]] & 0xfcfcfc) >> 2) +
-                       ((g_CameraConvertedPalette[pbVar8[0x281]] & 0xfcfcfc) >> 2);
-            pbVar8 = pbVar8 + 2;
-            piVar28 = piVar28 + 1;
+            *piVar27 = ((g_CameraConvertedPalette[*pbVar7] & 0xfcfcfc) >> 2) +
+                       ((g_CameraConvertedPalette[pbVar7[1]] & 0xfcfcfc) >> 2) +
+                       ((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +
+                       ((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);
+            pbVar7 = pbVar7 + 2;
+            piVar27 = piVar27 + 1;
           } while (local_94 < 0x140);
           local_20 = local_20 + 0x500;
         } while (local_20 != 0x4b000);
         local_20 = 0x4b000;
       }
-      else if (fVar2 == 6.72623e-43) {
-        pcVar22 = g_CameraIndexedImageData;
-        iVar7 = 0;
-        puVar14 = this_ptr->framebuffer_aligned;
+      else if (iVar6 == 0x1e0) {
+        pcVar21 = g_CameraIndexedImageData;
+        iVar6 = 0;
+        puVar13 = this_ptr->framebuffer_aligned;
         do {
-          bVar1 = *pcVar22;
-          pcVar22 = pcVar22 + 1;
-          iVar7 = iVar7 + 1;
-          *puVar14 = g_CameraConvertedPalette[bVar1];
-          puVar14 = puVar14 + 1;
-        } while (iVar7 < 0x4b000);
+          bVar1 = *pcVar21;
+          pcVar21 = pcVar21 + 1;
+          iVar6 = iVar6 + 1;
+          *puVar13 = g_CameraConvertedPalette[bVar1];
+          puVar13 = puVar13 + 1;
+        } while (iVar6 < 0x4b000);
       }
-      else if ((int)fVar2 < 0x1e1) {
+      else if (iVar6 < 0x1e1) {
         local_88 = this_ptr->framebuffer_aligned;
-        uVar4 = 0x9600000 / (longlong)this_ptr->screen_width;
+        uVar3 = 0x9600000 / (longlong)this_ptr->framebuffer_width;
         local_84 = (uint)((longlong)
-                          ((ulonglong)(uint)((int)uVar4 >> 0x1f) << 0x20 | uVar4 & 0xffffffff) /
-                         (longlong)(int)this_ptr->max_distance);
+                          ((ulonglong)(uint)((int)uVar3 >> 0x1f) << 0x20 | uVar3 & 0xffffffff) /
+                         (longlong)this_ptr->framebuffer_height);
         local_7c = 0;
-        if (0 < (int)this_ptr->max_distance) {
+        if (0 < this_ptr->framebuffer_height) {
           local_28 = 0;
           do {
             local_80 = 0;
-            if (0 < this_ptr->screen_width) {
+            if (0 < this_ptr->framebuffer_width) {
               local_2c = 0;
               local_64 = local_28;
               do {
-                uVar9 = local_2c / this_ptr->screen_width;
-                uVar27 = local_28 / (int)this_ptr->max_distance;
-                local_6c = (int)(0x27d80 / (longlong)this_ptr->screen_width) + uVar9;
-                iVar19 = ((int)uVar27 >> 8) * 0x280;
-                local_68 = (int)(0x1de20 / (longlong)(int)this_ptr->max_distance) + uVar27;
-                local_60 = (int)uVar9 >> 8;
-                uVar24 = g_CameraConvertedPalette[(byte)g_CameraIndexedImageData[local_60 + iVar19]]
+                uVar8 = local_2c / this_ptr->framebuffer_width;
+                uVar26 = local_28 / this_ptr->framebuffer_height;
+                local_6c = (int)(0x27d80 / (longlong)this_ptr->framebuffer_width) + uVar8;
+                iVar18 = ((int)uVar26 >> 8) * 0x280;
+                local_68 = (int)(0x1de20 / (longlong)this_ptr->framebuffer_height) + uVar26;
+                local_60 = (int)uVar8 >> 8;
+                uVar23 = g_CameraConvertedPalette[(byte)g_CameraIndexedImageData[local_60 + iVar18]]
                 ;
-                iVar15 = 0xff - (uVar27 & 0xff);
-                uVar18 = uVar24 >> 8 & 0xff;
-                uVar10 = uVar24 >> 0x10 & 0xff;
-                iVar7 = 0xff - (uVar9 & 0xff);
+                iVar14 = 0xff - (uVar26 & 0xff);
+                uVar17 = uVar23 >> 8 & 0xff;
+                uVar9 = uVar23 >> 0x10 & 0xff;
+                iVar6 = 0xff - (uVar8 & 0xff);
                 local_5c = (int)local_6c >> 8;
-                uVar9 = g_CameraConvertedPalette[(byte)g_CameraIndexedImageData[iVar19 + local_5c]];
-                uVar11 = uVar9 >> 0x10 & 0xff;
-                uVar20 = uVar9 >> 8 & 0xff;
-                uVar21 = local_6c & 0xff;
+                uVar8 = g_CameraConvertedPalette[(byte)g_CameraIndexedImageData[iVar18 + local_5c]];
+                uVar10 = uVar8 >> 0x10 & 0xff;
+                uVar19 = uVar8 >> 8 & 0xff;
+                uVar20 = local_6c & 0xff;
                 local_58 = ((int)local_68 >> 8) * 0x280;
-                uVar27 = g_CameraConvertedPalette
+                uVar26 = g_CameraConvertedPalette
                          [(byte)g_CameraIndexedImageData[local_58 + local_60]];
-                uVar12 = uVar27 >> 0x10 & 0xff;
-                uVar31 = uVar27 >> 8 & 0xff;
-                uVar32 = local_68 & 0xff;
-                local_54 = uVar31 * iVar7;
-                uVar3 = g_CameraConvertedPalette
+                uVar11 = uVar26 >> 0x10 & 0xff;
+                uVar30 = uVar26 >> 8 & 0xff;
+                uVar31 = local_68 & 0xff;
+                local_54 = uVar30 * iVar6;
+                uVar2 = g_CameraConvertedPalette
                         [(byte)g_CameraIndexedImageData[local_58 + local_5c]];
-                local_78 = uVar3 & 0xff;
-                local_70 = uVar3 >> 0x10 & 0xff;
-                local_74 = uVar3 >> 8 & 0xff;
-                local_50 = local_74 * uVar21;
-                uVar24 = ((uVar24 & 0xff) * iVar15 + (uVar24 & 0xff) * iVar7 +
-                          (uVar9 & 0xff) * uVar21 + (uVar9 & 0xff) * iVar15 +
-                          (uVar27 & 0xff) * iVar7 + (uVar27 & 0xff) * uVar32 +
-                         local_78 * uVar32 + local_78 * uVar21) / local_84;
-                uVar9 = (uVar18 * iVar15 + uVar18 * iVar7 + uVar20 * uVar21 + uVar20 * iVar15 +
-                         local_54 + uVar31 * uVar32 + local_74 * uVar32 + local_50) / local_84;
-                uVar27 = (uVar10 * iVar15 + uVar10 * iVar7 + iVar15 * uVar11 + uVar11 * uVar21 +
-                          uVar12 * uVar32 + uVar12 * iVar7 + local_70 * uVar32 + uVar21 * local_70)
+                local_78 = uVar2 & 0xff;
+                local_70 = uVar2 >> 0x10 & 0xff;
+                local_74 = uVar2 >> 8 & 0xff;
+                local_50 = local_74 * uVar20;
+                uVar23 = ((uVar23 & 0xff) * iVar14 + (uVar23 & 0xff) * iVar6 +
+                          (uVar8 & 0xff) * uVar20 + (uVar8 & 0xff) * iVar14 +
+                          (uVar26 & 0xff) * iVar6 + (uVar26 & 0xff) * uVar31 +
+                         local_78 * uVar31 + local_78 * uVar20) / local_84;
+                uVar8 = (uVar17 * iVar14 + uVar17 * iVar6 + uVar19 * uVar20 + uVar19 * iVar14 +
+                         local_54 + uVar30 * uVar31 + local_74 * uVar31 + local_50) / local_84;
+                uVar26 = (uVar9 * iVar14 + uVar9 * iVar6 + iVar14 * uVar10 + uVar10 * uVar20 +
+                          uVar11 * uVar31 + uVar11 * iVar6 + local_70 * uVar31 + uVar20 * local_70)
                          / local_84;
-                if (0xff < uVar24) {
-                  uVar24 = 0xff;
+                if (0xff < uVar23) {
+                  uVar23 = 0xff;
                 }
-                if (0xff < uVar9) {
-                  uVar9 = 0xff;
+                if (0xff < uVar8) {
+                  uVar8 = 0xff;
                 }
-                if (0xff < uVar27) {
-                  uVar27 = 0xff;
+                if (0xff < uVar26) {
+                  uVar26 = 0xff;
                 }
                 local_80 = local_80 + 1;
-                *local_88 = uVar24 | uVar9 << 8 | uVar27 << 0x10;
+                *local_88 = uVar23 | uVar8 << 8 | uVar26 << 0x10;
                 local_88 = local_88 + 1;
                 local_2c = local_2c + 0x28000;
-              } while (local_80 < this_ptr->screen_width);
+              } while (local_80 < this_ptr->framebuffer_width);
             }
             local_28 = local_28 + 0x1e000;
             local_7c = local_7c + 1;
-          } while (local_7c < (int)this_ptr->max_distance);
+          } while (local_7c < this_ptr->framebuffer_height);
         }
       }
       else {
         local_90 = this_ptr->framebuffer_aligned;
         local_8c = 0;
-        if (0 < (int)this_ptr->max_distance) {
+        if (0 < this_ptr->framebuffer_height) {
           local_24 = 0;
           do {
-            iVar7 = 0;
-            if (0 < this_ptr->screen_width) {
-              iVar19 = 0;
+            iVar6 = 0;
+            if (0 < this_ptr->framebuffer_width) {
+              iVar18 = 0;
               do {
-                iVar15 = iVar19 / this_ptr->screen_width;
-                iVar19 = iVar19 + 0x280;
+                iVar14 = iVar18 / this_ptr->framebuffer_width;
+                iVar18 = iVar18 + 0x280;
                 *local_90 = g_CameraConvertedPalette
                             [(byte)g_CameraIndexedImageData
-                                   [iVar15 + (local_24 / (int)this_ptr->max_distance) * 0x280]];
+                                   [iVar14 + (local_24 / this_ptr->framebuffer_height) * 0x280]];
                 local_90 = local_90 + 1;
-                iVar7 = iVar7 + 1;
-              } while (iVar7 < this_ptr->screen_width);
+                iVar6 = iVar6 + 1;
+              } while (iVar6 < this_ptr->framebuffer_width);
             }
             local_24 = local_24 + 0x1e0;
             local_8c = local_8c + 1;
-          } while (local_8c < (int)this_ptr->max_distance);
+          } while (local_8c < this_ptr->framebuffer_height);
         }
       }
-      iVar19 = 0;
-      iVar7 = 0;
+      iVar18 = 0;
+      iVar6 = 0;
       do {
-        iVar13 = 0;
-        iVar15 = iVar7;
+        iVar12 = 0;
+        iVar14 = iVar6;
         do {
-          iVar16 = iVar13 >> 0x1f;
-          iVar17 = iVar13 + iVar16 * -0x100;
-          iVar13 = iVar13 + 0x280;
-          *(char *)((int)g_CameraTextureWorkBuffer + iVar15) =
+          iVar15 = iVar12 >> 0x1f;
+          iVar16 = iVar12 + iVar15 * -0x100;
+          iVar12 = iVar12 + 0x280;
+          *(char *)((int)g_CameraTextureWorkBuffer + iVar14) =
                g_CameraIndexedImageData
-               [((int)(iVar17 - (uint)(iVar16 << 7 < 0)) >> 8) +
-                ((int)((iVar19 + (iVar19 >> 0x1f) * -0x100) - (uint)((iVar19 >> 0x1f) << 7 < 0)) >>
+               [((int)(iVar16 - (uint)(iVar15 << 7 < 0)) >> 8) +
+                ((int)((iVar18 + (iVar18 >> 0x1f) * -0x100) - (uint)((iVar18 >> 0x1f) << 7 < 0)) >>
                 8) * 0x280];
-          iVar15 = iVar15 + 1;
-        } while (iVar13 != 0x28000);
-        iVar7 = iVar7 + 0x100;
-        iVar19 = iVar19 + 0x1e0;
-      } while (iVar7 != 0x10000);
+          iVar14 = iVar14 + 1;
+        } while (iVar12 != 0x28000);
+        iVar6 = iVar6 + 0x100;
+        iVar18 = iVar18 + 0x1e0;
+      } while (iVar6 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                 (g_CDemonRenderer_PTR_005ae704,&g_CameraBackdropTexture);
-      puVar14 = g_CameraTextureWorkBuffer;
-      puVar29 = (uint *)g_CurrentTextureData;
-      for (iVar7 = 0x4000; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar29 = *puVar14;
-        puVar14 = puVar14 + (uint)bVar33 * -2 + 1;
-        puVar29 = puVar29 + (uint)bVar33 * -2 + 1;
+      puVar13 = g_CameraTextureWorkBuffer;
+      puVar28 = (uint *)g_CurrentTextureData;
+      for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {
+        *puVar28 = *puVar13;
+        puVar13 = puVar13 + (uint)bVar32 * -2 + 1;
+        puVar28 = puVar28 + (uint)bVar32 * -2 + 1;
       }
-      for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(uchar *)puVar29 = (uchar)*puVar14;
-        puVar14 = (uint *)((int)puVar14 + (uint)bVar33 * -2 + 1);
-        puVar29 = (uint *)((int)puVar29 + (uint)bVar33 * -2 + 1);
+      for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+        *(uchar *)puVar28 = (uchar)*puVar13;
+        puVar13 = (uint *)((int)puVar13 + (uint)bVar32 * -2 + 1);
+        puVar28 = (uint *)((int)puVar28 + (uint)bVar32 * -2 + 1);
       }
-      pSVar25 = &g_CameraImagePaletteData;
-      pSVar30 = g_CurrentPalette;
-      for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(uint *)pSVar30->colors = *(uint *)pSVar25->colors;
-        pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -8 + 4);
-        pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);
+      pSVar24 = &g_CameraImagePaletteData;
+      pSVar29 = g_CurrentPalette;
+      for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
+        *(uint *)pSVar29->colors = *(uint *)pSVar24->colors;
+        pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -8 + 4);
+        pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -8 + 4);
       }
-      for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        pSVar30->colors[0].r = pSVar25->colors[0].r;
-        pSVar25 = (SRGBColorPalette *)((int)pSVar25 + (uint)bVar33 * -2 + 1);
-        pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);
+      for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+        pSVar29->colors[0].r = pSVar24->colors[0].r;
+        pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -2 + 1);
+        pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -2 + 1);
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
                 (g_CDemonRenderer_PTR_005ae704,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
@@ -456,25 +455,25 @@ LAB_00443363:
         iStack_18 = 0;
         iStack_1c = 0;
         do {
-          iVar19 = 0;
-          iVar7 = 0;
+          iVar18 = 0;
+          iVar6 = 0;
           do {
-            iVar15 = 0;
+            iVar14 = 0;
             if (0 < g_ImageBytesPerPixel) {
-              iVar13 = ((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0))
+              iVar12 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
                        >> 8) + (iStack_18 / 0xc0) * 0x140;
-              iVar17 = iStack_1c + iVar19;
+              iVar16 = iStack_1c + iVar18;
               do {
-                iVar15 = iVar15 + 1;
-                g_CameraImageDecompressBuffer[0].pixels[0][iVar17] =
-                     g_CameraImageDecompressBuffer[0].pixels[0][iVar13];
-                iVar13 = iVar13 + 0x12c00;
-                iVar17 = iVar17 + 0x12c00;
-              } while (iVar15 < g_ImageBytesPerPixel);
+                iVar14 = iVar14 + 1;
+                g_CameraImageDecompressBuffer[0].pixels[0][iVar16] =
+                     g_CameraImageDecompressBuffer[0].pixels[0][iVar12];
+                iVar12 = iVar12 + 0x12c00;
+                iVar16 = iVar16 + 0x12c00;
+              } while (iVar14 < g_ImageBytesPerPixel);
             }
-            iVar19 = iVar19 + 1;
-            iVar7 = iVar7 + 0x140;
-          } while (iVar19 < 0x100);
+            iVar18 = iVar18 + 1;
+            iVar6 = iVar6 + 0x140;
+          } while (iVar18 < 0x100);
           iStack_18 = iStack_18 + 0xf0;
           iStack_1c = iStack_1c + 0x140;
         } while (iStack_18 != 0xb400);

@@ -251,6 +251,43 @@ TEST_F(CFadeCreditsTest, ALineAtTheMiddleIsOpaqueAndCentred) {
     EXPECT_EQ(screen_.pixel(column, row), kTextPixel);
 }
 
+// A marked line drops its two-character mark; "\b" makes it a heading in its own colour, and a
+// mark alone leaves nothing to draw.
+TEST_F(CFadeCreditsTest, MarkedLinesDropTheirMarkAndBIsAHeading) {
+    constexpr int kFrames = 31;
+    const auto rolled = [this](const std::string &credits) {
+        givenCredits(credits);
+        ticks_ = 0;
+        keyboard_[static_cast<std::size_t>(EInputCodeType::DIK_ESCAPE)] = 0;
+        cancelAfterFrames(kFrames);
+        game_.rollCredits();
+        return firstText();
+    };
+    const auto plain = rolled("XX\nend\n");
+    const std::uint32_t plain_pixel = screen_.pixel(plain.second, plain.first);
+    const auto marked = rolled("\\cXX\nend\n");
+    EXPECT_EQ(marked, plain);
+    EXPECT_EQ(screen_.pixel(marked.second, marked.first), plain_pixel);
+    const auto heading = rolled("\\bXX\nend\n");
+    EXPECT_EQ(heading, plain);
+    EXPECT_NE(screen_.pixel(heading.second, heading.first), plain_pixel);
+    EXPECT_EQ(rolled("\\\nend\n").first, -1);
+}
+
+// Once the first line rises above the top it isn't drawn; those under it still are.
+TEST_F(CFadeCreditsTest, ALineAboveTheTopIsLeftOut) {
+    std::string credits;
+    for (int i = 0; i < 40; ++i) {
+        credits += "XX\n";
+    }
+    givenCredits(credits + "end\n");
+    const int frames = (kHeight / kRowsPerFrame) + 3;
+    ASSERT_LT(topAfterFrames(frames), 0);
+    cancelAfterFrames(frames);
+    game_.rollCredits();
+    EXPECT_GE(firstText().first, 0);
+}
+
 // Further from the middle, fainter.
 TEST_F(CFadeCreditsTest, ALineAwayFromTheMiddleIsFainter) {
     givenCredits("XX\nend\n");
@@ -356,6 +393,13 @@ TEST_F(CTwoColumnCreditsTest, AMarkedLineIsInTwoColumns) {
 
 TEST_F(CTwoColumnCreditsTest, ALineMarkedForColumnsWithoutTheSecondIsNotDrawn) {
     givenCredits("\\1XXXX\nend\n");
+    cancelAfterFrames(11);
+    game_.rollCredits();
+    EXPECT_EQ(firstText().row, -1);
+}
+
+TEST_F(CTwoColumnCreditsTest, ALineWithNothingBeforeTheSecondColumnIsNotDrawn) {
+    givenCredits("\\1\\2XX\nend\n");
     cancelAfterFrames(11);
     game_.rollCredits();
     EXPECT_EQ(firstText().row, -1);

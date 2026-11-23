@@ -22,7 +22,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760(C
   }
   uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +
                    (((vertex->projected_vertex).screen_x >> 0x10) +
-                   ((vertex->projected_vertex).screen_y >> 0x10) * this_ptr->screen_width) * 4);
+                   ((vertex->projected_vertex).screen_y >> 0x10) * this_ptr->framebuffer_width) * 4)
+  ;
   bVar2 = g_GreenBitPosition.bytes[0] & 0x1f;
   vertex->r = (uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f) & 0xff) << 8;
   vertex->g = (uVar1 >> bVar2 & 0xff) << 8;

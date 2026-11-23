@@ -232,7 +232,7 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | g_CDemonSetPtr
     PUSH ECX                            ; 0049fb06 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0 ; 0049fb07
-        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
+        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet * this_ptr, int viewport_x, int viewport_y, int screen_height)
         ;   Label: LAB_0049fb07
     ADD ESP,0x10                        ; 0049fb0c
     CMP dword ptr [EBX + 0x210],0x0     ; 0049fb0f
@@ -788,7 +788,7 @@ section .text
     PUSH ECX                            ; 004a00db | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x1     ; 004a00dc
     CALL core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0 ; 004a00e6
-        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
+        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet * this_ptr, int viewport_x, int viewport_y, int screen_height)
     MOV EAX,[0x005be220]                ; 004a00eb | g_CScriptPtr
     MOV dword ptr [EBX + 0x1dc],0x1     ; 004a00f0
     MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | g_CScriptInstance.script_state

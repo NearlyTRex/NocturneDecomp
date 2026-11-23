@@ -318,6 +318,17 @@ TEST_F(CDFontTest, AScaleBeforeTheFontsAreMadeHasNothingToSet) {
     EXPECT_EQ(fonts_.getThemeFont(), nullptr);
 }
 
+// A font the package gives no OS size keeps its bitmap text.
+TEST_F(CDFontTest, AFontWithoutAnOsSizeKeepsItsBitmap) {
+    const auto first_with_size = std::ranges::find_if(
+        content_.fonts, [](const engine::SFontSpec &spec) { return spec.os_font.has_value(); });
+    ASSERT_NE(first_with_size, content_.fonts.end());
+    first_with_size->os_font.reset();
+    fonts_.setOsFontChoice(EOsFontChoice::System);
+    EXPECT_CALL(os_fonts_, createOsFont).Times(3);
+    fonts_.initFonts();
+}
+
 TEST_F(CDFontTest, TheSystemChoiceUsesOsFontsWithoutAMessageFile) {
     fonts_.setOsFontChoice(EOsFontChoice::System);
     EXPECT_CALL(os_fonts_, createOsFont).Times(4);

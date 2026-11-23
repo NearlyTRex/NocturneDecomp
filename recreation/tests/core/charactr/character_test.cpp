@@ -12,6 +12,7 @@
 #include "core/game/game.h"
 #include "core/npc/npc.h"
 #include "core/skeleton/deformablemodelinstance.h"
+#include "tests/mocks/common/vector3fequal.h"
 #include "tests/mocks/core/actorrenderfixture.h"
 #include "tests/mocks/core/charactermodelfixture.h"
 #include "tests/mocks/core/gameparts.h"
@@ -367,6 +368,17 @@ TEST_F(CCharacterArchiveTest, AHandPastTheTwoIsFatal) {
     }
 }
 
+// A character holds no victim to let go of, so placing it is the actor's placing.
+TEST(CCharacter, PlacingACharacterMovesAndTurnsIt) {
+    CTestClasses classes;
+    CTestCharacter character(classes.get());
+    common::CVector3f place{.x = 1.0F, .y = -2.0F, .z = 3.0F};
+    common::CVector3f turn{.x = 0.25F, .y = 0.5F, .z = 0.75F};
+    character.setPositionAndOrientation(&place, &turn);
+    EXPECT_TRUE(common::isSameVector(character.getLocation().position, place));
+    EXPECT_TRUE(common::isSameVector(character.getOrientation(), turn));
+}
+
 TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
     CTestClasses classes;
     CTestCharacter character(classes.get());
@@ -375,8 +387,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"renderTransparent", [&] { static_cast<void>(character.renderTransparent()); }},
         {"getCollisionType", [&] { static_cast<void>(character.getCollisionType(nullptr)); }},
         {"canLookAt", [&] { static_cast<void>(character.canLookAt()); }},
-        {"setPositionAndOrientation",
-         [&] { character.setPositionAndOrientation(nullptr, nullptr); }},
         {"drop", [&] { character.drop(nullptr, nullptr); }},
         {"spawnFlies", [&] { character.spawnFlies(0, 0.0F); }},
         {"calculateChecksum", [&] { character.calculateChecksum(nullptr); }},
@@ -387,7 +397,6 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"canBeGrabbed", [&] { static_cast<void>(character.canBeGrabbed(nullptr, 0)); }},
         {"getGrabbed", [&] { static_cast<void>(character.getGrabbed(nullptr, 0)); }},
         {"releaseFromGrab", [&] { character.releaseFromGrab(); }},
-        {"releaseVictim", [&] { character.releaseVictim(); }},
         {"onVictimLost", [&] { character.onVictimLost(nullptr); }},
         {"checkCylinderCollisionWorld",
          [&] { static_cast<void>(character.checkCylinderCollisionWorld(nullptr, 0.0F, nullptr)); }},
@@ -409,7 +418,7 @@ TEST(CCharacter, TheFunctionsNotPortedYetQuit) {
         {"setWalkTimeout", [&] { character.setWalkTimeout(0.0F); }},
         {"isWalkComplete", [&] { static_cast<void>(character.isWalkComplete()); }},
     };
-    EXPECT_EQ(calls.size(), 32U);
+    EXPECT_EQ(calls.size(), 30U);
     expectEachQuitsNotPorted("CCharacter", calls);
 }
 

@@ -62,7 +62,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
   pCStack_34 = &this_ptr->rotation_matrix;
   iStack_18 = 1;
   do {
-    if ((int)this_ptr->max_distance + -1 <= iStack_18) {
+    if (this_ptr->framebuffer_height + -1 <= iStack_18) {
       return output_bounds;
     }
     iStack_2c = iStack_18 + 1;
@@ -70,7 +70,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
     iStack_30 = iStack_38;
     iStack_1c = 0;
     iStack_24 = iStack_2c;
-    for (iStack_14 = 1; iStack_14 < this_ptr->screen_width + -1; iStack_14 = iStack_14 + 1) {
+    for (iStack_14 = 1; iStack_14 < this_ptr->framebuffer_width + -1; iStack_14 = iStack_14 + 1) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
                 (this_ptr,iStack_14,iStack_18,&CStack_d4);
       CStack_80.x = CStack_d4.x;
@@ -111,7 +111,7 @@ LAB_0044808b:
                *(int *)((int)&CStack_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
           if (0x1f400 < aiStack_c4[1]) goto LAB_0044808b;
         }
-        if ((iStack_14 < 2) || ((int)this_ptr->max_distance + -2 <= iStack_18)) {
+        if ((iStack_14 < 2) || (this_ptr->framebuffer_height + -2 <= iStack_18)) {
 LAB_0044809a:
           uVar2 = uVar2 + 1;
         }
@@ -124,7 +124,7 @@ LAB_0044809a:
                *(int *)((int)&CStack_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
           if (0x1f400 < aiStack_ac[1]) goto LAB_0044809a;
         }
-        if ((iStack_14 < this_ptr->screen_width + -2) && (1 < iStack_18)) {
+        if ((iStack_14 < this_ptr->framebuffer_width + -2) && (1 < iStack_18)) {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
                     (this_ptr,iStack_14 + 1,iStack_28,&CStack_8c);
           iStack_98 = CStack_8c.x;
@@ -137,8 +137,8 @@ LAB_0044809a:
 LAB_004480b3:
           uVar2 = uVar2 + 1;
         }
-        if ((iStack_14 < this_ptr->screen_width + -2) &&
-           (iStack_18 < (int)this_ptr->max_distance + -2)) {
+        if ((iStack_14 < this_ptr->framebuffer_width + -2) &&
+           (iStack_18 < this_ptr->framebuffer_height + -2)) {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
                     (this_ptr,iStack_14 + 1,iStack_24,&CStack_44);
           iStack_74 = CStack_44.x;

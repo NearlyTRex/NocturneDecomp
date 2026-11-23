@@ -53,12 +53,12 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_0049ab50(CGame *this_ptr)
     }
     engine_3d_c_setRenderAlpha_FUN_00408370(iVar3);
     local_38 = g_ThemeFont;
-    if (g_CDemonCameraInstance.screen_width < 0x1e0) {
+    if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
       local_38 = g_SmallEditorFont;
     }
     iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
                       (local_38,this_ptr->message_text,g_WrappedTextBuffer[0],10,0x100,
-                       (g_CDemonCameraInstance.screen_width * 9) / 10);
+                       (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
     local_48 = iVar3;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(local_38,0x58);
     iVar3 = g_WindowHeight - iVar3 * iVar5;

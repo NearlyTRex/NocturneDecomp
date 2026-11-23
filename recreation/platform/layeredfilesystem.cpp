@@ -51,8 +51,8 @@ bool CLayeredFileSystem::isLayered(std::string_view path) const {
     return !folders_.empty() && !isAbsolute(path);
 }
 
-std::string CLayeredFileSystem::inFolder(const std::string &folder, std::string_view path) const {
-    if (folder.empty() || !isLayered(path)) {
+std::string CLayeredFileSystem::inFolder(const std::string &folder, std::string_view path) {
+    if (folder.empty()) {
         return std::string(path);
     }
     return common::joinPath(folder, normalise(path));
@@ -77,7 +77,7 @@ std::string CLayeredFileSystem::makeWritePath(std::string_view path) {
     }
     std::string target = inFolder(folders_.front(), path);
     const std::string portable = common::toPortablePath(target);
-    if (const std::size_t slash = portable.rfind('/'); slash != std::string::npos && slash > 0) {
+    if (const std::size_t slash = portable.rfind('/'); slash != std::string::npos) {
         const std::string parent = portable.substr(0, slash);
         if (!host_.getFileInfo(parent)) {
             host_.makeDirectory(parent);
@@ -149,16 +149,14 @@ bool CLayeredFileSystem::removeDirectory(std::string_view path) {
 }
 
 std::unique_ptr<IFile> CLayeredFileSystem::openFile(std::string_view path, EFileMode mode) {
-    switch (mode) {
-    case EFileMode::Read:
+    if (mode == EFileMode::Read) {
         return host_.openFile(findPath(path), mode);
-    case EFileMode::Write:
-        return host_.openFile(makeWritePath(path), mode);
-    case EFileMode::Append:
-    case EFileMode::Update:
-        return host_.openFile(copyForChange(path), mode);
     }
-    return nullptr;
+    if (mode == EFileMode::Write) {
+        return host_.openFile(makeWritePath(path), mode);
+    }
+    // Appending and updating change the file, so they work on the writable layer's copy.
+    return host_.openFile(copyForChange(path), mode);
 }
 
 std::optional<std::string> CLayeredFileSystem::getFullPath(std::string_view path) {

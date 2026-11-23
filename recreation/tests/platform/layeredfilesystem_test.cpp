@@ -129,6 +129,50 @@ TEST_F(CLayeredFileSystemTest, AbsolutePathsAreTheHosts) {
     EXPECT_TRUE(files_.removeDirectory("/elsewhere/c"));
 }
 
+// A Windows root or drive is absolute too; a one-letter name isn't.
+TEST_F(CLayeredFileSystemTest, WindowsRootsAndDrivesAreTheHosts) {
+    disk_.givenFile("\\share\\a.txt", "share");
+    disk_.givenFile("C:\\a.txt", "drive");
+    disk_.givenFile("game/a", "layered");
+    EXPECT_THAT(files_.readFile("\\share\\a.txt"), Optional(std::string("share")));
+    EXPECT_THAT(files_.readFile("C:\\a.txt"), Optional(std::string("drive")));
+    EXPECT_THAT(files_.readFile("a"), Optional(std::string("layered")));
+}
+
+// Appending to an absolute path, or opening one to append, is the host's alone.
+TEST_F(CLayeredFileSystemTest, AnAbsoluteChangeIsTheHosts) {
+    disk_.givenFile("/elsewhere/log.txt", "one\n");
+    EXPECT_TRUE(files_.appendFile("/elsewhere/log.txt", "two\n"));
+    EXPECT_THAT(disk_.contents("/elsewhere/log.txt"), Optional(std::string("one\ntwo\n")));
+    EXPECT_NE(files_.openFile("/elsewhere/log.txt", EFileMode::Append), nullptr);
+    EXPECT_FALSE(disk_.contents("user/elsewhere/log.txt").has_value());
+}
+
+// Opened to append, a shipped file is copied up as a change is.
+TEST_F(CLayeredFileSystemTest, OpeningToAppendCopiesTheFileUp) {
+    disk_.givenFile("game/log.txt", "one\n");
+    EXPECT_NE(files_.openFile("log.txt", EFileMode::Append), nullptr);
+    EXPECT_THAT(disk_.contents("user/log.txt"), Optional(std::string("one\n")));
+}
+
+// A copy whose source can't then be looked at keeps the copy's own time.
+TEST_F(CLayeredFileSystemTest, ACopyWithoutItsSourcesTimeKeepsItsOwn) {
+    disk_.givenFile("game/log.txt", "one\n", 1000);
+    ON_CALL(disk_.host_, getFileInfo(std::string_view("game/log.txt")))
+        .WillByDefault(::testing::Return(std::nullopt));
+    EXPECT_TRUE(files_.appendFile("log.txt", "two\n"));
+    EXPECT_THAT(disk_.contents("user/log.txt"), Optional(std::string("one\ntwo\n")));
+    EXPECT_NE(disk_.modified("user/log.txt"), 1000);
+}
+
+// Written to the working directory, no folder is made for it.
+TEST_F(CLayeredFileSystemTest, AWriteAtTheTopMakesNoFolder) {
+    EXPECT_CALL(disk_.host_, makeDirectory).Times(0);
+    files_.setFolders({"", "game"});
+    EXPECT_TRUE(files_.writeFile("a.txt", "here"));
+    EXPECT_TRUE(disk_.contents("a.txt").has_value());
+}
+
 TEST_F(CLayeredFileSystemTest, TheCacheFolderIsTheHosts) {
     EXPECT_CALL(disk_.host_, getCacheFolder(std::string_view("Nocturne")))
         .WillOnce(::testing::Return(std::optional<std::string>("/cache/nocturne")));
