@@ -22,10 +22,10 @@ typedef struct CDemonCamera {
     CMatrix3x3f rotation_matrix; // 0x110
     int dead; // 0x134
     float focal_length; // 0x138
-    int screen_width; // 0x13c
-    float max_distance; // 0x140
-    int framebuffer_width; // 0x144
-    int framebuffer_height; // 0x148
+    int framebuffer_width; // 0x13c
+    int framebuffer_height; // 0x140
+    int viewport_x; // 0x144
+    int viewport_y; // 0x148
     int scale_factor; // 0x14c
     int display_width; // 0x150
     int display_height; // 0x154

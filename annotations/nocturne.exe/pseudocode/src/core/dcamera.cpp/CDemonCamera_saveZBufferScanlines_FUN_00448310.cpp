@@ -14,16 +14,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310(CDe
   int iVar3;
   
   iVar3 = 0;
-  if (0 < (int)this_ptr->max_distance) {
+  if (0 < this_ptr->framebuffer_height) {
     do {
-      iVar1 = this_ptr->screen_width * iVar3;
-      iVar2 = this_ptr->framebuffer_height + iVar3;
+      iVar1 = this_ptr->framebuffer_width * iVar3;
+      iVar2 = this_ptr->viewport_y + iVar3;
       iVar3 = iVar3 + 1;
       _memcpy
                 ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                 g_ZBufferScanlineArray[iVar2] + this_ptr->framebuffer_width,
-                 this_ptr->screen_width << 2);
-    } while (iVar3 < (int)this_ptr->max_distance);
+                 g_ZBufferScanlineArray[iVar2] + this_ptr->viewport_x,
+                 this_ptr->framebuffer_width << 2);
+    } while (iVar3 < this_ptr->framebuffer_height);
   }
   return;
 }

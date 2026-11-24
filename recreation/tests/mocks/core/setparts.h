@@ -44,7 +44,7 @@ public:
                                          engine::IScreenDevice &screen,
                                          engine::IRawInput &raw_input) {
         const SDemonLightOwners light_owners =
-            light_parts.owners(screen, special, renderer, dosio_);
+            light_parts.owners(screen, special, renderer, dosio_, matrix, two_d);
         if (!camera) {
             camera = std::make_unique<CDemonCamera>(light_owners.camera);
             flashlight =

@@ -1,6 +1,7 @@
 #include "core/menu/menu.h"
 #include "core/sound/sound.h"
 #include "platform/rendervertex.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/menufixture.h"
 #include "tests/mocks/sound/wavfile.h"
 
@@ -148,7 +149,7 @@ TEST_F(CAudioSpectrumTest, EachChannelHasABarEveryFourColumnsAcrossItsHalf) {
 TEST_F(CAudioSpectrumTest, AMirroredSpectrumRunsItsRightHalfBackwards) {
     std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
     ASSERT_TRUE(menu.has_value());
-    menu->spectrum->mirrored = true;
+    common::required(menu->spectrum).mirrored = true;
     playMusic();
     menu_.drawAudioSpectrum();
     std::vector<int> expected;

@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 556,
+    "complexity_score": 541,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 201,
-    "suspect_count": 32,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "struct_field_overrun",
-      "suspect_float"
+      "struct_field_overrun"
     ],
     "total_lines": 637
   },
@@ -457,14 +456,6 @@
       "severity": "moderate",
       "text": "int aiStackY_185c [1523];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 81,
-      "match": "6.72623e-43",
-      "severity": "mild",
-      "text": "if ((rect == (CRect *)0x0) || (this_ptr->max_distance != 6.72623e-43)) {",
-      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",

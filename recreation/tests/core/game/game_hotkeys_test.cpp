@@ -143,6 +143,23 @@ TEST_F(CGameHotkeysTest, EditModeStepsThroughTheCameras) {
     EXPECT_TRUE(game_.game_active);
 }
 
+// Ctrl+Y in developer mode; pausing lets go of the mouse's buttons, resuming leaves them.
+TEST_F(CGameHotkeysTest, PauseTurnsOnAndOffInDeveloperMode) {
+    ::testing::NiceMock<engine::MockRawInput> &raw_input = game_parts_.getRawInput();
+    EXPECT_CALL(raw_input, clearMouseClicks()).Times(0);
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Y});
+    EXPECT_FALSE(game_.is_paused);
+    ::testing::Mock::VerifyAndClearExpectations(&raw_input);
+    game_.developer_mode = true;
+    EXPECT_CALL(raw_input, clearMouseClicks());
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Y});
+    EXPECT_TRUE(game_.is_paused);
+    ::testing::Mock::VerifyAndClearExpectations(&raw_input);
+    EXPECT_CALL(raw_input, clearMouseClicks()).Times(0);
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Y});
+    EXPECT_FALSE(game_.is_paused);
+}
+
 // On a screen of 480 lines or more. The original shrank the scene to the top 240 lines.
 TEST_F(CGameHotkeysTest, TheScriptViewTurnsOnAndOffLeavingTheSceneWhole) {
     game_.developer_mode = true;

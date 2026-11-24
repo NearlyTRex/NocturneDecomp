@@ -64,9 +64,8 @@ protected:
     }
 
     void play() {
-        EXPECT_THAT(
-            [this] { static_cast<void>(game_.runGameSession(session_)); },
-            ThrowsMessage<common::CFatalError>(StrEq("CGame::processFrame is not ported yet")));
+        EXPECT_THAT([this] { static_cast<void>(game_.runGameSession(session_)); },
+                    ThrowsMessage<common::CFatalError>(StrEq("CGame::process is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
@@ -239,6 +238,15 @@ TEST_F(CGameSessionTest, TheLoadingScreenIsPutAwayAndReportsItsUpdates) {
         reported = reported || console_.getRow(row) == "gLevelIndicator: Used 0 calls";
     }
     EXPECT_TRUE(reported);
+}
+
+// A paused first frame is drawn without processing the game; the play loop after it waits for its
+// port.
+TEST_F(CGameSessionTest, APausedSessionPlaysItsFirstFrame) {
+    game_.is_paused = true;
+    EXPECT_THAT(
+        [this] { static_cast<void>(game_.runGameSession(session_)); },
+        ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
 }
 
 // Play reads the extended keys, which the menus fold away.

@@ -18,9 +18,9 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CCameraView` | 0x0 |  | 0x0 | 0x0 | 0x0 |
 | `camera_name` | `char[256]` | 0x40 | 0x0 | 0x40 | 0x40 | 0x40 |
-| `max_distance` | `float` | 0x140 | 0x140 | 0x140 | 0x140 | 0x140 |
-| `framebuffer_width` | `int` | 0x144 | 0x144 | 0x144 | 0x144 | 0x144 |
-| `framebuffer_height` | `int` | 0x148 | 0x148 | 0x148 | 0x148 | 0x148 |
+| `max_distance` | `float` | 0x140 |  | 0x140 | 0x140 | 0x140 |
+| `framebuffer_width` | `int` | 0x144 | 0x13c | 0x144 | 0x144 | 0x144 |
+| `framebuffer_height` | `int` | 0x148 | 0x140 | 0x148 | 0x148 | 0x148 |
 | `scale_factor` | `int` | 0x14c | 0x14c | 0x14c | 0x14c | 0x14c |
 | `display_width` | `int` | 0x150 | 0x150 | 0x150 | 0x150 | 0x150 |
 | `display_height` | `int` | 0x154 | 0x154 | 0x154 | 0x154 | 0x154 |
@@ -46,4 +46,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `rotation_matrix` | `CMatrix3x3f` |  | 0x110 |  |  |  |
 | `dead` | `int` |  | 0x134 |  |  |  |
 | `focal_length` | `float` |  | 0x138 |  |  |  |
-| `screen_width` | `int` |  | 0x13c |  |  |  |
+| `viewport_x` | `int` |  | 0x144 |  |  |  |
+| `viewport_y` | `int` |  | 0x148 |  |  |  |

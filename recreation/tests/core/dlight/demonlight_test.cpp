@@ -83,7 +83,8 @@ protected:
     }
 
     CLightParts parts_;
-    CDemonLight light_{parts_.owners(screen_, special_, demon_renderer_, dosio_), 256, 256};
+    CDemonLight light_{parts_.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_),
+                       256, 256};
 };
 
 TEST_F(CDemonLightTest, ALightStartsOnWithACircularShadowAndNoBuffers) {
@@ -137,7 +138,8 @@ TEST_F(CDemonLightTest, TheIntensityPicksTheGlobalFilter) {
 }
 
 TEST_F(CDemonLightTest, ALightWiderThan256PicksAPlayerFilter) {
-    CDemonLight wide{parts_.owners(screen_, special_, demon_renderer_, dosio_), 512, 512};
+    CDemonLight wide{parts_.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_),
+                     512, 512};
     wide.setVolumetricIntensity(0.7F);
     EXPECT_EQ(wide.getPrecomputedLightingTextures().data(), dataOf(parts_.player_filters[2]));
     EXPECT_EQ(wide.getShadowXShift(), 8 + 9 + 5);

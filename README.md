@@ -18,7 +18,7 @@ included; you need your own copy. More in **[docs/about.md](docs/about.md)**.
   playable, with rough edges still being fixed. macOS and Arm Linux build but haven't been
   played yet, so [testers are wanted](docs/ports.md).
 - **The recreation is being ported** in startup order, under a 100% coverage gate, and is not
-  playable yet. [Itinerary](docs/recreation-itinerary.md).
+  playable yet. [Itinerary](docs/recreation-itinerary.md), [screenshots](screenshots/README.md).
 - **The Ghidra annotation is ongoing** for `nocedit.exe`, `nocturne.exe`, `tridx7.dll` and the
   three Blair Witch games. [Progress](docs/progress.md).
 
@@ -52,6 +52,7 @@ Presets, prerequisites and the Windows, macOS and Arm lanes are in
 | | |
 |---|---|
 | [About](docs/about.md) | Goals, the two source trees, licensing, tools |
+| [Screenshots](screenshots/README.md) | Screenshots from the decompilation/recreation |
 | [Progress](docs/progress.md) | Decompilation and compilation charts for every binary |
 | [Ports](docs/ports.md) | Each platform's status, and how to report a test |
 | [Mod support](docs/mod-support.md) | Packages, manifests and the Blair Witch games |

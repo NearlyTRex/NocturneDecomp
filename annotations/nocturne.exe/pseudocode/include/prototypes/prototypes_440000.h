@@ -37,7 +37,7 @@
 // =============================================================================
 
 void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_ptr,int screen_height);
-void __cdecl core_dcamera_cpp_CDemonCamera_setFramebufferSize_FUN_004401b0(CDemonCamera *this_ptr,int width,int height);
+void __cdecl core_dcamera_cpp_CDemonCamera_setViewportOrigin_FUN_004401b0(CDemonCamera *this_ptr,int viewport_x,int viewport_y);
 void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_004401d0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(CDemonCamera *this_ptr,int skip_clear_buffers);
 void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(CDemonCamera *this_ptr);

@@ -6,6 +6,7 @@
 #include <cctype>
 #include <cstdio>
 #include <optional>
+#include <print>
 #include <string>
 
 namespace nocturne::platform::sdl {
@@ -42,16 +43,16 @@ namespace {
 
 SPathRootDefaults getPathRootDefaults() {
     SPathRootDefaults defaults;
-#if defined(NOCTURNE_DATA_DIR_FROM_SDL)
+#ifdef NOCTURNE_DATA_DIR_FROM_SDL
     // An empty organisation leaves one level: ~/Library/Application Support/NocturneDecomp/.
     defaults.data = getPrefPath("", "NocturneDecomp");
     defaults.data_filled_by_hand = true;
-#elif defined(NOCTURNE_DEFAULT_DATA_DIR)
+#elifdef NOCTURNE_DEFAULT_DATA_DIR
     defaults.data = NOCTURNE_DEFAULT_DATA_DIR;
 #endif
-#if defined(NOCTURNE_USER_DIR_FROM_SDL)
+#ifdef NOCTURNE_USER_DIR_FROM_SDL
     defaults.user = getPrefPath("NocturneDecomp", "Nocturne");
-#elif defined(NOCTURNE_DEFAULT_USER_DIR)
+#elifdef NOCTURNE_DEFAULT_USER_DIR
     defaults.user = NOCTURNE_DEFAULT_USER_DIR;
 #endif
     return defaults;
@@ -59,7 +60,7 @@ SPathRootDefaults getPathRootDefaults() {
 
 void reportMissingGameData(const SPathRoots &roots, std::string_view message) {
     const std::string text(message);
-    std::fprintf(stderr, "nocturne: %s\n", text.c_str());
+    std::println(stderr, "nocturne: {}", text);
     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Nocturne", text.c_str(), nullptr);
     if (roots.filled_by_hand) {
         SDL_OpenURL(makeFileUrl(roots.data).c_str());

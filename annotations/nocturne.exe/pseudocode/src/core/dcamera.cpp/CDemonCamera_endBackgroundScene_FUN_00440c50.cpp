@@ -37,16 +37,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
     g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
-      if (0 < (int)this_ptr->max_distance) {
+      if (0 < this_ptr->framebuffer_height) {
         do {
-          iVar4 = this_ptr->screen_width * iVar3;
-          iVar1 = this_ptr->framebuffer_height + iVar3;
+          iVar4 = this_ptr->framebuffer_width * iVar3;
+          iVar1 = this_ptr->viewport_y + iVar3;
           iVar3 = iVar3 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_00465341
                     ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
-                     g_ZBufferScanlineArray[iVar1] + this_ptr->screen_width,
-                     this_ptr->screen_width * 4);
-        } while (iVar3 < (int)this_ptr->max_distance);
+                     g_ZBufferScanlineArray[iVar1] + this_ptr->framebuffer_width,
+                     this_ptr->framebuffer_width * 4);
+        } while (iVar3 < this_ptr->framebuffer_height);
       }
       if (g_UseExternalRenderer != 0) {
         engine_special_cpp_masterZBuffer_FUN_00532c70(0);

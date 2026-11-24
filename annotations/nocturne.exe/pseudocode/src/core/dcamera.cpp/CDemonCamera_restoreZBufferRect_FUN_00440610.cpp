@@ -27,8 +27,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(CDemo
         core_dstrendr_cpp_memcpyMMX_FUN_00465341
                   ((void *)(rect_ptr->x_min * 4 + *(int *)((int)g_ZBufferScanlineArray + local_14)),
                    (void *)((int)this_ptr->zbuffer_aligned +
-                           (((iVar1 - this_ptr->framebuffer_height) * this_ptr->screen_width +
-                            rect_ptr->x_min) - this_ptr->framebuffer_width) * 4),
+                           (((iVar1 - this_ptr->viewport_y) * this_ptr->framebuffer_width +
+                            rect_ptr->x_min) - this_ptr->viewport_x) * 4),
                    (rect_ptr->x_max - rect_ptr->x_min) * 4 + 4);
         iVar1 = iVar1 + 1;
         local_14 = local_14 + 4;

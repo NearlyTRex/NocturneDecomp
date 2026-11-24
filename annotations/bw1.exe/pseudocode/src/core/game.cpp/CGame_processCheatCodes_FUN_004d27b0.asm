@@ -529,7 +529,7 @@ section .text
     PUSH ECX                            ; 004d2c94 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x2a8],0x1     ; 004d2c95
     CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0 ; 004d2c9f
-        ;   XREF to: 0054fbf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
+        ;   XREF to: 0054fbf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0(CDemonSet * this_ptr, int viewport_x, int viewport_y, int screen_height)
         ;   Label: LAB_004d2c9f
     ADD ESP,0x10                        ; 004d2ca4
     PUSH 0x5e1cfd                       ; 004d2ca7 | = "cheat-1.wav"

@@ -2,6 +2,7 @@
 #include "engine/package/gamecontent.h"
 #include "engine/pod/pod.h"
 #include "platform/filesystem.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/podimage.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/shape/strlistitems.h"
@@ -180,7 +181,8 @@ TEST_F(CSoundMusicTest, AboveThirtyThousandTheMusicIsTheFortyFourKilohertzOne) {
 // BW2's, the one sample at either rate; read as configure starts it.
 TEST_F(CSoundMusicTest, TheMusicIsTheGames) {
     givenSound("XBLAIRMENU.wav", sound::makeConstantWav(100, 0));
-    content_.menu->music = {.low_rate = "XBLAIRMENU.wav", .high_rate = "XBLAIRMENU.wav"};
+    common::required(content_.menu).music = {.low_rate = "XBLAIRMENU.wav",
+                                             .high_rate = "XBLAIRMENU.wav"};
     startOutput();
     game_sound_.configure();
     EXPECT_EQ(playing(), "XBLAIRMENU.wav");

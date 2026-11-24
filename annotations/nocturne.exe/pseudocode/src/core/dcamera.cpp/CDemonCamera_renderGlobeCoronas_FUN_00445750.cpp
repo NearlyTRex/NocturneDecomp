@@ -81,7 +81,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
     if (0 < this_ptr->display_height) {
       iVar4 = 0;
       do {
-        *(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->screen_width;
+        *(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->framebuffer_width;
         *(uint *)((int)g_CoronaRightExtent + iVar4) = 0;
         iVar7 = iVar7 + 1;
         iVar4 = iVar4 + 4;
@@ -103,7 +103,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
               return;
             }
             do {
-              if (pSVar10->left_extents[0] != this_ptr->screen_width) {
+              if (pSVar10->left_extents[0] != this_ptr->framebuffer_width) {
                 core_dcamera_cpp_blendCoronaTextureSpan_FUN_00445650
                           (iVar7,pSVar10->left_extents[0],pSVar10->right_extents[0],source_entry);
               }
@@ -126,7 +126,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
           local_70 = g_CoronaDepthBuffer;
           local_60 = local_80;
           do {
-            if (this_ptr->screen_width != g_CoronaLeftExtent[local_54]) {
+            if (this_ptr->framebuffer_width != g_CoronaLeftExtent[local_54]) {
               local_48 = local_54;
               local_88 = g_CoronaLeftExtent[local_54];
               local_50 = g_CoronaRightExtent[local_54];
@@ -228,7 +228,7 @@ LAB_00445beb:
       local_7c = g_CoronaBlurOutputBuffer;
       local_74 = g_PrecomputedWorldPositions;
       do {
-        if (this_ptr->screen_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {
+        if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {
           local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);
           iVar7 = *(int *)((int)g_CoronaRightExtent + local_58);
           pcVar13 = *local_7c + local_28;

@@ -101,7 +101,6 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   CScript::step's focus commands
 // deferred: the camera held while the goggles are on (the decomp's goggles_camera_hold), with
 //   processHotkeys' goggles
-// deferred: each frame processed, with processFrame
 // deferred: a client leaving a game whose host stopped answering or ended it (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's
@@ -171,7 +170,8 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     if (session.set.evaluateVirtualDirector(session.script.getFocusActor(), 0) != 0) {
         saveClockTime();
     }
-    quitNotPorted("CGame", "processFrame");
+    processFrame(session);
+    quitNotPorted("CGame", "runGameSession");
 }
 
 // nocedit 0x004e07a0

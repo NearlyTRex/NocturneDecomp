@@ -66,7 +66,7 @@ const engine::SFontSpec &CDFont::getSpec(std::string_view id) const {
 // A grey-level font takes the text colour; its runs of characters sit as low as the spec says.
 std::unique_ptr<engine::CBitFont> CDFont::loadFont(const engine::SFontSpec &spec) const {
     auto font = std::make_unique<engine::CBitFont>(dosio_, screen_, two_d_, three_d_, colors_);
-    font->openFontFile(spec.file.c_str(), spec.width, spec.height, spec.transparent);
+    font->openFontFile(spec.file, spec.width, spec.height, spec.transparent);
     if (!spec.own_colours) {
         font->setInitializedFlag();
     }

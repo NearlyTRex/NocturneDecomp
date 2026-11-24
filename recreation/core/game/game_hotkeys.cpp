@@ -8,6 +8,7 @@
 #include "core/setutil/3dscamera.h"
 #include "core/sound/sound.h"
 #include "engine/keys/keys.h"
+#include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "sound/sndmain/sndmain.h"
 
@@ -61,8 +62,8 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
 // deferred: the script's change of focus forgotten as edit mode ends, with
 //   CDemonMission::process's
-// deferred: pausing, the sound shut down and started again, with CSound::shutdown, CSound::init
-//   and the paused frame
+// deferred: the sound shut down as the game pauses and started again as it resumes, with
+//   CSound::shutdown and CSound::init
 // deferred: the camera debug, also with SPOOKHOUSE set, with processFrame's
 // deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the
 //   Dracula brides
@@ -95,6 +96,9 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
             camera_view_index = camera_view_index + 1 < camera_count ? camera_view_index + 1 : 0;
             session.set.setCameraView(camera_view_index);
         }
+    }
+    if (developer_mode && takeAction(EGameAction::Pause)) {
+        togglePause();
     }
     if (takeAction(EGameAction::Mute)) {
         owners_.sound_main.setSoundMuted(!owners_.sound_main.isSoundMuted());
@@ -145,6 +149,14 @@ bool CGame::isOutranked(const SKeyChord &chord, EGameAction action) const {
         }
     }
     return false;
+}
+
+// Pausing lets go of the mouse's buttons.
+void CGame::togglePause() {
+    is_paused = !is_paused;
+    if (is_paused) {
+        owners_.raw_input.clearMouseClicks();
+    }
 }
 
 // The new gamma is shown for a second.

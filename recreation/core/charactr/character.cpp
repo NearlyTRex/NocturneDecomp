@@ -175,6 +175,22 @@ CDemonActor *CCharacter::getGrabber() {
     return grabbed_by_;
 }
 
+// A character holds no victim of its own. The original's one empty body also filled
+// onVictimLost's slot.
+// nocedit 0x0042bf70
+void CCharacter::releaseVictim() {}
+
+// deferred: the velocity stopped and the closest distance threshold back to 9999, with
+//   processCharacter and moveAndCollide
+// deferred: BW2's cloth list settled at the new place, a step of 10 over a floor at the threshold,
+//   with CClothList::process
+// nocedit 0x004285d0
+void CCharacter::setPositionAndOrientation(common::CVector3f *new_position,
+                                           common::CVector3f *new_orientation) {
+    releaseVictim();
+    CDemonActor::setPositionAndOrientation(new_position, new_orientation);
+}
+
 // The original also checks each carried actor is one it made, which an object always is.
 // deferred: no damage decals yet, with processDamageDecals
 // deferred: a closest distance threshold of 9999, with processCharacter and moveAndCollide

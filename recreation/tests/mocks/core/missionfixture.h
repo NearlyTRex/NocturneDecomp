@@ -163,7 +163,8 @@ protected:
                                 .mission = mission_,
                                 .environment = environment_,
                                 .sound = sound_,
-                                .display = display_};
+                                .display = display_,
+                                .renderer = demon_renderer_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

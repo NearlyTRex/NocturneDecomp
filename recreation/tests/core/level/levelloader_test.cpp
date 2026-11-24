@@ -485,6 +485,32 @@ TEST_F(CLevelLoaderTest, TheIconFadesInOverItsPictureWithNoStatus) {
     EXPECT_EQ(pixel(kBoxLeft, kBoxTop), kPicture);
 }
 
+// A picture without an icon is shown alone.
+TEST_F(CLevelLoaderTest, APictureWithoutAnIconShowsNone) {
+    content_.front_end.loading_indicator = "icon";
+    content_.icon_indicator = engine::getShippedGameContent("blairwitch3").icon_indicator;
+    for (engine::SLoadingPicture &picture : content_.loading) {
+        picture.icon.clear();
+        picture.random = true;
+    }
+    loader_.show(4, false, CLevelLoader::kNoImage);
+    loader_.update("XX", false);
+    EXPECT_EQ(pixel(100, 320), kPicture);
+}
+
+// With no frames to count, the bar stays empty.
+TEST_F(CLevelLoaderTest, AProgressBarOfNoFramesStaysEmpty) {
+    constexpr std::uint32_t kBar = 0x123456;
+    color_table32_[4] = kBar;
+    content_.front_end.loading_indicator = "progress_bar";
+    content_.progress_bar_indicator =
+        engine::getShippedGameContent("blairwitch2").progress_bar_indicator;
+    loader_.show(0, false, CLevelLoader::kNoImage);
+    loader_.update("XX", false);
+    loader_.update("XX", false);
+    EXPECT_EQ(pixel(2, 10), 0U);
+}
+
 TEST_F(CLevelLoaderTest, WithoutTheIconsLookShowingIsFatal) {
     content_.front_end.loading_indicator = "icon";
     EXPECT_THAT([this] { loader_.show(4, false, CLevelLoader::kNoImage); },

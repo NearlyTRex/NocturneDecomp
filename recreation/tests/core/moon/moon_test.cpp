@@ -1,6 +1,7 @@
 #include "common/error/fatalerror.h"
 #include "core/moon/moon.h"
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/moonfixture.h"
 
 #include <gmock/gmock.h>
@@ -55,15 +56,15 @@ TEST_F(CMoonTest, TheHeadOfHorrorCheatLoadsTheHeadInsteadOfTheMoonOnce) {
 // A game's own frames, its prefix and digits: the first it loads is BW1's, which Nocturne's
 // files don't have.
 TEST_F(CMoonTest, TheTitleFramesAreTheGamesOwn) {
-    content_.sky_scene->frame_prefix = "blair_";
-    content_.sky_scene->frame_digits = 3;
+    common::required(content_.sky_scene).frame_prefix = "blair_";
+    common::required(content_.sky_scene).frame_digits = 3;
     EXPECT_THAT([this] { moon_.init(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("CAlphaBitmap::load - Can't open blair_000.raw")));
 }
 
 TEST_F(CMoonTest, TheBatCoursesAreTheGamesOwn) {
-    content_.sky_scene->bat_courses = {"bats.pth"};
+    common::required(content_.sky_scene).bat_courses = {"bats.pth"};
     EXPECT_THAT([this] { moon_.init(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("CCourse::load - can't open data\\bats.pth")));

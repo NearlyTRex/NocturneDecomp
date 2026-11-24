@@ -147,8 +147,10 @@ TEST(GetPictureArea, StretchedItIsTheWholeScreen) {
     EXPECT_EQ(picture.getScale(), 2.25F);
 }
 
+// Either side missing, there is no screen to stretch to.
 TEST(GetPictureArea, NoScreenIsThePictureAsItIs) {
     EXPECT_EQ(getPictureArea(0, 0, kStretched).scale_x, 1.0F);
+    EXPECT_EQ(getPictureArea(1920, 0, kStretched), getPictureArea(1920, 0, kKeepCentred));
 }
 
 // A pixel-keeping upscaler keeps a stretch's; Standard keeps them only where both ways are whole.
@@ -164,6 +166,11 @@ TEST(GetPictureArtFilter, KeepsPixelsOnlyWhereBothWaysDo) {
 TEST(GetTitleBackdropPicture, IsTheStillPicturesOrTheScreen) {
     engine::SGameContent content;
     content.front_end.title_backdrop = "sky_scene";
+    EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080), getPictureArea(1920, 1080, kStretched));
+    // A style whose picture the package doesn't give fills the screen.
+    content.front_end.title_backdrop = "figure_scene";
+    EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080), getPictureArea(1920, 1080, kStretched));
+    content.front_end.title_backdrop = "tiled_scroll";
     EXPECT_EQ(getTitleBackdropPicture(content, 1920, 1080), getPictureArea(1920, 1080, kStretched));
     content.front_end.title_backdrop = "figure_scene";
     content.figure_scene.emplace();

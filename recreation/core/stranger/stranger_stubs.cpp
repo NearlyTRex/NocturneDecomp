@@ -27,11 +27,6 @@ int CStranger::renderTransparent() {
     notPorted("renderTransparent");
 }
 
-void CStranger::setPositionAndOrientation(common::CVector3f * /*new_position*/,
-                                          common::CVector3f * /*new_orientation*/) {
-    notPorted("setPositionAndOrientation");
-}
-
 void CStranger::drop(CDemonActor * /*carrier*/, common::CVector3f * /*drop_position*/) {
     notPorted("drop");
 }

@@ -46,13 +46,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
     g_BlueBitPosition.dword = 0;
     g_RedBitPosition.dword = 0x10;
     iVar2 = 0;
-    if (0 < (int)this_ptr->max_distance) {
+    if (0 < this_ptr->framebuffer_height) {
       do {
-        g_ScreenBufferArray[this_ptr->framebuffer_height + iVar2] =
+        g_ScreenBufferArray[this_ptr->viewport_y + iVar2] =
              (void *)((int)this_ptr->framebuffer_aligned +
-                     this_ptr->framebuffer_width * -4 + this_ptr->screen_width * iVar2 * 4);
+                     this_ptr->viewport_x * -4 + this_ptr->framebuffer_width * iVar2 * 4);
         iVar2 = iVar2 + 1;
-      } while (iVar2 < (int)this_ptr->max_distance);
+      } while (iVar2 < this_ptr->framebuffer_height);
       return;
     }
   }

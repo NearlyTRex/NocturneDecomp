@@ -19,7 +19,7 @@ concurrency:
 jobs:
   security:
     name: Security
-    uses: NearlyTRex/Workflows/.github/workflows/security.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/security.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -28,7 +28,7 @@ jobs:
 
   codeql:
     name: CodeQL
-    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/codeql.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       actions: read
       contents: read
@@ -40,7 +40,7 @@ jobs:
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/dependency-review.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:

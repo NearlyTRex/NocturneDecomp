@@ -229,15 +229,12 @@ def generate_actor_cast_report(pseudocode_src_dir, reports_dir):
     log_info("Actor cast report: %d ClassInfo globals" % len(classinfo_map))
 
     # Scan all pseudocode .cpp files, a function's .keep.cpp in place of its .cpp
-    # (the *.cpp glob finds both, and the unit directories, which are named x.cpp)
-    file_map = {}
-    for f in glob.glob(os.path.join(pseudocode_src_dir, '**', '*.cpp'), recursive=True):
-        if not os.path.isfile(f):
-            continue
-        base = f.replace('.keep.cpp', '.cpp')
-        if base not in file_map or f.endswith('.keep.cpp'):
-            file_map[base] = f
-    cpp_files = sorted(file_map.values())
+    # (the *.cpp glob finds both, and the unit directories, which are named x.cpp),
+    # chosen by name, not by which one the glob, in the filesystem's order, gave first.
+    found = [f for f in glob.glob(os.path.join(pseudocode_src_dir, '**', '*.cpp'), recursive=True)
+             if os.path.isfile(f)]
+    kept = {f.removesuffix('.keep.cpp') + '.cpp' for f in found if f.endswith('.keep.cpp')}
+    cpp_files = sorted(f for f in found if f not in kept)
 
     all_calls = []
     mismatches = []

@@ -509,7 +509,7 @@ section .text
     PUSH ECX                            ; 004b9571
     MOV dword ptr [EBX + 0x298],0x1     ; 004b9572
     CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910 ; 004b957c
-        ;   XREF to: 0052e910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
+        ;   XREF to: 0052e910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910(CDemonSet * this_ptr, int viewport_x, int viewport_y, int screen_height)
         ;   Label: LAB_004b957c
     ADD ESP,0x10                        ; 004b9581
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9584

@@ -75,7 +75,7 @@ void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSe
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_ptr,int index);
 int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name);
-void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
+void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height);
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00509a80(CDemonSet *this_ptr,int skip_prerender);

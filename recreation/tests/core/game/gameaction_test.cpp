@@ -1,7 +1,9 @@
+#include "common/error/fatalerror.h"
 #include "core/game/gameaction.h"
 #include "core/game/keychord.h"
 #include "tests/mocks/core/keychords.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <optional>
@@ -70,6 +72,17 @@ TEST(GameAction, AnActionsIdIsItsIniKeySnakeCased) {
     EXPECT_EQ(findGameAction("field_notes"), EGameAction::FieldNotes);
     EXPECT_EQ(findGameAction("next_ammo"), EGameAction::NextAmmo);
     EXPECT_EQ(findGameAction("NextAmmo"), std::nullopt);
+}
+
+// A play action is found by its id; any other id, or a hotkey's, is fatal, naming where.
+TEST(GameAction, APlayActionIsRequiredByItsId) {
+    EXPECT_EQ(requirePlayAction("next_ammo", "Here"), EGameAction::NextAmmo);
+    EXPECT_THAT([] { static_cast<void>(requirePlayAction("NextAmmo", "Here")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("Here: NextAmmo isn't an action")));
+    EXPECT_THAT([] { static_cast<void>(requirePlayAction("mute", "Here")); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("Here: mute is a hotkey, the same in every game")));
 }
 
 TEST(GameAction, TheHotkeysFollowThePlayActions) {

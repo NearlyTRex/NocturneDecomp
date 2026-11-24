@@ -30,7 +30,7 @@ public:
     [[nodiscard]] int wasKeyPressed() const override;
     // The queue holds 19 characters; one more drops the oldest.
     void enqueueInput(int input_value);
-    void clearMouseClicks();
+    void clearMouseClicks() override;
     void setCursorPosition(int x, int y) override;
     // Releases the keys let go during the last pump, handles every waiting event, then reads the
     // pad, so every loop in the game, menus included, sees it once a frame.

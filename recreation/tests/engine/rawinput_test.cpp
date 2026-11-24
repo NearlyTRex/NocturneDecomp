@@ -29,6 +29,7 @@ TEST(IRawInput, PublicInterface) {
         std::is_same_v<decltype(&IRawInput::getMouseButtonFlags), int (IRawInput::*)() const>);
     static_assert(
         std::is_same_v<decltype(&IRawInput::releaseLeftMouseButton), void (IRawInput::*)()>);
+    static_assert(std::is_same_v<decltype(&IRawInput::clearMouseClicks), void (IRawInput::*)()>);
     static_assert(
         std::is_same_v<decltype(&IRawInput::setCursorPosition), void (IRawInput::*)(int, int)>);
     static_assert(

@@ -160,6 +160,133 @@ bool drawTwoColumnCredits(engine::CBitFont &font, std::span<const std::string_vi
     return drawn;
 }
 
+// The style's own look, one of the three, and what every style has.
+struct SCreditsLook {
+    const engine::SCreditsColumnScroll *column_scroll = nullptr;
+    const engine::SCreditsTwoColumn *two_column = nullptr;
+    const engine::SCreditsFadeLoop *fade_loop = nullptr;
+    std::string font;
+    std::string end_line;
+    int speed = 0;
+    int start_y = 0;
+};
+
+template <typename Look>
+void takeRoll(SCreditsLook &credits_look, const Look &look) {
+    credits_look.font = look.font;
+    credits_look.end_line = look.end_line;
+    credits_look.speed = look.scroll_speed;
+    credits_look.start_y = look.start_y;
+}
+
+[[noreturn]] void quitWithoutLook(std::string_view style) {
+    common::displayErrorAndQuit(std::format("No package gives the {} credits' look", style));
+}
+
+// The style's look; a style whose look no package gives is fatal.
+[[nodiscard]] SCreditsLook getCreditsLook(const engine::SGameCredits &credits,
+                                          std::string_view style) {
+    SCreditsLook look;
+    if (style == kFadeLoopCredits) {
+        if (!credits.fade_loop) {
+            quitWithoutLook(style);
+        }
+        look.fade_loop = &*credits.fade_loop;
+        takeRoll(look, *look.fade_loop);
+    } else if (style == kTwoColumnCredits) {
+        if (!credits.two_column) {
+            quitWithoutLook(style);
+        }
+        look.two_column = &*credits.two_column;
+        takeRoll(look, *look.two_column);
+    } else {
+        if (!credits.column_scroll) {
+            quitWithoutLook(style);
+        }
+        look.column_scroll = &*credits.column_scroll;
+        takeRoll(look, *look.column_scroll);
+    }
+    return look;
+}
+
+// What a drawing of the credits draws with and on.
+struct SCreditsFrame {
+    engine::CBitFont &font;
+    std::span<const std::string_view> lines;
+    SPictureArea picture;
+    // The last column and row the strips reach.
+    int right = 0;
+    int bottom = 0;
+    engine::CAlphaBitmap &image;
+    platform::EUpscaler upscaler;
+    engine::C2d &two_d;
+    engine::C3d &three_d;
+};
+
+// The style's image and lines from `top`; true when any line was on the screen.
+bool drawCreditsLines(const SCreditsLook &look, const SCreditsFrame &frame,
+                      const SScrollRows &top) {
+    if (look.two_column != nullptr) {
+        const engine::SCreditsTwoColumn &two = *look.two_column;
+        const bool drawn = drawTwoColumnCredits(frame.font, frame.lines, top, frame.picture, two);
+        const SPictureArea &picture = frame.picture;
+        frame.two_d.fillRectColor(picture.getX(0), picture.getY(0), frame.right,
+                                  picture.getY(two.top_strip_bottom), two.strip_colour);
+        frame.two_d.fillRectColor(picture.getX(0), picture.getY(two.bottom_strip_top), frame.right,
+                                  frame.bottom, two.strip_colour);
+        return drawn;
+    }
+    if (look.fade_loop != nullptr) {
+        const engine::SCreditsFadeLoop &fade = *look.fade_loop;
+        displayInPicture(
+            frame.image, frame.picture,
+            {.x = fade.image_x, .y = fade.image_y, .width = kImageWidth, .height = kImageHeight},
+            kFullAlpha, frame.upscaler);
+        drawFadeCredits(frame.font, frame.lines, top, frame.picture, frame.three_d, fade);
+        return true;
+    }
+    displayInPicture(frame.image, frame.picture,
+                     {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight}, kFullAlpha,
+                     frame.upscaler);
+    drawCredits(frame.font, frame.lines, top, frame.picture, frame.right, *look.column_scroll);
+    return true;
+}
+
+// Where the scroll starts again, if it does: a fade loop far enough up comes round from below,
+// and BW3's, once a drawing had none on the screen and the top is above it, from the start.
+std::optional<float> getScrollRestart(const SCreditsLook &look, float scroll_top, bool any_drawn) {
+    if (look.fade_loop != nullptr && scroll_top < static_cast<float>(look.fade_loop->loop_below)) {
+        return static_cast<float>(look.fade_loop->restart_y);
+    }
+    if (look.two_column != nullptr && !any_drawn && scroll_top < 0.0F) {
+        return static_cast<float>(look.start_y);
+    }
+    return std::nullopt;
+}
+
+// The credits' music on the music channel, unpositioned; 0 when it has none or the channel is
+// off.
+std::uint32_t startCreditsMusic(sound::CSndMain &sound_main, const std::string &music) {
+    if (music.empty() || !sound_main.isSfxChannelEnabled(CSound::kMusicChannel)) {
+        return 0;
+    }
+    sound_main.pushSfxOptions();
+    sound_main.setNextSfxChannel(CSound::kMusicChannel);
+    sound_main.setNextSfxFlags(sound::kSfxNonPositional);
+    const std::uint32_t handle = sound_main.startSfx(music);
+    sound_main.popSfxOptions();
+    return handle;
+}
+
+// column_scroll's strips over its column's top and foot.
+void drawColumnStrips(const engine::SCreditsColumnScroll &scroll, const SCreditsFrame &frame) {
+    const int column_left = frame.picture.getX(scroll.column_left);
+    frame.two_d.fillRectColor(column_left, 0, frame.right,
+                              frame.picture.getY(scroll.top_strip_bottom), scroll.strip_colour);
+    frame.two_d.fillRectColor(column_left, frame.picture.getY(scroll.bottom_strip_top), frame.right,
+                              frame.bottom, scroll.strip_colour);
+}
+
 } // namespace
 
 // The original kept at most 1024 lines of 254 characters, and ended on Escape held rather than
@@ -182,28 +309,13 @@ void CGame::rollCredits() {
     const std::string_view style =
         requireFrontEndStyle("credits", owners_.content.front_end.credits,
                              {kColumnScrollCredits, kFadeLoopCredits, kTwoColumnCredits});
-    const bool fades = style == kFadeLoopCredits;
-    const bool columns = style == kTwoColumnCredits;
-    if (fades ? !credits->fade_loop : columns ? !credits->two_column : !credits->column_scroll) {
-        common::displayErrorAndQuit(std::format("No package gives the {} credits' look", style));
-    }
-    // What every style has.
-    const std::string font_id = fades     ? credits->fade_loop->font
-                                : columns ? credits->two_column->font
-                                          : credits->column_scroll->font;
-    const std::string end_line = fades     ? credits->fade_loop->end_line
-                                 : columns ? credits->two_column->end_line
-                                           : credits->column_scroll->end_line;
-    const int speed = fades     ? credits->fade_loop->scroll_speed
-                      : columns ? credits->two_column->scroll_speed
-                                : credits->column_scroll->scroll_speed;
-    const int start_y = fades     ? credits->fade_loop->start_y
-                        : columns ? credits->two_column->start_y
-                                  : credits->column_scroll->start_y;
+    const SCreditsLook look = getCreditsLook(*credits, style);
+    const bool columns = look.two_column != nullptr;
     const engine::IScreenDevice &screen = owners_.screen;
     const SPictureArea picture =
         getPictureArea(screen.getWindowWidth(), screen.getWindowHeight(), credits->fit);
-    const bool to_screen_edge = !fades && !columns && credits->column_scroll->column_to_screen_edge;
+    const bool to_screen_edge =
+        look.column_scroll != nullptr && look.column_scroll->column_to_screen_edge;
     const int right = (to_screen_edge ? std::max(picture.getX(kImageWidth), screen.getWindowWidth())
                                       : picture.getX(kImageWidth)) -
                       1;
@@ -218,26 +330,28 @@ void CGame::rollCredits() {
         return;
     }
     std::vector<std::string_view> lines = common::splitTextLines(*text);
-    lines.erase(std::ranges::find(lines, end_line), lines.end());
+    lines.erase(std::ranges::find(lines, look.end_line), lines.end());
     sound::CSndMain &sound_main = owners_.sound_main;
     if (!columns) {
         sound_main.resetSoundDevice();
     }
     static_cast<void>(sound_main.enableSoundSystem());
-    std::uint32_t music = 0;
-    if (!credits->music.empty() && sound_main.isSfxChannelEnabled(CSound::kMusicChannel)) {
-        sound_main.pushSfxOptions();
-        sound_main.setNextSfxChannel(CSound::kMusicChannel);
-        sound_main.setNextSfxFlags(sound::kSfxNonPositional);
-        music = sound_main.startSfx(credits->music);
-        sound_main.popSfxOptions();
-    }
+    const std::uint32_t music = startCreditsMusic(sound_main, credits->music);
     owners_.two_d.clearInputAndWait();
-    engine::CBitFont &font = owners_.fonts.findFont(font_id);
+    engine::CBitFont &font = owners_.fonts.findFont(look.font);
     engine::CFont *const os_font = font.releaseWinFont();
     saveClockTime();
     owners_.three_d.setRenderAlpha(kFullAlpha);
-    auto scroll_top = static_cast<float>(start_y);
+    const SCreditsFrame frame{.font = font,
+                              .lines = lines,
+                              .picture = picture,
+                              .right = right,
+                              .bottom = bottom,
+                              .image = image,
+                              .upscaler = owners_.display.getUpscaler(),
+                              .two_d = owners_.two_d,
+                              .three_d = owners_.three_d};
+    auto scroll_top = static_cast<float>(look.start_y);
     std::optional<int> drawn_top;
     // Whether the last drawing had a line on the screen.
     bool any_drawn = false;
@@ -246,39 +360,12 @@ void CGame::rollCredits() {
         // Redrawn only once the scroll reaches another screen row.
         if (top.screen_top != drawn_top) {
             owners_.special.clearScreen();
-            if (columns) {
-                const engine::SCreditsTwoColumn &two = *credits->two_column;
-                any_drawn = drawTwoColumnCredits(font, lines, top, picture, two);
-                owners_.two_d.fillRectColor(picture.getX(0), picture.getY(0), right,
-                                            picture.getY(two.top_strip_bottom), two.strip_colour);
-                owners_.two_d.fillRectColor(picture.getX(0), picture.getY(two.bottom_strip_top),
-                                            right, bottom, two.strip_colour);
-            } else if (fades) {
-                const engine::SCreditsFadeLoop &fade = *credits->fade_loop;
-                displayInPicture(image, picture,
-                                 {.x = fade.image_x,
-                                  .y = fade.image_y,
-                                  .width = kImageWidth,
-                                  .height = kImageHeight},
-                                 kFullAlpha, owners_.display.getUpscaler());
-                drawFadeCredits(font, lines, top, picture, owners_.three_d, fade);
-            } else {
-                displayInPicture(image, picture,
-                                 {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
-                                 kFullAlpha, owners_.display.getUpscaler());
-                drawCredits(font, lines, top, picture, right, *credits->column_scroll);
-            }
+            any_drawn = drawCreditsLines(look, frame, top);
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
-            if (!fades && !columns) {
-                const engine::SCreditsColumnScroll &scroll = *credits->column_scroll;
-                const int column_left = picture.getX(scroll.column_left);
-                owners_.two_d.fillRectColor(column_left, 0, right,
-                                            picture.getY(scroll.top_strip_bottom),
-                                            scroll.strip_colour);
-                owners_.two_d.fillRectColor(column_left, picture.getY(scroll.bottom_strip_top),
-                                            right, bottom, scroll.strip_colour);
+            if (look.column_scroll != nullptr) {
+                drawColumnStrips(*look.column_scroll, frame);
             }
             drawn_top = top.screen_top;
         }
@@ -287,15 +374,9 @@ void CGame::rollCredits() {
             break;
         }
         updateDT();
-        scroll_top -= getDeltaTimeFloat() * static_cast<float>(speed);
-        // Once far enough up, the lines come round again from below.
-        if (fades && scroll_top < static_cast<float>(credits->fade_loop->loop_below)) {
-            scroll_top = static_cast<float>(credits->fade_loop->restart_y);
-            drawn_top.reset();
-        }
-        // BW3's: once a drawing had none on the screen and the top is above it, from the start.
-        if (columns && !any_drawn && scroll_top < 0.0F) {
-            scroll_top = static_cast<float>(start_y);
+        scroll_top -= getDeltaTimeFloat() * static_cast<float>(look.speed);
+        if (const std::optional<float> restart = getScrollRestart(look, scroll_top, any_drawn)) {
+            scroll_top = *restart;
             drawn_top.reset();
         }
     }

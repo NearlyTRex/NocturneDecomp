@@ -95,6 +95,7 @@
 #include <format>
 #include <new>
 #include <optional>
+#include <print>
 #include <span>
 #include <string>
 #include <string_view>
@@ -316,7 +317,9 @@ private:
                                                      .special = special_,
                                                      .crt_random = crt_random_,
                                                      .renderer = demon_renderer_,
-                                                     .dosio = dosio_},
+                                                     .dosio = dosio_,
+                                                     .matrix = matrix_,
+                                                     .two_d = two_d_},
                                           .global_filters = global_filters_,
                                           .player_filters = player_filters_,
                                           .glow = light_glow_};
@@ -452,7 +455,8 @@ private:
                                              .mission = mission_,
                                              .environment = environment_,
                                              .sound = sound_,
-                                             .display = display_};
+                                             .display = display_,
+                                             .renderer = demon_renderer_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,
@@ -487,7 +491,7 @@ int run(std::span<const std::string_view> args) {
     const nocturne::platform::SPathRoots roots =
         nocturne::platform::choosePathRoots(args, environment, sdl::getPathRootDefaults(), host);
     if (const std::optional<std::string> where = nocturne::platform::describePathRoots(roots)) {
-        std::fprintf(stderr, "nocturne: %s\n", where->c_str());
+        std::println(stderr, "nocturne: {}", *where);
     }
     // Without it the game would stop deep in its start-up with nothing on screen to say why.
     if (!nocturne::platform::hasGameData(host, roots)) {

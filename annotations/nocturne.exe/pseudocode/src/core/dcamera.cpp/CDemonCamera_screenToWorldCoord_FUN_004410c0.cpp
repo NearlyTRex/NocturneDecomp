@@ -14,10 +14,10 @@ int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0(C
   int iVar3;
   int iVar4;
   
-  iVar2 = (this_ptr->framebuffer_width + screen_x) * 0x10000;
-  iVar3 = screen_y + this_ptr->framebuffer_height;
+  iVar2 = (this_ptr->viewport_x + screen_x) * 0x10000;
+  iVar3 = screen_y + this_ptr->viewport_y;
   iVar4 = iVar3 * 0x10000;
-  uVar1 = g_ZBufferScanlineArray[iVar3][screen_x + this_ptr->framebuffer_width];
+  uVar1 = g_ZBufferScanlineArray[iVar3][screen_x + this_ptr->viewport_x];
   if (uVar1 == 0) {
     output_ptr->x = iVar2;
     output_ptr->y = iVar4;

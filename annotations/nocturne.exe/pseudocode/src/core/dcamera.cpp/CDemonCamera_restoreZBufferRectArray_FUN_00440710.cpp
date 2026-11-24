@@ -23,7 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   int local_24;
   int local_20;
   int local_1c;
-  float local_18;
+  int local_18;
   int local_14;
   
   if (g_UseExternalRenderer != 0) {
@@ -33,8 +33,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   if (0x100 < this_ptr->rect_array_count) {
     local_3c.x_min = g_UseExternalRenderer;
     local_3c.y_min = g_UseExternalRenderer;
-    local_3c.x_max = this_ptr->screen_width + -1;
-    local_3c.y_max = (int)this_ptr->max_distance + -1;
+    local_3c.x_max = this_ptr->framebuffer_width + -1;
+    local_3c.y_max = this_ptr->framebuffer_height + -1;
     core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(this_ptr,&local_3c);
     return;
   }
@@ -42,17 +42,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   if (0 < this_ptr->rect_array_count) {
     pCVar6 = this_ptr->rect_array;
     do {
-      if (pCVar6->x_min < this_ptr->framebuffer_width) {
-        pCVar6->x_min = this_ptr->framebuffer_width;
+      if (pCVar6->x_min < this_ptr->viewport_x) {
+        pCVar6->x_min = this_ptr->viewport_x;
       }
-      iVar7 = this_ptr->framebuffer_width + this_ptr->screen_width;
+      iVar7 = this_ptr->viewport_x + this_ptr->framebuffer_width;
       if (iVar7 <= pCVar6->x_max) {
         pCVar6->x_max = iVar7 + -1;
       }
-      if (pCVar6->y_min < this_ptr->framebuffer_height) {
-        pCVar6->y_min = this_ptr->framebuffer_height;
+      if (pCVar6->y_min < this_ptr->viewport_y) {
+        pCVar6->y_min = this_ptr->viewport_y;
       }
-      iVar7 = this_ptr->framebuffer_height + (int)this_ptr->max_distance;
+      iVar7 = this_ptr->viewport_y + this_ptr->framebuffer_height;
       if (iVar7 <= pCVar6->y_max) {
         pCVar6->y_max = iVar7 + -1;
       }
@@ -60,14 +60,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
       pCVar6 = pCVar6 + 1;
     } while (iVar8 < this_ptr->rect_array_count);
   }
-  local_18 = this_ptr->max_distance;
+  local_18 = this_ptr->framebuffer_height;
   iVar8 = 0;
   local_24 = 0;
   if (0 < this_ptr->rect_array_count) {
     pCVar6 = this_ptr->rect_array;
     do {
-      if (pCVar6->y_min < (int)local_18) {
-        local_18 = (float)pCVar6->y_min;
+      if (pCVar6->y_min < local_18) {
+        local_18 = pCVar6->y_min;
       }
       if (local_24 < pCVar6->y_max) {
         local_24 = pCVar6->y_max;
@@ -76,8 +76,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
       pCVar6 = pCVar6 + 1;
     } while (iVar8 < this_ptr->rect_array_count);
   }
-  if ((int)local_18 <= local_24) {
-    local_28 = (int)local_18 << 2;
+  if (local_18 <= local_24) {
+    local_28 = local_18 << 2;
     local_2c = this_ptr->rect_array;
     do {
       local_1c = 0;
@@ -86,7 +86,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
         local_14 = 0;
         pCVar6 = local_2c;
         do {
-          if ((pCVar6->y_min <= (int)local_18) && ((int)local_18 <= pCVar6->y_max)) {
+          if ((pCVar6->y_min <= local_18) && (local_18 <= pCVar6->y_max)) {
             bVar5 = false;
             if (0 < g_ScanlineSpanCount) {
               iVar8 = g_ScanlineSpanCount * 4;
@@ -136,14 +136,13 @@ LAB_0044089a:
           core_dstrendr_cpp_memcpyMMX_FUN_00465341
                     ((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),
                      (void *)((int)this_ptr->zbuffer_aligned +
-                             ((((int)local_18 - this_ptr->framebuffer_height) *
-                               this_ptr->screen_width + *piVar2) - this_ptr->framebuffer_width) * 4)
-                     ,(*piVar4 - *piVar3) * 4 + 4);
+                             (((local_18 - this_ptr->viewport_y) * this_ptr->framebuffer_width +
+                              *piVar2) - this_ptr->viewport_x) * 4),(*piVar4 - *piVar3) * 4 + 4);
         } while (iVar8 < g_ScanlineSpanCount);
       }
       local_28 = local_28 + 4;
-      local_18 = (float)((int)local_18 + 1);
-    } while ((int)local_18 <= local_24);
+      local_18 = local_18 + 1;
+    } while (local_18 <= local_24);
   }
   return;
 }

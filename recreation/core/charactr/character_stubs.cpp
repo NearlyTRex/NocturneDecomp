@@ -32,11 +32,6 @@ int CCharacter::canLookAt() {
     notPorted("canLookAt");
 }
 
-void CCharacter::setPositionAndOrientation(common::CVector3f * /*new_position*/,
-                                           common::CVector3f * /*new_orientation*/) {
-    notPorted("setPositionAndOrientation");
-}
-
 void CCharacter::drop(CDemonActor * /*carrier*/, common::CVector3f * /*drop_position*/) {
     notPorted("drop");
 }
@@ -76,10 +71,6 @@ int CCharacter::getGrabbed(CDemonActor * /*grabber*/, int /*grab_type*/) {
 
 void CCharacter::releaseFromGrab() {
     notPorted("releaseFromGrab");
-}
-
-void CCharacter::releaseVictim() {
-    notPorted("releaseVictim");
 }
 
 void CCharacter::onVictimLost(CDemonActor * /*lost_actor*/) {

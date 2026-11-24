@@ -29,16 +29,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *t
       engine_special_cpp_masterZBuffer_FUN_00532c70(0);
     }
     iVar3 = 0;
-    if (0 < (int)this_ptr->max_distance) {
+    if (0 < this_ptr->framebuffer_height) {
       do {
-        iVar2 = this_ptr->framebuffer_height + iVar3;
-        iVar1 = this_ptr->screen_width * iVar3;
+        iVar2 = this_ptr->viewport_y + iVar3;
+        iVar1 = this_ptr->framebuffer_width * iVar3;
         iVar3 = iVar3 + 1;
         _memcpy
                   ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                   g_ZBufferScanlineArray[iVar2] + this_ptr->framebuffer_width,
-                   this_ptr->screen_width << 2);
-      } while (iVar3 < (int)this_ptr->max_distance);
+                   g_ZBufferScanlineArray[iVar2] + this_ptr->viewport_x,
+                   this_ptr->framebuffer_width << 2);
+      } while (iVar3 < this_ptr->framebuffer_height);
     }
   }
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);

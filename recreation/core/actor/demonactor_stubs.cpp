@@ -99,11 +99,6 @@ int CDemonActor::processActionButton() {
     notPorted("processActionButton");
 }
 
-void CDemonActor::setPositionAndOrientation(common::CVector3f * /*new_position*/,
-                                            common::CVector3f * /*new_orientation*/) {
-    notPorted("setPositionAndOrientation");
-}
-
 void CDemonActor::onPickup(CDemonActor * /*owner*/) {
     notPorted("onPickup");
 }

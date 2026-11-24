@@ -30,6 +30,10 @@
 namespace nocturne::core {
 namespace {
 
+[[noreturn]] void quitWithoutStorySelect() {
+    common::displayErrorAndQuit("No package gives the story select's values");
+}
+
 constexpr std::string_view kIniSection = "Game";
 constexpr int kNoSelection = -1;
 
@@ -173,6 +177,37 @@ private:
     std::vector<std::size_t> listed_;
 };
 
+struct SStoryStart {
+    const engine::SGameStory *story = nullptr;
+    std::size_t chapter = 0;
+};
+
+// The story and chapter picked from the list, its difficulty set on the game; none when the list
+// is cancelled. Without the probe file the install is partial: every story offers its chapters,
+// the stories aren't greyed for a missing first mission, and chapters needing a full install
+// aren't listed.
+std::optional<SStoryStart> chooseFromList(const SChapterSelectOwners &owners,
+                                          const engine::CDosIo &dosio,
+                                          const engine::SGameContent &content,
+                                          const engine::SStorySelect &story_list,
+                                          EChapterSelectMode select_mode, CGame &game) {
+    const bool full_install =
+        dosio.getFile("", story_list.full_install_probe, platform::EFileMode::Read) != nullptr;
+    CChapterChooser chooser(owners, dosio, content.stories, story_list.difficulties, full_install,
+                            select_mode != EChapterSelectMode::kStories || !full_install,
+                            getLabel(content, owners.messages, "choose_story"));
+    const std::optional<SChoice> choice = chooser.choose();
+    if (!choice) {
+        return std::nullopt;
+    }
+    if (choice->difficulty) {
+        const engine::SStoryDifficulty &difficulty = story_list.difficulties[*choice->difficulty];
+        game.puzzle_difficulty_mode = difficulty.puzzle;
+        game.combat_difficulty_mode = difficulty.combat;
+    }
+    return SStoryStart{.story = &content.stories[choice->story], .chapter = choice->chapter};
+}
+
 // The picture's index among the packages', or none.
 int findLoadingPicture(const engine::SGameContent &content, std::string_view id) {
     const auto found = std::ranges::find(content.loading, id, &engine::SLoadingPicture::id);
@@ -204,11 +239,21 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
     const bool direct =
         requireFrontEndStyle("story select", content.front_end.story_select,
                              {kStoryListSelect, kDirectStartSelect}) == kDirectStartSelect;
-    if (direct ? !content.direct_start : !content.story_select) {
-        common::displayErrorAndQuit("No package gives the story select's values");
+    // The list's values, or none for a direct start.
+    const engine::SStorySelect *select = nullptr;
+    int loading_frames = 0;
+    if (direct) {
+        if (!content.direct_start) {
+            quitWithoutStorySelect();
+        }
+        loading_frames = content.direct_start->loading_frames;
+    } else {
+        if (!content.story_select) {
+            quitWithoutStorySelect();
+        }
+        select = &*content.story_select;
+        loading_frames = select->loading_frames;
     }
-    const int loading_frames =
-        direct ? content.direct_start->loading_frames : content.story_select->loading_frames;
     std::string filename;
     // The browser's mission has no story, and the loading screen picks a picture for it.
     int picture = CLevelLoader::kRandomImage;
@@ -230,28 +275,13 @@ void CGame::showChapterSelect(const SChapterSelectOwners &owners, EChapterSelect
             }
             chosen = &content.stories.front();
         } else {
-            const engine::SStorySelect &select = *content.story_select;
-            // Without the probe file the install is partial: every story offers its chapters,
-            // the stories aren't greyed for a missing first mission, and chapters needing a full
-            // install aren't listed.
-            const bool full_install = owners_.dosio.getFile("", select.full_install_probe,
-                                                            platform::EFileMode::Read) != nullptr;
-            CChapterChooser chooser(owners, owners_.dosio, content.stories, select.difficulties,
-                                    full_install,
-                                    select_mode != EChapterSelectMode::kStories || !full_install,
-                                    getLabel(content, owners.messages, "choose_story"));
-            const std::optional<SChoice> choice = chooser.choose();
-            if (!choice) {
+            const std::optional<SStoryStart> start =
+                chooseFromList(owners, owners_.dosio, content, *select, select_mode, *this);
+            if (!start) {
                 return;
             }
-            if (choice->difficulty) {
-                const engine::SStoryDifficulty &difficulty =
-                    select.difficulties[*choice->difficulty];
-                puzzle_difficulty_mode = difficulty.puzzle;
-                combat_difficulty_mode = difficulty.combat;
-            }
-            chosen = &content.stories[choice->story];
-            chapter = choice->chapter;
+            chosen = start->story;
+            chapter = start->chapter;
         }
         filename = chosen->chapters[chapter].mission;
         picture = findLoadingPicture(content, chosen->loading);

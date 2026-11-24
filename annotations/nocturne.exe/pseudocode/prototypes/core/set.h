@@ -55,7 +55,7 @@ int __cdecl CDemonSet::findCameraByName(CDemonSet *this_ptr,char *name);
 
 // Original: core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0
 // Address: 005090f0
-void __cdecl CDemonSet::reinitCamera(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
+void __cdecl CDemonSet::reinitCamera(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height);
 
 // Original: core_set.cpp_CDemonSet_processActors_FUN_00509140
 // Address: 00509140

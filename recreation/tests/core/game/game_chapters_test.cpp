@@ -12,6 +12,7 @@
 #include "platform/mrgltexturebasic.h"
 #include "shape/edittool/fileselection.h"
 #include "shape/edittool/strlist.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/overlayscreen.h"
@@ -251,6 +252,10 @@ TEST_F(CChapterSelectTest, DirectStartWithoutAStoryIsFatal) {
     EXPECT_THAT([this] { choose(EChapterSelectMode::kStories, {kReturn}); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("No package gives a story to start")));
+    content.stories.emplace_back();
+    EXPECT_THAT([this] { choose(EChapterSelectMode::kStories, {kReturn}); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("No package gives a story to start")));
 }
 
 TEST_F(CChapterSelectTest, DirectStartWithoutItsValuesIsFatal) {
@@ -329,7 +334,7 @@ TEST_F(CChapterTitleTest, EachStoryHasItsYear) {
 }
 
 TEST_F(CChapterTitleTest, TheTitlesFormatIsTheGamesOwn) {
-    game_parts_.getContent().chapter_title->format = "{title} ({year})";
+    common::required(game_parts_.getContent().chapter_title).format = "{title} ({year})";
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     watchTitle();
     EXPECT_CALL(medium_text_,
@@ -342,6 +347,25 @@ TEST_F(CChapterTitleTest, AGameWithoutAChapterTitleShowsNone) {
     chooseToStart(EChapterSelectMode::kStories, {kReturn});
     watchTitle();
     EXPECT_CALL(medium_text_, drawText(_, _, _, _, _)).Times(0);
+    game_.renderOverlay(session_);
+}
+
+// Gone while its time still runs, it isn't drawn.
+TEST_F(CChapterTitleTest, AChapterTitleTakenAwayShowsNone) {
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    game_parts_.getContent().chapter_title.reset();
+    EXPECT_CALL(medium_text_, drawText(_, _, _, _, _)).Times(0);
+    game_.renderOverlay(session_);
+}
+
+// A screen at or over every font's height takes the last font.
+TEST_F(CChapterTitleTest, AScreenPastEveryFontsHeightTakesTheLast) {
+    engine::SChapterTitle &title = common::required(game_parts_.getContent().chapter_title);
+    title.fonts.back().below_height = 400;
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    EXPECT_CALL(medium_text_, drawText(_, _, _, _, _));
     game_.renderOverlay(session_);
 }
 

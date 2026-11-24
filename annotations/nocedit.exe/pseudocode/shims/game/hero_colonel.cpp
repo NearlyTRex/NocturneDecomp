@@ -302,7 +302,7 @@ void blend_arm_onto_aim(CColonel *colonel, SColonelAim *aim) {
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(aim->aim_yaw, &yaw);
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(aim->aim_pitch, &pitch);
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&pitch, &yaw, &aim_rotation);
-    core_xform_cpp_slerpQuaternion_FUN_005f77e0(&g_IdentityQuaternion,&turn_y, 0.95f, &arm_out);
+    core_xform_cpp_slerpQuaternion_FUN_005f77e0(&g_IdentityQuaternion, &turn_y, 0.95f, &arm_out);
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&arm_out, &aim_rotation, &upper);
     core_xform_cpp_slerpQuaternion_FUN_005f77e0(
         model->bone_transform.pose_data.bone_rotations + upper_bone, &upper, aim->weight, &blended);

@@ -45,8 +45,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(CDemon
     do {
       local_28 = 1;
       puVar4 = (uint *)((int)g_ScreenBufferArray
-                             [aiStack_48[4] * this_ptr->scale_factor + this_ptr->framebuffer_height]
-                       + this_ptr->framebuffer_width * 4);
+                             [aiStack_48[4] * this_ptr->scale_factor + this_ptr->viewport_y] +
+                       this_ptr->viewport_x * 4);
       if (1 < this_ptr->display_width) {
         aiStack_48[5] = aiStack_48[3] + 0xc;
         local_2c = aiStack_48[2] + 4;
@@ -116,15 +116,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(CDemon
   g_LightBufferPoolIndex = 0;
   g_CoronaLightCache.count = 0;
   g_CameraEdgeCount = 0;
-  if (0x1df < (int)this_ptr->max_distance) {
+  if (0x1df < this_ptr->framebuffer_height) {
     for (local_1c = this_ptr->scale_factor; uVar10 = this_ptr->scale_factor,
-        (int)local_1c < (int)((int)this_ptr->max_distance - uVar10); local_1c = local_1c + 1) {
+        (int)local_1c < (int)(this_ptr->framebuffer_height - uVar10); local_1c = local_1c + 1) {
       local_30 = uVar10 * 4;
-      for (; (int)uVar10 < this_ptr->screen_width + this_ptr->scale_factor * -2; uVar10 = uVar10 + 1
-          ) {
+      for (; (int)uVar10 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
+          uVar10 = uVar10 + 1) {
         if ((g_CameraEdgeCount < 10000) && (((uVar10 & 1) != 0 || ((local_1c & 1) != 0)))) {
-          iVar5 = *(int *)((int)g_ZBufferScanlineArray[local_1c + this_ptr->framebuffer_height] +
-                          this_ptr->framebuffer_width * 4 + local_30);
+          iVar5 = *(int *)((int)g_ZBufferScanlineArray[local_1c + this_ptr->viewport_y] +
+                          this_ptr->viewport_x * 4 + local_30);
           iVar7 = 0x7fffffff;
           if (iVar5 == 0) {
             iVar5 = 0x7fffffff;

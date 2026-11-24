@@ -12,6 +12,7 @@
 #include "engine/texture/currenttexture.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/fontsheet.h"
 #include "tests/mocks/engine/memoryscreen.h"
 #include "tests/mocks/engine/mockgameclock.h"
@@ -150,8 +151,9 @@ TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
 // The game's menus name the two; either can be any [[font]].
 TEST_F(CDFontTest, TheMenuFontsAreTheOnesTheMenusName) {
     fonts_.initFonts();
-    content_.menu->text_font_large = "tiny";
-    content_.menu->text_font_small = "theme";
+    engine::SMenuLayout &menu = common::required(content_.menu);
+    menu.text_font_large = "tiny";
+    menu.text_font_small = "theme";
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getTinyFont());
     fonts_.setMenuFontChoice(EMenuFontChoice::Small);
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getThemeFont());
@@ -316,6 +318,17 @@ TEST_F(CDFontTest, AScaleBeforeTheFontsAreMadeHasNothingToSet) {
     EXPECT_CALL(os_fonts_, createOsFont).Times(0);
     fonts_.setOsFontScale(2.0F);
     EXPECT_EQ(fonts_.getThemeFont(), nullptr);
+}
+
+// A font the package gives no OS size keeps its bitmap text.
+TEST_F(CDFontTest, AFontWithoutAnOsSizeKeepsItsBitmap) {
+    const auto first_with_size = std::ranges::find_if(
+        content_.fonts, [](const engine::SFontSpec &spec) { return spec.os_font.has_value(); });
+    ASSERT_NE(first_with_size, content_.fonts.end());
+    first_with_size->os_font.reset();
+    fonts_.setOsFontChoice(EOsFontChoice::System);
+    EXPECT_CALL(os_fonts_, createOsFont).Times(3);
+    fonts_.initFonts();
 }
 
 TEST_F(CDFontTest, TheSystemChoiceUsesOsFontsWithoutAMessageFile) {

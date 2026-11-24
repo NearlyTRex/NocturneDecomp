@@ -16,13 +16,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
   if (0x1e0 < screen_height) {
     screen_height = 0x1e0;
   }
-  this_ptr->max_distance = (float)screen_height;
+  this_ptr->framebuffer_height = screen_height;
   this_ptr->scale_factor = 1;
-  this_ptr->screen_width = (screen_height * 4) / 3;
-  this_ptr->display_width = this_ptr->screen_width;
+  this_ptr->framebuffer_width = (screen_height * 4) / 3;
+  this_ptr->display_width = this_ptr->framebuffer_width;
   g_CameraDownscaleIterations.dword = 0;
   iVar1 = this_ptr->display_width;
-  this_ptr->display_height = (int)this_ptr->max_distance;
+  this_ptr->display_height = this_ptr->framebuffer_height;
   while (0x140 < iVar1) {
     this_ptr->display_width = this_ptr->display_width / 2;
     g_CameraDownscaleIterations.dword = g_CameraDownscaleIterations.dword + 1;
@@ -31,7 +31,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
     this_ptr->scale_factor = this_ptr->scale_factor * 2;
   }
   pvVar2 = malloc
-                     (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
+                     (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   pvVar2 = malloc
-                     (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
+                     (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";

@@ -1,4 +1,5 @@
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 
 #include <gmock/gmock.h>
@@ -51,13 +52,13 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
                                 .fade_loop = {},
                                 .two_column = {}};
     base.menu = getShippedGameContent().menu;
-    base.menu->left = 1;
+    common::required(base.menu).left = 1;
     SGameContent mod;
     mod.title = "Mod";
     mod.copyright = "Mod";
     mod.front_end.loading_indicator = "progress_bar";
     mod.menu = getShippedGameContent().menu;
-    mod.menu->left = 4;
+    common::required(mod.menu).left = 4;
     const SGameContent merged = merge({&base, &mod}).content;
     EXPECT_EQ(merged.title, "Mod");
     EXPECT_EQ(merged.front_end.title_backdrop, "sky_scene");

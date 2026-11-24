@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
   uint uStack00000078;
   int iStack0000007c;
   float in_stack_00000080;
-  uint clear_enabled;
+  uint viewport_x;
   float fVar8;
   float fStack_188;
   char acStack_ac [156];
@@ -125,9 +125,8 @@ LAB_0049f9d8:
     if (iVar5 != 0) {
       iVar4 = 0xf0;
     }
-    clear_enabled = (uint)(iVar5 != 0);
-    core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0
-              (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar4);
+    viewport_x = (uint)(iVar5 != 0);
+    core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(g_CDemonSetPtr,viewport_x,viewport_x,iVar4);
   }
   if (((this_ptr->developer_mode_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
      ((iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL),

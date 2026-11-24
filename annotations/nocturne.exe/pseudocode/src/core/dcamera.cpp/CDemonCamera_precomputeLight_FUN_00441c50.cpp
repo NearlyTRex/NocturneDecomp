@@ -85,7 +85,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::precomputeLight - Too many lights visible from camera %s",this_ptr);
   }
   core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(light_source);
-  if ((rect == (CRect *)0x0) || (this_ptr->max_distance != 6.72623e-43)) {
+  if ((rect == (CRect *)0x0) || (this_ptr->framebuffer_height != 0x1e0)) {
     local_78 = 0;
     local_80 = 0;
     local_7c = this_ptr->display_width + -1;
@@ -140,10 +140,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
       if (local_80 <= local_7c) {
         do {
           if (((local_18 < 1) || (local_2c < 1)) ||
-             ((iVar1 = local_18 * this_ptr->scale_factor, iVar10 = this_ptr->screen_width + -2,
+             ((iVar1 = local_18 * this_ptr->scale_factor, iVar10 = this_ptr->framebuffer_width + -2,
               iVar1 - iVar10 != 0 && iVar10 <= iVar1 ||
-              (iVar10 = local_2c * this_ptr->scale_factor, iVar1 = (int)this_ptr->max_distance + -2,
-              iVar10 - iVar1 != 0 && iVar1 <= iVar10)))) {
+              (iVar10 = local_2c * this_ptr->scale_factor, iVar1 = this_ptr->framebuffer_height + -2
+              , iVar10 - iVar1 != 0 && iVar1 <= iVar10)))) {
 LAB_00441e9f:
             *local_20 = 0;
             *local_1c = 0;

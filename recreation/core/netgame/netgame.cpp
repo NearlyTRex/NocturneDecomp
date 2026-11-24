@@ -93,6 +93,15 @@ void CNetGame::processServerFrame() {
     owners_.actor.setRandomSeed(static_cast<std::uint32_t>(owners_.crt_random.rand()));
 }
 
+// A game that isn't a client's has no frame to take from the host.
+// deferred: the client's frame: pinging the host and hearing from it, the error when this machine
+//   isn't in the player list, applying the sim frame it is on, acknowledging it, dropping older
+//   ones, and marking the next one pending if it came, with CNetGame::initializeNetworkToJoin
+// deferred: BW1-3's client frames over their own sim frame records, with
+//   CNetGame::initializeNetworkToJoin
+// nocedit 0x005435a0
+void CNetGame::processClientFrame() {}
+
 // deferred: a network player's controls, held for the frame it sends, and the error when this
 //   machine isn't in the player list, with CNetGame::addPlayer
 // nocedit 0x005438c0

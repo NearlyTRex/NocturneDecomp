@@ -1,6 +1,7 @@
 #include "common/error/fatalerror.h"
 #include "core/moon/moon.h"
 #include "engine/package/gamecontent.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/moonfixture.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 
@@ -31,7 +32,7 @@ protected:
         content_.front_end.title_backdrop = "tiled_scroll";
         content_.tiled_scroll = engine::getShippedGameContent("blairwitch3").tiled_scroll;
         // A step a second, so each frame below is a whole step.
-        content_.tiled_scroll->steps_per_second = 1;
+        common::required(content_.tiled_scroll).steps_per_second = 1;
         std::string tile(std::size_t{kWidth} * kHeight, '\0');
         for (std::size_t i = 0; i < tile.size(); ++i) {
             tile[i] = static_cast<char>(((i % kWidth) % kTileWrap) + 1);
@@ -102,7 +103,7 @@ TEST_F(CMoonTiledTest, TheTilesMoveByTimeNotByDrawing) {
 // Going past the right by part of a step, a column comes back from the left by as much, so the
 // two tiles stay edge to edge.
 TEST_F(CMoonTiledTest, AColumnPastTheRightKeepsWhatItWentPast) {
-    content_.tiled_scroll->step_y = 0;
+    common::required(content_.tiled_scroll).step_y = 0;
     moon_.init();
     moon_.update(160.5F);
     moon_.render();
@@ -114,8 +115,8 @@ TEST_F(CMoonTiledTest, AColumnPastTheRightKeepsWhatItWentPast) {
 // Past 639 a column goes to -640: at 160 a step, two steps take the first from 320 to 640 and
 // so to -640, and the second from -320 to 0.
 TEST_F(CMoonTiledTest, AColumnPastTheRightGoesBackToTheLeft) {
-    content_.tiled_scroll->step_x = 160;
-    content_.tiled_scroll->step_y = 0;
+    common::required(content_.tiled_scroll).step_x = 160;
+    common::required(content_.tiled_scroll).step_y = 0;
     moon_.init();
     drawFrames(2);
     EXPECT_EQ(pixel(5, kOpenRow), tileAt(5, 0));
@@ -132,8 +133,8 @@ TEST_F(CMoonTiledTest, OnAWideScreenTheTilesKeepToThePicture) {
     EXPECT_EQ(pixel(kLeft - 1, kOpenRow), 0U);
     EXPECT_EQ(pixel(kLeft + kWidth, kOpenRow), 0U);
     EXPECT_NE(pixel(kLeft, kOpenRow), 0U);
-    content_.tiled_scroll->fit = {.fit = engine::EPictureFit::Stretch,
-                                  .anchor = engine::EPictureAnchor::Centre};
+    common::required(content_.tiled_scroll).fit = {.fit = engine::EPictureFit::Stretch,
+                                                   .anchor = engine::EPictureAnchor::Centre};
     drawFrame();
     EXPECT_NE(pixel(kLeft - 1, kOpenRow), 0U);
     EXPECT_NE(pixel(kWideWidth - 1, kOpenRow), 0U);
@@ -149,9 +150,9 @@ TEST_F(CMoonTiledTest, TheOverlayIsOnTop) {
 // the tiles held, at 20000 a step it is 45536, 25536, 5536, then 5000, 25000 and 45000; the hand
 // is brighter than the tile under it, so the pixel is brighter the more of it there is.
 TEST_F(CMoonTiledTest, TheHandFadesAndComesBack) {
-    content_.tiled_scroll->step_x = 0;
-    content_.tiled_scroll->step_y = 0;
-    content_.tiled_scroll->hand_alpha_step = 20000;
+    common::required(content_.tiled_scroll).step_x = 0;
+    common::required(content_.tiled_scroll).step_y = 0;
+    common::required(content_.tiled_scroll).hand_alpha_step = 20000;
     moon_.init();
     std::vector<std::uint32_t> blue;
     for (int i = 0; i < 6; ++i) {
@@ -163,6 +164,34 @@ TEST_F(CMoonTiledTest, TheHandFadesAndComesBack) {
     EXPECT_GE(blue[2], blue[3]);
     EXPECT_LT(blue[3], blue[4]);
     EXPECT_LT(blue[4], blue[5]);
+}
+
+// Rising past its highest it holds there and fades again: 45000, 65000, then 65535 and 45535.
+TEST_F(CMoonTiledTest, TheHandHoldsAtItsHighestAndFadesAgain) {
+    common::required(content_.tiled_scroll).step_x = 0;
+    common::required(content_.tiled_scroll).step_y = 0;
+    common::required(content_.tiled_scroll).hand_alpha_step = 20000;
+    moon_.init();
+    std::vector<std::uint32_t> blue;
+    for (int i = 0; i < 9; ++i) {
+        drawFrame();
+        blue.push_back(pixel(100, 100) & 0xffU);
+    }
+    EXPECT_LT(blue[5], blue[6]);
+    EXPECT_LE(blue[6], blue[7]);
+    EXPECT_GT(blue[7], blue[8]);
+}
+
+// Rising past the top, a row comes back from the bottom, so the tiles stay edge to edge and the
+// screen stays covered.
+TEST_F(CMoonTiledTest, ARowPastTheTopComesBackFromTheBottom) {
+    common::required(content_.tiled_scroll).step_x = 0;
+    common::required(content_.tiled_scroll).step_y = -160;
+    moon_.init();
+    drawFrames(4);
+    for (int y = kOpenRow; y < kHeight; ++y) {
+        ASSERT_NE(pixel(330, y), 0U) << y;
+    }
 }
 
 // The timer only kept the glow on.

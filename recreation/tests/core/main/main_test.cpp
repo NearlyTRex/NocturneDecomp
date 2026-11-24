@@ -42,6 +42,7 @@
 #include "shape/edittool/editortools.h"
 #include "shape/edittool/picklist.h"
 #include "support/newmsg/newmsg.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/core/menufontfiles.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/fontsheet.h"
@@ -465,8 +466,9 @@ TEST_F(CInitializeGameSystemsTest, PlaysTheOpeningMovieThenShowsTheLoadingScreen
 
 // In the theme font, centred in a band an X tall; this sheet's characters are solid.
 TEST_F(CInitializeGameSystemsTest, TheOpeningMovieIsTheGamesOwn) {
-    content_.startup->movie_directory = "films";
-    content_.startup->movie = "intro.avi";
+    engine::SStartup &startup = common::required(content_.startup);
+    startup.movie_directory = "films";
+    startup.movie = "intro.avi";
     start();
     EXPECT_EQ(movies_, std::vector<std::string>{"films\\intro.avi"});
 }

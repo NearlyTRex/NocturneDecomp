@@ -71,7 +71,7 @@ private:
     void renderGlow();
     void drawProgressBar(int window_width);
     void drawIcon();
-    void drawStatus(const engine::SLoadingStatus &status, std::string_view text, int window_width,
+    void drawStatus(const engine::SLoadingStatus &look, std::string_view text, int window_width,
                     int window_height);
 
     SLevelLoaderOwners owners_;

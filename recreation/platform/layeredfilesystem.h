@@ -47,7 +47,7 @@ private:
     [[nodiscard]] std::string makeWritePath(std::string_view path);
     // Where the path is written, holding what the folders under it had of it first.
     [[nodiscard]] std::string copyForChange(std::string_view path);
-    [[nodiscard]] std::string inFolder(const std::string &folder, std::string_view path) const;
+    [[nodiscard]] static std::string inFolder(const std::string &folder, std::string_view path);
     [[nodiscard]] bool isLayered(std::string_view path) const;
 
     IFileSystem &host_;

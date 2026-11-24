@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height)
+; void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005353b0(CDemonSet *this_ptr,int viewport_x,int viewport_y,int screen_height)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   clear_enabled
-; int              Stack[0xc]:4   is_clearing
+; int              Stack[0x8]:4   viewport_x
+; int              Stack[0xc]:4   viewport_y
 ; int              Stack[0x10]:4   screen_height
 ;
 ; XREF[2]:

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 880,
-    "complexity_score": 356,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 281,
+    "pseudocode_lines": 280,
     "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unrolled_strcpy"
     ],
-    "total_lines": 1161
+    "total_lines": 1160
   },
   "cross_references": [
     {
@@ -486,7 +486,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 238,
+      "line": 237,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe4c,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
@@ -494,7 +494,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 239,
+      "line": 238,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,&stack0xfffffe4c,1.0);",
@@ -502,7 +502,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 268,
+      "line": 267,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080 = -0.02;",
@@ -510,7 +510,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 272,
+      "line": 271,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080;",
@@ -518,7 +518,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 174,
+      "line": 173,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

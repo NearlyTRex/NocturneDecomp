@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 885,
-    "complexity_score": 247,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 246,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 1132
+    "total_lines": 1131
   },
   "cross_references": [
     {
@@ -428,7 +428,7 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 219,
+      "line": 218,
       "match": "&stack0xfffffe58",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 220,
+      "line": 219,
       "match": "&stack0xfffffe58",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -446,7 +446,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 150,
+      "line": 149,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",

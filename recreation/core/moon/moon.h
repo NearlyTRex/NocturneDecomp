@@ -71,7 +71,6 @@ private:
 
     // The style the packages name; any style but the three is fatal.
     [[nodiscard]] EStyle getStyle() const;
-    [[nodiscard]] bool isFigureScene() const;
     // The packages' values for the style; without them, fatal.
     [[nodiscard]] const engine::SSkyScene &getSky() const;
     [[nodiscard]] const engine::SFigureScene &getFigure() const;

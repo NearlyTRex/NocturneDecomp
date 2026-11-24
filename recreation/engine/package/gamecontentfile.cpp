@@ -8,6 +8,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <expected>
 #include <format>
@@ -249,11 +250,12 @@ TomlResult<std::optional<SMenuTrademark>> readTrademark(const toml::table &table
         return std::unexpected(keys.error());
     }
     SMenuTrademark trademark;
-    if (TomlResult<void> read = readIntegers(**found, inner,
-                                             {{"x", &trademark.x, 0, kMaxPictureX},
-                                              {"y", &trademark.y, 0, kMaxPictureY},
-                                              {"glyph", &trademark.glyph, 1, kMaxColour},
-                                              {"alpha", &trademark.alpha, 0, kMaxAlpha}});
+    if (TomlResult<void> read = readIntegers(
+            **found, inner,
+            {{.key = "x", .field = &trademark.x, .low = 0, .high = kMaxPictureX},
+             {.key = "y", .field = &trademark.y, .low = 0, .high = kMaxPictureY},
+             {.key = "glyph", .field = &trademark.glyph, .low = 1, .high = kMaxColour},
+             {.key = "alpha", .field = &trademark.alpha, .low = 0, .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -355,8 +357,11 @@ TomlResult<std::vector<SMenuPoint>> readMenuPoints(const toml::table &table, std
         }
         if (TomlResult<void> read =
                 readIntegers(*entry, inner,
-                             {{point.centred ? "centre_x" : "x", &point.x, 0, kMaxPictureX},
-                              {"y", &point.y, 0, kMaxPictureY}});
+                             {{.key = point.centred ? "centre_x" : "x",
+                               .field = &point.x,
+                               .low = 0,
+                               .high = kMaxPictureX},
+                              {.key = "y", .field = &point.y, .low = 0, .high = kMaxPictureY}});
             !read) {
             return std::unexpected(read.error());
         }
@@ -380,10 +385,11 @@ TomlResult<std::optional<SMenuDrop>> readMenuDrop(const toml::table &table,
         return std::unexpected(keys.error());
     }
     SMenuDrop drop;
-    if (TomlResult<void> read = readIntegers(**found, inner,
-                                             {{"x", &drop.x, -kMaxDropOffset, kMaxDropOffset},
-                                              {"y", &drop.y, -kMaxDropOffset, kMaxDropOffset},
-                                              {"colour", &drop.colour, 0, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(
+            **found, inner,
+            {{.key = "x", .field = &drop.x, .low = -kMaxDropOffset, .high = kMaxDropOffset},
+             {.key = "y", .field = &drop.y, .low = -kMaxDropOffset, .high = kMaxDropOffset},
+             {.key = "colour", .field = &drop.colour, .low = 0, .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -403,10 +409,11 @@ TomlResult<SMenuTitle> readMenuTitle(const toml::table &table) {
         return std::unexpected(font.error());
     }
     title.font = std::move(*font);
-    if (TomlResult<void> read = readIntegers(table, kWhere,
-                                             {{"colour", &title.colour, 0, kMaxColour},
-                                              {"shadow", &title.shadow, kNoMenuShadow, kMaxColour},
-                                              {"gap_lines", &title.gap_lines, 0, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "colour", .field = &title.colour, .low = 0, .high = kMaxColour},
+             {.key = "shadow", .field = &title.shadow, .low = kNoMenuShadow, .high = kMaxColour},
+             {.key = "gap_lines", .field = &title.gap_lines, .low = 0, .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -434,7 +441,8 @@ TomlResult<SMenuGlow> readMenuGlow(const toml::table &table) {
     glow.item_colour = *item_colour;
     if (TomlResult<void> read = readIntegers(
             table, kWhere,
-            {{"colour", &glow.colour, 0, kMaxColour}, {"copies", &glow.copies, 0, kMaxGlowCopies}});
+            {{.key = "colour", .field = &glow.colour, .low = 0, .high = kMaxColour},
+             {.key = "copies", .field = &glow.copies, .low = 0, .high = kMaxGlowCopies}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -472,14 +480,20 @@ TomlResult<SMenuItems> readMenuItems(const toml::table &table) {
         return std::unexpected(positions.error());
     }
     items.untitled_positions = std::move(*positions);
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"colour", &items.colour, 0, kMaxColour},
-                          {"selected_colour", &items.selected_colour, 0, kMaxColour},
-                          {"alpha", &items.alpha, 0, kMaxAlpha},
-                          {"shadow", &items.shadow, kNoMenuShadow, kMaxColour},
-                          {"spacing_titled", &items.spacing_titled, 1, kMaxLines},
-                          {"spacing_untitled", &items.spacing_untitled, 1, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "colour", .field = &items.colour, .low = 0, .high = kMaxColour},
+             {.key = "selected_colour",
+              .field = &items.selected_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "alpha", .field = &items.alpha, .low = 0, .high = kMaxAlpha},
+             {.key = "shadow", .field = &items.shadow, .low = kNoMenuShadow, .high = kMaxColour},
+             {.key = "spacing_titled", .field = &items.spacing_titled, .low = 1, .high = kMaxLines},
+             {.key = "spacing_untitled",
+              .field = &items.spacing_untitled,
+              .low = 1,
+              .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -529,8 +543,10 @@ TomlResult<SFooterPlace> readFooterPlace(const toml::table &table, std::string_v
         return std::unexpected(edge.error());
     }
     place.edge = *edge;
-    if (TomlResult<void> read = readIntegers(
-            **found, where, {{"x", &place.x, 0, kMaxPictureX}, {"y", &place.y, 0, kMaxPictureY}});
+    if (TomlResult<void> read =
+            readIntegers(**found, where,
+                         {{.key = "x", .field = &place.x, .low = 0, .high = kMaxPictureX},
+                          {.key = "y", .field = &place.y, .low = 0, .high = kMaxPictureY}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -550,11 +566,14 @@ TomlResult<SMenuFooter> readMenuFooter(const toml::table &table) {
         return std::unexpected(font.error());
     }
     footer.font = std::move(*font);
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"colour", &footer.colour, 0, kMaxColour},
-                          {"shadow", &footer.shadow, kNoMenuShadow, kMaxColour},
-                          {"version_alpha", &footer.version_alpha, 0, kMaxAlpha}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "colour", .field = &footer.colour, .low = 0, .high = kMaxColour},
+             {.key = "shadow", .field = &footer.shadow, .low = kNoMenuShadow, .high = kMaxColour},
+             {.key = "version_alpha",
+              .field = &footer.version_alpha,
+              .low = 0,
+              .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -596,11 +615,14 @@ TomlResult<SMenuCalibration> readMenuCalibration(const toml::table &table) {
         return std::unexpected(std::format("{}steps: missing", kWhere));
     }
     calibration.steps = std::move(*steps);
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"colour", &calibration.colour, 0, kMaxColour},
-                          {"title_lines", &calibration.title_lines, 0, kMaxLines},
-                          {"prompt_lines", &calibration.prompt_lines, 0, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "colour", .field = &calibration.colour, .low = 0, .high = kMaxColour},
+             {.key = "title_lines", .field = &calibration.title_lines, .low = 0, .high = kMaxLines},
+             {.key = "prompt_lines",
+              .field = &calibration.prompt_lines,
+              .low = 0,
+              .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -625,7 +647,8 @@ TomlResult<std::map<std::string, int, std::less<>>> readPageTops(const toml::tab
     for (const auto &[page, node] : **found) {
         int top = 0;
         if (TomlResult<void> read =
-                readIntegers(**found, kWhere, {{page.str(), &top, 0, kMaxPictureY}});
+                readIntegers(**found, kWhere,
+                             {{.key = page.str(), .field = &top, .low = 0, .high = kMaxPictureY}});
             !read) {
             return std::unexpected(read.error());
         }
@@ -640,9 +663,13 @@ TomlResult<void> readMenuOptions(const toml::table &table, SMenuLayout &menu) {
         !keys) {
         return std::unexpected(keys.error());
     }
-    return readIntegers(table, kWhere,
-                        {{"hero", &menu.options_hero, 0, kMaxHeroType},
-                         {"card_name_length", &menu.card_name_length, 1, kMaxCardNameLength}});
+    return readIntegers(
+        table, kWhere,
+        {{.key = "hero", .field = &menu.options_hero, .low = 0, .high = kMaxHeroType},
+         {.key = "card_name_length",
+          .field = &menu.card_name_length,
+          .low = 1,
+          .high = kMaxCardNameLength}});
 }
 
 TomlResult<SMenuSpectrum> readMenuSpectrum(const toml::table &table) {
@@ -663,14 +690,20 @@ TomlResult<SMenuSpectrum> readMenuSpectrum(const toml::table &table) {
         return std::unexpected(std::format("{}frames: missing", kWhere));
     }
     spectrum.frames = std::move(*frames);
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"fps", &spectrum.fps, 1, kMaxFramesPerSecond},
-                          {"pitch", &spectrum.pitch, 1, kMaxPictureX},
-                          {"half_width", &spectrum.half_width, 1, kMaxPictureX},
-                          {"margin_divisor", &spectrum.margin_divisor, 2, kMaxPictureX},
-                          {"height_percent", &spectrum.height_percent, 1, kMaxPercent},
-                          {"alpha", &spectrum.alpha, 0, kMaxAlpha}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "fps", .field = &spectrum.fps, .low = 1, .high = kMaxFramesPerSecond},
+             {.key = "pitch", .field = &spectrum.pitch, .low = 1, .high = kMaxPictureX},
+             {.key = "half_width", .field = &spectrum.half_width, .low = 1, .high = kMaxPictureX},
+             {.key = "margin_divisor",
+              .field = &spectrum.margin_divisor,
+              .low = 2,
+              .high = kMaxPictureX},
+             {.key = "height_percent",
+              .field = &spectrum.height_percent,
+              .low = 1,
+              .high = kMaxPercent},
+             {.key = "alpha", .field = &spectrum.alpha, .low = 0, .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -717,16 +750,19 @@ TomlResult<SMenuSlider> readMenuSlider(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SMenuSlider slider;
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"width_share", &slider.width_share, 1, kMaxPictureX},
-                          {"width_parts", &slider.width_parts, 1, kMaxPictureX},
-                          {"height", &slider.height, 1, kMaxPictureY},
-                          {"bar_colour", &slider.bar_colour, 0, kMaxColour},
-                          {"trough_colour", &slider.trough_colour, 0, kMaxColour},
-                          {"border_colour", &slider.border_colour, 0, kMaxColour},
-                          {"text_colour", &slider.text_colour, 0, kMaxColour},
-                          {"text_shadow", &slider.text_shadow, kNoMenuShadow, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "width_share", .field = &slider.width_share, .low = 1, .high = kMaxPictureX},
+             {.key = "width_parts", .field = &slider.width_parts, .low = 1, .high = kMaxPictureX},
+             {.key = "height", .field = &slider.height, .low = 1, .high = kMaxPictureY},
+             {.key = "bar_colour", .field = &slider.bar_colour, .low = 0, .high = kMaxColour},
+             {.key = "trough_colour", .field = &slider.trough_colour, .low = 0, .high = kMaxColour},
+             {.key = "border_colour", .field = &slider.border_colour, .low = 0, .high = kMaxColour},
+             {.key = "text_colour", .field = &slider.text_colour, .low = 0, .high = kMaxColour},
+             {.key = "text_shadow",
+              .field = &slider.text_shadow,
+              .low = kNoMenuShadow,
+              .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -805,8 +841,11 @@ TomlResult<SPointerLook> readPointerLook(const toml::table &table) {
     }
     if (TomlResult<void> read =
             readIntegers(table, kWhere,
-                         {{"size", &pointer.size, 1, kMaxPictureY},
-                          {"default_height", &pointer.default_height, 1, kMaxPictureY}});
+                         {{.key = "size", .field = &pointer.size, .low = 1, .high = kMaxPictureY},
+                          {.key = "default_height",
+                           .field = &pointer.default_height,
+                           .low = 1,
+                           .high = kMaxPictureY}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -822,12 +861,23 @@ TomlResult<SScrollBarLook> readScrollBarLook(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SScrollBarLook scroll_bar;
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"first_repeat_ticks", &scroll_bar.first_repeat_ticks, 1, kMaxTicks},
-                          {"repeat_ticks", &scroll_bar.repeat_ticks, 1, kMaxTicks},
-                          {"track_fill_colour", &scroll_bar.track_fill_colour, 0, kMaxColour},
-                          {"track_border_colour", &scroll_bar.track_border_colour, 0, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{.key = "first_repeat_ticks",
+                                               .field = &scroll_bar.first_repeat_ticks,
+                                               .low = 1,
+                                               .high = kMaxTicks},
+                                              {.key = "repeat_ticks",
+                                               .field = &scroll_bar.repeat_ticks,
+                                               .low = 1,
+                                               .high = kMaxTicks},
+                                              {.key = "track_fill_colour",
+                                               .field = &scroll_bar.track_fill_colour,
+                                               .low = 0,
+                                               .high = kMaxColour},
+                                              {.key = "track_border_colour",
+                                               .field = &scroll_bar.track_border_colour,
+                                               .low = 0,
+                                               .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -846,24 +896,45 @@ TomlResult<SListLook> readList(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SListLook list;
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"item_colour", &list.item_colour, 0, kMaxColour},
-                          {"disabled_colour", &list.disabled_colour, 0, kMaxColour},
-                          {"selected_colour", &list.selected_colour, 0, kMaxColour},
-                          {"confirmed_colour", &list.confirmed_colour, 0, kMaxColour},
-                          {"separator_colour", &list.separator_colour, 0, kMaxColour},
-                          {"alpha", &list.alpha, 0, kMaxAlpha},
-                          {"shadow", &list.shadow, kNoMenuShadow, kMaxColour},
-                          {"column_padding", &list.column_padding, 0, kMaxPictureX},
-                          {"margin_width", &list.margin_width, 0, kMaxPictureX},
-                          {"margin_height", &list.margin_height, 0, kMaxPictureY},
-                          {"field_gap_divisor", &list.field_gap_divisor, 1, kMaxPictureX},
-                          {"row_extra", &list.row_extra, 0, kMaxPictureY},
-                          {"reserved_lines", &list.reserved_lines, 0, kMaxLines},
-                          {"width_share", &list.width_share, 1, kMaxPictureX},
-                          {"width_parts", &list.width_parts, 1, kMaxPictureX},
-                          {"double_click_ticks", &list.double_click_ticks, 1, kMaxTicks}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "item_colour", .field = &list.item_colour, .low = 0, .high = kMaxColour},
+             {.key = "disabled_colour",
+              .field = &list.disabled_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "selected_colour",
+              .field = &list.selected_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "confirmed_colour",
+              .field = &list.confirmed_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "separator_colour",
+              .field = &list.separator_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "alpha", .field = &list.alpha, .low = 0, .high = kMaxAlpha},
+             {.key = "shadow", .field = &list.shadow, .low = kNoMenuShadow, .high = kMaxColour},
+             {.key = "column_padding",
+              .field = &list.column_padding,
+              .low = 0,
+              .high = kMaxPictureX},
+             {.key = "margin_width", .field = &list.margin_width, .low = 0, .high = kMaxPictureX},
+             {.key = "margin_height", .field = &list.margin_height, .low = 0, .high = kMaxPictureY},
+             {.key = "field_gap_divisor",
+              .field = &list.field_gap_divisor,
+              .low = 1,
+              .high = kMaxPictureX},
+             {.key = "row_extra", .field = &list.row_extra, .low = 0, .high = kMaxPictureY},
+             {.key = "reserved_lines", .field = &list.reserved_lines, .low = 0, .high = kMaxLines},
+             {.key = "width_share", .field = &list.width_share, .low = 1, .high = kMaxPictureX},
+             {.key = "width_parts", .field = &list.width_parts, .low = 1, .high = kMaxPictureX},
+             {.key = "double_click_ticks",
+              .field = &list.double_click_ticks,
+              .low = 1,
+              .high = kMaxTicks}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -911,26 +982,71 @@ TomlResult<SDialogLook> readDialog(const toml::table &table) {
     SDialogLook dialog;
     if (TomlResult<void> read = readIntegers(
             table, kWhere,
-            {{"content_colour", &dialog.content_colour, 0, kMaxColour},
-             {"border_colour", &dialog.border_colour, 0, kMaxColour},
-             {"title_colour", &dialog.title_colour, 0, kMaxColour},
-             {"text_colour", &dialog.text_colour, 0, kMaxColour},
-             {"warning_colour", &dialog.warning_colour, 0, kMaxColour},
-             {"window_status_colour", &dialog.window_status_colour, 0, kMaxColour},
-             {"status_colour", &dialog.status_colour, 0, kMaxColour},
-             {"progress_background_colour", &dialog.progress_background_colour, 0, kMaxColour},
-             {"progress_border_colour", &dialog.progress_border_colour, 0, kMaxColour},
-             {"progress_fill_colour", &dialog.progress_fill_colour, 0, kMaxColour},
-             {"bevel_highlight_colour", &dialog.bevel_highlight_colour, 0, kMaxColour},
-             {"bevel_shade_colour", &dialog.bevel_shade_colour, 0, kMaxColour},
-             {"bevel_face_colour", &dialog.bevel_face_colour, 0, kMaxColour},
-             {"bevel_mark_colour", &dialog.bevel_mark_colour, 0, kMaxColour},
-             {"margin_width_divisor", &dialog.margin_width_divisor, 1, kMaxPictureX},
-             {"margin_height_divisor", &dialog.margin_height_divisor, 1, kMaxPictureY},
-             {"grid_divisor", &dialog.grid_divisor, 1, kMaxPictureX},
-             {"button_margin_divisor", &dialog.button_margin_divisor, 1, kMaxPictureY},
-             {"prompt_padding_chars", &dialog.prompt_padding_chars, 0, kMaxLines},
-             {"prompt_padding_lines", &dialog.prompt_padding_lines, 0, kMaxLines}});
+            {{.key = "content_colour",
+              .field = &dialog.content_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "border_colour", .field = &dialog.border_colour, .low = 0, .high = kMaxColour},
+             {.key = "title_colour", .field = &dialog.title_colour, .low = 0, .high = kMaxColour},
+             {.key = "text_colour", .field = &dialog.text_colour, .low = 0, .high = kMaxColour},
+             {.key = "warning_colour",
+              .field = &dialog.warning_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "window_status_colour",
+              .field = &dialog.window_status_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "status_colour", .field = &dialog.status_colour, .low = 0, .high = kMaxColour},
+             {.key = "progress_background_colour",
+              .field = &dialog.progress_background_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "progress_border_colour",
+              .field = &dialog.progress_border_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "progress_fill_colour",
+              .field = &dialog.progress_fill_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "bevel_highlight_colour",
+              .field = &dialog.bevel_highlight_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "bevel_shade_colour",
+              .field = &dialog.bevel_shade_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "bevel_face_colour",
+              .field = &dialog.bevel_face_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "bevel_mark_colour",
+              .field = &dialog.bevel_mark_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "margin_width_divisor",
+              .field = &dialog.margin_width_divisor,
+              .low = 1,
+              .high = kMaxPictureX},
+             {.key = "margin_height_divisor",
+              .field = &dialog.margin_height_divisor,
+              .low = 1,
+              .high = kMaxPictureY},
+             {.key = "grid_divisor", .field = &dialog.grid_divisor, .low = 1, .high = kMaxPictureX},
+             {.key = "button_margin_divisor",
+              .field = &dialog.button_margin_divisor,
+              .low = 1,
+              .high = kMaxPictureY},
+             {.key = "prompt_padding_chars",
+              .field = &dialog.prompt_padding_chars,
+              .low = 0,
+              .high = kMaxLines},
+             {.key = "prompt_padding_lines",
+              .field = &dialog.prompt_padding_lines,
+              .low = 0,
+              .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -981,17 +1097,29 @@ TomlResult<SCreditsColumnScroll> readCreditsColumnScroll(const toml::table &tabl
         }
         *field = std::move(*value);
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"column_left", &scroll.column_left, 0, kMaxPictureX},
-                          {"top_strip_bottom", &scroll.top_strip_bottom, 0, kMaxPictureY},
-                          {"bottom_strip_top", &scroll.bottom_strip_top, 0, kMaxPictureY},
-                          {"strip_colour", &scroll.strip_colour, 0, kMaxColour},
-                          {"text_colour", &scroll.text_colour, 0, kMaxColour},
-                          {"heading_colour", &scroll.heading_colour, 0, kMaxColour},
-                          {"shadow_colour", &scroll.shadow_colour, kNoMenuShadow, kMaxColour},
-                          {"scroll_speed", &scroll.scroll_speed, 1, kMaxPictureY},
-                          {"start_y", &scroll.start_y, 0, kMaxPictureY + 1}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "column_left", .field = &scroll.column_left, .low = 0, .high = kMaxPictureX},
+             {.key = "top_strip_bottom",
+              .field = &scroll.top_strip_bottom,
+              .low = 0,
+              .high = kMaxPictureY},
+             {.key = "bottom_strip_top",
+              .field = &scroll.bottom_strip_top,
+              .low = 0,
+              .high = kMaxPictureY},
+             {.key = "strip_colour", .field = &scroll.strip_colour, .low = 0, .high = kMaxColour},
+             {.key = "text_colour", .field = &scroll.text_colour, .low = 0, .high = kMaxColour},
+             {.key = "heading_colour",
+              .field = &scroll.heading_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "shadow_colour",
+              .field = &scroll.shadow_colour,
+              .low = kNoMenuShadow,
+              .high = kMaxColour},
+             {.key = "scroll_speed", .field = &scroll.scroll_speed, .low = 1, .high = kMaxPictureY},
+             {.key = "start_y", .field = &scroll.start_y, .low = 0, .high = kMaxPictureY + 1}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1030,19 +1158,25 @@ TomlResult<SCreditsFadeLoop> readCreditsFadeLoop(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"image_x", &fade.image_x, 0, kMaxPictureX},
-                          {"image_y", &fade.image_y, 0, kMaxPictureY},
-                          {"text_colour", &fade.text_colour, 0, kMaxColour},
-                          {"heading_colour", &fade.heading_colour, 0, kMaxColour},
-                          {"shadow_colour", &fade.shadow_colour, kNoMenuShadow, kMaxColour},
-                          {"scroll_speed", &fade.scroll_speed, 1, kMaxPictureY},
-                          {"start_y", &fade.start_y, 0, kMaxScrollTop},
-                          {"loop_below", &fade.loop_below, -kMaxScrollTop, kMaxPictureY},
-                          {"restart_y", &fade.restart_y, 0, kMaxScrollTop},
-                          {"fade_centre", &fade.fade_centre, 0, kMaxPictureY},
-                          {"fade_reach", &fade.fade_reach, 1, kMaxPictureY}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "image_x", .field = &fade.image_x, .low = 0, .high = kMaxPictureX},
+             {.key = "image_y", .field = &fade.image_y, .low = 0, .high = kMaxPictureY},
+             {.key = "text_colour", .field = &fade.text_colour, .low = 0, .high = kMaxColour},
+             {.key = "heading_colour", .field = &fade.heading_colour, .low = 0, .high = kMaxColour},
+             {.key = "shadow_colour",
+              .field = &fade.shadow_colour,
+              .low = kNoMenuShadow,
+              .high = kMaxColour},
+             {.key = "scroll_speed", .field = &fade.scroll_speed, .low = 1, .high = kMaxPictureY},
+             {.key = "start_y", .field = &fade.start_y, .low = 0, .high = kMaxScrollTop},
+             {.key = "loop_below",
+              .field = &fade.loop_below,
+              .low = -kMaxScrollTop,
+              .high = kMaxPictureY},
+             {.key = "restart_y", .field = &fade.restart_y, .low = 0, .high = kMaxScrollTop},
+             {.key = "fade_centre", .field = &fade.fade_centre, .low = 0, .high = kMaxPictureY},
+             {.key = "fade_reach", .field = &fade.fade_reach, .low = 1, .high = kMaxPictureY}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1077,20 +1211,38 @@ TomlResult<SCreditsTwoColumn> readCreditsTwoColumn(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"centre_left", &columns.centre_left, 0, kMaxPictureX},
-                          {"centre_right", &columns.centre_right, 0, kMaxPictureX},
-                          {"left_x", &columns.left_x, 0, kMaxPictureX},
-                          {"right_x", &columns.right_x, 0, kMaxPictureX},
-                          {"top_strip_bottom", &columns.top_strip_bottom, 0, kMaxPictureY},
-                          {"bottom_strip_top", &columns.bottom_strip_top, 0, kMaxPictureY},
-                          {"strip_colour", &columns.strip_colour, 0, kMaxColour},
-                          {"text_colour", &columns.text_colour, 0, kMaxColour},
-                          {"heading_colour", &columns.heading_colour, 0, kMaxColour},
-                          {"shadow_colour", &columns.shadow_colour, kNoMenuShadow, kMaxColour},
-                          {"scroll_speed", &columns.scroll_speed, 1, kMaxPictureY},
-                          {"start_y", &columns.start_y, 0, kMaxScrollTop}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "centre_left", .field = &columns.centre_left, .low = 0, .high = kMaxPictureX},
+             {.key = "centre_right",
+              .field = &columns.centre_right,
+              .low = 0,
+              .high = kMaxPictureX},
+             {.key = "left_x", .field = &columns.left_x, .low = 0, .high = kMaxPictureX},
+             {.key = "right_x", .field = &columns.right_x, .low = 0, .high = kMaxPictureX},
+             {.key = "top_strip_bottom",
+              .field = &columns.top_strip_bottom,
+              .low = 0,
+              .high = kMaxPictureY},
+             {.key = "bottom_strip_top",
+              .field = &columns.bottom_strip_top,
+              .low = 0,
+              .high = kMaxPictureY},
+             {.key = "strip_colour", .field = &columns.strip_colour, .low = 0, .high = kMaxColour},
+             {.key = "text_colour", .field = &columns.text_colour, .low = 0, .high = kMaxColour},
+             {.key = "heading_colour",
+              .field = &columns.heading_colour,
+              .low = 0,
+              .high = kMaxColour},
+             {.key = "shadow_colour",
+              .field = &columns.shadow_colour,
+              .low = kNoMenuShadow,
+              .high = kMaxColour},
+             {.key = "scroll_speed",
+              .field = &columns.scroll_speed,
+              .low = 1,
+              .high = kMaxPictureY},
+             {.key = "start_y", .field = &columns.start_y, .low = 0, .high = kMaxScrollTop}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1205,10 +1357,10 @@ TomlResult<void> readReals(const toml::table &table, std::string_view where,
             return std::unexpected(std::format("{}{}: missing", where, real.key));
         }
         const std::optional<double> value = node->value<double>();
-        if (!value || !node->is_number()) {
+        if (!value) {
             return std::unexpected(std::format("{}{}: not a number", where, real.key));
         }
-        if (!(*value >= real.low && *value <= real.high)) {
+        if (std::isnan(*value) || *value < real.low || *value > real.high) {
             return std::unexpected(
                 std::format("{}{}: not from {} to {}", where, real.key, real.low, real.high));
         }
@@ -1258,39 +1410,48 @@ TomlResult<SSkyScene> readSkyScene(const toml::table &table) {
     if (TomlResult<void> read = readSkySceneStrings(table, kWhere, sky); !read) {
         return std::unexpected(read.error());
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"cheat_code", &sky.cheat_code, 0, kMaxCheatCode},
-                          {"moon_ambient", &sky.moon_ambient, 0, kMaxLight},
-                          {"moon_flat", &sky.moon_flat, 0, kMaxLight},
-                          {"bat_count", &sky.bat_count, 0, kMaxBats},
-                          {"bat_ambient", &sky.bat_ambient, 0, kMaxLight},
-                          {"cloud_size", &sky.cloud_size, 1, kMaxCloudSize},
-                          {"cloud_shift_x", &sky.cloud_shift_x, 0, kMaxShift},
-                          {"cloud_shift_y", &sky.cloud_shift_y, 0, kMaxShift},
-                          {"frame_digits", &sky.frame_digits, 1, kMaxFrameDigits},
-                          {"frame_count", &sky.frame_count, 1, kMaxFrames},
-                          {"frame_x", &sky.frame_x, 0, kMaxPictureX},
-                          {"frame_y", &sky.frame_y, 0, kMaxPictureY},
-                          {"frame_width", &sky.frame_width, 1, kMaxPictureX + 1},
-                          {"frame_height", &sky.frame_height, 1, kMaxPictureY + 1},
-                          {"frame_alpha", &sky.frame_alpha, 0, kMaxAlpha}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "cheat_code", .field = &sky.cheat_code, .low = 0, .high = kMaxCheatCode},
+             {.key = "moon_ambient", .field = &sky.moon_ambient, .low = 0, .high = kMaxLight},
+             {.key = "moon_flat", .field = &sky.moon_flat, .low = 0, .high = kMaxLight},
+             {.key = "bat_count", .field = &sky.bat_count, .low = 0, .high = kMaxBats},
+             {.key = "bat_ambient", .field = &sky.bat_ambient, .low = 0, .high = kMaxLight},
+             {.key = "cloud_size", .field = &sky.cloud_size, .low = 1, .high = kMaxCloudSize},
+             {.key = "cloud_shift_x", .field = &sky.cloud_shift_x, .low = 0, .high = kMaxShift},
+             {.key = "cloud_shift_y", .field = &sky.cloud_shift_y, .low = 0, .high = kMaxShift},
+             {.key = "frame_digits", .field = &sky.frame_digits, .low = 1, .high = kMaxFrameDigits},
+             {.key = "frame_count", .field = &sky.frame_count, .low = 1, .high = kMaxFrames},
+             {.key = "frame_x", .field = &sky.frame_x, .low = 0, .high = kMaxPictureX},
+             {.key = "frame_y", .field = &sky.frame_y, .low = 0, .high = kMaxPictureY},
+             {.key = "frame_width", .field = &sky.frame_width, .low = 1, .high = kMaxPictureX + 1},
+             {.key = "frame_height",
+              .field = &sky.frame_height,
+              .low = 1,
+              .high = kMaxPictureY + 1},
+             {.key = "frame_alpha", .field = &sky.frame_alpha, .low = 0, .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
-    if (TomlResult<void> read =
-            readReals(table, kWhere,
-                      {{"start_phase", &sky.start_phase, 0.0, 1.0},
-                       {"turn_per_second", &sky.turn_per_second, 0.0, 1.0},
-                       {"rest_phase", &sky.rest_phase, 0.0, 1.0},
-                       {"projection", &sky.projection, 1.0, kMaxProjection},
-                       {"swing", &sky.swing, -kMaxProjection, kMaxProjection},
-                       {"depth", &sky.depth, 1.0, kMaxProjection},
-                       {"bat_speed", &sky.bat_speed, 0.0, kMaxProjection},
-                       {"bat_animation_speed", &sky.bat_animation_speed, 0.0, kMaxProjection},
-                       {"bat_scatter", &sky.bat_scatter, 0.0, kMaxProjection},
-                       {"frame_rate", &sky.frame_rate, 0.0, kMaxFramesPerSecond},
-                       {"frame_wrap", &sky.frame_wrap, 1.0, kMaxProjection}});
+    if (TomlResult<void> read = readReals(
+            table, kWhere,
+            {{.key = "start_phase", .field = &sky.start_phase, .low = 0.0, .high = 1.0},
+             {.key = "turn_per_second", .field = &sky.turn_per_second, .low = 0.0, .high = 1.0},
+             {.key = "rest_phase", .field = &sky.rest_phase, .low = 0.0, .high = 1.0},
+             {.key = "projection", .field = &sky.projection, .low = 1.0, .high = kMaxProjection},
+             {.key = "swing", .field = &sky.swing, .low = -kMaxProjection, .high = kMaxProjection},
+             {.key = "depth", .field = &sky.depth, .low = 1.0, .high = kMaxProjection},
+             {.key = "bat_speed", .field = &sky.bat_speed, .low = 0.0, .high = kMaxProjection},
+             {.key = "bat_animation_speed",
+              .field = &sky.bat_animation_speed,
+              .low = 0.0,
+              .high = kMaxProjection},
+             {.key = "bat_scatter", .field = &sky.bat_scatter, .low = 0.0, .high = kMaxProjection},
+             {.key = "frame_rate",
+              .field = &sky.frame_rate,
+              .low = 0.0,
+              .high = kMaxFramesPerSecond},
+             {.key = "frame_wrap", .field = &sky.frame_wrap, .low = 1.0, .high = kMaxProjection}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1317,7 +1478,7 @@ TomlResult<std::array<double, Count>> readRealList(const toml::table &table, std
     }
     for (std::size_t i = 0; i < Count; ++i) {
         const std::optional<double> value = (*array)[i].value<double>();
-        if (!value || !(*array)[i].is_number() || !(*value >= low && *value <= high)) {
+        if (!value || std::isnan(*value) || *value < low || *value > high) {
             return std::unexpected(std::format("{}{}: not from {} to {}", where, key, low, high));
         }
         values.at(i) = *value;
@@ -1352,8 +1513,9 @@ TomlResult<std::vector<SFigureModel>> readFigureModels(const toml::table &table,
             return std::unexpected(file.error());
         }
         model.file = std::move(*file);
-        if (TomlResult<void> read =
-                readIntegers(*entry, inner, {{"frame_wrap", &model.frame_wrap, 0, kMaxFrames}});
+        if (TomlResult<void> read = readIntegers(
+                *entry, inner,
+                {{.key = "frame_wrap", .field = &model.frame_wrap, .low = 0, .high = kMaxFrames}});
             !read) {
             return std::unexpected(read.error());
         }
@@ -1414,34 +1576,55 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
     }
     figure.models = std::move(*models);
     if (!figure.backdrop.empty()) {
-        if (TomlResult<void> read = readIntegers(
-                table, kWhere, {{"backdrop_alpha", &figure.backdrop_alpha, 0, kMaxAlpha}});
+        if (TomlResult<void> read = readIntegers(table, kWhere,
+                                                 {{.key = "backdrop_alpha",
+                                                   .field = &figure.backdrop_alpha,
+                                                   .low = 0,
+                                                   .high = kMaxAlpha}});
             !read) {
             return std::unexpected(read.error());
         }
     } else if (table.contains("backdrop_alpha")) {
         return std::unexpected(std::format("{}backdrop_alpha: there is no backdrop", kWhere));
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"steps_per_second", &figure.steps_per_second, 1, kMaxFramesPerSecond},
-                          {"cheat_code", &figure.cheat_code, 0, kMaxCheatCode},
-                          {"ambient", &figure.ambient, 0, kMaxLight},
-                          {"frame_digits", &figure.frame_digits, 1, kMaxFrameDigits},
-                          {"frame_count", &figure.frame_count, 1, kMaxFrames},
-                          {"frame_x", &figure.frame_x, 0, kMaxPictureX},
-                          {"frame_y", &figure.frame_y, 0, kMaxPictureY},
-                          {"frame_width", &figure.frame_width, 1, kMaxPictureX + 1},
-                          {"frame_height", &figure.frame_height, 1, kMaxPictureY + 1},
-                          {"frame_alpha", &figure.frame_alpha, 0, kMaxAlpha}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "steps_per_second",
+              .field = &figure.steps_per_second,
+              .low = 1,
+              .high = kMaxFramesPerSecond},
+             {.key = "cheat_code", .field = &figure.cheat_code, .low = 0, .high = kMaxCheatCode},
+             {.key = "ambient", .field = &figure.ambient, .low = 0, .high = kMaxLight},
+             {.key = "frame_digits",
+              .field = &figure.frame_digits,
+              .low = 1,
+              .high = kMaxFrameDigits},
+             {.key = "frame_count", .field = &figure.frame_count, .low = 1, .high = kMaxFrames},
+             {.key = "frame_x", .field = &figure.frame_x, .low = 0, .high = kMaxPictureX},
+             {.key = "frame_y", .field = &figure.frame_y, .low = 0, .high = kMaxPictureY},
+             {.key = "frame_width",
+              .field = &figure.frame_width,
+              .low = 1,
+              .high = kMaxPictureX + 1},
+             {.key = "frame_height",
+              .field = &figure.frame_height,
+              .low = 1,
+              .high = kMaxPictureY + 1},
+             {.key = "frame_alpha", .field = &figure.frame_alpha, .low = 0, .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
-    if (TomlResult<void> read =
-            readReals(table, kWhere,
-                      {{"projection", &figure.projection, 1.0, kMaxProjection},
-                       {"frame_rate", &figure.frame_rate, 0.0, kMaxFramesPerSecond},
-                       {"frame_wrap", &figure.frame_wrap, 1.0, kMaxProjection}});
+    if (TomlResult<void> read = readReals(
+            table, kWhere,
+            {{.key = "projection", .field = &figure.projection, .low = 1.0, .high = kMaxProjection},
+             {.key = "frame_rate",
+              .field = &figure.frame_rate,
+              .low = 0.0,
+              .high = kMaxFramesPerSecond},
+             {.key = "frame_wrap",
+              .field = &figure.frame_wrap,
+              .low = 1.0,
+              .high = kMaxProjection}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1525,21 +1708,51 @@ TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
     // The hand's alpha starts above the most, a step over 0xffff, as BW3's did.
     if (TomlResult<void> read = readIntegers(
             table, kWhere,
-            {{"step_x", &scroll.step_x, -kMaxPictureX, kMaxPictureX},
-             {"step_y", &scroll.step_y, -kMaxPictureY, kMaxPictureY},
-             {"steps_per_second", &scroll.steps_per_second, 1, kMaxFramesPerSecond},
-             {"wrap_x_above", &scroll.wrap_x_above, -kMaxPictureX - 1, kMaxPictureX + 1},
-             {"wrap_x_to", &scroll.wrap_x_to, -kMaxPictureX - 1, kMaxPictureX + 1},
-             {"wrap_y_below", &scroll.wrap_y_below, -kMaxPictureY - 1, kMaxPictureY + 1},
-             {"wrap_y_to", &scroll.wrap_y_to, -kMaxPictureY - 1, kMaxPictureY + 1},
-             {"hand_x", &scroll.hand_x, -kMaxPictureX, kMaxPictureX},
-             {"hand_y", &scroll.hand_y, -kMaxPictureY, kMaxPictureY},
-             {"hand_width", &scroll.hand_width, 1, kMaxPictureSize},
-             {"hand_height", &scroll.hand_height, 1, kMaxPictureSize},
-             {"hand_alpha_start", &scroll.hand_alpha_start, 0, kMaxAlpha + 1},
-             {"hand_alpha_low", &scroll.hand_alpha_low, 0, kMaxAlpha},
-             {"hand_alpha_high", &scroll.hand_alpha_high, 0, kMaxAlpha},
-             {"hand_alpha_step", &scroll.hand_alpha_step, 1, kMaxAlpha}});
+            {{.key = "step_x", .field = &scroll.step_x, .low = -kMaxPictureX, .high = kMaxPictureX},
+             {.key = "step_y", .field = &scroll.step_y, .low = -kMaxPictureY, .high = kMaxPictureY},
+             {.key = "steps_per_second",
+              .field = &scroll.steps_per_second,
+              .low = 1,
+              .high = kMaxFramesPerSecond},
+             {.key = "wrap_x_above",
+              .field = &scroll.wrap_x_above,
+              .low = -kMaxPictureX - 1,
+              .high = kMaxPictureX + 1},
+             {.key = "wrap_x_to",
+              .field = &scroll.wrap_x_to,
+              .low = -kMaxPictureX - 1,
+              .high = kMaxPictureX + 1},
+             {.key = "wrap_y_below",
+              .field = &scroll.wrap_y_below,
+              .low = -kMaxPictureY - 1,
+              .high = kMaxPictureY + 1},
+             {.key = "wrap_y_to",
+              .field = &scroll.wrap_y_to,
+              .low = -kMaxPictureY - 1,
+              .high = kMaxPictureY + 1},
+             {.key = "hand_x", .field = &scroll.hand_x, .low = -kMaxPictureX, .high = kMaxPictureX},
+             {.key = "hand_y", .field = &scroll.hand_y, .low = -kMaxPictureY, .high = kMaxPictureY},
+             {.key = "hand_width", .field = &scroll.hand_width, .low = 1, .high = kMaxPictureSize},
+             {.key = "hand_height",
+              .field = &scroll.hand_height,
+              .low = 1,
+              .high = kMaxPictureSize},
+             {.key = "hand_alpha_start",
+              .field = &scroll.hand_alpha_start,
+              .low = 0,
+              .high = kMaxAlpha + 1},
+             {.key = "hand_alpha_low",
+              .field = &scroll.hand_alpha_low,
+              .low = 0,
+              .high = kMaxAlpha},
+             {.key = "hand_alpha_high",
+              .field = &scroll.hand_alpha_high,
+              .low = 0,
+              .high = kMaxAlpha},
+             {.key = "hand_alpha_step",
+              .field = &scroll.hand_alpha_step,
+              .low = 1,
+              .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1615,10 +1828,11 @@ TomlResult<std::vector<SFontYOffset>> readFontYOffsets(const toml::table &table,
             return std::unexpected(keys.error());
         }
         SFontYOffset offset;
-        if (TomlResult<void> read = readIntegers(*entry, inner,
-                                                 {{"offset", &offset.offset, 0, kMaxLines},
-                                                  {"first", &offset.first, 0, kMaxColour},
-                                                  {"last", &offset.last, 0, kMaxColour}});
+        if (TomlResult<void> read = readIntegers(
+                *entry, inner,
+                {{.key = "offset", .field = &offset.offset, .low = 0, .high = kMaxLines},
+                 {.key = "first", .field = &offset.first, .low = 0, .high = kMaxColour},
+                 {.key = "last", .field = &offset.last, .low = 0, .high = kMaxColour}});
             !read) {
             return std::unexpected(read.error());
         }
@@ -1640,10 +1854,11 @@ TomlResult<std::optional<SOsFontSize>> readOsFontSize(const toml::table &table,
         return std::unexpected(keys.error());
     }
     SOsFontSize size;
-    if (TomlResult<void> read = readIntegers(**found, inner,
-                                             {{"height", &size.height, 1, kMaxPictureY},
-                                              {"y_offset1", &size.y_offset1, 0, kMaxLines},
-                                              {"y_offset2", &size.y_offset2, 0, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            **found, inner,
+            {{.key = "height", .field = &size.height, .low = 1, .high = kMaxPictureY},
+             {.key = "y_offset1", .field = &size.y_offset1, .low = 0, .high = kMaxLines},
+             {.key = "y_offset2", .field = &size.y_offset2, .low = 0, .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1669,12 +1884,13 @@ TomlResult<SFontSpec> readFont(const toml::table &table, std::string_view where)
         return std::unexpected(file.error());
     }
     font.file = std::move(*file);
-    if (TomlResult<void> read = readIntegers(table, where,
-                                             {{"width", &font.width, 1, kMaxFontSheet},
-                                              {"height", &font.height, 1, kMaxFontSheet},
-                                              {"transparent", &font.transparent, 0, kMaxColour},
-                                              {"space_width", &font.space_width, 0, kMaxLines},
-                                              {"shadow_x", &font.shadow_x, 0, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            table, where,
+            {{.key = "width", .field = &font.width, .low = 1, .high = kMaxFontSheet},
+             {.key = "height", .field = &font.height, .low = 1, .high = kMaxFontSheet},
+             {.key = "transparent", .field = &font.transparent, .low = 0, .high = kMaxColour},
+             {.key = "space_width", .field = &font.space_width, .low = 0, .high = kMaxLines},
+             {.key = "shadow_x", .field = &font.shadow_x, .low = 0, .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1827,12 +2043,15 @@ TomlResult<SStartup> readStartup(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"picture_alpha", &startup.picture_alpha, 0, kMaxAlpha},
-                          {"label_x", &startup.label_x, 0, kMaxPictureX},
-                          {"label_y", &startup.label_y, 0, kMaxPictureY},
-                          {"label_colour", &startup.label_colour, 0, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "picture_alpha", .field = &startup.picture_alpha, .low = 0, .high = kMaxAlpha},
+             {.key = "label_x", .field = &startup.label_x, .low = 0, .high = kMaxPictureX},
+             {.key = "label_y", .field = &startup.label_y, .low = 0, .high = kMaxPictureY},
+             {.key = "label_colour",
+              .field = &startup.label_colour,
+              .low = 0,
+              .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1852,10 +2071,15 @@ TomlResult<SLoadingStatus> readLoadingStatus(const toml::table &table, std::stri
         return std::unexpected(font.error());
     }
     status.status_font = std::move(*font);
-    if (TomlResult<void> read =
-            readIntegers(table, where,
-                         {{"status_box_colour", &status.status_box_colour, 0, kMaxColour},
-                          {"status_colour", &status.status_colour, 0, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(table, where,
+                                             {{.key = "status_box_colour",
+                                               .field = &status.status_box_colour,
+                                               .low = 0,
+                                               .high = kMaxColour},
+                                              {.key = "status_colour",
+                                               .field = &status.status_colour,
+                                               .low = 0,
+                                               .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1888,11 +2112,12 @@ TomlResult<SProgressBarIndicator> readProgressBarIndicator(const toml::table &ta
     SProgressBarIndicator bar;
     // The trough and the bar inside the frame need at least its middle row.
     constexpr int kInsetRows = 4;
-    if (TomlResult<void> read = readIntegers(table, kWhere,
-                                             {{"height", &bar.height, kInsetRows, kMaxPictureY},
-                                              {"frame_colour", &bar.frame_colour, 0, kMaxColour},
-                                              {"trough_colour", &bar.trough_colour, 0, kMaxColour},
-                                              {"bar_colour", &bar.bar_colour, 0, kMaxColour}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "height", .field = &bar.height, .low = kInsetRows, .high = kMaxPictureY},
+             {.key = "frame_colour", .field = &bar.frame_colour, .low = 0, .high = kMaxColour},
+             {.key = "trough_colour", .field = &bar.trough_colour, .low = 0, .high = kMaxColour},
+             {.key = "bar_colour", .field = &bar.bar_colour, .low = 0, .high = kMaxColour}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1913,14 +2138,15 @@ TomlResult<SIconIndicator> readIconIndicator(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SIconIndicator icon;
-    if (TomlResult<void> read = readIntegers(table, kWhere,
-                                             {{"x", &icon.x, 0, kMaxPictureX},
-                                              {"y", &icon.y, 0, kMaxPictureY},
-                                              {"width", &icon.width, 1, kMaxPictureSize},
-                                              {"height", &icon.height, 1, kMaxPictureSize},
-                                              {"alpha_start", &icon.alpha_start, 0, kMaxAlpha},
-                                              {"alpha_end", &icon.alpha_end, 0, kMaxAlpha},
-                                              {"frames", &icon.frames, 1, kMaxLoadingFrames}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "x", .field = &icon.x, .low = 0, .high = kMaxPictureX},
+             {.key = "y", .field = &icon.y, .low = 0, .high = kMaxPictureY},
+             {.key = "width", .field = &icon.width, .low = 1, .high = kMaxPictureSize},
+             {.key = "height", .field = &icon.height, .low = 1, .high = kMaxPictureSize},
+             {.key = "alpha_start", .field = &icon.alpha_start, .low = 0, .high = kMaxAlpha},
+             {.key = "alpha_end", .field = &icon.alpha_end, .low = 0, .high = kMaxAlpha},
+             {.key = "frames", .field = &icon.frames, .low = 1, .high = kMaxLoadingFrames}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -1952,18 +2178,27 @@ TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    if (TomlResult<void> read =
-            readIntegers(table, kWhere,
-                         {{"window_size", &moon.window_size, 1, kMaxPictureY + 1},
-                          {"corner_x", &moon.corner_x, 0, kMaxPictureX},
-                          {"corner_y", &moon.corner_y, 0, kMaxPictureY},
-                          {"corner_size", &moon.corner_size, 1, kMaxPictureY + 1},
-                          {"full_projection", &moon.full_projection, 1, kMaxProjection},
-                          {"window_projection", &moon.window_projection, 1, kMaxProjection},
-                          {"depth", &moon.depth, 1, kMaxProjection},
-                          {"light_reach", &moon.light_reach, 0, kMaxLight},
-                          {"ambient", &moon.ambient, 0, kMaxLight},
-                          {"glow_half_size", &moon.glow_half_size, 0, kMaxLight}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "window_size", .field = &moon.window_size, .low = 1, .high = kMaxPictureY + 1},
+             {.key = "corner_x", .field = &moon.corner_x, .low = 0, .high = kMaxPictureX},
+             {.key = "corner_y", .field = &moon.corner_y, .low = 0, .high = kMaxPictureY},
+             {.key = "corner_size", .field = &moon.corner_size, .low = 1, .high = kMaxPictureY + 1},
+             {.key = "full_projection",
+              .field = &moon.full_projection,
+              .low = 1,
+              .high = kMaxProjection},
+             {.key = "window_projection",
+              .field = &moon.window_projection,
+              .low = 1,
+              .high = kMaxProjection},
+             {.key = "depth", .field = &moon.depth, .low = 1, .high = kMaxProjection},
+             {.key = "light_reach", .field = &moon.light_reach, .low = 0, .high = kMaxLight},
+             {.key = "ambient", .field = &moon.ambient, .low = 0, .high = kMaxLight},
+             {.key = "glow_half_size",
+              .field = &moon.glow_half_size,
+              .low = 0,
+              .high = kMaxLight}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2048,9 +2283,10 @@ TomlResult<std::vector<SStoryDifficulty>> readDifficulties(const toml::table &ta
             return std::unexpected(label.error());
         }
         difficulty.label = std::move(*label);
-        if (TomlResult<void> read = readIntegers(entry, inner,
-                                                 {{"puzzle", &difficulty.puzzle, 0, kHardMode},
-                                                  {"combat", &difficulty.combat, 0, kHardMode}});
+        if (TomlResult<void> read = readIntegers(
+                entry, inner,
+                {{.key = "puzzle", .field = &difficulty.puzzle, .low = 0, .high = kHardMode},
+                 {.key = "combat", .field = &difficulty.combat, .low = 0, .high = kHardMode}});
             !read) {
             return std::unexpected(read.error());
         }
@@ -2072,8 +2308,11 @@ TomlResult<SStorySelect> readStoryList(const toml::table &table) {
         return std::unexpected(probe.error());
     }
     select.full_install_probe = std::move(*probe);
-    if (TomlResult<void> read = readIntegers(
-            table, kWhere, {{"loading_frames", &select.loading_frames, 1, kMaxLoadingFrames}});
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{.key = "loading_frames",
+                                               .field = &select.loading_frames,
+                                               .low = 1,
+                                               .high = kMaxLoadingFrames}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2092,8 +2331,11 @@ TomlResult<SDirectStart> readDirectStart(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SDirectStart start;
-    if (TomlResult<void> read = readIntegers(
-            table, kWhere, {{"loading_frames", &start.loading_frames, 0, kMaxLoadingFrames}});
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{.key = "loading_frames",
+                                               .field = &start.loading_frames,
+                                               .low = 0,
+                                               .high = kMaxLoadingFrames}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2189,13 +2431,14 @@ TomlResult<SChapterTitle> readChapterTitle(const toml::table &table) {
         return std::unexpected(format.error());
     }
     title.format = std::move(*format);
-    if (TomlResult<void> read = readIntegers(table, kWhere,
-                                             {{"seconds", &title.seconds, 1, kMaxTitleSeconds},
-                                              {"colour", &title.colour, 0, kMaxColour},
-                                              {"shadow", &title.shadow, kNoMenuShadow, kMaxColour},
-                                              {"alpha", &title.alpha, 0, kMaxAlpha},
-                                              {"inset_across", &title.inset_across, 0, kMaxLines},
-                                              {"inset_up", &title.inset_up, 0, kMaxLines}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "seconds", .field = &title.seconds, .low = 1, .high = kMaxTitleSeconds},
+             {.key = "colour", .field = &title.colour, .low = 0, .high = kMaxColour},
+             {.key = "shadow", .field = &title.shadow, .low = kNoMenuShadow, .high = kMaxColour},
+             {.key = "alpha", .field = &title.alpha, .low = 0, .high = kMaxAlpha},
+             {.key = "inset_across", .field = &title.inset_across, .low = 0, .high = kMaxLines},
+             {.key = "inset_up", .field = &title.inset_up, .low = 0, .high = kMaxLines}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2217,6 +2460,9 @@ TomlResult<T> readMenuPart(const toml::table &table, std::string_view key, Read 
     return read(**found);
 }
 
+TomlResult<void> readMenuPanels(const toml::table &table, SMenuLayout &menu);
+TomlResult<void> readMenuTextFonts(const toml::table &table, SMenuLayout &menu);
+
 TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
@@ -2228,10 +2474,11 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(keys.error());
     }
     SMenuLayout menu;
-    if (TomlResult<void> read = readIntegers(table, kWhere,
-                                             {{"left", &menu.left, 0, kMaxPictureX},
-                                              {"top", &menu.top, 0, kMaxPictureY},
-                                              {"titled_top", &menu.titled_top, 0, kMaxPictureY}});
+    if (TomlResult<void> read = readIntegers(
+            table, kWhere,
+            {{.key = "left", .field = &menu.left, .low = 0, .high = kMaxPictureX},
+             {.key = "top", .field = &menu.top, .low = 0, .high = kMaxPictureY},
+             {.key = "titled_top", .field = &menu.titled_top, .low = 0, .high = kMaxPictureY}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2272,6 +2519,23 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(page_tops.error());
     }
     menu.page_tops = std::move(*page_tops);
+    if (TomlResult<void> panels = readMenuPanels(table, menu); !panels) {
+        return std::unexpected(panels.error());
+    }
+    const TomlResult<bool> animate = readRequiredBoolean(table, kWhere, "animate_titled_backdrop");
+    if (!animate) {
+        return std::unexpected(animate.error());
+    }
+    menu.animate_titled_backdrop = *animate;
+    if (TomlResult<void> fonts = readMenuTextFonts(table, menu); !fonts) {
+        return std::unexpected(fonts.error());
+    }
+    return menu;
+}
+
+// The options, sound, slider, attract, features and music tables.
+TomlResult<void> readMenuPanels(const toml::table &table, SMenuLayout &menu) {
+    constexpr std::string_view kWhere = "menu: ";
     const TomlResult<const toml::table *> options = readRequiredTable(table, kWhere, "options");
     if (!options) {
         return std::unexpected(options.error());
@@ -2313,11 +2577,12 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         return std::unexpected(music.error());
     }
     menu.music = std::move(*music);
-    const TomlResult<bool> animate = readRequiredBoolean(table, kWhere, "animate_titled_backdrop");
-    if (!animate) {
-        return std::unexpected(animate.error());
-    }
-    menu.animate_titled_backdrop = *animate;
+    return {};
+}
+
+// The large and small fonts the menus' text is drawn in.
+TomlResult<void> readMenuTextFonts(const toml::table &table, SMenuLayout &menu) {
+    constexpr std::string_view kWhere = "menu: ";
     constexpr std::string_view kFontsWhere = "menu: text_fonts: ";
     const TomlResult<const toml::table *> fonts = readRequiredTable(table, kWhere, "text_fonts");
     if (!fonts) {
@@ -2335,7 +2600,7 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
         }
         *field = std::move(*value);
     }
-    return menu;
+    return {};
 }
 
 // The style each part names, by key.
@@ -2909,13 +3174,195 @@ std::string formatStory(const SGameStory &story) {
     return text;
 }
 
-} // namespace
-
-TomlResult<SGameContent> readGameContent(const toml::table &table) {
-    SGameContent content;
-    if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
-        return std::unexpected(strings.error());
+std::string formatFrontEndParts(const SFrontEndParts &parts) {
+    if (parts == SFrontEndParts{}) {
+        return {};
     }
+    std::string text = "\n[front_end]\n";
+    for (const auto &[key, field] : getFrontEndParts(parts)) {
+        if (*field) {
+            text += std::format("{} = {}\n", key, quoteToml(**field));
+        }
+    }
+    return text;
+}
+
+std::string formatColumnScroll(const SCreditsColumnScroll &scroll) {
+    return std::format(
+        "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
+        "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
+        "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
+        "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
+        "end_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(scroll.font), scroll.column_left, scroll.column_to_screen_edge,
+        scroll.top_strip_bottom, scroll.bottom_strip_top, scroll.strip_colour, scroll.text_colour,
+        scroll.heading_colour, scroll.shadow_colour, scroll.scroll_speed, scroll.start_y,
+        quoteToml(scroll.end_line), quoteToml(std::string(1, scroll.marker)),
+        quoteToml(std::string(1, scroll.heading)));
+}
+
+std::string formatTwoColumn(const SCreditsTwoColumn &two) {
+    return std::format(
+        "\n[credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
+        "left_x = {}\nright_x = {}\nleft_column = {}\nright_column = {}\n"
+        "top_strip_bottom = {}\nbottom_strip_top = {}\nstrip_colour = 0x{:x}\n"
+        "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
+        "scroll_speed = {}\nstart_y = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(two.font), two.centre_left, two.centre_right, two.left_x, two.right_x,
+        quoteToml(std::string(1, two.left_column)), quoteToml(std::string(1, two.right_column)),
+        two.top_strip_bottom, two.bottom_strip_top, two.strip_colour, two.text_colour,
+        two.heading_colour, two.shadow_colour, two.scroll_speed, two.start_y,
+        quoteToml(two.end_line), quoteToml(std::string(1, two.marker)),
+        quoteToml(std::string(1, two.heading)));
+}
+
+std::string formatFadeLoop(const SCreditsFadeLoop &fade) {
+    return std::format(
+        "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
+        "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
+        "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
+        "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
+        quoteToml(fade.font), fade.image_x, fade.image_y, fade.text_colour, fade.heading_colour,
+        fade.shadow_colour, fade.scroll_speed, fade.start_y, fade.loop_below, fade.restart_y,
+        fade.fade_centre, fade.fade_reach, quoteToml(fade.end_line),
+        quoteToml(std::string(1, fade.marker)), quoteToml(std::string(1, fade.heading)));
+}
+
+std::string formatCredits(const SGameCredits &credits) {
+    std::string text = std::format("\n[credits]\ntext = {}\n{}", quoteToml(credits.text),
+                                   formatPictureFit(credits.fit));
+    if (!credits.image.empty()) {
+        text += std::format("image = {}\n", quoteToml(credits.image));
+    }
+    if (!credits.music.empty()) {
+        text += std::format("music = {}\n", quoteToml(credits.music));
+    }
+    if (const std::optional<SCreditsColumnScroll> &scroll = credits.column_scroll) {
+        text += formatColumnScroll(*scroll);
+    }
+    if (const std::optional<SCreditsTwoColumn> &two = credits.two_column) {
+        text += formatTwoColumn(*two);
+    }
+    if (const std::optional<SCreditsFadeLoop> &fade = credits.fade_loop) {
+        text += formatFadeLoop(*fade);
+    }
+    return text;
+}
+
+std::string formatStartup(const SStartup &startup) {
+    return std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
+                       "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
+                       "movie_directory = {}\nmovie = {}\n",
+                       quoteToml(startup.picture), formatPictureFit(startup.fit),
+                       startup.picture_alpha, startup.label_x, startup.label_y,
+                       quoteToml(startup.label_font), startup.label_colour,
+                       quoteToml(startup.movie_directory), quoteToml(startup.movie));
+}
+
+// The moon, progress bar and icon indicators, those the game has.
+std::string formatLoadingIndicators(const SGameContent &content) {
+    std::string text;
+    if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
+        text += std::format(
+            "\n[loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
+            "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
+            "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
+            "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
+            "glow_half_size = {}\n{}",
+            quoteToml(moon->model), quoteToml(moon->glow_texture), moon->window_size,
+            moon->corner_x, moon->corner_y, moon->corner_size, moon->default_tint[0],
+            moon->default_tint[1], moon->default_tint[2], moon->full_projection,
+            moon->window_projection, moon->depth, moon->light_reach, moon->ambient,
+            moon->glow_half_size, formatLoadingStatus(moon->status));
+    }
+    if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
+        text +=
+            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
+                        "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
+                        bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
+                        formatLoadingStatus(bar->status));
+    }
+    if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
+        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
+                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
+                            "always_random = {}\n",
+                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
+                            icon->alpha_end, icon->frames, icon->always_random);
+    }
+    return text;
+}
+
+// The story list with its difficulties, and the direct start, those the game has.
+std::string formatStoryStart(const SGameContent &content) {
+    std::string text;
+    if (const std::optional<SStorySelect> &select = content.story_select) {
+        text += std::format(
+            "\n[story_select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
+            quoteToml(select->full_install_probe), select->loading_frames);
+        for (const SStoryDifficulty &difficulty : select->difficulties) {
+            text += std::format(
+                "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
+                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
+        }
+    }
+    if (const std::optional<SDirectStart> &start = content.direct_start) {
+        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
+                            start->loading_frames);
+    }
+    return text;
+}
+
+std::string formatChapterTitle(const SChapterTitle &title) {
+    std::string text =
+        std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
+                    "shadow = {}\nalpha = 0x{:x}\ninset_across = {}\ninset_up = {}\n",
+                    title.seconds, quoteToml(title.format), title.colour, title.shadow, title.alpha,
+                    title.inset_across, title.inset_up);
+    for (const SChapterTitleFont &font : title.fonts) {
+        text += std::format("\n[[chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
+        if (font.below_height != 0) {
+            text += std::format("below_height = {}\n", font.below_height);
+        }
+    }
+    return text;
+}
+
+std::string formatLoadingPicture(const SLoadingPicture &picture) {
+    std::string text = std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
+                                   formatPictureFit(picture.fit));
+    if (picture.moon) {
+        text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
+                            picture.moon->y, formatTint(picture.moon->tint));
+    }
+    if (picture.random) {
+        text += "random = true\n";
+    }
+    if (!picture.icon.empty()) {
+        text += std::format("icon = {}\n", quoteToml(picture.icon));
+    }
+    return text;
+}
+
+// The labels, then each language's translations.
+std::string formatTextTables(const SGameContent &content) {
+    std::string text;
+    if (!content.labels.empty()) {
+        text += "\n[labels]\n";
+        for (const auto &[english, label] : content.labels) {
+            text += std::format("{} = {}\n", quoteToml(english), quoteToml(label));
+        }
+    }
+    for (const auto &[language, translation] : content.translations) {
+        text += std::format("\n[translation.{}]\n", quoteToml(language));
+        for (const auto &[english, translated] : translation) {
+            text += std::format("{} = {}\n", quoteToml(english), quoteToml(translated));
+        }
+    }
+    return text;
+}
+
+// The front end, credits, menu, list and dialog tables.
+TomlResult<void> readGameLooks(const toml::table &table, SGameContent &content) {
     TomlResult<std::optional<SFrontEndParts>> front_end =
         readOptionalTable<SFrontEndParts>(table, "front_end", readFrontEnd);
     if (!front_end) {
@@ -2946,14 +3393,29 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(dialog.error());
     }
     content.dialog = *dialog;
-    const TomlResult<const toml::table *> backdrop = readTable(table, "", "title_backdrop");
-    if (!backdrop) {
-        return std::unexpected(backdrop.error());
+    return {};
+}
+
+// A table the content reads only when it's there.
+TomlResult<void> readPresentTable(const toml::table &table, std::string_view key,
+                                  SGameContent &content,
+                                  TomlResult<void> (*read)(const toml::table &, SGameContent &)) {
+    const TomlResult<const toml::table *> found = readTable(table, "", key);
+    if (!found) {
+        return std::unexpected(found.error());
     }
-    if (*backdrop != nullptr) {
-        if (TomlResult<void> read = readTitleBackdrop(**backdrop, content); !read) {
-            return std::unexpected(read.error());
-        }
+    if (*found == nullptr) {
+        return {};
+    }
+    return read(**found, content);
+}
+
+// The title backdrop, startup, loading indicator, story select and chapter title tables.
+TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content) {
+    if (TomlResult<void> read =
+            readPresentTable(table, "title_backdrop", content, readTitleBackdrop);
+        !read) {
+        return read;
     }
     TomlResult<std::optional<SStartup>> startup =
         readOptionalTable<SStartup>(table, "startup", readStartup);
@@ -2961,23 +3423,14 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(startup.error());
     }
     content.startup = std::move(*startup);
-    const TomlResult<const toml::table *> indicator = readTable(table, "", "loading_indicator");
-    if (!indicator) {
-        return std::unexpected(indicator.error());
+    if (TomlResult<void> read =
+            readPresentTable(table, "loading_indicator", content, readLoadingIndicator);
+        !read) {
+        return read;
     }
-    if (*indicator != nullptr) {
-        if (TomlResult<void> read = readLoadingIndicator(**indicator, content); !read) {
-            return std::unexpected(read.error());
-        }
-    }
-    const TomlResult<const toml::table *> story_select = readTable(table, "", "story_select");
-    if (!story_select) {
-        return std::unexpected(story_select.error());
-    }
-    if (*story_select != nullptr) {
-        if (TomlResult<void> read = readStorySelect(**story_select, content); !read) {
-            return std::unexpected(read.error());
-        }
+    if (TomlResult<void> read = readPresentTable(table, "story_select", content, readStorySelect);
+        !read) {
+        return read;
     }
     TomlResult<std::optional<SChapterTitle>> chapter_title =
         readOptionalTable<SChapterTitle>(table, "chapter_title", readChapterTitle);
@@ -2985,6 +3438,22 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
         return std::unexpected(chapter_title.error());
     }
     content.chapter_title = std::move(*chapter_title);
+    return {};
+}
+
+} // namespace
+
+TomlResult<SGameContent> readGameContent(const toml::table &table) {
+    SGameContent content;
+    if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
+        return std::unexpected(strings.error());
+    }
+    if (TomlResult<void> looks = readGameLooks(table, content); !looks) {
+        return std::unexpected(looks.error());
+    }
+    if (TomlResult<void> screens = readGameScreens(table, content); !screens) {
+        return std::unexpected(screens.error());
+    }
     TomlResult<std::vector<SFontSpec>> fonts = readListById<SFontSpec>(table, "font", readFont);
     if (!fonts) {
         return std::unexpected(fonts.error());
@@ -3037,64 +3506,9 @@ std::string formatGameContentKeys(const SGameContent &content) {
 }
 
 std::string formatGameContentTables(const SGameContent &content) {
-    std::string text;
-    if (content.front_end != SFrontEndParts{}) {
-        text += "\n[front_end]\n";
-        for (const auto &[key, field] : getFrontEndParts(content.front_end)) {
-            if (*field) {
-                text += std::format("{} = {}\n", key, quoteToml(**field));
-            }
-        }
-    }
+    std::string text = formatFrontEndParts(content.front_end);
     if (content.credits) {
-        text += std::format("\n[credits]\ntext = {}\n{}", quoteToml(content.credits->text),
-                            formatPictureFit(content.credits->fit));
-        if (!content.credits->image.empty()) {
-            text += std::format("image = {}\n", quoteToml(content.credits->image));
-        }
-        if (!content.credits->music.empty()) {
-            text += std::format("music = {}\n", quoteToml(content.credits->music));
-        }
-        if (const std::optional<SCreditsColumnScroll> &scroll = content.credits->column_scroll) {
-            text += std::format(
-                "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
-                "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
-                "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
-                "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
-                "end_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(scroll->font), scroll->column_left, scroll->column_to_screen_edge,
-                scroll->top_strip_bottom, scroll->bottom_strip_top, scroll->strip_colour,
-                scroll->text_colour, scroll->heading_colour, scroll->shadow_colour,
-                scroll->scroll_speed, scroll->start_y, quoteToml(scroll->end_line),
-                quoteToml(std::string(1, scroll->marker)),
-                quoteToml(std::string(1, scroll->heading)));
-        }
-        if (const std::optional<SCreditsTwoColumn> &two = content.credits->two_column) {
-            text += std::format(
-                "\n[credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
-                "left_x = {}\nright_x = {}\nleft_column = {}\nright_column = {}\n"
-                "top_strip_bottom = {}\nbottom_strip_top = {}\nstrip_colour = 0x{:x}\n"
-                "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
-                "scroll_speed = {}\nstart_y = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(two->font), two->centre_left, two->centre_right, two->left_x,
-                two->right_x, quoteToml(std::string(1, two->left_column)),
-                quoteToml(std::string(1, two->right_column)), two->top_strip_bottom,
-                two->bottom_strip_top, two->strip_colour, two->text_colour, two->heading_colour,
-                two->shadow_colour, two->scroll_speed, two->start_y, quoteToml(two->end_line),
-                quoteToml(std::string(1, two->marker)), quoteToml(std::string(1, two->heading)));
-        }
-        if (const std::optional<SCreditsFadeLoop> &fade = content.credits->fade_loop) {
-            text += std::format(
-                "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
-                "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
-                "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
-                "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
-                quoteToml(fade->font), fade->image_x, fade->image_y, fade->text_colour,
-                fade->heading_colour, fade->shadow_colour, fade->scroll_speed, fade->start_y,
-                fade->loop_below, fade->restart_y, fade->fade_centre, fade->fade_reach,
-                quoteToml(fade->end_line), quoteToml(std::string(1, fade->marker)),
-                quoteToml(std::string(1, fade->heading)));
-        }
+        text += formatCredits(*content.credits);
     }
     if (content.menu) {
         text += formatMenu(*content.menu);
@@ -3121,97 +3535,20 @@ std::string formatGameContentTables(const SGameContent &content) {
         text += formatTiledScroll(*tiled);
     }
     if (const std::optional<SStartup> &startup = content.startup) {
-        text += std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
-                            "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
-                            "movie_directory = {}\nmovie = {}\n",
-                            quoteToml(startup->picture), formatPictureFit(startup->fit),
-                            startup->picture_alpha, startup->label_x, startup->label_y,
-                            quoteToml(startup->label_font), startup->label_colour,
-                            quoteToml(startup->movie_directory), quoteToml(startup->movie));
+        text += formatStartup(*startup);
     }
-    if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
-        text += std::format(
-            "\n[loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
-            "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
-            "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
-            "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
-            "glow_half_size = {}\n{}",
-            quoteToml(moon->model), quoteToml(moon->glow_texture), moon->window_size,
-            moon->corner_x, moon->corner_y, moon->corner_size, moon->default_tint[0],
-            moon->default_tint[1], moon->default_tint[2], moon->full_projection,
-            moon->window_projection, moon->depth, moon->light_reach, moon->ambient,
-            moon->glow_half_size, formatLoadingStatus(moon->status));
-    }
-    if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
-        text +=
-            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
-                        "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
-                        bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
-                        formatLoadingStatus(bar->status));
-    }
-    if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
-        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
-                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
-                            "always_random = {}\n",
-                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
-                            icon->alpha_end, icon->frames, icon->always_random);
-    }
-    if (const std::optional<SStorySelect> &select = content.story_select) {
-        text += std::format(
-            "\n[story_select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
-            quoteToml(select->full_install_probe), select->loading_frames);
-        for (const SStoryDifficulty &difficulty : select->difficulties) {
-            text += std::format(
-                "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
-                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
-        }
-    }
-    if (const std::optional<SDirectStart> &start = content.direct_start) {
-        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
-                            start->loading_frames);
-    }
+    text += formatLoadingIndicators(content);
+    text += formatStoryStart(content);
     if (const std::optional<SChapterTitle> &title = content.chapter_title) {
-        text += std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
-                            "shadow = {}\nalpha = 0x{:x}\ninset_across = {}\ninset_up = {}\n",
-                            title->seconds, quoteToml(title->format), title->colour, title->shadow,
-                            title->alpha, title->inset_across, title->inset_up);
-        for (const SChapterTitleFont &font : title->fonts) {
-            text += std::format("\n[[chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
-            if (font.below_height != 0) {
-                text += std::format("below_height = {}\n", font.below_height);
-            }
-        }
+        text += formatChapterTitle(*title);
     }
     for (const SLoadingPicture &picture : content.loading) {
-        text += std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
-                            formatPictureFit(picture.fit));
-        if (picture.moon) {
-            text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
-                                picture.moon->y, formatTint(picture.moon->tint));
-        }
-        if (picture.random) {
-            text += "random = true\n";
-        }
-        if (!picture.icon.empty()) {
-            text += std::format("icon = {}\n", quoteToml(picture.icon));
-        }
+        text += formatLoadingPicture(picture);
     }
     for (const SGameStory &story : content.stories) {
         text += formatStory(story);
     }
-    if (!content.labels.empty()) {
-        text += "\n[labels]\n";
-        for (const auto &[english, label] : content.labels) {
-            text += std::format("{} = {}\n", quoteToml(english), quoteToml(label));
-        }
-    }
-    for (const auto &[language, translation] : content.translations) {
-        text += std::format("\n[translation.{}]\n", quoteToml(language));
-        for (const auto &[english, translated] : translation) {
-            text += std::format("{} = {}\n", quoteToml(english), quoteToml(translated));
-        }
-    }
-    return text;
+    return text + formatTextTables(content);
 }
 
 } // namespace nocturne::engine

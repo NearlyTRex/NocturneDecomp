@@ -101,6 +101,10 @@ TEST_F(CGameplayPageTest, AGameWithDifficultiesStepsThemOnTheirLines) {
     EXPECT_EQ(game_.puzzle_difficulty_mode, 1);
     EXPECT_EQ(game_.combat_difficulty_mode, 0);
     EXPECT_EQ(text(kPuzzleDifficulty), "Puzzle difficulty: Hard");
+    choose(kPuzzleDifficulty);
+    choose(kCombatDifficulty);
+    EXPECT_EQ(game_.puzzle_difficulty_mode, 0);
+    EXPECT_EQ(game_.combat_difficulty_mode, 1);
 }
 
 // Any mode but hard reads, and is kept, as normal.

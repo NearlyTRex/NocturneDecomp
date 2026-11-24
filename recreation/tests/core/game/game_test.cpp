@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "core/game/chapterselectmode.h"
 #include "core/game/game.h"
 #include "engine/gameclock.h"
@@ -51,6 +52,8 @@ TEST(CGame, PublicInterface) {
                                  void (CGame::*)(std::string_view, float, float)>);
     static_assert(std::is_same_v<decltype(&CGame::updateStatusDisplays), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::renderOverlay),
+                                 void (CGame::*)(const SGameSessionOwners &)>);
+    static_assert(std::is_same_v<decltype(&CGame::processFrame),
                                  void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::loadGame), void (CGame::*)(char *, int)>);
     static_assert(
@@ -143,6 +146,26 @@ TEST_F(CGameTest, UpdateDTScalesAndChopsTheTime) {
     game_.time_scale_factor = 0.5F;
     stepTo(0, 18 * 6553);
     EXPECT_EQ(game_.getDeltaTimeInt(), 3276);
+}
+
+// Unscaled and uncapped; its 16.16 is chopped. No time at all is a time too.
+TEST_F(CGameTest, SlamDTSetsTheFramesTimeOutright) {
+    game_.time_scale_factor = 2.0F;
+    game_.slamDT(0.25F);
+    EXPECT_EQ(game_.getDeltaTimeFloat(), 0.25F);
+    EXPECT_EQ(game_.getDeltaTimeInt(), 0x4000);
+    game_.slamDT(3.0F);
+    EXPECT_EQ(game_.getDeltaTimeInt(), 0x30000);
+    game_.slamDT(1.0F / 3.0F);
+    EXPECT_EQ(game_.getDeltaTimeInt(), 21845);
+    game_.slamDT(0.0F);
+    EXPECT_EQ(game_.getDeltaTimeInt(), 0);
+}
+
+TEST_F(CGameTest, ANegativeSlammedTimeIsFatal) {
+    EXPECT_THAT([this] { game_.slamDT(-0.001F); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CGame::slamDT - invalid dt!")));
 }
 
 } // namespace
