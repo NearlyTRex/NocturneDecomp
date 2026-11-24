@@ -18,6 +18,7 @@
 #include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
+#include "tests/mocks/platform/mockheap.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
 #include <gmock/gmock.h>
@@ -97,8 +98,6 @@ TEST(CEditorTools, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DAxisLabelsAt),
                                  void (CEditorTools::*)(float, int, common::CVector3f *,
                                                         common::UOrientationVector *)>);
-    static_assert(std::is_same_v<decltype(&CEditorTools::displayMemoryDiagnostics),
-                                 void (CEditorTools::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::draw3DProjectedLine),
                                  void (CEditorTools::*)(common::CVector3f *, int)>);
     static_assert(std::is_same_v<decltype(&CEditorTools::getEditorFontLineHeight),
@@ -158,6 +157,12 @@ protected:
                                 .clipboard = clipboard_,
                                 .content = content_}};
 };
+
+TEST(CEditorTools, TheMemoryLineIsTheHeapsOwnAccount) {
+    ::testing::NiceMock<platform::MockHeap> heap;
+    EXPECT_CALL(heap, describe()).WillOnce(::testing::Return("Used: 1.0k Free: 2.0k Blocks: 3"));
+    EXPECT_EQ(CEditorTools::displayMemoryDiagnostics(heap), "Used: 1.0k Free: 2.0k Blocks: 3");
+}
 
 TEST_F(CEditorToolsTest, WithoutAPackagesLookTheDialogsAndPointerAreFatal) {
     content_.dialog.reset();

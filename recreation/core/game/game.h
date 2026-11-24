@@ -73,6 +73,8 @@ struct SGameSessionOwners {
     // What the camera debug reports on: the textures and the skinned models loaded.
     const engine::CTexture &textures;
     const CDeformableModelManager &deformable_models;
+    // What the editor's memory line asks.
+    platform::IHeap &heap;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -86,6 +88,15 @@ struct SChapterSelectOwners {
     ILoadingScreen &loading_screen;
     CDemonMission &mission;
     const SGameSessionOwners &session;
+};
+
+// What a debug movie records: its frames a second, how many before it stops (0 for no limit),
+// and each frame's size, which the screen is averaged down to.
+struct SMovieSettings {
+    float frames_per_second = 30.0F;
+    int max_frames = 0;
+    int width = 0;
+    int height = 0;
 };
 
 class CGame {
@@ -148,6 +159,10 @@ public:
     [[nodiscard]] const engine::CDosIo &getDosIo() const;
     void displayBitmap(char *filename, int width, int height);
     void slamDT(float delta_time);
+    // What setupMovieRecording leaves once its prompts are answered: the movie armed, not yet
+    // recording, for the debug display's key to start and stop. The frame rate is above zero.
+    void armMovieRecording(const SMovieSettings &settings);
+    [[nodiscard]] bool isMovieRecording() const;
     void displayActStats();
     void finishAct();
     // data\credits.txt up the right of the stats image to the credits music, until the music ends
@@ -208,6 +223,8 @@ public:
     bool camera_debug = false;
     // The sound effects playing are listed down the frame's left.
     bool sound_debug = false;
+    // The editor's line on the heap shows.
+    bool editor_tools_enabled = false;
     // Off in edit mode, where the camera is the one picked rather than the director's.
     bool game_active = true;
     // The set's camera edit mode shows.
@@ -251,6 +268,8 @@ private:
     // While it is off, its averages start again.
     void renderCameraDebug(const SGameSessionOwners &session);
     void renderSoundDebug();
+    // An armed movie's key, and while it records the frame written and named over it.
+    void captureDebugMovieFrame();
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);
@@ -293,6 +312,11 @@ private:
     // The frames and seconds the camera debug's average frame rate is over.
     int debug_frames_ = 0;
     double debug_seconds_ = 0.0;
+    SMovieSettings movie_;
+    bool movie_armed_ = false;
+    bool movie_recording_ = false;
+    // The next frame's number, from noc00000.raw.
+    int movie_frame_ = 0;
 };
 
 } // namespace nocturne::core

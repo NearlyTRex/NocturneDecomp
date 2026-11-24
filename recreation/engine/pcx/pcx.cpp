@@ -66,6 +66,17 @@ void appendRow(std::vector<std::uint8_t> &rgb, IScreenDevice &screen, const C2d 
 
 } // namespace
 
+std::vector<std::uint8_t> readScreenRgb(IScreenDevice &screen, const C2d &two_d) {
+    const int width = screen.getWindowWidth();
+    std::vector<std::uint8_t> rgb;
+    const std::span<void *> rows = screen.getScreenRows();
+    for (int y = 0; y < screen.getWindowHeight(); ++y) {
+        appendRow(rgb, screen, two_d, rows[static_cast<std::size_t>(y)],
+                  static_cast<std::size_t>(width));
+    }
+    return rgb;
+}
+
 // The original wrote an 8-bit screen as a PCX and a 16- or 32-bit one as a raw dump of its rows;
 // every depth is now a PNG, which any viewer opens.
 // nocedit 0x005490c0
@@ -77,12 +88,13 @@ void saveScreenshotGeneral(IScreenDevice &screen, const C2d &two_d, const CDosIo
     const int width = screen.getWindowWidth();
     const int height = screen.getWindowHeight();
     const int copies = width == kHalfHeightWidth && height == kHalfHeight ? 2 : 1;
+    const std::vector<std::uint8_t> screen_rgb = readScreenRgb(screen, two_d);
+    const std::size_t row_bytes = static_cast<std::size_t>(width) * 3;
     std::vector<std::uint8_t> rgb;
-    const std::span<void *> rows = screen.getScreenRows();
-    for (int y = 0; y < height; ++y) {
+    for (std::size_t start = 0; start < screen_rgb.size(); start += row_bytes) {
         for (int copy = 0; copy < copies; ++copy) {
-            appendRow(rgb, screen, two_d, rows[static_cast<std::size_t>(y)],
-                      static_cast<std::size_t>(width));
+            rgb.insert(rgb.end(), screen_rgb.begin() + static_cast<std::ptrdiff_t>(start),
+                       screen_rgb.begin() + static_cast<std::ptrdiff_t>(start + row_bytes));
         }
     }
     const std::optional<std::vector<std::uint8_t>> png =

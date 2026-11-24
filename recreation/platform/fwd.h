@@ -14,6 +14,7 @@ class IDisplay;
 class IEnvironment;
 class IFile;
 class IFileSystem;
+class IHeap;
 class IGamepad;
 class ILog;
 class IMoviePlayer;

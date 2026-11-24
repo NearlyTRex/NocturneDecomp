@@ -8,6 +8,7 @@
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/slew/slew.h"
+#include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
@@ -24,6 +25,8 @@ namespace {
 
 constexpr int kOpaque = 0xffff;
 constexpr int kLeftMouseButton = 1;
+// The editor's memory line, up from the screen's bottom.
+constexpr int kMemoryLineUp = 0x42;
 // The world's 24.8 fixed point.
 constexpr double kFixed8ToFloat = 1.0 / 256.0;
 
@@ -66,8 +69,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the screen border, with drawScreenBorder
 // deferred: the automap (the decomp's AUTOMAP), with the automap
 // deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
-// deferred: the debug movie: Ctrl+V starting and stopping it, and each frame written averaged to
-//   its size as a .raw in movie, up to its frame limit, with setupMovieRecording
 // deferred: the subtitles, with CScript::renderSubtitles
 // deferred: the iris fade, with renderIrisFade
 // deferred: the camera debug's fudge target line, with processFudge
@@ -77,8 +78,7 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the event list, while event processing shows it, with CEventList::render
 // deferred: the script editor below the light view in script debug, and the decomp's debug
 //   window frame in its place (DEBUG_WINDOW), with CScript::renderEditor
-// deferred: the memory diagnostics line while the editor tools are on, with
-//   CEditorTools::displayMemoryDiagnostics
+// deferred: the editor tools switched on and off, with processCheatCodes
 // deferred: "You're dead.  Game over." while the local hero is dead, which BW1 and BW3 copy but
 //   never draw, and the decomp's banner a quarter down (HUD), with getDeathState's death wait
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
@@ -143,11 +143,16 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     if (takeAction(EGameAction::Screenshot)) {
         saveScreenshot();
     }
+    captureDebugMovieFrame();
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
     renderOverlay(session);
     renderCameraDebug(session);
     if (sound_debug) {
         renderSoundDebug();
+    }
+    if (editor_tools_enabled) {
+        owners_.two_d.drawText(shape::CEditorTools::displayMemoryDiagnostics(session.heap), 0,
+                               owners_.screen.getWindowHeight() - kMemoryLineUp);
     }
     if (console_enabled) {
         renderConsole(session);

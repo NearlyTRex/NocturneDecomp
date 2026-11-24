@@ -444,6 +444,145 @@ TEST_F(CGameFrameDebugTest, TheSoundDebugListsWhatIsPlaying) {
     EXPECT_EQ(pixels(), playing);
 }
 
+TEST_F(CGameFrameDebugTest, TheEditorsMemoryLineIsTheHeapsAccount) {
+    ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+    ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight / 2));
+    ON_CALL(heap_, describe()).WillByDefault(Return("Used: 1.0k Free: 2.0k Blocks: 3"));
+    game_.editor_tools_enabled = true;
+    frame();
+    const std::vector<std::uint32_t> shown = pixels();
+    game_.editor_tools_enabled = false;
+    frame();
+    game_parts_.getTwoD().drawText("Used: 1.0k Free: 2.0k Blocks: 3", 0, kHeight - 0x42);
+    EXPECT_EQ(pixels(), shown);
+}
+
+// A movie of the screen, half its size, armed but not yet recording.
+class CGameMovieTest : public CGameFrameDebugTest {
+protected:
+    CGameMovieTest() {
+        ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+        ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+    }
+
+    void arm(int max_frames = 0, float frames_per_second = 30.0F) {
+        game_.armMovieRecording({.frames_per_second = frames_per_second,
+                                 .max_frames = max_frames,
+                                 .width = kWidth / 2,
+                                 .height = kHeight / 2});
+    }
+
+    // A frame with Ctrl+V pressed through it.
+    void frameWithCtrlV() {
+        hold(EInputCodeType::DIK_LCONTROL);
+        frameWith(EInputCodeType::DIK_V);
+        game_parts_.hold(EInputCodeType::DIK_LCONTROL, false);
+    }
+
+    [[nodiscard]] bool wrote(int frame) const {
+        return written_.contains(std::format("movie\\noc{:05d}.raw", frame));
+    }
+};
+
+TEST_F(CGameMovieTest, CtrlVDoesNothingUntilAMovieIsArmed) {
+    EXPECT_CALL(file_system_, openFile(_, platform::EFileMode::Write)).Times(0);
+    frameWithCtrlV();
+    EXPECT_FALSE(game_.isMovieRecording());
+}
+
+// Each frame from the first, the screen averaged to the movie's size, then named at the top left.
+TEST_F(CGameMovieTest, CtrlVStartsAndStopsTheMovieAFrameAFile) {
+    arm();
+    frame();
+    EXPECT_FALSE(wrote(0));
+    frameWithCtrlV();
+    EXPECT_TRUE(game_.isMovieRecording());
+    const std::string &first = written_["movie\\noc00000.raw"];
+    ASSERT_EQ(first.size(), static_cast<std::size_t>((kWidth / 2) * (kHeight / 2) * 3));
+    EXPECT_EQ(first.substr(0, 3), "\x12\x34\x56");
+    frame();
+    EXPECT_TRUE(wrote(1));
+    frameWithCtrlV();
+    EXPECT_FALSE(game_.isMovieRecording());
+    EXPECT_FALSE(wrote(2));
+    // Started again, it begins at the first frame.
+    frameWithCtrlV();
+    EXPECT_EQ(written_.size(), 2U);
+}
+
+TEST_F(CGameMovieTest, TheFileItWroteIsNamedOverTheFrame) {
+    arm();
+    frameWithCtrlV();
+    frame();
+    const std::vector<std::uint32_t> recording = pixels();
+    game_.armMovieRecording({.width = 1, .height = 1});
+    frame();
+    game_parts_.getTwoD().drawText("Movie recording active: movie\\noc00001.raw", 0, 0);
+    EXPECT_EQ(pixels(), recording);
+}
+
+// Each of the movie's pixels is the mean of the block of the screen's it covers.
+TEST_F(CGameMovieTest, APixelIsTheMeanOfItsBlock) {
+    game_.armMovieRecording({.width = 1, .height = 1});
+    screen_.fill(kBackground);
+    static_cast<std::uint32_t *>(screen_.getScreenRows()[0])[0] = 0xff0000;
+    hold(EInputCodeType::DIK_LCONTROL);
+    hold(EInputCodeType::DIK_V);
+    game_.processFrame(session_);
+    const std::string &frame = written_["movie\\noc00000.raw"];
+    ASSERT_EQ(frame.size(), 3U);
+    const auto mean = [](int sum) { return static_cast<char>(sum / (kWidth * kHeight)); };
+    EXPECT_EQ(frame[0], mean((0x12 * ((kWidth * kHeight) - 1)) + 0xff));
+    EXPECT_EQ(frame[1], mean(0x34 * ((kWidth * kHeight) - 1)));
+    EXPECT_EQ(frame[2], mean(0x56 * ((kWidth * kHeight) - 1)));
+}
+
+// Wider and taller than the screen, each pixel is the one its block starts on.
+TEST_F(CGameMovieTest, AMovieLargerThanTheScreenRepeatsItsPixels) {
+    game_.armMovieRecording({.width = kWidth * 2, .height = kHeight * 2});
+    frameWithCtrlV();
+    const std::string &frame = written_["movie\\noc00000.raw"];
+    ASSERT_EQ(frame.size(), static_cast<std::size_t>(kWidth * kHeight * 12));
+    EXPECT_EQ(frame.substr(frame.size() - 3), "\x12\x34\x56");
+}
+
+TEST_F(CGameMovieTest, TheMovieStopsAtItsFrameLimit) {
+    arm(2);
+    frameWithCtrlV();
+    frame();
+    EXPECT_TRUE(game_.isMovieRecording());
+    frame();
+    EXPECT_FALSE(game_.isMovieRecording());
+    EXPECT_FALSE(wrote(2));
+}
+
+// A frame whose file won't open is skipped, its number kept for the next.
+TEST_F(CGameMovieTest, AFrameThatCantBeWrittenIsTriedAgain) {
+    arm();
+    EXPECT_CALL(file_system_, openFile(_, platform::EFileMode::Write))
+        .WillOnce([](std::string_view, platform::EFileMode) { return nullptr; })
+        .WillRepeatedly([this](std::string_view name, platform::EFileMode) {
+            return std::make_unique<engine::CRecordingFile>(written_[std::string(name)]);
+        });
+    frameWithCtrlV();
+    EXPECT_TRUE(written_.empty());
+    frame();
+    EXPECT_TRUE(wrote(0));
+}
+
+// Each frame while recording is a frame of the movie's, the clock aside: 65536 / 24 scaled by
+// a half, cut to 1365.
+TEST_F(CGameMovieTest, EachFrameIsOneOfTheMoviesWhileItRecords) {
+    arm(0, 24.0F);
+    game_.time_scale_factor = 0.5F;
+    frameWithCtrlV();
+    frame();
+    EXPECT_EQ(game_.getDeltaTimeInt(), 1365);
+    frameWithCtrlV();
+    frame();
+    EXPECT_NE(game_.getDeltaTimeInt(), 1365);
+}
+
 TEST_F(CGameFrameDebugTest, TheWheelIsLeftAloneWhileTheConsoleIsOff) {
     EXPECT_CALL(game_input_, takeMouseWheelNotches()).Times(0);
     frame();

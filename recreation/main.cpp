@@ -61,6 +61,7 @@
 #include "platform/gl/glrenderer.h"
 #include "platform/layeredfilesystem.h"
 #include "platform/pathroots.h"
+#include "platform/processheap.h"
 #include "platform/rendervertex.h"
 #include "platform/sdl/sdlaudiodevice.h"
 #include "platform/sdl/sdlclipboard.h"
@@ -196,6 +197,7 @@ private:
     sdl::CSdlOsFontFactory os_fonts_;
     sdl::CSdlMoviePlayer movies_{display_, log_};
     sdl::CSdlEnvironment environment_;
+    nocturne::platform::CProcessHeap heap_;
     engine::CDosIo dosio_{game_files_};
     std::vector<engine::SRelease> releases_ =
         engine::loadReleaseCatalog(engine::getReleaseCatalogText(), engine::getEmbeddedGames());
@@ -458,7 +460,8 @@ private:
                                              .display = display_,
                                              .renderer = demon_renderer_,
                                              .textures = texture_,
-                                             .deformable_models = deformable_models_};
+                                             .deformable_models = deformable_models_,
+                                             .heap = heap_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

@@ -10,6 +10,7 @@
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "platform/clipboard.h"
+#include "platform/heap.h"
 
 #include <algorithm>
 #include <cstring>
@@ -127,6 +128,17 @@ void CEditorTools::showWarning(std::string_view message) {
 // bw3 0x0047cf40
 void CEditorTools::showError(std::string_view message) {
     showPrompt(kErrorTitle, message, getDialogLook().warning_colour);
+}
+
+// The original walked the Watcom heap for its free blocks, their total and the largest, or said
+// it was empty or corrupt; the decomp's heap report (shims/core/heap_report.cpp) asks the
+// allocator instead.
+// nocedit 0x004a2590
+// bw1 0x00498e40
+// bw2 0x004807e0
+// bw3 0x004819e0
+std::string CEditorTools::displayMemoryDiagnostics(platform::IHeap &heap) {
+    return heap.describe();
 }
 
 // The message is drawn at the font's own size, as the enhanced game leaves it.

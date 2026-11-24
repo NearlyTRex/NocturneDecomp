@@ -37,6 +37,7 @@
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockenvironment.h"
+#include "tests/mocks/platform/mockheap.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/shape/picklistfixture.h"
 
@@ -140,6 +141,7 @@ protected:
     CInventoryAssets inventory_assets_{
         {.dosio = dosio_, .screen = screen_, .special = special_, .game = game_}};
     ::testing::NiceMock<platform::MockEnvironment> environment_;
+    ::testing::NiceMock<platform::MockHeap> heap_;
     ::testing::NiceMock<platform::MockDisplay> display_;
     CNetGame net_game_{{.file_system = file_system_,
                         .environment = environment_,
@@ -169,7 +171,8 @@ protected:
                                 .display = display_,
                                 .renderer = demon_renderer_,
                                 .textures = textures_,
-                                .deformable_models = deformable_models_};
+                                .deformable_models = deformable_models_,
+                                .heap = heap_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

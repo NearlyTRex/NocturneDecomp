@@ -116,7 +116,8 @@ public:
     void draw3DAxisLabels(float scale_factor, int text_color);
     void draw3DAxisLabelsAt(float scale_factor, int text_color, common::CVector3f *world_position,
                             common::UOrientationVector *orientation);
-    void displayMemoryDiagnostics(char *output_buffer);
+    // The heap's use, as its allocator gives it.
+    [[nodiscard]] static std::string displayMemoryDiagnostics(platform::IHeap &heap);
     void draw3DProjectedLine(common::CVector3f *world_point, int line_length);
 
     [[nodiscard]] std::size_t getWindowCount() const;

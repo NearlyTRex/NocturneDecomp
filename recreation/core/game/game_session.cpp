@@ -147,6 +147,9 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     is_processing = 0;
     time_scale_factor = 1.0F;
     game_active = true;
+    camera_debug = false;
+    console_enabled = false;
+    editor_tools_enabled = false;
     setGameRes(session);
     developer_mode = session.environment.getVariable(kDeveloperVariable).has_value() ||
                      session.environment.getVariable(kSpookHouseVariable).has_value();

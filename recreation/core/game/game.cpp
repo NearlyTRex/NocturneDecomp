@@ -1,6 +1,7 @@
 #include "core/game/game.h"
 
 #include "common/error/error.h"
+#include "common/math/extendedfloat.h"
 #include "common/math/fixed.h"
 #include "engine/gameclock.h"
 #include "engine/package/gamecontent.h"
@@ -31,8 +32,6 @@ void CGame::saveClockTime() {
     clocktime_ = owners_.clock.getTime();
 }
 
-// deferred: the fixed thirtieth of a second, scaled, while a debug movie records, with
-//   setupMovieRecording
 // deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's
 //   death ends it, where the original drops to the main menu (the decomp's helper_death.h), with
 //   CGame::runGameSession
@@ -40,6 +39,7 @@ void CGame::saveClockTime() {
 //   Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
 // deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture
 //   (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
+// While a debug movie records, each frame is a frame of the movie's, whatever the clock says.
 // nocedit 0x004d7d90
 void CGame::updateDT() {
     const int now = owners_.clock.getTime();
@@ -48,6 +48,12 @@ void CGame::updateDT() {
     const int clamped = std::clamp(elapsed, 0, kMaxDeltaTimeInt);
     delta_time_int_ = common::truncateToInt(static_cast<double>(clamped) *
                                             static_cast<double>(time_scale_factor));
+    if (movie_recording_) {
+        delta_time_int_ = (common::CExtendedFloat(kSecondsToDeltaTime) /
+                           common::CExtendedFloat(static_cast<double>(movie_.frames_per_second)) *
+                           common::CExtendedFloat(static_cast<double>(time_scale_factor)))
+                              .truncateToInt();
+    }
     delta_time_float_ =
         static_cast<float>(static_cast<double>(delta_time_int_) * kDeltaTimeToSeconds);
 }

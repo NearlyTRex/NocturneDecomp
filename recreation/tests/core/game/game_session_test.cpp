@@ -160,6 +160,17 @@ TEST_F(CGameSessionTest, DeveloperModeFollowsVelocity) {
 }
 
 // The original's other developers' variable is a second name for developer mode.
+// The console, the camera debug and the editor tools start each session off.
+TEST_F(CGameSessionTest, TheDebugDisplaysStartOff) {
+    game_.console_enabled = true;
+    game_.camera_debug = true;
+    game_.editor_tools_enabled = true;
+    play();
+    EXPECT_FALSE(game_.console_enabled);
+    EXPECT_FALSE(game_.camera_debug);
+    EXPECT_FALSE(game_.editor_tools_enabled);
+}
+
 TEST_F(CGameSessionTest, SpookHouseTurnsDeveloperModeOnToo) {
     ON_CALL(environment_, getVariable(std::string_view("SPOOKHOUSE")))
         .WillByDefault(Return(std::optional<std::string>("")));
