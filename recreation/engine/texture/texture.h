@@ -5,6 +5,7 @@
 #include "platform/fwd.h"
 
 #include <memory>
+#include <string>
 
 namespace nocturne::engine {
 
@@ -30,7 +31,8 @@ public:
     // loaded.
     void loadAndUpdateTexture(platform::SMRGLTextureBasic &texture,
                               std::span<std::uint8_t> palette);
-    void getTextureCacheStats(char *output_buffer);
+    // The cache's, for the camera debug.
+    [[nodiscard]] std::string getTextureCacheStats() const;
     platform::SMRGLTextureBasic *getCurrentTexture();
 
 private:

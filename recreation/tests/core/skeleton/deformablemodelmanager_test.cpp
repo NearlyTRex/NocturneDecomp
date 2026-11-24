@@ -35,8 +35,6 @@ TEST(CDeformableModelManager, PublicInterface) {
                                  void (CDeformableModelManager::*)()>);
     static_assert(std::is_same_v<decltype(&CDeformableModelManager::freeAllSkeletons),
                                  void (CDeformableModelManager::*)()>);
-    static_assert(std::is_same_v<decltype(&CDeformableModelManager::getMemoryStats),
-                                 void (CDeformableModelManager::*)(char *)>);
 }
 
 using CDeformableModelManagerTest = CDeformableModelFixture;
@@ -51,6 +49,25 @@ TEST_F(CDeformableModelManagerTest, AModelIsLoadedOnceAndBound) {
     EXPECT_EQ(&models_.getDeformableModel("GABRIELA.DFM"), &model);
     EXPECT_EQ(models_.getModelCount(), 1U);
     EXPECT_EQ(models_.getSkeletonCount(), 1U);
+}
+
+// The default model's two levels: 3 vertices, a triangle and a cap; then a vertex and a triangle.
+// Its skeleton has no frames.
+TEST_F(CDeformableModelManagerTest, TheMemoryStatsCountWhatIsLoaded) {
+    EXPECT_EQ(models_.getMemoryStats(), "0 skeletons, 0 bytes, 0 models, 0 bytes");
+    givenModel("a.dfm", {});
+    givenModel("b.dfm", {});
+    const CDeformableModel &a = models_.getDeformableModel("a.dfm");
+    static_cast<void>(models_.getDeformableModel("b.dfm"));
+    givenFile("data\\MOVING.SKL",
+              "// v\n3\n// counts\n1,2\n// bones\n\"root\",-1\n// angles\n1,0,0,0\n1,0,0,0\n"
+              "// roots\n0,0,0\n0,0,0\n// canceled\n0,0,0\n0,0,0\n// motion list version\n2\n"
+              "// states\n0\n// motions\n0\n// origins\n0,0,0\n");
+    static_cast<void>(models_.loadSkeleton("MOVING.SKL"));
+    constexpr int kModelBytes = (((1 + 1) * 22) + 4 + (3 * 52)) + ((1 * 22) + (1 * 52));
+    EXPECT_EQ(a.calculateMemorySize(), kModelBytes);
+    EXPECT_EQ(models_.getMemoryStats(), std::format("2 skeletons, {} bytes, 2 models, {} bytes",
+                                                    (16 + 24) * 2, 2 * kModelBytes));
 }
 
 TEST_F(CDeformableModelManagerTest, ModelsShareTheirSkeleton) {

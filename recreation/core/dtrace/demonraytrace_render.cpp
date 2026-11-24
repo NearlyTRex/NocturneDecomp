@@ -240,6 +240,8 @@ void CDemonRaytrace::renderFrustumCubes(float reach_distance, bool use_pvs,
             bounds.max.*axis = grid_coord_.*axis - 1;
         }
     }
+    // The frame's count starts again here, so the camera debug shows the cubes' alone.
+    owners.special.setRenderedTriangleCount(0);
     owners.renderer.setRGBAColor(kWhite, kWhite, kWhite);
     const SWalkAxes walk = getWalkAxes(inverse.m[2]);
     walkOutward(camera.*walk.main, bounds.min.*walk.main, bounds.max.*walk.main,

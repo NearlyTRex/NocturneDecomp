@@ -204,6 +204,22 @@ TEST_F(CZRasterTest, WithTheRendererOnTheTriangleGoesToIt) {
     EXPECT_TRUE(rows_.empty());
 }
 
+// Each polygon not culled counts as one triangle, wherever it is drawn.
+TEST_F(CZRasterTest, EachPolygonNotCulledCountsAsOneTriangle) {
+    std::vector<SRenderVertex> quad{at(10, 0), at(10, 6), at(14, 6), at(4, 3)};
+    three_d_.setCullingMode(1);
+    zraster_.rasterizeTriangle(quad, state_);
+    zraster_.rasterizePolygonCustom(quad, state_, custom_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 0);
+    three_d_.setCullingMode(2);
+    zraster_.rasterizeTriangle(quad, state_);
+    zraster_.rasterizePolygonCustom(quad, state_, custom_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 2);
+    startRenderer();
+    zraster_.rasterizeTriangle(quad, state_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 3);
+}
+
 TEST_F(CZRasterTest, WithTexturesOffTheTriangleIsDrawnInSoftware) {
     startRenderer();
     texture_.textures_disabled = true;

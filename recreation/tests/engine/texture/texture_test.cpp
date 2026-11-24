@@ -29,8 +29,6 @@ TEST(CTexture, PublicInterface) {
         std::is_same_v<decltype(&CTexture::loadTextureAndGetData),
                        SMRGLHeaderExtended *(CTexture::*)(platform::SMRGLTextureBasic *)>);
     static_assert(std::is_same_v<decltype(&CTexture::clearTextureCache), void (CTexture::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CTexture::getTextureCacheStats), void (CTexture::*)(char *)>);
     static_assert(std::is_same_v<decltype(&CTexture::getCurrentTexture),
                                  platform::SMRGLTextureBasic *(CTexture::*)()>);
 }
@@ -115,6 +113,14 @@ TEST_F(CTextureTest, ClearingTheCacheForgetsEveryTexture) {
     texture_.clearTextureCache();
     EXPECT_CALL(file_system_, openFile).Times(AtLeast(1));
     texture_.ensureTextureLoaded(texture);
+}
+
+TEST_F(CTextureTest, TheStatsAreTheCaches) {
+    givenTexels("a", 32, 0);
+    platform::SMRGLTextureBasic texture{.texture_name = "a.raw", .cache_index = 0};
+    texture_.ensureTextureLoaded(texture);
+    EXPECT_EQ(texture_.getTextureCacheStats(),
+              "Total: 1, 32: 1, 64: 0, 128: 0, 256: 0, 512: 0, 1024: 0");
 }
 
 TEST_F(CTextureTest, AFreshCacheReplacesTheOldOne) {

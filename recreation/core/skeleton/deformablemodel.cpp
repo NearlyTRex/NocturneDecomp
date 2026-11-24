@@ -157,6 +157,24 @@ std::span<const SLodMesh> CDeformableModel::getLodMeshes() const {
     return meshes_;
 }
 
+// The original's triangle took 22 bytes, a cap's part 4 more, and a vertex 52.
+// nocedit 0x0059dd60
+// bw1 0x00567310
+// bw2 0x00544c70
+// bw3 0x0054bea0
+int CDeformableModel::calculateMemorySize() const {
+    constexpr int kTriangleBytes = 0x16;
+    constexpr int kCapPartBytes = 4;
+    constexpr int kVertexBytes = 0x34;
+    int bytes = 0;
+    for (const SLodMesh &mesh : meshes_) {
+        bytes += ((mesh.tri_count + mesh.cap_tri_count) * kTriangleBytes) +
+                 (mesh.cap_tri_count * kCapPartBytes) +
+                 (static_cast<int>(mesh.vertices.size()) * kVertexBytes);
+    }
+    return bytes;
+}
+
 std::span<const SPart> CDeformableModel::getParts() const {
     return parts_;
 }

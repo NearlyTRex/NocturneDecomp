@@ -233,6 +233,26 @@ TEST_F(CPrimRasterTest, WithTheRendererOnThePolygonGoesToIt) {
     EXPECT_TRUE(rows_.empty());
 }
 
+// The software rasterisers count a polygon as one, the hardware hand-off as its corners less two;
+// a culled one isn't counted.
+TEST_F(CPrimRasterTest, APolygonDrawnCountsAsOneTriangleAndOneHandedOnAsItsFan) {
+    std::vector<SRenderVertex> quad{at(10, 0), at(10, 6), at(14, 6), at(4, 3)};
+    const std::array<int, 4> indices{0, 1, 2, 3};
+    prim_.renderPolygonSoftware(quad, state_);
+    prim_.renderIndexedPolygonSoftware(quad, indices, state_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 2);
+    startRenderer();
+    special_.setRenderedTriangleCount(0);
+    prim_.renderPolygonSoftware(quad, state_);
+    prim_.renderIndexedPolygonSoftware(quad, indices, state_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 4);
+    std::vector<SRenderVertex> triangle = getTriangle();
+    three_d_.setCullingMode(1);
+    special_.setRenderedTriangleCount(0);
+    prim_.renderPolygonSoftware(triangle, state_);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 0);
+}
+
 TEST_F(CPrimRasterTest, WithTexturesOffTheRendererIsPassedOver) {
     startRenderer();
     texture_.textures_disabled = true;

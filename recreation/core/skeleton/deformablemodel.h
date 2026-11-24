@@ -126,7 +126,8 @@ public:
                  int lod_index, common::CVector3i *skinned_vertices, int *part_visibility_flags,
                  int *texture_set_indices);
     int findMaxWeightBone(int lod_level, int triangle_index);
-    int calculateMemorySize();
+    // The bytes the original's levels of detail took: their triangles, caps and vertices.
+    [[nodiscard]] int calculateMemorySize() const;
 
     [[nodiscard]] const std::string &getModelFilename() const;
     // The skeleton file the model is skinned to.

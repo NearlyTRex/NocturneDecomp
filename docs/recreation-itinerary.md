@@ -20,12 +20,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 |---|---|---|---|---|---|---|---|---|---|
 | 0 | Math value types | 3 | 13 | 791 | 13 | 0 | 100.0% | 4 | 4 |
 | 1 | File system: `dosio`, pods | 5 | 44 | 2518 | 44 | 0 | 100.0% | 11 | 5 |
-| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 28 | 2 | 93.3% | 19 | 5 |
+| 2 | `doNothing`, `readMessageFile`, `getLocalizedString`, `initializeTrigTables`, `initTextureCache`, `initGraphicsSystem` | 8 | 30 | 2804 | 29 | 1 | 96.6% | 19 | 5 |
 | 3 | Sound system: `sndmain`, `CSound` lifetime, `readIniData` | 7 | 124 | 8365 | 119 | 4 | 95.9% | 76 | 41 |
 | 4 | `initFonts`, `CEditorTools::showWarning` | 11 | 46 | 4804 | 45 | 1 | 97.8% | 16 | 5 |
 | 5 | `showCalibrationTest`, `playMovie`, `CAlphaBitmap::ctor`, `CAlphaBitmap::dtor`, `CSound::findAllSoundFiles`, `CDemonMission::reset`, `CDemonFilter::init`, `CMouse::load`, `CNetGame::init` | 14 | 50 | 4789 | 32 | 3 | 64.0% | 27 | 10 |
-| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 20 | 5 | 80.0% | 16 | 11 |
-| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 69 | 30 | 57.5% | 40 | 20 |
+| 6 | `initializeGameSystems`, `CAlphaBitmap::scale`, `clearTextureCache`, `CMoon::init`, `CGame::saveClockTime`, `CGame::updateDT` | 11 | 25 | 2988 | 21 | 4 | 84.0% | 16 | 11 |
+| 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 82 | 17 | 68.3% | 40 | 20 |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
@@ -33,7 +33,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 16 | 9 | 61.5% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 13 | 8 | 6.8% | 69 | 2 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 18 | 8 | 9.5% | 69 | 5 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1216** | **242** | **27.1%** | **2032** | **367** |
+| | **All** | | **4487** | **402625** | **1236** | **227** | **27.5%** | **2032** | **370** |
 
 ## Step 0: Math value types
 
@@ -175,10 +175,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `initializeTrigTables` 0x0050c530 (41)
     - BW: [ ] bw1 0x005072c0 = bw2 0x004e8620 = bw3 0x004e4d00 (logic-change)
 
-### `engine/texture.cpp` (2 functions, 34 instructions, 1 done, 1 partial)
+### `engine/texture.cpp` (2 functions, 34 instructions, 2 done, 0 partial)
 - class `CTextureCache`
-  - [~] `ctor` 0x005dcab0 (19)
-    - deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
+  - [x] `ctor` 0x005dcab0 (19)
     - BW: [ ] bw1 0x00596560 = bw2 0x00573940 = bw3 0x00569550 (logic-change)
 - free functions
   - [x] `initTextureCache` 0x005dd760 (15)
@@ -712,10 +711,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CAlphaBitmap`
   - [x] `scale` 0x00410c20 (71)
 
-### `engine/texture.cpp` (2 functions, 59 instructions, 1 done, 1 partial)
+### `engine/texture.cpp` (2 functions, 59 instructions, 2 done, 0 partial)
 - class `CTextureCache`
-  - [~] `freeTextures` 0x005dcb30 (54)
-    - deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
+  - [x] `freeTextures` 0x005dcb30 (54)
     - BW: [ ] bw1 0x005965d0 = bw2 0x005739b0 = bw3 0x005695c0 (logic-change)
 - free functions
   - [x] `clearTextureCache` 0x005dd8e0 (5)
@@ -810,10 +808,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `intersectAABB` 0x00471770 (85)
     - BW: [ ] bw1 0x0045edf0 = bw2 0x00448c90 = bw3 0x0045af60 (logic-change)
 
-### `engine/texture.cpp` (4 functions, 763 instructions, 2 done, 2 partial)
+### `engine/texture.cpp` (4 functions, 763 instructions, 3 done, 1 partial)
 - class `CTextureCache`
-  - [~] `loadTexture` 0x005dcc00 (396)
-    - deferred: setting the cache's has-wrapped flag when the next slot goes back to the first, with getTextureCacheStats
+  - [x] `loadTexture` 0x005dcc00 (396)
     - BW: [ ] bw1 0x005967a0 = bw3 0x00569790 (logic-change); [ ] bw2 0x00573b80 (logic-change)
   - [x] `findTexture` 0x005dd180 (49)
     - BW: [ ] bw1 0x005970b0 = bw2 0x00574490 = bw3 0x0056a0a0 (logic-change)
@@ -854,35 +851,30 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `clipInterpolateBottomPlane` 0x005f7e00 (81)
   - [x] `transformAndClipGeometry` 0x005f8550 (584)
 
-### `engine/clipper.c` (12 functions, 2424 instructions, 9 done, 3 partial)
+### `engine/clipper.c` (12 functions, 2424 instructions, 12 done, 0 partial)
 - free functions
   - [x] `interpolateVertexRightClip` 0x00435a00 (104)
   - [x] `interpolateVertexLeftClip` 0x00435b00 (104)
   - [x] `interpolateVertexTopClip` 0x00435c00 (104)
   - [x] `interpolateVertexBottomClip` 0x00435d00 (109)
   - [x] `interpolateVertexFarClip` 0x00435e00 (109)
-  - [~] `clipPolygonToViewFrustum` 0x004366e0 (782)
-    - deferred: adding the corner count less two to the rendered-triangle count before the hardware draw, with CGame::processFrame's statistics
+  - [x] `clipPolygonToViewFrustum` 0x004366e0 (782)
     - BW: [x] bw1 0x0043c190 = bw2 0x00431330 (logic-change); [x] bw3 0x00439da0 (logic-change)
-  - [~] `clipAndRasterize` 0x004371b0 (28)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `clipAndRasterize` 0x004371b0 (28)
   - [x] `interpolateVertexRightClipAdvanced` 0x00437230 (126)
   - [x] `interpolateVertexLeftClipAdvanced` 0x00437360 (125)
   - [x] `interpolateVertexTopClipAdvanced` 0x00437490 (126)
   - [x] `interpolateVertexBottomClipAdvanced` 0x004375c0 (126)
-  - [~] `clipPolygonToViewport` 0x00438420 (581)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `clipPolygonToViewport` 0x00438420 (581)
 
-### `engine/zraster.c` (2 functions, 738 instructions, 0 done, 2 partial)
+### `engine/zraster.c` (2 functions, 738 instructions, 2 done, 0 partial)
 - free functions
-  - [~] `rasterizePolygonCustom` 0x005fd4e0 (365)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `rasterizePolygonCustom` 0x005fd4e0 (365)
     - BW: [x] bw1 0x005bf640 = bw2 0x0059a5d0 = bw3 0x005a23c0 (const-change)
-  - [~] `rasterizeTriangle` 0x005fcfc0 (373)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `rasterizeTriangle` 0x005fcfc0 (373)
     - BW: [x] bw1 0x005bf120 = bw2 0x0059a0b0 = bw3 0x005a1ea0 (const-change)
 
-### `engine/prim.c` (13 functions, 2410 instructions, 8 done, 4 partial)
+### `engine/prim.c` (13 functions, 2410 instructions, 12 done, 0 partial)
 - free functions
   - [x] `setCullingMode` 0x00551b90 (3)
   - [x] `prepareDepthBuffer` 0x00551fb0 (44)
@@ -892,17 +884,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `calculateTriangleWindingOrder` 0x00552150 (63)
   - [x] `findEdgeInBuffer` 0x00551f70 (22)
     - BW: [x] bw1 0x0053db80 = bw2 0x0051c580 = bw3 0x005158e0 (const-change)
-  - [~] `renderPolygonSoftware` 0x00552510 (427)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderPolygonSoftware` 0x00552510 (427)
     - BW: [x] bw1 0x0053e120 = bw2 0x0051cb20 = bw3 0x00515e80 (const-change)
-  - [~] `renderIndexedPolygonSoftware` 0x00552a40 (418)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderIndexedPolygonSoftware` 0x00552a40 (418)
     - BW: [x] bw1 0x0053e650 = bw2 0x0051d050 = bw3 0x005163b0 (const-change)
-  - [~] `renderScanlinePolygon` 0x00553470 (538)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderScanlinePolygon` 0x00553470 (538)
     - BW: [x] bw1 0x0053f080 = bw3 0x00516de0 (const-change); [x] bw2 0x0051da80 (logic-change)
-  - [~] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderIndexedPolygonAdvanced` 0x00553b10 (610)
     - BW: [x] bw1 0x0053f720 = bw2 0x0051e130 = bw3 0x00517480 (const-change)
   - [ ] `getTriangleWindingFromPackedIndices` 0x005523f0 (81)
   - [x] `calculateTriangleWindingOrderFromIndices` 0x00552210 (78)
@@ -941,7 +929,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `isVisiblePlane` 0x00403950 (36)
   - [x] `processCameraRelativePoint` 0x004037e0 (25)
 
-### `engine/drender.cpp` (27 functions, 2214 instructions, 12 done, 11 partial)
+### `engine/drender.cpp` (27 functions, 2214 instructions, 14 done, 9 partial)
 - class `CDemonRenderer`
   - [~] `enableFaceCapture` 0x0048caa0 (5)
     - deferred: setting the vertex-processing flag, with 3d.c's dispatchMRGLBlockChain and transformAndBufferVertices, which read it
@@ -990,11 +978,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `processCameraRelativeVertex` 0x0048c450 (20)
   - [x] `setProjectionScale` 0x0048c650 (6)
 - free functions
-  - [~] `renderTriangleTextured` 0x00483370 (502)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderTriangleTextured` 0x00483370 (502)
     - BW: [x] bw1 0x0047a480 = bw2 0x00461f70 = bw3 0x00466d50 (const-change)
-  - [~] `renderTriangleSimple` 0x004839f0 (366)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `renderTriangleSimple` 0x004839f0 (366)
     - BW: [x] bw1 0x0047ab00 = bw2 0x004625f0 = bw3 0x004673d0 (const-change)
 
 ### `core/set.cpp` (10 functions, 2496 instructions, 1 done, 4 partial)
@@ -1028,7 +1014,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the per-pixel flat-colour pass first, with renderCustomScanline and the code that sets per_pixel_lighting_enabled
   - [x] `setFlatColor` 0x00570ca0 (8)
 
-### `engine/special.cpp` (10 functions, 1391 instructions, 8 done, 1 partial)
+### `engine/special.cpp` (10 functions, 1391 instructions, 9 done, 0 partial)
 - free functions
   - [x] `transformAndProjectPoint` 0x005b575c (205)
   - [x] `selectTextureFromPalette` 0x005b7340 (26)
@@ -1039,8 +1025,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `renderMMXPerspectiveScanline32` 0x005b4031 (449)
     - BW: [ ] bw1 0x0057de01 = bw2 0x0055b3b1 = bw3 0x00560f31 (logic-change)
   - [x] `renderMMXPerspectiveScanline16` 0x005b4823 (509)
-  - [~] `drawPolyList` 0x005b7640 (106)
-    - deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+  - [x] `drawPolyList` 0x005b7640 (106)
   - [x] `clearZBufferNative` 0x005b3ed4 (35)
 
 ### `core/moon.cpp` (2 functions, 356 instructions, 1 done, 1 partial)
@@ -2244,7 +2229,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
   - [ ] `setCurrentPolygonColor` 0x0048c960 (3)
   - [~] `renderDepthProfiledDirect` 0x0048ab50 (70)
-    - deferred: leaving the rendered triangle count as it was across the draw, with CGame's frame stats display
     - deferred: the shadow pass's screen-depth test, with setShadowPass's callers
     - deferred: drawing through the shadow pass while the hardware renderer is on, with setShadowPass's callers
     - deferred: a budget other than one pixel, with CWater::calculateVisibleTiles
@@ -3008,7 +2992,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: edit mode and its cameras left alone while a cinematic skips, and the agreed skip polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
     - deferred: the script's change of focus forgotten as edit mode ends, with CDemonMission::process's
     - deferred: the sound shut down as the game pauses and started again as it resumes, with CSound::shutdown and CSound::init
-    - deferred: the camera debug, also with SPOOKHOUSE set, with processFrame's
     - deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the Dracula brides
     - deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script debug
     - deferred: the debug display, not while a movie records, with processFrame's
@@ -3363,17 +3346,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00550da0 = bw2 0x0052fad0 = bw3 0x005365c0 (logic-change)
   - [ ] `renderLightDebugView` 0x0056d190 (91)
 
-### `core/skeleton.cpp` (4 functions, 144 instructions, 1 done, 0 partial)
+### `core/skeleton.cpp` (4 functions, 144 instructions, 4 done, 0 partial)
 - class `CSkeleton`
   - [x] `findBone` 0x00599fc0 (52)
     - BW: [x] bw1 0x005634f0 = bw3 0x00548090 (operand-change); [x] bw2 0x00540e80 (operand-change)
-  - [ ] `calculateFrameDataSize` 0x0059a140 (7)
+  - [x] `calculateFrameDataSize` 0x0059a140 (7)
 - class `CDeformableModel`
-  - [ ] `calculateMemorySize` 0x0059dd60 (31)
-    - BW: [ ] bw3 0x0054bea0 (logic-change)
+  - [x] `calculateMemorySize` 0x0059dd60 (31)
+    - BW: [x] bw3 0x0054bea0 (logic-change)
 - free functions
-  - [ ] `getMemoryStats` 0x005a1ed0 (54)
-    - BW: [ ] bw1 0x0056b780 = bw3 0x00550310 (logic-change); [ ] bw2 0x005490d0 (logic-change)
+  - [x] `getMemoryStats` 0x005a1ed0 (54)
+    - BW: [x] bw1 0x0056b780 = bw3 0x00550310 (logic-change); [x] bw2 0x005490d0 (logic-change)
 
 ### `core/slew.cpp` (1 functions, 301 instructions, 0 done, 1 partial)
 - class `CSlew`
@@ -3395,12 +3378,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `process` 0x005b2fd0 (508)
     - BW: [ ] bw1 0x0057ce10 = bw3 0x0055ff40 (logic-change); [ ] bw2 0x0055a3c0 (logic-change)
 
-### `engine/texture.cpp` (2 functions, 82 instructions, 0 done, 0 partial)
+### `engine/texture.cpp` (2 functions, 82 instructions, 2 done, 0 partial)
 - class `CTextureCache`
-  - [ ] `getTextureCacheStats` 0x005dd690 (75)
-    - BW: [ ] bw1 0x00597710 = bw2 0x00574af0 = bw3 0x0056a700 (operand-change)
+  - [x] `getTextureCacheStats` 0x005dd690 (75)
+    - BW: [x] bw1 0x00597710 = bw2 0x00574af0 = bw3 0x0056a700 (operand-change)
 - free functions
-  - [ ] `getTextureCacheStats` 0x005dd970 (7)
+  - [x] `getTextureCacheStats` 0x005dd970 (7)
 
 ### `core/game.cpp` (18 functions, 8127 instructions, 2 done, 6 partial)
 - class `CGame`
@@ -3443,7 +3426,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [~] `processFrame` 0x004da100 (949)
     - deferred: a cinematic skip's or a pending sim frame's frame, unpaused and not drawn: the client's frame, the game processed, the clock stepped a quarter second while skipping and by updateDT otherwise, then the server's frame, with skipCinematic and CNetGame's sim frames
     - deferred: the screen paint time printed while profiling, with processCheatCodes' profile mode
-    - deferred: the frame's triangle count started from none, with the camera debug's count
     - deferred: the screen cleared first while the light view is on or the session asks, with processHotkeys' light view and runGameSession's clear
     - deferred: the scene drawn while the goggles are off, and again in a frame they went off in (the decomp's GOGGLES_OFF_FRAME), with CDemonSet::renderScene
     - deferred: BW1-3's scene and static lights left undrawn while the field notes show or a puzzle is up, and the puzzle stepped before the client's frame, with CFieldNotes and CPuzzle
@@ -3464,8 +3446,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the debug movie: Ctrl+V starting and stopping it, and each frame written averaged to its size as a .raw in movie, up to its frame limit, with setupMovieRecording
     - deferred: the subtitles, with CScript::renderSubtitles
     - deferred: the iris fade, with renderIrisFade
-    - deferred: the camera debug's camera, frame rate, hero, slew, fudge, sound memory, texture cache, skeleton memory, debug string and hardware texture lines, its averages reset while it is off, with processHotkeys' camera debug
-    - deferred: the sound debug's playing samples, with the sound debug's switch
+    - deferred: the camera debug's fudge target line, with processFudge
+    - deferred: the camera debug's hardware renderer textures counted by size, with a renderer report of them
+    - deferred: the sound debug switched on and off, with processCheatCodes
     - deferred: the event list, while event processing shows it, with CEventList::render
     - deferred: the script editor below the light view in script debug, and the decomp's debug window frame in its place (DEBUG_WINDOW), with CScript::renderEditor
     - deferred: the memory diagnostics line while the editor tools are on, with CEditorTools::displayMemoryDiagnostics

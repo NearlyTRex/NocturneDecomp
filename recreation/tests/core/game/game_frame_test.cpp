@@ -2,29 +2,44 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
+#include "core/set/demonset.h"
+#include "core/setutil/3dscamera.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/special/special.h"
+#include "engine/texture/texture.h"
+#include "sound/sndmain/sampleinfo.h"
+#include "sound/sndmain/sndmain.h"
+#include "sound/sndmain/soundmemorystats.h"
 #include "tests/mocks/common/pngimage.h"
+#include "tests/mocks/common/required.h"
 #include "tests/mocks/common/vector3fequal.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/overlayscreen.h"
+#include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/testhero.h"
 #include "tests/mocks/engine/twodfixture.h"
 #include "tests/mocks/platform/mockrenderer.h"
+#include "tests/mocks/sound/wavfile.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <format>
+#include <iterator>
 #include <map>
 #include <memory>
 #include <optional>
@@ -215,6 +230,16 @@ protected:
         game_parts_.hold(code, false);
     }
 
+    [[nodiscard]] std::vector<std::uint32_t> pixels() const {
+        std::vector<std::uint32_t> all;
+        for (int y = 0; y < kHeight; ++y) {
+            for (int x = 0; x < kWidth; ++x) {
+                all.push_back(screen_.pixel(x, y));
+            }
+        }
+        return all;
+    }
+
     [[nodiscard]] std::size_t countDrawn() const {
         std::size_t count = 0;
         for (int y = 0; y < screen_.getWindowHeight(); ++y) {
@@ -281,6 +306,142 @@ TEST_F(CGameFrameDebugTest, TheWheelScrollsTheConsoleBack) {
     EXPECT_CALL(game_input_, takeMouseWheelNotches()).WillOnce(Return(1));
     frame();
     EXPECT_EQ(console_.getViewTop(), newest - engine::CConsole::kWheelLines);
+}
+
+// The camera debug's frames: the clock moves on by the delta units given each frame, and the
+// pointer sits between the top lines and the bottom ones.
+class CGameCameraDebugTest : public CGameFrameDebugTest {
+protected:
+    CGameCameraDebugTest() {
+        ON_CALL(game_clock_, getTime()).WillByDefault([this] {
+            ticks_ += step_ * kTicksPerDeltaUnit;
+            return ticks_;
+        });
+        ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth / 2));
+        ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kPointerY));
+        game_.camera_debug = true;
+    }
+
+    // The screen a frame with the camera debug on left is the one a frame with it off leaves,
+    // with these lines, at these heights, drawn over it.
+    void expectLines(const std::vector<std::pair<std::string, int>> &lines) {
+        frame();
+        const std::vector<std::uint32_t> on = pixels();
+        game_.camera_debug = false;
+        frame();
+        for (const auto &[text, y] : lines) {
+            game_parts_.getTwoD().drawText(text, 0, y);
+        }
+        EXPECT_EQ(pixels(), on);
+    }
+
+    // The memory lines as the stats give them.
+    [[nodiscard]] std::vector<std::pair<std::string, int>> memoryLines() {
+        const sound::SSoundMemoryStats stats = game_parts_.getSoundMain().getSoundMemoryStats();
+        return {{std::format("SFX: 0 Samples: Active: 0/0.0k Avail: 0/0.0k Total alloc: 0.0k "
+                             "Free: {:.1f}k",
+                             static_cast<double>(stats.available_memory) / 1024.0),
+                 kHeight - 0x42},
+                {textures_.getTextureCacheStats(), kHeight - 0x37},
+                {deformable_models_.getMemoryStats(), kHeight - 0x2c}};
+    }
+
+    static constexpr int kTicksPerDeltaUnit = 18;
+    // An eighth of a second's delta units.
+    static constexpr int kEighthSecond = 0x2000;
+    static constexpr int kPointerY = 40;
+
+    int ticks_ = 0;
+    int step_ = kEighthSecond;
+};
+
+// The hero stands at the origin turned half a radian about y; no camera is selected yet.
+TEST_F(CGameCameraDebugTest, ItsLinesAreTheCameraFrameRateHeroSlewAndMemory) {
+    std::vector<std::pair<std::string, int>> lines{
+        {std::format("Camera: \"{}\" Group -1", session_.camera.getCameraName()), kHeight - 0x16},
+        {"FR: 8.000000, AVG: 8.000000, PC: 0", kHeight - 0x0b},
+        {"Hero : 0.00,0.00,0.00 xyz and 0.00,0.00,28.65 pbh", 0},
+        {"Slew : On, Virtual Director : Off", 0x0b}};
+    game_.game_active = false;
+    std::ranges::copy(memoryLines(), std::back_inserter(lines));
+    expectLines(lines);
+}
+
+// The average is over the frames since it was turned on; turning it off starts it again.
+TEST_F(CGameCameraDebugTest, TheAverageFrameRateIsOverTheFramesSinceItWasOn) {
+    frame();
+    step_ = 2 * kEighthSecond;
+    std::vector<std::pair<std::string, int>> lines{
+        {std::format("Camera: \"{}\" Group -1", session_.camera.getCameraName()), kHeight - 0x16},
+        {std::format("FR: 4.000000, AVG: {:f}, PC: 0", 2.0 / 0.375), kHeight - 0x0b},
+        {"Hero : 0.00,0.00,0.00 xyz and 0.00,0.00,28.65 pbh", 0},
+        {"Slew : On, Virtual Director : On", 0x0b}};
+    std::ranges::copy(memoryLines(), std::back_inserter(lines));
+    expectLines(lines);
+    game_.camera_debug = true;
+    lines[1].first = "FR: 4.000000, AVG: 4.000000, PC: 0";
+    expectLines(lines);
+}
+
+// The set's selected camera names its group.
+TEST_F(CGameCameraDebugTest, TheSelectedCamerasGroupIsShown) {
+    givenFile("models\\one.set",
+              SSetFile{.cameras = "1\n" + cameraText("a"), .pvs = "1\n\t0\n"}.text());
+    givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
+                                        {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
+    set_.load("one.set");
+    set_.setCameraView(0);
+    set_.getCameras()[0].setCameraGroup(7);
+    std::vector<std::pair<std::string, int>> lines{
+        {std::format("Camera: \"{}\" Group 7", session_.camera.getCameraName()), kHeight - 0x16},
+        {"FR: 8.000000, AVG: 8.000000, PC: 0", kHeight - 0x0b},
+        {"Hero : 0.00,0.00,0.00 xyz and 0.00,0.00,28.65 pbh", 0},
+        {"Slew : On, Virtual Director : On", 0x0b}};
+    std::ranges::copy(memoryLines(), std::back_inserter(lines));
+    expectLines(lines);
+}
+
+// The frame's count of triangles starts from none.
+TEST_F(CGameFrameDebugTest, EachFramesTriangleCountStartsFromNone) {
+    game_parts_.getSpecial().addRenderedTriangles(12);
+    frame();
+    EXPECT_EQ(game_parts_.getSpecial().getRenderedTriangleCount(), 0);
+}
+
+// Each playing effect's name, a line apart down from 0x37; nothing while none plays.
+TEST_F(CGameFrameDebugTest, TheSoundDebugListsWhatIsPlaying) {
+    ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+    ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+    game_.sound_debug = true;
+    frame();
+    const std::vector<std::uint32_t> silent = pixels();
+    game_.sound_debug = false;
+    frame();
+    EXPECT_EQ(pixels(), silent);
+
+    ON_CALL(game_parts_.getAudioDevice(), open).WillByDefault(Return(true));
+    sound::CSndMain &sound_main = game_parts_.getSoundMain();
+    sound_main.resetSoundSystemDefaults();
+    sound_main.initializeSoundDevice();
+    ASSERT_TRUE(sound_main.enableSoundSystem());
+    const std::vector<std::byte> samples(4000, std::byte{0x40});
+    givenFile("sound\\tone.wav", sound::makeWav(samples));
+    givenFile("sound\\click.wav", sound::makeWav(samples));
+    const std::uint32_t tone = sound_main.startSfx("tone.wav");
+    const std::uint32_t click = sound_main.startSfx("click.wav");
+    ASSERT_NE(tone, 0U);
+    ASSERT_NE(click, 0U);
+    game_.sound_debug = true;
+    frame();
+    const std::vector<std::uint32_t> playing = pixels();
+    game_.sound_debug = false;
+    frame();
+    std::optional<sound::CSampleInfo> tone_info = sound_main.getSfxSampleInfo(tone);
+    std::optional<sound::CSampleInfo> click_info = sound_main.getSfxSampleInfo(click);
+    game_parts_.getTwoD().drawText(common::required(tone_info, "tone's info").name, 0, 0x37);
+    game_parts_.getTwoD().drawText(common::required(click_info, "click's info").name, 0,
+                                   0x37 + 0x0b);
+    EXPECT_EQ(pixels(), playing);
 }
 
 TEST_F(CGameFrameDebugTest, TheWheelIsLeftAloneWhileTheConsoleIsOff) {

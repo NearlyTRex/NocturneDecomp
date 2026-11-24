@@ -298,6 +298,17 @@ TEST_F(CSpecialTest, WithTheRendererPolygonsGoThroughIt) {
     EXPECT_EQ(special_.drawPolygon(vertices, 5), 7);
     EXPECT_EQ(special_.drawPolygon2(corners, 6), 8);
     EXPECT_EQ(special_.drawPolyList(vertices.data(), polygons, 9), 10);
+    // The list's polygons are counted, one triangle each; its callers count the single ones.
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 2);
+}
+
+TEST_F(CSpecialTest, TheRenderedTriangleCountIsAddedToAndSet) {
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 0);
+    special_.addRenderedTriangles(3);
+    special_.addRenderedTriangles(4);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 7);
+    special_.setRenderedTriangleCount(1);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 1);
 }
 
 TEST_F(CSpecialTest, WithoutDirect3DTheRendererIsNotStarted) {

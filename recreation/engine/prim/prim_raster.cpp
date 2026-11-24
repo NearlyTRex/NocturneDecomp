@@ -86,9 +86,11 @@ void CPrim::renderPolygon(std::span<SRenderVertex> vertices, const SPolygonState
         return;
     }
     if (drawsInHardware()) {
+        special_.addRenderedTriangles(static_cast<int>(vertices.size()) - 2);
         special_.drawPolygon(vertices, static_cast<int>(state.mode.render_flags));
         return;
     }
+    special_.addRenderedTriangles(1);
     preprocessVertices(vertices, state.mode.vertex_preprocess_mode);
     rasterizeEdges(corners, EDepthSource::Transformed, state.draw_scanline, walk);
 }
@@ -106,9 +108,11 @@ void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
         return;
     }
     if (drawsInHardware()) {
+        special_.addRenderedTriangles(static_cast<int>(corners.size()) - 2);
         special_.drawPolygon2(corners, static_cast<int>(state.mode.render_flags));
         return;
     }
+    special_.addRenderedTriangles(1);
     if (walk.preprocess_corners) {
         for (SRenderVertex *corner : corners) {
             preprocessVertices({corner, 1}, state.mode.vertex_preprocess_mode);
@@ -120,7 +124,6 @@ void CPrim::renderIndexedPolygon(std::span<SRenderVertex> vertex_buffer,
                    state.draw_scanline, walk);
 }
 
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552510
 // bw1 0x0053e120
 // bw2 0x0051cb20
@@ -131,7 +134,6 @@ void CPrim::renderPolygonSoftware(std::span<SRenderVertex> vertices, const SPoly
 
 // The original also took preprocessing 1's edge depth as 0x7fffffff less z for a processor type
 // other than 0, which neither build ever sets.
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00552a40
 // bw1 0x0053e650
 // bw2 0x0051d050
@@ -142,7 +144,6 @@ void CPrim::renderIndexedPolygonSoftware(std::span<SRenderVertex> vertex_buffer,
     renderIndexedPolygon(vertex_buffer, vertex_indices, state, EVariant::Simple);
 }
 
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553470
 // bw1 0x0053f080
 // bw2 0x0051da80
@@ -153,7 +154,6 @@ void CPrim::renderScanlinePolygon(std::span<SRenderVertex> vertices, const SPoly
 
 // The original also took preprocessing 1's edge depth as 0x7fffffff less z for a processor type
 // other than 0, which neither build ever sets.
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00553b10
 // bw1 0x0053f720
 // bw2 0x0051e130

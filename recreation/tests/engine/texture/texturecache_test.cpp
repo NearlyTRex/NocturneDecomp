@@ -42,8 +42,6 @@ TEST(CTextureCache, PublicInterface) {
         std::is_same_v<decltype(&CTextureCache::setupTexture), void (CTextureCache::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&CTextureCache::renderAllTextures), void (CTextureCache::*)()>);
-    static_assert(std::is_same_v<decltype(&CTextureCache::getTextureCacheStats),
-                                 int (CTextureCache::*)(char *)>);
 }
 
 // The texels of a 32 by 32 texture.
@@ -180,6 +178,31 @@ TEST_F(CTextureCacheTest, ReloadingASlotWithoutOpacityDropsTheOldOne) {
     EXPECT_THAT(current_texture_.opacity, SizeIs(kTexels));
     cache.setupTexture(cache.loadTexture("b.raw"));
     EXPECT_THAT(current_texture_.opacity, IsEmpty());
+}
+
+TEST_F(CTextureCacheTest, TheStatsCountTheTexturesLoadedBySize) {
+    EXPECT_EQ(cache_.getTextureCacheStats(),
+              "Total: 0, 32: 0, 64: 0, 128: 0, 256: 0, 512: 0, 1024: 0");
+    CTextureCache cache(8, owners_);
+    for (const int dimension : {32, 64, 128, 256, 512, 1024, 32}) {
+        const std::string stem = "t" + std::to_string(dimension);
+        givenTexels(stem, dimension, 0);
+        static_cast<void>(cache.loadTexture(stem + ".raw"));
+    }
+    EXPECT_EQ(cache.getTextureCacheStats(),
+              "Total: 7, 32: 2, 64: 1, 128: 1, 256: 1, 512: 1, 1024: 1");
+}
+
+// Once loading goes back to the first slot the cache is too small, until it is emptied.
+TEST_F(CTextureCacheTest, TheStatsSayWhenTheCacheHasWrapped) {
+    for (const char *stem : {"a", "b", "c"}) {
+        givenTexels(stem, 32, 0);
+        static_cast<void>(cache_.loadTexture(std::string(stem) + ".raw"));
+    }
+    EXPECT_EQ(cache_.getTextureCacheStats(), "Texture cache has wrapped.  Make it bigger, please.");
+    cache_.freeTextures();
+    EXPECT_EQ(cache_.getTextureCacheStats(),
+              "Total: 0, 32: 0, 64: 0, 128: 0, 256: 0, 512: 0, 1024: 0");
 }
 
 TEST_F(CTextureCacheTest, FreeingEmptiesEverySlot) {

@@ -60,4 +60,12 @@ void CTexture::clearTextureCache() {
     texture_cache_instance_->freeTextures();
 }
 
+// nocedit 0x005dd970
+// bw1 0x00597cd0
+// bw2 0x005750b0
+// bw3 0x0056acc0
+std::string CTexture::getTextureCacheStats() const {
+    return texture_cache_instance_->getTextureCacheStats();
+}
+
 } // namespace nocturne::engine

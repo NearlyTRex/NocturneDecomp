@@ -7,6 +7,7 @@
 
 #include <cstddef>
 #include <memory>
+#include <string>
 #include <string_view>
 #include <vector>
 
@@ -34,7 +35,9 @@ public:
     void freeAllModels();
     // The models with them.
     void freeAllSkeletons();
-    void getMemoryStats(char *output_buffer);
+    // The skeletons and models loaded, and the bytes the original's would take, for the camera
+    // debug.
+    [[nodiscard]] std::string getMemoryStats() const;
 
     [[nodiscard]] std::size_t getModelCount() const;
     [[nodiscard]] std::size_t getSkeletonCount() const;

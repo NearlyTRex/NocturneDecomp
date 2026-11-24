@@ -40,7 +40,9 @@ public:
     // hardware palettes from the slot's palette.
     void setupTexture(int texture_index);
     void renderAllTextures();
-    int getTextureCacheStats(char *output_buffer);
+    // How many textures the cache holds, and of each size; once it has gone back to its first
+    // slot, that it is too small.
+    [[nodiscard]] std::string getTextureCacheStats() const;
 
 private:
     static constexpr std::size_t kPaletteBytes = 768;
@@ -58,6 +60,8 @@ private:
     STextureOwners owners_;
     int max_texture_count_;
     int current_texture_count_ = 0;
+    // Loading has gone back to the first slot, writing over textures still in use.
+    bool has_wrapped_ = false;
     std::vector<STextureSlot> slots_;
 };
 

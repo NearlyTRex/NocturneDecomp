@@ -7,6 +7,7 @@
 #include "engine/screendevice.h"
 #include "engine/softwareedge.h"
 #include "engine/special/scanlinemode.h"
+#include "engine/special/special.h"
 #include "platform/mrglheaderprimitive.h"
 
 #include <cstddef>
@@ -110,8 +111,7 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
     clipAndFillPoly(prim.vertex_indices, state);
 }
 
-// deferred: leaving the rendered triangle count as it was across the draw, with CGame's frame
-//   stats display
+// A visibility test, not a draw: the rendered-triangle count is left as it was.
 // deferred: the shadow pass's screen-depth test, with setShadowPass's callers
 // deferred: drawing through the shadow pass while the hardware renderer is on, with
 //   setShadowPass's callers
@@ -129,7 +129,9 @@ bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimit
         visible = renderDepthInterlacedProfiled(left, right, y, screen_, reciprocals);
         return visible;
     };
+    const int rendered_triangles = special_.getRenderedTriangleCount();
     clipAndFillPoly(prim.vertex_indices, state);
+    special_.setRenderedTriangleCount(rendered_triangles);
     return visible;
 }
 

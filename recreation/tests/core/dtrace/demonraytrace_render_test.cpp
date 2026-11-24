@@ -167,6 +167,19 @@ TEST_F(CDemonRaytraceRenderTest, APVSCubeOutsideTheGridIsFatal) {
     }
 }
 
+// The frame's count starts again before the frustum's cubes are drawn; drawing the saved PVS
+// only adds to it.
+TEST_F(CDemonRaytraceRenderTest, TheFrustumDrawStartsTheTriangleCountAgain) {
+    // Far below any count the cubes could add up to.
+    constexpr int kBefore = -1000000;
+    special_.setRenderedTriangleCount(kBefore);
+    raytrace().renderFrustumCubes(kEverything, false, owners());
+    EXPECT_GE(special_.getRenderedTriangleCount(), 0);
+    special_.setRenderedTriangleCount(kBefore);
+    raytrace().renderFrustumCubes(kEverything, true, owners());
+    EXPECT_LT(special_.getRenderedTriangleCount(), 0);
+}
+
 // With no geometry the camera's cube is the x87's indefinite, and nothing is reached.
 TEST_F(CDemonRaytraceRenderTest, AWalkThatDrawsNothingLeavesNothingToSave) {
     lookFrom({.x = 8.0F, .y = 8.0F, .z = -40.0F});

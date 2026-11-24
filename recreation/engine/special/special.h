@@ -30,6 +30,11 @@ public:
     // The INI's currentBoard: the graphics card the Graphics Options picked.
     [[nodiscard]] int getCurrentGraphicsBoard() const;
     void setCurrentGraphicsBoard(int board);
+    // The triangles drawn since the frame began, which the camera debug shows: the software
+    // rasterisers count each they fill, the hardware hand-offs each they pass on.
+    [[nodiscard]] int getRenderedTriangleCount() const;
+    void setRenderedTriangleCount(int count);
+    void addRenderedTriangles(int count);
 
     void clearScreen();
     void clearZBufferNative();
@@ -141,6 +146,7 @@ private:
     int external_bits_per_pixel_ = 0;
     int card_index_ = 0;
     int current_graphics_board_ = 0;
+    int rendered_triangle_count_ = 0;
     // The renderer's processor type, 0 for its reciprocal-depth buffer as the software renderer
     // writes it. Both builds set 0 and never anything else.
     int processor_type_ = 0;

@@ -41,7 +41,6 @@ void copyFile(std::string_view file, std::span<std::uint8_t> out) {
 
 } // namespace
 
-// deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 // nocedit 0x005dcab0
 CTextureCache::CTextureCache(int max_texture_count, const STextureOwners &owners)
     : owners_(owners), max_texture_count_(max_texture_count),
@@ -51,18 +50,16 @@ int CTextureCache::getMaxTextureCount() const {
     return max_texture_count_;
 }
 
-// deferred: clearing the cache's has-wrapped flag, with getTextureCacheStats
 // nocedit 0x005dcb30
 void CTextureCache::freeTextures() {
     current_texture_count_ = 0;
+    has_wrapped_ = false;
     std::ranges::fill(slots_, STextureSlot{});
 }
 
 // Retail quits with "Bad texture length" on 512 and 1024 textures; they load here, as in nocedit,
 // so higher-resolution art works. The original read an .opa into a null buffer when the slot kept
 // its dimension but had lost its opacity. A failed allocation throws where it quit "Out of memory".
-// deferred: setting the cache's has-wrapped flag when the next slot goes back to the first, with
-//   getTextureCacheStats
 // nocedit 0x005dcc00
 int CTextureCache::loadTexture(std::string_view texture_name) {
     const std::int64_t size = owners_.dosio.getFileSize("art", texture_name);
@@ -98,6 +95,7 @@ int CTextureCache::loadTexture(std::string_view texture_name) {
     const int index = current_texture_count_++;
     if (current_texture_count_ >= max_texture_count_) {
         current_texture_count_ = 0;
+        has_wrapped_ = true;
     }
     return index;
 }
@@ -162,6 +160,26 @@ void CTextureCache::setupHardwarePalettes(std::span<const std::uint8_t, kPalette
             palette32[i] = (red << 16U) | (green << 8U) | blue;
         }
     }
+}
+
+// The slots up to the next free one, by their side in texels. The Blair Witch builds differ only in
+// where the cache keeps its fields.
+// nocedit 0x005dd690
+// bw1 0x00597710
+// bw2 0x00574af0
+// bw3 0x0056a700
+std::string CTextureCache::getTextureCacheStats() const {
+    if (has_wrapped_) {
+        return "Texture cache has wrapped.  Make it bigger, please.";
+    }
+    const std::span<const STextureSlot> loaded(slots_.data(),
+                                               static_cast<std::size_t>(current_texture_count_));
+    const auto count = [loaded](int dimension) {
+        return std::ranges::count(loaded, dimension, &STextureSlot::dimension);
+    };
+    return std::format("Total: {}, 32: {}, 64: {}, 128: {}, 256: {}, 512: {}, 1024: {}",
+                       current_texture_count_, count(32), count(64), count(128), count(256),
+                       count(512), count(1024));
 }
 
 } // namespace nocturne::engine

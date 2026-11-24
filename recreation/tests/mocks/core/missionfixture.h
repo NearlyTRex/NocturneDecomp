@@ -15,6 +15,7 @@
 #include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/skeleton/deformablemodelmanager.h"
 #include "core/sound/sound.h"
 #include "core/water/water.h"
 #include "core/xform/xform.h"
@@ -147,6 +148,8 @@ protected:
                         .crt_random = crt_random_,
                         .actor = actor_,
                         .mission = mission_}};
+    // What the camera debug counts; the actors' models come from models_.
+    CDeformableModelManager deformable_models_{dosio_, demon_renderer_};
     SGameSessionOwners session_{.console = console_,
                                 .camera = *set_parts_.camera,
                                 .flashlight = *set_parts_.flashlight,
@@ -164,7 +167,9 @@ protected:
                                 .environment = environment_,
                                 .sound = sound_,
                                 .display = display_,
-                                .renderer = demon_renderer_};
+                                .renderer = demon_renderer_,
+                                .textures = textures_,
+                                .deformable_models = deformable_models_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

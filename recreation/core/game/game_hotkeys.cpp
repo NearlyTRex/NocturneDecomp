@@ -64,7 +64,6 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   CDemonMission::process's
 // deferred: the sound shut down as the game pauses and started again as it resumes, with
 //   CSound::shutdown and CSound::init
-// deferred: the camera debug, with processFrame's
 // deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the
 //   Dracula brides
 // deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script
@@ -94,6 +93,9 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
     }
     if (developer_mode && takeAction(EGameAction::Console)) {
         console_enabled = !console_enabled;
+    }
+    if (developer_mode && takeAction(EGameAction::CameraDebug)) {
+        camera_debug = !camera_debug;
     }
     if (takeAction(EGameAction::Mute)) {
         owners_.sound_main.setSoundMuted(!owners_.sound_main.isSoundMuted());

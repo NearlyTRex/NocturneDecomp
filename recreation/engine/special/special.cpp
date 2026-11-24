@@ -53,6 +53,18 @@ void CSpecial::setCurrentGraphicsBoard(int board) {
     current_graphics_board_ = board;
 }
 
+int CSpecial::getRenderedTriangleCount() const {
+    return rendered_triangle_count_;
+}
+
+void CSpecial::setRenderedTriangleCount(int count) {
+    rendered_triangle_count_ = count;
+}
+
+void CSpecial::addRenderedTriangles(int count) {
+    rendered_triangle_count_ += count;
+}
+
 // The original cleared in 32-byte strides, past the end of a row that isn't a whole number of
 // them, and cleared one row of a zero-height mode.
 // nocedit 0x005b3e70
@@ -209,8 +221,7 @@ int CSpecial::drawPolygon2(std::span<platform::SRenderVertex *> vertices, int re
 }
 
 // The original drew each polygon through drawPolygon2 for a renderer without a list entry; every
-// renderer here has one.
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
+// renderer here has one. Each polygon counts as one triangle, a quad too.
 // nocedit 0x005b7640
 int CSpecial::drawPolyList(platform::SRenderVertex *vertex_buffer,
                            std::span<const platform::SMRGLPrimitiveQuad *const> polygons,
@@ -218,6 +229,7 @@ int CSpecial::drawPolyList(platform::SRenderVertex *vertex_buffer,
     if (!use_external_renderer_) {
         return 0;
     }
+    addRenderedTriangles(static_cast<int>(polygons.size()));
     return renderer_.drawPolyList(vertex_buffer, polygons.data(), static_cast<int>(polygons.size()),
                                   render_flags);
 }

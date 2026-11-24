@@ -117,6 +117,15 @@ TEST_F(CDemonRendererDepthTest, AProfiledPolygonShowsWhereAnyPixelIsInFront) {
     EXPECT_EQ(depth(4, 2), kDepth);
 }
 
+// A visibility test leaves the frame's count of triangles as it was.
+TEST_F(CDemonRendererDepthTest, AProfiledPolygonIsNotCountedAsRendered) {
+    depths_.fill(kNearer);
+    depth(4, 2) = kDepth;
+    special_.setRenderedTriangleCount(5);
+    EXPECT_TRUE(demon_renderer_.renderDepthProfiledDirect(cornersOneToThree()));
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 5);
+}
+
 TEST_F(CDemonRendererDepthTest, AProfiledPolygonBehindTheDepthsIsHidden) {
     depths_.fill(kNearer);
     EXPECT_FALSE(demon_renderer_.renderDepthProfiledDirect(cornersOneToThree()));

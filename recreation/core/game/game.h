@@ -70,6 +70,9 @@ struct SGameSessionOwners {
     const platform::IDisplay &display;
     // What each frame's 3D is drawn through.
     engine::CDemonRenderer &renderer;
+    // What the camera debug reports on: the textures and the skinned models loaded.
+    const engine::CTexture &textures;
+    const CDeformableModelManager &deformable_models;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -201,6 +204,10 @@ public:
     bool developer_mode = false;
     // The console shows over the frame.
     bool console_enabled = false;
+    // The developers' lines on the camera, frame rate, hero and memory show over the frame.
+    bool camera_debug = false;
+    // The sound effects playing are listed down the frame's left.
+    bool sound_debug = false;
     // Off in edit mode, where the camera is the one picked rather than the director's.
     bool game_active = true;
     // The set's camera edit mode shows.
@@ -241,6 +248,9 @@ private:
     void saveScreenshot();
     // Over the frame, scrolled by its own keys and the wheel.
     void renderConsole(const SGameSessionOwners &session);
+    // While it is off, its averages start again.
+    void renderCameraDebug(const SGameSessionOwners &session);
+    void renderSoundDebug();
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);
@@ -280,6 +290,9 @@ private:
     std::vector<SStatusLine> status_lines_;
     // The last screenshot's number.
     int screenshot_index_ = 0;
+    // The frames and seconds the camera debug's average frame rate is over.
+    int debug_frames_ = 0;
+    double debug_seconds_ = 0.0;
 };
 
 } // namespace nocturne::core

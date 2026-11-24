@@ -44,8 +44,6 @@ TEST(CSkeleton, PublicInterface) {
                                  common::CQuaternion4f (CSkeleton::*)(int, int, int, float) const>);
     static_assert(std::is_same_v<decltype(&CSkeleton::getHierarchyDistance),
                                  int (CSkeleton::*)(int, int) const>);
-    static_assert(
-        std::is_same_v<decltype(&CSkeleton::calculateFrameDataSize), int (CSkeleton::*)()>);
 }
 
 // A skeleton of the version, with the bones Pelvis and Spine over two frames, one motion, and the
@@ -113,6 +111,14 @@ TEST_F(CSkeletonTest, ASkeletonIsReadWithItsBonesFramesAndMotions) {
 }
 
 // Retail reads past a version 3 file's reference bone origins without keeping them.
+// Each frame a 24-byte record and 16 bytes a bone, as the original kept them.
+TEST_F(CSkeletonTest, TheFrameDataIsSizedAsTheOriginalLaidItOut) {
+    EXPECT_EQ(skeleton_.calculateFrameDataSize(), 0);
+    givenFile("data\\GABRIELA.SKL", skeletonFile(3));
+    skeleton_.load("GABRIELA.SKL");
+    EXPECT_EQ(skeleton_.calculateFrameDataSize(), ((2 * 16) + 24) * 2);
+}
+
 TEST_F(CSkeletonTest, AVersionTwoSkeletonEndsAtItsMotions) {
     givenFile("data\\old.skl", skeletonFile(2));
     skeleton_.load("old.skl");

@@ -345,6 +345,8 @@ TEST_F(CClipToViewTest, APolygonInViewGoesToTheHardwareRenderer) {
     clip(buffer);
     clipToViewport(buffer);
     EXPECT_TRUE(rows_.empty());
+    // Each counts as its corners less two.
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 2);
 }
 
 TEST_F(CClipToViewTest, APolygonInViewFacingAwayIsCulledBeforeTheHardwareRenderer) {
@@ -353,9 +355,11 @@ TEST_F(CClipToViewTest, APolygonInViewFacingAwayIsCulledBeforeTheHardwareRendere
     std::vector<SRenderVertex> buffer = getTriangleInView();
     clip(buffer);
     EXPECT_TRUE(corners_.empty());
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 0);
     std::swap(buffer[1], buffer[2]);
     clip(buffer);
     EXPECT_EQ(corners_.size(), 1U);
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 1);
 }
 
 TEST_F(CClipToViewTest, TwoCornersInViewReachTheHardwareRendererOnlyWithoutCulling) {

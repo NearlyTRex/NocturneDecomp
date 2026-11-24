@@ -20,13 +20,15 @@ namespace {
 using platform::SRenderVertex;
 
 // Whether the triangle is done before the software rasteriser: culled on its first three
-// corners, or drawn by the hardware renderer.
+// corners, or drawn by the hardware renderer. One that isn't culled counts as rendered, wherever
+// it is drawn.
 bool isCulledOrDrawnInHardware(std::span<SRenderVertex *> corners, const SPolygonState &state,
                                CSpecial &special, const C3d &three_d,
                                const SCurrentTexture &texture) {
     if (raster::isBackFacing(*corners[0], *corners[1], *corners[2], three_d.getCullingMode())) {
         return true;
     }
+    special.addRenderedTriangles(1);
     if (!special.getUseExternalRenderer() || texture.textures_disabled) {
         return false;
     }
@@ -37,7 +39,6 @@ bool isCulledOrDrawnInHardware(std::span<SRenderVertex *> corners, const SPolygo
 } // namespace
 
 // The original stopped when a row set a global abort flag.
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x00483370
 // bw1 0x0047a480
 // bw2 0x00461f70
@@ -67,7 +68,6 @@ void renderTriangleTextured(std::span<SRenderVertex> vertex_buffer,
 }
 
 // The original stopped when a row set a global abort flag.
-// deferred: adding to the rendered-triangle count, with CGame::processFrame's statistics
 // nocedit 0x004839f0
 // bw1 0x0047ab00
 // bw2 0x004625f0

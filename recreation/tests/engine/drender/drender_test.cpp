@@ -198,8 +198,10 @@ TEST_F(CDrenderTriangleTest, OnlyTheFirstThreeCornersAreCulled) {
     three_d_.setCullingMode(1);
     renderTextured(buffer, std::array{0, 1, 2, 3});
     EXPECT_TRUE(rows_.empty());
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 0);
     renderTextured(buffer, std::array{1, 2, 3, 0});
     EXPECT_FALSE(rows_.empty());
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 1);
 }
 
 TEST_F(CDrenderTriangleTest, WithTheRendererOnTheTexturedTriangleGoesToIt) {
@@ -266,6 +268,8 @@ TEST_F(CDrenderTriangleTest, WithTheRendererOnTheSimpleTriangleGoesToIt) {
     EXPECT_CALL(renderer_, drawPolygon2(_, 3, 0)).WillOnce(Return(1));
     renderSimple(buffer, kIndices);
     EXPECT_TRUE(rows_.empty());
+    // Counted wherever it is drawn.
+    EXPECT_EQ(special_.getRenderedTriangleCount(), 1);
 }
 
 } // namespace

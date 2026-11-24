@@ -78,8 +78,6 @@ TEST(CDeformableModel, PublicInterface) {
                                                   common::CVector3i *, int *, int *)>);
     static_assert(std::is_same_v<decltype(&CDeformableModel::findMaxWeightBone),
                                  int (CDeformableModel::*)(int, int)>);
-    static_assert(std::is_same_v<decltype(&CDeformableModel::calculateMemorySize),
-                                 int (CDeformableModel::*)()>);
 }
 
 class CDeformableModelTest : public CDeformableModelFixture {

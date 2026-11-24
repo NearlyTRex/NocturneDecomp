@@ -96,6 +96,11 @@ public:
         return sound_main_;
     }
 
+    // What the game's sound plays through.
+    ::testing::NiceMock<platform::MockAudioDevice> &getAudioDevice() {
+        return audio_device_;
+    }
+
     // The pad layer the game reads its sticks from, over a pad unplugged unless the test says.
     engine::SGamepadInputParts &getGamepad() {
         return gamepad_;

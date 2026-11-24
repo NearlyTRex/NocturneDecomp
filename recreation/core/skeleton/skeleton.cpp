@@ -232,6 +232,17 @@ int CSkeleton::getFrameCount() const {
     return frame_count_;
 }
 
+// The original's frame record was 24 bytes, and each bone's angle in it 16.
+// nocedit 0x0059a140
+// bw1 0x00563670
+// bw2 0x00541000
+// bw3 0x00548210
+int CSkeleton::calculateFrameDataSize() const {
+    constexpr int kFrameRecordBytes = 0x18;
+    constexpr int kBoneAngleBytes = 0x10;
+    return ((getBoneCount() * kBoneAngleBytes) + kFrameRecordBytes) * frame_count_;
+}
+
 std::span<const common::CQuaternion4f> CSkeleton::getBoneAngleFrames() const {
     return bone_angle_frames_;
 }

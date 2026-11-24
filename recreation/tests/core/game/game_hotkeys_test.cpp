@@ -170,6 +170,16 @@ TEST_F(CGameHotkeysTest, TheConsoleTurnsOnAndOffInDeveloperMode) {
     EXPECT_FALSE(game_.console_enabled);
 }
 
+TEST_F(CGameHotkeysTest, TheCameraDebugTurnsOnAndOffInDeveloperMode) {
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Z});
+    EXPECT_FALSE(game_.camera_debug);
+    game_.developer_mode = true;
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Z});
+    EXPECT_TRUE(game_.camera_debug);
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_Z});
+    EXPECT_FALSE(game_.camera_debug);
+}
+
 // On a screen of 480 lines or more. The original shrank the scene to the top 240 lines.
 TEST_F(CGameHotkeysTest, TheScriptViewTurnsOnAndOffLeavingTheSceneWhole) {
     game_.developer_mode = true;

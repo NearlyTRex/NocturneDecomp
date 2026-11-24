@@ -49,7 +49,8 @@ public:
     // How many bones up from the start the target is, 0 for the start itself, and -1 when it is
     // neither. A target below 0 is past the root: one more than the start's depth.
     [[nodiscard]] int getHierarchyDistance(int start_bone_index, int target_bone_index) const;
-    int calculateFrameDataSize();
+    // The bytes the original's frames took: each frame's record and its bones' angles.
+    [[nodiscard]] int calculateFrameDataSize() const;
 
     [[nodiscard]] const std::string &getLoadedFilename() const;
     [[nodiscard]] std::span<const SBone> getBones() const;

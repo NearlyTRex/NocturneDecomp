@@ -41,7 +41,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   client's frame, the game processed, the clock stepped a quarter second while skipping and by
 //   updateDT otherwise, then the server's frame, with skipCinematic and CNetGame's sim frames
 // deferred: the screen paint time printed while profiling, with processCheatCodes' profile mode
-// deferred: the frame's triangle count started from none, with the camera debug's count
 // deferred: the screen cleared first while the light view is on or the session asks, with
 //   processHotkeys' light view and runGameSession's clear
 // deferred: the scene drawn while the goggles are off, and again in a frame they went off in (the
@@ -71,10 +70,10 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   its size as a .raw in movie, up to its frame limit, with setupMovieRecording
 // deferred: the subtitles, with CScript::renderSubtitles
 // deferred: the iris fade, with renderIrisFade
-// deferred: the camera debug's camera, frame rate, hero, slew, fudge, sound memory, texture cache,
-//   skeleton memory, debug string and hardware texture lines, its averages reset while it is off,
-//   with processHotkeys' camera debug
-// deferred: the sound debug's playing samples, with the sound debug's switch
+// deferred: the camera debug's fudge target line, with processFudge
+// deferred: the camera debug's hardware renderer textures counted by size, with a renderer report
+//   of them
+// deferred: the sound debug switched on and off, with processCheatCodes
 // deferred: the event list, while event processing shows it, with CEventList::render
 // deferred: the script editor below the light view in script debug, and the decomp's debug
 //   window frame in its place (DEBUG_WINDOW), with CScript::renderEditor
@@ -93,6 +92,7 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   CDemonSet::renderMonsterVisionView
 // nocedit 0x004da100
 void CGame::processFrame(const SGameSessionOwners &session) {
+    owners_.special.setRenderedTriangleCount(0);
     const bool external = owners_.special.getUseExternalRenderer();
     if (external) {
         owners_.screen.openScreenDevice();
@@ -145,6 +145,10 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     }
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
     renderOverlay(session);
+    renderCameraDebug(session);
+    if (sound_debug) {
+        renderSoundDebug();
+    }
     if (console_enabled) {
         renderConsole(session);
     }

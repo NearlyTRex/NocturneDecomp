@@ -8,6 +8,7 @@
 #include <cstddef>
 #include <format>
 #include <memory>
+#include <string>
 #include <string_view>
 
 namespace nocturne::core {
@@ -77,6 +78,25 @@ void CDeformableModelManager::freeAllSkeletons() {
         skeleton->free();
     }
     skeleton_count_ = 0;
+}
+
+// The Blair Witch builds walk their whole pools, counting the slots with a file loaded, which an
+// empty slot's nothing makes the same.
+// nocedit 0x005a1ed0
+// bw1 0x0056b780
+// bw2 0x005490d0
+// bw3 0x00550310
+std::string CDeformableModelManager::getMemoryStats() const {
+    int skeleton_bytes = 0;
+    for (std::size_t i = 0; i < skeleton_count_; ++i) {
+        skeleton_bytes += skeletons_[i]->calculateFrameDataSize();
+    }
+    int model_bytes = 0;
+    for (std::size_t i = 0; i < model_count_; ++i) {
+        model_bytes += models_[i]->calculateMemorySize();
+    }
+    return std::format("{} skeletons, {} bytes, {} models, {} bytes", skeleton_count_,
+                       skeleton_bytes, model_count_, model_bytes);
 }
 
 std::size_t CDeformableModelManager::getModelCount() const {
