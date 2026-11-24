@@ -618,6 +618,18 @@ def test_a_full_export_writes_every_file_and_report(export, logs):
     assert "  Found 2 suspect patterns in f5" in logs and "THROUGHPUT STATISTICS" in logs
 
 
+def test_results_are_written_and_reported_in_submission_order_whichever_finishes_first(export, monkeypatch):
+    monkeypatch.setattr(e, "as_completed", lambda futures: list(futures)[::-1])
+    funcs = ["f0", "bad0", "f1", "bad1", "f2"]
+    export.results = {name: decompiled(name, processed = processed(name)) for name in ("f0", "f1", "f2")}
+    export.results.update({name: decompiled(name, success = False) for name in ("bad0", "bad1")})
+    export.run(funcs)
+    written = [path for c in export.called("write_batched_files") for path, _ in c[1][0]]
+    assert written == ["f0.cpp", "f1.cpp", "f2.cpp"]
+    report = (export.path / "reports" / "decompilation_errors.txt").read_text()
+    assert report.index("Decompile failed bad0") < report.index("Decompile failed bad1")
+
+
 def test_an_export_of_nothing_skips_what_it_was_told_to(export, logs):
     export.run([], header_compile = False, function_compile = False, static_analysis = False)
     assert "Skipping header, globals and shim compilation (--no-header-compile)" in logs

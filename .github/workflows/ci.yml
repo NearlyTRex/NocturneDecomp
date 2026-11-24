@@ -29,7 +29,7 @@ jobs:
   # preset also runs clang-tidy over each shim as it compiles.
   build-linux:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     strategy:
@@ -104,7 +104,7 @@ jobs:
   # release.yml has the setup.
   package-linux:
     name: Package (exe-linux-x86_64, Ubuntu 22.04)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -141,7 +141,7 @@ jobs:
   # works. Xcode's clang and CMake are on the runner.
   build-macos:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     strategy:
@@ -171,11 +171,12 @@ jobs:
   # The clang-cl lane, against the Microsoft runtime linked statically, so its
   # tests need nothing staged beside them; windows-tests-msvc runs them. The
   # Visual Studio environment the toolchain file checks for brings CMake and
-  # Ninja, and the runner's LLVM supplies clang-cl. No ccache: the workflow sets
+  # Ninja. clang-cl comes from llvm-version, first on PATH: the image's own LLVM
+  # is older than its Visual Studio's STL accepts. No ccache: the workflow sets
   # it up on Linux and macOS runners only.
   build-windows:
     name: Build (${{ matrix.preset }})
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     strategy:
@@ -187,6 +188,8 @@ jobs:
       # with Visual Studio 2026.
       runs-on: windows-2025
       msvc: true
+      # The release the presets name, as on Linux.
+      llvm-version: "23"
       cache-paths: |
         build/${{ matrix.preset }}/_deps
         build/${{ matrix.preset }}/ffmpeg
@@ -214,7 +217,7 @@ jobs:
   # loader and heap are not Windows'.
   build-windows-tests:
     name: Build (exe-windows-x86_64 tests)
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -248,7 +251,7 @@ jobs:
   windows-tests:
     name: Windows tests (exe-windows-x86_64)
     needs: build-windows-tests
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -258,7 +261,7 @@ jobs:
   windows-tests-msvc:
     name: Windows tests (exe-windows-msvc)
     needs: build-windows
-    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/windows-test.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -272,7 +275,7 @@ jobs:
   # a row of timings on the run's summary page.
   recreation:
     name: Recreation
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -312,7 +315,7 @@ jobs:
   # carries those results from run to run.
   recreation-tidy:
     name: Recreation tidy
-    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/cpp-build.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -346,7 +349,7 @@ jobs:
   # omit list in pyproject.toml; everything else is held to every line and branch.
   python:
     name: Python
-    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/python-ci.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:
@@ -362,7 +365,7 @@ jobs:
 
   lint:
     name: Lint
-    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@d90e5632677c483bafde340d821d3b1f070196b9 # v0.2.28
+    uses: NearlyTRex/Workflows/.github/workflows/lint.yml@c7ccdd2026ee4f8c9a9eb46226b9f2767842d568 # v0.2.30
     permissions:
       contents: read
     with:

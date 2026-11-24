@@ -1219,7 +1219,9 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
     timer.start_phase("Parallel decompile+process (%d threads)" % num_threads)
     log_info("Submitting %d decompilation tasks" % len(functions_to_process))
     total_tasks = len(functions_to_process)
-    futures = []
+    # Each task's place in the submission order, which the results are put back in once all finish,
+    # so the files' batches, the log and the report don't hang on which thread finished first
+    futures = {}
     for func in functions_to_process:
         worker = DecompileWorker(
             func, currentProgram, decompiler_tls,
@@ -1230,11 +1232,11 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
             constants_map=constants_map,
             global_interval_map=global_interval_map,
             address_interval_map=address_interval_map)
-        futures.append(executor.submit(worker))
+        futures[executor.submit(worker)] = len(futures)
 
-    # Collect raw decompilation results
-    decompile_results = []
-    decompile_errors = []
+    # Collect raw decompilation results, each beside its task's place
+    ordered_results = []
+    ordered_errors = []
     log_info("Waiting for %d decompilation tasks..." % total_tasks)
     decompile_start = time.time()
     decompiled_count = 0
@@ -1251,9 +1253,9 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
             total_pcode_time += result.pcode_time
 
             if result.success:
-                decompile_results.append(result)
+                ordered_results.append((futures[future], result))
             else:
-                decompile_errors.append("Decompile failed %s: %s" % (result.func_name, result.error))
+                ordered_errors.append((futures[future], "Decompile failed %s: %s" % (result.func_name, result.error)))
 
             # Progress logging
             if decompiled_count % 100 == 0:
@@ -1264,9 +1266,11 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
                 log_info("Decompiled: %d/%d (%.1f/sec, ETA: %.0fs)" % (
                     decompiled_count, total_tasks, rate, eta))
         except Exception as e:
-            decompile_errors.append("Decompile exception: %s" % str(e))
+            ordered_errors.append((futures[future], "Decompile exception: %s" % str(e)))
 
     executor.shutdown(wait=True)
+    decompile_results = [result for _, result in sorted(ordered_results, key=lambda pair: pair[0])]
+    decompile_errors = [error for _, error in sorted(ordered_errors, key=lambda pair: pair[0])]
     timer.end_phase()
 
     # Clear decompiler fixes registry now that decompilation is done
