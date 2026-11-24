@@ -53,10 +53,13 @@ set(SDL_HIDAPI          ON  CACHE BOOL "" FORCE)
 set(SDL_HIDAPI_JOYSTICK OFF CACHE BOOL "" FORCE)
 set(SDL_HIDAPI_LIBUSB   OFF CACHE BOOL "" FORCE)
 set(SDL_VIRTUAL_JOYSTICK ON CACHE BOOL "" FORCE)
+# The patch is SDL's own fix for newer clang-cl, which has _m_prefetch as a
+# builtin; see the script.
 FetchContent_Declare(sdl2
     GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
     GIT_TAG        ${NOCTURNE_SDL2_TAG}
-    GIT_SHALLOW    TRUE)
+    GIT_SHALLOW    TRUE
+    PATCH_COMMAND  ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/patch_sdl2_endian.cmake)
 
 # ----------------------------------------------------------------------------
 # SDL2_ttf (shared, vendored freetype + harfbuzz — built static inside the
