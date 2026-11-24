@@ -180,8 +180,11 @@ class NoReturn(gf.DataType):
 NoReturn.__name__ = "FunctionDefinition"
 
 
-class EmptyParam:
-    """A parameter with no type."""
+class EmptyParam(gf.ParameterDefinition):
+    """A parameter whose type comes back null, which the fake, like Ghidra, would make DEFAULT."""
+    def __init__(self):
+        super().__init__(None, "param")
+
     def getDataType(self):
         return None
 
