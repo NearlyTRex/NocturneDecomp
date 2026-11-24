@@ -9,11 +9,15 @@
 #include "core/netgame/netgame.h"
 #include "core/slew/slew.h"
 #include "engine/3d/3d.h"
+#include "engine/console/console.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/pcx/pcx.h"
 #include "engine/rawinput.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
+
+#include <format>
 
 namespace nocturne::core {
 namespace {
@@ -54,8 +58,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the goggles' view, with CDemonSet::renderGogglesView
 // deferred: BW1-3's field notes or puzzle drawn in the scene's place, or monster vision's view,
 //   with CFieldNotes, CPuzzle and CDemonSet::renderMonsterVisionView
-// deferred: F4's screenshot in developer mode or with SPOOKHOUSE set, with
-//   saveScreenshotGeneral
 // deferred: BW2's blood timer's seconds centred above the scene, with CEventList's timers
 // deferred: the inventory's items, with CInventory::renderAllItems
 // deferred: the inventory held to the screen's 4:3 while a modal dialog is up (the decomp's
@@ -83,7 +85,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the customizable keys, with showCustomizableKeys
-// deferred: the console, with CConsole::render and processHotkeys' console
 // deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
 // deferred: the pointer left undrawn in an unpaused frame, with CGame::process
 // deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the
@@ -133,14 +134,35 @@ void CGame::slewLocalHero(const SGameSessionOwners &session) {
     raw_input.releaseLeftMouseButton();
 }
 
-// Text is drawn opaque whatever alpha the scene left (the decomp's TEXT_RENDER_ALPHA).
+// Text is drawn opaque whatever alpha the scene left (the decomp's TEXT_RENDER_ALPHA). The
+// screenshot is the scene before the text goes over it; the original took one only for its
+// developers.
 void CGame::renderFrame(const SGameSessionOwners &session) {
     engine::CSpecial &special = owners_.special;
     static_cast<void>(special.lockFrame());
+    if (takeAction(EGameAction::Screenshot)) {
+        saveScreenshot();
+    }
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
     renderOverlay(session);
+    if (console_enabled) {
+        renderConsole(session);
+    }
     session.editor_tools.drawMousePointer(false);
     static_cast<void>(special.unlockFrame());
+}
+
+void CGame::saveScreenshot() {
+    ++screenshot_index_;
+    engine::saveScreenshotGeneral(owners_.screen, owners_.two_d, owners_.dosio,
+                                  std::format("demon{}.png", screenshot_index_));
+}
+
+// The console's scrolling is the decomp's console shim's, which read its keys as it drew.
+void CGame::renderConsole(const SGameSessionOwners &session) {
+    session.console.processInput(owners_.keys, owners_.raw_input.takeMouseWheelNotches());
+    session.console.render(owners_.two_d, owners_.screen.getWindowWidth(),
+                           owners_.screen.getWindowHeight());
 }
 
 } // namespace nocturne::core

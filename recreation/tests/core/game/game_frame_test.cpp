@@ -8,12 +8,15 @@
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "engine/3d/3d.h"
+#include "engine/console/console.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/special/special.h"
+#include "tests/mocks/common/pngimage.h"
 #include "tests/mocks/common/vector3fequal.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/testhero.h"
+#include "tests/mocks/engine/twodfixture.h"
 #include "tests/mocks/platform/mockrenderer.h"
 
 #include <gmock/gmock.h>
@@ -22,9 +25,13 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <map>
 #include <memory>
+#include <optional>
 #include <span>
 #include <string>
+#include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -180,6 +187,105 @@ TEST_F(CGameFrameTest, TheSoftwareFrameLeavesTheScreenDeviceAlone) {
     EXPECT_CALL(game_parts_.getScreen(), openScreenDevice()).Times(0);
     EXPECT_CALL(game_parts_.getScreen(), closeScreenDevice()).Times(0);
     game_.processFrame(session_);
+}
+
+// The game's frames drawn onto the screen, and what the screenshots write kept by name.
+class CGameFrameDebugTest : public CGameFrameTest {
+protected:
+    CGameFrameDebugTest() {
+        drawGameOnto(
+            game_parts_, screen_,
+            [this](const std::string &name, const std::string &text) { givenFile(name, text); });
+        ON_CALL(file_system_, openFile(_, platform::EFileMode::Write))
+            .WillByDefault([this](std::string_view name, platform::EFileMode) {
+                return std::make_unique<engine::CRecordingFile>(written_[std::string(name)]);
+            });
+    }
+
+    // A frame on a cleared screen.
+    void frame() {
+        screen_.fill(kBackground);
+        game_.processFrame(session_);
+    }
+
+    // A frame with the key held through it.
+    void frameWith(EInputCodeType code) {
+        hold(code);
+        frame();
+        game_parts_.hold(code, false);
+    }
+
+    [[nodiscard]] std::size_t countDrawn() const {
+        std::size_t count = 0;
+        for (int y = 0; y < screen_.getWindowHeight(); ++y) {
+            for (int x = 0; x < screen_.getWindowWidth(); ++x) {
+                count += screen_.pixel(x, y) != kBackground ? 1U : 0U;
+            }
+        }
+        return count;
+    }
+
+    [[nodiscard]] std::optional<common::SPngImage> screenshot(const std::string &name) const {
+        const auto found = written_.find(name);
+        if (found == written_.end()) {
+            return std::nullopt;
+        }
+        const std::vector<std::uint8_t> bytes(found->second.begin(), found->second.end());
+        return common::readPng(bytes);
+    }
+
+    std::map<std::string, std::string> written_;
+};
+
+// The message and the pointer are drawn after it, so the picture is the scene alone. Any player
+// can take one; the original needed developer mode or SPOOKHOUSE.
+TEST_F(CGameFrameDebugTest, F4SavesTheSceneAsNumberedPngs) {
+    game_.displayMessage("Paused", 10.0F);
+    frameWith(EInputCodeType::DIK_F4);
+    const std::optional<common::SPngImage> first = screenshot("demon1.png");
+    ASSERT_TRUE(first.has_value());
+    EXPECT_EQ(first->width, kWidth);
+    EXPECT_EQ(first->height, kHeight);
+    EXPECT_EQ(first->rgb.size(), static_cast<std::size_t>(kWidth * kHeight * 3));
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            ASSERT_EQ(first->pixel(x, y), kBackground) << x << ", " << y;
+        }
+    }
+    frameWith(EInputCodeType::DIK_F4);
+    EXPECT_TRUE(screenshot("demon2.png").has_value());
+}
+
+TEST_F(CGameFrameDebugTest, AFrameWithoutF4SavesNothing) {
+    EXPECT_CALL(file_system_, openFile(_, platform::EFileMode::Write)).Times(0);
+    frame();
+}
+
+TEST_F(CGameFrameDebugTest, TheConsoleIsDrawnOverTheFrameWhileItIsOn) {
+    console_.printf("Nocturne\n");
+    frame();
+    const std::size_t without = countDrawn();
+    game_.console_enabled = true;
+    frame();
+    EXPECT_GT(countDrawn(), without);
+    EXPECT_EQ(console_.getScale(), 1);
+}
+
+TEST_F(CGameFrameDebugTest, TheWheelScrollsTheConsoleBack) {
+    game_.console_enabled = true;
+    for (int line = 0; line < 100; ++line) {
+        console_.printf("line\n");
+    }
+    frame();
+    const int newest = console_.getViewTop();
+    EXPECT_CALL(game_input_, takeMouseWheelNotches()).WillOnce(Return(1));
+    frame();
+    EXPECT_EQ(console_.getViewTop(), newest - engine::CConsole::kWheelLines);
+}
+
+TEST_F(CGameFrameDebugTest, TheWheelIsLeftAloneWhileTheConsoleIsOff) {
+    EXPECT_CALL(game_input_, takeMouseWheelNotches()).Times(0);
+    frame();
 }
 
 } // namespace

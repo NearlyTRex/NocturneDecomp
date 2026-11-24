@@ -73,6 +73,11 @@ public:
     // starting at x again, and clipped; while text wrap is on, a line also breaks at the clip's
     // right edge. Bytes are Windows-1252, and controls other than a newline are skipped.
     void drawText(std::string_view text, int x, int y);
+    // A character of the built-in font, its set pixels in the colour and the rest left as they
+    // are, every pixel a scale x scale block. How far the next character starts, at the scale,
+    // or 0 when the scaled glyph does not fit whole in the clip and nothing is drawn.
+    int drawCharacterMaskedColor(unsigned char char_code, int x_pos, int y_pos, int color,
+                                 int scale);
     void drawString(char *text, int x_pos, int y_pos, int color);
     void drawTextXY(int x, int y, char *text);
     void drawTextColor(char *text, int x, int y);

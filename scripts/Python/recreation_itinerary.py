@@ -21,7 +21,8 @@ on over lines starting `//` and two or more spaces.
 
 The Blair Witch builds add two kinds of work (itinerary_bw.py): under a function, the builds whose
 body differs from nocedit's, each done by its `// bwN 0x...` line; and at the end, the Blair Witch
-functions nocedit has no twin of, by unit.
+functions nocedit has no twin of, by unit. Such a function's own `// bwN 0x...` lines, with no
+`// nocedit` line beside them, take the items above them as a nocedit line does.
 
 Usage: recreation_itinerary.py [--out docs/recreation-itinerary.md] [--split 300] [--merge 25]
 """
@@ -106,16 +107,36 @@ def source_files(source):
 
 
 def deferred_items(lines):
-    """Each address line's deferred and unverified items, from the comment block just above it,
-    and the line number of each item no address line follows."""
+    """Each address line's deferred and unverified items, from the comment block just above it;
+    the items of a function only the Blair Witch builds have, by (build, addr); and the line
+    number of each item no address line follows. A nocedit line takes the items above it. A
+    Blair Witch line takes them only when its comment block has no nocedit line, as the
+    builds' lines beside a nocedit function's are its variants, which share its items."""
     found = {}
+    bw_found = {}
     orphans = []
     block = []
+    builds = []
+    has_nocedit = False
+
+    def end_block():
+        """The block's items to its Blair Witch lines, or to the orphans."""
+        if builds and not has_nocedit:
+            for key in builds:
+                bw_found.setdefault(key, []).extend(item for _, item in block)
+            return []
+        return [n for n, _ in block]
+
     for number, line in enumerate(lines, 1):
         done = DONE.match(line)
         if done:
             found.setdefault(done.group(1), []).extend(item for _, item in block)
             block = []
+            has_nocedit = True
+            continue
+        build = itinerary_bw.PORTED.match(line)
+        if build:
+            builds.append(build.groups())
             continue
         deferred = DEFERRED.match(line)
         continued = CONTINUED.match(line)
@@ -124,29 +145,34 @@ def deferred_items(lines):
         elif continued and block:
             block[-1] = (block[-1][0], block[-1][1] + " " + continued.group(1))
         elif not COMMENT.match(line):
-            orphans += [n for n, _ in block]
-            block = []
-    return found, orphans + [n for n, _ in block]
+            orphans += end_block()
+            block, builds, has_nocedit = [], [], False
+    orphans += end_block()
+    return found, {k: v for k, v in bw_found.items() if v}, orphans
 
 
 def done_addresses():
-    """Every ported address, with the items it still defers or hasn't verified. An item that no
-    address line follows would go uncounted, so it is fatal."""
+    """Every ported address, with the items it still defers or hasn't verified, and the items of
+    the Blair Witch builds' own functions by (build, addr). An item that no address line follows
+    would go uncounted, so it is fatal."""
     done = {}
+    bw_deferred = {}
     orphans = []
     for directory, _, names in os.walk(RECREATION):
         for name in names:
             if name.endswith((".cpp", ".h")):
                 path = os.path.join(directory, name)
                 with open(path, encoding="utf-8") as f:
-                    found, stray = deferred_items(f.read().splitlines())
+                    found, bw_found, stray = deferred_items(f.read().splitlines())
                 for addr, items in found.items():
                     done.setdefault(addr, []).extend(items)
+                for key, items in bw_found.items():
+                    bw_deferred.setdefault(key, []).extend(items)
                 orphans += ["%s:%d" % (os.path.relpath(path, ROOT), n) for n in stray]
     if orphans:
         sys.exit("deferred or unverified items with no address line under them:\n  " +
                  "\n  ".join(orphans))
-    return done
+    return done, bw_deferred
 
 
 def percent(done, total):
@@ -194,7 +220,7 @@ class Itinerary:
         # that only returns `this`, a copy constructor or assignment that calls nothing, and an
         # empty static initializer.
         self.generated = {a for a in self.in_scope if self.is_compiler_generated(self.functions[a])}
-        ported = done_addresses()
+        ported, bw_deferred = done_addresses()
         self.deferred = {a: items for a, items in ported.items() if items}
         self.done = (set(ported) - set(self.deferred)) | self.generated
         self.vtable_slots = collections.defaultdict(set)
@@ -205,6 +231,7 @@ class Itinerary:
         self.reached = set()
         self.steps = []
         self.bw = itinerary_bw.BlairWitch.load(RECREATION)
+        self.bw.deferred = bw_deferred
 
     def is_compiler_generated(self, f):
         method = f["method"]

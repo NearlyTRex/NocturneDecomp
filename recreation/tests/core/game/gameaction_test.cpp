@@ -41,6 +41,10 @@ TEST(GameAction, TheHotkeysHaveTheOriginalsKeys) {
     EXPECT_EQ(mute.also, (SKeyChord{.code = EInputCodeType::DIK_M, .control = true}));
     EXPECT_FALSE(mute.developer);
     EXPECT_TRUE(getGameActionInfo(EGameAction::MotionDebug).developer);
+    // The original read F4 in processFrame, for its developers alone; any player can take one now.
+    const SGameActionInfo &screenshot = getGameActionInfo(EGameAction::Screenshot);
+    EXPECT_EQ(screenshot.keyboard, (SKeyChord{.code = EInputCodeType::DIK_F4}));
+    EXPECT_FALSE(screenshot.developer);
     const SGameActionInfo &ambient_down = getGameActionInfo(EGameAction::AmbientDown);
     EXPECT_EQ(ambient_down.keyboard,
               (SKeyChord{.code = EInputCodeType::DIK_A, .alt = true, .shift = true}));

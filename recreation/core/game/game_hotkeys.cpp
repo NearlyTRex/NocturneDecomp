@@ -64,7 +64,7 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   CDemonMission::process's
 // deferred: the sound shut down as the game pauses and started again as it resumes, with
 //   CSound::shutdown and CSound::init
-// deferred: the camera debug, also with SPOOKHOUSE set, with processFrame's
+// deferred: the camera debug, with processFrame's
 // deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the
 //   Dracula brides
 // deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script
@@ -74,7 +74,6 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   asking, not while letterboxed or loading in a network game, with CGame::saveGame and
 //   promptLoadGame
 // deferred: the keys help, with renderOverlay's key list
-// deferred: the console, also with SPOOKHOUSE set, with processFrame's console
 // deferred: the script debug keys while not paused: running or stopping the script in the script
 //   view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
 // deferred: the camera on or off, with CDemonSet's camera flag's reader
@@ -88,17 +87,13 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
         }
     }
     if (!game_active) {
-        const auto camera_count = static_cast<int>(session.set.getCameras().size());
-        if (takeAction(EGameAction::PrevCamera)) {
-            camera_view_index = camera_view_index > 0 ? camera_view_index - 1 : camera_count - 1;
-            session.set.setCameraView(camera_view_index);
-        } else if (takeAction(EGameAction::NextCamera)) {
-            camera_view_index = camera_view_index + 1 < camera_count ? camera_view_index + 1 : 0;
-            session.set.setCameraView(camera_view_index);
-        }
+        stepEditModeCamera(session);
     }
     if (developer_mode && takeAction(EGameAction::Pause)) {
         togglePause();
+    }
+    if (developer_mode && takeAction(EGameAction::Console)) {
+        console_enabled = !console_enabled;
     }
     if (takeAction(EGameAction::Mute)) {
         owners_.sound_main.setSoundMuted(!owners_.sound_main.isSoundMuted());
@@ -118,6 +113,18 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
         stepAmbientLight(session, -kAmbientStep);
     } else if (developer_mode && takeAction(EGameAction::AmbientUp)) {
         stepAmbientLight(session, kAmbientStep);
+    }
+}
+
+// Each way round the set's cameras.
+void CGame::stepEditModeCamera(const SGameSessionOwners &session) {
+    const auto camera_count = static_cast<int>(session.set.getCameras().size());
+    if (takeAction(EGameAction::PrevCamera)) {
+        camera_view_index = camera_view_index > 0 ? camera_view_index - 1 : camera_count - 1;
+        session.set.setCameraView(camera_view_index);
+    } else if (takeAction(EGameAction::NextCamera)) {
+        camera_view_index = camera_view_index + 1 < camera_count ? camera_view_index + 1 : 0;
+        session.set.setCameraView(camera_view_index);
     }
 }
 

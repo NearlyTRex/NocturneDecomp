@@ -167,8 +167,9 @@ list(APPEND _sources "${CMAKE_CURRENT_BINARY_DIR}/generated/engine/package/relea
 if(_sources)
     add_library(nocturne_recreation STATIC ${_sources})
     target_link_libraries(nocturne_recreation PUBLIC nocturne_recreation_options miniaudio)
+    # zlib, which libarchive builds, also compresses the screenshots' PNGs.
     target_link_libraries(nocturne_recreation
-        PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash nocturne_libarchive)
+        PRIVATE tomlplusplus::tomlplusplus nocturne_xxhash nocturne_libarchive ZLIB::ZLIB)
 else()
     add_library(nocturne_recreation INTERFACE)
     target_link_libraries(nocturne_recreation INTERFACE nocturne_recreation_options miniaudio)
@@ -209,7 +210,7 @@ endforeach()
 if(_mock_checks)
     add_library(nocturne_recreation_mock_checks OBJECT ${_mock_checks})
     target_link_libraries(nocturne_recreation_mock_checks
-        PRIVATE nocturne_recreation_options GTest::gmock nocturne_libarchive)
+        PRIVATE nocturne_recreation_options GTest::gmock nocturne_libarchive ZLIB::ZLIB)
 endif()
 
 if(NOCTURNE_RECREATION_GAME)
@@ -324,14 +325,18 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
         target_link_libraries(${_target} PRIVATE nocturne_recreation)
     endif()
     target_link_libraries(${_target} PRIVATE GTest::gtest_main GTest::gmock)
-    if(_module STREQUAL "engine")
-        # The package layer's TOML readers take toml++ tables, and its archive tests make
-        # archives with libarchive.
-        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus nocturne_libarchive)
+    if(_module STREQUAL "common")
+        # Its PNG tests read back what the encoder wrote (tests/mocks/common/pngimage.h).
+        target_link_libraries(${_target} PRIVATE ZLIB::ZLIB)
+    elseif(_module STREQUAL "engine")
+        # The package layer's TOML readers take toml++ tables, its archive tests make archives
+        # with libarchive, and its screenshot tests read back PNGs with zlib.
+        target_link_libraries(${_target} PRIVATE tomlplusplus::tomlplusplus nocturne_libarchive
+                                                 ZLIB::ZLIB)
     elseif(_module STREQUAL "core")
         # Its loader tests read PODs and packages from archives made with libarchive
-        # (tests/mocks/engine/testarchive.h).
-        target_link_libraries(${_target} PRIVATE nocturne_libarchive)
+        # (tests/mocks/engine/testarchive.h), and its frame tests read back screenshots.
+        target_link_libraries(${_target} PRIVATE nocturne_libarchive ZLIB::ZLIB)
     endif()
     # A test runs in well under a second; one stuck in a loop is ended before ctest, which holds
     # each test's output, fills the memory with it.

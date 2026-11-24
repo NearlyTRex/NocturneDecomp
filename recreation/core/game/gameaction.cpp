@@ -86,6 +86,8 @@ constexpr std::array<SGameActionInfo, kGameActionCount> kGameActions = {{
     {.ini_key = "keyScriptView", .keyboard = ctrl(EInputCodeType::DIK_W), .developer = true},
     {.ini_key = "keyDebugDisplay", .keyboard = ctrl(EInputCodeType::DIK_V), .developer = true},
     {.ini_key = "keyConsole", .keyboard = key(EInputCodeType::DIK_TAB), .developer = true},
+    // processFrame's own key, which the original read there and only for its developers.
+    {.ini_key = "keyScreenshot", .keyboard = key(EInputCodeType::DIK_F4)},
     {.ini_key = "keyCameraToggle", .keyboard = ctrl(EInputCodeType::DIK_H), .developer = true},
     {.ini_key = "keyAmbientUp", .keyboard = alt(EInputCodeType::DIK_A), .developer = true},
     {.ini_key = "keyAmbientDown",

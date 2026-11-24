@@ -84,6 +84,7 @@ RECREATION = {
     "game/a.cpp": "// deferred: the cache, with the pods\n//   it fills\n// nocedit 0x00000020\n"
                   "int load();\n// nocedit 0x00000051\n",
     "game/a.h": "    // unverified: a path, by hand\n    // nocedit 0x00000999\n",
+    "game/bw.cpp": "// deferred: its lights, with the set\n// bw2 0x00002500\nvoid draw();\n",
     "notes.md": "// deferred: ignored\n",
 }
 # nocedit's 0x20 has a twin in bw1 with another body.
@@ -137,10 +138,27 @@ def test_deferred_items_gather_continuations_and_report_orphans():
              "//   not a continuation without an item", "  // unverified: e, by f", "// plain comment",
              "// nocedit 0x00000002", "// nocedit 0x00000003",
              "// deferred: lost", "int x;", "// unverified: also lost"]
-    found, orphans = ri.deferred_items(lines)
+    found, bw_found, orphans = ri.deferred_items(lines)
     assert found == {"00000001": ["deferred: a, with b and c and d"], "00000002": ["unverified: e, by f"],
                      "00000003": []}
+    assert bw_found == {}
     assert orphans == [10, 12]
+
+
+# A Blair Witch function's own lines take its items; beside a nocedit line, before or after it,
+# they are the nocedit function's variants and leave the items to it.
+def test_blair_witch_lines_take_the_items_of_a_function_only_they_have():
+    lines = ["// deferred: bw only, with g", "//   and h", "// bw2 0x00002000", "// bw1 0x00001000", "void g();",
+             "// deferred: shared, with i", "// bw2 0x00002100", "// nocedit 0x00000100", "void i();",
+             "// nocedit 0x00000200", "// bw3 0x00003200", "// deferred: after both", "void j();",
+             "// bw3 0x00003300", "void k();",
+             "// unverified: at the end", "// bw1 0x00001400"]
+    found, bw_found, orphans = ri.deferred_items(lines)
+    assert found == {"00000100": ["deferred: shared, with i"], "00000200": []}
+    assert bw_found == {("bw2", "00002000"): ["deferred: bw only, with g and h"],
+                        ("bw1", "00001000"): ["deferred: bw only, with g and h"],
+                        ("bw1", "00001400"): ["unverified: at the end"]}
+    assert orphans == [12]
 
 
 def test_an_item_with_no_address_line_under_it_is_fatal(world, monkeypatch):
@@ -150,7 +168,7 @@ def test_an_item_with_no_address_line_under_it_is_fatal(world, monkeypatch):
     assert str(raised.value) == "deferred or unverified items with no address line under them:\n  " \
                                 "recreation/game/b.cpp:1"
     monkeypatch.setattr(ri, "RECREATION", str(world / "src"))
-    assert not ri.done_addresses()
+    assert ri.done_addresses() == ({}, {})
 
 
 def test_source_files_skip_keeps_chunks_and_names_without_an_address(world):
@@ -170,6 +188,10 @@ def test_compiler_generated_functions_count_as_done(itinerary):
     assert itinerary.done == itinerary.generated | {"00000051"}
     assert itinerary.deferred == {"00000020": ["deferred: the cache, with the pods it fills"],
                                   "00000999": ["unverified: a path, by hand"]}
+
+
+def test_a_blair_witch_functions_own_items_go_to_the_blair_witch_section(itinerary):
+    assert itinerary.bw.deferred == {("bw2", "00002500"): ["deferred: its lights, with the set"]}
 
 
 def test_a_body_names_its_walkable_callees_once_in_order(itinerary):

@@ -33,6 +33,23 @@ void drawGlyph(std::span<void *> rows, const SFontGlyph &glyph, int x, int y, bo
     }
 }
 
+// The glyph's set pixels in ink, each a scale x scale block, its other pixels left as they are.
+template <typename TPixel>
+void drawMaskedGlyph(std::span<void *> rows, const SFontGlyph &glyph, int x, int y, int scale,
+                     TPixel ink) {
+    const auto step = static_cast<std::size_t>(scale);
+    for (std::size_t row = 0; row < SFontGlyph::kRows * step; ++row) {
+        auto *pixels = static_cast<TPixel *>(rows[static_cast<std::size_t>(y) + row]) + x;
+        const unsigned bits = glyph.rows.at(row / step);
+        for (int column = 0; column < glyph.width * scale; ++column) {
+            const int bit = glyph.width - 1 - (column / scale);
+            if (((bits >> static_cast<unsigned>(bit)) & 1U) != 0) {
+                pixels[column] = ink;
+            }
+        }
+    }
+}
+
 } // namespace
 
 // nocedit 0x00401610
@@ -64,6 +81,41 @@ int C2d::drawCharacter(unsigned char char_code, int x_pos, int y_pos) {
         return 0;
     }
     return glyph.width + 1;
+}
+
+// The scale is the decomp's console shim's (nocturne_console_draw_char), for a console readable
+// on a large screen; at 1 it draws as the original does.
+// nocedit 0x00401a10
+// bw1 0x00401a20
+// bw2 0x00401a20
+// bw3 0x00401a20
+int C2d::drawCharacterMaskedColor(unsigned char char_code, int x_pos, int y_pos, int color,
+                                  int scale) {
+    const SFontGlyph &glyph = getFontGlyph(char_code);
+    const int width = glyph.width * scale;
+    const int height = kLineHeight * scale;
+    if (x_pos < clip_left_ || y_pos < clip_top_ || x_pos + width - 1 > clip_right_ ||
+        y_pos + height - 1 > clip_bottom_) {
+        return 0;
+    }
+    const auto index = static_cast<std::uint8_t>(color);
+    const std::span<void *> rows = screen_.getScreenRows();
+    switch (screen_.getBitsPerPixel()) {
+    case 8:
+        drawMaskedGlyph<std::uint8_t>(rows, glyph, x_pos, y_pos, scale, index);
+        break;
+    case 16:
+        drawMaskedGlyph<std::uint16_t>(rows, glyph, x_pos, y_pos, scale,
+                                       screen_.getColorTable16()[index]);
+        break;
+    case 32:
+        drawMaskedGlyph<std::uint32_t>(rows, glyph, x_pos, y_pos, scale,
+                                       screen_.getColorTable32()[index]);
+        break;
+    default:
+        return 0;
+    }
+    return (glyph.width + 1) * scale;
 }
 
 // The original drops a character that would cross x_max instead of breaking the line before it,

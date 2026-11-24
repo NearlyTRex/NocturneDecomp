@@ -52,6 +52,7 @@ constexpr auto kHotkeyRows = std::to_array<SBindingRow>({
     {.action = EGameAction::KeysHelp, .label = "hotkey_keys_help"},
     {.action = EGameAction::GammaDown, .label = "hotkey_gamma_down"},
     {.action = EGameAction::GammaUp, .label = "hotkey_gamma_up"},
+    {.action = EGameAction::Screenshot, .label = "hotkey_screenshot"},
     {.action = EGameAction::MotionDebug, .label = "hotkey_motion_debug"},
     {.action = EGameAction::EditMode, .label = "hotkey_edit_mode"},
     {.action = EGameAction::Pause, .label = "hotkey_pause"},

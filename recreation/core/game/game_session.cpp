@@ -26,8 +26,10 @@
 namespace nocturne::core {
 namespace {
 
-// Set, it turns developer mode on.
+// Either set turns developer mode on. The original's SPOOKHOUSE let only the console, camera debug
+// and screenshot keys work, read at each press.
 constexpr std::string_view kDeveloperVariable = "VELOCITY";
+constexpr std::string_view kSpookHouseVariable = "SPOOKHOUSE";
 constexpr int kFallbackWidth = 640;
 constexpr int kFallbackHeight = 480;
 // Below this many lines the editor's text is drawn in its small font.
@@ -146,7 +148,8 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     time_scale_factor = 1.0F;
     game_active = true;
     setGameRes(session);
-    developer_mode = session.environment.getVariable(kDeveloperVariable).has_value();
+    developer_mode = session.environment.getVariable(kDeveloperVariable).has_value() ||
+                     session.environment.getVariable(kSpookHouseVariable).has_value();
     session.flashlight.init();
     session.flashlight.setCameraName("Flashlight");
     session.flashlight.setLightEnabled(false);

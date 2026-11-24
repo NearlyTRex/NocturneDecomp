@@ -107,6 +107,30 @@ def test_the_blair_witch_only_section_has_a_table_and_a_list_per_unit(bw):
     assert lines[-1] == "- [ ] `helper` bw1 0x00001700 (3)"
 
 
+def test_a_blair_witch_function_ported_in_part_is_marked_partial_with_its_items(bw):
+    bw.deferred = {("bw3", "00003500"): ["deferred: its sparks, with the fire"]}
+    lines = bw.only_lines()
+    assert "| `core/doc.cpp` | 3 | 1 | 49 | 0 |" in lines
+    doc = lines.index("### `core/doc.cpp`")
+    assert lines[doc + 1:doc + 3] == [
+        "- [~] `CDoc::think` bw1 0x00001500, bw3 0x00003500 (40, differs, in nocturne)",
+        "  - deferred: its sparks, with the fire"]
+    assert bw.mark([("bw1", "00001600")]) == " "
+
+
+# A variant ported as a function of its own carries its own items, under the BW line.
+def test_a_variant_ported_in_part_is_marked_partial_with_its_items_under_the_bw_line(bw):
+    bw.done |= {("bw1", "00001100"), ("bw2", "00002100")}
+    bw.deferred = {("bw1", "00001100"): ["deferred: its fog, with the set"],
+                   ("bw3", "00003100"): ["deferred: its fog, with the set"]}
+    assert bw.variant_lines("00000100") == [
+        "    - BW: [~] bw1 0x00001100 = bw3 0x00003100 (logic-change); [x] bw2 0x00002100 (const-change)",
+        "      - deferred: its fog, with the set"]
+    assert bw.variant_counts(["00000100"]) == (1, 0)
+    bw.deferred = {}
+    assert bw.variant_counts(["00000100"]) == (1, 1)
+
+
 def test_siblings_are_read_from_each_function_json(tmp_path):
     unit = tmp_path / "bw1.exe" / "pseudocode" / "src" / "core" / "a.cpp"
     unit.mkdir(parents = True)

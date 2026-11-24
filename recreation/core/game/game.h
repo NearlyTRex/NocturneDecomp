@@ -188,9 +188,7 @@ public:
     // The automap's zoom, in percent.
     int map_zoom = 320;
     // The puzzles' and the combat's difficulty, as a story's difficulty list or the options page
-    // sets them: 0 normal, 1 hard.
-    // deferred: reading and writing them as BW1's and BW2's puzzleDifficultyMode and
-    //   combatDifficultyMode, with each game's own ini file
+    // sets them: 0 normal, 1 hard. BW1 and BW2 keep them in their ini (readIniData).
     int puzzle_difficulty_mode = 0;
     int combat_difficulty_mode = 0;
     // Each frame's time is multiplied by it; 1 is real time.
@@ -201,6 +199,8 @@ public:
     bool is_loading = false;
     // The developers' hotkeys work, and Customize Keys lists them.
     bool developer_mode = false;
+    // The console shows over the frame.
+    bool console_enabled = false;
     // Off in edit mode, where the camera is the one picked rather than the director's.
     bool game_active = true;
     // The set's camera edit mode shows.
@@ -234,7 +234,13 @@ private:
     [[nodiscard]] bool takeAction(EGameAction action);
     [[nodiscard]] bool isOutranked(const SKeyChord &chord, EGameAction action) const;
     void stepGamma(const SGameSessionOwners &session, int step);
+    // Edit mode's previous or next camera, as the keys ask.
+    void stepEditModeCamera(const SGameSessionOwners &session);
     void togglePause();
+    // demon1.png and on, counted from the run's first and over any left by an earlier run.
+    void saveScreenshot();
+    // Over the frame, scrolled by its own keys and the wheel.
+    void renderConsole(const SGameSessionOwners &session);
     void seedCalibration();
     // The screen at the game's resolution, falling back to 640x480, its camera sized for it.
     void setGameRes(const SGameSessionOwners &session);
@@ -272,6 +278,8 @@ private:
     std::string chapter_title_;
     float chapter_title_timer_ = 0.0F;
     std::vector<SStatusLine> status_lines_;
+    // The last screenshot's number.
+    int screenshot_index_ = 0;
 };
 
 } // namespace nocturne::core

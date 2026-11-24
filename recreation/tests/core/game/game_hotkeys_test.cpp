@@ -160,6 +160,16 @@ TEST_F(CGameHotkeysTest, PauseTurnsOnAndOffInDeveloperMode) {
     EXPECT_FALSE(game_.is_paused);
 }
 
+TEST_F(CGameHotkeysTest, TheConsoleTurnsOnAndOffInDeveloperMode) {
+    press({EInputCodeType::DIK_TAB});
+    EXPECT_FALSE(game_.console_enabled);
+    game_.developer_mode = true;
+    press({EInputCodeType::DIK_TAB});
+    EXPECT_TRUE(game_.console_enabled);
+    press({EInputCodeType::DIK_TAB});
+    EXPECT_FALSE(game_.console_enabled);
+}
+
 // On a screen of 480 lines or more. The original shrank the scene to the top 240 lines.
 TEST_F(CGameHotkeysTest, TheScriptViewTurnsOnAndOffLeavingTheSceneWhole) {
     game_.developer_mode = true;

@@ -9,11 +9,15 @@
 namespace nocturne::engine {
 
 // The on-screen debug console. Its grid is wider and deeper than the screen, so lines that scroll
-// off stay as scrollback; the shipped console's buffer capped it at 80 x 50 and dropped them.
+// off stay as scrollback; the shipped console's buffer capped it at 80 x 50 and dropped them. The
+// screen shows a window into the grid that follows the newest line until it is scrolled back,
+// then holds still while new lines arrive.
 class CConsole {
 public:
     static constexpr int kMaxColumns = 256;
     static constexpr int kMaxRows = 200;
+    // Rows a wheel notch scrolls.
+    static constexpr int kWheelLines = 3;
 
     CConsole(platform::IFileSystem &file_system, int width, int height, int screen_x, int screen_y);
 
@@ -24,7 +28,13 @@ public:
     void writeChar(char character);
     void scrollUp();
     void reset();
-    void render();
+    // PageUp and PageDown move the window a screen of rows, End goes back to following the newest,
+    // and each wheel notch away from the user scrolls kWheelLines rows back.
+    void processInput(CKeys &keys, int wheel_notches);
+    // Sized to the screen, the rows in the window in the built-in font at the console's scale.
+    void render(C2d &two_d, int screen_width, int screen_height);
+    // The first grid row the window shows.
+    [[nodiscard]] int getViewTop() const;
 
     [[nodiscard]] int getConsoleWidth() const;
     [[nodiscard]] int getConsoleHeight() const;
@@ -40,6 +50,9 @@ public:
 private:
     void newLine();
     [[nodiscard]] char &cell(int row, int column);
+    // The highest the window can start without passing the newest line.
+    [[nodiscard]] int getMaxViewTop() const;
+    void scrollView(int rows);
 
     platform::IFileSystem &file_system_;
     int console_width_;
@@ -49,6 +62,9 @@ private:
     int screen_y_;
     int current_row_ = 0;
     int current_column_ = 0;
+    // Where a held window starts; a following window ignores it.
+    int view_top_ = 0;
+    bool following_ = true;
     std::vector<char> grid_;
 };
 

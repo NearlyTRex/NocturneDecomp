@@ -65,6 +65,7 @@ enum class EGameAction : std::uint8_t {
     ScriptView,
     DebugDisplay,
     Console,
+    Screenshot,
     CameraToggle,
     AmbientUp,
     AmbientDown,

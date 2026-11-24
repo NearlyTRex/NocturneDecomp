@@ -236,6 +236,8 @@ void writePodSettings(engine::CIniFile &file, const engine::SPodSettings &settin
 // are the packages', which aren't loaded yet. A game whose folder ships no ini, as Blair Witch's
 // empty SYSTEM, is given an empty one, so it starts from the defaults the reads give; only one
 // that can't be made writable is fatal.
+// deferred: BW1's and BW2's puzzleDifficultyMode and combatDifficultyMode read into the game's
+//   difficulties, with each game's own ini file
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,
                  const SIniDataOwners &owners) {
@@ -264,6 +266,8 @@ void readIniControls(engine::CIni &ini, const SIniDataOwners &owners) {
     readControls(file, owners.game);
 }
 
+// deferred: BW1's and BW2's puzzleDifficultyMode and combatDifficultyMode written from the
+//   game's difficulties, with each game's own ini file
 // nocedit 0x004fc510
 void writeIniData(engine::CIni &ini, const SIniDataOwners &owners) {
     engine::CIniFile file(ini, kIniFilename);

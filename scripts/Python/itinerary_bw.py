@@ -16,7 +16,8 @@ writes into every function's pseudocode JSON:
              function, listed once. A named one is Blair Witch code to extract
              whole; an unnamed one may still be an unidentified nocedit function.
              Done when the recreation has a `// bwN 0x<addr>` line for any of its
-             addresses.
+             addresses, and partial when the comment above that line, with no
+             nocedit line in it, holds deferred or unverified items.
 """
 
 import json
@@ -84,12 +85,14 @@ class Groups:
 
 class BlairWitch:
     """siblings: {program: {addr: siblings}} for nocedit and each build;
-    functions: {build: {addr: recreation function record}}; done: {(build, addr)}."""
+    functions: {build: {addr: recreation function record}}; done: {(build, addr)};
+    deferred: {(build, addr): items} for the builds' own functions the recreation has in part."""
 
-    def __init__(self, siblings, functions, done):
+    def __init__(self, siblings, functions, done, deferred=None):
         self.siblings = siblings
         self.functions = functions
         self.done = done
+        self.deferred = deferred or {}
 
     @classmethod
     def load(cls, recreation_root):
@@ -121,19 +124,34 @@ class BlairWitch:
     def is_done(self, addrs):
         return any((b, a) in self.done for b, a in addrs.items())
 
+    def items(self, members):
+        """What a Blair Witch function, by its (build, addr)s, still defers or hasn't verified."""
+        return [item for key in members for item in self.deferred.get(key, [])]
+
+    def mark(self, members):
+        """Ported whole, ported in part, or not yet: a variant or a Blair Witch only function, by
+        its (build, addr)s."""
+        if not self.is_done(dict(members)):
+            return " "
+        return "~" if self.items(members) else "x"
+
     def variant_counts(self, addrs):
         """(functions with a variant, of those every variant done)."""
         have = [a for a in addrs if self.variants(a)]
-        return len(have), sum(1 for a in have if all(self.is_done(v[1]) for v in self.variants(a)))
+        return len(have), sum(1 for a in have
+                              if all(self.mark(sorted(v[1].items())) == "x" for v in self.variants(a)))
 
     def variant_lines(self, addr):
+        """The BW line, then what its variants ported on their own still defer or haven't
+        verified."""
         found = self.variants(addr)
         if not found:
             return []
-        parts = ["[%s] %s (%s)" % ("x" if self.is_done(addrs) else " ",
+        parts = ["[%s] %s (%s)" % (self.mark(sorted(addrs.items())),
                                    " = ".join("%s 0x%s" % (b, addrs[b]) for b in builds), cls)
                  for builds, addrs, cls in found]
-        return ["    - BW: " + "; ".join(parts)]
+        items = [item for _, addrs, _ in found for item in self.items(sorted(addrs.items()))]
+        return ["    - BW: " + "; ".join(parts)] + ["      - %s" % item for item in dict.fromkeys(items)]
 
     def only(self):
         """Each BW-only function once: (tu, [(build, addr)], record, differs between builds, in nocturne)."""
@@ -168,20 +186,22 @@ class BlairWitch:
         by_tu = defaultdict(list)
         for g in groups:
             by_tu[g[0]].append(g)
-        done = sum(1 for g in groups if self.is_done(dict(g[1])))
+        done = sum(1 for g in groups if self.mark(g[1]) == "x")
         lines = ["", "## Blair Witch only", "",
                  "Functions of the Blair Witch builds with no nocedit twin, each listed once with its",
                  "address in every build that has it. A named one is Blair Witch code to extract whole;",
                  "an unnamed one may still be a nocedit function nothing has identified. Marked",
                  "`differs` when the builds' bodies differ from each other, and `in nocturne` when",
-                 "the retail game has it too. Sizes are in instructions.",
+                 "the retail game has it too. One the recreation has in part is marked `[~]`, with",
+                 "what it still defers or hasn't verified under it, and isn't counted as done.",
+                 "Sizes are in instructions.",
                  "",
                  "| Unit | Functions | Named | Instructions | Done |", "|---|---|---|---|---|"]
         for tu, members in sorted(by_tu.items()):
             lines.append("| `%s` | %d | %d | %d | %d |" % (
                 tu, len(members), sum(1 for g in members if not is_unnamed(g[2])),
                 sum(g[2].get("instructions", 0) for g in members),
-                sum(1 for g in members if self.is_done(dict(g[1])))))
+                sum(1 for g in members if self.mark(g[1]) == "x")))
         lines.append("| **All** | **%d** | **%d** | **%d** | **%d** |" % (
             len(groups), sum(1 for g in groups if not is_unnamed(g[2])),
             sum(g[2].get("instructions", 0) for g in groups), done))
@@ -190,9 +210,10 @@ class BlairWitch:
             for _tu, addrs, f, differs, in_nocturne in sorted(members, key=lambda g: (is_unnamed(g[2]), g[1])):
                 notes = [n for n, on in (("differs", differs), ("in nocturne", in_nocturne)) if on]
                 lines.append("- [%s] %s %s (%d%s)" % (
-                    "x" if self.is_done(dict(addrs)) else " ", label(f),
+                    self.mark(addrs), label(f),
                     ", ".join("%s 0x%s" % m for m in addrs),
                     f.get("instructions", 0), "".join(", " + n for n in notes)))
+                lines += ["  - %s" % item for item in self.items(addrs)]
         return lines
 
 

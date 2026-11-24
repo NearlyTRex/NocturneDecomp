@@ -159,6 +159,18 @@ TEST_F(CGameSessionTest, DeveloperModeFollowsVelocity) {
     EXPECT_FALSE(game_.developer_mode);
 }
 
+// The original's other developers' variable is a second name for developer mode.
+TEST_F(CGameSessionTest, SpookHouseTurnsDeveloperModeOnToo) {
+    ON_CALL(environment_, getVariable(std::string_view("SPOOKHOUSE")))
+        .WillByDefault(Return(std::optional<std::string>("")));
+    play();
+    EXPECT_TRUE(game_.developer_mode);
+    ON_CALL(environment_, getVariable(std::string_view("SPOOKHOUSE")))
+        .WillByDefault(Return(std::nullopt));
+    play();
+    EXPECT_FALSE(game_.developer_mode);
+}
+
 // The frame's hotkeys come before its controls; Gamma up held raises the gamma the session began
 // at.
 TEST_F(CGameSessionTest, EachFrameReadsTheHotkeys) {

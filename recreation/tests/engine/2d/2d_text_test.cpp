@@ -117,5 +117,51 @@ TEST_P(C2dTextTest, WithWrapOffANewlinePastTheBottomEndsTheText) {
     EXPECT_FALSE(hasInk(0, 11, kWidth - 1, kHeight - 1));
 }
 
+TEST_P(C2dTextTest, AMaskedCharacterDrawsOnlyItsInkAndLeavesTheRest) {
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 2, 1, kInk, 1), 7);
+    EXPECT_EQ(picture(2, 1, 7, 11), "~~~~~~~\n"
+                                    "~####~~\n"
+                                    "#~~~~#~\n"
+                                    "#~~~~#~\n"
+                                    "######~\n"
+                                    "#~~~~#~\n"
+                                    "#~~~~#~\n"
+                                    "#~~~~#~\n"
+                                    "~~~~~~~\n"
+                                    "~~~~~~~\n"
+                                    "~~~~~~~");
+}
+
+TEST_P(C2dTextTest, AMaskedCharacterDrawsInTheColourItIsGiven) {
+    static_cast<void>(two_d_.drawCharacterMaskedColor('A', 2, 1, 0, 1));
+    EXPECT_EQ(picture(3, 2, 4, 1), "....");
+}
+
+TEST_P(C2dTextTest, AScaledCharacterDrawsEachPixelAsABlock) {
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 0, 0, kInk, 2), 14);
+    EXPECT_EQ(picture(0, 2, 12, 4), "~~########~~\n"
+                                    "~~########~~\n"
+                                    "##~~~~~~~~##\n"
+                                    "##~~~~~~~~##");
+}
+
+// The original's rule for a glyph that won't fit whole, widened to the scaled one.
+TEST_P(C2dTextTest, AMaskedCharacterThatDoesNotFitWholeInsideTheClipIsNotDrawn) {
+    two_d_.setupViewportAndClipping(2, 2, 20, 23);
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 1, 2, kInk, 1), 0);
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 2, 1, kInk, 1), 0);
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 16, 2, kInk, 1), 0);
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 2, 3, kInk, 2), 0);
+    EXPECT_TRUE(isUntouched());
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 15, 13, kInk, 1), 7);
+}
+
+TEST_P(C2dTextTest, AMaskedCharacterAtADepthWithNoColourTableDrawsNothing) {
+    screen_.setBitsPerPixel(24);
+    EXPECT_EQ(two_d_.drawCharacterMaskedColor('A', 2, 1, kInk, 1), 0);
+    screen_.setBitsPerPixel(GetParam());
+    EXPECT_TRUE(isUntouched());
+}
+
 } // namespace
 } // namespace nocturne::engine

@@ -358,7 +358,8 @@ TEST_F(CKeyBindingsTest, TheDevelopersHotkeysAreListedInDeveloperModeAlone) {
         leave(steps);
         steps.push_back(tap(EInputCodeType::DIK_ESCAPE));
         run(std::move(steps));
-        const EGameAction last = developer ? EGameAction::ScriptResetDialog : EGameAction::GammaUp;
+        const EGameAction last =
+            developer ? EGameAction::ScriptResetDialog : EGameAction::Screenshot;
         EXPECT_THAT(bindings(last), ElementsAre(EInputCodeType::DIK_Q)) << developer;
     }
 }

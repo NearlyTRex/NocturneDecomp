@@ -1,5 +1,8 @@
 #include "engine/console/console.h"
 
+#include "engine/2d/2d.h"
+#include "engine/keys/inputcodetype.h"
+#include "engine/keys/keys.h"
 #include "platform/filesystem.h"
 
 #include <algorithm>
@@ -16,6 +19,9 @@ constexpr std::size_t kGridSize =
 constexpr int kCellWidth = 7;
 constexpr int kCellHeight = 11;
 constexpr int kMaxScale = 8;
+// The text's palette index, and the built-in font's first character; it skips those before it.
+constexpr int kInk = 0xf8;
+constexpr unsigned char kFirstPrintable = 0x20;
 // The smallest grid worth scaling up for: a terminal's width, and enough rows to read.
 constexpr int kMinColumns = 72;
 constexpr int kMinRows = 40;
@@ -103,6 +109,10 @@ void CConsole::newLine() {
 void CConsole::scrollUp() {
     std::ranges::shift_left(grid_, kMaxColumns);
     std::fill(grid_.end() - kMaxColumns, grid_.end(), '\0');
+    // A held window moves up with its rows, or it would seem to scroll by itself.
+    if (!following_ && view_top_ > 0) {
+        --view_top_;
+    }
 }
 
 // nocedit 0x00441a40
@@ -110,7 +120,73 @@ void CConsole::reset() {
     std::ranges::fill(grid_, '\0');
     current_column_ = 0;
     current_row_ = 0;
+    view_top_ = 0;
+    following_ = true;
     file_system_.removeFile(kLogFilename);
+}
+
+// The decomp's console shim's (nocturne_console_process_input), which the original didn't have.
+void CConsole::processInput(CKeys &keys, int wheel_notches) {
+    if (keys.getAndClearKeyState(EInputCodeType::DIK_PRIOR) != 0) {
+        scrollView(-console_height_);
+    }
+    if (keys.getAndClearKeyState(EInputCodeType::DIK_NEXT) != 0) {
+        scrollView(console_height_);
+    }
+    if (keys.getAndClearKeyState(EInputCodeType::DIK_END) != 0) {
+        view_top_ = 0;
+        following_ = true;
+    }
+    if (wheel_notches != 0) {
+        scrollView(-wheel_notches * kWheelLines);
+    }
+}
+
+// The original drew 40 x 32 cells at 1x inside a box of lines around them; the decomp's console
+// shim fits the console to the screen, draws the window into its history, and leaves the box out,
+// which sat off the text at any scale that doesn't divide the screen. A cursor past the fitted
+// width starts its row again.
+// nocedit 0x00441b00
+// bw1 0x00445690
+// bw2 0x00436970
+// bw3 0x00442250
+void CConsole::render(C2d &two_d, int screen_width, int screen_height) {
+    fitToScreen(screen_width, screen_height);
+    if (current_column_ >= console_width_) {
+        current_column_ = 0;
+        const auto start =
+            grid_.begin() + (static_cast<std::ptrdiff_t>(current_row_) * kMaxColumns);
+        std::fill(start, start + kMaxColumns, '\0');
+    }
+    const int top = getViewTop();
+    const int cell_width = kCellWidth * scale_;
+    const int cell_height = kCellHeight * scale_;
+    for (int row = 0; row < console_height_; ++row) {
+        for (int column = 0; column < console_width_; ++column) {
+            const auto character = static_cast<unsigned char>(cell(top + row, column));
+            if (character >= kFirstPrintable) {
+                static_cast<void>(
+                    two_d.drawCharacterMaskedColor(character, screen_x_ + (column * cell_width),
+                                                   screen_y_ + (row * cell_height), kInk, scale_));
+            }
+        }
+    }
+}
+
+int CConsole::getViewTop() const {
+    return following_ ? getMaxViewTop() : std::min(view_top_, getMaxViewTop());
+}
+
+int CConsole::getMaxViewTop() const {
+    return std::max(current_row_ + 1 - console_height_, 0);
+}
+
+// Scrolling back from the newest starts where the window shows it; landing on the newest
+// follows it again.
+void CConsole::scrollView(int rows) {
+    const int max_top = getMaxViewTop();
+    view_top_ = std::clamp(getViewTop() + rows, 0, max_top);
+    following_ = view_top_ >= max_top;
 }
 
 int CConsole::getConsoleWidth() const {
