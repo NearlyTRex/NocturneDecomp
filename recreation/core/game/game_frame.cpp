@@ -25,6 +25,8 @@ namespace {
 
 constexpr int kOpaque = 0xffff;
 constexpr int kLeftMouseButton = 1;
+// Palette index 0, black.
+constexpr int kBorderColor = 0;
 // The editor's memory line, up from the screen's bottom.
 constexpr int kMemoryLineUp = 0x42;
 // The world's 24.8 fixed point.
@@ -66,7 +68,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   NETPLAY), with the network dialogs
 // deferred: the light view while it is on, in a window of its own (the decomp's DEBUG_WINDOW),
 //   with CDemonSet::renderLightDebugView
-// deferred: the screen border, with drawScreenBorder
 // deferred: the automap (the decomp's AUTOMAP), with the automap
 // deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
 // deferred: the subtitles, with CScript::renderSubtitles
@@ -79,11 +80,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the script editor below the light view in script debug, and the decomp's debug
 //   window frame in its place (DEBUG_WINDOW), with CScript::renderEditor
 // deferred: the editor tools switched on and off, with processCheatCodes
-// deferred: "You're dead.  Game over." while the local hero is dead, which BW1 and BW3 copy but
-//   never draw, and the decomp's banner a quarter down (HUD), with getDeathState's death wait
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
-// deferred: the customizable keys, with showCustomizableKeys
 // deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
 // deferred: the pointer left undrawn in an unpaused frame, with CGame::process
 // deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the
@@ -143,6 +141,7 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     if (takeAction(EGameAction::Screenshot)) {
         saveScreenshot();
     }
+    drawScreenBorder();
     captureDebugMovieFrame();
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
     renderOverlay(session);
@@ -154,11 +153,34 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
         owners_.two_d.drawText(shape::CEditorTools::displayMemoryDiagnostics(session.heap), 0,
                                owners_.screen.getWindowHeight() - kMemoryLineUp);
     }
+    renderDeathBanner(session);
+    if (show_customizable_keys) {
+        showCustomizableKeys(session);
+    }
     if (console_enabled) {
         renderConsole(session);
     }
     session.editor_tools.drawMousePointer(false);
     static_cast<void>(special.unlockFrame());
+}
+
+// nocedit 0x004d7e50
+// bw1 0x004cc0c0
+// bw2 0x004b30d0
+// bw3 0x004b45e0
+void CGame::drawScreenBorder() {
+    engine::C2d &two_d = owners_.two_d;
+    const int right = owners_.screen.getWindowWidth() - 1;
+    const int bottom = owners_.screen.getWindowHeight() - 1;
+    two_d.setActiveRenderColor(kBorderColor);
+    two_d.drawLine(0, 0, right, 0);
+    two_d.drawLine(1, 1, right - 1, 1);
+    two_d.drawLine(0, bottom, right, bottom);
+    two_d.drawLine(1, bottom - 1, right - 1, bottom - 1);
+    two_d.drawLine(0, 1, 0, bottom - 1);
+    two_d.drawLine(1, 2, 1, bottom - 2);
+    two_d.drawLine(right, 1, right, bottom - 1);
+    two_d.drawLine(right - 1, 2, right - 1, bottom - 2);
 }
 
 void CGame::saveScreenshot() {

@@ -1970,7 +1970,8 @@ TomlResult<SControlMode> readControlMode(const toml::table &table, std::string_v
 }
 
 TomlResult<SBindingRowSpec> readBindingRow(const toml::table &table, std::string_view where) {
-    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"action", "label"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"action", "label", "help"});
+        !keys) {
         return std::unexpected(keys.error());
     }
     TomlResult<std::string> action = readRequiredString(table, where, "action");
@@ -1981,7 +1982,12 @@ TomlResult<SBindingRowSpec> readBindingRow(const toml::table &table, std::string
     if (!label) {
         return std::unexpected(label.error());
     }
-    return SBindingRowSpec{.action = std::move(*action), .label = std::move(*label)};
+    TomlResult<std::optional<std::string>> help = readString(table, where, "help");
+    if (!help) {
+        return std::unexpected(help.error());
+    }
+    return SBindingRowSpec{
+        .action = std::move(*action), .label = std::move(*label), .help = std::move(*help)};
 }
 
 TomlResult<SControls> readControls(const toml::table &table) {
@@ -2854,7 +2860,8 @@ TomlResult<void> readLabels(const toml::table &table, SGameContent &content) {
 auto getGameStrings(auto &content) {
     return std::array{std::pair{"title", &content.title},
                       std::pair{"copyright", &content.copyright},
-                      std::pair{"copyright_os_font", &content.copyright_os_font}};
+                      std::pair{"copyright_os_font", &content.copyright_os_font},
+                      std::pair{"death_banner", &content.death_banner}};
 }
 
 TomlResult<void> readGameStrings(const toml::table &table, SGameContent &content) {
@@ -3060,6 +3067,9 @@ std::string formatControls(const SControls &controls) {
     for (const SBindingRowSpec &row : controls.bindings) {
         text += std::format("\n[[controls.binding]]\naction = {}\nlabel = {}\n",
                             quoteToml(row.action), quoteToml(row.label));
+        if (row.help) {
+            text += std::format("help = {}\n", quoteToml(*row.help));
+        }
     }
     return text;
 }

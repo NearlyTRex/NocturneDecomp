@@ -1,10 +1,13 @@
 #include "common/text/ascii.h"
 #include "common/video/presentation.h"
 #include "common/video/widescreen.h"
+#include "core/charactr/deathstate.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
+#include "core/hero/hero.h"
 #include "core/inv/inventoryassets.h"
+#include "core/mission/demonmission.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/alphabit/alphabitmap.h"
@@ -13,6 +16,7 @@
 #include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "platform/display.h"
+#include "support/newmsg/newmsg.h"
 
 #include <algorithm>
 #include <cmath>
@@ -52,6 +56,8 @@ constexpr float kSmallFontLift = 7.0F;
 constexpr int kBatteryIconInset = 4;
 constexpr int kBatteryGaugeWidth = 0x10;
 constexpr int kBatteryGap = 4;
+// The death banner's red, in 5-5-5, which the colour cube maps to the palette's nearest.
+constexpr std::size_t kBannerColor555 = 0x7c00;
 
 // The scene's picture: its 4:3 column when pillarboxed, else the whole screen.
 common::SViewport getHudFrame(common::EWidescreen widescreen, int width, int height) {
@@ -262,6 +268,30 @@ void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SV
         font.drawText(line.name, left, top, kTextColor, kShadowColor);
         bottom -= bar_height * 3 / 2;
     }
+}
+
+// The game's banner while the local hero is dead, centred a quarter of the way down the scene's
+// picture, clear of the message line and the Game Over dialog, as the decomp's HUD places it; the
+// original drew it two lines up from the screen's bottom. The Blair Witch games give none.
+void CGame::renderDeathBanner(const SGameSessionOwners &session) {
+    const std::optional<std::string> &banner = owners_.content.death_banner;
+    if (!banner ||
+        session.mission.getLocalHero()->getDeathState() != EDeathState::DEATH_STATE_DEAD) {
+        return;
+    }
+    const common::SViewport frame =
+        getHudFrame(session.display.getWidescreen(), owners_.screen.getWindowWidth(),
+                    owners_.screen.getWindowHeight());
+    engine::CBitFont &font = *owners_.fonts.getMediumFont();
+    const float scale = engine::getUiTextScale(frame.height);
+    const auto height =
+        static_cast<int>(std::lround(static_cast<float>(font.getMaxCharHeight()) * scale));
+    const std::string_view text = session.messages.getLocalizedString(*banner);
+    const int width = font.getTextWidthScaled(text, scale);
+    owners_.three_d.setRenderAlpha(kFullAlpha);
+    font.drawTextScaled(text, frame.x + ((frame.width - width) / 2),
+                        frame.y + ((frame.height - height) / 4),
+                        owners_.two_d.getColorCubeLookup()[kBannerColor555], kShadowColor, scale);
 }
 
 } // namespace nocturne::core

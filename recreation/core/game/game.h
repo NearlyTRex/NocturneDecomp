@@ -75,6 +75,8 @@ struct SGameSessionOwners {
     const CDeformableModelManager &deformable_models;
     // What the editor's memory line asks.
     platform::IHeap &heap;
+    // What the keys help's and the death banner's text is translated by.
+    const support::CNewMsg &messages;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -225,6 +227,8 @@ public:
     bool sound_debug = false;
     // The editor's line on the heap shows.
     bool editor_tools_enabled = false;
+    // The keys help shows over the frame.
+    bool show_customizable_keys = false;
     // Off in edit mode, where the camera is the one picked rather than the director's.
     bool game_active = true;
     // The set's camera edit mode shows.
@@ -253,6 +257,10 @@ private:
     void renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame);
     void renderChapterTitle(const common::SViewport &frame);
     void renderStatusBars(const SGameSessionOwners &session, const common::SViewport &frame);
+    void renderDeathBanner(const SGameSessionOwners &session);
+    void showCustomizableKeys(const SGameSessionOwners &session);
+    // Two black pixels round the screen's edge.
+    void drawScreenBorder();
     // A press of the action taken, unless another action of its context binds the same key with
     // more of the modifiers held, as Alt+Shift+A is ambient light down's and not up's too.
     [[nodiscard]] bool takeAction(EGameAction action);

@@ -3,11 +3,11 @@
 #include "core/game/controlmode.h"
 #include "core/game/game.h"
 #include "core/game/gameaction.h"
+#include "core/game/keynames.h"
 #include "core/menu/menu.h"
 #include "engine/2d/2d.h"
 #include "engine/gamepadinput.h"
 #include "engine/keys/inputcodetype.h"
-#include "engine/keys/keyname.h"
 #include "engine/keys/keys.h"
 #include "engine/menuinput.h"
 #include "engine/package/gamecontent.h"
@@ -71,36 +71,6 @@ constexpr auto kHotkeyRows = std::to_array<SBindingRow>({
 });
 static_assert(kHotkeyRows.size() == kGameActionCount - static_cast<std::size_t>(kFirstHotkey));
 
-struct SDeviceName {
-    EInputCodeType code;
-    std::string_view name;
-};
-
-// The joystick's directions are the enhanced game's left stick.
-constexpr std::array<SDeviceName, 20> kDeviceNames{{
-    {.code = EInputCodeType::INPUT_NONE, .name = "(none)"},
-    {.code = EInputCodeType::DIM_XAXIS, .name = "Mouse X-Axis"},
-    {.code = EInputCodeType::DIM_YAXIS, .name = "Mouse Y-Axis"},
-    {.code = EInputCodeType::DIM_LBUTTON, .name = "Mouse B1"},
-    {.code = EInputCodeType::DIM_RBUTTON, .name = "Mouse B2"},
-    {.code = EInputCodeType::DIM_MBUTTON, .name = "Mouse B3"},
-    {.code = EInputCodeType::DIJ_BUTTON1, .name = "Button 1"},
-    {.code = EInputCodeType::DIJ_BUTTON2, .name = "Button 2"},
-    {.code = EInputCodeType::DIJ_BUTTON3, .name = "Button 3"},
-    {.code = EInputCodeType::DIJ_BUTTON4, .name = "Button 4"},
-    {.code = EInputCodeType::DIJ_BUTTON5, .name = "Button 5"},
-    {.code = EInputCodeType::DIJ_BUTTON6, .name = "Button 6"},
-    {.code = EInputCodeType::DIJ_BUTTON7, .name = "Button 7"},
-    {.code = EInputCodeType::DIJ_BUTTON8, .name = "Button 8"},
-    {.code = EInputCodeType::DIJ_BUTTON9, .name = "Button 9"},
-    {.code = EInputCodeType::DIJ_BUTTON10, .name = "Button 10"},
-    {.code = EInputCodeType::DIJ_LEFT, .name = "Left Stick Left"},
-    {.code = EInputCodeType::DIJ_RIGHT, .name = "Left Stick Right"},
-    {.code = EInputCodeType::DIJ_UP, .name = "Left Stick Forward"},
-    {.code = EInputCodeType::DIJ_DOWN, .name = "Left Stick Back"},
-}};
-
-constexpr std::string_view kNameSeparator = ", ";
 constexpr auto kFirstCode = static_cast<std::size_t>(EInputCodeType::DIK_ESCAPE);
 
 [[nodiscard]] bool isMouseCode(EInputCodeType code) {
@@ -139,19 +109,8 @@ private:
 
 } // namespace
 
-// The original copied the name into the next of ten shared buffers. The pad's own codes are
-// named as the pad plugged in labels them.
-// nocedit 0x005134e0
 std::string CMenu::getKeyDisplayName(EInputCodeType key_code) const {
-    const std::optional<std::string_view> pad_name = owners_.gamepad.getCodeName(key_code);
-    if (pad_name) {
-        return std::string(*pad_name);
-    }
-    const auto *found = std::ranges::find(kDeviceNames, key_code, &SDeviceName::code);
-    if (found != kDeviceNames.end()) {
-        return std::string(owners_.messages.getLocalizedString(found->name));
-    }
-    return std::string(engine::getKeyName(key_code));
+    return core::getKeyDisplayName(getKeyNameOwners(), key_code);
 }
 
 void CMenu::setBindingButtons(shape::CPickList &list) const {
@@ -160,13 +119,11 @@ void CMenu::setBindingButtons(shape::CPickList &list) const {
 }
 
 std::string CMenu::getChordDisplayName(const SKeyChord &chord) const {
-    std::string name;
-    for (const SChordModifier &modifier : kChordModifiers) {
-        if (chord.*modifier.flag) {
-            name += std::format("{}+", modifier.label);
-        }
-    }
-    return name + getKeyDisplayName(chord.code);
+    return core::getChordDisplayName(getKeyNameOwners(), chord);
+}
+
+SKeyNameOwners CMenu::getKeyNameOwners() const {
+    return {.gamepad = owners_.gamepad, .messages = owners_.messages};
 }
 
 // The original answered the other way round, 1 for a code that doesn't suit, and took a
@@ -264,12 +221,7 @@ void CMenu::configureHotkeyBindings() {
 }
 
 std::string CMenu::getBindingNames(EGameAction action) const {
-    std::string names;
-    for (const SKeyChord &chord : owners_.game.controls.getBindings(action)) {
-        names += names.empty() ? "" : kNameSeparator;
-        names += getChordDisplayName(chord);
-    }
-    return names.empty() ? getKeyDisplayName(EInputCodeType::INPUT_NONE) : names;
+    return core::getBindingNames(getKeyNameOwners(), owners_.game.controls.getBindings(action));
 }
 
 // The enhanced game's: the original's pick went straight to capturing the action's one code. A

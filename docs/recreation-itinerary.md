@@ -33,7 +33,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 17 | 9 | 65.3% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 18 | 8 | 9.5% | 69 | 5 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 20 | 8 | 10.5% | 69 | 6 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1237** | **228** | **27.5%** | **2032** | **371** |
+| | **All** | | **4487** | **402625** | **1239** | **228** | **27.6%** | **2032** | **372** |
 
 ## Step 0: Math value types
 
@@ -778,7 +778,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `saveClockTime` 0x004d7d80 (4)
   - [~] `updateDT` 0x004d7d90 (44)
     - deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's death ends it, where the original drops to the main menu (the decomp's helper_death.h), with CGame::runGameSession
-    - deferred: the death banner a quarter of the way down, clear of the message line and the Game Over dialog (the decomp's hud.h, HUD), with CGame::processFrame
     - deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
     - BW: [ ] bw1 0x004cbf20 = bw3 0x004b4440 (logic-change)
 
@@ -2995,7 +2994,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script debug
     - deferred: the debug display's virtual directors, its key left to a debug movie while one is armed, with CDemonSet::renderScene
     - deferred: saving, loading, quick saving with its "Quick Save" message, and quick loading after asking, not while letterboxed or loading in a network game, with CGame::saveGame and promptLoadGame
-    - deferred: the keys help, with renderOverlay's key list
     - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
     - deferred: the camera on or off, with CDemonSet's camera flag's reader
     - BW: [ ] bw1 0x004d1a80 (logic-change); [ ] bw2 0x004b82e0 (logic-change); [ ] bw3 0x004ba540 (logic-change)
@@ -3384,7 +3382,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 2 done, 6 partial)
+### `core/game.cpp` (18 functions, 8127 instructions, 4 done, 6 partial)
 - class `CGame`
   - [x] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
@@ -3407,13 +3405,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: camera-relative movement (the decomp's movement.h, MENU), with the hero's turn rate from its frame and CDemonCamera::updateTransformMatrices
     - deferred: noting the local input for the network game (the decomp's NETPLAY), with CNetGame::initializeNetworkToHost
     - BW: [ ] bw1 0x004d0860 = bw3 0x004b92e0 (logic-change); [ ] bw2 0x004b7050 (logic-change)
-  - [ ] `drawScreenBorder` 0x004d7e50 (75)
+  - [x] `drawScreenBorder` 0x004d7e50 (75)
   - [~] `renderOverlay` 0x004d8040 (344)
     - deferred: the message line and chapter title above the bottom letterbox bar, and the status bars hidden while it is up, with CScript::getLetterboxHeight and the script's letterbox
     - deferred: a hero's bar as long as its health can go, max_hit_points / 100 of the width and clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with CCharacter::processCharacter and processDamage, which record it
     - BW: [x] bw1 0x004cc2b0 (operand-change); [x] bw2 0x004b32c0 (operand-change); [ ] bw3 0x004b47d0 (logic-change)
-  - [ ] `showCustomizableKeys` 0x004d89d0 (1621)
-    - BW: [ ] bw1 0x004ccc40 (logic-change); [ ] bw2 0x004b3c50 (logic-change); [ ] bw3 0x004b51e0 (logic-change)
+  - [x] `showCustomizableKeys` 0x004d89d0 (1621)
+    - BW: [x] bw1 0x004ccc40 (logic-change); [x] bw2 0x004b3c50 (logic-change); [x] bw3 0x004b51e0 (logic-change)
   - [ ] `renderIrisFade` 0x004e0aa0 (73)
     - BW: [ ] bw1 0x004d61e0 = bw3 0x004bd7d0 (logic-change); [ ] bw2 0x004bb3d0 (logic-change)
   - [ ] `processCheatCodes` 0x004ddaf0 (3192)
@@ -3439,7 +3437,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the inventory's items, with CInventory::renderAllItems
     - deferred: the inventory held to the screen's 4:3 while a modal dialog is up (the decomp's NETPLAY), with the network dialogs
     - deferred: the light view while it is on, in a window of its own (the decomp's DEBUG_WINDOW), with CDemonSet::renderLightDebugView
-    - deferred: the screen border, with drawScreenBorder
     - deferred: the automap (the decomp's AUTOMAP), with the automap
     - deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
     - deferred: the subtitles, with CScript::renderSubtitles
@@ -3450,9 +3447,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the event list, while event processing shows it, with CEventList::render
     - deferred: the script editor below the light view in script debug, and the decomp's debug window frame in its place (DEBUG_WINDOW), with CScript::renderEditor
     - deferred: the editor tools switched on and off, with processCheatCodes
-    - deferred: "You're dead.  Game over." while the local hero is dead, which BW1 and BW3 copy but never draw, and the decomp's banner a quarter down (HUD), with getDeathState's death wait
     - deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
-    - deferred: the customizable keys, with showCustomizableKeys
     - deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
     - deferred: the pointer left undrawn in an unpaused frame, with CGame::process
     - deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the point-and-click control mode

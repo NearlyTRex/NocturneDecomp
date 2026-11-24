@@ -47,6 +47,7 @@ SGameContent fullContent() {
     content.chapter_title = getShippedGameContent().chapter_title;
     content.copyright = "Game \"1999\"";
     content.copyright_os_font = "Game (c) 1999";
+    content.death_banner = "You're \"dead\".";
     content.credits = getShippedGameContent().credits;
     common::required(content.credits).music = "m.mp3";
     content.menu = getShippedGameContent().menu;
@@ -695,7 +696,11 @@ INSTANTIATE_TEST_SUITE_P(
                  "controls: binding 1: z: not a key this file takes"},
         SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
                  "[controls.mode.defaults]\n[[controls.binding]]\naction = 'fire'",
-                 "controls: binding 1: label: missing"}));
+                 "controls: binding 1: label: missing"},
+        SBadCase{"[[controls.mode]]\nid = 'keyboard'\nlabel = 'K'\nmanual_aim = false\n"
+                 "[controls.mode.defaults]\n[[controls.binding]]\naction = 'fire'\nlabel = 'F'\n"
+                 "help = 1",
+                 "controls: binding 1: help: not a string"}));
 
 INSTANTIATE_TEST_SUITE_P(
     Fonts, CGameContentErrorTest,
@@ -1041,7 +1046,7 @@ TEST(GameContentFile, BlairWitchOnesFrontEndReads) {
     ASSERT_TRUE(content->controls.has_value());
     EXPECT_EQ(content->controls->modes.size(), 3U);
     EXPECT_EQ(content->controls->bindings.front(),
-              (SBindingRowSpec{.action = "fire", .label = "Fire / Action"}));
+              (SBindingRowSpec{.action = "fire", .label = "Fire / Action", .help = {}}));
     ASSERT_EQ(content->stories.size(), 1U);
     EXPECT_EQ(content->stories.front().year, 1941);
     EXPECT_EQ(content->stories.front().chapters.front().mission, "hq-bw1.msn");

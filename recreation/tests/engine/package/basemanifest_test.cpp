@@ -59,6 +59,7 @@ protected:
                                    .story_select = {}},
                      .copyright = {},
                      .copyright_os_font = {},
+                     .death_banner = {},
                      .credits = {},
                      .menu = {},
                      .fonts = {},

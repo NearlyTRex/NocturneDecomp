@@ -172,7 +172,8 @@ protected:
                                 .renderer = demon_renderer_,
                                 .textures = textures_,
                                 .deformable_models = deformable_models_,
-                                .heap = heap_};
+                                .heap = heap_,
+                                .messages = messages_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

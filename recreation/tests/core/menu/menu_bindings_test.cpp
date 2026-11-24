@@ -125,7 +125,7 @@ TEST_F(CKeyBindingsTest, PickingACodeRebindsIt) {
 // The rows are the game's, in its order.
 TEST_F(CKeyBindingsTest, TheRowsAreTheGames) {
     common::required(game_parts_.getContent().controls).bindings = {
-        {.action = "fire", .label = "Shoot"}};
+        {.action = "fire", .label = "Shoot", .help = {}}};
     std::vector<EStep> steps = openForward();
     bindQ(steps);
     leave(steps);

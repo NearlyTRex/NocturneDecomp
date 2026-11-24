@@ -243,7 +243,7 @@ TEST_F(CGameRestoreDefaultControls, ADefaultForAnUnknownActionOrAHotkeyIsFatal) 
 
 TEST_F(CGameRestoreDefaultControls, ABindingsRowForAnUnknownActionIsFatal) {
     common::required(parts_.getContent().controls)
-        .bindings.push_back({.action = "levitate", .label = "Levitate"});
+        .bindings.push_back({.action = "levitate", .label = "Levitate", .help = {}});
     EXPECT_THAT([this] { static_cast<void>(gameWith(EControlMode::CONTROL_MODE_KEYBOARD)); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("A bindings page row: levitate isn't an action")));

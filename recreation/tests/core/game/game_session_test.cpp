@@ -165,10 +165,12 @@ TEST_F(CGameSessionTest, TheDebugDisplaysStartOff) {
     game_.console_enabled = true;
     game_.camera_debug = true;
     game_.editor_tools_enabled = true;
+    game_.show_customizable_keys = true;
     play();
     EXPECT_FALSE(game_.console_enabled);
     EXPECT_FALSE(game_.camera_debug);
     EXPECT_FALSE(game_.editor_tools_enabled);
+    EXPECT_FALSE(game_.show_customizable_keys);
 }
 
 TEST_F(CGameSessionTest, SpookHouseTurnsDeveloperModeOnToo) {

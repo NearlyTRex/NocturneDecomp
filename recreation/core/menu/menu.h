@@ -4,6 +4,7 @@
 #include "core/frontend.h"
 #include "core/fwd.h"
 #include "core/game/keychord.h"
+#include "core/game/keynames.h"
 #include "core/moon/moon.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
@@ -139,6 +140,7 @@ private:
     void setBindingButtons(shape::CPickList &list) const;
     // An action's chords' names, or (none).
     [[nodiscard]] std::string getBindingNames(EGameAction action) const;
+    [[nodiscard]] SKeyNameOwners getKeyNameOwners() const;
     // The codes of one action, as a list with Add binding after them, until Cancel.
     void editActionBindings(EGameAction action, std::string_view label);
     // The chord next pressed, taken as every key is let go, after any held are let go first;

@@ -81,6 +81,14 @@ TEST_F(CGameHotkeysTest, MuteTurnsTheSoundOffAndOn) {
 }
 
 // By a 64th either way, held between a half and one.
+// F1, for any player.
+TEST_F(CGameHotkeysTest, TheKeysHelpTurnsOnAndOff) {
+    press({EInputCodeType::DIK_F1});
+    EXPECT_TRUE(game_.show_customizable_keys);
+    press({EInputCodeType::DIK_F1});
+    EXPECT_FALSE(game_.show_customizable_keys);
+}
+
 TEST_F(CGameHotkeysTest, GammaStepsAndIsHeldInRange) {
     game_.gamma = 0x8400;
     press({EInputCodeType::DIK_F11});

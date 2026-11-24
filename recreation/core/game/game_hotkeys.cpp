@@ -73,7 +73,6 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 // deferred: saving, loading, quick saving with its "Quick Save" message, and quick loading after
 //   asking, not while letterboxed or loading in a network game, with CGame::saveGame and
 //   promptLoadGame
-// deferred: the keys help, with renderOverlay's key list
 // deferred: the script debug keys while not paused: running or stopping the script in the script
 //   view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
 // deferred: the camera on or off, with CDemonSet's camera flag's reader
@@ -101,6 +100,9 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
     if (takeAction(EGameAction::Mute)) {
         owners_.sound_main.setSoundMuted(!owners_.sound_main.isSoundMuted());
         session.sound.configure();
+    }
+    if (takeAction(EGameAction::KeysHelp)) {
+        show_customizable_keys = !show_customizable_keys;
     }
     const int height = owners_.screen.getWindowHeight();
     if (developer_mode && takeAction(EGameAction::ScriptView) && height >= kScriptViewLeastHeight) {

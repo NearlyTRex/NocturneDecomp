@@ -4,6 +4,8 @@
 title = "Nocturne"
 copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending."
 copyright_os_font = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending."
+# Over the frame while the hero is dead; the Blair Witch games show none
+death_banner = "You're dead.  Game over."
 
 # The turning moon with bats and clouds behind the menus; the moon in a corner while a level
 # loads; the credits in a column up the right of their picture; START lists the stories, then
@@ -315,6 +317,7 @@ next_ammo = [0x16b]  # PAD_DPAD_UP
 map = [0x164]  # PAD_BACK
 
 # The bindings page's rows above Hotkeys: the original's, in its order, and the map after them.
+# The keys help lists them too, by help where its name for one isn't the page's.
 [[controls.binding]]
 action = "walk"
 label = "Forward"
@@ -382,22 +385,27 @@ label = "Jump"
 [[controls.binding]]
 action = "weapon1"
 label = "Select pistol weapons"
+help = "Cycle pistol weapons"
 
 [[controls.binding]]
 action = "weapon2"
 label = "Select assault weapons"
+help = "Cycle assault weapons"
 
 [[controls.binding]]
 action = "weapon3"
 label = "Select flame weapons"
+help = "Cycle flame weapons"
 
 [[controls.binding]]
 action = "weapon4"
 label = "Select grenade weapons"
+help = "Cycle grenade weapons"
 
 [[controls.binding]]
 action = "weapon5"
 label = "Select melee weapons"
+help = "Cycle melee weapons"
 
 [[controls.binding]]
 action = "next_weapon"
@@ -952,3 +960,13 @@ hotkey_prev_camera = "Previous camera (edit mode)"
 hotkey_script_run = "Run or stop script (script debug)"
 hotkey_script_resume = "Resume script (script debug)"
 hotkey_script_reset_dialog = "Reset dialog (script debug)"
+
+# The keys help: its title, and its hotkeys' lines before the bindings rows
+keys_help_title = "Quick help"
+keys_help_toggle = "Toggle help"
+keys_help_save = "Save game"
+keys_help_restore = "Restore game"
+keys_help_mute = "Toggle mute"
+keys_help_quick_save = "Quick save"
+keys_help_quick_load = "Quick load"
+keys_help_pause = "Pause game"

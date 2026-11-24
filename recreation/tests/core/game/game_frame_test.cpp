@@ -1,7 +1,9 @@
 #include "common/error/fatalerror.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
+#include "core/charactr/deathstate.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dfont/dfont.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -13,7 +15,9 @@
 #include "core/skeleton/deformablemodelmanager.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
+#include "engine/font/bitfont.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "engine/texture/texture.h"
 #include "sound/sndmain/sampleinfo.h"
@@ -457,6 +461,128 @@ TEST_F(CGameFrameDebugTest, TheEditorsMemoryLineIsTheHeapsAccount) {
     EXPECT_EQ(pixels(), shown);
 }
 
+// The pointer is in the middle, inside the border's ring.
+TEST_F(CGameFrameDebugTest, TheFrameHasABlackBorderTwoPixelsWide) {
+    ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth / 2));
+    ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight / 2));
+    frame();
+    std::size_t border = 0;
+    std::size_t inside = 0;
+    for (int y = 0; y < kHeight; ++y) {
+        for (int x = 0; x < kWidth; ++x) {
+            const int edge = std::min({x, y, kWidth - 1 - x, kHeight - 1 - y});
+            border += edge < 2 && screen_.pixel(x, y) == 0U ? 1U : 0U;
+            inside += edge == 2 && screen_.pixel(x, y) == kBackground ? 1U : 0U;
+        }
+    }
+    EXPECT_EQ(border,
+              static_cast<std::size_t>((kWidth * kHeight) - ((kWidth - 4) * (kHeight - 4))));
+    EXPECT_EQ(inside, static_cast<std::size_t>(((kWidth - 4) * 2) + ((kHeight - 6) * 2)));
+}
+
+// The game's banner, centred a quarter of the way down in the colour cube's red, while the local
+// hero is dead and not before.
+TEST_F(CGameFrameDebugTest, ADeadHeroShowsTheGamesBannerAQuarterDown) {
+    ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+    ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+    auto &test_hero = static_cast<CTestHero &>(hero());
+    test_hero.death_state = EDeathState::DEATH_STATE_DEAD;
+    frame();
+    const std::vector<std::uint32_t> shown = pixels();
+    test_hero.death_state = EDeathState::DEATH_STATE_DYING;
+    frame();
+    engine::CBitFont &font = *game_parts_.getFonts().getMediumFont();
+    const std::string_view text = "You're dead.  Game over.";
+    font.drawText(text, (kWidth - font.getTextWidth(text)) / 2,
+                  (kHeight - font.getMaxCharHeight()) / 4,
+                  game_parts_.getTwoD().getColorCubeLookup()[0x7c00], 0);
+    EXPECT_EQ(pixels(), shown);
+}
+
+TEST_F(CGameFrameDebugTest, AGameWithoutABannerShowsNoneForTheDead) {
+    game_parts_.getContent().death_banner.reset();
+    frame();
+    const std::vector<std::uint32_t> alive = pixels();
+    static_cast<CTestHero &>(hero()).death_state = EDeathState::DEATH_STATE_DEAD;
+    frame();
+    EXPECT_EQ(pixels(), alive);
+}
+
+// The keys help's frames, with the pointer out of the way, and its lines as the original lays
+// them out: down from 4 lines and 4 characters in, each a line below the last, and once one is
+// within 4 lines of the bottom, the next column a third of the way across from 6 lines down.
+class CGameKeysHelpTest : public CGameFrameDebugTest {
+protected:
+    CGameKeysHelpTest() {
+        ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+        ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+    }
+
+    // The help on, then off with the lines drawn in its place; empty lines are gaps.
+    [[nodiscard]] std::vector<std::uint32_t>
+    drawnInsteadOfTheHelp(std::span<const std::string> lines) {
+        game_.show_customizable_keys = false;
+        frame();
+        engine::CBitFont &font = *game_parts_.getFonts().getThemeFont();
+        const int line = font.getCharHeight('X');
+        int x = font.getCharWidth('X') * 4;
+        int y = line * 4;
+        for (const std::string &text : lines) {
+            if (text.empty()) {
+                y += line;
+                continue;
+            }
+            font.drawText(text, x, y, 7, engine::CBitFont::kNoShadow);
+            y += line;
+            if (y > kHeight - (line * 4)) {
+                y = line * 6;
+                x += kWidth / 3;
+            }
+        }
+        return pixels();
+    }
+
+    [[nodiscard]] std::vector<std::uint32_t> helpShown() {
+        game_.show_customizable_keys = true;
+        frame();
+        return pixels();
+    }
+
+    void givenRows(std::vector<engine::SBindingRowSpec> rows) {
+        common::required(game_parts_.getContent().controls).bindings = std::move(rows);
+    }
+
+    // The title and the hotkeys, each named by its bindings.
+    static constexpr std::array<std::string_view, 10> kHotkeyLines{
+        "Quick help",        "",
+        "F1 = Toggle help",  "Ctrl+S, F2 = Save game",
+        "F3 = Restore game", "F5, Ctrl+M = Toggle mute",
+        "F6 = Quick save",   "F9 = Quick load",
+        "Esc = Pause game",  ""};
+};
+
+// A row's help names it where the game gives one, and Run is Walk while the hero always runs.
+TEST_F(CGameKeysHelpTest, ItListsTheHotkeysThenTheGamesRows) {
+    givenRows({{.action = "walk", .label = "Forward", .help = {}},
+               {.action = "run", .label = "Run", .help = {}},
+               {.action = "weapon1", .label = "Select pistol weapons", .help = "Cycle pistols"}});
+    game_.always_run = 1;
+    const std::vector<std::uint32_t> shown = helpShown();
+    std::vector<std::string> lines(kHotkeyLines.begin(), kHotkeyLines.end());
+    lines.insert(lines.end(), {"Up = Forward", "LeftShift = Walk", "1 = Cycle pistols"});
+    EXPECT_EQ(drawnInsteadOfTheHelp(lines), shown);
+}
+
+// Run is Run while the hero walks, and the rows go on in the next column.
+TEST_F(CGameKeysHelpTest, ALongListGoesOnInTheNextColumn) {
+    givenRows(std::vector<engine::SBindingRowSpec>(
+        300, engine::SBindingRowSpec{.action = "run", .label = "Run", .help = {}}));
+    const std::vector<std::uint32_t> shown = helpShown();
+    std::vector<std::string> lines(kHotkeyLines.begin(), kHotkeyLines.end());
+    lines.insert(lines.end(), 300, "LeftShift = Run");
+    EXPECT_EQ(drawnInsteadOfTheHelp(lines), shown);
+}
+
 // A movie of the screen, half its size, armed but not yet recording.
 class CGameMovieTest : public CGameFrameDebugTest {
 protected:
@@ -479,6 +605,10 @@ protected:
         game_parts_.hold(EInputCodeType::DIK_LCONTROL, false);
     }
 
+    // Where the half-size movie's pixel second down and second across starts, clear of the
+    // border.
+    static constexpr std::size_t kSecondRowSecondPixel = std::size_t{(kWidth / 2) + 1} * 3;
+
     [[nodiscard]] bool wrote(int frame) const {
         return written_.contains(std::format("movie\\noc{:05d}.raw", frame));
     }
@@ -499,7 +629,7 @@ TEST_F(CGameMovieTest, CtrlVStartsAndStopsTheMovieAFrameAFile) {
     EXPECT_TRUE(game_.isMovieRecording());
     const std::string &first = written_["movie\\noc00000.raw"];
     ASSERT_EQ(first.size(), static_cast<std::size_t>((kWidth / 2) * (kHeight / 2) * 3));
-    EXPECT_EQ(first.substr(0, 3), "\x12\x34\x56");
+    EXPECT_EQ(first.substr(kSecondRowSecondPixel, 3), "\x12\x34\x56");
     frame();
     EXPECT_TRUE(wrote(1));
     frameWithCtrlV();
@@ -521,29 +651,31 @@ TEST_F(CGameMovieTest, TheFileItWroteIsNamedOverTheFrame) {
     EXPECT_EQ(pixels(), recording);
 }
 
-// Each of the movie's pixels is the mean of the block of the screen's it covers.
+// Each of the movie's pixels is the mean of the block of the screen's it covers: the second
+// pixel down and across, clear of the border, is the mean of the screen's 2x2 block at 2, 2.
 TEST_F(CGameMovieTest, APixelIsTheMeanOfItsBlock) {
-    game_.armMovieRecording({.width = 1, .height = 1});
+    arm();
     screen_.fill(kBackground);
-    static_cast<std::uint32_t *>(screen_.getScreenRows()[0])[0] = 0xff0000;
+    static_cast<std::uint32_t *>(screen_.getScreenRows()[2])[2] = 0xff0000;
     hold(EInputCodeType::DIK_LCONTROL);
     hold(EInputCodeType::DIK_V);
     game_.processFrame(session_);
     const std::string &frame = written_["movie\\noc00000.raw"];
-    ASSERT_EQ(frame.size(), 3U);
-    const auto mean = [](int sum) { return static_cast<char>(sum / (kWidth * kHeight)); };
-    EXPECT_EQ(frame[0], mean((0x12 * ((kWidth * kHeight) - 1)) + 0xff));
-    EXPECT_EQ(frame[1], mean(0x34 * ((kWidth * kHeight) - 1)));
-    EXPECT_EQ(frame[2], mean(0x56 * ((kWidth * kHeight) - 1)));
+    const std::string pixel = frame.substr(kSecondRowSecondPixel, 3);
+    EXPECT_EQ(pixel[0], static_cast<char>(((0x12 * 3) + 0xff) / 4));
+    EXPECT_EQ(pixel[1], static_cast<char>((0x34 * 3) / 4));
+    EXPECT_EQ(pixel[2], static_cast<char>((0x56 * 3) / 4));
 }
 
-// Wider and taller than the screen, each pixel is the one its block starts on.
+// Wider and taller than the screen, each pixel is the one its block starts on: the fifth down
+// and across is the screen's at 2, 2, inside the border.
 TEST_F(CGameMovieTest, AMovieLargerThanTheScreenRepeatsItsPixels) {
     game_.armMovieRecording({.width = kWidth * 2, .height = kHeight * 2});
     frameWithCtrlV();
     const std::string &frame = written_["movie\\noc00000.raw"];
     ASSERT_EQ(frame.size(), static_cast<std::size_t>(kWidth * kHeight * 12));
-    EXPECT_EQ(frame.substr(frame.size() - 3), "\x12\x34\x56");
+    EXPECT_EQ(frame.substr(static_cast<std::size_t>(((4 * kWidth * 2) + 4) * 3), 3),
+              "\x12\x34\x56");
 }
 
 TEST_F(CGameMovieTest, TheMovieStopsAtItsFrameLimit) {

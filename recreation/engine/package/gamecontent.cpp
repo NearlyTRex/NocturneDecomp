@@ -60,6 +60,7 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
         mergeValue(content.front_end.story_select, from->front_end.story_select);
         mergeValue(content.copyright, from->copyright);
         mergeValue(content.copyright_os_font, from->copyright_os_font);
+        mergeValue(content.death_banner, from->death_banner);
         mergeValue(content.credits, from->credits);
         mergeValue(content.menu, from->menu);
         mergeById(content.fonts, from->fonts);

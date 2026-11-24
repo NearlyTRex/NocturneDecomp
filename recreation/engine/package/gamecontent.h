@@ -212,10 +212,11 @@ struct SControlMode {
     bool operator==(const SControlMode &) const = default;
 };
 
-// A row of the bindings page.
+// A row of the bindings page, and of the keys help, which names it help where it gives one.
 struct SBindingRowSpec {
     std::string action;
     std::string label;
+    std::optional<std::string> help;
 
     bool operator==(const SBindingRowSpec &) const = default;
 };
@@ -907,6 +908,8 @@ struct SGameContent {
     std::optional<std::string> copyright;
     // With the (c), which only the OS fonts have.
     std::optional<std::string> copyright_os_font;
+    // Over the frame while the local hero is dead; none shows nothing.
+    std::optional<std::string> death_banner;
     std::optional<SGameCredits> credits;
     std::optional<SMenuLayout> menu;
     // By id; a later package's replaces an earlier one's with the same id.
