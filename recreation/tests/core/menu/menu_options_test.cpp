@@ -134,11 +134,11 @@ TEST_F(COptionsScreenTest, GameplayOpensItsPage) {
     EXPECT_EQ(frames_, 4);
 }
 
-// The halo is the Graphic page's last line, five below its first without acceleration.
+// The halo is five lines below the Graphic page's first without acceleration.
 TEST_F(COptionsScreenTest, GraphicOpensItsPage) {
     pressEachFrame({kDown, kReturn, kDown, kDown, kDown, kDown, kDown, kReturn, kEscape, kEscape});
     menu_.showOptionsScreen(0);
-    EXPECT_EQ(game_.halo_mode, 1);
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Simple);
     EXPECT_EQ(frames_, 10);
 }
 

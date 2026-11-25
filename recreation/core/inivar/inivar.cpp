@@ -55,7 +55,11 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     game.hero_number =
         static_cast<EHeroType>(readEnumValue(file, "heroNumber", static_cast<int>(game.hero_number),
                                              static_cast<int>(EHeroType::HERO_TYPE_MOLOCH)));
-    readFlag(file, "haloMode", game.halo_mode);
+    game.halo_mode = static_cast<EHaloMode>(
+        readEnumValue(file, "haloMode", static_cast<int>(game.halo_mode), kHaloModeCount - 1));
+    game.flashlight_range = static_cast<EFlashlightRange>(
+        readEnumValue(file, "flashlightRange", static_cast<int>(game.flashlight_range),
+                      kFlashlightRangeCount - 1));
     readFlag(file, "firstTimeFlag", game.first_time_flag);
     readFlag(file, "subtitleMode", game.subtitle_mode);
     owners.messages.setLanguage(
@@ -115,7 +119,8 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("useDirect3D", owners.special.getUseDirect3D() ? 1 : 0);
     file.setInteger("gamma", game.gamma);
     file.setInteger("heroNumber", static_cast<int>(game.hero_number));
-    file.setInteger("haloMode", game.halo_mode);
+    file.setInteger("haloMode", static_cast<int>(game.halo_mode));
+    file.setInteger("flashlightRange", static_cast<int>(game.flashlight_range));
     file.setInteger("firstTimeFlag", game.first_time_flag);
     file.setInteger("subtitleMode", game.subtitle_mode);
     file.setString("language", owners.messages.getLanguage());

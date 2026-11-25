@@ -51,14 +51,6 @@ constexpr std::array<std::string_view, 2> kMenuFontNames{"gameplay_menu_text_lar
 // A window this short keeps the font its dialogs have.
 constexpr int kTallestFixedFontWindow = 240;
 
-// One on or back, wrapping.
-template <typename TChoice, std::size_t Count>
-TChoice stepChoice(TChoice choice, EMenuStep step) {
-    constexpr int kCount = static_cast<int>(Count);
-    const int next = (std::to_underlying(choice) + std::to_underlying(step) + kCount) % kCount;
-    return static_cast<TChoice>(next);
-}
-
 int toggle(int flag) {
     return flag == 0 ? 1 : 0;
 }

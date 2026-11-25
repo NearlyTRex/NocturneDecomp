@@ -1055,14 +1055,19 @@ TomlResult<SDialogLook> readDialog(const toml::table &table) {
 
 TomlResult<SMenuFeatures> readMenuFeatures(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: features: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"difficulty"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"difficulty", "flashlight"});
+        !keys) {
         return std::unexpected(keys.error());
     }
     const TomlResult<bool> difficulty = readRequiredBoolean(table, kWhere, "difficulty");
     if (!difficulty) {
         return std::unexpected(difficulty.error());
     }
-    return SMenuFeatures{.difficulty = *difficulty};
+    const TomlResult<bool> flashlight = readRequiredBoolean(table, kWhere, "flashlight");
+    if (!flashlight) {
+        return std::unexpected(flashlight.error());
+    }
+    return SMenuFeatures{.difficulty = *difficulty, .flashlight = *flashlight};
 }
 
 // A one-character string, as a marker in the text.
@@ -2983,7 +2988,8 @@ std::string formatMenu(const SMenuLayout &menu) {
         text += std::format("\n[menu.attract]\ndirectory = {}\nmovies = {}\n",
                             quoteToml(attract->directory), formatTomlList(attract->movies));
     }
-    text += std::format("\n[menu.features]\ndifficulty = {}\n", menu.features.difficulty);
+    text += std::format("\n[menu.features]\ndifficulty = {}\nflashlight = {}\n",
+                        menu.features.difficulty, menu.features.flashlight);
     return text;
 }
 

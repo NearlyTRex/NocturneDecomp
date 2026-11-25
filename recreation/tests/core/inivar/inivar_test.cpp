@@ -139,7 +139,7 @@ TEST_F(CInivarTest, ReadsTheGraphicsSettings) {
     EXPECT_TRUE(special_.getUseDirect3D());
     EXPECT_EQ(game_.gamma, 70000);
     EXPECT_EQ(game_.hero_number, EHeroType::HERO_TYPE_STRANGER);
-    EXPECT_EQ(game_.halo_mode, 1);
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Simple);
     EXPECT_EQ(game_.first_time_flag, 1);
     EXPECT_EQ(game_.subtitle_mode, 0);
     EXPECT_EQ(game_.blood_flag, 0);
@@ -156,6 +156,36 @@ TEST_F(CInivarTest, TheOsFontChoiceIsReadUnlessItIsOutOfRange) {
     text_ = "[Graphics]\r\nosFont=3\r\n";
     read();
     EXPECT_EQ(fonts_.getOsFontChoice(), EOsFontChoice::System);
+}
+
+TEST_F(CInivarTest, TheHaloModeIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nhaloMode=2\r\n";
+    read();
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Complex);
+    text_ = "[Graphics]\r\nhaloMode=3\r\n";
+    read();
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Complex);
+}
+
+TEST_F(CInivarTest, TheHaloModeIsWritten) {
+    game_.halo_mode = EHaloMode::Complex;
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("haloMode=2\r\n"));
+}
+
+TEST_F(CInivarTest, TheFlashlightRangeIsReadUnlessItIsOutOfRange) {
+    text_ = "[Graphics]\r\nflashlightRange=1\r\n";
+    read();
+    EXPECT_EQ(game_.flashlight_range, EFlashlightRange::Long);
+    text_ = "[Graphics]\r\nflashlightRange=2\r\n";
+    read();
+    EXPECT_EQ(game_.flashlight_range, EFlashlightRange::Long);
+}
+
+TEST_F(CInivarTest, TheFlashlightRangeIsWritten) {
+    game_.flashlight_range = EFlashlightRange::Long;
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("flashlightRange=1\r\n"));
 }
 
 TEST_F(CInivarTest, TheOsFontChoiceIsWritten) {

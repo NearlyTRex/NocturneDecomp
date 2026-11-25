@@ -33,12 +33,15 @@ enum class EGraphicLine : std::uint8_t {
     Sharpness,
     Antialias,
     Halo,
+    FlashlightRange,
 };
 
-// By halo mode; the labels' ids, as the names below are.
-constexpr std::array<std::string_view, 3> kHaloLabels{"graphic_halo_off", "graphic_halo_simple",
-                                                      "graphic_halo_complex"};
-constexpr int kHaloModeCount = static_cast<int>(kHaloLabels.size());
+// By EHaloMode; the labels' ids, as the names below are.
+constexpr std::array<std::string_view, kHaloModeCount> kHaloLabels{
+    "graphic_halo_off", "graphic_halo_simple", "graphic_halo_complex"};
+// By EFlashlightRange.
+constexpr std::array<std::string_view, kFlashlightRangeCount> kFlashlightRangeNames{
+    "graphic_flashlight_original", "graphic_flashlight_long"};
 
 constexpr int kLowBitDepth = 16;
 constexpr int kHighBitDepth = 32;
@@ -106,9 +109,15 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
                 label("graphic_antialias") + label(kAntialiasNames.at(static_cast<std::size_t>(
                                                  owners.display.getAntialias()))));
     }
+    // A game whose hero never lights a weapon has no flashlight to set.
+    if (!getMenu().getMenuLayout().features.flashlight) {
+        return;
+    }
     addLine(lines, EGraphicLine::Halo,
-            label(kHaloLabels.at(
-                static_cast<std::size_t>(std::clamp(game.halo_mode, 0, kHaloModeCount - 1)))));
+            label(kHaloLabels.at(static_cast<std::size_t>(game.halo_mode))));
+    addLine(lines, EGraphicLine::FlashlightRange,
+            label("graphic_flashlight_range") +
+                label(kFlashlightRangeNames.at(static_cast<std::size_t>(game.flashlight_range))));
 }
 
 // The API is the one renderer the recreation has, so its line only says which.
@@ -135,8 +144,12 @@ EMenuOutcome CGraphicOptionsPage::choose(int id, EMenuStep step) {
     case EGraphicLine::Antialias:
         stepAntialias(step);
         break;
+    case EGraphicLine::Halo:
+        game.halo_mode = stepChoice<EHaloMode, kHaloModeCount>(game.halo_mode, step);
+        break;
     default:
-        stepHalo(step);
+        game.flashlight_range =
+            stepChoice<EFlashlightRange, kFlashlightRangeCount>(game.flashlight_range, step);
         break;
     }
     return EMenuOutcome::Stay;
@@ -182,13 +195,6 @@ void CGraphicOptionsPage::listCards() {
     if (std::cmp_greater_equal(special.getCurrentGraphicsBoard(), card_names_.size())) {
         special.setCurrentGraphicsBoard(0);
     }
-}
-
-// A mode past Complex steps as Complex.
-void CGraphicOptionsPage::stepHalo(EMenuStep step) {
-    CGame &game = getOwners().game;
-    const int from = std::clamp(game.halo_mode, 0, kHaloModeCount - 1);
-    game.halo_mode = (from + std::to_underlying(step) + kHaloModeCount) % kHaloModeCount;
 }
 
 // Turned on, the renderer is loaded again, which turns acceleration back off if it won't start.

@@ -34,6 +34,7 @@ constexpr int kUpscaler = 4;
 constexpr int kSharpness = 5;
 constexpr int kAntialias = 6;
 constexpr int kHalo = 7;
+constexpr int kFlashlightRange = 8;
 
 TEST(CGraphicOptionsPage, PublicInterface) {
     static_assert(std::is_base_of_v<CScreenModePage, CGraphicOptionsPage>);
@@ -102,10 +103,19 @@ TEST_F(CGraphicOptionsPageTest, TheTitleIsGraphicOptions) {
 
 TEST_F(CGraphicOptionsPageTest, WithoutAccelerationThereIsNoApiOrCard) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(texts(page),
-              (std::vector<std::string>{"Acceleration : Off", "3D API : None",
-                                        "No 3D Hardware detected", "Bits per pixel : 32",
-                                        "Upscaler : Standard", "Flashlight halo : Off"}));
+    EXPECT_EQ(texts(page), (std::vector<std::string>{
+                               "Acceleration : Off", "3D API : None", "No 3D Hardware detected",
+                               "Bits per pixel : 32", "Upscaler : Standard",
+                               "Flashlight halo : Off", "Flashlight range : Original"}));
+}
+
+// As in Blair Witch 2 and 3, whose heroes carry lanterns.
+TEST_F(CGraphicOptionsPageTest, AGameWithoutAFlashlightHasNoHaloOrRange) {
+    common::required(game_parts_.getContent().menu).features.flashlight = false;
+    CGraphicOptionsPage page(menu_, menu_owners_);
+    EXPECT_EQ(texts(page), (std::vector<std::string>{
+                               "Acceleration : Off", "3D API : None", "No 3D Hardware detected",
+                               "Bits per pixel : 32", "Upscaler : Standard"}));
 }
 
 TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
@@ -121,13 +131,13 @@ TEST_F(CGraphicOptionsPageTest, AntialiasingIsListedWhileAccelerated) {
     loadRenderer();
     CGraphicOptionsPage page(menu_, menu_owners_);
     std::vector<std::string> lines = texts(page);
-    EXPECT_EQ(lines.at(lines.size() - 2), "Anti-aliasing : Off");
+    EXPECT_EQ(lines.at(lines.size() - 3), "Anti-aliasing : Off");
     ON_CALL(display_, getAntialias()).WillByDefault(Return(platform::EAntialias::Fxaa));
     lines = texts(page);
-    EXPECT_EQ(lines.at(lines.size() - 2), "Anti-aliasing : FXAA");
+    EXPECT_EQ(lines.at(lines.size() - 3), "Anti-aliasing : FXAA");
     special_.setUseDirect3D(false);
     lines = texts(page);
-    EXPECT_EQ(lines.at(lines.size() - 2), "Upscaler : Standard");
+    EXPECT_EQ(lines.at(lines.size() - 3), "Upscaler : Standard");
 }
 
 TEST_F(CGraphicOptionsPageTest, AntialiasingStepsBothWaysAndWraps) {
@@ -237,17 +247,19 @@ TEST_F(CGraphicOptionsPageTest, TheHaloStepsEitherWayAndWraps) {
     EXPECT_EQ(page.choose(kHalo, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_EQ(text(page, kHalo), "Flashlight halo : Complex");
     EXPECT_EQ(page.choose(kHalo, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(game_.halo_mode, 0);
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Off);
     EXPECT_EQ(page.choose(kHalo, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(game_.halo_mode, 2);
+    EXPECT_EQ(game_.halo_mode, EHaloMode::Complex);
 }
 
-TEST_F(CGraphicOptionsPageTest, AHaloPastComplexIsTakenAsComplex) {
-    game_.halo_mode = 7;
+TEST_F(CGraphicOptionsPageTest, TheFlashlightRangeStepsEitherWayAndWraps) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(text(page, kHalo), "Flashlight halo : Complex");
-    EXPECT_EQ(page.choose(kHalo, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(game_.halo_mode, 1);
+    EXPECT_EQ(page.choose(kFlashlightRange, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(text(page, kFlashlightRange), "Flashlight range : Long");
+    EXPECT_EQ(page.choose(kFlashlightRange, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_EQ(game_.flashlight_range, EFlashlightRange::Original);
+    EXPECT_EQ(page.choose(kFlashlightRange, EMenuStep::Back), EMenuOutcome::Stay);
+    EXPECT_EQ(game_.flashlight_range, EFlashlightRange::Long);
 }
 
 TEST_F(CGraphicOptionsPageTest, AccelerationLoadsAndKillsTheRenderer) {

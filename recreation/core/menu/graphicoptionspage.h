@@ -9,9 +9,10 @@
 
 namespace nocturne::core {
 
-// Graphic Options: the original's halo, acceleration, card and depth, with the enhanced game's
-// upscaler and anti-aliasing. The picture settings apply from the next frame; the resolution and
-// the window are Display Options'.
+// Graphic Options: Nocturne's acceleration, card, depth and flashlight halo, with the enhanced
+// game's upscaler, anti-aliasing and flashlight range. The halo and range are listed only for a
+// game whose hero lights a weapon. The settings apply from the next frame; the resolution and the
+// window are Display Options'.
 class CGraphicOptionsPage final : public CScreenModePage {
 public:
     CGraphicOptionsPage(CMenu &menu, const SMenuOwners &owners);
@@ -27,7 +28,6 @@ private:
     // The renderer's cards, none while it isn't loaded. The original started on the first card
     // only as it opened, when the INI's was gone; this does whenever the list loses it.
     void listCards();
-    void stepHalo(EMenuStep step);
     void toggleAcceleration();
     void pickCard();
     void stepUpscaler(EMenuStep step);

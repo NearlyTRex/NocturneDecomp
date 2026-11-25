@@ -5,6 +5,8 @@
 #include "core/game/aimmode.h"
 #include "core/game/controlbindings.h"
 #include "core/game/controlmode.h"
+#include "core/game/flashlightrange.h"
+#include "core/game/halomode.h"
 #include "core/game/herotype.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
@@ -157,6 +159,8 @@ public:
     void showChapterSelect(const SChapterSelectOwners &owners, EChapterSelectMode select_mode);
     // The mission file last started; starting it again keeps its loaded models and textures.
     [[nodiscard]] const std::string &getCurrentSaveFile() const;
+    // In world units, as the player chose it.
+    [[nodiscard]] int getFlashlightRange() const;
     // Where the game reads its files from.
     [[nodiscard]] const engine::CDosIo &getDosIo() const;
     void displayBitmap(char *filename, int width, int height);
@@ -178,7 +182,8 @@ public:
     // 16.16 fixed point.
     int gamma = 0x10000;
     EHeroType hero_number = EHeroType::HERO_TYPE_GABRIELLA;
-    int halo_mode = 0;
+    EHaloMode halo_mode = EHaloMode::Off;
+    EFlashlightRange flashlight_range = EFlashlightRange::Original;
     // Set until startup has shown the first run's calibration.
     int first_time_flag = 0;
     int subtitle_mode = 1;

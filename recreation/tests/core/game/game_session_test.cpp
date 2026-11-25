@@ -211,13 +211,19 @@ TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
     }
 }
 
-// The flashlight is set up off, as "Flashlight", reaching 64 units.
+TEST_F(CGameSessionTest, TheFlashlightReachesAsFarAsThePlayerChose) {
+    game_.flashlight_range = EFlashlightRange::Long;
+    play();
+    EXPECT_EQ(set_parts_.flashlight->getMaxDistance(), 64.0F);
+}
+
+// The flashlight is set up off, as "Flashlight", reaching the originals' 32 units.
 TEST_F(CGameSessionTest, TheFlashlightIsSetUpOffAndShort) {
     play();
     const CDemonLight &flashlight = *set_parts_.flashlight;
     EXPECT_EQ(flashlight.getCameraName(), "Flashlight");
     EXPECT_FALSE(flashlight.isLightEnabled());
-    EXPECT_EQ(flashlight.getMaxDistance(), 64.0F);
+    EXPECT_EQ(flashlight.getMaxDistance(), 32.0F);
     EXPECT_EQ(flashlight.getShadowDepthBuffer().size(), 256U * 256U);
 }
 

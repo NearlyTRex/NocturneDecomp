@@ -34,12 +34,16 @@ constexpr int kFallbackWidth = 640;
 constexpr int kFallbackHeight = 480;
 // Below this many lines the editor's text is drawn in its small font.
 constexpr int kSmallFontHeight = 384;
-constexpr float kFlashlightRange = 64.0F;
 // The sync stages a session waits on: every player loaded, then every player starting.
 constexpr int kSyncLoaded = 3;
 constexpr int kSyncStarting = 4;
 
 } // namespace
+
+int CGame::getFlashlightRange() const {
+    return flashlight_range == EFlashlightRange::Long ? kLongFlashlightRange
+                                                      : kOriginalFlashlightRange;
+}
 
 // Only the height and depth are compared, so a new width alone keeps the old mode.
 // nocedit 0x004dade0
@@ -157,7 +161,9 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.flashlight.init();
     session.flashlight.setCameraName("Flashlight");
     session.flashlight.setLightEnabled(false);
-    session.flashlight.setMaxDistance(kFlashlightRange);
+    // Nocturne started it at 64 and Blair Witch at 32, but nothing shows it before a lit weapon
+    // sets its own.
+    session.flashlight.setMaxDistance(static_cast<float>(getFlashlightRange()));
     session.set.initScene();
     gamma = std::clamp(gamma, kMinGamma, kMaxGamma);
     session.set.setGamma(gamma);

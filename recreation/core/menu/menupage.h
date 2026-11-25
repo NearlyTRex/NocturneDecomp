@@ -2,10 +2,12 @@
 
 #include "core/fwd.h"
 
+#include <cstddef>
 #include <cstdint>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
@@ -22,6 +24,14 @@ enum class EMenuStep : std::int8_t {
     Back = -1,
     On = 1,
 };
+
+// A choice of Count, one on or back, wrapping.
+template <typename TChoice, std::size_t Count>
+[[nodiscard]] TChoice stepChoice(TChoice choice, EMenuStep step) {
+    constexpr int kCount = static_cast<int>(Count);
+    const int next = (std::to_underlying(choice) + std::to_underlying(step) + kCount) % kCount;
+    return static_cast<TChoice>(next);
+}
 
 enum class EMenuOutcome : std::uint8_t {
     Stay,

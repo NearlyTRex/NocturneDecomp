@@ -738,6 +738,9 @@ struct SMenuAttract {
 struct SMenuFeatures {
     // The options page's puzzle and combat difficulty lines, before Credits.
     bool difficulty = false;
+    // The graphics page's flashlight halo and range lines, for a game whose hero can light a
+    // weapon.
+    bool flashlight = false;
 
     bool operator==(const SMenuFeatures &) const = default;
 };

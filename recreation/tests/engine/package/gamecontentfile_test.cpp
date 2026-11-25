@@ -353,7 +353,7 @@ constexpr std::string_view kMenuSlider =
 
 // With the music, the table read last.
 constexpr std::string_view kMenuFeatures =
-    "[menu.features]\ndifficulty = false\n"
+    "[menu.features]\ndifficulty = false\nflashlight = false\n"
     "[menu.music]\nlow_rate = 'low.wav'\nhigh_rate = 'high.wav'\n";
 
 std::string menuWith(std::string_view title, std::string_view item, std::string_view glow,
@@ -553,11 +553,16 @@ INSTANTIATE_TEST_SUITE_P(
             "menu: features: difficulty: missing"},
         SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n", kMenuOptions,
                                       kMenuSound, kMenuSlider)),
-                 "menu: music: missing"},
-        SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n"
-                                      "[menu.music]\nlow_rate = 'a.wav'\n",
-                                      kMenuOptions, kMenuSound, kMenuSlider)),
-                 "menu: music: high_rate: missing"},
+                 "menu: features: flashlight: missing"},
+        SBadCase{
+            menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\nflashlight = false\n",
+                                 kMenuOptions, kMenuSound, kMenuSlider)),
+            "menu: music: missing"},
+        SBadCase{
+            menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\nflashlight = false\n"
+                                 "[menu.music]\nlow_rate = 'a.wav'\n",
+                                 kMenuOptions, kMenuSound, kMenuSlider)),
+            "menu: music: high_rate: missing"},
         SBadCase{menuKeyed("align = 'right'"), "menu: align: not one of left, centre"},
         SBadCase{menuWith(kMenuTitle,
                           std::format("{}untitled_positions = [{{ x = 1, centre_x = 2, y = 3 }}]\n",
@@ -629,10 +634,11 @@ INSTANTIATE_TEST_SUITE_P(
                                       "height_percent = 25\nalpha = 1\nmirrored = 1\n",
                                       kMenuOptions, kMenuSound)),
                  "menu: sound: spectrum: mirrored: not true or false"},
-        SBadCase{menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\n"
-                                      "[menu.music]\ntempo = 1\n",
-                                      kMenuOptions, kMenuSound, kMenuSlider)),
-                 "menu: music: tempo: not a key this file takes"},
+        SBadCase{
+            menuThen(std::format("{}{}{}[menu.features]\ndifficulty = false\nflashlight = false\n"
+                                 "[menu.music]\ntempo = 1\n",
+                                 kMenuOptions, kMenuSound, kMenuSlider)),
+            "menu: music: tempo: not a key this file takes"},
         SBadCase{menuTopped(std::format("{}text_fonts = {{ large = 'a', small = 'b' }}\n",
                                         kMenuPosition)),
                  "menu: animate_titled_backdrop: missing"},

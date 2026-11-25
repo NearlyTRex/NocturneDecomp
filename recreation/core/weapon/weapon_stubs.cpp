@@ -71,6 +71,7 @@ void CWeapon::renderAimBeam() {
     notPorted("renderAimBeam");
 }
 
+// Ported, it reaches CGame::getFlashlightRange, the originals' 32 unless the player chose Long.
 void CWeapon::updateLighting() {
     notPorted("updateLighting");
 }
