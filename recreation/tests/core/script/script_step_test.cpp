@@ -1,6 +1,7 @@
 #include "common/error/fatalerror.h"
 #include "core/game/game.h"
 #include "core/game/irisfade.h"
+#include "core/game/letterbox.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -210,6 +211,21 @@ TEST_F(CScriptInitSectionTest, RunningACommandNotPortedYetQuits) {
 }
 
 // Each begins the game's iris; checking alone begins none.
+// Running, letterbox sets the game's; checking leaves it; the script's start puts it down.
+TEST_F(CScriptInitSectionTest, LetterboxSetsTheGamesLetterbox) {
+    givenFile("world\\m1.scr", "letterbox(true)\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", false));
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::Off);
+    run(":initSection\nletterbox(TRUE)\n:initSectionEnd\n");
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::On);
+    run(":initSection\nletterbox(bottom)\n:initSectionEnd\n");
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::Bottom);
+    script_.initRuntime();
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::Off);
+    run(":initSection\nletterbox(true)\nletterbox(false)\n:initSectionEnd\n");
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::Off);
+}
+
 TEST_F(CScriptInitSectionTest, BeginFadeInAndOutBeginTheGamesIris) {
     givenFile("world\\m1.scr", "beginFadeOut\n");
     ASSERT_TRUE(script_.loadScript("m1.scr", true));

@@ -7,7 +7,11 @@ file(MAKE_DIRECTORY "${_profiles}")
 
 # Each test process writes its own profile, so they can run in parallel.
 set(ENV{LLVM_PROFILE_FILE} "${_profiles}/%p.profraw")
+# Every core, unless NOCTURNE_RECREATION_JOBS limits them, as recreation.sh's gates do.
 cmake_host_system_information(RESULT _cores QUERY NUMBER_OF_LOGICAL_CORES)
+if(NOT "$ENV{NOCTURNE_RECREATION_JOBS}" STREQUAL "")
+    set(_cores "$ENV{NOCTURNE_RECREATION_JOBS}")
+endif()
 execute_process(COMMAND ctest -j ${_cores} --output-on-failure WORKING_DIRECTORY "${BINARY_DIR}"
                 RESULT_VARIABLE _ctest)
 if(_ctest)

@@ -1,7 +1,9 @@
 #pragma once
 
 #include "core/fwd.h"
+#include "core/game/letterbox.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 #include "shape/fwd.h"
 
 #include <cstddef>
@@ -27,6 +29,16 @@ struct SScriptOwners {
     CSound &sound;
     CGame &game;
     CDemonCamera &camera;
+};
+
+// What the letterbox and the subtitles are measured on and drawn with: the screen, its 2D and 3D
+// state, the fonts, and the display's widescreen framing.
+struct SScriptScreen {
+    engine::IScreenDevice &screen;
+    engine::C2d &two_d;
+    engine::C3d &three_d;
+    const CDFont &fonts;
+    const platform::IDisplay &display;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
@@ -78,8 +90,11 @@ public:
 
     void clear();
     void process();
-    int getLetterboxHeight();
-    void renderSubtitles();
+    // Each bar's height as far as it has slid in.
+    [[nodiscard]] int getLetterboxHeight(const SScriptScreen &screen) const;
+    // The bars slid a frame further in or out and drawn, then the line said, if any, in the
+    // bottom one while the player has subtitles on.
+    void renderSubtitles(const SScriptScreen &screen);
     void renderEditor(int left, int top, int right, int bottom);
     // Loads world\<filename> and the dialogue in world\<stem>.txt, then checks the script's
     // syntax unless told not to; a syntax error quits. A missing script loads as an empty one;
@@ -139,6 +154,9 @@ private:
     static CommandResult checkSetSkipLabel(CScript &script, SStatement &statement);
     static CommandResult checkSay(CScript &script, SStatement &statement);
     static CommandResult checkDbSay(CScript &script, SStatement &statement);
+    static CommandResult checkDisplay(CScript &script, SStatement &statement);
+    // A bar at full extension, as tall as the letterbox goes.
+    [[nodiscard]] static int getFullLetterbox(const SScriptScreen &screen);
 
     SScriptOwners owners_;
     std::vector<std::string> script_text_;
@@ -150,6 +168,12 @@ private:
     bool checking_ = false;
     // syntaxCheckOff: the check passes over commands until syntaxCheckOn.
     bool checks_suspended_ = false;
+    // The line the subtitles show; empty for none.
+    std::string current_message_;
+    // How far the letterbox has slid in, from 0 to 1.
+    float letterbox_extension_ = 0.0F;
+    // The last letterbox the script set, which the bars keep as they slide out.
+    ELetterbox previous_letterbox_ = ELetterbox::Off;
 };
 
 } // namespace nocturne::core

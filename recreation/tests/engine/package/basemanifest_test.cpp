@@ -61,6 +61,8 @@ protected:
                      .copyright_os_font = {},
                      .death_banner = {},
                      .iris_fade = {},
+                     .battery = {},
+                     .flashlight = {},
                      .credits = {},
                      .menu = {},
                      .fonts = {},

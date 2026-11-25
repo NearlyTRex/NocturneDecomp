@@ -46,6 +46,8 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.copyright_os_font = "(c) Base";
     base.death_banner = "Dead";
     base.iris_fade = SIrisFade{.opens_session = false, .black_frames = 3};
+    base.battery = SBattery{.gauge = false};
+    base.flashlight = SFlashlight{.options = false};
     base.credits = SGameCredits{.text = "a.txt",
                                 .image = "a",
                                 .fit = {},
@@ -69,6 +71,8 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     EXPECT_EQ(merged.copyright_os_font, "(c) Base");
     EXPECT_EQ(merged.death_banner, "Dead");
     EXPECT_EQ(merged.iris_fade, base.iris_fade);
+    EXPECT_EQ(merged.battery, base.battery);
+    EXPECT_EQ(merged.flashlight, base.flashlight);
     EXPECT_EQ(merged.credits, base.credits);
     EXPECT_EQ(merged.menu, mod.menu);
 }

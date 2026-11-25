@@ -206,16 +206,22 @@ text_shadow = 0
 directory = "video"
 movies = ["noc1.avi", "noc2.avi", "noc3.avi", "noc4.avi"]
 
-# Nocturne has no puzzle or combat difficulty. The Stranger lights his guns, so Graphic Options
-# has the flashlight halo and range
+# Nocturne has no puzzle or combat difficulty
 [menu.features]
 difficulty = false
-flashlight = true
 
 # Each session opens on an iris, the screen black for one frame first
 [iris_fade]
 opens_session = true
 black_frames = 1
+
+# The flashlight's battery gauge at the HUD's bottom left
+[battery]
+gauge = true
+
+# The Stranger lights his guns, so Graphic Options has the flashlight halo and range
+[flashlight]
+options = true
 
 # The control modes the Control line steps through, in order: each one's label, whether it aims
 # by hand, and the codes each play action starts bound to, as the INI stores them. The hotkeys'

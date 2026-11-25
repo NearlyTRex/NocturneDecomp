@@ -33,7 +33,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 17 | 9 | 65.3% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 21 | 9 | 11.1% | 69 | 8 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 22 | 10 | 11.6% | 69 | 9 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1243** | **230** | **27.7%** | **2032** | **377** |
+| | **All** | | **4487** | **402625** | **1244** | **231** | **27.7%** | **2032** | **378** |
 
 ## Step 0: Math value types
 
@@ -2579,15 +2579,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `buildParsedLines` 0x0055a370 (107)
     - BW: [x] bw1 0x00543fd0 = bw2 0x00521ec0 = bw3 0x005295e0 (logic-change)
   - [~] `initRuntime` 0x0055a540 (120)
-    - deferred: clearing the shown message, with renderSubtitles
     - deferred: clearing the wait and dialogue timers and the time a message shows for, with processTimer and startDialogLine
     - deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and the loop warning, with process and skipCinematic
     - deferred: following the first hero placed in an area when the local hero is in none (the decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
     - deferred: marking the focus changed, with the play loop's virtual director call
     - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
-    - deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox, with CGame's readers of them
-    - deferred: clearing the script's time scale, with process
-    - deferred: the letterbox measured over the 4:3 picture and three subtitle lines high with half a line spare each side, the subtitles in it at the HUD's text scale (the decomp's hud.h, HUD), with CScript::getLetterboxHeight and renderSubtitles
+    - deferred: letting the heroes be damaged and the enemies attack, with CGame's readers of them
     - BW: [ ] bw1 0x00544190 = bw2 0x00522080 = bw3 0x005297a0 (logic-change)
   - [~] `startDialogLine` 0x0055ff00 (148)
     - deferred: the line's length: the number the sound is, the sound's own, or two hundredths of a second a character and 0.4 more for a missing sound, which the script's pick list notes, with CSound::getSoundDuration and the script editor
@@ -2644,7 +2641,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: running chainToMission, naming the next mission and ending this one, with process
     - deferred: running clearActorVariable, clearing the variable, with process
     - deferred: running debug, showing the message, with process
-    - deferred: keeping display's message, while checking too, with renderSubtitles
     - deferred: running else, skipping the statement after it, with process
     - deferred: running end, ending the mission and noting it for the helper-death fix, with process
     - deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's fades
@@ -2654,7 +2650,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: running goto, jumping to the label, with process
     - deferred: running gtfo, showing the message and ending the mission, with process
     - deferred: running idle, stopping for the frame after moving past it, with process
-    - deferred: running letterbox, setting the letterbox and what it allows, and turning off the goggles, with CGame's readers of them
+    - deferred: letterbox setting what the letterbox allows: the heroes' damage, the enemies' attacks and the hero's controls, the script's saved command and input flag, with their readers
+    - deferred: letterbox turning the goggles off and choosing the focus's camera again, with the goggles
     - deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
     - deferred: running setIniInt, writing the INI value, with process
     - deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
@@ -3144,13 +3141,14 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setCurrentFont` 0x004874c0 (3)
   - [ ] `drawHorizontalLineWithEffect` 0x00487630 (82)
 
-### `core/script.cpp` (4 functions, 469 instructions, 0 done, 0 partial)
+### `core/script.cpp` (4 functions, 469 instructions, 1 done, 1 partial)
 - class `CScript`
-  - [ ] `getLetterboxHeight` 0x00559ac0 (28)
+  - [x] `getLetterboxHeight` 0x00559ac0 (28)
   - [ ] `process` 0x00559960 (112)
     - BW: [ ] bw1 0x005437f0 = bw3 0x00528e00 (operand-change)
-  - [ ] `renderSubtitles` 0x00559b20 (183)
-    - BW: [ ] bw1 0x005439b0 = bw2 0x005218a0 = bw3 0x00528fc0 (logic-change)
+  - [~] `renderSubtitles` 0x00559b20 (183)
+    - deferred: the bars and the lines kept to the screen while a network dialog is up (the decomp's NETPLAY), with the network dialogs
+    - BW: [x] bw1 0x005439b0 = bw2 0x005218a0 = bw3 0x00528fc0 (logic-change)
   - [ ] `renderEditor` 0x00559d80 (146)
 
 ### `core/dstrendr.cpp` (12 functions, 1957 instructions, 0 done, 0 partial)
@@ -3406,7 +3404,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004d0860 = bw3 0x004b92e0 (logic-change); [ ] bw2 0x004b7050 (logic-change)
   - [x] `drawScreenBorder` 0x004d7e50 (75)
   - [~] `renderOverlay` 0x004d8040 (344)
-    - deferred: the message line and chapter title above the bottom letterbox bar, and the status bars hidden while it is up, with CScript::getLetterboxHeight and the script's letterbox
     - deferred: a hero's bar as long as its health can go, max_hit_points / 100 of the width and clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with CCharacter::processCharacter and processDamage, which record it
     - BW: [x] bw1 0x004cc2b0 (operand-change); [x] bw2 0x004b32c0 (operand-change); [ ] bw3 0x004b47d0 (logic-change)
   - [x] `showCustomizableKeys` 0x004d89d0 (1621)
@@ -3440,7 +3437,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the light view while it is on, in a window of its own (the decomp's DEBUG_WINDOW), with CDemonSet::renderLightDebugView
     - deferred: the automap (the decomp's AUTOMAP), with the automap
     - deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
-    - deferred: the subtitles, with CScript::renderSubtitles
     - deferred: the camera debug's fudge target line, with processFudge
     - deferred: the camera debug's hardware renderer textures counted by size, with a renderer report of them
     - deferred: the sound debug switched on and off, with processCheatCodes

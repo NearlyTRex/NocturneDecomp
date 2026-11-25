@@ -522,6 +522,24 @@ struct SDirectStart {
     bool operator==(const SDirectStart &) const = default;
 };
 
+// The flashlight's battery, as the game has it.
+struct SBattery {
+    // Its gauge on the HUD, Nocturne's alone: BW1 and BW3 keep a charge but draw none, and BW2
+    // kept the code but never shows it.
+    bool gauge = true;
+
+    bool operator==(const SBattery &) const = default;
+};
+
+// The flashlight, as the game has it.
+struct SFlashlight {
+    // Graphic Options' halo and range lines, for a game whose hero lights a weapon: Nocturne's
+    // and BW1's; BW2's and BW3's heroes carry lanterns.
+    bool options = true;
+
+    bool operator==(const SFlashlight &) const = default;
+};
+
 // How the game's iris fade runs.
 struct SIrisFade {
     // The session opens on an iris; BW2's starts on its scene.
@@ -749,9 +767,6 @@ struct SMenuAttract {
 struct SMenuFeatures {
     // The options page's puzzle and combat difficulty lines, before Credits.
     bool difficulty = false;
-    // The graphics page's flashlight halo and range lines, for a game whose hero can light a
-    // weapon.
-    bool flashlight = false;
 
     bool operator==(const SMenuFeatures &) const = default;
 };
@@ -926,6 +941,9 @@ struct SGameContent {
     std::optional<std::string> death_banner;
     // None runs Nocturne's.
     std::optional<SIrisFade> iris_fade;
+    // Each feature none of whose table a package gives is Nocturne's.
+    std::optional<SBattery> battery;
+    std::optional<SFlashlight> flashlight;
     std::optional<SGameCredits> credits;
     std::optional<SMenuLayout> menu;
     // By id; a later package's replaces an earlier one's with the same id.

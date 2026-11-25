@@ -110,7 +110,7 @@ void CGraphicOptionsPage::build(std::vector<SMenuLine> &lines) {
                                                  owners.display.getAntialias()))));
     }
     // A game whose hero never lights a weapon has no flashlight to set.
-    if (!getMenu().getMenuLayout().features.flashlight) {
+    if (!owners.content.flashlight.value_or(engine::SFlashlight{}).options) {
         return;
     }
     addLine(lines, EGraphicLine::Halo,

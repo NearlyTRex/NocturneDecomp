@@ -7,6 +7,7 @@
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
+#include "core/script/script.h"
 #include "core/slew/slew.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -70,7 +71,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   with CDemonSet::renderLightDebugView
 // deferred: the automap (the decomp's AUTOMAP), with the automap
 // deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
-// deferred: the subtitles, with CScript::renderSubtitles
 // deferred: the camera debug's fudge target line, with processFudge
 // deferred: the camera debug's hardware renderer textures counted by size, with a renderer report
 //   of them
@@ -143,6 +143,7 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     drawScreenBorder();
     captureDebugMovieFrame();
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
+    session.script.renderSubtitles(getScriptScreen(session));
     renderOverlay(session);
     renderIrisFade(session);
     renderCameraDebug(session);

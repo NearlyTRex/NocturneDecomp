@@ -3,6 +3,7 @@
 #include "core/menu/menupage.h"
 #include "core/menu/screenmodepage.h"
 #include "engine/keys/inputcodetype.h"
+#include "engine/package/gamecontent.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
@@ -111,7 +112,7 @@ TEST_F(CGraphicOptionsPageTest, WithoutAccelerationThereIsNoApiOrCard) {
 
 // As in Blair Witch 2 and 3, whose heroes carry lanterns.
 TEST_F(CGraphicOptionsPageTest, AGameWithoutAFlashlightHasNoHaloOrRange) {
-    common::required(game_parts_.getContent().menu).features.flashlight = false;
+    game_parts_.getContent().flashlight = engine::SFlashlight{.options = false};
     CGraphicOptionsPage page(menu_, menu_owners_);
     EXPECT_EQ(texts(page), (std::vector<std::string>{
                                "Acceleration : Off", "3D API : None", "No 3D Hardware detected",

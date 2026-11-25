@@ -2,20 +2,26 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
+#include "core/game/letterbox.h"
 #include "core/inv/inventoryassets.h"
+#include "core/script/script.h"
 #include "engine/3d/3d.h"
 #include "engine/font/bitfont.h"
+#include "engine/package/gamecontent.h"
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/engine/mockfont.h"
+#include "tests/mocks/platform/mockosfont.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <format>
 #include <limits>
+#include <memory>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -76,6 +82,44 @@ protected:
         return game_parts_.getThreeD().getCurrentAlphaValue();
     }
 
+    [[nodiscard]] SScriptScreen scriptScreen() {
+        return {.screen = game_parts_.getScreen(),
+                .two_d = game_parts_.getTwoD(),
+                .three_d = game_parts_.getThreeD(),
+                .fonts = fonts(),
+                .display = display_};
+    }
+
+    // The script's letterbox and subtitles over a frame of that many seconds.
+    void subtitles(float seconds) {
+        game_.slamDT(seconds);
+        script_.renderSubtitles(scriptScreen());
+    }
+
+    // The letterbox all the way in.
+    void letterboxUp(ELetterbox mode = ELetterbox::On) {
+        game_.letterbox_mode = mode;
+        subtitles(1.0F);
+    }
+
+    // The script's line, as its display command sets it.
+    void say(std::string_view text) {
+        givenFile("world\\m1.scr",
+                  std::format(":initSection\ndisplay({})\n:initSectionEnd\n", text));
+        ASSERT_TRUE(script_.loadScript("m1.scr", true));
+        script_.executeInitSection();
+    }
+
+    // A screen row's pixels the background's from left to right, or not.
+    [[nodiscard]] bool rowIsBackground(int y) const {
+        for (int x = 0; x < Width; ++x) {
+            if (screen_.pixel(x, y) != kBackground) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     NiceMock<engine::MockFont> theme_text_;
     NiceMock<engine::MockFont> small_text_;
     NiceMock<engine::MockFont> tiny_text_;
@@ -88,6 +132,192 @@ using COverlay720Test = COverlayTest<960, 720>;
 using COverlayPillarboxTest = COverlayTest<1280, 720>;
 using COverlayWideTest = COverlayTest<3200, 480>;
 using COverlayShortTest = COverlayTest<640, 40>;
+using COverlay400Test = COverlayTest<512, 400>;
+using COverlayPanTest = COverlayTest<1280, 720>;
+using COverlayVeryWideTest = COverlayTest<3200, 720>;
+
+// A game without a battery gauge, as BW1 and BW3 have none, starts the bars at the frame's
+// eightieth, 8.
+TEST_F(COverlay480Test, WithoutABatteryGaugeTheBarsKeepTheFramesMargin) {
+    game_parts_.getContent().battery = engine::SBattery{.gauge = false};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 8, 462, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
+// At 640x480 a full bar is half of what a 1.85:1 band leaves: (480 - 345) / 2 = 67. The message
+// rises above it and the bars hide.
+TEST_F(COverlay480Test, WhileTheLetterboxIsUpTheMessageRisesAndTheBarsHide) {
+    letterboxUp();
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), 67);
+    watchText();
+    ON_CALL(theme_text_, getStringWidth(_)).WillByDefault(Return(100));
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 270, 403, _, _));
+    EXPECT_CALL(small_text_, drawText).Times(0);
+    game_.displayMessage("Hello", 3.0F);
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
+// In over 0.35 seconds and out over the same, the top bar and the bottom one black.
+TEST_F(COverlay480Test, TheBarsSlideInAndOut) {
+    screen_.fill(kBackground);
+    subtitles(1.0F);
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), 0);
+    EXPECT_TRUE(rowIsBackground(0));
+    game_.letterbox_mode = ELetterbox::On;
+    subtitles(0.1F);
+    const int part = script_.getLetterboxHeight(scriptScreen());
+    EXPECT_GT(part, 0);
+    EXPECT_LT(part, 67);
+    subtitles(1.0F);
+    EXPECT_EQ(screen_.pixel(5, 0), 0U);
+    EXPECT_EQ(screen_.pixel(5, 66), 0U);
+    EXPECT_EQ(screen_.pixel(5, 67), kBackground);
+    EXPECT_EQ(screen_.pixel(5, 412), kBackground);
+    EXPECT_EQ(screen_.pixel(5, 413), 0U);
+    EXPECT_EQ(screen_.pixel(5, 479), 0U);
+    game_.letterbox_mode = ELetterbox::Off;
+    subtitles(0.1F);
+    EXPECT_LT(script_.getLetterboxHeight(scriptScreen()), 67);
+    subtitles(1.0F);
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), 0);
+}
+
+// The bottom bar alone, and it keeps to the bottom as it slides out.
+TEST_F(COverlay480Test, ABottomLetterboxLeavesTheTopOfTheShot) {
+    screen_.fill(kBackground);
+    letterboxUp(ELetterbox::Bottom);
+    EXPECT_TRUE(rowIsBackground(0));
+    EXPECT_EQ(screen_.pixel(5, 479), 0U);
+    game_.letterbox_mode = ELetterbox::Off;
+    screen_.fill(kBackground);
+    subtitles(0.1F);
+    EXPECT_TRUE(rowIsBackground(0));
+    EXPECT_EQ(screen_.pixel(5, 479), 0U);
+}
+
+// The line centred in the bottom bar: the block's middle halfway down it.
+TEST_F(COverlay480Test, ALineIsCentredInTheBottomBar) {
+    say("Hello");
+    watchText();
+    ON_CALL(medium_text_, getStringWidth(_)).WillByDefault(Return(100));
+    const int pitch =
+        fonts().getMediumFont()->wrapTextScaled("Hello", 10, 0x400, 576, 1.0F).line_pitch;
+    EXPECT_CALL(medium_text_, drawText(std::string_view("Hello"), 270, ((960 - 67 - pitch) / 2),
+                                       kTextColor, kShadowColor));
+    letterboxUp();
+}
+
+// A block too tall for a bar rises over the shot, half a line clear of the screen's foot. Each
+// word is long enough to take a line of its own.
+TEST_F(COverlay480Test, ALongBlockRisesOverTheShot) {
+    std::string words;
+    for (char letter = 'a'; letter < 'm'; ++letter) {
+        words += std::string(50, letter) + " ";
+    }
+    say(words);
+    watchText();
+    ON_CALL(medium_text_, getStringWidth(_)).WillByDefault([](std::string_view text) {
+        return static_cast<int>(text.size()) * 10;
+    });
+    const engine::CBitFont::SWrappedText wrapped =
+        fonts().getMediumFont()->wrapTextScaled(words, 10, 0x400, 576, 1.0F);
+    const int pitch = wrapped.line_pitch;
+    const auto lines = static_cast<int>(wrapped.lines.size());
+    ASSERT_GT((lines * pitch) + pitch, 67);
+    EXPECT_CALL(medium_text_, drawText(std::string_view(wrapped.lines.front()), _,
+                                       480 - (pitch / 2) - (lines * pitch), _, _));
+    EXPECT_CALL(medium_text_,
+                drawText(::testing::Ne(std::string_view(wrapped.lines.front())), _, _, _, _))
+        .Times(lines - 1);
+    letterboxUp();
+}
+
+// The line shows without the letterbox too, but not with the player's subtitles off.
+TEST_F(COverlay480Test, SubtitlesOffShowNoLine) {
+    say("Hello");
+    watchText();
+    EXPECT_CALL(medium_text_, drawText(std::string_view("Hello"), _, _, _, _));
+    subtitles(1.0F);
+    game_.subtitle_mode = 0;
+    EXPECT_CALL(medium_text_, drawText).Times(0);
+    subtitles(1.0F);
+}
+
+// Under 480 lines the tiny font; under 384 the micro font, or the small editor font with the OS
+// fonts.
+TEST_F(COverlay400Test, UnderFourHundredAndEightyLinesTheTinyFont) {
+    say("Hello");
+    watchText();
+    EXPECT_CALL(tiny_text_, drawText(std::string_view("Hello"), _, _, _, _));
+    subtitles(1.0F);
+}
+
+TEST_F(COverlayShortTest, WithTheOsFontsAShortScreenTakesTheSmallEditorFont) {
+    say("Hello");
+    ON_CALL(game_parts_.getOsFonts(), createOsFont).WillByDefault([](std::string_view, int) {
+        return std::make_unique<NiceMock<platform::MockOsFont>>();
+    });
+    fonts().setOsFontChoice(EOsFontChoice::System);
+    fonts().initFonts();
+    ASSERT_TRUE(fonts().getUseOSFonts());
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Hello"), _, _, _, _));
+    subtitles(1.0F);
+}
+
+TEST_F(COverlayShortTest, WithoutTheOsFontsAShortScreenTakesTheMicroFont) {
+    say("Hello");
+    fonts().setOsFontChoice(EOsFontChoice::Bitmap);
+    NiceMock<engine::MockFont> micro_text;
+    fonts().getMicroFont()->setWinFont(micro_text);
+    EXPECT_CALL(micro_text, drawText(std::string_view("Hello"), _, _, _, _));
+    subtitles(1.0F);
+}
+
+// At 480 lines pan and scan crops nothing, so the bar is the whole band's.
+TEST_F(COverlay480Test, PanningAtFourHundredAndEightyLinesKeepsTheWholeBar) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    letterboxUp();
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), 67);
+}
+
+// Pillarboxed, the line is centred in the 960-column picture from 160.
+TEST_F(COverlayPillarboxTest, PillarboxedTheLineIsCentredInThePicture) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Pillarbox));
+    say("Hello");
+    watchText();
+    ON_CALL(medium_text_, getStringWidth(_)).WillByDefault(Return(100));
+    EXPECT_CALL(medium_text_,
+                drawText(std::string_view("Hello"), 160 + ((960 - 100) / 2), _, _, _));
+    letterboxUp();
+}
+
+// Pillarboxed, the band is over the 960-column picture: (720 - 518) / 2 = 101.
+TEST_F(COverlayPillarboxTest, PillarboxedTheBarIsMeasuredOverThePicture) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Pillarbox));
+    letterboxUp();
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), 101);
+}
+
+// Panned and scanned, 360 of the 480 rows show: the shipped 67-row bar less the 60 cropped
+// above it is 7 rows, 14 lines, unless three lines and their room are taller.
+TEST_F(COverlayPanTest, PannedTheBarIsWhatTheCropLeavesOrThreeLines) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    letterboxUp();
+    const int pitch = fonts().getMediumFont()->getCharHeightScaled('X', 1.5F);
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), std::max(14, pitch * 4));
+}
+
+// So wide the crop takes the whole bar: three lines and their room.
+TEST_F(COverlayVeryWideTest, PannedPastTheBarThreeLines) {
+    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
+    letterboxUp();
+    const int pitch = fonts().getMediumFont()->getCharHeightScaled('X', 1.5F);
+    EXPECT_EQ(script_.getLetterboxHeight(scriptScreen()), pitch * 4);
+}
 
 // The theme font's 'X' is 5 tall with its offset, so a line is 5 apart: the one line is two
 // lines up from the foot.

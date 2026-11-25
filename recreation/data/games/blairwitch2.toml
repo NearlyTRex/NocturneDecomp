@@ -179,15 +179,22 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-# Lazarus carries a lantern and never lights a weapon, so there is no flashlight halo or range
 [menu.features]
 difficulty = false
-flashlight = false
 
 # A session starts on its scene, any iris put away; its scripts begin none
 [iris_fade]
 opens_session = false
 black_frames = 1
+
+# No battery gauge: BW2 draws it only while the flashlight or the goggles are on, and its hero
+# turns on neither, though its levels still hold batteries
+[battery]
+gauge = false
+
+# Lazarus carries a lantern and never lights a weapon, so there is no flashlight halo or range
+[flashlight]
+options = false
 
 # No mode aims by hand. Infrared, map, jump and the fourth and fifth weapons start unbound.
 [[controls.mode]]

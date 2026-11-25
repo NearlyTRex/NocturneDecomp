@@ -73,7 +73,79 @@ def test_help_prints_the_header_comment(tmp_path, shell_traced_env, flag):
     lines = result.stdout.splitlines()
     assert (result.returncode, calls) == (0, [])
     assert lines[0].startswith("recreation.sh — build and run")
-    assert lines[-1] == "run script does."
+    assert lines[-1] == "longer."
+
+
+ALL_GATES = ["cmake --preset coverage", "cmake --build --preset coverage --target coverage",
+             "cmake --preset ci", "cmake --build --preset ci --target tidy",
+             "cmake --build --preset default --target format-check",
+             "cmake --build --preset ci --target nocturne"]
+
+# cmake as the gates see it: each call notes the jobs it was given
+JOBS_CMAKE = 'echo "$CMAKE_BUILD_PARALLEL_LEVEL $NOCTURNE_RECREATION_JOBS" >> "$(dirname "$0")/jobs.log"'
+
+
+def jobs_seen(tmp_path):
+    return (tmp_path / "bin" / "jobs.log").read_text().splitlines()
+
+
+# Half the cores, and clang-tidy at most six of them.
+def test_the_gates_run_each_in_turn_on_half_the_cores(tmp_path, shell_traced_env):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates",
+                               cmake = JOBS_CMAKE, RECREATION_JOBS = "")
+    half = (len(os.sched_getaffinity(0)) + 1) // 2
+    assert (result.returncode, calls) == (0, ALL_GATES)
+    tidy = f"{half} {min(half, 6)}"
+    assert jobs_seen(tmp_path) == [f"{half} {half}"] * 3 + [tidy] + [f"{half} {half}"] * 2
+    assert result.stderr.splitlines()[-1] == f"== recreation.sh: passed: coverage tidy format game ({half} jobs)"
+
+
+# Jobs given go to clang-tidy too.
+def test_the_gates_named_run_with_the_jobs_given(tmp_path, shell_traced_env):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env,
+                               "gates", "--jobs", "12", "game", "tidy", cmake = JOBS_CMAKE)
+    assert (result.returncode, calls) == (0, [ALL_GATES[5], ALL_GATES[2], ALL_GATES[3]])
+    assert jobs_seen(tmp_path) == ["12 12"] * 3
+
+
+def test_the_jobs_can_come_from_the_environment(tmp_path, shell_traced_env):
+    recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates", "format",
+               cmake = JOBS_CMAKE, RECREATION_JOBS = "2")
+    assert jobs_seen(tmp_path) == ["2 2"]
+
+
+@pytest.mark.parametrize("jobs", [["--jobs", "0"], ["--jobs", "two"], ["--jobs"]])
+def test_jobs_that_are_not_a_number_are_refused(tmp_path, shell_traced_env, jobs):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates", *jobs)
+    assert (result.returncode, calls) == (2, [])
+    assert "--jobs takes a number of jobs" in result.stderr
+
+
+def test_an_unknown_gate_is_refused_before_any_runs(tmp_path, shell_traced_env):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates", "format", "lint")
+    assert (result.returncode, calls) == (2, [])
+    assert "unknown gate 'lint'" in result.stderr
+
+
+def test_a_failing_gate_stops_the_rest(tmp_path, shell_traced_env):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates",
+                               "format", "game", cmake = "exit 4")
+    assert (result.returncode, calls) == (4, [ALL_GATES[4]])
+
+
+# The interrupt reaches the script while the gate's cmake runs; the gate finishes, nothing after it.
+# cmake finds the script as the outermost of its ancestors running this test's link to it, which no
+# process outside the test names.
+def test_an_interrupt_stops_the_gates(tmp_path, shell_traced_env):
+    root = root_with(tmp_path)
+    interrupt = ('script=$PPID\n'
+                 'while parent=$(ps -o ppid= -p "$script" | tr -d " ") && '
+                 f'ps -o args= -p "$parent" | grep -qF "{root}/recreation.sh"; do script=$parent; done\n'
+                 'kill -INT "$script"')
+    result, calls = recreation(tmp_path, root, shell_traced_env, "gates",
+                               "format", "game", cmake = interrupt)
+    assert (result.returncode, calls) == (130, [ALL_GATES[4]])
+    assert result.stderr.splitlines()[-1] == "recreation.sh: gates interrupted"
 
 
 def test_an_unknown_command_is_refused(tmp_path, shell_traced_env):

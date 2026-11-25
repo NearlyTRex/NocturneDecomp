@@ -1057,19 +1057,14 @@ TomlResult<SDialogLook> readDialog(const toml::table &table) {
 
 TomlResult<SMenuFeatures> readMenuFeatures(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: features: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"difficulty", "flashlight"});
-        !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"difficulty"}); !keys) {
         return std::unexpected(keys.error());
     }
     const TomlResult<bool> difficulty = readRequiredBoolean(table, kWhere, "difficulty");
     if (!difficulty) {
         return std::unexpected(difficulty.error());
     }
-    const TomlResult<bool> flashlight = readRequiredBoolean(table, kWhere, "flashlight");
-    if (!flashlight) {
-        return std::unexpected(flashlight.error());
-    }
-    return SMenuFeatures{.difficulty = *difficulty, .flashlight = *flashlight};
+    return SMenuFeatures{.difficulty = *difficulty};
 }
 
 // A one-character string, as a marker in the text.
@@ -2452,6 +2447,30 @@ TomlResult<SIrisFade> readIrisFade(const toml::table &table) {
     return iris;
 }
 
+TomlResult<SBattery> readBattery(const toml::table &table) {
+    constexpr std::string_view kWhere = "battery: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"gauge"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<bool> gauge = readRequiredBoolean(table, kWhere, "gauge");
+    if (!gauge) {
+        return std::unexpected(gauge.error());
+    }
+    return SBattery{.gauge = *gauge};
+}
+
+TomlResult<SFlashlight> readFlashlight(const toml::table &table) {
+    constexpr std::string_view kWhere = "flashlight: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"options"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<bool> options = readRequiredBoolean(table, kWhere, "options");
+    if (!options) {
+        return std::unexpected(options.error());
+    }
+    return SFlashlight{.options = *options};
+}
+
 TomlResult<SChapterTitle> readChapterTitle(const toml::table &table) {
     constexpr std::string_view kWhere = "chapter_title: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
@@ -3012,8 +3031,7 @@ std::string formatMenu(const SMenuLayout &menu) {
         text += std::format("\n[menu.attract]\ndirectory = {}\nmovies = {}\n",
                             quoteToml(attract->directory), formatTomlList(attract->movies));
     }
-    text += std::format("\n[menu.features]\ndifficulty = {}\nflashlight = {}\n",
-                        menu.features.difficulty, menu.features.flashlight);
+    text += std::format("\n[menu.features]\ndifficulty = {}\n", menu.features.difficulty);
     return text;
 }
 
@@ -3484,6 +3502,18 @@ TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content
         return std::unexpected(iris_fade.error());
     }
     content.iris_fade = *iris_fade;
+    TomlResult<std::optional<SBattery>> battery =
+        readOptionalTable<SBattery>(table, "battery", readBattery);
+    if (!battery) {
+        return std::unexpected(battery.error());
+    }
+    content.battery = *battery;
+    TomlResult<std::optional<SFlashlight>> flashlight =
+        readOptionalTable<SFlashlight>(table, "flashlight", readFlashlight);
+    if (!flashlight) {
+        return std::unexpected(flashlight.error());
+    }
+    content.flashlight = *flashlight;
     return {};
 }
 
@@ -3591,6 +3621,12 @@ std::string formatGameContentTables(const SGameContent &content) {
     if (const std::optional<SIrisFade> &iris = content.iris_fade) {
         text += std::format("\n[iris_fade]\nopens_session = {}\nblack_frames = {}\n",
                             iris->opens_session, iris->black_frames);
+    }
+    if (const std::optional<SBattery> &battery = content.battery) {
+        text += std::format("\n[battery]\ngauge = {}\n", battery->gauge);
+    }
+    if (const std::optional<SFlashlight> &flashlight = content.flashlight) {
+        text += std::format("\n[flashlight]\noptions = {}\n", flashlight->options);
     }
     for (const SLoadingPicture &picture : content.loading) {
         text += formatLoadingPicture(picture);

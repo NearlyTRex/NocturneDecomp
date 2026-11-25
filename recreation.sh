@@ -16,9 +16,18 @@
 #   ./recreation.sh run --some-arg   # arguments after the command go to the game
 #   ./recreation.sh --debug          # the same, on the game-debug preset
 #   RECREATION_PRESET=ci ./recreation.sh build
+#   ./recreation.sh gates            # every gate, one after another
+#   ./recreation.sh gates tidy game  # some: coverage, tidy, format and game
+#   ./recreation.sh gates --jobs 4   # at most 4 at once (or RECREATION_JOBS=4)
 #
 # The game runs from the repo root, where its data files are, as the decomp's
-# run script does.
+# run script does. The gates are the checks a change must pass: the tests at
+# full coverage, clang-tidy over the whole tree, clang-format, and the game
+# built on the ci preset. They run in turn and stop at the first that fails or
+# at Ctrl+C. Compiles and tests run at most half the cores at once, and
+# clang-tidy, the hungriest, at most 6, unless told otherwise; all at low
+# priority, so the machine keeps its memory and stays usable. Fewer jobs take
+# longer.
 
 set -euo pipefail
 
@@ -52,8 +61,77 @@ run() {
     exec "$exe" "$@"
 }
 
+# cmake at low priority from the recreation's own directory.
+gate_cmake() {
+    (cd "$root/recreation" && nice -n 10 cmake "$@")
+}
+
+gate() {
+    echo "== recreation.sh: $1 gate" >&2
+    case "$1" in
+        coverage)
+            gate_cmake --preset coverage >/dev/null
+            gate_cmake --build --preset coverage --target coverage
+            ;;
+        tidy)
+            gate_cmake --preset ci >/dev/null
+            NOCTURNE_RECREATION_JOBS="$tidy_jobs" gate_cmake --build --preset ci --target tidy
+            ;;
+        format)
+            gate_cmake --build --preset default --target format-check
+            ;;
+        game)
+            gate_cmake --build --preset ci --target nocturne
+            ;;
+    esac
+}
+
+# The jobs go to the builds through CMAKE_BUILD_PARALLEL_LEVEL and to the tests and clang-tidy
+# through NOCTURNE_RECREATION_JOBS. Each clang-tidy takes a gigabyte or two, so unless the jobs
+# are given, tidy runs at most 6 at once. Every name is checked before any gate runs.
+gates() {
+    local jobs="${RECREATION_JOBS:-}"
+    if [ "${1:-}" = "--jobs" ]; then
+        jobs="${2:--}"
+        shift 2 || shift
+    fi
+    if [ -n "$jobs" ] && ! [[ "$jobs" =~ ^[1-9][0-9]*$ ]]; then
+        echo "recreation.sh: --jobs takes a number of jobs, not '$jobs'" >&2
+        exit 2
+    fi
+    tidy_jobs="$jobs"
+    if [ -z "$jobs" ]; then
+        jobs=$((($(nproc) + 1) / 2))
+        tidy_jobs=$((jobs < 6 ? jobs : 6))
+    fi
+    if [ "$#" -eq 0 ]; then
+        set -- coverage tidy format game
+    fi
+    local name
+    for name in "$@"; do
+        case "$name" in
+            coverage | tidy | format | game) ;;
+            *)
+                echo "recreation.sh: unknown gate '$name' (coverage, tidy, format or game)" >&2
+                exit 2
+                ;;
+        esac
+    done
+    export CMAKE_BUILD_PARALLEL_LEVEL="$jobs" NOCTURNE_RECREATION_JOBS="$jobs"
+    # A Ctrl+C reaches the gate's own processes too; once they stop, nothing more runs.
+    trap 'echo "recreation.sh: gates interrupted" >&2; exit 130' INT TERM
+    for name in "$@"; do
+        gate "$name"
+    done
+    echo "== recreation.sh: passed: $* ($jobs jobs)" >&2
+}
+
 command="${1:-all}"
 case "$command" in
+    gates)
+        shift
+        gates "$@"
+        ;;
     build)
         build
         ;;
@@ -66,10 +144,10 @@ case "$command" in
         run
         ;;
     -h|--help)
-        sed -n '2,21p' "$0" | sed 's/^# \{0,1\}//'
+        sed -n '2,30p' "$0" | sed 's/^# \{0,1\}//'
         ;;
     *)
-        echo "recreation.sh: unknown command '$command' (build, run, or nothing for both)" >&2
+        echo "recreation.sh: unknown command '$command' (build, run, gates, or nothing for build and run)" >&2
         exit 2
         ;;
 esac

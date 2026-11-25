@@ -16,9 +16,11 @@
 #include <cstddef>
 #include <expected>
 #include <format>
+#include <iterator>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -90,16 +92,6 @@ Result checkClearActorVariable(CScript & /*script*/, SScriptStatement &statement
         return std::unexpected(name.error());
     }
     return validateActorVariableName(*name);
-}
-
-Result checkDisplay(CScript & /*script*/, SScriptStatement &statement) {
-    const std::expected<std::string, std::string> message =
-        parseArgument(statement.rest, kMaxDisplayMessage);
-    if (!message) {
-        return std::unexpected(
-            std::format("Error parsing message text on display statament: {}", message.error()));
-    }
-    return {};
 }
 
 // A command that takes only a condition.
@@ -259,18 +251,26 @@ Result checkSetIniInt(CScript & /*script*/, SScriptStatement &statement) {
                           "Error parsing setIniInt command parms");
 }
 
+// Running, it sets the game's letterbox.
 Result checkLetterbox(CScript & /*script*/, SScriptStatement &statement) {
     const std::expected<std::string, std::string> mode =
         parseArgument(statement.rest, kMaxShortArgument);
     if (!mode) {
         return std::unexpected(mode.error());
     }
-    for (const std::string_view known : {"false", "true", "bottom"}) {
-        if (common::equalsIgnoringAsciiCase(*mode, known)) {
-            return {};
-        }
+    // By ELetterbox.
+    static constexpr std::array<std::string_view, 3> kModes{"false", "true", "bottom"};
+    const auto *found = std::ranges::find_if(kModes, [&mode](std::string_view known) {
+        return common::equalsIgnoringAsciiCase(*mode, known);
+    });
+    if (found == kModes.end()) {
+        return std::unexpected(std::format("Invalid letterBox mode: {}", *mode));
     }
-    return std::unexpected(std::format("Invalid letterBox mode: {}", *mode));
+    if (statement.running) {
+        statement.owners.game.letterbox_mode =
+            static_cast<ELetterbox>(std::distance(kModes.begin(), found));
+    }
+    return {};
 }
 
 // The shipped game refused removeKeys in a network game; there it takes every hero's keys.
@@ -340,6 +340,19 @@ Result consumeScanned(SScriptStatement &statement, std::optional<std::size_t> ta
     return {};
 }
 
+// The message is the subtitles' line from the moment it is read, checking too, as the original
+// parsed it straight into the line.
+CScript::CommandResult CScript::checkDisplay(CScript &script, SStatement &statement) {
+    std::expected<std::string, std::string> message =
+        parseArgument(statement.rest, kMaxDisplayMessage);
+    if (!message) {
+        return std::unexpected(
+            std::format("Error parsing message text on display statament: {}", message.error()));
+    }
+    script.current_message_ = std::move(*message);
+    return {};
+}
+
 const CScript::SCommand *CScript::findCommand(std::string_view name) {
     static constexpr std::array kCommands{
         SCommand{.name = "addItemToInventory", .check = &checkAddItemToInventory},
@@ -363,7 +376,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "debug", .check = &checkText},
         SCommand{.name = "deleteActor", .check = &checkEventCommand},
         SCommand{.name = "dismember", .check = &checkDismember},
-        SCommand{.name = "display", .check = &checkDisplay},
+        SCommand{.name = "display", .check = &checkDisplay, .runs = true},
         SCommand{.name = "displayBitmap", .check = &checkEventCommand},
         SCommand{.name = "else", .check = &checkElse},
         SCommand{.name = "enableCamera", .check = &checkEnableCamera},
@@ -393,7 +406,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "killCharacter", .check = &checkEventCommand},
         SCommand{.name = "killHero", .check = &checkEventCommand},
         SCommand{.name = "killSfx", .check = &checkEventCommand},
-        SCommand{.name = "letterbox", .check = &checkLetterbox},
+        SCommand{.name = "letterbox", .check = &checkLetterbox, .runs = true},
         SCommand{.name = "lightning", .check = &checkEventCommand},
         SCommand{.name = "lockFocusActor", .check = &checkCondition},
         SCommand{.name = "lookAt", .check = &checkLookAt},

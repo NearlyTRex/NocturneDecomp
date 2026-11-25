@@ -131,6 +131,37 @@ def test_an_empty_run_writes_a_bare_summary(monkeypatch, tmp_path):
     assert summary.read_text().startswith("### clang-tidy: 0 files") and "Slowest" not in summary.read_text()
 
 
+def test_an_interrupt_stops_the_run_without_the_files_left(monkeypatch, tmp_path, capsys):
+    src, build = project(tmp_path)
+    ran = []
+
+    def interrupted(command, **kwargs):
+        if command[-1] != "--version" and "-E" not in command:
+            ran.append(command[-1])
+            raise KeyboardInterrupt
+        return fake_run(command, **kwargs)
+
+    monkeypatch.setattr(tidy.subprocess, "run", interrupted)
+    assert tidy.main(["--clang-tidy", "ct", "--source-dir", str(src), "--build-dir", str(build),
+                      "--jobs", "1"]) == 130
+    assert len(ran) == 1
+    assert "clang-tidy: interrupted" in capsys.readouterr().err
+
+
+def test_the_jobs_default_to_every_core_up_to_six_or_the_gates_limit(monkeypatch):
+    monkeypatch.delenv("NOCTURNE_RECREATION_JOBS", raising = False)
+    monkeypatch.setattr(tidy.os, "cpu_count", lambda: 4)
+    assert tidy.default_jobs() == 4
+    monkeypatch.setattr(tidy.os, "cpu_count", lambda: 16)
+    assert tidy.default_jobs() == 6
+    monkeypatch.setattr(tidy.os, "cpu_count", lambda: None)
+    assert tidy.default_jobs() == 1
+    monkeypatch.setenv("NOCTURNE_RECREATION_JOBS", "12")
+    assert tidy.default_jobs() == 12
+    monkeypatch.setenv("NOCTURNE_RECREATION_JOBS", "")
+    assert tidy.default_jobs() == 1
+
+
 def test_runs_as_a_script(monkeypatch):
     monkeypatch.setattr(sys, "argv", ["tidy.py", "--help"])
     with pytest.raises(SystemExit) as exit_info:

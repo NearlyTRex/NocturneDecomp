@@ -188,16 +188,23 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-# Puzzle and combat difficulty lines on the Options page. Doc lights her guns, so Graphic Options
-# has the flashlight halo and range; BW1 dropped the halo line and forced it off, but kept the code
+# Puzzle and combat difficulty lines on the Options page
 [menu.features]
 difficulty = true
-flashlight = true
 
 # Each session opens on an iris, the screen black for three frames first
 [iris_fade]
 opens_session = true
 black_frames = 3
+
+# No battery gauge, though the inventory still keeps a charge
+[battery]
+gauge = false
+
+# Doc lights her guns, so Graphic Options has the flashlight halo and range; BW1 dropped the halo
+# line and forced it off, but kept the code
+[flashlight]
+options = true
 
 # No mode aims by hand. The keyboard binds Fire and Jump both to Space.
 [[controls.mode]]

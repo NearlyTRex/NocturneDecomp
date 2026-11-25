@@ -129,6 +129,11 @@ public:
         return fonts_;
     }
 
+    // What the fonts make their OS fonts with.
+    ::testing::NiceMock<platform::MockOsFontFactory> &getOsFonts() {
+        return os_fonts_;
+    }
+
     // The 2D the game fills its overlay's bars with, clipped as the test sets.
     engine::C2d &getTwoD() {
         return two_d_;

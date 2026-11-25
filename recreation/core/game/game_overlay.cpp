@@ -8,6 +8,7 @@
 #include "core/hero/hero.h"
 #include "core/inv/inventoryassets.h"
 #include "core/mission/demonmission.h"
+#include "core/script/script.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/alphabit/alphabitmap.h"
@@ -179,9 +180,9 @@ void CGame::setStatusDisplay(std::string_view name, float value, float duration)
 }
 
 // Laid out as the decomp's HUD lays it, in the scene's picture with its text at the HUD's scale,
-// the bars clear of the battery gauge, which the original drew them over.
-// deferred: the message line and chapter title above the bottom letterbox bar, and the status
-//   bars hidden while it is up, with CScript::getLetterboxHeight and the script's letterbox
+// the message line and chapter title above the bottom letterbox bar, and the bars clear of the
+// battery gauge in a game that has one, which the original drew them over. The bars hide while
+// the letterbox is up.
 // deferred: a hero's bar as long as its health can go, max_hit_points / 100 of the width and
 //   clear of the screen's right edge (the decomp's status_bar.h, STATUS_BAR_WIDTH), with
 //   CCharacter::processCharacter and processDamage, which record it
@@ -192,13 +193,25 @@ void CGame::renderOverlay(const SGameSessionOwners &session) {
     const common::SViewport frame =
         getHudFrame(session.display.getWidescreen(), owners_.screen.getWindowWidth(),
                     owners_.screen.getWindowHeight());
-    renderMessageLine(session, frame);
-    renderChapterTitle(frame);
-    renderStatusBars(session, frame);
+    const int letterbox = session.script.getLetterboxHeight(getScriptScreen(session));
+    renderMessageLine(session, frame, letterbox);
+    renderChapterTitle(frame, letterbox);
+    if (letterbox_mode == ELetterbox::Off) {
+        renderStatusBars(session, frame);
+    }
+}
+
+SScriptScreen CGame::getScriptScreen(const SGameSessionOwners &session) const {
+    return {.screen = owners_.screen,
+            .two_d = owners_.two_d,
+            .three_d = owners_.three_d,
+            .fonts = owners_.fonts,
+            .display = session.display};
 }
 
 // Centred above the frame's bottom; below 480 camera columns in the small editor font.
-void CGame::renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame) {
+void CGame::renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame,
+                              int letterbox) {
     if (message_timer_ == 0.0F) {
         return;
     }
@@ -210,7 +223,8 @@ void CGame::renderMessageLine(const SGameSessionOwners &session, const common::S
     const engine::CBitFont::SWrappedText wrapped = font.wrapTextScaled(
         message_text_, kMaxMessageLines, kMessageLineWidth, frame.width * 9 / 10, scale);
     const int pitch = wrapped.line_pitch;
-    int y = frame.y + frame.height - (static_cast<int>(wrapped.lines.size()) * pitch) - pitch;
+    int y = frame.y + frame.height - (static_cast<int>(wrapped.lines.size()) * pitch) - letterbox -
+            pitch;
     if (small) {
         y -= static_cast<int>(std::lround(kSmallFontLift * scale));
     }
@@ -223,7 +237,7 @@ void CGame::renderMessageLine(const SGameSessionOwners &session, const common::S
 
 // The story's year and title at the frame's bottom left, as the packages' chapter title gives
 // them; a game without one shows none.
-void CGame::renderChapterTitle(const common::SViewport &frame) {
+void CGame::renderChapterTitle(const common::SViewport &frame, int letterbox) {
     const std::optional<engine::SChapterTitle> &title = owners_.content.chapter_title;
     if (!(chapter_title_timer_ > 0.0F) || !title) {
         return;
@@ -237,8 +251,8 @@ void CGame::renderChapterTitle(const common::SViewport &frame) {
     owners_.three_d.setRenderAlpha(title->alpha);
     font.drawTextScaled(formatChapterTitle(title->format, chapter_year_, chapter_title_),
                         frame.x + (gap * title->inset_across),
-                        frame.y + frame.height - height - (gap * title->inset_up), title->colour,
-                        title->shadow, scale);
+                        frame.y + frame.height - letterbox - height - (gap * title->inset_up),
+                        title->colour, title->shadow, scale);
 }
 
 // Stacked up from the frame's bottom left, each named over its fill.
@@ -248,13 +262,15 @@ void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SV
     }
     engine::CBitFont &font = getStatusBarFont(owners_.fonts, frame.width);
     const int bar_height = std::max(frame.height / 40, font.getCharHeight(kMeasureChar));
-    const int ui_scale = engine::getUiScale(owners_.screen.getWindowHeight());
-    const int battery_icon =
-        kBatteryIconInset +
-        session.inventory_assets.getBitmap(EInventoryBitmap::kBattery).getWidth();
-    const int battery_right = frame.x + (std::max(battery_icon, kBatteryGaugeWidth) * ui_scale);
-    const int left =
-        std::max(frame.x + (frame.width / 80), battery_right + (kBatteryGap * ui_scale));
+    int left = frame.x + (frame.width / 80);
+    if (owners_.content.battery.value_or(engine::SBattery{}).gauge) {
+        const int ui_scale = engine::getUiScale(owners_.screen.getWindowHeight());
+        const int battery_icon =
+            kBatteryIconInset +
+            session.inventory_assets.getBitmap(EInventoryBitmap::kBattery).getWidth();
+        const int battery_right = frame.x + (std::max(battery_icon, kBatteryGaugeWidth) * ui_scale);
+        left = std::max(left, battery_right + (kBatteryGap * ui_scale));
+    }
     const int right = left + (frame.width / 4);
     int bottom = frame.y + frame.height - (frame.height / 80);
     for (const SStatusLine &line : status_lines_) {

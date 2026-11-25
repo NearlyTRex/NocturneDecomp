@@ -23,8 +23,10 @@ TEST(CScript, Constructors) {
 TEST(CScript, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CScript::clear), void (CScript::*)()>);
     static_assert(std::is_same_v<decltype(&CScript::process), void (CScript::*)()>);
-    static_assert(std::is_same_v<decltype(&CScript::getLetterboxHeight), int (CScript::*)()>);
-    static_assert(std::is_same_v<decltype(&CScript::renderSubtitles), void (CScript::*)()>);
+    static_assert(std::is_same_v<decltype(&CScript::getLetterboxHeight),
+                                 int (CScript::*)(const SScriptScreen &) const>);
+    static_assert(std::is_same_v<decltype(&CScript::renderSubtitles),
+                                 void (CScript::*)(const SScriptScreen &)>);
     static_assert(
         std::is_same_v<decltype(&CScript::renderEditor), void (CScript::*)(int, int, int, int)>);
     static_assert(

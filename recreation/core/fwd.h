@@ -314,6 +314,7 @@ struct SPlayerInput;
 struct SPose;
 struct SPoseData;
 struct SQuadVertices;
+struct SScriptScreen;
 struct SSimFrame;
 struct STextureSet;
 struct STriangleRef;

@@ -178,15 +178,21 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-# Prye carries a lantern and never lights a weapon, so there is no flashlight halo or range
 [menu.features]
 difficulty = false
-flashlight = false
 
 # Each session opens on an iris, the screen black for three frames first
 [iris_fade]
 opens_session = true
 black_frames = 3
+
+# No battery gauge, though the inventory still keeps a charge
+[battery]
+gauge = false
+
+# Prye carries a lantern and never lights a weapon, so there is no flashlight halo or range
+[flashlight]
+options = false
 
 # The menus' text, by the id the code asks for: BW3's words where it had the line, its menus
 # unspaced and its pages capitalised, Nocturne's for the rest

@@ -10,6 +10,7 @@
 #include "core/game/halomode.h"
 #include "core/game/herotype.h"
 #include "core/game/irisfade.h"
+#include "core/game/letterbox.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 #include "shape/fwd.h"
@@ -56,7 +57,7 @@ struct SGameSessionOwners {
     CDemonCamera &camera;
     CDemonLight &flashlight;
     CDemonSet &set;
-    const CScript &script;
+    CScript &script;
     shape::CEditorTools &editor_tools;
     std::string_view build_version;
     CFireEffect &fire;
@@ -250,6 +251,8 @@ public:
     bool script_view = false;
     // The developers' pause: the game stands still and the slew keys fly the hero.
     bool is_paused = false;
+    // As the script last set it.
+    ELetterbox letterbox_mode = ELetterbox::Off;
 
     // The gamma a session plays at is held between a half and one, 16.16.
     static constexpr int kMinGamma = 0x8000;
@@ -267,14 +270,18 @@ private:
     void slewLocalHero(const SGameSessionOwners &session);
     void renderFrame(const SGameSessionOwners &session);
     // The frame is the scene's picture: its 4:3 column when pillarboxed, else the whole screen.
-    void renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame);
-    void renderChapterTitle(const common::SViewport &frame);
+    // The letterbox is its bars' height, which the line and the title rise above.
+    void renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame,
+                           int letterbox);
+    void renderChapterTitle(const common::SViewport &frame, int letterbox);
     void renderStatusBars(const SGameSessionOwners &session, const common::SViewport &frame);
     void renderDeathBanner(const SGameSessionOwners &session);
     void showCustomizableKeys(const SGameSessionOwners &session);
     // Two black pixels round the screen's edge.
     void drawScreenBorder();
     [[nodiscard]] engine::SIrisFade getIrisFadeContent() const;
+    // The screen the script's letterbox and subtitles are measured on and drawn to.
+    [[nodiscard]] SScriptScreen getScriptScreen(const SGameSessionOwners &session) const;
     // The focus actor's middle where the screen shows it; nothing while it is off the screen.
     void calculateIrisFadeCenter(CDemonActor *focus, CDemonCamera &camera);
     // Black outside the iris's disc, or everywhere while it starts or once it has closed.

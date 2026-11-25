@@ -2,6 +2,7 @@
 #include "common/text/ascii.h"
 #include "common/text/path.h"
 #include "core/actor/notported.h"
+#include "core/game/game.h"
 #include "core/hero/hero.h"
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
@@ -95,7 +96,6 @@ void CScript::executeInitSection() {
     next_cmd_ = resume;
 }
 
-// deferred: clearing the shown message, with renderSubtitles
 // deferred: clearing the wait and dialogue timers and the time a message shows for, with
 //   processTimer and startDialogLine
 // deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and
@@ -105,17 +105,16 @@ void CScript::executeInitSection() {
 //   decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
 // deferred: marking the focus changed, with the play loop's virtual director call
 // deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
-// deferred: letting the heroes be damaged and the enemies attack, and clearing the letterbox,
-//   with CGame's readers of them
-// deferred: clearing the script's time scale, with process
-// deferred: the letterbox measured over the 4:3 picture and three subtitle lines high with half
-//   a line spare each side, the subtitles in it at the HUD's text scale (the decomp's hud.h,
-//   HUD), with CScript::getLetterboxHeight and renderSubtitles
+// deferred: letting the heroes be damaged and the enemies attack, with CGame's readers of them
+// The letterbox is down and drawn so, and no line is shown.
 // The set's ambient sound is its geometry's stem as a .wav, the mill's and the town's quieter.
 // nocedit 0x0055a540
 void CScript::initRuntime() {
     next_cmd_ = 0;
+    current_message_.clear();
     focus_actor_ = owners_.mission.getHero(kLocalHero);
+    owners_.game.letterbox_mode = ELetterbox::Off;
+    letterbox_extension_ = 0.0F;
     std::string ambient =
         std::format("{}.wav", common::pathStem(owners_.set.getGeometryFilename()));
     if (common::equalsIgnoringAsciiCase(ambient, "smill.wav") ||
@@ -209,7 +208,6 @@ CDemonActor *CScript::getFocusActor() const {
 // deferred: running chainToMission, naming the next mission and ending this one, with process
 // deferred: running clearActorVariable, clearing the variable, with process
 // deferred: running debug, showing the message, with process
-// deferred: keeping display's message, while checking too, with renderSubtitles
 // deferred: running else, skipping the statement after it, with process
 // deferred: running end, ending the mission and noting it for the helper-death fix, with process
 // deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's
@@ -221,8 +219,11 @@ CDemonActor *CScript::getFocusActor() const {
 // deferred: running goto, jumping to the label, with process
 // deferred: running gtfo, showing the message and ending the mission, with process
 // deferred: running idle, stopping for the frame after moving past it, with process
-// deferred: running letterbox, setting the letterbox and what it allows, and turning off the
-//   goggles, with CGame's readers of them
+// deferred: letterbox setting what the letterbox allows: the heroes' damage, the enemies'
+//   attacks and the hero's controls, the script's saved command and input flag, with their
+//   readers
+// deferred: letterbox turning the goggles off and choosing the focus's camera again, with the
+//   goggles
 // deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
 // deferred: running setIniInt, writing the INI value, with process
 // deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine

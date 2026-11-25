@@ -24,13 +24,24 @@ from pathlib import Path
 INCLUDE = re.compile(r'^\s*#\s*include\s+"([^"]+)"', re.MULTILINE)
 
 
+# Each clang-tidy takes a gigabyte or two, so more than this at once can exhaust a desktop's
+# memory, as a build of the same width does not.
+MAX_DEFAULT_JOBS = 6
+
+
+def default_jobs() -> int:
+    """NOCTURNE_RECREATION_JOBS, as recreation.sh's gates set it, or every core up to six."""
+    return (int(os.environ.get("NOCTURNE_RECREATION_JOBS") or 0)
+            or min(os.cpu_count() or 1, MAX_DEFAULT_JOBS))
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--clang-tidy", required=True)
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--build-dir", type=Path, required=True)
     parser.add_argument("--cache-dir", type=Path, help="where clean results are kept; none disables")
-    parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count() or 1)
+    parser.add_argument("-j", "--jobs", type=int, default=default_jobs())
     return parser.parse_args(argv)
 
 
@@ -161,9 +172,17 @@ def main(argv: list[str] | None = None) -> int:
 
     run = Run(args, len(chosen))
     start = time.monotonic()
-    with concurrent.futures.ThreadPoolExecutor(args.jobs) as pool:
+    # A Ctrl+C drops the files still queued rather than waiting for all of them; the clang-tidy
+    # runs already started stop with the same Ctrl+C, being in the terminal's process group.
+    pool = concurrent.futures.ThreadPoolExecutor(args.jobs)
+    try:
         for future in [pool.submit(run.check, entry) for entry in chosen]:
             future.result()
+    except KeyboardInterrupt:
+        pool.shutdown(wait=False, cancel_futures=True)
+        print("\nclang-tidy: interrupted", file=sys.stderr)
+        return 130
+    pool.shutdown()
     if args.cache_dir:
         run.prune()
 
