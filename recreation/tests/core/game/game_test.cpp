@@ -43,8 +43,12 @@ TEST(CGame, PublicInterface) {
                                  void (CGame::*)(const SGameSessionOwners &)>);
     static_assert(std::is_same_v<decltype(&CGame::playerControls),
                                  void (CGame::*)(const SGameSessionOwners &)>);
-    static_assert(std::is_same_v<decltype(&CGame::beginFadeIn), void (CGame::*)()>);
-    static_assert(std::is_same_v<decltype(&CGame::beginFadeOut), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::beginFadeIn),
+                                 void (CGame::*)(CDemonActor *, CDemonCamera &)>);
+    static_assert(std::is_same_v<decltype(&CGame::beginFadeOut),
+                                 void (CGame::*)(CDemonActor *, CDemonCamera &)>);
+    static_assert(std::is_same_v<decltype(&CGame::updateFadeTransition), void (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::getIrisFade), EIrisFade (CGame::*)() const>);
     static_assert(std::is_same_v<decltype(&CGame::fadeIn), std::uint32_t (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetWeaponSwitchTimers), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetInventoryDisplayTimer), void (CGame::*)()>);

@@ -118,5 +118,52 @@ TEST_F(CDemonCameraTransformTest, ThePointIsTheOneTheScenesTransformSeesThere) {
     }
 }
 
+// A point the scene shows lands back where it was on the screen, at its depth, within the
+// inverse's rounding.
+TEST_F(CDemonCameraTransformTest, AWorldPointOnTheScreenProjectsBackOntoIt) {
+    common::CMatrix3x3f turn;
+    turn.buildRotationMatrix({.x = 0.3F, .y = 1.1F, .z = -0.4F});
+    camera_.setRotationMatrix(turn);
+    camera_.setPosition({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+    static_cast<void>(openAndCloseScene());
+    for (const auto &[x, y] : {std::array{32, 24}, std::array{5, 40}}) {
+        common::CVector3i screen_point{.x = x << 16, .y = y << 16, .z = 0x20000};
+        common::CVector3i world;
+        camera_.screenToWorldTransform(&screen_point, &world);
+        common::CVector3i projected;
+        EXPECT_EQ(camera_.worldToScreenWithFrustumCull(&world, &projected), &projected);
+        EXPECT_LE(std::abs(projected.x - (x << 16)), 0x100) << x;
+        EXPECT_LE(std::abs(projected.y - (y << 16)), 0x100) << y;
+        EXPECT_LE(std::abs(projected.z - 0x20000), 8);
+    }
+}
+
+// Behind the camera, or past a side of its view, the point is all zeros.
+TEST_F(CDemonCameraTransformTest, APointOffTheViewProjectsToZeros) {
+    common::CMatrix3x3f turn;
+    turn.buildRotationMatrix({.x = 0.3F, .y = 1.1F, .z = -0.4F});
+    camera_.setRotationMatrix(turn);
+    camera_.setPosition({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+    static_cast<void>(openAndCloseScene());
+    const common::CVector3i origin = matrix_.getCameraOrigin();
+    common::CVector3i ahead{.x = 32 << 16, .y = 24 << 16, .z = 0x20000};
+    common::CVector3i world;
+    camera_.screenToWorldTransform(&ahead, &world);
+    common::CVector3i behind{.x = origin.x - (world.x - origin.x),
+                             .y = origin.y - (world.y - origin.y),
+                             .z = origin.z - (world.z - origin.z)};
+    common::CVector3i projected{.x = 1, .y = 1, .z = 1};
+    camera_.worldToScreenWithFrustumCull(&behind, &projected);
+    EXPECT_EQ(projected, common::CVector3i{});
+    for (const auto &[x, y] : {std::array{4000, 24}, std::array{-4000, 24}, std::array{32, 4000},
+                               std::array{32, -4000}}) {
+        common::CVector3i aside{.x = x << 16, .y = y << 16, .z = 0x20000};
+        camera_.screenToWorldTransform(&aside, &world);
+        projected = {.x = 1, .y = 1, .z = 1};
+        camera_.worldToScreenWithFrustumCull(&world, &projected);
+        EXPECT_EQ(projected, common::CVector3i{}) << x << "," << y;
+    }
+}
+
 } // namespace
 } // namespace nocturne::core

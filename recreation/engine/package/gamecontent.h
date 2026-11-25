@@ -522,6 +522,17 @@ struct SDirectStart {
     bool operator==(const SDirectStart &) const = default;
 };
 
+// How the game's iris fade runs.
+struct SIrisFade {
+    // The session opens on an iris; BW2's starts on its scene.
+    bool opens_session = true;
+    // The frames an opening iris holds the screen black before it widens: Nocturne's one, BW1's
+    // and BW3's three.
+    int black_frames = 1;
+
+    bool operator==(const SIrisFade &) const = default;
+};
+
 // The font the chapter title takes on a screen shorter than below_height; 0 for any height.
 struct SChapterTitleFont {
     int below_height = 0;
@@ -913,6 +924,8 @@ struct SGameContent {
     std::optional<std::string> copyright_os_font;
     // Over the frame while the local hero is dead; none shows nothing.
     std::optional<std::string> death_banner;
+    // None runs Nocturne's.
+    std::optional<SIrisFade> iris_fade;
     std::optional<SGameCredits> credits;
     std::optional<SMenuLayout> menu;
     // By id; a later package's replaces an earlier one's with the same id.

@@ -6,6 +6,7 @@
 #include "core/dmodel/keyframedmodelinstance.h"
 #include "core/fire/fireeffect.h"
 #include "core/game/game.h"
+#include "core/game/irisfade.h"
 #include "core/gore/gore.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/inv/inventoryassets.h"
@@ -16,6 +17,7 @@
 #include "engine/console/console.h"
 #include "engine/font/font.h"
 #include "engine/keys/keys.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
@@ -209,6 +211,16 @@ TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
             ASSERT_EQ(screen_.pixel(x, y), kBackground) << x << "," << y;
         }
     }
+}
+
+// Nocturne's, BW1's and BW3's sessions open on the iris; BW2's puts any iris away.
+TEST_F(CGameSessionTest, TheSessionOpensOnTheIrisAsTheGameSays) {
+    play();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
+    game_parts_.getContent().iris_fade =
+        engine::SIrisFade{.opens_session = false, .black_frames = 1};
+    play();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
 }
 
 TEST_F(CGameSessionTest, TheFlashlightReachesAsFarAsThePlayerChose) {

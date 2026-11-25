@@ -35,8 +35,6 @@ void CGame::saveClockTime() {
 // deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's
 //   death ends it, where the original drops to the main menu (the decomp's helper_death.h), with
 //   CGame::runGameSession
-// deferred: the iris fade centred where its scene point lands in a pillarboxed or panned picture
-//   (the decomp's widescreen.h nocturne_widescreen_scene_to_screen), with calculateIrisFadeCenter
 // While a debug movie records, each frame is a frame of the movie's, whatever the clock says.
 // nocedit 0x004d7d90
 void CGame::updateDT() {

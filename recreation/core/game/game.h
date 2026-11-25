@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/video/presentation.h"
 #include "core/fwd.h"
 #include "core/game/aimmode.h"
 #include "core/game/controlbindings.h"
@@ -8,6 +9,7 @@
 #include "core/game/flashlightrange.h"
 #include "core/game/halomode.h"
 #include "core/game/herotype.h"
+#include "core/game/irisfade.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 #include "shape/fwd.h"
@@ -137,8 +139,14 @@ public:
     void playerControls(const SGameSessionOwners &session);
     // The frame's hotkeys, the developers' in developer mode alone. Public as playerControls is.
     void processHotkeys(const SGameSessionOwners &session);
-    void beginFadeIn();
-    void beginFadeOut();
+    // An iris opening from black on the focus actor, or the middle of the screen while it is off
+    // it, and one closing from the screen's width onto it.
+    void beginFadeIn(CDemonActor *focus, CDemonCamera &camera);
+    void beginFadeOut(CDemonActor *focus, CDemonCamera &camera);
+    // A frame of the iris: widening or narrowing by a screen height every three seconds and a
+    // bit, opened when it is wider than the screen, closed at nothing.
+    void updateFadeTransition();
+    [[nodiscard]] EIrisFade getIrisFade() const;
     std::uint32_t fadeIn();
     void resetWeaponSwitchTimers();
     void resetInventoryDisplayTimer();
@@ -266,6 +274,12 @@ private:
     void showCustomizableKeys(const SGameSessionOwners &session);
     // Two black pixels round the screen's edge.
     void drawScreenBorder();
+    [[nodiscard]] engine::SIrisFade getIrisFadeContent() const;
+    // The focus actor's middle where the screen shows it; nothing while it is off the screen.
+    void calculateIrisFadeCenter(CDemonActor *focus, CDemonCamera &camera);
+    // Black outside the iris's disc, or everywhere while it starts or once it has closed.
+    void renderIrisFade(const SGameSessionOwners &session);
+    void maskOutsideIris(int threshold);
     // A press of the action taken, unless another action of its context binds the same key with
     // more of the modifiers held, as Alt+Shift+A is ambient light down's and not up's too.
     [[nodiscard]] bool takeAction(EGameAction action);
@@ -328,6 +342,12 @@ private:
     SMovieSettings movie_;
     bool movie_armed_ = false;
     bool movie_recording_ = false;
+    EIrisFade iris_fade_ = EIrisFade::Idle;
+    // In screen pixels.
+    float iris_radius_ = 0.0F;
+    common::SPoint iris_center_;
+    // The frames an iris has started for.
+    int iris_black_frames_ = 0;
     // The next frame's number, from noc00000.raw.
     int movie_frame_ = 0;
 };

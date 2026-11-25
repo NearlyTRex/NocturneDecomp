@@ -2,6 +2,7 @@
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
 #include "core/event/eventlist.h"
+#include "core/game/game.h"
 #include "core/script/commandchecks.h"
 #include "core/script/script.h"
 #include "core/script/script_functions.h"
@@ -43,6 +44,22 @@ Result checkArgument(SScriptStatement &statement, std::size_t max_length) {
 
 // A command that takes nothing: anything after its name is extra.
 Result checkNothing(CScript & /*script*/, SScriptStatement & /*statement*/) {
+    return {};
+}
+
+// Running, the iris opens on the script's focus.
+Result checkBeginFadeIn(CScript & /*script*/, SScriptStatement &statement) {
+    if (statement.running) {
+        statement.owners.game.beginFadeIn(statement.focus, statement.owners.camera);
+    }
+    return {};
+}
+
+// Running, the iris closes on the script's focus.
+Result checkBeginFadeOut(CScript & /*script*/, SScriptStatement &statement) {
+    if (statement.running) {
+        statement.owners.game.beginFadeOut(statement.focus, statement.owners.camera);
+    }
     return {};
 }
 
@@ -333,8 +350,8 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "allowHeroDamage", .check = &checkCondition},
         SCommand{
             .name = "attachActorToPlatform", .check = &checkAttachActorToPlatform, .runs = true},
-        SCommand{.name = "beginFadeIn", .check = &checkNothing},
-        SCommand{.name = "beginFadeOut", .check = &checkNothing},
+        SCommand{.name = "beginFadeIn", .check = &checkBeginFadeIn, .runs = true},
+        SCommand{.name = "beginFadeOut", .check = &checkBeginFadeOut, .runs = true},
         SCommand{.name = "breakPoint", .check = &checkNothing},
         SCommand{.name = "cancelCameraHold", .check = &checkNothing},
         SCommand{.name = "cancelWalkTo", .check = &checkCancelWalkTo},

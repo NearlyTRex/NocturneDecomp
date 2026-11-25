@@ -1,11 +1,14 @@
 #include "common/error/fatalerror.h"
+#include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
+#include "core/box/boundingbox3d.h"
 #include "core/charactr/deathstate.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
+#include "core/game/irisfade.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
@@ -718,6 +721,216 @@ TEST_F(CGameMovieTest, EachFrameIsOneOfTheMoviesWhileItRecords) {
 TEST_F(CGameFrameDebugTest, TheWheelIsLeftAloneWhileTheConsoleIsOff) {
     EXPECT_CALL(game_input_, takeMouseWheelNotches()).Times(0);
     frame();
+}
+
+// The iris over paused frames, the hero the script's focus, the scene camera turned and placed
+// so it sees the world, and the pointer in the corner.
+class CGameIrisTest : public CGameFrameDebugTest {
+protected:
+    CGameIrisTest() {
+        ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+        ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+        common::CMatrix3x3f turn;
+        turn.buildRotationMatrix({.x = 0.3F, .y = 1.1F, .z = -0.4F});
+        session_.camera.setRotationMatrix(turn);
+        session_.camera.setPosition({.x = 1.0F, .y = 2.0F, .z = 3.0F});
+        session_.camera.beginScene(1);
+        session_.camera.endScene(1);
+        script_.initRuntime();
+    }
+
+    // The middle the iris centres on: the hero's box's, taken to the world.
+    [[nodiscard]] common::CVector3f heroMiddle() {
+        CBoundingBox3D box;
+        hero().getBoundingBox(&box);
+        common::CVector3f middle{.x = (box.min.x + box.max.x) * 0.5F,
+                                 .y = (box.min.y + box.max.y) * 0.5F,
+                                 .z = (box.min.z + box.max.z) * 0.5F};
+        common::CVector3f world;
+        hero().localToWorldPoint(&world, &middle);
+        return world;
+    }
+
+    void moveHeroTo(const common::CVector3f &position) {
+        common::CVector3f moved = position;
+        common::CVector3f facing = hero().getOrientation();
+        hero().setPositionAndOrientation(&moved, &facing);
+    }
+
+    // The hero moved so its middle is where the scene camera shows the middle of that pixel.
+    void placeHeroAt(int x, int y) {
+        common::CVector3i screen_point{
+            .x = (x << 16) + 0x8000, .y = (y << 16) + 0x8000, .z = 0x20000};
+        common::CVector3i fixed;
+        session_.camera.screenToWorldTransform(&screen_point, &fixed);
+        moveHeroTo({});
+        const common::CVector3f offset = heroMiddle();
+        moveHeroTo({.x = (static_cast<float>(fixed.x) / 256.0F) - offset.x,
+                    .y = (static_cast<float>(fixed.y) / 256.0F) - offset.y,
+                    .z = (static_cast<float>(fixed.z) / 256.0F) - offset.z});
+    }
+
+    // The radius after a frame of delta units: a screen height every 3.2 seconds, its divisor a
+    // float, the rest at full precision.
+    [[nodiscard]] static float step(float radius, int delta, int sign) {
+        const auto divisor = static_cast<float>(31457280.0 / kHeight);
+        return static_cast<float>(
+            static_cast<long double>(radius) +
+            (sign * static_cast<long double>(delta) * 256.0L / static_cast<long double>(divisor)));
+    }
+
+    // An iris begun from the middle and opened for half a second.
+    void openForHalfASecond() {
+        game_.beginFadeIn(nullptr, session_.camera);
+        game_.updateFadeTransition();
+        game_.slamDT(0.5F);
+        game_.updateFadeTransition();
+    }
+
+    static constexpr int kMiddleX = kWidth / 2;
+    static constexpr int kMiddleY = kHeight / 2;
+};
+
+TEST_F(CGameIrisTest, AGameStartsWithNoIris) {
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
+}
+
+// Black for its one frame, then widening from nothing until it is wider than the screen.
+TEST_F(CGameIrisTest, AnIrisOpensFromBlackAcrossTheScreen) {
+    game_.beginFadeIn(nullptr, session_.camera);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), 0U);
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Opening);
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), 0U);
+    game_.slamDT(kQuarterSecond);
+    float radius = 0.0F;
+    int frames = 0;
+    while (game_.getIrisFade() == EIrisFade::Opening && frames < 100) {
+        game_.updateFadeTransition();
+        radius = step(radius, game_.getDeltaTimeInt(), 1);
+        ++frames;
+    }
+    EXPECT_GT(radius, static_cast<float>(kWidth));
+    EXPECT_LE(step(radius, game_.getDeltaTimeInt(), -1), static_cast<float>(kWidth));
+    EXPECT_GT(frames, 1);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
+}
+
+// BW1's and BW3's hold the screen black for three frames.
+TEST_F(CGameIrisTest, TheGameSaysHowManyFramesTheIrisStartsBlack) {
+    game_parts_.getContent().iris_fade =
+        engine::SIrisFade{.opens_session = true, .black_frames = 3};
+    game_.beginFadeIn(nullptr, session_.camera);
+    game_.updateFadeTransition();
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Opening);
+}
+
+// Outside the disc is black, inside left as it was.
+TEST_F(CGameIrisTest, AnOpeningIrisBlacksOutsideItsDisc) {
+    openForHalfASecond();
+    const float radius = step(0.0F, game_.getDeltaTimeInt(), 1);
+    ASSERT_GT(radius, 4.0F);
+    ASSERT_LT(radius, static_cast<float>(kMiddleY - 4));
+    frame();
+    const int reach = static_cast<int>(radius);
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
+    EXPECT_EQ(screen_.pixel(kMiddleX + reach - 1, kMiddleY), kBackground);
+    EXPECT_EQ(screen_.pixel(kMiddleX + reach + 1, kMiddleY), 0U);
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY - reach - 1), 0U);
+    EXPECT_EQ(screen_.pixel(4, 4), 0U);
+}
+
+// It began on the focus where the camera shows it, and keeps that centre as the hero moves.
+TEST_F(CGameIrisTest, AnOpeningIrisKeepsTheCentreItBeganWith) {
+    placeHeroAt(30, 20);
+    game_.beginFadeIn(&hero(), session_.camera);
+    game_.updateFadeTransition();
+    game_.slamDT(1.0F);
+    game_.updateFadeTransition();
+    placeHeroAt(150, 100);
+    frame();
+    EXPECT_EQ(screen_.pixel(30, 20), kBackground);
+    EXPECT_EQ(screen_.pixel(150, 100), 0U);
+}
+
+// From the screen's width down to nothing, black for a frame, then black until another fade.
+TEST_F(CGameIrisTest, AClosingIrisNarrowsToBlack) {
+    game_.beginFadeOut(nullptr, session_.camera);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Closing);
+    frame();
+    EXPECT_EQ(screen_.pixel(4, 4), kBackground);
+    game_.slamDT(kQuarterSecond);
+    auto radius = static_cast<float>(kWidth);
+    int frames = 0;
+    while (game_.getIrisFade() == EIrisFade::Closing && frames < 100) {
+        game_.updateFadeTransition();
+        radius = step(radius, game_.getDeltaTimeInt(), -1);
+        ++frames;
+    }
+    EXPECT_LT(radius, 0.0F);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Closed);
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), 0U);
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Black);
+    game_.updateFadeTransition();
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Black);
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), 0U);
+}
+
+// A closing iris follows the script's focus each frame.
+TEST_F(CGameIrisTest, AClosingIrisFollowsTheFocus) {
+    placeHeroAt(30, 20);
+    game_.beginFadeOut(&hero(), session_.camera);
+    game_.slamDT(2.0F);
+    game_.updateFadeTransition();
+    ASSERT_EQ(game_.getIrisFade(), EIrisFade::Closing);
+    placeHeroAt(150, 100);
+    frame();
+    EXPECT_EQ(screen_.pixel(150, 100), kBackground);
+    EXPECT_EQ(screen_.pixel(30, 20), 0U);
+}
+
+// A focus the camera doesn't show leaves the iris on the screen's middle.
+TEST_F(CGameIrisTest, AFocusOffTheScreenLeavesTheMiddle) {
+    placeHeroAt(30, 20);
+    const common::CVector3f position = hero().getLocation().position;
+    common::CVector3f behind{
+        .x = -position.x * 50.0F, .y = -position.y * 50.0F, .z = -position.z * 50.0F};
+    common::CVector3f facing = hero().getOrientation();
+    hero().setPositionAndOrientation(&behind, &facing);
+    game_.beginFadeOut(&hero(), session_.camera);
+    game_.slamDT(2.0F);
+    game_.updateFadeTransition();
+    frame();
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
+}
+
+// At 16 bits the disc's outside goes black too, where the original left it.
+TEST_F(CGameIrisTest, SixteenBitPixelsAreBlackedToo) {
+    openForHalfASecond();
+    screen_.fill(kBackground);
+    screen_.setBitsPerPixel(16);
+    game_.processFrame(session_);
+    const auto row = [this](int y) {
+        return std::span<const std::uint16_t>(
+            static_cast<const std::uint16_t *>(
+                screen_.getScreenRows()[static_cast<std::size_t>(y)]),
+            static_cast<std::size_t>(kWidth));
+    };
+    EXPECT_EQ(row(4)[4], 0U);
+    EXPECT_EQ(row(kMiddleY)[kMiddleX], kBackground & 0xffffU);
 }
 
 } // namespace

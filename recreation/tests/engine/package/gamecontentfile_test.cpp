@@ -48,6 +48,7 @@ SGameContent fullContent() {
     content.copyright = "Game \"1999\"";
     content.copyright_os_font = "Game (c) 1999";
     content.death_banner = "You're \"dead\".";
+    content.iris_fade = SIrisFade{.opens_session = false, .black_frames = 3};
     content.credits = getShippedGameContent().credits;
     common::required(content.credits).music = "m.mp3";
     content.menu = getShippedGameContent().menu;
@@ -264,6 +265,12 @@ INSTANTIATE_TEST_SUITE_P(
                  "story_select: story_list: full_install_probe: missing"},
         SBadCase{"[story_select.story_list]\nfull_install_probe = 'a.pod'\nloading_frames = 0",
                  "story_select: story_list: loading_frames: not from 1 to 1000"},
+        SBadCase{"iris_fade = 1", "iris_fade: not a [iris_fade] table"},
+        SBadCase{"[iris_fade]\nspeed = 1", "iris_fade: speed: not a key this file takes"},
+        SBadCase{"[iris_fade]\nblack_frames = 1", "iris_fade: opens_session: missing"},
+        SBadCase{"[iris_fade]\nopens_session = true", "iris_fade: black_frames: missing"},
+        SBadCase{"[iris_fade]\nopens_session = true\nblack_frames = 0",
+                 "iris_fade: black_frames: not from 1 to 300"},
         SBadCase{"chapter_title = 1", "chapter_title: not a [chapter_title] table"},
         SBadCase{"[chapter_title]\nsize = 1", "chapter_title: size: not a key this file takes"},
         SBadCase{"[chapter_title]\nseconds = 8", "chapter_title: format: missing"},

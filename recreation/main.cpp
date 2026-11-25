@@ -429,7 +429,9 @@ private:
                            .mission = mission_,
                            .events = events_,
                            .set = set_,
-                           .sound = sound_}};
+                           .sound = sound_,
+                           .game = game_,
+                           .camera = camera_}};
     nocturne::shape::CStrList::LocalTime local_time_ = &toLocalTime;
     nocturne::shape::SFileSelectionOwners file_selection_owners_{.pick_list = pick_list_owners_,
                                                                  .pod = &pod_,

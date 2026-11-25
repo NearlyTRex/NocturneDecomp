@@ -16,8 +16,8 @@
 namespace nocturne::core {
 
 // What a script reads its files with, reports a bad file through, finds the actors its commands
-// name in, checks and evaluates its conditions and event commands with, and finds and changes
-// the set's lights and cameras in.
+// name in, checks and evaluates its conditions and event commands with, finds and changes the
+// set's lights and cameras in, and begins the game's iris fades under the scene camera with.
 struct SScriptOwners {
     const engine::CDosIo &dosio;
     shape::CEditorTools &editor_tools;
@@ -25,6 +25,8 @@ struct SScriptOwners {
     CEventList &events;
     CDemonSet &set;
     CSound &sound;
+    CGame &game;
+    CDemonCamera &camera;
 };
 
 // A line of the script that holds something, trimmed, and its line in the file, from 1.
@@ -58,6 +60,8 @@ struct SScriptStatement {
     // Set while the script runs, when a check that passes also does what the command says.
     bool running = false;
     const SScriptOwners &owners;
+    // The script's focus, which the iris fades centre on.
+    CDemonActor *focus = nullptr;
 };
 
 class CScript {

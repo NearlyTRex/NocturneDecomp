@@ -37,5 +37,8 @@ struct SSceneReframe {
 // narrower, or for Stretch, which is the renderer's own fill. Until a scene reports its focus
 // the pan-and-scan crop sits at the middle of the shot.
 [[nodiscard]] std::optional<SSceneReframe> getSceneReframe(EWidescreen mode, SExtent screen);
+// Where the screen shows a point of the camera's space: as it is at 480 lines or fewer, else
+// stretched over the screen as the renderer stretches it, then moved as the reframe moves it.
+[[nodiscard]] SPoint getScenePointOnScreen(EWidescreen mode, SExtent screen, SPoint scene);
 
 } // namespace nocturne::common

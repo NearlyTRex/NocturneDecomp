@@ -85,6 +85,8 @@ public:
     // inverse transform.
     common::CVector3i *screenToWorldTransform(common::CVector3i *input_ptr,
                                               common::CVector3i *output_ptr);
+    // A world point in 24.8 to the screen in 16.16, with its depth; outside the frustum it is all
+    // zeros, so a zero depth says the point isn't on the screen.
     common::CVector3i *worldToScreenWithFrustumCull(common::CVector3i *input_ptr,
                                                     common::CVector3i *output_ptr);
     void precomputeLight(CDemonLight *light_source, CRect *rect);

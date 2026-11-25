@@ -14,6 +14,7 @@
 #include "engine/2d/2d.h"
 #include "engine/console/console.h"
 #include "engine/keys/keys.h"
+#include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "platform/environment.h"
@@ -87,7 +88,6 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // The original also cleared its one pick list; here each dialog makes its own.
 // The game is made active as a session starts, edit mode left, so the virtual director chooses the
 // first camera for the script's focus; the camera view the game keeps is for when it isn't.
-// deferred: opening the iris on the focus actor, with beginFadeIn and renderIrisFade
 // deferred: the cheats the menu turned on (the decomp's nocturne_cheats_apply), with
 //   showCheatsMenu
 // deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits
@@ -113,6 +113,8 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's
 //   CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, with
 //   showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+// deferred: BW1-3's iris put away as a cinematic is skipped (their resetIrisFade), with
+//   skipCinematic
 // deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), not
 //   CSound::shutdown and init, which lost a dialogue line and restarted the music. The slots
 //   playing as it opens are held, neither computed nor heard, and written down with their
@@ -169,6 +171,11 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.set.setGamma(gamma);
     clearOverlay();
     static_cast<void>(session.set.evaluateVirtualDirector(session.script.getFocusActor(), 1));
+    if (getIrisFadeContent().opens_session) {
+        beginFadeIn(session.script.getFocusActor(), session.camera);
+    } else {
+        iris_fade_ = EIrisFade::Idle;
+    }
     loadAssets(session);
     static_cast<void>(session.net_game.syncPlayers(kSyncLoaded));
     static_cast<void>(session.net_game.syncPlayers(kSyncStarting));

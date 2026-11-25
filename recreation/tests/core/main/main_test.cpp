@@ -337,7 +337,9 @@ protected:
                      .mission = mission_,
                      .events = events_,
                      .set = set_,
-                     .sound = game_sound_}};
+                     .sound = game_sound_,
+                     .game = game_,
+                     .camera = *set_parts_.camera}};
     std::vector<std::string> movies_;
     std::vector<std::string> titles_;
     void addTitle(std::string_view title) {

@@ -53,5 +53,41 @@ TEST(GetSceneReframe, PanAndScanFillsTheWidthWithTheMiddleOfTheShot) {
                              .destination = {.x = 0, .y = 0, .width = 1600, .height = 900}}));
 }
 
+// At 480 lines the scene and the screen are one space, whatever the mode.
+TEST(GetScenePointOnScreen, IsThePointItselfAtFourHundredEightyLines) {
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::Pillarbox, {.width = 848, .height = 480},
+                                    {.x = 100, .y = 50}),
+              (SPoint{.x = 100, .y = 50}));
+}
+
+// Stretched, or at 4:3, as the renderer spreads the 640x480 space over the screen.
+TEST(GetScenePointOnScreen, StretchesOverTheScreen) {
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::Stretch, {.width = 1920, .height = 1080},
+                                    {.x = 320, .y = 240}),
+              (SPoint{.x = 960, .y = 540}));
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::Pillarbox, {.width = 1280, .height = 960},
+                                    {.x = 100, .y = 50}),
+              (SPoint{.x = 200, .y = 100}));
+}
+
+TEST(GetScenePointOnScreen, PillarboxPutsItInTheColumn) {
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::Pillarbox, {.width = 1920, .height = 1080},
+                                    {.x = 0, .y = 0}),
+              (SPoint{.x = 240, .y = 0}));
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::Pillarbox, {.width = 1920, .height = 1080},
+                                    {.x = 320, .y = 240}),
+              (SPoint{.x = 960, .y = 540}));
+}
+
+// The crop's top edge is the screen's.
+TEST(GetScenePointOnScreen, PanAndScanMovesItUpByTheCrop) {
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::PanAndScan, {.width = 1920, .height = 1080},
+                                    {.x = 0, .y = 60}),
+              (SPoint{.x = 0, .y = 0}));
+    EXPECT_EQ(getScenePointOnScreen(EWidescreen::PanAndScan, {.width = 1920, .height = 1080},
+                                    {.x = 640, .y = 420}),
+              (SPoint{.x = 1920, .y = 1080}));
+}
+
 } // namespace
 } // namespace nocturne::common

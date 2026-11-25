@@ -135,7 +135,9 @@ protected:
                      .mission = mission_,
                      .events = events_,
                      .set = set_,
-                     .sound = sound_}};
+                     .sound = sound_,
+                     .game = game_,
+                     .camera = *set_parts_.camera}};
     CFireEffect fire_{{.renderer = demon_renderer_, .keyframed_models = keyframed_models_}};
     CGore gore_{demon_renderer_};
     CInventoryAssets inventory_assets_{

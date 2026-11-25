@@ -204,7 +204,6 @@ CDemonActor *CScript::getFocusActor() const {
 //   processTimer and setSpeaker
 // deferred: noting a line the dialogue database doesn't hold in the script's pick list, while
 //   checking too, with the script editor
-// deferred: running beginFadeIn and beginFadeOut, starting the fade, with CGame's fades
 // deferred: running breakPoint, showing where the script stopped and stopping it, with process
 // deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
 // deferred: running chainToMission, naming the next mission and ending this one, with process
@@ -247,7 +246,8 @@ CScript::CommandResult CScript::step() {
                          .rest = line.text,
                          .line_number = line.line_number,
                          .running = !checking_,
-                         .owners = owners_};
+                         .owners = owners_,
+                         .focus = focus_actor_};
     const char first = line.text.front();
     if (first == '{' || first == '}') {
         return {};

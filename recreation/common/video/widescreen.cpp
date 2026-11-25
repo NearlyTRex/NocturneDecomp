@@ -46,4 +46,20 @@ std::optional<SSceneReframe> getSceneReframe(EWidescreen mode, SExtent screen) {
                          .destination = whole};
 }
 
+SPoint getScenePointOnScreen(EWidescreen mode, SExtent screen, SPoint scene) {
+    if (screen.height <= kSceneSpace.height) {
+        return scene;
+    }
+    const SPoint stretched{.x = (scene.x * screen.width) / kSceneSpace.width,
+                           .y = (scene.y * screen.height) / kSceneSpace.height};
+    const std::optional<SSceneReframe> reframe = getSceneReframe(mode, screen);
+    if (!reframe) {
+        return stretched;
+    }
+    const SViewport &source = reframe->source;
+    const SViewport &destination = reframe->destination;
+    return {.x = destination.x + (((stretched.x - source.x) * destination.width) / source.width),
+            .y = destination.y + (((stretched.y - source.y) * destination.height) / source.height)};
+}
+
 } // namespace nocturne::common

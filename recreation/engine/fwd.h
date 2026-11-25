@@ -62,6 +62,7 @@ struct SHardwareEdge;
 struct SLineStrip;
 struct SListLook;
 struct SIconIndicator;
+struct SIrisFade;
 struct SLoadingPicture;
 struct SLoadingStatus;
 struct SMRGLAnimatedTexture;

@@ -60,6 +60,7 @@ protected:
                      .copyright = {},
                      .copyright_os_font = {},
                      .death_banner = {},
+                     .iris_fade = {},
                      .credits = {},
                      .menu = {},
                      .fonts = {},

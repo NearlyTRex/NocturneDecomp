@@ -78,6 +78,8 @@ constexpr int kMaxShift = 15;
 constexpr int kMaxFrameDigits = 8;
 constexpr int kMaxFrames = 1000;
 constexpr int kMaxTitleSeconds = 600;
+// A few seconds of frames.
+constexpr int kMaxIrisBlackFrames = 300;
 // The colour cube's last entry, 15 bits of red, green and blue.
 constexpr int kMaxCubeColour = 0x7fff;
 // A minute of game-clock ticks, far more than any delay needs.
@@ -2428,6 +2430,28 @@ TomlResult<std::vector<SChapterTitleFont>> readChapterTitleFonts(const toml::tab
     return fonts;
 }
 
+TomlResult<SIrisFade> readIrisFade(const toml::table &table) {
+    constexpr std::string_view kWhere = "iris_fade: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"opens_session", "black_frames"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<bool> opens = readRequiredBoolean(table, kWhere, "opens_session");
+    if (!opens) {
+        return std::unexpected(opens.error());
+    }
+    SIrisFade iris{.opens_session = *opens};
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{.key = "black_frames",
+                                               .field = &iris.black_frames,
+                                               .low = 1,
+                                               .high = kMaxIrisBlackFrames}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    return iris;
+}
+
 TomlResult<SChapterTitle> readChapterTitle(const toml::table &table) {
     constexpr std::string_view kWhere = "chapter_title: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
@@ -3454,6 +3478,12 @@ TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content
         return std::unexpected(chapter_title.error());
     }
     content.chapter_title = std::move(*chapter_title);
+    TomlResult<std::optional<SIrisFade>> iris_fade =
+        readOptionalTable<SIrisFade>(table, "iris_fade", readIrisFade);
+    if (!iris_fade) {
+        return std::unexpected(iris_fade.error());
+    }
+    content.iris_fade = *iris_fade;
     return {};
 }
 
@@ -3557,6 +3587,10 @@ std::string formatGameContentTables(const SGameContent &content) {
     text += formatStoryStart(content);
     if (const std::optional<SChapterTitle> &title = content.chapter_title) {
         text += formatChapterTitle(*title);
+    }
+    if (const std::optional<SIrisFade> &iris = content.iris_fade) {
+        text += std::format("\n[iris_fade]\nopens_session = {}\nblack_frames = {}\n",
+                            iris->opens_session, iris->black_frames);
     }
     for (const SLoadingPicture &picture : content.loading) {
         text += formatLoadingPicture(picture);

@@ -1,4 +1,6 @@
 #include "common/error/fatalerror.h"
+#include "core/game/game.h"
+#include "core/game/irisfade.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -205,6 +207,17 @@ TEST_F(CScriptInitSectionTest, ACheckedScriptRunsItsSectionToo) {
 TEST_F(CScriptInitSectionTest, RunningACommandNotPortedYetQuits) {
     expectRunQuits(":initSection\nidle\n:initSectionEnd\n",
                    "CScript::step running idle is not ported yet");
+}
+
+// Each begins the game's iris; checking alone begins none.
+TEST_F(CScriptInitSectionTest, BeginFadeInAndOutBeginTheGamesIris) {
+    givenFile("world\\m1.scr", "beginFadeOut\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
+    run(":initSection\nbeginFadeIn\n:initSectionEnd\n");
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
+    run(":initSection\nbeginFadeOut\n:initSectionEnd\n");
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Closing);
 }
 
 TEST_F(CScriptInitSectionTest, SetAmbientSoundMakesItTheSetsAmbientSound) {

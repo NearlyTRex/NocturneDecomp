@@ -71,7 +71,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the automap (the decomp's AUTOMAP), with the automap
 // deferred: the performance overlay (the decomp's CHEAT_MENU), with the cheat menu
 // deferred: the subtitles, with CScript::renderSubtitles
-// deferred: the iris fade, with renderIrisFade
 // deferred: the camera debug's fudge target line, with processFudge
 // deferred: the camera debug's hardware renderer textures counted by size, with a renderer report
 //   of them
@@ -145,6 +144,7 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     captureDebugMovieFrame();
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));
     renderOverlay(session);
+    renderIrisFade(session);
     renderCameraDebug(session);
     if (sound_debug) {
         renderSoundDebug();
