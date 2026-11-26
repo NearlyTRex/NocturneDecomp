@@ -49,8 +49,11 @@ SGameContent fullContent() {
     content.copyright_os_font = "Game (c) 1999";
     content.death_banner = "You're \"dead\".";
     content.iris_fade = SIrisFade{.opens_session = false, .black_frames = 3};
-    content.battery = SBattery{.gauge = false};
+    content.battery =
+        SBattery{.gauge = false, .place = {.corner = EHudCorner::TopRight, .x = 9, .y = 12}};
     content.flashlight = SFlashlight{.options = false};
+    content.health_bar =
+        SHealthBar{.place = {.corner = EHudCorner::BottomLeft, .x = 639, .y = 479}};
     content.credits = getShippedGameContent().credits;
     common::required(content.credits).music = "m.mp3";
     content.menu = getShippedGameContent().menu;
@@ -97,6 +100,16 @@ std::string format(const SGameContent &content) {
 TEST(GameContentFile, WritesWhatItReadsBack) {
     const SGameContent content = fullContent();
     EXPECT_EQ(parseGameContent(format(content)), content);
+}
+
+// A HUD element without a place goes where Nocturne's does.
+TEST(GameContentFile, AnElementWithoutAPlaceTakesNocturnes) {
+    const auto content = parseGameContent("[battery]\ngauge = true\n[health_bar]\n");
+    ASSERT_TRUE(content.has_value());
+    EXPECT_EQ(common::required(content->battery).place,
+              (SHudPlace{.corner = EHudCorner::BottomLeft, .x = 4, .y = 4}));
+    EXPECT_EQ(common::required(content->health_bar).place,
+              (SHudPlace{.corner = EHudCorner::TopRight, .x = 4, .y = 4}));
 }
 
 TEST(GameContentFile, NoContentWritesNothing) {
@@ -270,6 +283,22 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"battery = 1", "battery: not a [battery] table"},
         SBadCase{"[battery]\ndrain = 1", "battery: drain: not a key this file takes"},
         SBadCase{"[battery]", "battery: gauge: missing"},
+        SBadCase{"[battery]\ngauge = true\nplace = 1", "battery: place: not a [place] table"},
+        SBadCase{"[battery]\ngauge = true\nplace = { x = 1, y = 1 }",
+                 "battery: place: corner: missing"},
+        SBadCase{"[battery]\ngauge = true\nplace = { corner = 'middle', x = 1, y = 1 }",
+                 "battery: place: corner: not one of top_left, top_right, bottom_left, "
+                 "bottom_right"},
+        SBadCase{"[battery]\ngauge = true\nplace = { corner = 'top_left', y = 1 }",
+                 "battery: place: x: missing"},
+        SBadCase{"[battery]\ngauge = true\nplace = { corner = 'top_left', x = 1, y = 480 }",
+                 "battery: place: y: not from 0 to 479"},
+        SBadCase{"[battery]\ngauge = true\nplace = { corner = 'top_left', x = 1, y = 1, z = 1 }",
+                 "battery: place: z: not a key this file takes"},
+        SBadCase{"health_bar = 1", "health_bar: not a [health_bar] table"},
+        SBadCase{"[health_bar]\nsize = 1", "health_bar: size: not a key this file takes"},
+        SBadCase{"[health_bar]\nplace = { corner = 'top_left', x = -1, y = 1 }",
+                 "health_bar: place: x: not from 0 to 639"},
         SBadCase{"flashlight = 1", "flashlight: not a [flashlight] table"},
         SBadCase{"[flashlight]\nrange = 1", "flashlight: range: not a key this file takes"},
         SBadCase{"[flashlight]", "flashlight: options: missing"},

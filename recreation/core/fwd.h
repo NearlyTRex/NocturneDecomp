@@ -290,6 +290,7 @@ struct SIniDataOwners;
 struct SInteractionInfo;
 struct SIntersectXZCylinder;
 struct SInventoryAssetsOwners;
+struct SInventoryHud;
 struct SInventoryItemInfo;
 struct SLaserInfo;
 struct SLightGlowTextures;

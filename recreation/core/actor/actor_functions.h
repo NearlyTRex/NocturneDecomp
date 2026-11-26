@@ -26,6 +26,11 @@ template <typename T>
 [[nodiscard]] T *castToClass(CDemonActor *actor_ptr) {
     return dynamic_cast<T *>(castToClassHash(actor_ptr, T::kType.name_hash));
 }
+template <typename T>
+[[nodiscard]] const T *castToClass(const CDemonActor *actor_ptr) {
+    return isOfClassHash(actor_ptr, T::kType.name_hash) ? dynamic_cast<const T *>(actor_ptr)
+                                                        : nullptr;
+}
 void syncActorTypeIDs();
 // The angle moved by whole turns to within pi of 0; one already there is left as it is.
 [[nodiscard]] float normalizeAngleToPi(float angle_radians);

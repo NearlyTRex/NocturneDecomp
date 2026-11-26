@@ -80,7 +80,7 @@ struct SGameSessionOwners {
     const CDeformableModelManager &deformable_models;
     // What the editor's memory line asks.
     platform::IHeap &heap;
-    // What the keys help's and the death banner's text is translated by.
+    // What the keys help's, the death banner's and the inventory's text is translated by.
     const support::CNewMsg &messages;
 };
 
@@ -282,6 +282,8 @@ private:
     [[nodiscard]] engine::SIrisFade getIrisFadeContent() const;
     // The screen the script's letterbox and subtitles are measured on and drawn to.
     [[nodiscard]] SScriptScreen getScriptScreen(const SGameSessionOwners &session) const;
+    // What the local hero's inventory is drawn with, in the scene's picture.
+    [[nodiscard]] SInventoryHud getInventoryHud(const SGameSessionOwners &session) const;
     // The focus actor's middle where the screen shows it; nothing while it is off the screen.
     void calculateIrisFadeCenter(CDemonActor *focus, CDemonCamera &camera);
     // Black outside the iris's disc, or everywhere while it starts or once it has closed.

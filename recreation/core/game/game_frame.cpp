@@ -4,6 +4,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
+#include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
@@ -64,7 +65,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: BW1-3's field notes or puzzle drawn in the scene's place, or monster vision's view,
 //   with CFieldNotes, CPuzzle and CDemonSet::renderMonsterVisionView
 // deferred: BW2's blood timer's seconds centred above the scene, with CEventList's timers
-// deferred: the inventory's items, with CInventory::renderAllItems
 // deferred: the inventory held to the screen's 4:3 while a modal dialog is up (the decomp's
 //   NETPLAY), with the network dialogs
 // deferred: the light view while it is on, in a window of its own (the decomp's DEBUG_WINDOW),
@@ -140,6 +140,7 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     if (takeAction(EGameAction::Screenshot)) {
         saveScreenshot();
     }
+    session.mission.getLocalHero()->getInventory().renderAllItems(getInventoryHud(session));
     drawScreenBorder();
     captureDebugMovieFrame();
     static_cast<void>(owners_.three_d.setRenderAlpha(kOpaque));

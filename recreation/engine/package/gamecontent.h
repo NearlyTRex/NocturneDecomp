@@ -522,13 +522,41 @@ struct SDirectStart {
     bool operator==(const SDirectStart &) const = default;
 };
 
+// A corner of the HUD's frame, the scene's picture, that an element is placed from.
+enum class EHudCorner : std::uint8_t {
+    TopLeft,
+    TopRight,
+    BottomLeft,
+    BottomRight,
+};
+
+// Where a HUD element goes: its box x and y HUD pixels in from the corner, a HUD pixel being a
+// 640x480 one drawn at the HUD's whole-number scale.
+struct SHudPlace {
+    EHudCorner corner = EHudCorner::TopLeft;
+    int x = 0;
+    int y = 0;
+
+    bool operator==(const SHudPlace &) const = default;
+};
+
 // The flashlight's battery, as the game has it.
 struct SBattery {
     // Its gauge on the HUD, Nocturne's alone: BW1 and BW3 keep a charge but draw none, and BW2
     // kept the code but never shows it.
     bool gauge = true;
+    // The gauge's box, its battery picture's size.
+    SHudPlace place{.corner = EHudCorner::BottomLeft, .x = 4, .y = 4};
 
     bool operator==(const SBattery &) const = default;
+};
+
+// The local hero's health bar while the inventory shows.
+struct SHealthBar {
+    // The bar's box, its pictures' size.
+    SHudPlace place{.corner = EHudCorner::TopRight, .x = 4, .y = 4};
+
+    bool operator==(const SHealthBar &) const = default;
 };
 
 // The flashlight, as the game has it.
@@ -944,6 +972,7 @@ struct SGameContent {
     // Each feature none of whose table a package gives is Nocturne's.
     std::optional<SBattery> battery;
     std::optional<SFlashlight> flashlight;
+    std::optional<SHealthBar> health_bar;
     std::optional<SGameCredits> credits;
     std::optional<SMenuLayout> menu;
     // By id; a later package's replaces an earlier one's with the same id.

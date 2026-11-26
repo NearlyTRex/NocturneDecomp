@@ -71,6 +71,10 @@ int CAlphaBitmap::getWidth() const {
     return width_;
 }
 
+int CAlphaBitmap::getHeight() const {
+    return height_;
+}
+
 // nocedit 0x004105d0
 // bw1 0x0040d220
 // bw3 0x0040d460

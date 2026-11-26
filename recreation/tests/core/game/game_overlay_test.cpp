@@ -146,6 +146,16 @@ TEST_F(COverlay480Test, WithoutABatteryGaugeTheBarsKeepTheFramesMargin) {
     render();
 }
 
+// A gauge the game places in another corner leaves the bars where they are.
+TEST_F(COverlay480Test, AGaugeElsewhereLeavesTheBarsAtTheFramesMargin) {
+    game_parts_.getContent().battery =
+        engine::SBattery{.gauge = true, .place = {.corner = engine::EHudCorner::TopLeft}};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 8, 462, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
 // At 640x480 a full bar is half of what a 1.85:1 band leaves: (480 - 345) / 2 = 67. The message
 // rises above it and the bars hide.
 TEST_F(COverlay480Test, WhileTheLetterboxIsUpTheMessageRisesAndTheBarsHide) {

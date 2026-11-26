@@ -72,7 +72,7 @@ public:
     [[nodiscard]] CDemonActor *getPushedObject() const;
     [[nodiscard]] EHeroTask getAiTask() const;
     [[nodiscard]] EGasMaskState getGasMaskState() const;
-    [[nodiscard]] const CInventory &getInventory() const;
+    [[nodiscard]] CInventory &getInventory();
     // The controls it acts on, which the player's machine fills for a player's hero.
     [[nodiscard]] SPlayerInput &getPlayerInput();
 

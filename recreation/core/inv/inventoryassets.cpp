@@ -131,6 +131,10 @@ const engine::CAlphaBitmap &CInventoryAssets::getBitmap(EInventoryBitmap bitmap)
     return bitmaps_.at(static_cast<std::size_t>(bitmap));
 }
 
+engine::CAlphaBitmap &CInventoryAssets::getBitmap(EInventoryBitmap bitmap) {
+    return bitmaps_.at(static_cast<std::size_t>(bitmap));
+}
+
 std::span<const SInventoryItemInfo> CInventoryAssets::getItems() const {
     return items_;
 }

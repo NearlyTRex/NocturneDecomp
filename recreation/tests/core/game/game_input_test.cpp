@@ -4,6 +4,7 @@
 #include "core/game/game.h"
 #include "core/game/gameaction.h"
 #include "core/hero/heroplaceholder.h"
+#include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "core/playerinput.h"
@@ -280,6 +281,20 @@ TEST_F(CGameInputTest, UseLightDrawAndJumpAreSetOnlyAsTheirKeysGoDown) {
     hold(EGameAction::Jump, false);
     frame(kFrame);
     EXPECT_FALSE(input().action_state.jump);
+}
+
+// The item description key switches the inventory's view at each press.
+TEST_F(CGameInputTest, TheItemDescriptionKeySwitchesTheInventorysView) {
+    const CInventory &inventory = hero_->getInventory();
+    hold(EGameAction::ItemDesc);
+    frame(kFrame);
+    EXPECT_TRUE(inventory.isDetailView());
+    frame(kFrame);
+    EXPECT_TRUE(inventory.isDetailView());
+    hold(EGameAction::ItemDesc, false);
+    hold(EGameAction::ItemDesc);
+    frame(kFrame);
+    EXPECT_FALSE(inventory.isDetailView());
 }
 
 // The input reset forgets what was held, so a key still down counts as pressed again.

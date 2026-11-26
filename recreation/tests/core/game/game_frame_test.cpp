@@ -81,6 +81,8 @@ protected:
         session_.camera.init(kHeight);
         session_.camera.beginScene(1);
         session_.camera.endScene(1);
+        // As the session loads them, so a frame finds them at the screen's size.
+        inventory_assets_.loadAssets();
         game_.slamDT(kQuarterSecond);
         game_.is_paused = true;
     }

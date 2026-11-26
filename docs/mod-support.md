@@ -38,7 +38,8 @@ or a mod can change it without code. Nocturne's is `recreation/data/games/noctur
 |---|---|
 | `title`, `copyright` | The game's name and copyright line |
 | `death_banner` | The line over the frame while the hero is dead; Nocturne's only, the Blair Witch games show none |
-| `[battery]` | The flashlight's battery: `gauge`, its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it). Without it, Nocturne's |
+| `[battery]` | The flashlight's battery: `gauge`, its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it), and the gauge's `place`. Without it, Nocturne's |
+| `[health_bar]` | Where the hero's health bar goes: `place`. A HUD element's `place` is `{ corner = "top_left", x = 4, y = 4 }`: a corner of the scene's picture (`top_left`, `top_right`, `bottom_left`, `bottom_right`) and the element's box x and y 640x480 pixels in from it, drawn at the HUD's scale. Without it, Nocturne's |
 | `[flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns). Without it, Nocturne's |
 | `[iris_fade]` | Whether a session opens on the iris (`opens_session`: BW2's doesn't) and how many frames it starts black (`black_frames`: Nocturne's 1, BW1's and BW3's 3). Without it, Nocturne's |
 | `[front_end]` | The style of each front-end part, named for how it is drawn: `title_backdrop` (Nocturne's `sky_scene`, BW1's and BW2's `figure_scene`, BW3's `tiled_scroll`), `loading_indicator` (Nocturne's and BW1's `moon`, BW2's `progress_bar`, BW3's `icon`), `credits` (Nocturne's and BW1's `column_scroll`, BW2's `fade_loop`, BW3's `two_column`) and `story_select` (Nocturne's and BW1's `story_list`, BW2's and BW3's `direct_start`). A mod can change one part and keep the rest |

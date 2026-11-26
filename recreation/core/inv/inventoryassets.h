@@ -66,6 +66,8 @@ public:
     [[nodiscard]] int getWidth() const;
     [[nodiscard]] int getHeight() const;
     [[nodiscard]] const engine::CAlphaBitmap &getBitmap(EInventoryBitmap bitmap) const;
+    // To draw it.
+    [[nodiscard]] engine::CAlphaBitmap &getBitmap(EInventoryBitmap bitmap);
     [[nodiscard]] std::span<const SInventoryItemInfo> getItems() const;
 
 private:

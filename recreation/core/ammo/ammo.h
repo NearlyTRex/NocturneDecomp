@@ -7,6 +7,7 @@
 
 #include <memory>
 #include <string>
+#include <string_view>
 
 namespace nocturne::core {
 
@@ -35,8 +36,11 @@ public:
     [[nodiscard]] const CDemonActorType &getActorType() const override;
     void archive(CActorArchive &actor_archive) override;
 
-    void setWeaponClass(char *weapon_class_name);
+    // The rounds take the model the class's rounds have, by their kind for a pistol's, and the
+    // model is loaded; a class with none keeps the model it had.
+    void setWeaponClass(std::string_view weapon_class_name);
     void setAmmoCount(int ammo_count);
+    void setAmmoType(EAmmoType ammo_type);
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
     // The weapon class the rounds are for.

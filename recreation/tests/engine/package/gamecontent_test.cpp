@@ -48,6 +48,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.iris_fade = SIrisFade{.opens_session = false, .black_frames = 3};
     base.battery = SBattery{.gauge = false};
     base.flashlight = SFlashlight{.options = false};
+    base.health_bar = SHealthBar{.place = {.corner = EHudCorner::TopLeft, .x = 1, .y = 2}};
     base.credits = SGameCredits{.text = "a.txt",
                                 .image = "a",
                                 .fit = {},
@@ -73,6 +74,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     EXPECT_EQ(merged.iris_fade, base.iris_fade);
     EXPECT_EQ(merged.battery, base.battery);
     EXPECT_EQ(merged.flashlight, base.flashlight);
+    EXPECT_EQ(merged.health_bar, base.health_bar);
     EXPECT_EQ(merged.credits, base.credits);
     EXPECT_EQ(merged.menu, mod.menu);
 }

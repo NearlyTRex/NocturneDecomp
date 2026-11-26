@@ -63,6 +63,7 @@ protected:
                      .iris_fade = {},
                      .battery = {},
                      .flashlight = {},
+                     .health_bar = {},
                      .credits = {},
                      .menu = {},
                      .fonts = {},

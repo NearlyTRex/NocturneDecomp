@@ -6,6 +6,8 @@
 #include "core/dfont/dfont.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
+#include "core/hudlayout.h"
+#include "core/inv/inventory.h"
 #include "core/inv/inventoryassets.h"
 #include "core/mission/demonmission.h"
 #include "core/script/script.h"
@@ -52,31 +54,10 @@ constexpr int kTinyFontWidth = 0x280;
 constexpr int kMediumFontWidth = 800;
 // The small editor font sits this much higher under the message.
 constexpr float kSmallFontLift = 7.0F;
-// The battery gauge's column: its icon 4 in, or the 16-wide gauge where that is wider, and the
-// gap the bars keep from it, in HUD pixels.
-constexpr int kBatteryIconInset = 4;
-constexpr int kBatteryGaugeWidth = 0x10;
+// The gap the bars keep from the battery gauge, in HUD pixels.
 constexpr int kBatteryGap = 4;
 // The death banner's red, in 5-5-5, which the colour cube maps to the palette's nearest.
 constexpr std::size_t kBannerColor555 = 0x7c00;
-
-// The scene's picture: its 4:3 column when pillarboxed, else the whole screen.
-common::SViewport getHudFrame(common::EWidescreen widescreen, int width, int height) {
-    const std::optional<common::SSceneReframe> reframe =
-        common::getSceneReframe(widescreen, {.width = width, .height = height});
-    if (reframe) {
-        return reframe->destination;
-    }
-    return {.x = 0, .y = 0, .width = width, .height = height};
-}
-
-// Opaque until its last second, fading in it.
-int getFadeAlpha(float timer) {
-    if (timer < 1.0F) {
-        return static_cast<int>(std::lround(timer * static_cast<float>(kFullAlpha)));
-    }
-    return kFullAlpha;
-}
 
 // The first of the title's fonts whose height the screen is under, or the last.
 engine::CBitFont &getChapterTitleFont(const CDFont &fonts, const engine::SChapterTitle &title,
@@ -201,6 +182,21 @@ void CGame::renderOverlay(const SGameSessionOwners &session) {
     }
 }
 
+SInventoryHud CGame::getInventoryHud(const SGameSessionOwners &session) const {
+    return {.assets = session.inventory_assets,
+            .fonts = owners_.fonts,
+            .messages = session.messages,
+            .screen = owners_.screen,
+            .two_d = owners_.two_d,
+            .special = owners_.special,
+            .content = owners_.content,
+            .camera = session.camera,
+            .hero = *session.mission.getLocalHero(),
+            .frame = getHudFrame(session.display.getWidescreen(), owners_.screen.getWindowWidth(),
+                                 owners_.screen.getWindowHeight()),
+            .letterbox_up = letterbox_mode != ELetterbox::Off};
+}
+
 SScriptScreen CGame::getScriptScreen(const SGameSessionOwners &session) const {
     return {.screen = owners_.screen,
             .two_d = owners_.two_d,
@@ -255,7 +251,8 @@ void CGame::renderChapterTitle(const common::SViewport &frame, int letterbox) {
                         title->colour, title->shadow, scale);
 }
 
-// Stacked up from the frame's bottom left, each named over its fill.
+// Stacked up from the frame's bottom left, each named over its fill, right of a battery gauge
+// placed in that corner.
 void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SViewport &frame) {
     if (status_lines_.empty()) {
         return;
@@ -263,13 +260,14 @@ void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SV
     engine::CBitFont &font = getStatusBarFont(owners_.fonts, frame.width);
     const int bar_height = std::max(frame.height / 40, font.getCharHeight(kMeasureChar));
     int left = frame.x + (frame.width / 80);
-    if (owners_.content.battery.value_or(engine::SBattery{}).gauge) {
+    const engine::SBattery battery = owners_.content.battery.value_or(engine::SBattery{});
+    if (battery.gauge && battery.place.corner == engine::EHudCorner::BottomLeft) {
         const int ui_scale = engine::getUiScale(owners_.screen.getWindowHeight());
-        const int battery_icon =
-            kBatteryIconInset +
-            session.inventory_assets.getBitmap(EInventoryBitmap::kBattery).getWidth();
-        const int battery_right = frame.x + (std::max(battery_icon, kBatteryGaugeWidth) * ui_scale);
-        left = std::max(left, battery_right + (kBatteryGap * ui_scale));
+        const engine::CAlphaBitmap &picture =
+            session.inventory_assets.getBitmap(EInventoryBitmap::kBattery);
+        const common::SViewport gauge = getBatteryGaugeBox(frame, battery.place, picture.getWidth(),
+                                                           picture.getHeight(), ui_scale);
+        left = std::max(left, gauge.x + gauge.width + (kBatteryGap * ui_scale));
     }
     const int right = left + (frame.width / 4);
     int bottom = frame.y + frame.height - (frame.height / 80);

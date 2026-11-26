@@ -11,6 +11,7 @@
 #include "core/actor/actorlookup.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/ammo/ammo.h"
 #include "core/weapon/weapon.h"
 
 #include <bit>
@@ -42,22 +43,25 @@ CInventory::CInventory() = default;
 CInventory::~CInventory() = default;
 
 // The original took each item out through removeItem, destroying it unless the mission still held
-// it, and let go of the selected item, which nothing reads yet.
-// deferred: destroying the ammo counter, with CAmmo
+// it.
+// deferred: BW1's SPS and compass flags and its second ammunition cache cleared, with the SPS
+//   meter and the compass
+// deferred: BW2's selections cleared for each of its four players, with BW2's shared inventory
+// deferred: BW3's SPS flag cleared, with the SPS meter
 // nocedit 0x004fd0e0
 void CInventory::clear() {
     items_.clear();
+    selected_item_ = nullptr;
     selected_weapon_ = nullptr;
+    ammo_.reset();
 }
 
 // Each angle is a draw from the C library's generator, so a hundred are drawn.
-// deferred: making and setting up the ammo counter, with CAmmo
-// deferred: the item panels drawn over the finished scene in the camera's space laid onto the
-//   picture's corner, their text, ammo and counts in the same boxes at the HUD's text scale, and
-//   the pickup help under the top letterbox (the decomp's hud.h, HUD), with
-//   CInventory::renderSelectedItems and renderAllItems
+// deferred: BW3's caches of the hero's own two kinds of rounds cleared, with BW3's hero ammunition
 // nocedit 0x004fd190
-void CInventory::initialize(common::CWatcomRandom &crt_random) {
+// bw1 0x004f7050
+// bw2 0x004da900
+void CInventory::initialize(common::CWatcomRandom &crt_random, CActor &classes) {
     clear();
     for (float &angle : item_angles_) {
         const common::CExtendedFloat draw(static_cast<double>(crt_random.rand()));
@@ -65,13 +69,15 @@ void CInventory::initialize(common::CWatcomRandom &crt_random) {
                  common::CExtendedFloat(kTwo))
                     .toFloat();
     }
+    ammo_ = std::make_unique<CAmmo>(classes);
+    ammo_->setup();
+    cached_ammo_count_ = 0;
 }
 
 // The original read each heading with fgets, 254 characters at most. A version it couldn't read
 // stayed the last one read, and a weapon whatever its stack held; here they are 0 and none. More
 // than its items overran them. It took the carried items off the mission's list after, with
 // loadItems; here each comes off as it is claimed.
-// deferred: showing the held weapon's ammo, with CAmmo
 // nocedit 0x004ff400
 // bw1 0x004f97a0
 // bw3 0x004dc750
@@ -79,7 +85,7 @@ void CInventory::initialize(common::CWatcomRandom &crt_random) {
 void CInventory::load(CActorArchive &actor_archive) {
     common::CTextScanner &scanner = actor_archive.getScanner();
     const SActorArchiveOwners &owners = actor_archive.getOwners();
-    initialize(owners.crt_random);
+    initialize(owners.crt_random, owners.actor_classes);
     scanner.skipLine();
     scanner.skipLine();
     int version = 0;
@@ -117,16 +123,16 @@ void CInventory::load(CActorArchive &actor_archive) {
     if (version >= kClosedVersion) {
         scanner.skipLine();
     }
-    if (weapon_index < 0) {
-        return;
+    if (weapon_index >= 0) {
+        CDemonActor *held = std::cmp_less(weapon_index, items_.size())
+                                ? items_[static_cast<std::size_t>(weapon_index)].get()
+                                : nullptr;
+        selected_weapon_ = castToClassHash(held, CWeapon::kType.name_hash);
+        if (selected_weapon_ == nullptr) {
+            common::displayErrorAndQuit("CInventory::load - Can't find your weapon");
+        }
     }
-    CDemonActor *held = std::cmp_less(weapon_index, items_.size())
-                            ? items_[static_cast<std::size_t>(weapon_index)].get()
-                            : nullptr;
-    selected_weapon_ = castToClassHash(held, CWeapon::kType.name_hash);
-    if (selected_weapon_ == nullptr) {
-        common::displayErrorAndQuit("CInventory::load - Can't find your weapon");
-    }
+    updateSelectedWeaponAmmoDisplay();
 }
 
 // The original also quits when it doesn't yet own its items, which here it does from load on, and
@@ -148,6 +154,10 @@ CDemonActor *CInventory::getSelectedWeapon() const {
 
 float CInventory::getBatteryCharge() const {
     return battery_charge_;
+}
+
+bool CInventory::isDetailView() const {
+    return detail_view_;
 }
 
 std::span<const float, CInventory::kMaxItems> CInventory::getItemAngles() const {

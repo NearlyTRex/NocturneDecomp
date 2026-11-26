@@ -5,6 +5,7 @@
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/game/game.h"
 #include "core/inv/inventory.h"
 #include "core/weapon/weapon.h"
@@ -46,7 +47,7 @@ TEST(CInventory, Constructors) {
 
 TEST(CInventory, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CInventory::initialize),
-                                 void (CInventory::*)(common::CWatcomRandom &)>);
+                                 void (CInventory::*)(common::CWatcomRandom &, CActor &)>);
     static_assert(
         std::is_same_v<decltype(&CInventory::addItem), int (CInventory::*)(CDemonActor *, int)>);
     static_assert(std::is_same_v<decltype(&CInventory::findItemByName),
@@ -70,16 +71,18 @@ TEST(CInventory, PublicInterface) {
         std::is_same_v<decltype(&CInventory::select), int (CInventory::*)(CDemonActor *)>);
     static_assert(
         std::is_same_v<decltype(&CInventory::getActiveLightGun), CLightGun *(CInventory::*)()>);
-    static_assert(std::is_same_v<decltype(&CInventory::updateInventory), void (CInventory::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CInventory::updateInventory), void (CInventory::*)(float)>);
     static_assert(std::is_same_v<decltype(&CInventory::calculateTotalBatteryCharge),
                                  float (CInventory::*)(float)>);
     static_assert(
-        std::is_same_v<decltype(&CInventory::resetWeaponSwitchTimers), void (CInventory::*)(int)>);
+        std::is_same_v<decltype(&CInventory::resetWeaponSwitchTimers), void (CInventory::*)(bool)>);
     static_assert(
         std::is_same_v<decltype(&CInventory::resetInventoryDisplayTimer), void (CInventory::*)()>);
     static_assert(
         std::is_same_v<decltype(&CInventory::renderSelectedItems), void (CInventory::*)()>);
-    static_assert(std::is_same_v<decltype(&CInventory::renderAllItems), void (CInventory::*)()>);
+    static_assert(std::is_same_v<decltype(&CInventory::renderAllItems),
+                                 void (CInventory::*)(const SInventoryHud &) const>);
     static_assert(std::is_same_v<decltype(&CInventory::checkHasMatchingKey),
                                  int (CInventory::*)(std::uint32_t, int)>);
     static_assert(std::is_same_v<decltype(&CInventory::removeMatchingKeys),
@@ -110,19 +113,6 @@ TEST(CInventory, AnInventoryStartsEmptyWithAFullBattery) {
     EXPECT_EQ(inventory.getBatteryCharge(), 100.0F);
 }
 
-// One draw for each place an item can be drawn at, turned into an angle of up to a full turn.
-TEST(CInventory, InitializingDrawsAnAngleForEachPlace) {
-    CInventory inventory;
-    common::CWatcomRandom crt;
-    common::CWatcomRandom fresh;
-    inventory.initialize(crt);
-    for (const float angle : inventory.getItemAngles()) {
-        const double expected = fresh.rand() / 32767.0 * 2.0 * std::numbers::pi;
-        EXPECT_NEAR(angle, expected, 1e-5);
-    }
-    EXPECT_EQ(crt.rand(), fresh.rand());
-}
-
 // A hero's inventory, read for the hero Gabriel, with the item classes registered.
 class CInventoryLoadTest : public ::testing::Test {
 protected:
@@ -130,6 +120,8 @@ protected:
         owner_.setActorName("Gabriel");
         classes_.registerActorClass(kItemType);
         classes_.registerActorClass(kGunType);
+        ON_CALL(keyframed_models_, loadModel(::testing::_))
+            .WillByDefault(::testing::ReturnRef(ammo_model_));
     }
 
     // An inventory of the version, held weapon and battery given, listing the items, each of
@@ -177,7 +169,22 @@ protected:
     ::testing::NiceMock<MockActorLookup> actors_;
     CTestActor owner_{kTestBaseType};
     CInventory inventory_;
+    CKeyFramedModel ammo_model_{game_parts_.getDosIo()};
 };
+
+// One draw for each place an item can be drawn at, turned into an angle of up to a full turn, and
+// the ammunition counter made and its model found.
+TEST_F(CInventoryLoadTest, InitializingDrawsAnAngleForEachPlace) {
+    common::CWatcomRandom fresh;
+    EXPECT_CALL(keyframed_models_, loadModel(StrEq("bullet.kfm")))
+        .WillOnce(::testing::ReturnRef(ammo_model_));
+    inventory_.initialize(crt_, classes_);
+    for (const float angle : inventory_.getItemAngles()) {
+        const double expected = fresh.rand() / 32767.0 * 2.0 * std::numbers::pi;
+        EXPECT_NEAR(angle, expected, 1e-5);
+    }
+    EXPECT_EQ(crt_.rand(), fresh.rand());
+}
 
 // Items the file doesn't list as carried are made from their class and name.
 TEST_F(CInventoryLoadTest, TheItemsAreMadeAndTheWeaponHeld) {

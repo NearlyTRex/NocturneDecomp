@@ -20,8 +20,8 @@ constexpr float kWeight = 8.0F;
 constinit const CDemonActorType CLightGun::kType =
     makeActorType("CLightGun", &CWeapon::kType, &CLightGun::create, kVersion);
 
-// deferred: the defaults the constructor gives the firing fields, the charge and the hit flag,
-//   with CLightGun::fire and CLightGun::process
+// deferred: the defaults the constructor gives the firing fields, the charge level and the hit
+//   flag, with CLightGun::fire and CLightGun::process
 // deferred: lighting the beam with the carrying hero's own light rather than the one shared light
 //   (the decomp's nocturne_hero_light), with CLightGun::process, CLightGun::fire and
 //   CLightGun::updateBeamLight
@@ -46,6 +46,10 @@ const CDemonActorType &CLightGun::getActorType() const {
 // bw2 0x004e29f0
 std::unique_ptr<CDemonActor> CLightGun::create(CActor &classes) {
     return std::make_unique<CLightGun>(classes);
+}
+
+float CLightGun::getChargeRatio() const {
+    return charge_ratio_;
 }
 
 void CLightGun::process(float /*delta_time*/) {

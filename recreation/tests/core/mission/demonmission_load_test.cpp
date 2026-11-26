@@ -160,7 +160,12 @@ protected:
         actor_.registerActorClass(kPlacedType);
         actor_.registerActorClass(kLinkedType);
         actor_.registerActorClass(kCarrierType);
+        // Every model found, the inventories' ammunition counters' included.
+        ON_CALL(keyframed_models_, loadModel(::testing::_))
+            .WillByDefault(::testing::ReturnRef(item_model_));
     }
+
+    CKeyFramedModel item_model_{dosio_};
 
     void read(const std::string &text, bool keep_assets = true) {
         common::CTextScanner scanner(text);

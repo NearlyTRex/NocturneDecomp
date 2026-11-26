@@ -6,6 +6,7 @@
 #include "core/actor/demonactortype.h"
 #include "core/charactr/character.h"
 #include "core/charactr/healthbarmode.h"
+#include "core/dmodel/keyframedmodel.h"
 #include "core/game/game.h"
 #include "core/hero/gasmaskstate.h"
 #include "core/hero/hero.h"
@@ -138,6 +139,9 @@ protected:
         box_.setActorName("Box");
         hook_.setActorName("Hook");
         classes_.setSavedVersion(CCharacter::kType, 1);
+        // The inventory's ammunition counter finds its model.
+        ON_CALL(keyframed_models_, loadModel(::testing::_))
+            .WillByDefault(::testing::ReturnRef(ammo_model_));
         ON_CALL(actors_, loadActor)
             .WillByDefault([this](common::CTextScanner &scanner, const CDemonActor &,
                                   std::string_view) -> CDemonActor * {
@@ -179,6 +183,7 @@ protected:
     common::CWatcomRandom crt_;
     ::testing::NiceMock<MockDeformableModels> models_;
     ::testing::NiceMock<MockKeyFramedModels> keyframed_models_;
+    CKeyFramedModel ammo_model_{game_parts_.getDosIo()};
     ::testing::NiceMock<MockEventConditions> actor_events_;
     CActor classes_{game_, crt_, models_, keyframed_models_, actor_events_};
     ::testing::NiceMock<MockActorLookup> actors_;

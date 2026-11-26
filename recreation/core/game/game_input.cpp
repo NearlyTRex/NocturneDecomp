@@ -3,6 +3,7 @@
 #include "core/charactr/deathstate.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
+#include "core/inv/inventory.h"
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/playerinput.h"
@@ -175,7 +176,6 @@ void CGame::playerControls(const SGameSessionOwners &session) {
 // deferred: no controls while the automap has them (the decomp's AUTOMAP), with the automap
 // deferred: the weapon, item and ammo keys choosing for the hero, by way of the network game's
 //   requests (the decomp's net_weapon.h), with CHero's weapon selection
-// deferred: the item description key, with CInventory::toggleDetailView
 // deferred: the infrared key turning the goggles on or off, refused to a dead hero and to an
 //   unplaced client, the look reset (the decomp's GOGGLE_LOOK) and the camera chosen again, with
 //   CDemonSet::renderGogglesView
@@ -244,6 +244,9 @@ void CGame::processKeyboardControls(const SGameSessionOwners &session, SPlayerIn
     buttons.light = pressed(EGameAction::Light);
     buttons.draw = pressed(EGameAction::Draw);
     buttons.jump = pressed(EGameAction::Jump);
+    if (takeAction(EGameAction::ItemDesc)) {
+        session.mission.getLocalHero()->getInventory().toggleDetailView();
+    }
 }
 
 // The original also left the mouse alone while screen_clear_condition was set, which nothing

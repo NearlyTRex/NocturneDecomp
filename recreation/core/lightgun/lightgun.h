@@ -26,8 +26,13 @@ public:
     float getDamage() override;
     void renderAimBeam() override;
 
+    // From 0, drained, to 1, full.
+    [[nodiscard]] float getChargeRatio() const;
+
 private:
     static std::unique_ptr<CDemonActor> create(CActor &classes);
+
+    float charge_ratio_ = 1.0F;
 };
 
 } // namespace nocturne::core

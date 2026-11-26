@@ -71,10 +71,9 @@ constinit const CDemonActorType CHero::kType =
 //   hero_breath.h), with CCharacter::processSmoking, CColonel::process, CGabriella::process,
 //   CHaystack::process, CIcePick::process and CScat::process
 // deferred: what a player hero may hold by class (the Stranger anything, Gabriella guns, ammo,
-//   dynamite and the Baron, the rest health items, keys and plain items for all), the slot text
-//   of a hero's own item, weapons not in hand put back in the inventory each frame, and no ammo
-//   shown for the Baron weapon or a melee hero's shovel (the decomp's hero_weapon.h), with
-//   CInventory's items and display
+//   dynamite and the Baron, the rest health items, keys and plain items for all) and weapons not
+//   in hand put back in the inventory each frame (the decomp's hero_weapon.h), with CInventory's
+//   items
 // deferred: each network player's own flashlight switch, beam, lens glow, goggles flag and
 //   battery drain, another hero's beam giving way when the dynamic lights are full (the decomp's
 //   hero_light.h), with CNetGame and the weapons' lights
@@ -170,7 +169,7 @@ void CHero::archiveInteractionTargets(CActorArchive &actor_archive) {
     actor_archive.archiveActor(ladder_to_climb_, "ladderToClimb");
 }
 
-const CInventory &CHero::getInventory() const {
+CInventory &CHero::getInventory() {
     return inventory_;
 }
 

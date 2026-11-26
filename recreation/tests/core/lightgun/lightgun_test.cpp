@@ -35,6 +35,8 @@ TEST(CLightGun, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CLightGun::fire), int (CLightGun::*)()>);
     static_assert(std::is_same_v<decltype(&CLightGun::getDamage), float (CLightGun::*)()>);
     static_assert(std::is_same_v<decltype(&CLightGun::renderAimBeam), void (CLightGun::*)()>);
+    static_assert(
+        std::is_same_v<decltype(&CLightGun::getChargeRatio), float (CLightGun::*)() const>);
 }
 
 TEST(CLightGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
@@ -47,11 +49,12 @@ TEST(CLightGun, ItsRecordIsAVersion1WeaponThatMissionsCanCreate) {
     EXPECT_EQ(&gun->getActorType(), &CLightGun::kType);
 }
 
-TEST(CLightGun, ALightGunIsTheCreModelAndWeighsEight) {
+TEST(CLightGun, ALightGunIsTheCreModelWeighsEightAndStartsCharged) {
     CTestClasses classes;
     const CLightGun gun{classes.get()};
     EXPECT_EQ(gun.getModel().getModelName(), "cre.kfm");
     EXPECT_EQ(gun.getWeight(), 8.0F);
+    EXPECT_EQ(gun.getChargeRatio(), 1.0F);
 }
 
 TEST(CLightGun, TheFunctionsNotPortedYetQuit) {

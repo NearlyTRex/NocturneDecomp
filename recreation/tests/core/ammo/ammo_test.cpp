@@ -11,6 +11,7 @@
 
 #include <memory>
 #include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -44,8 +45,62 @@ TEST(CAmmo, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CAmmo::getActorType), const CDemonActorType &(CAmmo::*)() const>);
     static_assert(std::is_same_v<decltype(&CAmmo::archive), void (CAmmo::*)(CActorArchive &)>);
-    static_assert(std::is_same_v<decltype(&CAmmo::setWeaponClass), void (CAmmo::*)(char *)>);
+    static_assert(
+        std::is_same_v<decltype(&CAmmo::setWeaponClass), void (CAmmo::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CAmmo::setAmmoCount), void (CAmmo::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CAmmo::setAmmoType), void (CAmmo::*)(EAmmoType)>);
+}
+
+// The rounds of a weapon class, by the ammunition's kind, as setWeaponClass picks them.
+struct SRoundCase {
+    std::string_view weapon_class;
+    EAmmoType ammo_type;
+    std::string_view model;
+};
+
+class CAmmoRoundTest : public ::testing::TestWithParam<SRoundCase> {};
+
+TEST_P(CAmmoRoundTest, AWeaponClassTakesItsRoundsModelAndLoadsIt) {
+    const SRoundCase &round = GetParam();
+    CTestClasses classes;
+    CAmmo ammo{classes.get()};
+    ammo.setAmmoType(round.ammo_type);
+    EXPECT_CALL(classes.getKeyFramedModels(), loadModel(::testing::StrEq(round.model)))
+        .WillOnce(::testing::ReturnRef(classes.getKeyFramedModel()));
+    ammo.setWeaponClass(round.weapon_class);
+    EXPECT_EQ(ammo.getWeaponClassName(), round.weapon_class);
+    EXPECT_EQ(ammo.getModel().getModelName(), round.model);
+}
+
+INSTANTIATE_TEST_SUITE_P(
+    Rounds, CAmmoRoundTest,
+    ::testing::Values(SRoundCase{"CGun", EAmmoType::kHoly, "holybullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kWood, "woodbullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kSilver, "silverbullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kGold, "goldbullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kLithium, "lithiumbullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kMercury, "mercurybullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kGeneric, "gatbullet.kfm"},
+                      SRoundCase{"CGun", EAmmoType::kFlaming, "gatbullet.kfm"},
+                      SRoundCase{"CShotgun", EAmmoType::kGeneric, "shell.kfm"},
+                      SRoundCase{"CCrossbow", EAmmoType::kHoly, "holystake.kfm"},
+                      SRoundCase{"CCrossbow", EAmmoType::kWood, "stake.kfm"},
+                      SRoundCase{"CDynamite", EAmmoType::kGeneric, "dynamitebundle.kfm"},
+                      SRoundCase{"CTommyGun", EAmmoType::kGeneric, "tommybullet.kfm"},
+                      SRoundCase{"CFlameThrower", EAmmoType::kGeneric, "fgunammo.kfm"},
+                      SRoundCase{"CElephantGun", EAmmoType::kGeneric, "eleshell.kfm"},
+                      // A class with no rounds of its own keeps the model it had.
+                      SRoundCase{"CMelee", EAmmoType::kGeneric, "bullet.kfm"},
+                      // Matched case and all.
+                      SRoundCase{"cshotgun", EAmmoType::kGeneric, "bullet.kfm"}));
+
+TEST(CAmmo, ItsCountAndKindAreSet) {
+    CTestClasses classes;
+    CAmmo ammo{classes.get()};
+    ammo.setAmmoCount(7);
+    ammo.setAmmoType(EAmmoType::kSilver);
+    EXPECT_EQ(ammo.getAmmoCount(), 7);
+    EXPECT_EQ(ammo.getAmmoType(), EAmmoType::kSilver);
 }
 
 TEST(CAmmo, ItsRecordIsAVersion1ActorThatMissionsCanCreate) {

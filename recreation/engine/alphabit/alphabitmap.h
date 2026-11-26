@@ -49,6 +49,7 @@ public:
     // The palette indices, a row at a time.
     [[nodiscard]] std::span<const std::uint8_t> getRaw() const;
     [[nodiscard]] int getWidth() const;
+    [[nodiscard]] int getHeight() const;
 
 private:
     void loadPalette(std::string_view filename);

@@ -48,6 +48,11 @@ constexpr std::array<std::pair<std::string_view, EFooterCorner>, 4> kFooterCorne
      {"bottom_right", EFooterCorner::BottomRight},
      {"top_left", EFooterCorner::TopLeft},
      {"top_right", EFooterCorner::TopRight}}};
+constexpr std::array<std::pair<std::string_view, EHudCorner>, 4> kHudCorners{
+    {{"top_left", EHudCorner::TopLeft},
+     {"top_right", EHudCorner::TopRight},
+     {"bottom_left", EHudCorner::BottomLeft},
+     {"bottom_right", EHudCorner::BottomRight}}};
 constexpr std::array<std::pair<std::string_view, EFooterEdge>, 3> kFooterEdges{
     {{"screen", EFooterEdge::Screen},
      {"layout", EFooterEdge::Layout},
@@ -2447,16 +2452,65 @@ TomlResult<SIrisFade> readIrisFade(const toml::table &table) {
     return iris;
 }
 
+// The element's place table, every key in it required; fallback when the table is left out.
+TomlResult<SHudPlace> readHudPlace(const toml::table &table, std::string_view where,
+                                   const SHudPlace &fallback) {
+    const TomlResult<const toml::table *> found = readTable(table, where, "place");
+    if (!found) {
+        return std::unexpected(found.error());
+    }
+    if (*found == nullptr) {
+        return fallback;
+    }
+    const std::string inner = std::format("{}place: ", where);
+    if (TomlResult<void> keys = rejectUnknownKeys(**found, inner, {"corner", "x", "y"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    if (!(*found)->contains("corner")) {
+        return std::unexpected(std::format("{}corner: missing", inner));
+    }
+    TomlResult<EHudCorner> corner =
+        readKeyword(**found, inner, "corner", fallback.corner, kHudCorners);
+    if (!corner) {
+        return std::unexpected(corner.error());
+    }
+    SHudPlace place{.corner = *corner};
+    if (TomlResult<void> read =
+            readIntegers(**found, inner,
+                         {{.key = "x", .field = &place.x, .low = 0, .high = kMaxPictureX},
+                          {.key = "y", .field = &place.y, .low = 0, .high = kMaxPictureY}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    return place;
+}
+
 TomlResult<SBattery> readBattery(const toml::table &table) {
     constexpr std::string_view kWhere = "battery: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"gauge"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"gauge", "place"}); !keys) {
         return std::unexpected(keys.error());
     }
     const TomlResult<bool> gauge = readRequiredBoolean(table, kWhere, "gauge");
     if (!gauge) {
         return std::unexpected(gauge.error());
     }
-    return SBattery{.gauge = *gauge};
+    const TomlResult<SHudPlace> place = readHudPlace(table, kWhere, SBattery{}.place);
+    if (!place) {
+        return std::unexpected(place.error());
+    }
+    return SBattery{.gauge = *gauge, .place = *place};
+}
+
+TomlResult<SHealthBar> readHealthBar(const toml::table &table) {
+    constexpr std::string_view kWhere = "health_bar: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"place"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<SHudPlace> place = readHudPlace(table, kWhere, SHealthBar{}.place);
+    if (!place) {
+        return std::unexpected(place.error());
+    }
+    return SHealthBar{.place = *place};
 }
 
 TomlResult<SFlashlight> readFlashlight(const toml::table &table) {
@@ -3370,6 +3424,11 @@ std::string formatStoryStart(const SGameContent &content) {
     return text;
 }
 
+std::string formatHudPlace(const SHudPlace &place) {
+    return std::format("place = {{ corner = {}, x = {}, y = {} }}\n",
+                       quoteToml(getKeywordName(place.corner, kHudCorners)), place.x, place.y);
+}
+
 std::string formatChapterTitle(const SChapterTitle &title) {
     std::string text =
         std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
@@ -3514,6 +3573,12 @@ TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content
         return std::unexpected(flashlight.error());
     }
     content.flashlight = *flashlight;
+    TomlResult<std::optional<SHealthBar>> health_bar =
+        readOptionalTable<SHealthBar>(table, "health_bar", readHealthBar);
+    if (!health_bar) {
+        return std::unexpected(health_bar.error());
+    }
+    content.health_bar = *health_bar;
     return {};
 }
 
@@ -3623,10 +3688,14 @@ std::string formatGameContentTables(const SGameContent &content) {
                             iris->opens_session, iris->black_frames);
     }
     if (const std::optional<SBattery> &battery = content.battery) {
-        text += std::format("\n[battery]\ngauge = {}\n", battery->gauge);
+        text += std::format("\n[battery]\ngauge = {}\n{}", battery->gauge,
+                            formatHudPlace(battery->place));
     }
     if (const std::optional<SFlashlight> &flashlight = content.flashlight) {
         text += std::format("\n[flashlight]\noptions = {}\n", flashlight->options);
+    }
+    if (const std::optional<SHealthBar> &health_bar = content.health_bar) {
+        text += std::format("\n[health_bar]\n{}", formatHudPlace(health_bar->place));
     }
     for (const SLoadingPicture &picture : content.loading) {
         text += formatLoadingPicture(picture);

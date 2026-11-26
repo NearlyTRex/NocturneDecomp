@@ -7,9 +7,12 @@
 #include "core/ammo/ammotype.h"
 #include "core/dmodel/keyframedmodelinstance.h"
 
+#include <algorithm>
+#include <array>
 #include <memory>
 #include <string>
 #include <string_view>
+#include <utility>
 
 namespace nocturne::core {
 
@@ -20,6 +23,46 @@ constexpr int kVersion = 1;
 
 [[noreturn]] void notPorted(std::string_view function) {
     quitNotPorted("CAmmo", function);
+}
+
+// A pistol's rounds by their kind; the rest are its plain bullets.
+std::string_view getPistolRoundModel(EAmmoType ammo_type) {
+    switch (ammo_type) {
+    case EAmmoType::kHoly:
+        return "holybullet.kfm";
+    case EAmmoType::kWood:
+        return "woodbullet.kfm";
+    case EAmmoType::kSilver:
+        return "silverbullet.kfm";
+    case EAmmoType::kGold:
+        return "goldbullet.kfm";
+    case EAmmoType::kLithium:
+        return "lithiumbullet.kfm";
+    case EAmmoType::kMercury:
+        return "mercurybullet.kfm";
+    default:
+        return "gatbullet.kfm";
+    }
+}
+
+// The model of a weapon class's rounds; empty for a class with none of its own.
+std::string_view getRoundModel(std::string_view weapon_class_name, EAmmoType ammo_type) {
+    if (weapon_class_name == "CGun") {
+        return getPistolRoundModel(ammo_type);
+    }
+    if (weapon_class_name == "CCrossbow") {
+        return ammo_type == EAmmoType::kHoly ? "holystake.kfm" : "stake.kfm";
+    }
+    constexpr std::array<std::pair<std::string_view, std::string_view>, 5> kRounds{{
+        {"CShotgun", "shell.kfm"},
+        {"CDynamite", "dynamitebundle.kfm"},
+        {"CTommyGun", "tommybullet.kfm"},
+        {"CFlameThrower", "fgunammo.kfm"},
+        {"CElephantGun", "eleshell.kfm"},
+    }};
+    const auto *found = std::ranges::find(kRounds, weapon_class_name,
+                                          &std::pair<std::string_view, std::string_view>::first);
+    return found == kRounds.end() ? std::string_view() : found->second;
 }
 
 } // namespace
@@ -75,6 +118,32 @@ int CAmmo::getAmmoCount() const {
 
 EAmmoType CAmmo::getAmmoType() const {
     return ammo_type_;
+}
+
+// deferred: BW1's and BW2's light gun rounds, CLightgun's batterylarge.kfm, with the Blair Witch
+//   light guns
+// deferred: BW2's bullets6_1.kfm for a pistol's plain, flaming and blank rounds, which would
+//   change Nocturne's, with the superset changes' review
+// nocedit 0x00410fd0
+void CAmmo::setWeaponClass(std::string_view weapon_class_name) {
+    weapon_class_name_ = weapon_class_name;
+    if (const std::string_view model = getRoundModel(weapon_class_name, ammo_type_);
+        !model.empty()) {
+        model_.setModelName(model);
+    }
+    model_.preCache();
+}
+
+// nocedit 0x004111b0
+// bw1 0x0040dfd0
+// bw2 0x0040e440
+// bw3 0x0040e070
+void CAmmo::setAmmoCount(int ammo_count) {
+    ammo_count_ = ammo_count;
+}
+
+void CAmmo::setAmmoType(EAmmoType ammo_type) {
+    ammo_type_ = ammo_type;
 }
 
 // nocedit 0x00410e50
