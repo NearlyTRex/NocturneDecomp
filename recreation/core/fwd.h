@@ -321,6 +321,8 @@ struct STextureSet;
 struct STriangleRef;
 struct STriangleVertices;
 struct SVDBox;
+struct SWaterOwners;
+struct SWaterTile;
 union UNetPacket;
 
 } // namespace nocturne::core

@@ -81,6 +81,8 @@ struct SDemonSetOwners {
     CSkyDome &sky_dome;
     // What its actors ask of the events as they draw.
     IEventConditions &events;
+    // Where the water's visible tiles are reported.
+    engine::CConsole &console;
 };
 
 class CDemonSet {
@@ -136,8 +138,11 @@ public:
                                  common::CVector3i *surface_normal);
     void computeLighting(common::CVector3i *world_position, common::CVector3i *surface_normal,
                          int start_vertex_index, int vertex_count);
-    void computeVertexOmniLighting(common::CVector3f *vertex_position,
-                                   common::CVector3f *position_offset, int vertex_index);
+    // The renderer's vertex at the index lit by the omni lights at the point offset from the
+    // place, grey without any.
+    void computeVertexOmniLighting(const common::CVector3f &vertex_position,
+                                   const common::CVector3f &position_offset,
+                                   std::size_t vertex_index) const;
     // Marks the screen box the renderer's first vertex_count vertices reach on the camera whose
     // scene keeps its buffers, for its depths to be put back before the next scene.
     void pushScreenBoundsToCamera(int vertex_count) const;
@@ -318,6 +323,9 @@ private:
     // tinted by its scale, its bit for the pass kept while it drew something.
     void renderOpaqueActors();
     void renderTransparentActors();
+    // What the water is drawn with: the set's renderer, geometry and lights, the camera's tables,
+    // the game's frame time and the console.
+    [[nodiscard]] SWaterOwners getWaterOwners() const;
     // Frees the enviro model and the terrain.
     void clear();
     std::string loadHeader(common::CTextScanner &scanner);

@@ -36,11 +36,12 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderSolidColorDepthDirect),
                                  void (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderSolidColorPoly),
-                                 void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
+                                 void (CDemonRenderer::*)(const platform::SMRGLPrimitiveQuad &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderZPrepassPoly),
                                  void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
-    static_assert(std::is_same_v<decltype(&CDemonRenderer::renderDepthProfiledDirect),
-                                 bool (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonRenderer::renderDepthProfiledDirect),
+                       bool (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &, int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::renderTexturedDirect),
                        void (CDemonRenderer::*)(const platform::SMRGLHeaderPrimitive &, int)>);
@@ -50,7 +51,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderAlphaBlendedPoly),
                                  void (CDemonRenderer::*)(const platform::SMRGLPrimitiveQuad &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderDecalPoly),
-                                 void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
+                                 void (CDemonRenderer::*)(const platform::SMRGLPrimitiveQuad &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderSolidTexturedPoly),
                                  void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderDestReadBlendPoly),
@@ -62,7 +63,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderBlendedDirect),
                                  void (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderBlendedPoly),
-                                 void (CDemonRenderer::*)(SMRGLPrimitivePoly *)>);
+                                 void (CDemonRenderer::*)(const platform::SMRGLPrimitiveQuad &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderOverlayDirect),
                                  void (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOrigin),

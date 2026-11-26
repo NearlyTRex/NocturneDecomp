@@ -40,6 +40,9 @@ using platform::SRenderVertex;
 // A normal's length in the fixed point the lighting dots it in.
 constexpr double kUnitNormal = 65535.0;
 constexpr int kBrightest = 0xffff;
+// Without omni lights a vertex is grey, each channel 128 of 255.
+constexpr int kUnlitOmniLevel = 128;
+constexpr int kOmniLevelShift = 8;
 // The screen's positions are 16.16.
 constexpr int kScreenFractionBits = 16;
 
@@ -245,6 +248,19 @@ void CDemonSet::lightVertexColor(const CVector3i &surface_normal, SRenderVertex 
     vertex.g = common::fixedMultiply(flat_color_.g, level);
     vertex.b = common::fixedMultiply(flat_color_.b, level);
     vertex.a = 0;
+}
+
+// The original's 0 to 255 per channel, in the vertex's 8.8.
+// deferred: each omni light the camera sees adding its colour, less with its distance out to its
+//   reach and each channel up to 255, with the spatial lights
+// nocedit 0x0056e3e0
+void CDemonSet::computeVertexOmniLighting(const common::CVector3f & /*vertex_position*/,
+                                          const common::CVector3f & /*position_offset*/,
+                                          std::size_t vertex_index) const {
+    SRenderVertex &vertex = owners_.renderer.getVertexBuffer()[vertex_index];
+    vertex.r = kUnlitOmniLevel << kOmniLevelShift;
+    vertex.g = kUnlitOmniLevel << kOmniLevelShift;
+    vertex.b = kUnlitOmniLevel << kOmniLevelShift;
 }
 
 // nocedit 0x00570f10

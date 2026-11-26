@@ -1,5 +1,6 @@
 #include "engine/drender/demonrenderer.h"
 #include "platform/mrglheaderprimitive.h"
+#include "platform/mrglprimitivequad.h"
 #include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
@@ -125,6 +126,28 @@ TEST_F(CDemonRendererDepthTest, TheShadowPassDrawsOnlyTheDepthIntoTheRows) {
     EXPECT_EQ(depth(0, 0), kNearer);
     demon_renderer_.setShadowPass(0);
     EXPECT_FALSE(texture_.textures_disabled);
+}
+
+// A polygon's corners fill as the direct polygon's do, and nothing facing away.
+TEST_F(CDemonRendererDepthTest, ASolidPolygonsCornersFillInTheActiveColour) {
+    const platform::SMRGLPrimitiveQuad poly{
+        .surface_normal = {},
+        .vertices = {{.vertex_index = 1}, {.vertex_index = 2}, {.vertex_index = 3}}};
+    platform::SMRGLPrimitiveQuad away = poly;
+    away.surface_normal = {.a = 1, .d = 1};
+    demon_renderer_.renderSolidColorPoly(away);
+    EXPECT_EQ(pixel(0, 0), kBlank);
+    demon_renderer_.renderSolidColorPoly(poly);
+    EXPECT_EQ(pixel(0, 0), kColor);
+    EXPECT_EQ(depth(0, 0), kDepth);
+    EXPECT_EQ(pixel(7, 0), kBlank);
+}
+
+// With a budget, the polygon shows only once that many sampled pixels pass: the triangle's even
+// rows' even pixels number 4 + 3 + 2 + 1.
+TEST_F(CDemonRendererDepthTest, AProfiledPolygonShowsOnceItsBudgetOfPixelsPass) {
+    EXPECT_TRUE(demon_renderer_.renderDepthProfiledDirect(cornersOneToThree(), 10));
+    EXPECT_FALSE(demon_renderer_.renderDepthProfiledDirect(cornersOneToThree(), 11));
 }
 
 TEST_F(CDemonRendererDepthTest, AProfiledPolygonShowsWhereAnyPixelIsInFront) {

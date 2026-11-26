@@ -12,11 +12,13 @@
 #include "core/terrain/terrain.h"
 #include "core/water/water.h"
 #include "core/weather/weather.h"
+#include "engine/console/console.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/lightparts.h"
 #include "tests/mocks/core/mockeventconditions.h"
 #include "tests/mocks/core/mockloadingscreen.h"
 #include "tests/mocks/core/testclasses.h"
+#include "tests/mocks/platform/mockfilesystem.h"
 
 #include <gmock/gmock.h>
 
@@ -72,7 +74,8 @@ public:
                 .weather = weather,
                 .game = classes.getGame(),
                 .sky_dome = *sky_dome,
-                .events = events};
+                .events = events,
+                .console = console};
     }
 
     ::testing::NiceMock<MockLoadingScreen> loading_screen;
@@ -91,6 +94,8 @@ public:
     CTestClasses classes;
     CWeather weather{classes.get()};
     ::testing::NiceMock<MockEventConditions> events;
+    ::testing::NiceMock<platform::MockFileSystem> console_files;
+    engine::CConsole console{console_files, 80, 50, 0, 0};
 
 private:
     const engine::CDosIo &dosio_;

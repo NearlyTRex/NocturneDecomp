@@ -1,20 +1,25 @@
+#include "common/math/fixed.h"
 #include "common/render/renderstate.h"
+#include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/clipper/clipper.h"
 #include "engine/clipper/clipplane.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/drender/drender.h"
 #include "engine/polygonstate.h"
+#include "engine/scanlinespan.h"
 #include "engine/screendevice.h"
 #include "engine/softwareedge.h"
 #include "engine/special/scanlinemode.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "engine/zraster/zraster.h"
 #include "platform/clipplane.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
 
+#include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <span>
@@ -34,6 +39,55 @@ constexpr std::uint32_t kDestReadBlendFlags = common::kRenderTextured | common::
                                               common::kRenderSmooth | common::kRenderSourceAlpha |
                                               common::kRenderDepthTest | common::kRenderDepthWrite |
                                               common::kRenderVertexColor;
+// The blended polygon's are the dest-read blend's, but for writing the depth.
+constexpr std::uint32_t kBlendedFlags = kDestReadBlendFlags & ~common::kRenderDepthWrite;
+constexpr std::uint32_t kDecalFlags = common::kRenderTextured | common::kRenderDepthTest;
+
+// Whether every corner of the polygon is past one same side of the view.
+bool isPolyWhollyPastASide(std::span<const SRenderVertex> vertex_buffer,
+                           const SMRGLPrimitiveQuad &poly) {
+    std::vector<const SRenderVertex *> corners;
+    corners.reserve(poly.vertices.size());
+    for (const platform::SMRGLVertex &corner : poly.vertices) {
+        corners.push_back(&vertex_buffer[static_cast<std::size_t>(corner.vertex_index)]);
+    }
+    return isWhollyPastASide(corners);
+}
+
+// The row's pixels from the further left edge through the further right, each texel straight
+// through the 32-bit palette where the depth, compared signed, is at least the buffer's; the
+// depth is left as it was.
+// nocedit 0x0049169d
+void drawDecalRow(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge, int scanline_y,
+                  IScreenDevice &screen, std::span<const std::uint32_t> reciprocals,
+                  const SCurrentTexture &texture) {
+    const SRowSpan span = getRowSpan(left_edge, right_edge);
+    if (span.count <= 0) {
+        return;
+    }
+    const auto row = static_cast<std::size_t>(scanline_y);
+    std::uint32_t *pixels = static_cast<std::uint32_t *>(screen.getScreenRows()[row]) + span.left_x;
+    const std::uint32_t *depths = screen.getZBufferRows()[row] + span.left_x;
+    const std::span<const std::uint32_t, 256> palette = screen.getHardwarePalette32();
+    const std::uint32_t reciprocal = reciprocals[static_cast<std::size_t>(span.count) + 1];
+    const SSoftwareEdge &lo = *span.lo;
+    const SSoftwareEdge &hi = *span.hi;
+    const int u_step = getStep(lo.u_current, hi.u_current, reciprocal);
+    const int v_step = getStep(lo.v_current, hi.v_current, reciprocal);
+    const int depth_step = getStep(lo.depth_current, hi.depth_current, reciprocal);
+    int u = lo.u_current;
+    int v = lo.v_current;
+    int depth = lo.depth_current;
+    for (int x = 0; x <= span.count; ++x) {
+        if (std::bit_cast<std::int32_t>(depths[x]) <= depth) {
+            pixels[x] = palette[texture.data[getTexelIndex(
+                static_cast<std::uint32_t>(u), static_cast<std::uint32_t>(v), texture)]];
+        }
+        u = common::wrappingAdd(u, u_step);
+        v = common::wrappingAdd(v, v_step);
+        depth = common::wrappingAdd(depth, depth_step);
+    }
+}
 
 } // namespace
 
@@ -180,15 +234,7 @@ void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
 //   fog setup
 // nocedit 0x0048b970
 void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
-    if (!isFacing(poly.surface_normal)) {
-        return;
-    }
-    std::vector<const SRenderVertex *> corners;
-    corners.reserve(poly.vertices.size());
-    for (const platform::SMRGLVertex &corner : poly.vertices) {
-        corners.push_back(&vertex_buffer_[static_cast<std::size_t>(corner.vertex_index)]);
-    }
-    if (isWhollyPastASide(corners)) {
+    if (!isFacing(poly.surface_normal) || isPolyWhollyPastASide(vertex_buffer_, poly)) {
         return;
     }
     if (shadow_pass_) {
@@ -205,6 +251,49 @@ void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
     }
     const std::vector<int> vertex_indices = takeCorners(poly);
     clipAndFillPoly(vertex_indices, getPerspectiveState(kDestReadBlendFlags));
+}
+
+// In the shadow pass only the depth is drawn, into the light's map, and the corners keep their
+// texture coordinates.
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// nocedit 0x0048b420
+void CDemonRenderer::renderDecalPoly(const SMRGLPrimitiveQuad &poly) {
+    if (!isFacing(poly.surface_normal)) {
+        return;
+    }
+    if (shadow_pass_) {
+        clipAndFillPoly(takeIndices(poly), getShadowState());
+        return;
+    }
+    SPolygonState state;
+    state.mode.render_flags = kDecalFlags;
+    state.mode.vertex_preprocess_mode = SScanlineMode::kReplaceWithDepth;
+    state.vertex_processing = face_capture_enabled_;
+    state.draw_scanline = [this, reciprocals = two_d_.getReciprocalLookupTable()](
+                              const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
+        drawDecalRow(left, right, y, screen_, reciprocals, texture_);
+        return false;
+    };
+    clipAndFillPoly(takeCorners(poly), std::move(state));
+}
+
+// In the shadow pass only the depth is drawn, into the light's map, and the corners keep their
+// texture coordinates.
+// deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
+//   CCharacter::renderEthereal
+// deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
+//   fog setup
+// nocedit 0x0048bdc0
+void CDemonRenderer::renderBlendedPoly(const SMRGLPrimitiveQuad &poly) {
+    if (!isFacing(poly.surface_normal) || isPolyWhollyPastASide(vertex_buffer_, poly)) {
+        return;
+    }
+    if (shadow_pass_) {
+        clipAndFillPoly(takeIndices(poly), getShadowState());
+        return;
+    }
+    clipAndFillPoly(takeCorners(poly), getPerspectiveState(kBlendedFlags));
 }
 
 } // namespace nocturne::engine

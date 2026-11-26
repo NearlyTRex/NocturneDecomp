@@ -57,7 +57,8 @@ TEST(CDemonSet, PublicInterface) {
                        void (CDemonSet::*)(common::CVector3i *, common::CVector3i *, int, int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::computeVertexOmniLighting),
-                       void (CDemonSet::*)(common::CVector3f *, common::CVector3f *, int)>);
+                       void (CDemonSet::*)(const common::CVector3f &, const common::CVector3f &,
+                                           std::size_t) const>);
     static_assert(std::is_same_v<decltype(&CDemonSet::pushScreenBoundsToCamera),
                                  void (CDemonSet::*)(int) const>);
     static_assert(std::is_same_v<decltype(&CDemonSet::rotateVerticies),

@@ -66,17 +66,18 @@ inline void writeGeoCube(common::CBinaryWriter &writer, const SGeoCube &cube) {
     }
 }
 
-// A .GEO file of the version and grid, its box from (0, 0, 0) to (16, 8, 24) in cubes of
-// (8, 16, 24), so voxels of (1, 2, 3), and the cubes.
-inline std::string geoFile(std::int32_t version, const common::CVector3i &grid,
-                           const std::vector<SGeoCube> &cubes) {
+// A .GEO file of the version and grid, its box from (0, 0, 0) to (16, 8, 24) unless given in
+// cubes of (8, 16, 24), so voxels of (1, 2, 3), and the cubes.
+inline std::string
+geoFile(std::int32_t version, const common::CVector3i &grid, const std::vector<SGeoCube> &cubes,
+        const common::CVector3f &bbox_max = {.x = 16.0F, .y = 8.0F, .z = 24.0F}) {
     common::CBinaryWriter writer;
     writer.write(version);
     writer.write(grid.x);
     writer.write(grid.y);
     writer.write(grid.z);
     writeGeoVector(writer, {.x = 0.0F, .y = 0.0F, .z = 0.0F});
-    writeGeoVector(writer, {.x = 16.0F, .y = 8.0F, .z = 24.0F});
+    writeGeoVector(writer, bbox_max);
     writeGeoVector(writer, {.x = 8.0F, .y = 16.0F, .z = 24.0F});
     for (const SGeoCube &cube : cubes) {
         writeGeoCube(writer, cube);

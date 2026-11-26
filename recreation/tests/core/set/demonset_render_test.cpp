@@ -12,6 +12,10 @@
 #include "core/location.h"
 #include "core/rect.h"
 #include "core/set/demonset.h"
+#include "core/water/water.h"
+#include "engine/console/console.h"
+#include "engine/drender/demonrenderer.h"
+#include "engine/special/special.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
@@ -26,6 +30,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <cstdint>
 #include <format>
@@ -434,6 +439,89 @@ TEST_F(CDemonSetFrameTest, TheDepthsUnderWhatWasMarkedComeBackFirst) {
     set_parts_.camera->pushRect({.x_min = 0, .x_max = 0, .y_min = 0, .y_max = 0});
     set_.renderScene();
     EXPECT_EQ(depth_row_[0], kept);
+}
+
+// The set with water two units up in tiles of 32, and a frame time that rolls its waves on: how
+// often it was drawn shows in its waves' phase.
+class CDemonSetWaterTest : public CDemonSetBackgroundTest {
+protected:
+    CDemonSetWaterTest() {
+        for (std::size_t frame = 0; frame < CWater::kTextureCount; ++frame) {
+            givenFile(std::format("art\\WATER{}.RAW", frame),
+                      std::string(std::size_t{32} * 32, '\x01'));
+        }
+        set_parts_.water.setLevel(2.0F, 32.0F);
+        set_parts_.water.setWaveAnimationEnabled(false);
+        set_parts_.classes.getGame().slamDT(kFrameTime);
+    }
+
+    [[nodiscard]] long draws() const {
+        return std::lround(static_cast<double>(set_parts_.water.getWavePhase()) /
+                           (kFrameTime * 3.1415926535));
+    }
+
+    [[nodiscard]] bool tilesReported() const {
+        for (int row = 0; row < set_parts_.console.getConsoleHeight(); ++row) {
+            if (set_parts_.console.getRow(row).starts_with("Vis water tiles")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static constexpr float kFrameTime = 0.125F;
+};
+
+// The software geometry finds the water's tiles, and blends still water in; waving water waits
+// for the frame.
+TEST_F(CDemonSetWaterTest, TheGeometryFindsTheTilesAndBlendsStillWaterIn) {
+    set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
+    EXPECT_TRUE(tilesReported());
+    EXPECT_EQ(draws(), 1);
+    set_parts_.water.setWaveAnimationEnabled(true);
+    set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
+    EXPECT_EQ(draws(), 1);
+}
+
+TEST_F(CDemonSetWaterTest, TheShadowPassAndTheHardwareLeaveTheWaterOut) {
+    demon_renderer_.setShadowPass(1);
+    set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
+    demon_renderer_.setShadowPass(0);
+    special_.setUseExternalRenderer(true);
+    set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
+    EXPECT_FALSE(tilesReported());
+    EXPECT_EQ(draws(), 0);
+}
+
+// Showing a camera blends still water into its backdrop with the geometry and draws it into the
+// lit frame; in hardware it is drawn after the geometry too.
+TEST_F(CDemonSetWaterTest, ShowingACameraDrawsStillWaterIntoEachFrame) {
+    showTheCamera();
+    EXPECT_EQ(draws(), 2);
+    startRenderer();
+    special_.setUseExternalRenderer(true);
+    showTheCamera();
+    EXPECT_EQ(draws(), 5);
+}
+
+// In the frame, waving water is drawn between the opaque and the tinted actors, and still water
+// into the backdrop after them.
+TEST_F(CDemonSetWaterTest, TheFrameDrawsWavingWaterOverItAndStillWaterIntoTheBackdrop) {
+    showTheCamera();
+    near_.setTransparent(true);
+    long before_tinted = 0;
+    near_.onRenderTransparent([this, &before_tinted] {
+        before_tinted = draws();
+        return 1;
+    });
+    const long shown = draws();
+    set_.renderScene();
+    EXPECT_EQ(before_tinted, shown);
+    EXPECT_EQ(draws(), shown + 1);
+    set_parts_.water.setWaveAnimationEnabled(true);
+    set_.renderScene();
+    EXPECT_EQ(before_tinted, shown + 2);
+    EXPECT_EQ(draws(), shown + 2);
 }
 
 TEST_F(CDemonSetSceneGeometryTest, TheSceneIsLitFromAboveAndInFront) {

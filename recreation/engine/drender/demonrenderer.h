@@ -40,12 +40,14 @@ public:
     // depth already there, writing their depth; nothing for a polygon facing away while plane
     // culling is on.
     void renderSolidColorDepthDirect(const platform::SMRGLHeaderPrimitive &prim);
-    void renderSolidColorPoly(SMRGLPrimitivePoly *poly);
+    // The same for a polygon's corners.
+    void renderSolidColorPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderZPrepassPoly(SMRGLPrimitivePoly *poly);
-    // Whether any of the polygon would show in front of the depth already there, testing every
-    // other pixel of every other row and writing nothing; false for a polygon facing away while
-    // plane culling is on.
-    [[nodiscard]] bool renderDepthProfiledDirect(const platform::SMRGLHeaderPrimitive &prim);
+    // Whether at least the budget's pixels of the polygon would show in front of the depth already
+    // there, testing every other pixel of every other row and writing nothing; false for a
+    // polygon facing away while plane culling is on.
+    [[nodiscard]] bool renderDepthProfiledDirect(const platform::SMRGLHeaderPrimitive &prim,
+                                                 int pixel_budget = 1);
     // Skips a polygon facing away while plane culling is on, and draws the buffer's corners
     // through the perspective scanline; -1 takes kDefaultTexturedFlags.
     void renderTexturedDirect(const platform::SMRGLHeaderPrimitive &prim, int render_flags);
@@ -53,14 +55,18 @@ public:
     // polygon's texture coordinates before drawing it through the perspective scanline.
     void renderTexturedPoly(const platform::SMRGLPrimitiveQuad &poly, int render_flags);
     void renderAlphaBlendedPoly(const platform::SMRGLPrimitiveQuad &poly);
-    void renderDecalPoly(SMRGLPrimitivePoly *poly);
+    // Like those, but each texel straight through the 32-bit palette where the polygon is no
+    // further than the depth already there, through the further right edge, writing no depth.
+    void renderDecalPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderSolidTexturedPoly(SMRGLPrimitivePoly *poly);
     // Blends against the screen, and skips a polygon wholly past a side of the view.
     void renderDestReadBlendPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderVertexAlphaDirect(platform::SMRGLHeaderPrimitive *prim);
     void renderVertexAlphaPoly(SMRGLPrimitivePoly *poly);
     void renderBlendedDirect(platform::SMRGLHeaderPrimitive *prim);
-    void renderBlendedPoly(SMRGLPrimitivePoly *poly);
+    // Blends against the screen by the render alpha, lit by its corners' colours, testing the
+    // depth but not writing it; skips a polygon wholly past a side of the view.
+    void renderBlendedPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderOverlayDirect(platform::SMRGLHeaderPrimitive *prim);
     void setCameraOrigin(common::CVector3i *origin);
     void setCameraOriginFromScaledPoint(const common::CVector3f &point);
@@ -158,6 +164,8 @@ private:
     // The shadow pass's draw: untextured, the corners' depths as they are, and only the depth
     // drawn, into the light's map.
     [[nodiscard]] SPolygonState getShadowState() const;
+    // The active render colour where nearer, writing the depth; the shadow pass's draw in it.
+    [[nodiscard]] SPolygonState getSolidColorState() const;
     // The polygon drawn with the state, its depths pushed back by the rasteriser's bias.
     void clipAndFillPoly(std::span<const int> vertex_indices, SPolygonState state);
     void renderFacetList(std::span<const platform::SMRGLPrimitiveQuad> primitives,

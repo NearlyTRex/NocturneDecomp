@@ -113,6 +113,18 @@ TEST_F(CDemonRendererShadowTest, AnAlphaBlendedPolygonDrawsOnlyItsDepthAndLeaves
     expectTheCornersKeptTheirCoordinates();
 }
 
+TEST_F(CDemonRendererShadowTest, EveryOtherPolygonDrawsOnlyItsDepthAndLeavesTheCorners) {
+    demon_renderer_.renderBlendedPoly(over({1, 2, 3}));
+    expectTheTriangleDrawn();
+    map_.fill(kFar);
+    demon_renderer_.renderDecalPoly(over({1, 2, 3}));
+    expectTheTriangleDrawn();
+    map_.fill(kFar);
+    demon_renderer_.renderSolidColorPoly(over({1, 2, 3}));
+    expectTheTriangleDrawn();
+    expectTheCornersKeptTheirCoordinates();
+}
+
 // A see-through polygon draws its depth only through the texture's solid texels, at the
 // coordinates the corners already had.
 class CDemonRendererCutoutTest : public CDemonRendererShadowTest {
@@ -178,6 +190,16 @@ TEST_F(CDemonRendererShadowTest, AProfiledPolygonIsShownWhereItIsNearerThanTheMa
     map_.fill(0);
     EXPECT_FALSE(demon_renderer_.renderDepthProfiledDirect(prim));
     EXPECT_EQ(mapAt(0, 0), 0);
+}
+
+// With a budget, that many sampled pixels must be nearer than the map.
+TEST_F(CDemonRendererShadowTest, AProfiledPolygonOnTheMapShowsOnceItsBudgetPasses) {
+    map_.fill(0);
+    map_.at(0) = kFar;
+    map_.at(2) = kFar;
+    const SMRGLHeaderPrimitive prim{.surface_normal = {}, .vertex_indices = {1, 2, 3}};
+    EXPECT_TRUE(demon_renderer_.renderDepthProfiledDirect(prim, 2));
+    EXPECT_FALSE(demon_renderer_.renderDepthProfiledDirect(prim, 3));
 }
 
 // Only the even rows' even pixels are tested.

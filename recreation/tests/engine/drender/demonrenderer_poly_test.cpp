@@ -28,6 +28,8 @@ using ::testing::ReturnRef;
 
 constexpr std::uint32_t kAlphaBlendedFlags = CDemonRenderer::kDefaultTexturedFlags;
 constexpr std::uint32_t kDestReadBlendFlags = 0x2e7;
+constexpr std::uint32_t kBlendedFlags = 0x267;
+constexpr std::uint32_t kDecalFlags = 0x41;
 constexpr std::uint32_t kUntouched = 0x11223344;
 
 SRenderVertex at(int x, int y) {
@@ -92,9 +94,26 @@ TEST_F(CDemonRendererPolyTest, EachEntryPointDrawsWithItsOwnFlags) {
     demon_renderer_.renderTexturedPoly(getPoly(), common::kRenderTextured);
     demon_renderer_.renderAlphaBlendedPoly(getPoly());
     demon_renderer_.renderDestReadBlendPoly(getPoly());
-    EXPECT_EQ(hardware_flags_,
-              (std::vector<int>{CDemonRenderer::kDefaultTexturedFlags, common::kRenderTextured,
-                                kAlphaBlendedFlags, kDestReadBlendFlags}));
+    demon_renderer_.renderBlendedPoly(getPoly());
+    demon_renderer_.renderDecalPoly(getPoly());
+    EXPECT_EQ(hardware_flags_, (std::vector<int>{CDemonRenderer::kDefaultTexturedFlags,
+                                                 common::kRenderTextured, kAlphaBlendedFlags,
+                                                 kDestReadBlendFlags, kBlendedFlags, kDecalFlags}));
+}
+
+// Blending against the screen, a polygon wholly past a side draws nothing, nor one facing away.
+TEST_F(CDemonRendererPolyTest, ABlendedPolygonPastASideOrFacingAwayIsSkipped) {
+    startRenderer();
+    for (std::size_t corner = 1; corner <= 3; ++corner) {
+        vertex_buffer_[corner].projected_vertex.screen_x = platform::SProjectedVertex::kClipLeft;
+    }
+    demon_renderer_.renderBlendedPoly(getPoly());
+    vertex_buffer_[1] = at(0, 0);
+    SMRGLPrimitiveQuad away = getPoly();
+    away.surface_normal = {.a = 1, .d = 1};
+    demon_renderer_.renderBlendedPoly(away);
+    demon_renderer_.renderDecalPoly(away);
+    EXPECT_TRUE(hardware_flags_.empty());
 }
 
 // The buffer's corners keep the texture coordinates they hold.
@@ -246,6 +265,34 @@ TEST_F(CDemonRendererScanlineTest, ASixteenBitScreenTakesTheSixteenBitScanline) 
     drawAt(16);
     EXPECT_NE(screen_row_[0], kUntouched);
     EXPECT_EQ(screen_row_[4], kUntouched);
+}
+
+// A decal's texels go straight through the 32-bit palette, through the further right edge,
+// wherever the buffer's depth, compared signed, is no nearer; the depth is left as it was. The
+// triangle's right edge stands at x = 4 on every row, and its rows share one screen row.
+TEST_F(CDemonRendererScanlineTest, ADecalDrawsThroughThePaletteWhereTheDepthAllows) {
+    vertex_buffer_[2] = at(4, 0);
+    vertex_buffer_[3] = at(4, 4);
+    palette_[0] = 0x00abcdef;
+    depth_row_[1] = 0x7fffffff;
+    depth_row_[2] = 0x80000000U;
+    demon_renderer_.renderDecalPoly(getPoly());
+    EXPECT_EQ(screen_row_[0], 0x00abcdefU);
+    EXPECT_EQ(screen_row_[1], kUntouched);
+    EXPECT_EQ(screen_row_[2], 0x00abcdefU);
+    EXPECT_EQ(screen_row_[4], 0x00abcdefU);
+    EXPECT_EQ(screen_row_[5], kUntouched);
+    EXPECT_EQ(depth_row_[0], 0U);
+}
+
+// A row with no pixels draws nothing.
+TEST_F(CDemonRendererScanlineTest, ADecalsEmptyRowDrawsNothing) {
+    palette_[0] = 0x00abcdef;
+    vertex_buffer_[1] = at(2, 0);
+    vertex_buffer_[2] = at(2, 0);
+    vertex_buffer_[3] = at(2, 4);
+    demon_renderer_.renderDecalPoly(getPoly());
+    EXPECT_EQ(screen_row_[2], kUntouched);
 }
 
 } // namespace

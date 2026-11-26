@@ -11,6 +11,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/mrglheaderprimitive.h"
+#include "platform/mrglprimitivequad.h"
 
 #include <cstddef>
 #include <cstdint>
@@ -32,14 +33,21 @@ std::uint16_t *getShadowRow(IScreenDevice &screen, int scanline_y, int left_x) {
            left_x;
 }
 
+// What a profiled row counts: the pixels found so far, and how many stop the polygon. The original
+// kept both, and the stop, in globals.
+struct SPixelBudget {
+    int counted = 0;
+    int budget = 1;
+};
+
 // Every other pixel of every other row, from the further left edge up to the further right,
-// until one's depth, shifted down by 8, is nearer than the light's map, which stops the polygon.
-// A depth below zero compares as unsigned, so it is never nearer. The original counted them
-// against a budget, one pixel but for the water's, kept with the stop in globals.
+// each whose depth, shifted down by 8, is nearer than the light's map counted until the budget
+// is spent, which stops the polygon. A depth below zero compares as unsigned, so it is never
+// nearer.
 // nocedit 0x00490cb5
 bool testShadowDepthRow(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
                         int scanline_y, IScreenDevice &screen,
-                        std::span<const std::uint32_t> reciprocals) {
+                        std::span<const std::uint32_t> reciprocals, SPixelBudget &pixels) {
     if ((scanline_y & 1) != 0) {
         return false;
     }
@@ -52,7 +60,8 @@ bool testShadowDepthRow(const SSoftwareEdge &left_edge, const SSoftwareEdge &rig
     const std::uint16_t *row = getShadowRow(screen, scanline_y, span.left_x);
     int depth = span.lo->depth_current;
     for (int x = 0; x < span.count; x += 2) {
-        if ((static_cast<std::uint32_t>(depth) >> 8U) < row[x]) {
+        if ((static_cast<std::uint32_t>(depth) >> 8U) < row[x] &&
+            ++pixels.counted >= pixels.budget) {
             return true;
         }
         depth = common::wrappingAdd(depth, step * 2);
@@ -66,12 +75,12 @@ bool isInFront(int depth, std::uint32_t buffered) {
            static_cast<std::int32_t>(buffered);
 }
 
-// Every other pixel of every other row, from the further left edge up to the further right,
-// until one is in front of the buffer, which stops the polygon. The original counted them
-// against a budget, one pixel but for the water's, kept with the stop in globals.
+// Every other pixel of every other row, from the further left edge up to the further right, each
+// in front of the buffer counted until the budget is spent, which stops the polygon.
 // nocedit 0x00490c37
 bool testDepthRow(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge, int scanline_y,
-                  IScreenDevice &screen, std::span<const std::uint32_t> reciprocals) {
+                  IScreenDevice &screen, std::span<const std::uint32_t> reciprocals,
+                  SPixelBudget &pixels) {
     if ((scanline_y & 1) != 0) {
         return false;
     }
@@ -84,7 +93,7 @@ bool testDepthRow(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edg
     const std::uint32_t *row = getDepthRow(screen, scanline_y, span.left_x);
     int depth = span.lo->depth_current;
     for (int x = 0; x < span.count; x += 2) {
-        if (isInFront(depth, row[x])) {
+        if (isInFront(depth, row[x]) && ++pixels.counted >= pixels.budget) {
             return true;
         }
         depth = common::wrappingAdd(depth, step * 2);
@@ -202,9 +211,21 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
     if (!isFacing(prim.surface_normal)) {
         return;
     }
-    if (shadow_pass_) {
-        clipAndFillPoly(prim.vertex_indices, getShadowState());
+    clipAndFillPoly(prim.vertex_indices, getSolidColorState());
+}
+
+// In the shadow pass only the depth is drawn, untested, into the light's map.
+// nocedit 0x0048a8a0
+void CDemonRenderer::renderSolidColorPoly(const platform::SMRGLPrimitiveQuad &poly) {
+    if (!isFacing(poly.surface_normal)) {
         return;
+    }
+    clipAndFillPoly(takeIndices(poly), getSolidColorState());
+}
+
+SPolygonState CDemonRenderer::getSolidColorState() const {
+    if (shadow_pass_) {
+        return getShadowState();
     }
     SPolygonState state = getDepthState();
     state.vertex_processing = face_capture_enabled_;
@@ -214,7 +235,7 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
         drawSolidColorRow(left, right, y, screen_, reciprocals, color);
         return false;
     };
-    clipAndFillPoly(prim.vertex_indices, std::move(state));
+    return state;
 }
 
 // The textures go off with it: nothing in the shadow pass is textured.
@@ -241,29 +262,27 @@ int CDemonRenderer::getRasterizerDepthBias() const {
 // A visibility test, not a draw: the rendered-triangle count is left as it was. In the shadow
 // pass it tests the light's map, untextured and with the corners' depths as they are. While the
 // hardware renderer is on, the test runs in the shadow pass, so in software.
-// deferred: a budget other than one pixel, with CWater::calculateVisibleTiles
 // nocedit 0x0048ab50
-bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimitive &prim) {
+bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimitive &prim,
+                                               int pixel_budget) {
     if (!isFacing(prim.surface_normal)) {
         return false;
     }
-    bool visible = false;
+    SPixelBudget pixels{.budget = pixel_budget};
     SPolygonState state = getDepthState();
     state.vertex_processing = face_capture_enabled_;
     const std::span<const std::uint32_t> reciprocals = two_d_.getReciprocalLookupTable();
     if (shadow_pass_) {
         state.mode.render_flags = 0;
         state.mode.vertex_preprocess_mode = SScanlineMode::kNoPreprocess;
-        state.draw_scanline = [this, &visible, reciprocals](const SSoftwareEdge &left,
-                                                            const SSoftwareEdge &right, int y) {
-            visible = testShadowDepthRow(left, right, y, screen_, reciprocals);
-            return visible;
+        state.draw_scanline = [this, &pixels, reciprocals](const SSoftwareEdge &left,
+                                                           const SSoftwareEdge &right, int y) {
+            return testShadowDepthRow(left, right, y, screen_, reciprocals, pixels);
         };
     } else {
-        state.draw_scanline = [this, &visible, reciprocals](const SSoftwareEdge &left,
-                                                            const SSoftwareEdge &right, int y) {
-            visible = testDepthRow(left, right, y, screen_, reciprocals);
-            return visible;
+        state.draw_scanline = [this, &pixels, reciprocals](const SSoftwareEdge &left,
+                                                           const SSoftwareEdge &right, int y) {
+            return testDepthRow(left, right, y, screen_, reciprocals, pixels);
         };
     }
     const int rendered_triangles = special_.getRenderedTriangleCount();
@@ -277,7 +296,7 @@ bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimit
         setShadowPass(shadow_pass);
     }
     special_.setRenderedTriangleCount(rendered_triangles);
-    return visible;
+    return pixels.counted >= pixels.budget;
 }
 
 } // namespace nocturne::engine

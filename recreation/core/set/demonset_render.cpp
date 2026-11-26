@@ -11,7 +11,9 @@
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "core/water/water.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/special/special.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 
@@ -119,13 +121,15 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
 //   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
 //   crop's focus tracking
-// deferred: the gore's particles and the fire's effects, in each mirror too, the animated water,
-//   on the train the terrain, and the weather's particles, with CGore::renderParticles,
-//   CFireEffect::render, CWater::render, CTerrain::render and CWeather::renderParticles
+// Waving water is drawn over the frame between the opaque and the tinted actors, and still water
+// into the backdrop after them.
+// deferred: the gore's particles and the fire's effects, in each mirror too, on the train the
+//   terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render,
+//   CTerrain::render and CWeather::renderParticles
 // deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the
 //   light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
-// deferred: the gore's and the fire's decals, the still water and each glass's backdrop drawn
-//   into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals, CWater::render
+// deferred: the gore's and the fire's decals before the still water, and each glass's backdrop
+//   after it, drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals
 //   and CGlass
 // deferred: the local hero's weapon and item drawn in their panels, with
 //   CInventory::renderSelectedItems
@@ -155,7 +159,16 @@ void CDemonSet::renderScene() {
     buildDisplayList(kScenePasses);
     renderOpaqueActors();
     camera.setupPerspectiveAndFog(nullptr, nullptr);
+    CWater &water = owners_.water;
+    if (water.getWaveAnimationEnabled()) {
+        water.render(0, getWaterOwners());
+    }
     renderTransparentActors();
+    camera.beginBackgroundScene();
+    if (!water.getWaveAnimationEnabled()) {
+        water.render(0, getWaterOwners());
+    }
+    camera.endBackgroundScene(0);
     camera.endScene(0);
     for (const SShownSpotlight &shown : spotlights_) {
         shown.light->restoreDirtyRegions();
@@ -229,10 +242,11 @@ bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim
 // A camera that has no PVS saves the one the walk draws. A selected camera may be none, which
 // draws a PVS already set, whichever camera set it.
 // deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
-// deferred: drawing in software the mirror list, the environment model, the sky dome, the
-//   water and, on the train, the terrain, with buildMirrorList, the enviro model's
-//   prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and
-//   CTerrain::render
+// Outside the shadow pass the software renderer finds the water's visible tiles, and draws still
+// water blended in. The original's switch to leave the water out is the editors' alone.
+// deferred: drawing in software the mirror list, the environment model and the sky dome before
+//   the water and, on the train, the terrain after it, with buildMirrorList, the enviro model's
+//   prepareForRender, renderSkyDome and CTerrain::render
 // deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with
 //   setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and
 //   CGlass::renderBrokenGlass
@@ -261,6 +275,23 @@ void CDemonSet::renderSceneGeometry(float frustum_param, int render_mode) {
         cameras_.at(static_cast<std::size_t>(selected_camera_index_))
             .setPVSList(owners_.raytrace.savePVS());
     }
+    if (owners_.renderer.isShadowPass() == 0 && !owners_.special.getUseExternalRenderer()) {
+        CWater &water = owners_.water;
+        water.calculateVisibleTiles(getWaterOwners());
+        if (!water.getWaveAnimationEnabled()) {
+            water.render(1, getWaterOwners());
+        }
+    }
+}
+
+SWaterOwners CDemonSet::getWaterOwners() const {
+    return {.renderer = owners_.renderer,
+            .special = owners_.special,
+            .raytrace = owners_.raytrace,
+            .set = *this,
+            .camera_tables = owners_.light_owners.camera.tables,
+            .game = owners_.game,
+            .console = owners_.console};
 }
 
 // deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and

@@ -13,6 +13,7 @@
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "core/water/water.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/matrix/matrix.h"
 #include "engine/special/special.h"
@@ -333,8 +334,7 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the actors' backgrounds lit without the quality modes while the depths are taken
 //   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
-// deferred: the still water, in hardware after the geometry and in the lit frame, with
-//   CWater::render
+// Still water is drawn after the geometry in hardware, and into the lit frame after the actors.
 // deferred: the omni lights the camera sees, with the spatial lights
 // Each shown spotlight keeps its map as master depths, which the actors' backgrounds are drawn
 // into and its map takes back, before its light is precomputed; once the lit frame is drawn,
@@ -386,8 +386,12 @@ void CDemonSet::setCameraView(int index) {
     owners_.camera.loadImage(camera.getName() + ".raw");
     renderBackgroundActors(1);
     owners_.camera.endBackgroundScene(0);
+    CWater &water = owners_.water;
     if (owners_.special.getUseExternalRenderer()) {
         renderSceneGeometry(kBackgroundReach, kDrawReachedGeometry);
+        if (!water.getWaveAnimationEnabled()) {
+            water.render(0, getWaterOwners());
+        }
         renderBackgroundActors(1);
     }
     owners_.camera.endScene(0);
@@ -410,6 +414,9 @@ void CDemonSet::setCameraView(int index) {
         owners_.sky_dome.renderSkyDome(sky_texture_name_, sky_brightness_);
     }
     renderBackgroundActors(1);
+    if (!water.getWaveAnimationEnabled()) {
+        water.render(0, getWaterOwners());
+    }
     owners_.camera.endBackgroundScene(0);
     owners_.camera.endScene(0);
     renderStaticLights();

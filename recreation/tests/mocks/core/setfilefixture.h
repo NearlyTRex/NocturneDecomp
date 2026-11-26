@@ -28,6 +28,8 @@ struct SSetFile {
     std::string old_directors = "1\n\"director\", 2\nline\nline\n";
     // Versions 6 on: whether the set has a sky, which from 12 on is stars.raw at 200.
     std::string sky = "0";
+    // The water's height and tile size: none at height 0.
+    std::string water = "0,16";
 
     [[nodiscard]] std::string text() const {
         const std::string label = version >= 11 ? "label\n" : "";
@@ -38,7 +40,7 @@ struct SSetFile {
         file += version < 17
                     ? "fog\n9,1,2,3\nfog\n4,5,6\n7,8,0,0\n"
                     : std::string("fog\n1,2,3\nfog\n4,5,6\n7,8\n") + (version >= 26 ? "9\n" : "");
-        file += "water\n10.5,16\nenviro\n" + enviro + "\n";
+        file += "water\n" + water + "\nenviro\n" + enviro + "\n";
         file += version >= 5 ? "wave\n1\n" : "";
         file += version >= 6 ? "sky\n" + sky + "\n" : "";
         file += version >= 12 ? "200,stars.raw\n" : "";

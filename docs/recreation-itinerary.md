@@ -29,7 +29,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 170 | 64 | 29.3% | 268 | 49 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 174 | 67 | 30.0% | 268 | 49 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 20 | 6 | 76.9% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1305** | **236** | **29.0%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1309** | **239** | **29.1%** | **2032** | **382** |
 
 ## Step 0: Math value types
 
@@ -2174,7 +2174,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `render` 0x005e1f50 (86)
     - BW: [ ] bw1 0x0059f3e0 = bw2 0x0057b860 = bw3 0x005723d0 (logic-change)
 
-### `core/dstrendr.cpp` (7 functions, 558 instructions, 3 done, 0 partial)
+### `core/dstrendr.cpp` (7 functions, 558 instructions, 4 done, 0 partial)
 - free functions
   - [ ] `memcpyMMX` 0x00492001 (32)
   - [x] `renderSolidColorDepth16xUnrolled` 0x00490a58 (186)
@@ -2182,13 +2182,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `renderScreenDepthTestInterlacedProfiled` 0x00490cb5 (51)
   - [ ] `renderDepth16BitConditional` 0x0049077d (35)
   - [ ] `renderZBufferFill16xUnrolled` 0x00490902 (131)
-  - [ ] `renderTexturedDecalMMXScanline` 0x0049169d (73)
+  - [x] `renderTexturedDecalMMXScanline` 0x0049169d (73)
 
-### `core/water.cpp` (2 functions, 654 instructions, 0 done, 0 partial)
+### `core/water.cpp` (2 functions, 654 instructions, 1 done, 1 partial)
 - class `CWater`
-  - [ ] `calculateVisibleTiles` 0x005e9e70 (308)
+  - [x] `calculateVisibleTiles` 0x005e9e70 (308)
     - BW: [ ] bw1 0x005a9a40 = bw2 0x00585e10 = bw3 0x00577290 (logic-change)
-  - [ ] `render` 0x005ea320 (346)
+  - [~] `render` 0x005ea320 (346)
+    - deferred: the polygon colour set to 1 for the hardware's still water, with setCurrentPolygonColor's reader clipAndDrawLine3D
+    - unverified: the waves' last bit, which the original took from the x87's FSIN of the extended sum where this takes double's sine of it, by running render in the machine-code oracle
     - BW: [ ] bw1 0x005a9f10 = bw2 0x005862e0 (logic-change); [ ] bw3 0x00577760 (logic-change)
 
 ### `core/dlight.cpp` (15 functions, 1123 instructions, 15 done, 0 partial)
@@ -2210,7 +2212,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [x] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 5 done, 2 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 7 done, 3 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -2230,8 +2232,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the mirror pass's alpha mask in the colour's top byte while drawing in software, with setupMirrorRendering
   - [x] `renderSolidColorDepthDirect` 0x0048a820 (41)
   - [ ] `setCurrentPolygonColor` 0x0048c960 (3)
-  - [~] `renderDepthProfiledDirect` 0x0048ab50 (70)
-    - deferred: a budget other than one pixel, with CWater::calculateVisibleTiles
+  - [x] `renderDepthProfiledDirect` 0x0048ab50 (70)
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
   - [x] `getCameraOriginWorld` 0x0048c780 (31)
@@ -2240,9 +2241,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setAlphaMask` 0x0048cdf0 (5)
   - [ ] `enableAdvancedCulling` 0x0048ce10 (4)
   - [ ] `setCameraOrigin` 0x0048c130 (12)
-  - [ ] `renderSolidColorPoly` 0x0048a8a0 (56)
-  - [ ] `renderDecalPoly` 0x0048b420 (93)
-  - [ ] `renderBlendedPoly` 0x0048bdc0 (101)
+  - [x] `renderSolidColorPoly` 0x0048a8a0 (56)
+  - [~] `renderDecalPoly` 0x0048b420 (93)
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+  - [~] `renderBlendedPoly` 0x0048bdc0 (101)
+    - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
+    - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [ ] `renderVertexAlphaPoly` 0x0048bba0 (101)
   - [ ] `setRenderAlphaNormalized` 0x0048ca70 (11)
 
@@ -2452,7 +2456,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
     - BW: [ ] bw3 0x0057d1a0 (logic-change)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 8 done, 6 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 8 done, 7 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
     - BW: [ ] bw1 0x00554440 = bw3 0x00539dd0 (logic-change); [ ] bw2 0x00533190 (logic-change)
@@ -2474,11 +2478,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `restoreCameraAfterMirror` 0x00570af0 (34)
   - [ ] `buildMirrorList` 0x00570b70 (66)
     - BW: [ ] bw1 0x00555610 = bw2 0x00534360 = bw3 0x0053afa0 (logic-change)
-  - [ ] `computeVertexOmniLighting` 0x0056e3e0 (137)
+  - [~] `computeVertexOmniLighting` 0x0056e3e0 (137)
+    - deferred: each omni light the camera sees adding its colour, less with its distance out to its reach and each channel up to 255, with the spatial lights
     - BW: [ ] bw1 0x00552d40 = bw2 0x00531a90 = bw3 0x005386d0 (logic-change)
   - [~] `renderSceneGeometry` 0x0056a190 (204)
     - deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
-    - deferred: drawing in software the mirror list, the environment model, the sky dome, the water and, on the train, the terrain, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and CTerrain::render
+    - deferred: drawing in software the mirror list, the environment model and the sky dome before the water and, on the train, the terrain after it, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome and CTerrain::render
     - deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and CGlass::renderBrokenGlass
     - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setupMirrorRendering and CMirror::renderMirrorQuadDepth
     - BW: [x] bw2 0x0052d0e0 (operand-change); [x] bw3 0x00533b80 (operand-change)
@@ -2502,7 +2507,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: restoring the dynamic lights' dirty regions, with addDynamicLight
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with lightVerticies' quality modes, the spatial lights and addCoronaGlobe
     - deferred: the actors' backgrounds lit without the quality modes while the depths are taken (g_InMirrorRenderPass), with lightVerticies' quality modes
-    - deferred: the still water, in hardware after the geometry and in the lit frame, with CWater::render
     - deferred: the omni lights the camera sees, with the spatial lights
     - deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio off for the lit frame, with lightVerticies' quality modes
     - deferred: the gore and fire decals in the lit frame, with CGore::renderDecals, CFireEffect::renderDecals and their decal pools' writers
@@ -3351,9 +3355,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the shown camera's view set up again once a mirror has marked it, with markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
     - deferred: the dynamic lights', the globes' and the queued globes' coronas drawn, in each mirror too, with renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
     - deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the crop's focus tracking
-    - deferred: the gore's particles and the fire's effects, in each mirror too, the animated water, on the train the terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render, CWater::render, CTerrain::render and CWeather::renderParticles
+    - deferred: the gore's particles and the fire's effects, in each mirror too, on the train the terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render, CTerrain::render and CWeather::renderParticles
     - deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
-    - deferred: the gore's and the fire's decals, the still water and each glass's backdrop drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals, CWater::render and CGlass
+    - deferred: the gore's and the fire's decals before the still water, and each glass's backdrop after it, drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals and CGlass
     - deferred: the local hero's weapon and item drawn in their panels, with CInventory::renderSelectedItems
     - deferred: the time the scene's parts took, printed while profiling, with processHotkeys' profile mode
     - deferred: the virtual directors drawn while debugging, with renderVirtualDirectors

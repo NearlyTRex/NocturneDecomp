@@ -43,7 +43,7 @@ constexpr std::string_view kMoonModel = "/\n5\n;\n4,1,1,1,1\n;\n0\n;\n"
                                         "0,3, 0,0,0, 2,0,0, 1,0,0\n;\na.raw\n;\n4,1\n";
 
 TEST_F(CDemonSetLoadTest, ACurrentFileGivesEverySetting) {
-    load({});
+    load({.water = "10.5,16"});
     EXPECT_EQ(set_.getSetFileVersion(), 26);
     EXPECT_EQ(set_.getSetScaleFactor(), 1.5F);
     EXPECT_EQ(set_.getMinAmbientValue(), 0.25F);
