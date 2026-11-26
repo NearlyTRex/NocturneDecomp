@@ -82,7 +82,7 @@ TEST(CDemonCamera, PublicInterface) {
                                  common::CVector3i *(CDemonCamera::*)(common::CVector3i *,
                                                                       common::CVector3i *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::precomputeLight),
-                                 void (CDemonCamera::*)(CDemonLight *, CRect *)>);
+                                 void (CDemonCamera::*)(CDemonLight &, const CRect &)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::precomputeNormals), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::calculateAttenuatedDirectionalLight),
@@ -91,7 +91,7 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderLightCoronas),
                                  void (CDemonCamera::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::addLightmapToCorona),
-                                 void (CDemonCamera::*)(CDemonLight *)>);
+                                 void (CDemonCamera::*)(const CDemonLight &)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::isCoronaSufficientlyVisible),
                                  int (CDemonCamera::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::computeLightExtentBounds),

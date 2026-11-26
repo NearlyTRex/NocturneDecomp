@@ -94,6 +94,7 @@ protected:
         session_.camera.setEffectIntensity(0.0F);
         tables.fog_color_index = {.r = kFogLevel, .g = kFogLevel, .b = kFogLevel};
         tables.lightmap_palette.at(kFogLevel) = 0x40404040U;
+        tables.fog_plane_count = 1;
         std::ranges::fill(tables.fog_mix, kSceneFog);
         // As the session loads them, so a frame finds them at the screen's size.
         inventory_assets_.loadAssets();

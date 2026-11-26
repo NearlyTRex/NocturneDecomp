@@ -8,6 +8,7 @@
 #include "core/dcamera/fog.h"
 #include "core/dlight/demonlight.h"
 #include "core/fwd.h"
+#include "core/rect.h"
 #include "core/setdir/vdbox.h"
 #include "core/setutil/3dscamera.h"
 #include "core/setutil/3dslight.h"
@@ -43,6 +44,13 @@ struct SRoom {
 struct SSpotlight {
     const C3DSLight *light = nullptr;
     std::size_t index = 0;
+};
+
+// A spotlight the shown camera sees: its master light, and the display rectangle the set gives
+// for its light in that camera's view.
+struct SShownSpotlight {
+    CDemonLight *light = nullptr;
+    CRect bounds;
 };
 
 // What a set loads with and into, and draws with.
@@ -137,8 +145,16 @@ public:
     // ambient level and the flat colour, by the given normals or by the polygons' faces.
     void lightVerticies(int vertex_count, std::span<const platform::SMRGLPrimitiveQuad> polygons,
                         std::span<const common::CVector3i> vertex_normals);
+    // A frame of the spotlights: each master light steps its filters and flicker, the shown
+    // ones' beams taking their filter frame; the events "<light>on" and "<light>off" switch it,
+    // and a light named moon... shows only from outside every virtual director box.
     void process();
     int getReverbPresetAtPosition(common::CVector3f *position);
+    // The developer's switch that turns every spotlight off, on until flipped.
+    void toggleLights();
+    [[nodiscard]] bool getLightsOn() const;
+    // The spotlights the shown camera sees, as setCameraView last gathered them.
+    [[nodiscard]] std::span<const SShownSpotlight> getShownSpotlights() const;
     // Loads the lights' glow textures and the water's.
     void loadAssets();
     // A model's polygons, drawn as the renderer's quad batch.
@@ -293,6 +309,8 @@ private:
     void renderBackgroundActors(int layer_flag);
     // Fatal unless a camera is shown.
     void checkCameraSelected() const;
+    // The spotlights the camera sees, with their master lights.
+    void gatherSpotlights(std::size_t camera_index);
     // The display list from its far end, each renderable or transparent actor drawing that pass,
     // tinted by its scale, its bit for the pass kept while it drew something.
     void renderOpaqueActors();
@@ -386,6 +404,8 @@ private:
     std::vector<CDemonActor *> sorted_render_actors_;
     // A camera has been shown since the scene last started its coronas over.
     bool corona_due_ = false;
+    std::vector<SShownSpotlight> spotlights_;
+    bool lights_on_ = true;
 };
 
 } // namespace nocturne::core

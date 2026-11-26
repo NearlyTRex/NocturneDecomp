@@ -2,8 +2,10 @@
 
 #include "common/fwd.h"
 #include "common/math/matrix3x3i.h"
+#include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
 #include "core/dlight/cameraview.h"
+#include "core/dlight/lightmappixel.h"
 #include "core/fwd.h"
 #include "core/rect.h"
 #include "engine/2d/2d.h"
@@ -13,6 +15,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
@@ -96,7 +99,15 @@ public:
     // zeros, so a zero depth says the point isn't on the screen.
     common::CVector3i *worldToScreenWithFrustumCull(common::CVector3i *input_ptr,
                                                     common::CVector3i *output_ptr);
-    void precomputeLight(CDemonLight *light_source, CRect *rect);
+    // Where each display pixel of the view, inside the rectangle on a 480-line frame or else the
+    // whole display, falls in the light's view: its depth there, its shadow map entry and its
+    // beam texel, and each display row's first and last pixel the light reaches. A pixel past
+    // the frame's edge, facing away from a light other than the moving screen's, or out of the
+    // light's view gets none. No more than kMaxPrecomputedLights since precomputeNormals.
+    void precomputeLight(CDemonLight &light_source, const CRect &rect);
+    // Each display pixel's world position, depth and surface normal from what the background
+    // scene drew: the depths through the scene's inverse projection, the normal from the
+    // pixel's colour. The farthest depth is the camera's reach.
     void precomputeNormals();
     int calculateAttenuatedDirectionalLight(common::CVector3i *world_pos, CDemonLight *light_source,
                                             common::CVector3i *light_direction);
@@ -105,7 +116,9 @@ public:
     // texture. Nothing without the palette; the fog or image missing is skipped.
     void loadImage(std::string_view filename);
     void renderLightCoronas(CDemonLight *light_source);
-    void addLightmapToCorona(CDemonLight *light_source);
+    // The light's beam level added to the coronas' light at each pixel precomputeLight found
+    // the light reaching, not behind the light's shadow map.
+    void addLightmapToCorona(const CDemonLight &light_source);
     int isCoronaSufficientlyVisible(CDemonLight *light_source);
     CRect *computeLightExtentBounds(CDemonLight *light, CRect *out_bounds);
     // The coronas' light started over at the effect's level, and the fog over the display mixed
@@ -154,7 +167,20 @@ public:
     [[nodiscard]] std::span<const CRect> getDirtyRects() const;
     [[nodiscard]] bool getDirtyRectsOverflowed() const;
 
+    // As precomputeNormals left them, a display pixel each, 320 a row; empty before it.
+    [[nodiscard]] std::span<const common::CVector3i> getPrecomputedWorldPositions() const;
+    [[nodiscard]] std::span<const common::CVector3f> getPrecomputedNormals() const;
+    [[nodiscard]] std::span<const int> getPrecomputedDepths() const;
+
     static constexpr std::size_t kMaxDirtyRects = 256;
+    static constexpr int kMaxPrecomputedLights = 8;
+
+protected:
+    [[nodiscard]] const SDemonCameraOwners &getOwners() const;
+    // What a light's own scene begins and ends with in place of the camera's.
+    void setSceneOpen(bool open, bool skip_clear_buffers);
+    [[nodiscard]] bool getSkipClearBuffers() const;
+    void forgetDirtyRects();
 
 private:
     static constexpr float kDefaultMaxDistance = 999.9F;
@@ -162,7 +188,14 @@ private:
     // The camera's depths into the screen's over the rows and columns of the rectangle, which is
     // inside the frame.
     void restoreDepths(const CRect &rect);
-    void forgetDirtyRects();
+    // The front of what saveBackdrop did: the fog's drift started over and its plane count from
+    // its drift.
+    void saveBackdrop();
+    // Where the display pixel falls in the light's view, its depth there before the bias; none for
+    // a pixel past the frame's edge, facing away unless the light is the moving screen's, or out
+    // of the light's view.
+    [[nodiscard]] std::optional<SLightMapPixel> findInLight(CDemonLight &light_source, int x, int y,
+                                                            bool moving_screen) const;
     void compositeLightmapToFramebuffer(int frame_time);
     // The coronas' light blurred, the display's edges left dark.
     void blurCoronaBufferAndClearEdges();
@@ -207,6 +240,12 @@ private:
     bool skip_clear_buffers_ = false;
     std::vector<CRect> dirty_rects_;
     bool dirty_rects_overflowed_ = false;
+    std::vector<common::CVector3i> precomputed_world_;
+    std::vector<common::CVector3f> precomputed_normals_;
+    std::vector<int> precomputed_depths_;
+    // Lights precomputed since precomputeNormals, and the maps they take, a light's in turn.
+    int precomputed_lights_ = 0;
+    std::vector<SLightMapPixel> light_map_pool_;
 };
 
 } // namespace nocturne::core

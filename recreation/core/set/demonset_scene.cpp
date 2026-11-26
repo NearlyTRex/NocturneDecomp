@@ -1,9 +1,12 @@
 #include "common/error/error.h"
+#include "common/text/ascii.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dcamera/gammacurve.h"
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
 #include "core/dlight/dlight.h"
+#include "core/event/eventconditions.h"
+#include "core/game/game.h"
 #include "core/loadingscreen.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -16,6 +19,7 @@
 #include <cstddef>
 #include <memory>
 #include <span>
+#include <string_view>
 #include <utility>
 
 namespace nocturne::core {
@@ -28,6 +32,10 @@ constexpr int kIntensityScale = 0x10000;
 constexpr int kMinIntensityValue = 0x100;
 // The most spotlights a scene can light.
 constexpr std::size_t kMaxMasterLights = 96;
+// How far out a master light's shadow map takes the set's geometry: everything.
+constexpr float kShadowMapReach = 9999.9F;
+// A light whose name starts so is the moon, seen only from outside the virtual director boxes.
+constexpr std::string_view kMoonPrefix = "moon";
 
 } // namespace
 
@@ -36,11 +44,7 @@ constexpr std::size_t kMaxMasterLights = 96;
 // deferred: resetting the shadow restore allocator, with allocMasterZBuffer
 // deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and
 //   buildMirrorList
-// deferred: drawing the set into each master light's shadow map, its edges cleared for a circular
-//   shadow, with renderSceneGeometry and CDemonLight's beginScene, clearCircularShadowMapEdges
-//   and endScene
-// deferred: no spot, omni or corona lights gathered, with renderScene's coronas and
-//   addDynamicLight
+// deferred: no omni or corona lights gathered, with the spatial lights and addCoronaGlobe
 // nocedit 0x0056aa10
 void CDemonSet::initScene() {
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Initializing scene"), false);
@@ -63,6 +67,13 @@ void CDemonSet::initScene() {
             common::displayErrorAndQuit("CDemonSet::initScene - Too many spotlights!");
         }
     }
+    for (const std::unique_ptr<CDemonLight> &master : master_lights_) {
+        master->beginScene(0);
+        master->clearCircularShadowMapEdges();
+        renderSceneGeometry(kShadowMapReach, kDrawReachedGeometry);
+        master->endScene(0);
+    }
+    spotlights_.clear();
     selected_camera_index_ = -1;
     previous_best_camera_index_ = -1;
     previous_best_camera_timer_ = 0.0F;
@@ -102,6 +113,62 @@ std::span<const int> CDemonSet::getIntensityToValueLookupTable() const {
 void CDemonSet::loadAssets() {
     captureLightTextures(owners_.renderer, owners_.light_owners.glow);
     owners_.water.captureTextures(owners_.renderer);
+}
+
+// A set shown before initScene made its master lights has no spotlight to show.
+void CDemonSet::gatherSpotlights(std::size_t camera_index) {
+    spotlights_.clear();
+    std::size_t spotlight = 0;
+    for (const C3DSLight &light : lights_) {
+        if (light.getLightType() != C3DSLight::kSpotlightType) {
+            continue;
+        }
+        if (light.getVisibleFlags()[camera_index] != 0 && spotlight < master_lights_.size()) {
+            spotlights_.push_back({.light = master_lights_[spotlight].get(),
+                                   .bounds = light.getCameraLightBounds()[camera_index]});
+        }
+        ++spotlight;
+    }
+}
+
+// The original stopped at a spotlight without a master light, as before initScene.
+// nocedit 0x0056f940
+void CDemonSet::process() {
+    std::size_t spotlight = 0;
+    for (C3DSLight &light : lights_) {
+        if (light.getLightType() != C3DSLight::kSpotlightType) {
+            continue;
+        }
+        if (spotlight >= master_lights_.size()) {
+            return;
+        }
+        CDemonLight &master = *master_lights_[spotlight];
+        ++spotlight;
+        const bool shown = std::ranges::contains(spotlights_, &master, &SShownSpotlight::light);
+        light.process(master, shown, owners_.game.getDeltaTimeFloat(),
+                      owners_.game.getDeltaTimeInt(), lights_on_);
+        if (owners_.events.evaluateCondition(light.getName() + "on")) {
+            master.setLightEnabled(true);
+        }
+        if (owners_.events.evaluateCondition(light.getName() + "off")) {
+            master.setLightEnabled(false);
+        }
+        if (common::startsWithIgnoringAsciiCase(light.getName(), kMoonPrefix)) {
+            master.setLightEnabled(last_switch_area_invalid_);
+        }
+    }
+}
+
+void CDemonSet::toggleLights() {
+    lights_on_ = !lights_on_;
+}
+
+bool CDemonSet::getLightsOn() const {
+    return lights_on_;
+}
+
+std::span<const SShownSpotlight> CDemonSet::getShownSpotlights() const {
+    return spotlights_;
 }
 
 } // namespace nocturne::core

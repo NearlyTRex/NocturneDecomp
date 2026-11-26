@@ -26,7 +26,7 @@ constexpr std::uint32_t kShiftMask = 0x1f;
 // nocedit 0x0048a6c0
 CDemonRenderer::CDemonRenderer(CMatrix &matrix, CLight &light, C2d &two_d, C3d &three_d,
                                std::span<platform::SRenderVertex> vertex_buffer, CSpecial &special,
-                               CPrim &prim, CZRaster &zraster, const SCurrentTexture &texture,
+                               CPrim &prim, CZRaster &zraster, SCurrentTexture &texture,
                                CTexture &textures, IScreenDevice &screen,
                                GeometryClipper clip_geometry)
     : matrix_(matrix), light_(light), two_d_(two_d), three_d_(three_d),

@@ -5,6 +5,7 @@
 #include "common/math/vector3i.h"
 #include "core/actor/demonactor.h"
 #include "core/box/boundingbox3d.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/dskybox/dskybox.h"
 #include "core/game/game.h"
 #include "core/location.h"
@@ -321,19 +322,19 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 //   master z-buffers and resetting their restore memory, with restoreDirtyRegions,
 //   freeMasterZBuffer and resetRestoreMemoryAllocator
 // deferred: the full lighting mode and the directional light ratio while the background draws,
-//   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
-//   decomp's windowed reswitch fix), with lightVerticies' quality modes and renderScene's coronas
+//   and no omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's
+//   windowed reswitch fix), with lightVerticies' quality modes, the spatial lights and
+//   addCoronaGlobe
 // deferred: the actors' backgrounds lit without the quality modes while the depths are taken
 //   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
-// deferred: the backdrop's world positions, normals and depths taken from what was drawn, with
-//   CDemonCamera::precomputeNormals and its readers, the spotlights' light over the backdrop
 // deferred: the still water, in hardware after the geometry and in the lit frame, with
 //   CWater::render
-// deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights'
-//   shadow maps and their light over the backdrop, then the scene's static lights' shadow maps,
-//   with their reader renderScene's coronas, CDemonSet::process, the CDemonLight scene functions,
-//   CDemonCamera::precomputeLight and renderStaticLights
+// deferred: the omni lights the camera sees, with the spatial lights
+// deferred: each shown spotlight's master depths kept and the actors drawn into its shadow map
+//   before its light is precomputed, then the scene's static lights' shadow maps, with
+//   allocMasterZBuffer, CDemonLight's background scenes, restoreDirtyRegions and
+//   renderStaticLights
 // deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio
 //   off for the lit frame, with lightVerticies' quality modes
 // deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
@@ -368,6 +369,7 @@ void CDemonSet::setCameraView(int index) {
     renderSceneGeometry(kBackgroundReach, kDrawCameraPVS);
     owners_.camera.saveZBufferScanlines();
     renderBackgroundActors(1);
+    owners_.camera.precomputeNormals();
     owners_.camera.restoreZBufferScanlines();
     owners_.camera.loadImage(camera.getName() + ".raw");
     renderBackgroundActors(1);
@@ -377,6 +379,11 @@ void CDemonSet::setCameraView(int index) {
         renderBackgroundActors(1);
     }
     owners_.camera.endScene(0);
+    gatherSpotlights(static_cast<std::size_t>(index));
+    process();
+    for (const SShownSpotlight &shown : spotlights_) {
+        owners_.camera.precomputeLight(*shown.light, shown.bounds);
+    }
     owners_.camera.beginScene(1);
     owners_.camera.beginBackgroundScene();
     if (has_sky_) {

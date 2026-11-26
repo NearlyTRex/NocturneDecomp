@@ -10,6 +10,11 @@ namespace nocturne::engine {
 
 using CustomScanlineFunc = void(int, SSoftwareEdge *, SSoftwareEdge *);
 
+// The shadow pass's row: depth as 16-bit pixels into the screen rows, each shifted down by 8 and
+// kept where it is nearer, up to but not including the further right edge.
+void renderDepthOnlyStandard(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
+                             int scanline_y, IScreenDevice &screen, const C2d &two_d);
+
 int qsortByCapturedFaceDepthAscending(SFace **face_ptr_a, SFace **face_ptr_b);
 int qsortByCapturedFaceDepthDescending(SFace **face_ptr_a, SFace **face_ptr_b);
 

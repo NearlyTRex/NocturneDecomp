@@ -75,7 +75,6 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   promptLoadGame
 // deferred: the script debug keys while not paused: running or stopping the script in the script
 //   view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
-// deferred: the camera on or off, with CDemonSet's camera flag's reader
 // nocedit 0x004dcee0
 void CGame::processHotkeys(const SGameSessionOwners &session) {
     if (developer_mode && takeAction(EGameAction::EditMode)) {
@@ -113,6 +112,9 @@ void CGame::processHotkeys(const SGameSessionOwners &session) {
     }
     if (takeAction(EGameAction::GammaUp)) {
         stepGamma(session, kGammaStep);
+    }
+    if (developer_mode && takeAction(EGameAction::CameraToggle)) {
+        session.set.toggleLights();
     }
     if (developer_mode && takeAction(EGameAction::AmbientDown)) {
         stepAmbientLight(session, -kAmbientStep);

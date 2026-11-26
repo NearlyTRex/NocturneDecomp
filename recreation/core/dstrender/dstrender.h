@@ -9,11 +9,7 @@
 
 namespace nocturne::core {
 
-// These two draw depth as 16-bit pixels into the screen rows, keeping what is nearer.
-// Each depth shifted down by 8, up to but not including the further right edge.
-void renderDepthOnlyStandard(const engine::SSoftwareEdge &left_edge,
-                             const engine::SSoftwareEdge &right_edge, int scanline_y,
-                             engine::IScreenDevice &screen, const engine::C2d &two_d);
+// Depth as 16-bit pixels into the screen rows, keeping what is nearer.
 void renderDepth16BitConditional(engine::SSoftwareEdge *left_edge,
                                  engine::SSoftwareEdge *right_edge, int scanline_y);
 // Each depth whole, where the texel's opacity, or its colour index without an opacity map, is

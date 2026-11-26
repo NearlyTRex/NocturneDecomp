@@ -12,6 +12,7 @@
 
 #include <memory>
 #include <string>
+#include <string_view>
 #include <type_traits>
 
 namespace nocturne::core {
@@ -83,6 +84,65 @@ TEST_F(C3DSLightSceneTest, ApplyingGivesTheLightItsAspectIntensityAndMovingFilte
     EXPECT_FALSE(other.hasFilterBuffer());
 }
 
+// Each second the filter frame's time runs, the next frame taking over when it is out, the
+// filter drifting by its velocity; a shown light's beam takes the frame's filter. A light on for
+// less than its whole cycle is on for the first part of it, and lights off turn it off.
+TEST_F(C3DSLightSceneTest, AFrameStepsTheFiltersAndTheFlicker) {
+    const std::unique_ptr<CDemonLight> made = light_.create(
+        parts_.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_), cache_);
+    light_.apply(*made);
+    ASSERT_LT(light_.getOnTime(), 1.0F);
+    const auto frame = static_cast<std::size_t>(light_.getCurrentFilterFrame());
+    const auto next = (frame + 1) % 2;
+    const float duration = light_.getFilterDurations()[frame];
+    const common::CVector2i start = light_.getFilterPos();
+    light_.process(*made, true, duration / 2.0F, 0x10000, true);
+    EXPECT_EQ(light_.getCurrentFilterFrame(), static_cast<int>(frame));
+    EXPECT_EQ(made->getFilterName(), light_.getFilters()[frame]->getName());
+    EXPECT_EQ(light_.getFilterPos().x, start.x + light_.getFilterVel().x);
+    EXPECT_EQ(light_.getFilterPos().y, start.y + light_.getFilterVel().y);
+    EXPECT_EQ(made->isLightEnabled(), duration / 2.0F <= light_.getOnTime());
+    light_.process(*made, false, duration, 0, true);
+    EXPECT_EQ(light_.getCurrentFilterFrame(), static_cast<int>(next));
+    EXPECT_EQ(made->getFilterName(), light_.getFilters()[frame]->getName());
+    light_.process(*made, true, light_.getFilterDurations()[next], 0, true);
+    EXPECT_EQ(light_.getCurrentFilterFrame(), static_cast<int>(frame));
+    light_.process(*made, true, 0.0F, 0, false);
+    EXPECT_FALSE(made->isLightEnabled());
+}
+
+// A filter frame without a duration stays however long the light runs.
+TEST_F(C3DSLightSceneTest, AFilterFrameWithoutATimeStays) {
+    std::string text = lightText("Still", 0);
+    text.replace(text.find("1.5,3,glow.raw"), std::string_view("1.5,3,glow.raw").size(),
+                 "0,3,glow.raw");
+    text.replace(text.find("2.5,4,dim.raw"), std::string_view("2.5,4,dim.raw").size(),
+                 "0,4,dim.raw");
+    C3DSLight still;
+    common::CTextScanner scanner(text);
+    still.load(scanner, 26);
+    const std::unique_ptr<CDemonLight> made = still.create(
+        parts_.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_), cache_);
+    const int frame = still.getCurrentFilterFrame();
+    still.process(*made, true, 100.0F, 0, true);
+    EXPECT_EQ(still.getCurrentFilterFrame(), frame);
+}
+
+// A light without filters, on all the time, is left as it was but for lights off.
+TEST_F(C3DSLightSceneTest, ALightOnAllTheTimeIsOnlyTurnedOffWithTheLights) {
+    C3DSLight plain;
+    const std::unique_ptr<CDemonLight> made = plain.create(
+        parts_.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_), cache_);
+    made->setLightEnabled(false);
+    plain.process(*made, true, 5.0F, 0x10000, true);
+    EXPECT_FALSE(made->isLightEnabled());
+    made->setLightEnabled(true);
+    plain.process(*made, true, 5.0F, 0x10000, true);
+    EXPECT_TRUE(made->isLightEnabled());
+    plain.process(*made, true, 5.0F, 0x10000, false);
+    EXPECT_FALSE(made->isLightEnabled());
+}
+
 TEST(C3DSLight, IsConcrete) {
     static_assert(!std::is_abstract_v<C3DSLight>);
 }
@@ -99,8 +159,8 @@ TEST(C3DSLight, PublicInterface) {
                                      const SDemonLightOwners &, CFilterCache &)>);
     static_assert(std::is_same_v<decltype(&C3DSLight::apply), void (C3DSLight::*)(CDemonLight &)>);
     static_assert(std::is_same_v<decltype(&C3DSLight::doNothing), void (C3DSLight::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&C3DSLight::process), void (C3DSLight::*)(CDemonLight *, int)>);
+    static_assert(std::is_same_v<decltype(&C3DSLight::process),
+                                 void (C3DSLight::*)(CDemonLight &, bool, float, int, bool)>);
     static_assert(
         std::is_same_v<decltype(&C3DSLight::advanceFilter), void (C3DSLight::*)(CDemonLight *)>);
     static_assert(std::is_same_v<decltype(&C3DSLight::setFilterFrame),

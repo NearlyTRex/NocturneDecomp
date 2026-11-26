@@ -25,10 +25,10 @@ TEST(CDemonRenderer, IsConcrete) {
 }
 
 TEST(CDemonRenderer, Constructors) {
-    static_assert(std::is_constructible_v<CDemonRenderer, CMatrix &, CLight &, C2d &, C3d &,
-                                          std::span<platform::SRenderVertex>, CSpecial &, CPrim &,
-                                          CZRaster &, const SCurrentTexture &, CTexture &,
-                                          IScreenDevice &, GeometryClipper>);
+    static_assert(
+        std::is_constructible_v<CDemonRenderer, CMatrix &, CLight &, C2d &, C3d &,
+                                std::span<platform::SRenderVertex>, CSpecial &, CPrim &, CZRaster &,
+                                SCurrentTexture &, CTexture &, IScreenDevice &, GeometryClipper>);
     static_assert(!std::is_default_constructible_v<CDemonRenderer>);
 }
 
@@ -128,7 +128,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::setShadowPass), void (CDemonRenderer::*)(int)>);
     static_assert(
-        std::is_same_v<decltype(&CDemonRenderer::isShadowPass), int (CDemonRenderer::*)()>);
+        std::is_same_v<decltype(&CDemonRenderer::isShadowPass), int (CDemonRenderer::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::clipAndDrawLine3D),
                                  void (CDemonRenderer::*)(int, int)>);
     static_assert(

@@ -3,12 +3,17 @@
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
 #include "core/dlight/lightglow.h"
+#include "core/dlight/lightmappixel.h"
+#include "core/dtrace/demonraytrace.h"
+#include "core/rect.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "core/water/water.h"
 #include "core/weather/weather.h"
 #include "core/weather/weathertype.h"
+#include "engine/drender/demonrenderer.h"
 #include "platform/mrgltexturebasic.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
@@ -16,6 +21,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -80,7 +86,23 @@ protected:
         givenFile("art\\glow.raw", std::string(std::size_t{64} * 64, '\x40'));
         givenFile("art\\dim.raw", std::string(std::size_t{64} * 64, '\x08'));
         ON_CALL(screen_, getWindowHeight()).WillByDefault(::testing::Return(480));
+        for (std::size_t row = 0; row < kRows; ++row) {
+            rows_.at(row) = pixels_.data() + (row * kColumns);
+            depth_rows_.at(row) = depths_.data() + (row * kColumns);
+        }
+        ON_CALL(screen_, getScreenRows()).WillByDefault(::testing::Return(std::span(rows_)));
+        ON_CALL(screen_, getZBufferRows()).WillByDefault(::testing::Return(std::span(depth_rows_)));
+        ON_CALL(screen_, getColorMasks()).WillByDefault(::testing::ReturnRef(masks_));
     }
+
+    engine::SColorMasks masks_;
+    // A 640 by 480 screen of 32-bit pixels and depths.
+    static constexpr std::size_t kColumns = 640;
+    static constexpr std::size_t kRows = 480;
+    std::vector<std::uint32_t> pixels_ = std::vector<std::uint32_t>(kColumns * kRows);
+    std::vector<std::uint32_t> depths_ = std::vector<std::uint32_t>(kColumns * kRows);
+    std::array<void *, kRows> rows_{};
+    std::array<std::uint32_t *, kRows> depth_rows_{};
 
     void loadScene(const std::string &vdir_boxes) {
         load({.weather = "1",
@@ -91,6 +113,8 @@ protected:
     }
 };
 
+// Each master light's shadow map is drawn from the set, which here has no geometry, so its reach
+// is nothing, and the screen's rows are put back.
 TEST_F(CDemonSetInitSceneTest, EachSpotlightGetsAMasterLightPlacedAsItIs) {
     loadScene("0\n");
     const auto masters = set_.getMasterLights();
@@ -100,6 +124,113 @@ TEST_F(CDemonSetInitSceneTest, EachSpotlightGetsAMasterLightPlacedAsItIs) {
     EXPECT_EQ(masters[0]->getTransformScaleFactor(), 0x18000);
     EXPECT_TRUE(masters[0]->hasFilterBuffer());
     EXPECT_NE(set_parts_.filter_cache.findFilter("glow.raw"), nullptr);
+    EXPECT_EQ(masters[0]->getMaxDistance(), 0.0F);
+    EXPECT_FALSE(masters[0]->isSceneOpen());
+    EXPECT_EQ(rows_[0], pixels_.data());
+    EXPECT_EQ(demon_renderer_.isShadowPass(), 0);
+}
+
+// A set of three spotlights and an omni light after the first: the first and last spotlights seen
+// from its one camera in a rectangle of its display, the middle one not, and the last named the
+// moon.
+class CDemonSetSpotlightTest : public CDemonSetInitSceneTest {
+protected:
+    CDemonSetSpotlightTest() {
+        const auto seen = [](const std::string &name) {
+            std::string text = lightText(name, 0);
+            text.replace(text.find("visible\n0\n"), std::string_view("visible\n0\n").size(),
+                         "visible\n1\n0,2,300,4,200\n");
+            return text;
+        };
+        givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
+                                            {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
+        load({.lights = "4\n" + seen("Lamp") + lightText("Omni", 1) + lightText("Hidden", 0) +
+                        seen("moonlight"),
+              .cameras = "1\n" + cameraText("Door"),
+              .pvs = "1\n\t0\n"});
+        set_.initScene();
+    }
+
+    [[nodiscard]] CDemonLight &master(std::size_t index) const {
+        return *set_.getMasterLights()[index];
+    }
+};
+
+// Showing the camera gathers the spotlights it sees with their rectangles and precomputes each
+// one's light over the backdrop.
+TEST_F(CDemonSetSpotlightTest, ShowingACameraGathersTheSpotlightsItSees) {
+    set_.setCameraView(0);
+    const std::span<const SShownSpotlight> shown = set_.getShownSpotlights();
+    ASSERT_EQ(shown.size(), 2U);
+    EXPECT_EQ(shown[0].light, &master(0));
+    EXPECT_EQ(shown[0].bounds, (CRect{.x_min = 2, .x_max = 300, .y_min = 4, .y_max = 200}));
+    EXPECT_EQ(shown[1].light, &master(2));
+    EXPECT_FALSE(master(0).getLightMap().empty());
+    EXPECT_TRUE(master(1).getLightMap().empty());
+    EXPECT_EQ(master(0).getLeftExtents()[3], CDemonLight::kNoLeftExtent);
+}
+
+// Each frame a light's events switch it on and off, the off winning, and the moon is on only
+// while the director's focus was outside every box at the last switch.
+TEST_F(CDemonSetSpotlightTest, TheEventsSwitchTheLightsAndTheMoonFollowsTheBoxes) {
+    ON_CALL(set_parts_.events, evaluateCondition(::testing::_))
+        .WillByDefault(::testing::Return(false));
+    ON_CALL(set_parts_.events, evaluateCondition(::testing::StrEq("Hiddenoff")))
+        .WillByDefault(::testing::Return(true));
+    ON_CALL(set_parts_.events, evaluateCondition(::testing::StrEq("Lampon")))
+        .WillByDefault(::testing::Return(true));
+    master(0).setLightEnabled(false);
+    set_.process();
+    EXPECT_TRUE(master(0).isLightEnabled());
+    EXPECT_FALSE(master(1).isLightEnabled());
+    EXPECT_FALSE(master(2).isLightEnabled());
+    set_.toggleLights();
+    EXPECT_FALSE(set_.getLightsOn());
+    set_.process();
+    EXPECT_TRUE(master(0).isLightEnabled());
+    set_.toggleLights();
+    EXPECT_TRUE(set_.getLightsOn());
+}
+
+// A scene's coronas take the light of each shown spotlight that is on.
+// The lamp's map is made to light one pixel at the middle of its shadow map, which nothing is in
+// front of.
+TEST_F(CDemonSetSpotlightTest, TheSceneAddsTheLightOfEachShownSpotlightThatIsOn) {
+    set_.setCameraView(0);
+    CDemonLight &lamp = master(0);
+    const std::span<const std::uint8_t> beam = lamp.getPrecomputedLightingTextures();
+    const auto texel = static_cast<std::uint32_t>(std::ranges::max_element(beam) - beam.begin());
+    const std::size_t middle = (static_cast<std::size_t>(lamp.getShadowMapHeight() / 2) *
+                                static_cast<std::size_t>(lamp.getShadowMapWidth())) +
+                               static_cast<std::size_t>(lamp.getShadowMapWidth() / 2);
+    ASSERT_EQ(lamp.getShadowDepthBuffer()[middle], 0xffffU);
+    std::vector<SLightMapPixel> map(std::size_t{320} * 240);
+    map[(5 * 320) + 7] = {
+        .depth = 1, .shadow_entry = static_cast<std::uint32_t>(middle), .texel = texel};
+    lamp.setLightMap(map);
+    lamp.getLeftExtents()[5] = 7;
+    lamp.getRightExtents()[5] = 7;
+    master(2).setLightEnabled(false);
+    set_.renderScene();
+    const std::uint8_t start = set_parts_.tables.corona_light[(4 * 320) + 7];
+    EXPECT_EQ(set_parts_.tables.corona_light[(5 * 320) + 7],
+              static_cast<std::uint8_t>(start + beam[texel]));
+    lamp.setLightEnabled(false);
+    set_.renderScene();
+    EXPECT_EQ(set_parts_.tables.corona_light[(5 * 320) + 7], start);
+}
+
+// Shown before its master lights are made, a set shows no spotlight and leaves them alone.
+TEST_F(CDemonSetInitSceneTest, ASetWithoutMasterLightsShowsNoSpotlight) {
+    std::string text = lightText("Lamp", 0);
+    text.replace(text.find("visible\n0\n"), std::string_view("visible\n0\n").size(),
+                 "visible\n1\n0,2,300,4,200\n");
+    givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
+                                        {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
+    load({.lights = "1\n" + text, .cameras = "1\n" + cameraText("Door"), .pvs = "1\n\t0\n"});
+    set_parts_.camera->init(480);
+    set_.setCameraView(0);
+    EXPECT_TRUE(set_.getShownSpotlights().empty());
 }
 
 // The camera's tables are built, the set's fog is the active fog, the ambient level the coronas'

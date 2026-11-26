@@ -13,6 +13,7 @@
 #include <cstddef>
 #include <memory>
 #include <span>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -122,16 +123,55 @@ std::unique_ptr<CDemonLight> C3DSLight::create(const SDemonLightOwners &owners,
 }
 
 // A light whose filter moves gets a buffer to draw it into.
-// deferred: restarting the light's on and off cycle and its filter frame's time, with process
-//   and advanceFilter
 // nocedit 0x00586bf0
 void C3DSLight::apply(CDemonLight &light) {
+    cycle_elapsed_ = 0.0F;
+    filter_frame_elapsed_ = 0.0F;
     placeLight(light);
     light.setTransformScaleFactor(
         common::truncateToInt(static_cast<double>(aspect_) * kAspectScale));
     light.setVolumetricIntensity(intensity_);
     if (move_filter_ != 0) {
         light.allocateFilter();
+    }
+}
+
+// A light the file gave a negative filter count, which the original took as having filters, has
+// none. The original's check for a light was for its callers' null.
+// nocedit 0x00586cb0
+void C3DSLight::process(CDemonLight &light, bool apply_filter, float delta_time, int delta_time_int,
+                        bool lights_on) {
+    if (!filters_.empty()) {
+        const auto frame = static_cast<std::size_t>(current_filter_frame_);
+        if (filter_durations_[frame] > 0.0F) {
+            filter_frame_elapsed_ += delta_time;
+            if (filter_durations_[frame] < filter_frame_elapsed_) {
+                filter_frame_elapsed_ -= filter_durations_[frame];
+                ++current_filter_frame_;
+                if (std::cmp_greater_equal(current_filter_frame_, filters_.size())) {
+                    current_filter_frame_ = 0;
+                }
+            }
+        }
+        filter_pos_.x = common::wrappingAdd(filter_pos_.x,
+                                            common::fixedMultiply(delta_time_int, filter_vel_.x));
+        filter_pos_.y = common::wrappingAdd(filter_pos_.y,
+                                            common::fixedMultiply(delta_time_int, filter_vel_.y));
+        if (apply_filter) {
+            const auto shown = static_cast<std::size_t>(current_filter_frame_);
+            light.applyFilter(*filters_[shown], filter_indices_[shown], filter_pos_.x,
+                              filter_pos_.y);
+        }
+    }
+    if (on_time_ < 1.0F) {
+        cycle_elapsed_ += delta_time;
+        if (cycle_time_ < cycle_elapsed_) {
+            cycle_elapsed_ -= cycle_time_;
+        }
+        light.setLightEnabled(cycle_elapsed_ <= on_time_);
+    }
+    if (!lights_on) {
+        light.setLightEnabled(false);
     }
 }
 

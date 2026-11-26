@@ -4,6 +4,7 @@
 #include "core/actor/demonactor.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dcube/cubedrawowners.h"
+#include "core/dlight/demonlight.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
 #include "core/location.h"
@@ -70,10 +71,10 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // deferred: the shown camera's view set up again once a mirror has marked it, with
 //   markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
 // The coronas start over while shadows are on, which the game's shadowFlag has them by default,
-// or once a camera has just been shown.
-// deferred: the spotlights' light maps added to the coronas and the dynamic lights', the globes'
-//   and the queued globes' coronas drawn, in each mirror too, with addLightmapToCorona,
-//   renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
+// or once a camera has just been shown, each shown spotlight that is on adding its light.
+// deferred: the dynamic lights', the globes' and the queued globes' coronas drawn, in each
+//   mirror too, with renderLightCoronas, renderGlobeCoronas, addDynamicLight and
+//   addQueuedCoronaGlobe
 // deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
 //   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
 //   crop's focus tracking
@@ -103,6 +104,11 @@ void CDemonSet::renderScene() {
     if (corona_due_ || owners_.game.shadow_flag != 0) {
         corona_due_ = false;
         camera.processCorona();
+        for (const SShownSpotlight &shown : spotlights_) {
+            if (shown.light->isLightEnabled()) {
+                camera.addLightmapToCorona(*shown.light);
+            }
+        }
     }
     camera.lockAndRenderToBuffer(owners_.game.getDeltaTimeInt());
     buildDisplayList(kScenePasses);

@@ -2,11 +2,15 @@
 
 #include "common/error/error.h"
 #include "common/math/fixed.h"
+#include "common/math/matrix3x3f.h"
+#include "common/math/vector3f.h"
+#include "common/math/vector3i.h"
 #include "common/random/watcomrandom.h"
 #include "core/dcamera/cameratables.h"
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
 #include "core/dcamera/gammacurve.h"
+#include "core/dlight/demonlight.h"
 #include "core/dstrender/dstrender.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
@@ -15,10 +19,13 @@
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
+#include <format>
+#include <optional>
 #include <span>
 #include <string>
 #include <string_view>
 #include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -51,6 +58,27 @@ constexpr int kFogDriftRate = 4;
 constexpr int kWholeFogPlane = 0x10000;
 // The effect's intensity to the coronas' starting light, 0 to 63.
 constexpr int kCoronaLevelDivisor = 0x400;
+
+// The display's pixels the precomputes keep, 320 a row.
+constexpr std::size_t kDisplayColumns = SCameraTables::kFogPlaneWidth;
+constexpr std::size_t kDisplayRows = SCameraTables::kFogPlaneHeight;
+// screenToWorldCoord's depth where nothing was drawn, and a depth's 24.8 to the world's.
+constexpr int kNoDepth = 0x7fffffff;
+constexpr float kDepthToWorld = 1.0F / 256.0F;
+// The background scene's pixel holds its surface normal, x then y then z down from the top,
+// each a signed byte of 127ths.
+constexpr unsigned kNormalXShift = 16;
+constexpr unsigned kNormalYShift = 8;
+constexpr float kNormalScale = 1.0F / 127.0F;
+// A light's depths are taken this much nearer, the moving screen's further, so the surfaces
+// they light aren't shadowed by themselves.
+constexpr std::string_view kMovingScreenFilter = "movscrn.raw";
+constexpr int kLightDepthBias = 0x80;
+constexpr int kMovingScreenDepthBias = 0x100;
+
+[[nodiscard]] float toNormalComponent(std::uint32_t bits) {
+    return static_cast<float>(static_cast<std::int8_t>(bits & 0xffU)) * kNormalScale;
+}
 
 [[nodiscard]] int getNextFogPlane(int plane) {
     return plane + 1 < static_cast<int>(SCameraTables::kMaxFogPlanes) ? plane + 1 : 0;
@@ -485,6 +513,198 @@ void CDemonCamera::processCorona() {
     if (tables.fog_plane_count > 1) {
         blendFogPlanes(tables.fog_drift_plane, tables.fog_drift_fraction);
     }
+}
+
+// The original also kept each pixel's world position before a mirror's transform, which nothing
+// read.
+// deferred: a pixel a mirror's reflection drew taken back through the mirror's saved transform,
+//   with setupMirrorRendering and restoreAlphaTransform
+// deferred: the backdrop's depth edges listed for the composite to blend a pixel at a time, with
+//   blendLightmapPixel16 and blendLightmapPixel32
+// nocedit 0x0044e360
+void CDemonCamera::precomputeNormals() {
+    const std::size_t pixels = kDisplayColumns * kDisplayRows;
+    precomputed_world_.assign(pixels, {});
+    precomputed_normals_.assign(pixels, {});
+    precomputed_depths_.assign(pixels, 0);
+    const std::span<void *> rows = owners_.screen.getScreenRows();
+    int farthest = 0;
+    for (int y = 1; y < display_height_; ++y) {
+        const auto scale = static_cast<std::size_t>(scale_factor_);
+        const auto *const row =
+            static_cast<const std::uint32_t *>(rows[static_cast<std::size_t>(y) * scale]);
+        for (int x = 1; x < display_width_; ++x) {
+            const std::uint32_t pixel = row[static_cast<std::size_t>(x) * scale];
+            common::CVector3i point;
+            static_cast<void>(screenToWorldCoord(x * scale_factor_, y * scale_factor_, &point));
+            if (point.z != kNoDepth && farthest < point.z) {
+                farthest = point.z;
+            }
+            common::CVector3i world;
+            screenToWorldTransform(&point, &world);
+            const std::size_t at =
+                (static_cast<std::size_t>(y) * kDisplayColumns) + static_cast<std::size_t>(x);
+            precomputed_world_[at] = world;
+            precomputed_depths_[at] = point.z;
+            precomputed_normals_[at] = {.x = toNormalComponent(pixel >> kNormalXShift),
+                                        .y = toNormalComponent(pixel >> kNormalYShift),
+                                        .z = toNormalComponent(pixel)};
+        }
+    }
+    setMaxDistance(static_cast<float>(farthest) * kDepthToWorld);
+    saveBackdrop();
+    precomputed_lights_ = 0;
+}
+
+// deferred: the still fog's plane copied into the fog over the display once a backdrop is saved,
+//   with processCorona's still-fog copy
+// deferred: a camera without a .fog given one, its fog sampled along each pixel's ray and
+//   written to backdrop\, with sampleFogAlongRay and CLZWCompress
+// deferred: the fog grid's sampling offset started over, with getFogValueAtPosition
+// nocedit 0x004529b0
+void CDemonCamera::saveBackdrop() {
+    SCameraTables &tables = owners_.tables;
+    tables.fog_drift_plane = 0;
+    tables.fog_drift_fraction = 0;
+    const common::CVector3i &drift = tables.fog_grid.scroll_vector;
+    tables.fog_plane_count = drift.x == 0 && drift.y == 0 && drift.z == 0
+                                 ? 1
+                                 : static_cast<int>(SCameraTables::kMaxFogPlanes);
+}
+
+// The original took each light's three buffers from a pool of 25, so eight lights at most, and
+// with no rectangle, as only the editor asks, started the pool over.
+// nocedit 0x0044de10
+void CDemonCamera::precomputeLight(CDemonLight &light_source, const CRect &rect) {
+    if (precomputed_lights_ >= kMaxPrecomputedLights) {
+        common::displayErrorAndQuit(
+            std::format("CDemonCamera::precomputeLight - Too many lights visible from camera {}",
+                        camera_name_));
+    }
+    const std::size_t pixels = kDisplayColumns * kDisplayRows;
+    if (light_map_pool_.empty()) {
+        light_map_pool_.resize(pixels * static_cast<std::size_t>(kMaxPrecomputedLights));
+    }
+    const std::span<SLightMapPixel> map =
+        std::span(light_map_pool_)
+            .subspan(static_cast<std::size_t>(precomputed_lights_) * pixels, pixels);
+    ++precomputed_lights_;
+    light_source.setLightMap(map);
+    light_source.initializeVisibilityBuffer();
+    const bool moving_screen = light_source.getFilterName() == kMovingScreenFilter;
+    const int bias = moving_screen ? kMovingScreenDepthBias : kLightDepthBias;
+    const std::span<int, CDemonLight::kDisplayRows> lefts = light_source.getLeftExtents();
+    const std::span<int, CDemonLight::kDisplayRows> rights = light_source.getRightExtents();
+    CRect area{.x_min = 0, .x_max = display_width_ - 1, .y_min = 0, .y_max = display_height_ - 1};
+    if (framebuffer_height_ == kMaxFramebufferHeight) {
+        area = rect;
+        for (int y = 0; y < display_height_; ++y) {
+            if (y < area.y_min || y > area.y_max) {
+                lefts[static_cast<std::size_t>(y)] = CDemonLight::kNoLeftExtent;
+                rights[static_cast<std::size_t>(y)] = 0;
+            }
+        }
+    }
+    for (int y = area.y_min; y <= area.y_max; ++y) {
+        int first = CDemonLight::kNoLeftExtent;
+        int last = 0;
+        for (int x = area.x_min; x <= area.x_max; ++x) {
+            const std::size_t at =
+                (static_cast<std::size_t>(y) * kDisplayColumns) + static_cast<std::size_t>(x);
+            const std::optional<SLightMapPixel> found =
+                findInLight(light_source, x, y, moving_screen);
+            map[at] = found.value_or(SLightMapPixel{});
+            if (found) {
+                map[at].depth -= bias;
+                first = std::min(first, x);
+                last = std::max(last, x);
+            }
+        }
+        lefts[static_cast<std::size_t>(y)] = first;
+        rights[static_cast<std::size_t>(y)] = last;
+    }
+}
+
+// The pixel's depth in the light before its bias, its shadow map entry and its beam texel.
+std::optional<SLightMapPixel> CDemonCamera::findInLight(CDemonLight &light_source, int x, int y,
+                                                        bool moving_screen) const {
+    if (x < 1 || y < 1 || x * scale_factor_ > framebuffer_width_ - 2 ||
+        y * scale_factor_ > framebuffer_height_ - 2) {
+        return std::nullopt;
+    }
+    const std::size_t at =
+        (static_cast<std::size_t>(y) * kDisplayColumns) + static_cast<std::size_t>(x);
+    const common::CVector3f &normal = precomputed_normals_[at];
+    const common::CMatrix3x3f &axes = light_source.getRotationMatrix();
+    if (!moving_screen && (((double{normal.z} * axes.m[2].z) + (double{normal.x} * axes.m[0].z)) +
+                           (double{normal.y} * axes.m[1].z)) < 0.0) {
+        return std::nullopt;
+    }
+    common::CVector3i world = precomputed_world_[at];
+    common::CVector3i screen;
+    light_source.worldToScreenWithFrustumCull(&world, &screen);
+    if (screen.z < 1) {
+        return std::nullopt;
+    }
+    const std::optional<std::size_t> entry =
+        light_source.projectLightAndMarkVisibility(screen, (x & 1) != 0, (y & 1) != 0);
+    if (!entry) {
+        return std::nullopt;
+    }
+    const unsigned mask = light_source.getTextureCoordMask();
+    const auto texel_row =
+        (static_cast<unsigned>(screen.y >> light_source.getShadowYShift()) & mask)
+        << static_cast<unsigned>(light_source.getTextureRowShift());
+    const auto texel_column =
+        static_cast<unsigned>(screen.x >> light_source.getShadowXShift()) & mask;
+    return SLightMapPixel{.depth = screen.z,
+                          .shadow_entry = static_cast<std::uint32_t>(*entry),
+                          .texel = texel_row + texel_column};
+}
+
+// nocedit 0x00450e30
+void CDemonCamera::addLightmapToCorona(const CDemonLight &light_source) {
+    const std::span<const SLightMapPixel> map = light_source.getLightMap();
+    const std::span<const std::uint16_t> shadow = light_source.getShadowDepthBuffer();
+    const std::span<const std::uint8_t> beam = light_source.getPrecomputedLightingTextures();
+    std::vector<std::uint8_t> &light = owners_.tables.corona_light;
+    for (std::size_t y = 0; std::cmp_less(y, display_height_); ++y) {
+        const int first = light_source.getLeftExtents()[y];
+        const int last = light_source.getRightExtents()[y];
+        for (int x = first; x <= last; ++x) {
+            const std::size_t at = (y * kDisplayColumns) + static_cast<std::size_t>(x);
+            const SLightMapPixel &pixel = map[at];
+            if (pixel.depth != 0 && std::cmp_less_equal(static_cast<unsigned>(pixel.depth),
+                                                        shadow[pixel.shadow_entry])) {
+                light[at] = static_cast<std::uint8_t>(light[at] + beam[pixel.texel]);
+            }
+        }
+    }
+}
+
+std::span<const common::CVector3i> CDemonCamera::getPrecomputedWorldPositions() const {
+    return precomputed_world_;
+}
+
+std::span<const common::CVector3f> CDemonCamera::getPrecomputedNormals() const {
+    return precomputed_normals_;
+}
+
+std::span<const int> CDemonCamera::getPrecomputedDepths() const {
+    return precomputed_depths_;
+}
+
+const SDemonCameraOwners &CDemonCamera::getOwners() const {
+    return owners_;
+}
+
+void CDemonCamera::setSceneOpen(bool open, bool skip_clear_buffers) {
+    scene_open_ = open;
+    skip_clear_buffers_ = skip_clear_buffers;
+}
+
+bool CDemonCamera::getSkipClearBuffers() const {
+    return skip_clear_buffers_;
 }
 
 // nocedit 0x00453160

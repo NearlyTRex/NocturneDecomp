@@ -155,4 +155,13 @@ void CDemonRenderer::setProjectionShape(int width, int height) {
     matrix_.setProjectionAspect(shifted / (height + 1));
 }
 
+// The original's CDemonLight::beginScene stretched the transform itself.
+void CDemonRenderer::scaleTransformY(int scale) {
+    common::CMatrix3x3i transform = matrix_.getTransformMatrix();
+    for (common::CVector3i &row : transform.m) {
+        row.y = common::fixedMultiply(scale, row.y);
+    }
+    matrix_.setTransformMatrix(transform);
+}
+
 } // namespace nocturne::engine

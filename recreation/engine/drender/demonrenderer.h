@@ -30,7 +30,7 @@ public:
     // The polygons are drawn from vertex_buffer's corners.
     CDemonRenderer(CMatrix &matrix, CLight &light, C2d &two_d, C3d &three_d,
                    std::span<platform::SRenderVertex> vertex_buffer, CSpecial &special, CPrim &prim,
-                   CZRaster &zraster, const SCurrentTexture &texture, CTexture &textures,
+                   CZRaster &zraster, SCurrentTexture &texture, CTexture &textures,
                    IScreenDevice &screen, GeometryClipper clip_geometry);
 
     // The buffer the polygons' corners index.
@@ -114,8 +114,13 @@ public:
     // On, polygons may hold corners still in eye space and are clipped to the view; off, every
     // corner is on the screen and drawn as it is.
     void enableFaceCapture(bool enabled);
+    // The transform's y column times the 16.16 scale, as a light whose beam is wider than tall
+    // stretches its view.
+    void scaleTransformY(int scale);
+    // On, polygons draw only their depth, as 16-bit pixels into the screen's rows, which a
+    // light's scene points at its shadow map, and textures are off.
     void setShadowPass(int value);
-    int isShadowPass();
+    [[nodiscard]] int isShadowPass() const;
     void clipAndDrawLine3D(int vertex_index1, int vertex_index2);
     void setAlphaMask(int alpha_mask);
     int getAlphaMask();
@@ -156,11 +161,12 @@ private:
     CSpecial &special_;
     CPrim &prim_;
     CZRaster &zraster_;
-    const SCurrentTexture &texture_;
+    SCurrentTexture &texture_;
     CTexture &textures_;
     IScreenDevice &screen_;
     GeometryClipper clip_geometry_;
     bool plane_culling_enabled_ = true;
+    bool shadow_pass_ = false;
     // Ghidra's name; whether corners may come in eye space, as the vertex processing flag says.
     bool face_capture_enabled_ = true;
 };

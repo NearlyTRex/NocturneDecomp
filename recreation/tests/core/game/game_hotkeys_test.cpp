@@ -129,6 +129,17 @@ TEST_F(CGameHotkeysTest, TheDevelopersKeysNeedDeveloperMode) {
     const float before = ambient(0);
     press({EInputCodeType::DIK_LMENU, EInputCodeType::DIK_A});
     EXPECT_EQ(ambient(0), before);
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_H});
+    EXPECT_TRUE(set_.getLightsOn());
+}
+
+// The developer's Ctrl+H turns every spotlight off, and on again.
+TEST_F(CGameHotkeysTest, CtrlHTurnsTheLightsOffAndOn) {
+    game_.developer_mode = true;
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_H});
+    EXPECT_FALSE(set_.getLightsOn());
+    press({EInputCodeType::DIK_LCONTROL, EInputCodeType::DIK_H});
+    EXPECT_TRUE(set_.getLightsOn());
 }
 
 // Edit mode's cameras step either way round the set; leaving it lets the director choose again.

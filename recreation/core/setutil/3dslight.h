@@ -37,7 +37,11 @@ public:
     // moving filter.
     void apply(CDemonLight &light);
     void doNothing();
-    void process(CDemonLight *light, int apply_filter_flag);
+    // A frame of the light, delta_time in seconds and delta_time_int in 65536ths: its filters
+    // step on as each one's time runs out and drift, the beam taking the frame's filter when
+    // asked, and a light on less than all the time flickers in its cycle. Lights off turn it off.
+    void process(CDemonLight &light, bool apply_filter, float delta_time, int delta_time_int,
+                 bool lights_on);
     void advanceFilter(CDemonLight *light);
     void setFilterFrame(int frame_index, CDemonLight *light);
     void addFilter(char *filter_name, float duration, int filter_mode);
@@ -107,6 +111,9 @@ private:
     common::CVector2i filter_pos_;
     common::CVector2i size_{.x = 256, .y = 256};
     int current_filter_frame_ = 0;
+    // How long the filter frame and the on and off cycle have run, in seconds.
+    float filter_frame_elapsed_ = 0.0F;
+    float cycle_elapsed_ = 0.0F;
 };
 
 } // namespace nocturne::core

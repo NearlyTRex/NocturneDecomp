@@ -32,28 +32,6 @@ std::uint32_t getReciprocal(const engine::C2d &two_d, int count) {
 
 } // namespace
 
-// nocedit 0x0049072f
-void renderDepthOnlyStandard(const engine::SSoftwareEdge &left_edge,
-                             const engine::SSoftwareEdge &right_edge, int scanline_y,
-                             engine::IScreenDevice &screen, const engine::C2d &two_d) {
-    const SRowSpan span = engine::getRowSpan(left_edge, right_edge);
-    if (span.count <= 0) {
-        return;
-    }
-    std::uint16_t *row = getDepthRow(screen, scanline_y, span.left_x);
-    const int step = engine::getStep(span.lo->depth_current, span.hi->depth_current,
-                                     getReciprocal(two_d, span.count));
-    int depth = span.lo->depth_current;
-    for (int x = 0; x < span.count; ++x) {
-        // A depth below zero compares as unsigned, so it is never nearer.
-        const auto level = static_cast<std::uint32_t>(depth >> 8);
-        if (level < row[x]) {
-            row[x] = static_cast<std::uint16_t>(level);
-        }
-        depth = common::wrappingAdd(depth, step);
-    }
-}
-
 // The original's loop ran while its byte offset was at most twice the count, one pixel past the
 // row's end.
 // nocedit 0x004907e7

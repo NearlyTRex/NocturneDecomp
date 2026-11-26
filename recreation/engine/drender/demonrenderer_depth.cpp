@@ -2,12 +2,14 @@
 #include "common/render/renderstate.h"
 #include "engine/2d/2d.h"
 #include "engine/drender/demonrenderer.h"
+#include "engine/drender/drender.h"
 #include "engine/polygonstate.h"
 #include "engine/scanlinespan.h"
 #include "engine/screendevice.h"
 #include "engine/softwareedge.h"
 #include "engine/special/scanlinemode.h"
 #include "engine/special/special.h"
+#include "engine/texture/currenttexture.h"
 #include "platform/mrglheaderprimitive.h"
 
 #include <cstddef>
@@ -94,7 +96,31 @@ SPolygonState getDepthState() {
 
 } // namespace
 
-// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// nocedit 0x0049072f
+void renderDepthOnlyStandard(const SSoftwareEdge &left_edge, const SSoftwareEdge &right_edge,
+                             int scanline_y, IScreenDevice &screen, const C2d &two_d) {
+    const SRowSpan span = getRowSpan(left_edge, right_edge);
+    if (span.count <= 0) {
+        return;
+    }
+    std::uint16_t *row =
+        static_cast<std::uint16_t *>(screen.getScreenRows()[static_cast<std::size_t>(scanline_y)]) +
+        span.left_x;
+    const int step =
+        getStep(span.lo->depth_current, span.hi->depth_current,
+                two_d.getReciprocalLookupTable()[static_cast<std::size_t>(span.count) + 1]);
+    int depth = span.lo->depth_current;
+    for (int x = 0; x < span.count; ++x) {
+        // A depth below zero compares as unsigned, so it is never nearer.
+        const auto level = static_cast<std::uint32_t>(depth >> 8);
+        if (level < row[x]) {
+            row[x] = static_cast<std::uint16_t>(level);
+        }
+        depth = common::wrappingAdd(depth, step);
+    }
+}
+
+// In the shadow pass only the depth is drawn, untested, into the light's map.
 // nocedit 0x0048a820
 void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrimitive &prim) {
     if (!isFacing(prim.surface_normal)) {
@@ -102,6 +128,16 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
     }
     SPolygonState state = getDepthState();
     state.vertex_processing = face_capture_enabled_;
+    if (shadow_pass_) {
+        state.mode.render_flags = 0;
+        state.mode.vertex_preprocess_mode = SScanlineMode::kNoPreprocess;
+        state.draw_scanline = [this](const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
+            renderDepthOnlyStandard(left, right, y, screen_, two_d_);
+            return false;
+        };
+        clipAndFillPoly(prim.vertex_indices, state);
+        return;
+    }
     state.draw_scanline = [this, color = static_cast<std::uint32_t>(two_d_.getActiveRenderColor()),
                            reciprocals = two_d_.getReciprocalLookupTable()](
                               const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
@@ -109,6 +145,18 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
         return false;
     };
     clipAndFillPoly(prim.vertex_indices, state);
+}
+
+// The textures go off with it: nothing in the shadow pass is textured.
+// nocedit 0x0048cac0
+void CDemonRenderer::setShadowPass(int value) {
+    texture_.textures_disabled = value != 0;
+    shadow_pass_ = value != 0;
+}
+
+// nocedit 0x0048cae0
+int CDemonRenderer::isShadowPass() const {
+    return shadow_pass_ ? 1 : 0;
 }
 
 // A visibility test, not a draw: the rendered-triangle count is left as it was.

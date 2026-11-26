@@ -109,6 +109,24 @@ TEST_F(CDemonRendererDepthTest, ASolidPolygonFacingAwayDrawsNothing) {
     EXPECT_EQ(pixel(0, 0), kBlank);
 }
 
+// In the shadow pass the rows take only the depth, 16 bits a pixel, where it is nearer; the
+// colour and the screen's depths are left alone, and textures are off until the pass ends.
+TEST_F(CDemonRendererDepthTest, TheShadowPassDrawsOnlyTheDepthIntoTheRows) {
+    EXPECT_EQ(demon_renderer_.isShadowPass(), 0);
+    demon_renderer_.setShadowPass(1);
+    EXPECT_EQ(demon_renderer_.isShadowPass(), 1);
+    EXPECT_TRUE(texture_.textures_disabled);
+    depths_.fill(kNearer);
+    demon_renderer_.renderSolidColorDepthDirect(cornersOneToThree());
+    const auto *const first_row = static_cast<const std::uint16_t *>(pixel_rows_.at(0));
+    EXPECT_NE(first_row[0], 0x5555U);
+    EXPECT_LT(first_row[0], 0x5555U);
+    EXPECT_EQ(first_row[7], 0x5555U);
+    EXPECT_EQ(depth(0, 0), kNearer);
+    demon_renderer_.setShadowPass(0);
+    EXPECT_FALSE(texture_.textures_disabled);
+}
+
 TEST_F(CDemonRendererDepthTest, AProfiledPolygonShowsWhereAnyPixelIsInFront) {
     depths_.fill(kNearer);
     depth(4, 2) = kDepth;

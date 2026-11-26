@@ -2,9 +2,13 @@
 
 #include "common/fwd.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dlight/lightmappixel.h"
 #include "core/fwd.h"
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
+#include <optional>
 #include <span>
 #include <string>
 #include <vector>
@@ -25,6 +29,11 @@ struct SDemonLightOwners {
 // shapes its beam.
 class CDemonLight : public CDemonCamera {
 public:
+    // The display's most rows; a row's first pixel past its last where the light reaches none.
+    static constexpr std::size_t kDisplayRows = 240;
+    static constexpr std::size_t kDisplayColumns = 320;
+    static constexpr int kNoLeftExtent = 999;
+
     // The widest shadow map that takes the global filters.
     static constexpr int kMaxGlobalFilterWidth = 0x100;
 
@@ -41,15 +50,24 @@ public:
     void free();
     void allocMasterZBuffer();
     void freeMasterZBuffer();
+    // The light's scene: drawn from the light, the screen's rows its shadow map's while it is
+    // open, which only depths are drawn into, the beam's aspect stretching its view, the map
+    // cleared unless told to skip it. One open is fatal.
     void beginScene(int skip_clear_buffers);
+    // Closes it, the screen's rows back, its reach the farthest depth drawn unless it kept the
+    // map. Not open is fatal.
     void endScene(int restore_viewport_state);
     void beginBackgroundScene();
     void endBackgroundScene();
     void restoreDirtyRegions();
-    std::uint16_t *projectLightAndMarkVisibility(common::CVector3i *projected_coord,
-                                                 std::uint8_t x_round_flag,
-                                                 std::uint8_t y_round_flag);
+    // The shadow map entry the projected point in 16.16, on an odd row or column rounded on by a
+    // quarter or a half, falls on, marked seen; none in front of the light or outside its map,
+    // or for a circular shadow its circle.
+    [[nodiscard]] std::optional<std::size_t>
+    projectLightAndMarkVisibility(const common::CVector3i &projected_coord, bool x_odd, bool y_odd);
     void renderShadowMapDebugView(int screen_x, int screen_y, int display_size);
+    // For a circular shadow, the map's corners outside its circle at depth 0, which nothing is
+    // in front of.
     void clearCircularShadowMapEdges();
     void renderCoronaGeometry();
     void renderLightBloomQuad();
@@ -91,6 +109,14 @@ public:
     void setTransformScaleFactor(int transform_scale_factor);
     [[nodiscard]] float getVolumetricIntensity() const;
     [[nodiscard]] bool hasFilterBuffer() const;
+    // What the camera's precomputeLight leaves on the light: a display pixel each, 320 a row, in
+    // the camera's pool, and each display row's first and last pixel it reaches.
+    [[nodiscard]] std::span<SLightMapPixel> getLightMap() const;
+    void setLightMap(std::span<SLightMapPixel> light_map);
+    [[nodiscard]] std::span<int, kDisplayRows> getLeftExtents();
+    [[nodiscard]] std::span<const int, kDisplayRows> getLeftExtents() const;
+    [[nodiscard]] std::span<int, kDisplayRows> getRightExtents();
+    [[nodiscard]] std::span<const int, kDisplayRows> getRightExtents() const;
 
 private:
     static constexpr float kDefaultMaxDistance = 255.0F;
@@ -121,6 +147,11 @@ private:
     std::string filter_name_;
     int transform_scale_factor_ = kUnitScale;
     float volumetric_intensity_ = 1.0F;
+    std::span<SLightMapPixel> light_map_;
+    std::array<int, kDisplayRows> left_extents_{};
+    std::array<int, kDisplayRows> right_extents_{};
+    // The screen's rows the scene took over.
+    std::vector<void *> saved_screen_rows_;
 };
 
 } // namespace nocturne::core
