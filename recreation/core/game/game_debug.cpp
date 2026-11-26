@@ -55,14 +55,10 @@ constexpr double kPerKilobyte = 1.0 / 1024.0;
     return on ? "On" : "Off";
 }
 
-// The set's selected camera's group, or -1 before one is selected; the original read the slot
-// before the first.
+// The set's selected camera's group: the frame's scene, drawn first, has made sure one is shown.
 [[nodiscard]] int getSelectedCameraGroup(const CDemonSet &set) {
-    const int index = set.getSelectedCameraIndex();
-    if (index < 0) {
-        return -1;
-    }
-    return set.getCameras()[static_cast<std::size_t>(index)].getCameraGroup();
+    return set.getCameras()[static_cast<std::size_t>(set.getSelectedCameraIndex())]
+        .getCameraGroup();
 }
 
 // A screen width by height of red, green and blue bytes, each of the movie's pixels the mean of

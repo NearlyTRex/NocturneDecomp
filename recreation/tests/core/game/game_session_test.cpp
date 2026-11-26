@@ -63,6 +63,7 @@ protected:
         mission_.addActorToList(std::move(placeholder));
         EXPECT_TRUE(mission_.createHeros(std::make_unique<CTestHero>(actor_)));
         script_.initRuntime();
+        showACamera();
     }
 
     void play() {

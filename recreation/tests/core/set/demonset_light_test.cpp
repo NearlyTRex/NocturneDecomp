@@ -2,14 +2,22 @@
 #include "common/math/matrix3x3i.h"
 #include "common/math/vector3i.h"
 #include "common/render/renderstate.h"
+#include "core/dcamera/cameratables.h"
+#include "core/dcamera/demoncamera.h"
+#include "core/rect.h"
 #include "core/set/demonset.h"
+#include "engine/2d/2d.h"
 #include "platform/mrglprimitivequad.h"
+#include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <cstddef>
+#include <span>
 #include <vector>
 
 namespace nocturne::core {
@@ -75,6 +83,83 @@ TEST_F(CDemonSetLightTest, RotatingPutsTheVerticesInEyeSpaceAndOnTheScreen) {
     EXPECT_EQ(vertex_buffer_[0].projected_vertex.transformed_z, 100);
     EXPECT_GE(vertex_buffer_[0].projected_vertex.screen_x, 0);
     EXPECT_FALSE(faceCaptureIsOn());
+}
+
+// A 640 by 480 view centred at (320, 240), y running down the screen, in 16.16, and the scene
+// camera keeping its buffers.
+class CDemonSetScreenBoundsTest : public CDemonSetLightTest {
+protected:
+    CDemonSetScreenBoundsTest() {
+        two_d_.setProjection({.half_width_fixed = 320 << 16,
+                              .neg_half_height_fixed = -240 << 16,
+                              .center_x_fixed = 320 << 16,
+                              .center_y_fixed = 240 << 16});
+        set_parts_.tables.kept_camera = set_parts_.camera.get();
+    }
+
+    void onScreen(std::size_t index, int x, int y) {
+        vertex_buffer_[index].projected_vertex = {.screen_x = x << 16, .screen_y = y << 16};
+    }
+
+    // Out of view, with its eye space coordinates.
+    void offScreen(std::size_t index, int x, int y, int z) {
+        vertex_buffer_[index].projected_vertex = {.transformed_x = x,
+                                                  .transformed_y = y,
+                                                  .transformed_z = z,
+                                                  .screen_x =
+                                                      platform::SProjectedVertex::kClipLeft};
+    }
+
+    [[nodiscard]] std::span<const CRect> marked() const {
+        return set_parts_.camera->getDirtyRects();
+    }
+};
+
+// The box the vertices in view reach, in whole pixels.
+TEST_F(CDemonSetScreenBoundsTest, TheVerticesInViewMarkTheBoxTheyReach) {
+    onScreen(0, 100, 300);
+    onScreen(1, 200, 50);
+    onScreen(2, 900, 900);
+    set_.pushScreenBoundsToCamera(2);
+    EXPECT_THAT(marked(), ::testing::ElementsAre(
+                              CRect{.x_min = 100, .x_max = 200, .y_min = 50, .y_max = 300}));
+}
+
+// A vertex out of view reaches where it projects along an axis it is in view on, and the view's
+// edge on a side it is past.
+TEST_F(CDemonSetScreenBoundsTest, AVertexOutOfViewReachesTheEdgeItIsPast) {
+    // Half way right, past the top.
+    offScreen(0, 50, 200, 100);
+    set_.pushScreenBoundsToCamera(1);
+    // Past the left, at the middle; then past the right and the bottom.
+    offScreen(1, -150, 0, 100);
+    offScreen(2, 150, -150, 100);
+    set_.pushScreenBoundsToCamera(3);
+    EXPECT_THAT(marked(),
+                ::testing::ElementsAre(CRect{.x_min = 480, .x_max = 480, .y_min = 0, .y_max = 0},
+                                       CRect{.x_min = 0, .x_max = 640, .y_min = 0, .y_max = 480}));
+}
+
+// With no vertex the box is inside out, which marks nothing; without a camera keeping its
+// buffers nothing is marked at all.
+TEST_F(CDemonSetScreenBoundsTest, NoVertexMarksAnEmptyBox) {
+    set_.pushScreenBoundsToCamera(0);
+    EXPECT_THAT(marked(),
+                ::testing::ElementsAre(CRect{.x_min = 640, .x_max = 0, .y_min = 480, .y_max = 0}));
+    set_parts_.tables.kept_camera = nullptr;
+    set_.pushScreenBoundsToCamera(1);
+    EXPECT_EQ(marked().size(), 1U);
+}
+
+// Rotating marks the box the vertices reach.
+TEST_F(CDemonSetScreenBoundsTest, RotatingMarksTheVerticesBox) {
+    startRenderer();
+    const std::vector<CVector3i> vertices{{.x = 0, .y = 0, .z = 100}};
+    set_.rotateVerticies(vertices);
+    const int x = vertex_buffer_[0].projected_vertex.screen_x >> 16;
+    const int y = vertex_buffer_[0].projected_vertex.screen_y >> 16;
+    EXPECT_THAT(marked(),
+                ::testing::ElementsAre(CRect{.x_min = x, .x_max = x, .y_min = y, .y_max = y}));
 }
 
 TEST_F(CDemonSetLightTest, AVertexOutOfViewLeavesFaceCaptureOn) {

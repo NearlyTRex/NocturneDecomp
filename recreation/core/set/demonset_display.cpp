@@ -16,8 +16,10 @@ namespace {
 
 // Every pass's bit, which a mask of all of them sets on every actor.
 constexpr std::uint32_t kAllPasses = 0xffffffffU;
-// The passes a background always draws: the solid and the lit.
-constexpr std::uint32_t kAlwaysDrawnPasses = 0xc;
+// An actor is listed while its opaque or tinted pass has something to draw, whichever pass the
+// list is for.
+constexpr std::uint32_t kAlwaysDrawnPasses =
+    SDrawnTransform::kOpaquePass | SDrawnTransform::kTransparentPass;
 
 // An actor to draw and how far its box's middle is from the camera, squared.
 struct SDisplayEntry {

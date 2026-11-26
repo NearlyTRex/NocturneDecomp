@@ -1,11 +1,15 @@
+#include "common/error/fatalerror.h"
 #include "common/math/vector3i.h"
 #include "common/render/renderstate.h"
 #include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
 #include "core/color3i.h"
+#include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/location.h"
+#include "core/rect.h"
 #include "core/set/demonset.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
@@ -294,6 +298,118 @@ TEST_F(CDemonSetBackgroundTest, InHardwareTheGeometryAndActorsAreDrawnAgain) {
     showTheCamera();
     EXPECT_EQ(drawn, 4);
     EXPECT_FALSE(set_parts_.camera->isSceneOpen());
+}
+
+TEST_F(CDemonSetBackgroundTest, ASceneNeedsACameraShown) {
+    EXPECT_THAT([this] { set_.renderScene(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonSet::isCameraPanning - no camera selected")));
+}
+
+// The background test's set with its camera shown.
+class CDemonSetFrameTest : public CDemonSetBackgroundTest {
+protected:
+    CDemonSetFrameTest() {
+        showTheCamera();
+    }
+};
+
+// Farthest first each renderable actor draws opaque, tinted by its scale and with the render
+// alpha full, then each transparent one draws tinted; the flat colour is left untinted, and the
+// camera's scene is closed again.
+TEST_F(CDemonSetFrameTest, TheActorsDrawOpaqueThenTintedFarthestFirst) {
+    near_.setTransparent(true);
+    far_.setTransparent(true);
+    std::vector<std::string> drawn;
+    const auto record = [this, &drawn](std::string_view name) {
+        return [this, &drawn, name] {
+            const CColor3i &tint = set_.getFlatColor();
+            drawn.push_back(std::format("{} {},{},{} {:#x}", name, tint.r, tint.g, tint.b,
+                                        three_d_.getCurrentAlphaValue()));
+            return 1;
+        };
+    };
+    near_.onRenderOpaque(record("near opaque"));
+    far_.onRenderOpaque(record("far opaque"));
+    near_.onRenderTransparent(record("near tinted"));
+    far_.onRenderTransparent(record("far tinted"));
+    static_cast<void>(demon_renderer_.setRenderAlpha(0x8000));
+    set_.renderScene();
+    EXPECT_THAT(drawn, ElementsAre("far opaque 65536,65536,65536 0xff", "near opaque 1,2,3 0xff",
+                                   "far tinted 65536,65536,65536 0xff", "near tinted 1,2,3 0xff"));
+    EXPECT_EQ(set_.getFlatColor(), (CColor3i{.r = 0x10000, .g = 0x10000, .b = 0x10000}));
+    EXPECT_FALSE(set_parts_.camera->isSceneOpen());
+}
+
+// A pass's bit stays on an actor while it drew something in it, and is cleared on one that drew
+// nothing or doesn't take the pass.
+TEST_F(CDemonSetFrameTest, EachPassKeepsItsBitWhileTheActorDrewInIt) {
+    near_.onRenderOpaque([] { return 1; });
+    far_.setRenderable(false);
+    far_.setTransparent(true);
+    far_.onRenderTransparent([] { return 1; });
+    set_.renderScene();
+    EXPECT_EQ(near_.getDrawnTransform().dirty_flags,
+              SDrawnTransform::kEveryPass & ~SDrawnTransform::kTransparentPass);
+    EXPECT_EQ(far_.getDrawnTransform().dirty_flags,
+              SDrawnTransform::kEveryPass & ~SDrawnTransform::kOpaquePass);
+}
+
+// An actor that drew nothing is left out of the frames after while it stays where it was drawn,
+// and drawn again once it moves.
+TEST_F(CDemonSetFrameTest, AnActorThatDrewNothingWaitsUntilItMoves) {
+    int drawn = 0;
+    far_.onRenderOpaque([&drawn] {
+        ++drawn;
+        return 0;
+    });
+    set_.renderScene();
+    set_.renderScene();
+    EXPECT_EQ(drawn, 1);
+    far_.setLocation({.position = {.x = 1.0F, .y = 0.0F, .z = 50.0F}, .area_id = 0});
+    set_.renderScene();
+    EXPECT_EQ(drawn, 2);
+}
+
+// Each actor is noted as drawn where it is now, its passes left as they drew.
+TEST_F(CDemonSetFrameTest, EachActorsPlaceIsNotedAsDrawn) {
+    near_.setLocation({.position = {.x = 5.0F, .y = 0.0F, .z = 0.0F}, .area_id = 0});
+    near_.onRenderOpaque([] { return 1; });
+    set_.renderScene();
+    EXPECT_EQ(near_.getDrawnTransform().position.x, 5.0F);
+    EXPECT_NE(near_.getDrawnTransform().dirty_flags & SDrawnTransform::kOpaquePass, 0U);
+}
+
+// An actor that turns face capture off leaves it on for the next.
+TEST_F(CDemonSetFrameTest, EachActorStartsWithFaceCaptureOn) {
+    far_.onRenderOpaque([this] {
+        demon_renderer_.enableFaceCapture(false);
+        return 1;
+    });
+    bool near_capturing = false;
+    near_.onRenderOpaque([this, &near_capturing] {
+        near_capturing = faceCaptureIsOn();
+        return 1;
+    });
+    set_.renderScene();
+    EXPECT_TRUE(near_capturing);
+}
+
+// The scene keeps the camera's buffers, so what its actors draw marks the camera, and the next
+// scene first puts back the depths under what was marked.
+TEST_F(CDemonSetFrameTest, TheDepthsUnderWhatWasMarkedComeBackFirst) {
+    near_.onRenderOpaque([this] {
+        EXPECT_EQ(set_parts_.tables.kept_camera, set_parts_.camera.get());
+        set_.pushScreenBoundsToCamera(0);
+        return 1;
+    });
+    set_.renderScene();
+    EXPECT_EQ(set_parts_.camera->getDirtyRects().size(), 1U);
+    const std::uint32_t kept = set_parts_.camera->getZBuffer()[0];
+    depth_row_[0] = kept + 1;
+    set_parts_.camera->pushRect({.x_min = 0, .x_max = 0, .y_min = 0, .y_max = 0});
+    set_.renderScene();
+    EXPECT_EQ(depth_row_[0], kept);
 }
 
 TEST_F(CDemonSetSceneGeometryTest, TheSceneIsLitFromAboveAndInFront) {

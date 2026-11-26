@@ -69,7 +69,7 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 // deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script
 //   debug
 // deferred: the debug display's virtual directors, its key left to a debug movie while one is
-//   armed, with CDemonSet::renderScene
+//   armed, with CDemonSet::renderVirtualDirectors
 // deferred: saving, loading, quick saving with its "Quick Save" message, and quick loading after
 //   asking, not while letterboxed or loading in a network game, with CGame::saveGame and
 //   promptLoadGame

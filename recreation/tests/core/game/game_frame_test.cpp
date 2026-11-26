@@ -13,6 +13,7 @@
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
+#include "core/rect.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "core/skeleton/deformablemodelmanager.h"
@@ -65,7 +66,8 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 // A paused frame of a session whose one hero stands at the origin, a quarter second since the
-// last, with the scene camera's transform taken from an open and closed scene.
+// last, in a set of one camera, shown, with the scene camera's transform taken from an open and
+// closed scene.
 class CGameFrameTest : public CMissionFixture {
 protected:
     CGameFrameTest() {
@@ -78,7 +80,7 @@ protected:
         common::CVector3f start;
         common::CVector3f facing{.y = 0.5F};
         hero().setPositionAndOrientation(&start, &facing);
-        session_.camera.init(kHeight);
+        showACamera();
         session_.camera.beginScene(1);
         session_.camera.endScene(1);
         // As the session loads them, so a frame finds them at the screen's size.
@@ -105,6 +107,14 @@ TEST_F(CGameFrameTest, AnUnpausedFrameProcessesTheGame) {
     game_.is_paused = false;
     EXPECT_THAT([this] { game_.processFrame(session_); },
                 ThrowsMessage<common::CFatalError>(StrEq("CGame::process is not ported yet")));
+}
+
+// The frame draws the scene, whose beginning forgets the rectangles marked before it.
+TEST_F(CGameFrameTest, EachFrameDrawsTheScene) {
+    session_.camera.pushRect({.x_min = 1, .x_max = 2, .y_min = 1, .y_max = 2});
+    game_.processFrame(session_);
+    EXPECT_TRUE(session_.camera.getDirtyRects().empty());
+    EXPECT_FALSE(session_.camera.isSceneOpen());
 }
 
 // Q raises the hero 8 units a second, its time the last frame's; the frame then measures its own.
@@ -364,10 +374,10 @@ protected:
     int step_ = kEighthSecond;
 };
 
-// The hero stands at the origin turned half a radian about y; no camera is selected yet.
+// The hero stands at the origin turned half a radian about y; the camera shown is of group 0.
 TEST_F(CGameCameraDebugTest, ItsLinesAreTheCameraFrameRateHeroSlewAndMemory) {
     std::vector<std::pair<std::string, int>> lines{
-        {std::format("Camera: \"{}\" Group -1", session_.camera.getCameraName()), kHeight - 0x16},
+        {std::format("Camera: \"{}\" Group 0", session_.camera.getCameraName()), kHeight - 0x16},
         {"FR: 8.000000, AVG: 8.000000, PC: 0", kHeight - 0x0b},
         {"Hero : 0.00,0.00,0.00 xyz and 0.00,0.00,28.65 pbh", 0},
         {"Slew : On, Virtual Director : Off", 0x0b}};
@@ -381,7 +391,7 @@ TEST_F(CGameCameraDebugTest, TheAverageFrameRateIsOverTheFramesSinceItWasOn) {
     frame();
     step_ = 2 * kEighthSecond;
     std::vector<std::pair<std::string, int>> lines{
-        {std::format("Camera: \"{}\" Group -1", session_.camera.getCameraName()), kHeight - 0x16},
+        {std::format("Camera: \"{}\" Group 0", session_.camera.getCameraName()), kHeight - 0x16},
         {std::format("FR: 4.000000, AVG: {:f}, PC: 0", 2.0 / 0.375), kHeight - 0x0b},
         {"Hero : 0.00,0.00,0.00 xyz and 0.00,0.00,28.65 pbh", 0},
         {"Slew : On, Virtual Director : On", 0x0b}};
@@ -394,12 +404,6 @@ TEST_F(CGameCameraDebugTest, TheAverageFrameRateIsOverTheFramesSinceItWasOn) {
 
 // The set's selected camera names its group.
 TEST_F(CGameCameraDebugTest, TheSelectedCamerasGroupIsShown) {
-    givenFile("models\\one.set",
-              SSetFile{.cameras = "1\n" + cameraText("a"), .pvs = "1\n\t0\n"}.text());
-    givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
-                                        {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
-    set_.load("one.set");
-    set_.setCameraView(0);
     set_.getCameras()[0].setCameraGroup(7);
     std::vector<std::pair<std::string, int>> lines{
         {std::format("Camera: \"{}\" Group 7", session_.camera.getCameraName()), kHeight - 0x16},

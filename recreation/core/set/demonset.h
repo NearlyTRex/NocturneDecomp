@@ -108,7 +108,10 @@ public:
     void reinitCamera(int screen_height);
     void processActors();
     void renderStaticLights();
-    void renderScene(int skip_prerender);
+    // The frame's scene over the shown camera's backdrop: the depths the actors drew over last
+    // frame put back, then the actors drawn opaque and then tinted, farthest first and the local
+    // hero last, and each one's place noted as drawn. A camera must be shown.
+    void renderScene();
     void renderGogglesView();
     void addDynamicLight(CDemonLight *light);
     void addCoronaGlobe(CDemonGlobe *globe);
@@ -124,9 +127,11 @@ public:
                          int start_vertex_index, int vertex_count);
     void computeVertexOmniLighting(common::CVector3f *vertex_position,
                                    common::CVector3f *position_offset, int vertex_index);
+    // Marks the screen box the renderer's first vertex_count vertices reach on the camera whose
+    // scene keeps its buffers, for its depths to be put back before the next scene.
     void pushScreenBoundsToCamera(int vertex_count);
     // Puts each vertex into the renderer's buffer in eye space and on the screen, and turns face
-    // capture off when every one is in view.
+    // capture off when every one is in view, then marks the screen box they reach.
     void rotateVerticies(std::span<const common::CVector3i> input_vertices);
     // Gives the buffer's first vertex_count vertices their colour from the light direction, the
     // ambient level and the flat colour, by the given normals or by the polygons' faces.
@@ -286,6 +291,12 @@ private:
                           platform::SRenderVertex &vertex) const;
     // Each actor of the display list draws its background, opaque and tinted by its scale.
     void renderBackgroundActors(int layer_flag);
+    // Fatal unless a camera is shown.
+    void checkCameraSelected() const;
+    // The display list from its far end, each renderable or transparent actor drawing that pass,
+    // tinted by its scale, its bit for the pass kept while it drew something.
+    void renderOpaqueActors();
+    void renderTransparentActors();
     // Frees the enviro model and the terrain.
     void clear();
     std::string loadHeader(common::CTextScanner &scanner);

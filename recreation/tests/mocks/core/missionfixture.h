@@ -5,6 +5,7 @@
 #include "core/dfont/dfont.h"
 #include "core/dlight/lightglow.h"
 #include "core/dmodel/keyframedmodel.h"
+#include "core/dtrace/demonraytrace.h"
 #include "core/event/eventlist.h"
 #include "core/fire/fireeffect.h"
 #include "core/game/game.h"
@@ -30,8 +31,10 @@
 #include "sound/sndmain/sndmain.h"
 #include "support/newmsg/newmsg.h"
 #include "tests/mocks/core/gameparts.h"
+#include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/mockdeformablemodels.h"
 #include "tests/mocks/core/mockkeyframedmodels.h"
+#include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockaudiodevice.h"
@@ -213,6 +216,18 @@ protected:
             givenFile(std::format("art\\{}.raw", picture), "");
             givenFile(std::format("art\\{}.act", picture), "");
         }
+    }
+
+    // A set of one camera, loaded, with the scene camera framing the screen and the camera shown,
+    // as a mission shows its first before it plays.
+    void showACamera() {
+        givenFile("models\\one.set",
+                  SSetFile{.cameras = "1\n" + cameraText("a"), .pvs = "1\n\t0\n"}.text());
+        givenFile("data\\pier.geo", geoFile(CDemonRaytrace::kGeoFileFormatVersion,
+                                            {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
+        set_.load("one.set");
+        set_parts_.camera->init(kHeight);
+        set_.setCameraView(0);
     }
 
     CKeyFramedModel effect_model_{dosio_};

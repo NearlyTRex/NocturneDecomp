@@ -10,13 +10,21 @@ namespace nocturne::core {
 inline const CDemonActorType kTestHeroType = makeActorType("CTestHero", &CHero::kType, nullptr, 1);
 
 // A hero from the last mission, which counts how often it is set up, is as dead as the test says,
-// and does nothing else of its own.
+// draws nothing, and does nothing else of its own.
 class CTestHero : public CHero {
 public:
     using CHero::CHero;
 
     [[nodiscard]] const CDemonActorType &getActorType() const override {
         return kTestHeroType;
+    }
+
+    int renderOpaque() override {
+        return 0;
+    }
+
+    int renderTransparent() override {
+        return 0;
     }
 
     void setup() override {

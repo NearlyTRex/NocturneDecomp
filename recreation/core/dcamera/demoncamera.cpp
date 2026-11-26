@@ -142,7 +142,6 @@ void CDemonCamera::init(int screen_height) {
     zbuffer_.assign(pixels, 0);
 }
 
-// deferred: forgetting the dirty rectangles, with pushRect and restoreZBufferRectArray
 // nocedit 0x0044c360
 // bw1 0x0044cdf0
 // bw2 0x0043b730
@@ -150,6 +149,12 @@ void CDemonCamera::init(int screen_height) {
 void CDemonCamera::free() {
     framebuffer_.clear();
     zbuffer_.clear();
+    forgetDirtyRects();
+}
+
+void CDemonCamera::forgetDirtyRects() {
+    dirty_rects_.clear();
+    dirty_rects_overflowed_ = false;
 }
 
 // nocedit 0x004529a0
@@ -196,8 +201,8 @@ const std::string &CDemonCamera::getCameraName() const {
 // screen's size.
 // deferred: the camera shake's attack, sustain and decay and the screen's jitter, which stay
 //   still until a shake starts, with initCameraShake
-// deferred: the dirty rectangles and the viewport rectangle, with pushRect and
-//   restoreZBufferRectArray
+// The original also kept the frame as the scene's viewport, which only told restoreZBufferRect
+// whether a rectangle met the frame.
 // nocedit 0x0044c430
 void CDemonCamera::beginScene(int skip_clear_buffers) {
     if (scene_open_) {
@@ -208,6 +213,7 @@ void CDemonCamera::beginScene(int skip_clear_buffers) {
     skip_clear_buffers_ = skip_clear_buffers != 0;
     engine::CDemonRenderer &renderer = owners_.renderer;
     renderer.pushViewport(0, 0, framebuffer_width_ - 1, framebuffer_height_ - 1);
+    forgetDirtyRects();
     renderer.setCameraOriginFromScaledPoint(getPosition());
     renderer.setProjectionScale(getFocalLength());
     renderer.setupCameraAndProjection(getRotationMatrix());
@@ -254,11 +260,10 @@ void CDemonCamera::endScene(int skip_zbuffer_copy) {
     resetSceneCamera();
 }
 
-// deferred: the camera whose buffers are kept while skip_clear_buffers is set, with
-//   pushScreenBoundsToCamera
 // nocedit 0x0044c3e0
-void CDemonCamera::setSceneCamera(int /*skip_clear_buffers*/) {
+void CDemonCamera::setSceneCamera(int skip_clear_buffers) {
     owners_.tables.scene_camera = this;
+    owners_.tables.kept_camera = skip_clear_buffers != 0 ? this : nullptr;
 }
 
 // deferred: the fog's colour from the lightmap palette as the solid colour, with
@@ -275,10 +280,80 @@ void CDemonCamera::setupPerspectiveAndFog(common::CVector3f *position,
     tables.perspective_reciprocal = getFogValueAtPosition(&world_position, projected_vertex);
 }
 
-// deferred: no camera's buffers kept, with pushScreenBoundsToCamera
 // nocedit 0x0044c410
 void CDemonCamera::resetSceneCamera() {
+    owners_.tables.kept_camera = nullptr;
     owners_.tables.scene_camera = nullptr;
+}
+
+// nocedit 0x0044c740
+void CDemonCamera::pushRect(const CRect &rect) {
+    if (dirty_rects_.size() >= kMaxDirtyRects) {
+        dirty_rects_overflowed_ = true;
+        return;
+    }
+    dirty_rects_.push_back(rect);
+}
+
+// The original merged each row's rectangles into spans before copying them, which copies the
+// same depths. Its copy went to 8-byte boundaries, a depth or so past a rectangle's sides, and
+// copied a few even for a rectangle wholly past the frame's right.
+// nocedit 0x0044c860
+void CDemonCamera::restoreZBufferRectArray() {
+    if (owners_.special.getUseExternalRenderer()) {
+        static_cast<void>(owners_.special.restoreZBuffer(
+            0, 0, 0, owners_.screen.getWindowWidth() - 1, owners_.screen.getWindowHeight() - 1));
+        return;
+    }
+    if (dirty_rects_overflowed_) {
+        restoreDepths({.x_min = 0,
+                       .x_max = framebuffer_width_ - 1,
+                       .y_min = 0,
+                       .y_max = framebuffer_height_ - 1});
+        return;
+    }
+    for (const CRect &rect : dirty_rects_) {
+        restoreDepths({.x_min = std::max(rect.x_min, 0),
+                       .x_max = std::min(rect.x_max, framebuffer_width_ - 1),
+                       .y_min = std::max(rect.y_min, 0),
+                       .y_max = std::min(rect.y_max, framebuffer_height_ - 1)});
+    }
+}
+
+// The original's restoreZBufferRect, which restoreZBufferRectArray gave the whole frame; its test
+// that the rectangle met the scene's viewport always passed there.
+// nocedit 0x0044c780
+void CDemonCamera::restoreDepths(const CRect &rect) {
+    if (rect.x_min > rect.x_max) {
+        return;
+    }
+    const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    const auto count = static_cast<std::size_t>(rect.x_max - rect.x_min + 1);
+    for (int row = rect.y_min; row <= rect.y_max; ++row) {
+        const std::size_t from =
+            (static_cast<std::size_t>(row) * width) + static_cast<std::size_t>(rect.x_min);
+        std::copy_n(zbuffer_.begin() + static_cast<std::ptrdiff_t>(from), count,
+                    depth_rows[static_cast<std::size_t>(row)] + rect.x_min);
+    }
+}
+
+// deferred: the backdrop and the corona's light map composited onto the screen, the frame or,
+//   past 480 lines, the renderer's hold buffer locked around it, with
+//   compositeLightmapToFramebuffer and CSpecial's hold buffer
+// nocedit 0x004511c0
+void CDemonCamera::lockAndRenderToBuffer() {
+    if (owners_.special.getUseDirect3D()) {
+        static_cast<void>(owners_.special.beginScene());
+    }
+}
+
+std::span<const CRect> CDemonCamera::getDirtyRects() const {
+    return dirty_rects_;
+}
+
+bool CDemonCamera::getDirtyRectsOverflowed() const {
+    return dirty_rects_overflowed_;
 }
 
 // nocedit 0x00454450

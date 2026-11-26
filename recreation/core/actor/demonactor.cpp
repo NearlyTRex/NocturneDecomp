@@ -157,6 +157,21 @@ CBoundingBox3D *CDemonActor::getBoundingBox(CBoundingBox3D *out_box) {
 // bw3 0x004096e0
 void CDemonActor::updateCollisionData(CDemonSet & /*set*/) {}
 
+// Most actors draw nothing opaque or tinted, and say so. Retail's are empty; nocedit's checked the
+// actor's pointers.
+// nocedit 0x00408aa0
+int CDemonActor::renderOpaque() {
+    return 0;
+}
+
+// nocedit 0x00408ac0
+// bw1 0x00408790
+// bw2 0x004089b0
+// bw3 0x004087d0
+int CDemonActor::renderTransparent() {
+    return 0;
+}
+
 // Most actors have no background. Retail's is empty; nocedit's checked the actor's pointers.
 // nocedit 0x00408ae0
 // bw1 0x004087a0

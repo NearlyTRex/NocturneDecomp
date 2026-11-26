@@ -344,13 +344,17 @@ TEST(CDemonActor, AnActorWithNoShapeIsAnEightUnitBoxOnItsFeet) {
     EXPECT_THAT(box.max, ::testing::FieldsAre(4.0F, 8.0F, 4.0F));
 }
 
+TEST(CDemonActor, AnActorOfItsOwnDrawsNothingOpaqueOrTinted) {
+    CTestActor actor(kTestLeafType);
+    EXPECT_EQ(actor.renderOpaque(), 0);
+    EXPECT_EQ(actor.renderTransparent(), 0);
+}
+
 // Each quits, naming itself, until its function is ported.
 TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
     CTestActor actor(kTestLeafType);
     const std::vector<std::pair<std::string_view, std::function<void()>>> calls = {
         {"process", [&] { actor.process(0.0F); }},
-        {"renderOpaque", [&] { static_cast<void>(actor.renderOpaque()); }},
-        {"renderTransparent", [&] { static_cast<void>(actor.renderTransparent()); }},
         {"processFootstep", [&] { static_cast<void>(actor.processFootstep(0.0F)); }},
         {"processFootstepAtOffset",
          [&] { static_cast<void>(actor.processFootstepAtOffset(nullptr, 0.0F)); }},
@@ -405,7 +409,7 @@ TEST(CDemonActor, TheFunctionsNotPortedYetQuit) {
         {"getPathMap", [&] { static_cast<void>(actor.getPathMap()); }},
         {"calculateChecksum", [&] { actor.calculateChecksum(nullptr); }},
     };
-    EXPECT_EQ(calls.size(), 44U);
+    EXPECT_EQ(calls.size(), 42U);
     for (const auto &[name, call] : calls) {
         EXPECT_THAT(call, ThrowsMessage<common::CFatalError>(
                               StrEq("CDemonActor::" + std::string(name) + " is not ported yet")));

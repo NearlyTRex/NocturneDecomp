@@ -1,8 +1,11 @@
+#include "common/error/error.h"
 #include "common/math/vector3i.h"
 #include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/dcube/cubedrawowners.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "engine/drender/demonrenderer.h"
@@ -10,6 +13,8 @@
 #include "platform/mrglprimitivequad.h"
 
 #include <cstddef>
+#include <cstdint>
+#include <ranges>
 #include <span>
 
 namespace nocturne::core {
@@ -20,6 +25,16 @@ constexpr common::CVector3i kSceneLightDirection{.x = 0, .y = -46333, .z = 46333
 constexpr int kOpaqueRenderAlpha = 0xffff;
 // 16.16: the flat colour that leaves a colour as it is.
 constexpr int kUntinted = 0x10000;
+// The passes the scene's display list is built for, and the actors that moved are due in.
+constexpr std::uint32_t kScenePasses =
+    SDrawnTransform::kOpaquePass | SDrawnTransform::kTransparentPass;
+
+// The pass's bit kept on the actor while it drew something in it.
+void markPass(CDemonActor &actor, std::uint32_t pass, bool drew) {
+    SDrawnTransform drawn = actor.getDrawnTransform();
+    drawn.dirty_flags = drew ? (drawn.dirty_flags | pass) : (drawn.dirty_flags & ~pass);
+    actor.setDrawnTransform(drawn);
+}
 
 } // namespace
 
@@ -45,6 +60,106 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
         actor->renderBackground(layer_flag, render_owners);
         setFlatColor(kUntinted, kUntinted, kUntinted);
         owners_.renderer.enableFaceCapture(true);
+    }
+}
+
+// The game draws the scene once its prerender is done: only the editor asked for that here, the
+// dynamic lights and the coronas forgotten, the flashlight added and the static lights drawn.
+// Retail has no panning camera, for which the original drew nothing.
+// deferred: the shown camera's view set up again once a mirror has marked it, with
+//   markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
+// deferred: while shadows are on or a camera has just been shown, the corona buffer processed,
+//   the spotlights' light maps added to it and the dynamic lights', the globes' and the queued
+//   globes' coronas drawn, in each mirror too, with processCorona, addLightmapToCorona,
+//   renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
+// deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
+//   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
+//   crop's focus tracking
+// deferred: the gore's particles and the fire's effects, in each mirror too, the animated water,
+//   on the train the terrain, and the weather's particles, with CGore::renderParticles,
+//   CFireEffect::render, CWater::render, CTerrain::render and CWeather::renderParticles
+// deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the
+//   light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
+// deferred: the gore's and the fire's decals, the still water and each glass's backdrop drawn
+//   into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals, CWater::render
+//   and CGlass
+// deferred: the local hero's weapon and item drawn in their panels, with
+//   CInventory::renderSelectedItems
+// deferred: the spotlights' dirty regions put back, with CDemonLight::restoreDirtyRegions
+// deferred: the time the scene's parts took, printed while profiling, with processHotkeys'
+//   profile mode
+// deferred: the virtual directors drawn while debugging, with renderVirtualDirectors
+// nocedit 0x0056c1a0
+// bw1 0x00550580
+// bw2 0x0052f2a0
+// bw3 0x00535da0
+void CDemonSet::renderScene() {
+    checkCameraSelected();
+    CDemonCamera &camera = owners_.camera;
+    camera.restoreZBufferRectArray();
+    camera.beginScene(1);
+    camera.lockAndRenderToBuffer();
+    buildDisplayList(kScenePasses);
+    renderOpaqueActors();
+    camera.setupPerspectiveAndFog(nullptr, nullptr);
+    renderTransparentActors();
+    camera.endScene(0);
+    for (CDemonActor *actor : actors_) {
+        SDrawnTransform drawn = actor->getDrawnTransform();
+        drawn.position = actor->getLocation().position;
+        drawn.orientation = actor->getOrientation();
+        actor->setDrawnTransform(drawn);
+    }
+}
+
+// The original returned whether the camera panned, which no retail camera does.
+// nocedit 0x00571320
+void CDemonSet::checkCameraSelected() const {
+    if (selected_camera_index_ < 0) {
+        common::displayErrorAndQuit("CDemonSet::isCameraPanning - no camera selected");
+    }
+}
+
+// deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters
+//   and calculateSpatialLighting
+// deferred: each actor drawn again in each mirror, with buildMirrorList and setupMirrorRendering
+// nocedit 0x0056cd60
+// bw1 0x00551480
+// bw2 0x005301d0
+// bw3 0x00536c90
+void CDemonSet::renderOpaqueActors() {
+    for (CDemonActor *actor : sorted_render_actors_ | std::views::reverse) {
+        bool drew = false;
+        if (actor->isRenderable()) {
+            const common::CVector3i &scale = actor->getScale();
+            setFlatColor(scale.x, scale.y, scale.z);
+            static_cast<void>(owners_.renderer.setRenderAlpha(kOpaqueRenderAlpha));
+            drew = actor->renderOpaque() != 0;
+            owners_.renderer.enableFaceCapture(true);
+            setFlatColor(kUntinted, kUntinted, kUntinted);
+        }
+        markPass(*actor, SDrawnTransform::kOpaquePass, drew);
+    }
+}
+
+// deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters
+//   and calculateSpatialLighting
+// deferred: each actor drawn again in each mirror, with buildMirrorList and setupMirrorRendering
+// nocedit 0x0056cf00
+// bw1 0x005516c0
+// bw2 0x00530410
+// bw3 0x00536f90
+void CDemonSet::renderTransparentActors() {
+    for (CDemonActor *actor : sorted_render_actors_ | std::views::reverse) {
+        bool drew = false;
+        if (actor->isTransparent()) {
+            const common::CVector3i &scale = actor->getScale();
+            setFlatColor(scale.x, scale.y, scale.z);
+            drew = actor->renderTransparent() != 0;
+            owners_.renderer.enableFaceCapture(true);
+            setFlatColor(kUntinted, kUntinted, kUntinted);
+        }
+        markPass(*actor, SDrawnTransform::kTransparentPass, drew);
     }
 }
 

@@ -4,17 +4,23 @@
 #include "common/math/vector3i.h"
 #include "common/text/ascii.h"
 #include "core/cloth/cloth_functions.h"
+#include "core/dcamera/cameratables.h"
+#include "core/dcamera/demoncamera.h"
+#include "core/rect.h"
 #include "core/set/demonset.h"
 #include "core/set/set.h"
+#include "engine/2d/2d.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/special/special.h"
 #include "platform/mrglprimitivequad.h"
+#include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
 
 #include <algorithm>
 #include <array>
 #include <cmath>
 #include <cstddef>
+#include <cstdint>
 #include <format>
 #include <optional>
 #include <span>
@@ -34,6 +40,8 @@ using platform::SRenderVertex;
 // A normal's length in the fixed point the lighting dots it in.
 constexpr double kUnitNormal = 65535.0;
 constexpr int kBrightest = 0xffff;
+// The screen's positions are 16.16.
+constexpr int kScreenFractionBits = 16;
 
 void checkVertexCount(std::string_view what, int vertex_count, std::size_t capacity) {
     if (std::cmp_greater(vertex_count, capacity)) {
@@ -85,7 +93,6 @@ CVector3i toUnitNormal(const CVector3f &sum) {
 
 } // namespace
 
-// deferred: pushing the vertices' screen bounds to the scene camera, with the scene camera
 // nocedit 0x0056e7c0
 void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
     const std::span<SRenderVertex> buffer = owners_.renderer.getVertexBuffer();
@@ -100,6 +107,62 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
     if (all_in_view) {
         owners_.renderer.enableFaceCapture(false);
     }
+    pushScreenBoundsToCamera(static_cast<int>(input_vertices.size()));
+}
+
+// The box starts inside out, each side at the view's opposite edge, so with no vertex in it the
+// rectangle is empty. A vertex out of view reaches where it projects along an axis it is in view
+// on, and the view's edge on a side it is past.
+// nocedit 0x0056e5d0
+void CDemonSet::pushScreenBoundsToCamera(int vertex_count) {
+    CDemonCamera *const camera = owners_.light_owners.camera.tables.kept_camera;
+    if (camera == nullptr) {
+        return;
+    }
+    const engine::SProjectionParams &view = owners_.two_d.getProjection();
+    int min_x = view.center_x_fixed + view.half_width_fixed;
+    int max_x = view.center_x_fixed - view.half_width_fixed;
+    int min_y = view.center_y_fixed - view.neg_half_height_fixed;
+    int max_y = view.center_y_fixed + view.neg_half_height_fixed;
+    const auto widen = [](int &low, int &high, int eye, int depth, int half, int centre) {
+        if (-depth < eye && eye < depth) {
+            const auto at = static_cast<int>((std::int64_t{eye} * half) / depth) + centre;
+            high = std::max(high, at);
+            low = std::min(low, at);
+        }
+    };
+    const std::span<const SRenderVertex> buffer = owners_.renderer.getVertexBuffer();
+    for (const SRenderVertex &vertex :
+         buffer.first(static_cast<std::size_t>(std::max(vertex_count, 0)))) {
+        const platform::SProjectedVertex &point = vertex.projected_vertex;
+        if (point.screen_x >= 0) {
+            min_x = std::min(min_x, point.screen_x);
+            max_x = std::max(max_x, point.screen_x);
+            min_y = std::min(min_y, point.screen_y);
+            max_y = std::max(max_y, point.screen_y);
+            continue;
+        }
+        const int depth = point.transformed_z;
+        widen(min_x, max_x, point.transformed_x, depth, view.half_width_fixed, view.center_x_fixed);
+        widen(min_y, max_y, point.transformed_y, depth, view.neg_half_height_fixed,
+              view.center_y_fixed);
+        if (depth <= point.transformed_x) {
+            max_x = view.center_x_fixed + view.half_width_fixed;
+        }
+        if (point.transformed_x <= -depth) {
+            min_x = view.center_x_fixed - view.half_width_fixed;
+        }
+        if (depth <= point.transformed_y) {
+            min_y = view.center_y_fixed + view.neg_half_height_fixed;
+        }
+        if (point.transformed_y <= -depth) {
+            max_y = view.center_y_fixed - view.neg_half_height_fixed;
+        }
+    }
+    camera->pushRect({.x_min = min_x >> kScreenFractionBits,
+                      .x_max = max_x >> kScreenFractionBits,
+                      .y_min = min_y >> kScreenFractionBits,
+                      .y_max = max_y >> kScreenFractionBits});
 }
 
 // The original used the polygons' planes as scratch space for the face normals, as floats.

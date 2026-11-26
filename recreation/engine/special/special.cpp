@@ -282,6 +282,14 @@ int CSpecial::masterZBuffer(int slot) {
     return renderer_.masterZBuffer(slot);
 }
 
+// nocedit 0x005b7d20
+int CSpecial::restoreZBuffer(int slot, int left, int top, int right, int bottom) {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.restoreZBuffer(slot, left, top, right, bottom);
+}
+
 // Software drawing since the last present goes into the renderer's image first. The renderer
 // usually points the rows at that image already, so the copy may run a row onto itself.
 // The original's skip_buffer_copy parameter, which skipped the copy, is not in retail.

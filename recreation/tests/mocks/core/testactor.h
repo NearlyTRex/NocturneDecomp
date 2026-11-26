@@ -10,7 +10,7 @@
 
 namespace nocturne::core {
 
-// An actor of whatever class record the test gives it, whose archive() and renderBackground() do
+// An actor of whatever class record the test gives it, whose archive() and render functions do
 // what the test says, and which counts how often it is set up and its collision data updated.
 class CTestActor : public CDemonActor {
 public:
@@ -65,10 +65,29 @@ public:
         on_render_background_ = std::move(on_render_background);
     }
 
+    // Without one, the actor draws nothing opaque or tinted, as every actor does.
+    int renderOpaque() override {
+        return on_render_opaque_ ? on_render_opaque_() : CDemonActor::renderOpaque();
+    }
+
+    int renderTransparent() override {
+        return on_render_transparent_ ? on_render_transparent_() : CDemonActor::renderTransparent();
+    }
+
+    void onRenderOpaque(std::function<int()> on_render_opaque) {
+        on_render_opaque_ = std::move(on_render_opaque);
+    }
+
+    void onRenderTransparent(std::function<int()> on_render_transparent) {
+        on_render_transparent_ = std::move(on_render_transparent);
+    }
+
 private:
     const CDemonActorType &type_;
     std::function<void(CActorArchive &)> on_archive_;
     std::function<void(int)> on_render_background_;
+    std::function<int()> on_render_opaque_;
+    std::function<int()> on_render_transparent_;
     std::optional<SActorRenderOwners> render_owners_;
     int setup_count_ = 0;
     int collision_updates_ = 0;

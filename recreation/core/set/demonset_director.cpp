@@ -31,7 +31,7 @@ namespace {
 constexpr int kCamerasScoredPerSecond = 10;
 constexpr int kFewestCamerasScored = 3;
 // The actors' dirty flags the camera's background display list is built from.
-constexpr std::uint32_t kBackgroundDisplayListFlags = 0x10;
+constexpr std::uint32_t kBackgroundDisplayListFlags = SDrawnTransform::kBackgroundPass;
 // How far out from the camera the background's geometry is drawn: everything.
 constexpr float kBackgroundReach = 9999.9F;
 // How long a camera switched away from is held back from being chosen again.
@@ -322,20 +322,20 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 //   freeMasterZBuffer and resetRestoreMemoryAllocator
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no spot, omni or corona lights gathered yet, the coronas kept for the same camera (the
-//   decomp's windowed reswitch fix), with renderScene
+//   decomp's windowed reswitch fix), with lightVerticies' quality modes and renderScene's coronas
 // deferred: the actors' backgrounds lit without the quality modes while the depths are taken
 //   (g_InMirrorRenderPass), with lightVerticies' quality modes
 // The original also reset the raytrace's drawing mode, which only the editor changes.
 // deferred: the backdrop's world positions, normals and depths taken from what was drawn, with
-//   CDemonCamera::precomputeNormals' reader renderScene
+//   CDemonCamera::precomputeNormals and its readers, the spotlights' light over the backdrop
 // deferred: the still water, in hardware after the geometry and in the lit frame, with
 //   CWater::render
 // deferred: the spot and omni lights the camera sees, the lights' switches, the spotlights'
 //   shadow maps and their light over the backdrop, then the scene's static lights' shadow maps,
-//   with their reader renderScene, CDemonSet::process, the CDemonLight scene functions,
+//   with their reader renderScene's coronas, CDemonSet::process, the CDemonLight scene functions,
 //   CDemonCamera::precomputeLight and renderStaticLights
 // deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio
-//   off for the lit frame, with lightVerticies' quality modes and renderScene
+//   off for the lit frame, with lightVerticies' quality modes
 // deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
 //   CFireEffect::renderDecals and their decal pools' writers
 // deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the

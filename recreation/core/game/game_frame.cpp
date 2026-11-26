@@ -9,6 +9,7 @@
 #include "core/mission/demonmission.h"
 #include "core/netgame/netgame.h"
 #include "core/script/script.h"
+#include "core/set/demonset.h"
 #include "core/slew/slew.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
@@ -50,8 +51,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the screen paint time printed while profiling, with processCheatCodes' profile mode
 // deferred: the screen cleared first while the light view is on or the session asks, with
 //   processHotkeys' light view and runGameSession's clear
-// deferred: the scene drawn while the goggles are off, and again in a frame they went off in (the
-//   decomp's GOGGLES_OFF_FRAME), with CDemonSet::renderScene
+// deferred: the scene left undrawn while the goggles are on, and drawn again in a frame they went
+//   off in (the decomp's GOGGLES_OFF_FRAME), with the goggles
 // deferred: BW1-3's scene and static lights left undrawn while the field notes show or a puzzle is
 //   up, and the puzzle stepped before the client's frame, with CFieldNotes and CPuzzle
 // deferred: the world held still while the automap shows, its frame effects cleared instead, and
@@ -94,6 +95,7 @@ void CGame::processFrame(const SGameSessionOwners &session) {
     if (external) {
         owners_.screen.openScreenDevice();
     }
+    session.set.renderScene();
     session.net_game.processClientFrame();
     if (!is_paused) {
         quitNotPorted("CGame", "process");

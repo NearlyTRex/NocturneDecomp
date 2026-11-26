@@ -54,6 +54,9 @@ struct SCameraTables {
     SBackgroundSave background_save;
     // The camera or light whose scene is open; none between scenes.
     CDemonCamera *scene_camera = nullptr;
+    // The scene camera while its scene keeps the buffers it began with, which marks where the
+    // vertices drawn into it reach; none otherwise.
+    CDemonCamera *kept_camera = nullptr;
     // The fog in front of what is drawn next, 0 to 0xffff; none in a background scene.
     int perspective_reciprocal = 0;
 };

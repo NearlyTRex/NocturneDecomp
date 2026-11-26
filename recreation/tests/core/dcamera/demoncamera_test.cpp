@@ -7,6 +7,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
+#include "core/rect.h"
 #include "engine/matrix/matrix.h"
 #include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
@@ -60,8 +61,8 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::resetSceneCamera), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::beginScene), void (CDemonCamera::*)(int)>);
-    static_assert(std::is_same_v<decltype(&CDemonCamera::pushRect),
-                                 void (CDemonCamera::*)(int, int, int, int)>);
+    static_assert(
+        std::is_same_v<decltype(&CDemonCamera::pushRect), void (CDemonCamera::*)(const CRect &)>);
     static_assert(
         std::is_same_v<decltype(&CDemonCamera::restoreZBufferRectArray), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::endScene), void (CDemonCamera::*)(int)>);
@@ -96,7 +97,7 @@ TEST(CDemonCamera, PublicInterface) {
                                  CRect *(CDemonCamera::*)(CDemonLight *, CRect *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::processCorona), void (CDemonCamera::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CDemonCamera::lockAndRenderToBuffer), int (CDemonCamera::*)()>);
+        std::is_same_v<decltype(&CDemonCamera::lockAndRenderToBuffer), void (CDemonCamera::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderGlobeCoronas),
                                  void (CDemonCamera::*)(CDemonGlobe *, int)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::isBoundingBoxVisible),
@@ -477,6 +478,137 @@ TEST_F(CDemonCameraSceneTest, ABackgroundSceneNeedsTheSceneOpen) {
     EXPECT_THAT([this] { camera_.beginBackgroundScene(); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("CDemonCamera::beginBackgroundScene - Scene not open")));
+}
+
+// A camera of a 64 by 48 frame whose depths are 100 a row plus the column, kept from the screen,
+// which then holds 0 everywhere.
+class CDemonCameraDirtyRectTest : public CDemonCameraTest {
+protected:
+    static constexpr int kWidth = 64;
+    static constexpr int kHeight = 48;
+
+    CDemonCameraDirtyRectTest() {
+        camera_.init(kHeight);
+        for (std::size_t row = 0; row < depth_rows_.size(); ++row) {
+            for (std::size_t column = 0; column < kWidth; ++column) {
+                depths_.at(row).at(column) = static_cast<std::uint32_t>((row * 100) + column);
+            }
+            depth_rows_.at(row) = depths_.at(row).data();
+        }
+        ON_CALL(screen_, getZBufferRows())
+            .WillByDefault(Return(std::span<std::uint32_t *>(depth_rows_)));
+        camera_.saveZBufferScanlines();
+        for (auto &row : depths_) {
+            row.fill(0);
+        }
+    }
+
+    [[nodiscard]] std::uint32_t depthAt(int x, int y) const {
+        return depths_.at(static_cast<std::size_t>(y)).at(static_cast<std::size_t>(x));
+    }
+
+    // How many of the screen's depths are back.
+    [[nodiscard]] int restoredCount() const {
+        int count = 0;
+        for (const auto &row : depths_) {
+            count += static_cast<int>(
+                std::ranges::count_if(row, [](std::uint32_t depth) { return depth != 0; }));
+        }
+        return count;
+    }
+
+    std::array<std::array<std::uint32_t, kWidth>, kHeight> depths_{};
+    std::array<std::uint32_t *, kHeight> depth_rows_{};
+};
+
+// Each rectangle's depths come back, every edge inclusive, and nothing else.
+TEST_F(CDemonCameraDirtyRectTest, TheMarkedRectanglesDepthsComeBack) {
+    camera_.pushRect({.x_min = 2, .x_max = 4, .y_min = 1, .y_max = 2});
+    camera_.pushRect({.x_min = 3, .x_max = 6, .y_min = 2, .y_max = 3});
+    EXPECT_THAT(camera_.getDirtyRects(),
+                ::testing::ElementsAre(CRect{.x_min = 2, .x_max = 4, .y_min = 1, .y_max = 2},
+                                       CRect{.x_min = 3, .x_max = 6, .y_min = 2, .y_max = 3}));
+    camera_.restoreZBufferRectArray();
+    EXPECT_EQ(depthAt(2, 1), 102U);
+    EXPECT_EQ(depthAt(4, 1), 104U);
+    EXPECT_EQ(depthAt(6, 2), 206U);
+    EXPECT_EQ(depthAt(3, 3), 303U);
+    // 3 + 3, then the second row's 2 to 6, then 4.
+    EXPECT_EQ(restoredCount(), 3 + 5 + 4);
+}
+
+// A rectangle reaching past the frame is kept to it; one wholly past its right, or a box no
+// vertex widened, brings nothing back.
+TEST_F(CDemonCameraDirtyRectTest, ARectanglePastTheFrameIsKeptToIt) {
+    camera_.pushRect({.x_min = -5, .x_max = 1, .y_min = kHeight - 1, .y_max = kHeight + 9});
+    camera_.pushRect({.x_min = kWidth + 2, .x_max = kWidth + 9, .y_min = 0, .y_max = 0});
+    camera_.pushRect({.x_min = kWidth, .x_max = 0, .y_min = kHeight, .y_max = 0});
+    camera_.restoreZBufferRectArray();
+    EXPECT_EQ(depthAt(0, kHeight - 1), 4700U);
+    EXPECT_EQ(depthAt(1, kHeight - 1), 4701U);
+    EXPECT_EQ(restoredCount(), 2);
+}
+
+// Past 256 rectangles none are kept, and the whole frame's depths come back.
+TEST_F(CDemonCameraDirtyRectTest, PastTheirLimitTheWholeFrameComesBack) {
+    for (std::size_t index = 0; index < CDemonCamera::kMaxDirtyRects; ++index) {
+        camera_.pushRect({.x_min = 0, .x_max = 0, .y_min = 0, .y_max = 0});
+    }
+    EXPECT_FALSE(camera_.getDirtyRectsOverflowed());
+    camera_.pushRect({.x_min = 1, .x_max = 1, .y_min = 1, .y_max = 1});
+    EXPECT_TRUE(camera_.getDirtyRectsOverflowed());
+    EXPECT_EQ(camera_.getDirtyRects().size(), CDemonCamera::kMaxDirtyRects);
+    camera_.restoreZBufferRectArray();
+    EXPECT_EQ(depthAt(kWidth - 1, kHeight - 1), 4763U);
+    // All but the first, whose depth is 0.
+    EXPECT_EQ(restoredCount(), (kWidth * kHeight) - 1);
+}
+
+// A scene's beginning, and freeing the camera, forget the rectangles.
+TEST_F(CDemonCameraDirtyRectTest, ASceneBeginsWithNoRectangles) {
+    for (std::size_t index = 0; index <= CDemonCamera::kMaxDirtyRects; ++index) {
+        camera_.pushRect({.x_min = 1, .x_max = 1, .y_min = 1, .y_max = 1});
+    }
+    camera_.beginScene(1);
+    EXPECT_TRUE(camera_.getDirtyRects().empty());
+    EXPECT_FALSE(camera_.getDirtyRectsOverflowed());
+    camera_.endScene(1);
+    camera_.pushRect({.x_min = 1, .x_max = 1, .y_min = 1, .y_max = 1});
+    camera_.free();
+    EXPECT_TRUE(camera_.getDirtyRects().empty());
+}
+
+// Through the hardware renderer its master depths come back over the whole window instead.
+TEST_F(CDemonCameraDirtyRectTest, InHardwareTheRenderersDepthsComeBackOverTheWindow) {
+    startRenderer();
+    ON_CALL(screen_, getWindowWidth()).WillByDefault(Return(800));
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(600));
+    camera_.pushRect({.x_min = 1, .x_max = 1, .y_min = 1, .y_max = 1});
+    EXPECT_CALL(renderer_, restoreZBuffer(0, 0, 0, 799, 599));
+    camera_.restoreZBufferRectArray();
+    EXPECT_EQ(restoredCount(), 0);
+}
+
+// A scene that keeps its buffers makes its camera the one the vertices drawn mark rectangles on;
+// one that clears them, and the scene's end, leave none.
+TEST_F(CDemonCameraTest, AScenesKeptBuffersMakeItsCameraTheMarkedOne) {
+    camera_.init(48);
+    camera_.beginScene(1);
+    EXPECT_EQ(tables_.kept_camera, &camera_);
+    camera_.endScene(1);
+    EXPECT_EQ(tables_.kept_camera, nullptr);
+    camera_.setSceneCamera(1);
+    camera_.setSceneCamera(0);
+    EXPECT_EQ(tables_.kept_camera, nullptr);
+    EXPECT_EQ(tables_.scene_camera, &camera_);
+}
+
+// The backdrop's composite isn't ported yet; through Direct3D the renderer's scene begins.
+TEST_F(CDemonCameraTest, LockingTheFrameBeginsTheHardwareRenderersScene) {
+    camera_.lockAndRenderToBuffer();
+    startRenderer();
+    EXPECT_CALL(renderer_, beginScene());
+    camera_.lockAndRenderToBuffer();
 }
 
 } // namespace

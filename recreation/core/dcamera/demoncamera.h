@@ -5,11 +5,13 @@
 #include "common/math/vector3i.h"
 #include "core/dlight/cameraview.h"
 #include "core/fwd.h"
+#include "core/rect.h"
 #include "engine/2d/2d.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <span>
 #include <string>
@@ -73,7 +75,12 @@ public:
     // 8-8-8, in software, until the matching end puts the screen back. The scene must be open.
     void beginBackgroundScene();
     void endBackgroundScene(int restore_zbuffer);
-    void pushRect(int left, int top, int right, int bottom);
+    // Marks the rectangle of the frame, every edge inclusive, for its depths to be put back
+    // before the next scene; past kMaxDirtyRects of them, the whole frame's.
+    void pushRect(const CRect &rect);
+    // The depths the scene began with, put back into the screen's where the rectangles marked
+    // since the last scene began, kept to the frame; in hardware, the renderer's master depths
+    // over the whole window.
     void restoreZBufferRectArray();
     // The renderer's transform, camera origin and projection as the scene began, and the
     // transform's inverse.
@@ -102,7 +109,8 @@ public:
     int isCoronaSufficientlyVisible(CDemonLight *light_source);
     CRect *computeLightExtentBounds(CDemonLight *light, CRect *out_bounds);
     void processCorona();
-    int lockAndRenderToBuffer();
+    // The backdrop and its light onto the screen, and the hardware renderer's scene begun.
+    void lockAndRenderToBuffer();
     void renderGlobeCoronas(CDemonGlobe *globe, int force_render);
     int isBoundingBoxVisible(common::CVector3f *position, common::CVector3f *orientation,
                              common::CVector3f *bbox_min, common::CVector3f *bbox_max);
@@ -138,9 +146,19 @@ public:
     [[nodiscard]] std::span<const std::uint32_t> getZBuffer() const;
     // 0xffff is full.
     [[nodiscard]] int getCoronaBlendFactor() const;
+    // As pushRect marked them since the scene began.
+    [[nodiscard]] std::span<const CRect> getDirtyRects() const;
+    [[nodiscard]] bool getDirtyRectsOverflowed() const;
+
+    static constexpr std::size_t kMaxDirtyRects = 256;
 
 private:
     static constexpr float kDefaultMaxDistance = 999.9F;
+
+    // The camera's depths into the screen's over the rows and columns of the rectangle, which is
+    // inside the frame.
+    void restoreDepths(const CRect &rect);
+    void forgetDirtyRects();
 
     // Fills the camera tables' fog grid afresh from the CRT stream.
     void generateFogGrid();
@@ -176,6 +194,8 @@ private:
     engine::SProjectionParams cached_projection_;
     bool scene_open_ = false;
     bool skip_clear_buffers_ = false;
+    std::vector<CRect> dirty_rects_;
+    bool dirty_rects_overflowed_ = false;
 };
 
 } // namespace nocturne::core

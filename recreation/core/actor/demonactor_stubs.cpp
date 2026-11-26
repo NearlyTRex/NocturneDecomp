@@ -20,14 +20,6 @@ void CDemonActor::process(float /*delta_time*/) {
     notPorted("process");
 }
 
-int CDemonActor::renderOpaque() {
-    notPorted("renderOpaque");
-}
-
-int CDemonActor::renderTransparent() {
-    notPorted("renderTransparent");
-}
-
 std::uint32_t CDemonActor::processFootstep(float /*volume*/) {
     notPorted("processFootstep");
 }
