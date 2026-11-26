@@ -57,12 +57,16 @@ platform::SClipPlane facePlane(const SBoxFace &face, const common::CVector3i &lo
 
 } // namespace
 
-// deferred: the light's shadow-map test in place of the fog test while the renderer draws the
-//   shadow pass, with setShadowPass's callers and isVisibleWithShadow
+// In the shadow pass the fog does not hide the box.
+// deferred: the shadow pass's test of the box's corners on the light's map, with
+//   isVisibleWithShadow and renderStaticLights' current shadow light
 // nocedit 0x004204f0
 bool CBoundingBox3D::isVisible(const SActorRenderOwners &owners) const {
     if (!isVisibleWithCamera(owners)) {
         return false;
+    }
+    if (owners.renderer.isShadowPass() != 0) {
+        return true;
     }
     const common::CVector3f centre{
         .x = (min.x + max.x) * 0.5F, .y = (min.y + max.y) * 0.5F, .z = (min.z + max.z) * 0.5F};

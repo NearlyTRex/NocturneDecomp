@@ -174,7 +174,6 @@ void CDemonSet::pushScreenBoundsToCamera(int vertex_count) const {
 // deferred: the cached mirror colour, with cacheMirrorLighting
 // deferred: lighting without the directional light, with the actors that set
 //   disable_directional_lighting
-// deferred: leaving the colours alone in the shadow pass, with setShadowPass's callers
 // deferred: skipping small normals' normalisation while skip_normal_normalization is set, with
 //   CSvetlana::renderOpaque
 // deferred: packed and triangle face lists, with the callers that pass them
@@ -186,6 +185,10 @@ void CDemonSet::lightVerticies(int vertex_count,
                                std::span<const CVector3i> vertex_normals) {
     const std::span<SRenderVertex> buffer = owners_.renderer.getVertexBuffer();
     checkVertexCount("lightVerticies - tried to light", vertex_count, buffer.size());
+    // The shadow pass draws only depths, so the colours are left alone.
+    if (owners_.renderer.isShadowPass() != 0) {
+        return;
+    }
     const auto count = static_cast<std::size_t>(vertex_count);
     if (!vertex_normals.empty()) {
         for (std::size_t i = 0; i < count; ++i) {

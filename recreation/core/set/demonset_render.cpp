@@ -193,7 +193,7 @@ bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim
 //   setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and
 //   CGlass::renderBrokenGlass
 // deferred: the shadow pass drawing only the mirrors, while mirrors are on, with
-//   setShadowPass's callers
+//   setupMirrorRendering and CMirror::renderMirrorQuadDepth
 // nocedit 0x0056a190
 // bw2 0x0052d0e0
 // bw3 0x00533b80
@@ -221,8 +221,8 @@ void CDemonSet::renderSceneGeometry(float frustum_param, int render_mode) {
 
 // deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and
 //   game session
-// deferred: the env-mapped drawing in the game's env-map render modes, with
-//   renderEnvMapBatchQuad and the code that sets CGame's render_mode
+// deferred: the env-mapped drawing in the game's env-map render modes, outside the shadow pass,
+//   with renderEnvMapBatchQuad and the code that sets CGame's render_mode
 // deferred: the per-pixel flat-colour pass first, with renderCustomScanline and the code that
 //   sets per_pixel_lighting_enabled
 // nocedit 0x00570770

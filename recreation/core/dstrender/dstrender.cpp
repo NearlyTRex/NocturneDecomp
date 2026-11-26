@@ -1,73 +1,14 @@
 #include "core/dstrender/dstrender.h"
 
-#include "common/math/fixed.h"
-#include "engine/2d/2d.h"
-#include "engine/scanlinespan.h"
-#include "engine/screendevice.h"
-#include "engine/softwareedge.h"
 #include "engine/special/pixel16.h"
-#include "engine/texture/currenttexture.h"
 
 #include <algorithm>
 #include <array>
-#include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <span>
 
 namespace nocturne::core {
-namespace {
-
-using engine::SRowSpan;
-
-std::uint16_t *getDepthRow(engine::IScreenDevice &screen, int scanline_y, int left_x) {
-    return static_cast<std::uint16_t *>(
-               screen.getScreenRows()[static_cast<std::size_t>(scanline_y)]) +
-           left_x;
-}
-
-std::uint32_t getReciprocal(const engine::C2d &two_d, int count) {
-    return two_d.getReciprocalLookupTable()[static_cast<std::size_t>(count) + 1];
-}
-
-} // namespace
-
-// The original's loop ran while its byte offset was at most twice the count, one pixel past the
-// row's end.
-// nocedit 0x004907e7
-void renderTexturedAlphaMMXScanline(const engine::SSoftwareEdge &left_edge,
-                                    const engine::SSoftwareEdge &right_edge, int scanline_y,
-                                    engine::IScreenDevice &screen, const engine::C2d &two_d,
-                                    const engine::SCurrentTexture &texture) {
-    const SRowSpan span = engine::getRowSpan(left_edge, right_edge);
-    if (span.count <= 0) {
-        return;
-    }
-    std::uint16_t *row = getDepthRow(screen, scanline_y, span.left_x);
-    const std::uint32_t reciprocal = getReciprocal(two_d, span.count);
-    const engine::SSoftwareEdge &lo = *span.lo;
-    const engine::SSoftwareEdge &hi = *span.hi;
-    const int u_step = engine::getStep(lo.u_current, hi.u_current, reciprocal);
-    const int v_step = engine::getStep(lo.v_current, hi.v_current, reciprocal);
-    const int depth_step = engine::getStep(lo.depth_current, hi.depth_current, reciprocal);
-    const std::span<const std::uint8_t> coverage =
-        texture.opacity.empty() ? texture.data : texture.opacity;
-    int u = lo.u_current;
-    int v = lo.v_current;
-    int depth = lo.depth_current;
-    for (int x = 0; x <= span.count; ++x) {
-        // Unsigned, so a depth stepped below zero is behind everything.
-        if (std::bit_cast<std::uint32_t>(depth) < row[x] &&
-            coverage[engine::getTexelIndex(static_cast<std::uint32_t>(u),
-                                           static_cast<std::uint32_t>(v), texture)] != 0) {
-            row[x] = static_cast<std::uint16_t>(depth);
-        }
-        u = common::wrappingAdd(u, u_step);
-        v = common::wrappingAdd(v, v_step);
-        depth = common::wrappingAdd(depth, depth_step);
-    }
-}
-
 namespace {
 
 // The fog's weight at a level, all fog at kFullFog: the original's table g_LightmapData, a level
@@ -188,45 +129,39 @@ constexpr int kTopLevel = 0xff;
 } // namespace
 
 // nocedit 0x004926e1
-void blendLightmapPerPxU32toU32BB12Px2MMX(std::span<std::uint32_t> output,
-                                          std::span<const std::uint32_t> backdrop,
-                                          std::span<const std::uint8_t> light,
-                                          std::span<const std::uint8_t> fog,
-                                          const SLightmapLook &look) {
+void blendLightRow32Even(std::span<std::uint32_t> output, std::span<const std::uint32_t> backdrop,
+                         std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                         const SLightmapLook &look) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel, blendPerPixelPair(backdrop, light, fog, pixel, look, kEvenRows));
     }
 }
 
 // nocedit 0x00492bd5
-void blendLightmapPerPxU64toU32AmbientPx2MMX(std::span<std::uint32_t> output,
-                                             std::span<const std::uint32_t> backdrop,
-                                             std::span<const std::uint8_t> light,
-                                             std::span<const std::uint8_t> fog,
-                                             const SLightmapLook &look) {
+void blendLightRow32Odd(std::span<std::uint32_t> output, std::span<const std::uint32_t> backdrop,
+                        std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                        const SLightmapLook &look) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel, blendPerPixelPair(backdrop, light, fog, pixel, look, kOddRows));
     }
 }
 
 // nocedit 0x004917bc
-void blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(std::span<std::uint32_t> output,
-                                                   std::span<const std::uint32_t> backdrop,
-                                                   std::span<const std::uint8_t> light,
-                                                   std::span<const std::uint8_t> fog,
-                                                   const SLightmapLook &look) {
+void blendHalfLightRow32Even(std::span<std::uint32_t> output,
+                             std::span<const std::uint32_t> backdrop,
+                             std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                             const SLightmapLook &look) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel, blendSharedPair(backdrop, light, {}, fog, pixel / 2, look, kEvenRows));
     }
 }
 
 // nocedit 0x00491c9a
-void blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(std::span<std::uint32_t> output,
-                                                       std::span<const std::uint32_t> backdrop,
-                                                       std::span<const std::uint8_t> light,
-                                                       std::span<const std::uint8_t> light_below,
-                                                       std::span<const std::uint8_t> fog,
-                                                       const SLightmapLook &look) {
+void blendHalfLightRow32Odd(std::span<std::uint32_t> output,
+                            std::span<const std::uint32_t> backdrop,
+                            std::span<const std::uint8_t> light,
+                            std::span<const std::uint8_t> light_below,
+                            std::span<const std::uint8_t> fog, const SLightmapLook &look) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel,
               blendSharedPair(backdrop, light, light_below, fog, pixel / 2, look, kOddRows));
@@ -234,12 +169,9 @@ void blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(std::span<std::uint32_t> 
 }
 
 // nocedit 0x00493860
-void blendLightmapPerPxU32toU16pBB12Px2MMX(std::span<std::uint16_t> output,
-                                           std::span<const std::uint32_t> backdrop,
-                                           std::span<const std::uint8_t> light,
-                                           std::span<const std::uint8_t> fog,
-                                           const SLightmapLook &look,
-                                           const engine::SColorMasks &masks) {
+void blendLightRow16Even(std::span<std::uint16_t> output, std::span<const std::uint32_t> backdrop,
+                         std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                         const SLightmapLook &look, const engine::SColorMasks &masks) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel, blendPerPixelPair(backdrop, light, fog, pixel, look, kEvenRows),
               masks);
@@ -247,24 +179,19 @@ void blendLightmapPerPxU32toU16pBB12Px2MMX(std::span<std::uint16_t> output,
 }
 
 // nocedit 0x00493dc4
-void blendLightmapPerPxU64toU16pAmbientPx2MMX(std::span<std::uint16_t> output,
-                                              std::span<const std::uint32_t> backdrop,
-                                              std::span<const std::uint8_t> light,
-                                              std::span<const std::uint8_t> fog,
-                                              const SLightmapLook &look,
-                                              const engine::SColorMasks &masks) {
+void blendLightRow16Odd(std::span<std::uint16_t> output, std::span<const std::uint32_t> backdrop,
+                        std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                        const SLightmapLook &look, const engine::SColorMasks &masks) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel, blendPerPixelPair(backdrop, light, fog, pixel, look, kOddRows), masks);
     }
 }
 
 // nocedit 0x00492f03
-void blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(std::span<std::uint16_t> output,
-                                                   std::span<const std::uint32_t> backdrop,
-                                                   std::span<const std::uint8_t> light,
-                                                   std::span<const std::uint8_t> fog,
-                                                   const SLightmapLook &look,
-                                                   const engine::SColorMasks &masks) {
+void blendHalfLightRow16Even(std::span<std::uint16_t> output,
+                             std::span<const std::uint32_t> backdrop,
+                             std::span<const std::uint8_t> light, std::span<const std::uint8_t> fog,
+                             const SLightmapLook &look, const engine::SColorMasks &masks) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel,
               blendSharedPair(backdrop, light, {}, fog, pixel / 2, look, kEvenRows16), masks);
@@ -272,13 +199,12 @@ void blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(std::span<std::uint16_t> outp
 }
 
 // nocedit 0x00493450
-void blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(std::span<std::uint16_t> output,
-                                                    std::span<const std::uint32_t> backdrop,
-                                                    std::span<const std::uint8_t> light,
-                                                    std::span<const std::uint8_t> light_below,
-                                                    std::span<const std::uint8_t> fog,
-                                                    const SLightmapLook &look,
-                                                    const engine::SColorMasks &masks) {
+void blendHalfLightRow16Odd(std::span<std::uint16_t> output,
+                            std::span<const std::uint32_t> backdrop,
+                            std::span<const std::uint8_t> light,
+                            std::span<const std::uint8_t> light_below,
+                            std::span<const std::uint8_t> fog, const SLightmapLook &look,
+                            const engine::SColorMasks &masks) {
     for (std::size_t pixel = 0; pixel < output.size(); pixel += 2) {
         store(output, pixel,
               blendSharedPair(backdrop, light, light_below, fog, pixel / 2, look, kOddRows16),
@@ -289,9 +215,8 @@ void blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(std::span<std::uint16_t> out
 // The original also blurred the row's first and last pixels, reading one before the buffer and
 // one after it; the caller clears both.
 // nocedit 0x00492042
-void verticalBlur3TapMMXStride320(std::span<std::uint8_t> output,
-                                  std::span<const std::uint8_t> rows, std::size_t row,
-                                  std::size_t count) {
+void blurLightRow(std::span<std::uint8_t> output, std::span<const std::uint8_t> rows,
+                  std::size_t row, std::size_t count) {
     for (std::size_t x = 1; x + 1 < count; ++x) {
         unsigned sum = 0;
         for (std::size_t dy = 0; dy < kBlurWeights.size(); ++dy) {
@@ -304,8 +229,8 @@ void verticalBlur3TapMMXStride320(std::span<std::uint8_t> output,
 }
 
 // nocedit 0x00492e8a
-void alphaBlendPixelsMMX(std::span<std::uint8_t> output, std::span<const std::uint8_t> first,
-                         std::span<const std::uint8_t> second, int alpha) {
+void mixBytes(std::span<std::uint8_t> output, std::span<const std::uint8_t> first,
+              std::span<const std::uint8_t> second, int alpha) {
     const int second_weight = alpha >> 1;
     const int first_weight = (kFullAlpha - alpha) >> 1;
     for (std::size_t at = 0; at < output.size(); ++at) {

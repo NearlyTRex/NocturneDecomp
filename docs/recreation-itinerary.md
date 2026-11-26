@@ -29,7 +29,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 156 | 66 | 26.9% | 268 | 49 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 158 | 65 | 27.2% | 268 | 49 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 19 | 7 | 73.0% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
@@ -37,7 +37,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
-| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 29 | 2 | 10.4% | 50 | 5 |
+| 19 | Not reached from startup: `engine/` | 23 | 278 | 19700 | 30 | 1 | 10.7% | 50 | 5 |
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 2 | 0 |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 24 | 0 |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 14 | 1 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1289** | **240** | **28.7%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1292** | **238** | **28.7%** | **2032** | **382** |
 
 ## Step 0: Math value types
 
@@ -903,7 +903,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `rotateAndLightVertices` 0x004778d0 (64)
   - [~] `submitToRenderer` 0x00477980 (179)
     - deferred: skipping the parts an instance hides, with the writers of its part flags, CVehicle::archive and CLightActor
-    - deferred: batching each part whole without a texture in the shadow pass, with setShadowPass's callers
     - unverified: the diagonal's float roundings at the 250 threshold, by running the test against nocedit's own code with boxes either side of it
     - BW: [x] bw1 0x004673a0 = bw2 0x0044e7d0 = bw3 0x00461050 (logic-change)
   - [~] `prepareForRender` 0x00477850 (29)
@@ -941,27 +940,23 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: recording the texture while texture capture is on, with setTextureCaptureMode's callers
   - [ ] `renderCustomScanline` 0x0048c8d0 (54)
   - [~] `clipAndFillPoly` 0x0048a740 (80)
-    - deferred: the shadow pass sending an untextured polygon down the depth-only route, with setShadowPass's callers
+    - deferred: the shadow pass sending a polygon fogged but untextured down the depth-only route, with a shadow-pass draw that keeps the fog's flag without the texture's
   - [ ] `captureFace` 0x0048d8a0 (123)
     - BW: [ ] bw1 0x00484c20 = bw2 0x0046c720 = bw3 0x0046e300 (logic-change)
   - [ ] `processQuadPrimitive` 0x0048d7a0 (84)
   - [~] `renderTexturedPoly` 0x0048aeb0 (112)
     - deferred: handing the polygon to processQuadPrimitive while texture capture is on, with setTextureCaptureMode's callers
-    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [~] `renderFacetList` 0x0048cf00 (197)
-    - deferred: the shadow pass's depth-only straight path, with setShadowPass's callers
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [~] `renderQuadBatch` 0x0048ce90 (46)
     - deferred: sending each polygon to processQuadPrimitive while texture capture is on, with setTextureCaptureMode's callers
   - [~] `renderAlphaBlendedPoly` 0x0048b1e0 (96)
-    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [~] `renderDestReadBlendPoly` 0x0048b970 (104)
-    - deferred: the shadow pass's textured-alpha depth draw, with setShadowPass's callers
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [x] `getCameraOriginFixed` 0x0048c760 (23)
@@ -998,7 +993,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the quality modes' lighting, with setCameraView and the actors that set lighting_quality_mode
     - deferred: the cached mirror colour, with cacheMirrorLighting
     - deferred: lighting without the directional light, with the actors that set disable_directional_lighting
-    - deferred: leaving the colours alone in the shadow pass, with setShadowPass's callers
     - deferred: skipping small normals' normalisation while skip_normal_normalization is set, with CSvetlana::renderOpaque
     - deferred: packed and triangle face lists, with the callers that pass them
     - BW: [x] bw1 0x00553440 = bw2 0x00532190 (logic-change); [ ] bw3 0x00538dd0 (logic-change)
@@ -1006,7 +1000,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderEnvMapBatchQuad` 0x00570010 (16)
   - [~] `renderPrimitiveBatch` 0x00570770 (82)
     - deferred: drawing nothing while the game suppresses set geometry, with CGame's cheats and game session
-    - deferred: the env-mapped drawing in the game's env-map render modes, with renderEnvMapBatchQuad and the code that sets CGame's render_mode
+    - deferred: the env-mapped drawing in the game's env-map render modes, outside the shadow pass, with renderEnvMapBatchQuad and the code that sets CGame's render_mode
     - deferred: the per-pixel flat-colour pass first, with renderCustomScanline and the code that sets per_pixel_lighting_enabled
   - [x] `setFlatColor` 0x00570ca0 (8)
 
@@ -1171,7 +1165,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `engine/drender.cpp` (3 functions, 63 instructions, 2 done, 1 partial)
 - class `CDemonRenderer`
   - [~] `renderTexturedDirect` 0x0048ae10 (47)
-    - deferred: the shadow pass's depth-only draw, with setShadowPass's callers
     - deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's fog setup
   - [x] `pushViewport` 0x0048c890 (15)
   - [x] `popViewport` 0x0048c8c0 (1)
@@ -1671,7 +1664,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004b8100 = bw3 0x004a6090 (logic-change); [ ] bw2 0x0049f850 (logic-change)
   - [~] `renderBackground` 0x004caa80 (127)
     - deferred: whether a lit torch of more than unit size draws its corona, unless a flame within 5 already does, and clearing that and the visibility check first, with renderTransparent
-    - deferred: nothing tested in the shadow pass, with setShadowPass's callers
     - BW: [x] bw1 0x004b8ac0 = bw2 0x004a0210 = bw3 0x004a6a50 (logic-change)
   - [x] `getBoundingBox` 0x004cac00 (22)
     - BW: [x] bw1 0x004b8c90 = bw2 0x004a03e0 = bw3 0x004a6c20 (logic-change)
@@ -2182,12 +2174,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `render` 0x005e1f50 (86)
     - BW: [ ] bw1 0x0059f3e0 = bw2 0x0057b860 = bw3 0x005723d0 (logic-change)
 
-### `core/dstrendr.cpp` (7 functions, 558 instructions, 2 done, 0 partial)
+### `core/dstrendr.cpp` (7 functions, 558 instructions, 3 done, 0 partial)
 - free functions
   - [ ] `memcpyMMX` 0x00492001 (32)
   - [x] `renderSolidColorDepth16xUnrolled` 0x00490a58 (186)
   - [x] `renderDepthInterlacedProfiled` 0x00490c37 (50)
-  - [ ] `renderScreenDepthTestInterlacedProfiled` 0x00490cb5 (51)
+  - [x] `renderScreenDepthTestInterlacedProfiled` 0x00490cb5 (51)
   - [ ] `renderDepth16BitConditional` 0x0049077d (35)
   - [ ] `renderZBufferFill16xUnrolled` 0x00490902 (131)
   - [ ] `renderTexturedDecalMMXScanline` 0x0049169d (73)
@@ -2240,8 +2232,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `renderSolidColorDepthDirect` 0x0048a820 (41)
   - [ ] `setCurrentPolygonColor` 0x0048c960 (3)
   - [~] `renderDepthProfiledDirect` 0x0048ab50 (70)
-    - deferred: the shadow pass's screen-depth test, with setShadowPass's callers
-    - deferred: drawing through the shadow pass while the hardware renderer is on, with setShadowPass's callers
     - deferred: a budget other than one pixel, with CWater::calculateVisibleTiles
   - [ ] `renderSolidTexturedPoly` 0x0048b550 (77)
   - [ ] `renderZPrepassPoly` 0x0048a950 (80)
@@ -2491,7 +2481,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
     - deferred: drawing in software the mirror list, the environment model, the sky dome, the water and, on the train, the terrain, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome, CWater::calculateVisibleTiles and render, and CTerrain::render
     - deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and CGlass::renderBrokenGlass
-    - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setShadowPass's callers
+    - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setupMirrorRendering and CMirror::renderMirrorQuadDepth
     - BW: [x] bw2 0x0052d0e0 (operand-change); [x] bw3 0x00533b80 (operand-change)
   - [~] `renderBackgroundActors` 0x0056aca0 (101)
     - deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters and calculateSpatialLighting
@@ -2545,19 +2535,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `isVisibleWithCamera` 0x00420680 (136)
     - BW: [ ] bw1 0x00420990 = bw2 0x0041aa20 = bw3 0x0041dcd0 (logic-change)
   - [~] `isVisible` 0x004204f0 (128)
-    - deferred: the light's shadow-map test in place of the fog test while the renderer draws the shadow pass, with setShadowPass's callers and isVisibleWithShadow
+    - deferred: the shadow pass's test of the box's corners on the light's map, with isVisibleWithShadow and renderStaticLights' current shadow light
     - BW: [ ] bw1 0x004207b0 = bw2 0x0041a840 = bw3 0x0041daf0 (logic-change)
   - [x] `getMaximumBound` 0x00421060 (29)
 
-### `core/setdir.cpp` (5 functions, 729 instructions, 4 done, 1 partial)
+### `core/setdir.cpp` (5 functions, 729 instructions, 5 done, 0 partial)
 - class `CDemonSet`
   - [x] `setPendingCamera` 0x00575b00 (6)
   - [x] `isPointInVdirBox` 0x005762a0 (62)
     - BW: [x] bw1 0x0055b990 = bw3 0x00541350 (logic-change); [x] bw2 0x0053a090 (logic-change)
   - [x] `findVdirBoxAtPosition` 0x00576870 (32)
     - BW: [x] bw1 0x0055c060 = bw3 0x00541a20 (logic-change)
-  - [~] `evaluateVirtualDirector` 0x005751d0 (619)
-    - deferred: scoring with the shadow pass off, with setShadowPass's callers
+  - [x] `evaluateVirtualDirector` 0x005751d0 (619)
     - BW: [ ] bw1 0x00559f80 = bw3 0x0053f940 (logic-change); [ ] bw2 0x00538d10 (logic-change)
   - [x] `clearCameraSwitchCooldown` 0x00575b20 (10)
 
@@ -3924,12 +3913,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `staticInit` 0x004417e0 (11)
 
-### `engine/drender.cpp` (18 functions, 1601 instructions, 3 done, 1 partial)
+### `engine/drender.cpp` (18 functions, 1601 instructions, 4 done, 0 partial)
 - class `CDemonRenderer`
   - [x] `ctor` 0x0048a6c0 (10)
   - [ ] `setProjectionMode` 0x0048a700 (14)
-  - [~] `countVisiblePixelsPoly` 0x0048aa50 (76)
-    - deferred: refusing to count in the shadow pass, with setShadowPass's callers
+  - [x] `countVisiblePixelsPoly` 0x0048aa50 (76)
     - BW: [x] bw3 0x0046b470 (logic-change)
   - [ ] `renderNearPlaneTexturedPoly` 0x0048ac40 (102)
     - BW: [ ] bw3 0x0046b670 (logic-change)
@@ -7681,7 +7669,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderOpaque` 0x0054d720 (202)
     - BW: [ ] bw1 0x0053a3d0 = bw2 0x00519080 = bw3 0x005120b0 (logic-change)
   - [~] `renderBackground` 0x0054d9b0 (129)
-    - deferred: nothing drawn in the shadow pass, with setShadowPass's callers
     - deferred: marking a resting platform drawn into the backdrop, with renderOpaque and process
     - deferred: the draw lit per pixel with the fog sampled at its place, while recomputeFog is set, with getFogValueAtPosition and the set's per-pixel lighting
     - BW: [x] bw1 0x0053a520 = bw2 0x005191d0 = bw3 0x00512200 (logic-change)

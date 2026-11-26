@@ -236,6 +236,16 @@ TEST_F(CFlameBackgroundTest, AFlameLearnsWhetherItIsVisibleInItsLayer) {
     EXPECT_TRUE(flame_.isVisible());
 }
 
+TEST_F(CFlameBackgroundTest, InTheShadowPassTheFlameKeepsWhatItKnew) {
+    hideEverything();
+    flame_.renderBackground(1, render_owners_);
+    depths_.fill(kFarthest);
+    demon_renderer_.setShadowPass(1);
+    flame_.renderBackground(1, render_owners_);
+    demon_renderer_.setShadowPass(0);
+    EXPECT_FALSE(flame_.isVisible());
+}
+
 TEST_F(CFlameBackgroundTest, OutsideItsLayerTheFlameKeepsWhatItKnew) {
     hideEverything();
     flame_.renderBackground(0, render_owners_);

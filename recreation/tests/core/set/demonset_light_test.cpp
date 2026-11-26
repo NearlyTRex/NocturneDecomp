@@ -188,6 +188,18 @@ TEST_F(CDemonSetLightTest, GivenNormalsEachVertexIsLitByItsOwn) {
     EXPECT_EQ(vertex_buffer_[1].r, 0);
 }
 
+// The shadow pass draws only depths, so the colours stay as they were.
+TEST_F(CDemonSetLightTest, TheShadowPassLeavesTheColoursAlone) {
+    const std::vector<CVector3i> normals{{.z = kOne}};
+    vertex_buffer_[0].r = 3;
+    vertex_buffer_[0].a = 7;
+    demon_renderer_.setShadowPass(1);
+    set_.lightVerticies(1, {}, normals);
+    demon_renderer_.setShadowPass(0);
+    EXPECT_EQ(vertex_buffer_[0].r, 3);
+    EXPECT_EQ(vertex_buffer_[0].a, 7);
+}
+
 TEST_F(CDemonSetLightTest, WithoutNormalsOrFacesTheQuickLightIsFatal) {
     EXPECT_THROW(set_.lightVerticies(1, {}, {}), common::CFatalError);
     EXPECT_NO_THROW(set_.lightVerticies(0, {}, {}));

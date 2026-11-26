@@ -10,6 +10,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -121,6 +122,27 @@ TEST_F(CKeyFramedModelRenderTest, AModelOfOneTextureDrawsEachPartWhole) {
                "0,3, 0,0,0, 2,0,0, 1,0,0\n0,3, 0,0,0, 3,0,0, 2,0,0\n0,3, 0,0,0, 3,0,0, 1,0,0\n",
                "b.raw\n", "4,2\n0,1\n"));
     EXPECT_EQ(lists_, (std::vector<std::array<int, 2>>{{2, 64}, {1, 64}}));
+}
+
+// In the shadow pass no texture is taken: each part's depths go into the light's map whole, in
+// software, and nothing reaches the hardware's lists.
+TEST_F(CKeyFramedModelRenderTest, TheShadowPassDrawsEachPartWholeWithoutATexture) {
+    constexpr std::size_t kWidth = 640;
+    constexpr std::size_t kHeight = 480;
+    std::vector<std::uint16_t> map(kWidth * kHeight, 0xffff);
+    std::vector<void *> rows(kHeight);
+    for (std::size_t row = 0; row < kHeight; ++row) {
+        rows[row] = map.data() + (row * kWidth);
+    }
+    ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(rows)));
+    demon_renderer_.setShadowPass(1);
+    draw(model("4,3,2,1,1", kSquareCorners,
+               "1,3, 0,0,0, 2,0,0, 1,0,0\n1,3, 0,0,0, 3,0,0, 2,0,0\n0,3, 0,0,0, 3,0,0, 1,0,0\n",
+               "a.raw\nb.raw\n", "4,3\n"));
+    demon_renderer_.setShadowPass(0);
+    EXPECT_TRUE(lists_.empty());
+    EXPECT_EQ(texture_.dimension, 0);
+    EXPECT_TRUE(std::ranges::any_of(map, [](std::uint16_t depth) { return depth != 0xffff; }));
 }
 
 TEST_F(CKeyFramedModelRenderTest, AModelWithoutTexturesStillDraws) {

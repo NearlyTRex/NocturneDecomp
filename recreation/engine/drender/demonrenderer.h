@@ -148,7 +148,12 @@ private:
     [[nodiscard]] bool isFacing(const platform::SClipPlane &surface_normal) const;
     // The polygon's corner indices, each corner given the polygon's texture coordinates.
     std::vector<int> takeCorners(const platform::SMRGLPrimitiveQuad &poly);
+    // The polygon's corner indices alone.
+    static std::vector<int> takeIndices(const platform::SMRGLPrimitiveQuad &poly);
     [[nodiscard]] SPolygonState getPerspectiveState(std::uint32_t render_flags) const;
+    // The shadow pass's draw: untextured, the corners' depths as they are, and only the depth
+    // drawn, into the light's map.
+    [[nodiscard]] SPolygonState getShadowState() const;
     void clipAndFillPoly(std::span<const int> vertex_indices, const SPolygonState &state);
     void renderFacetList(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                          int render_flags);

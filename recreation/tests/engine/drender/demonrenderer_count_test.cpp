@@ -1,3 +1,4 @@
+#include "common/error/fatalerror.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/matrix/matrix.h"
 #include "platform/mrglprimitivequad.h"
@@ -5,6 +6,7 @@
 #include "platform/rendervertex.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
 #include <array>
@@ -16,6 +18,8 @@ namespace {
 
 using platform::SMRGLPrimitiveQuad;
 using platform::SRenderVertex;
+using ::testing::StrEq;
+using ::testing::ThrowsMessage;
 
 // A corner at the pixel, of reciprocal depth 9.
 SRenderVertex at(int x, int y) {
@@ -64,6 +68,16 @@ protected:
 TEST_F(CDemonRendererCountTest, EachPixelNoNearerThanTheDepthsIsCounted) {
     givenTriangle();
     EXPECT_EQ(demon_renderer_.countVisiblePixelsPoly(cornersOneToThree(), rows_), 28);
+}
+
+TEST_F(CDemonRendererCountTest, NothingIsCountedInTheShadowPass) {
+    givenTriangle();
+    demon_renderer_.setShadowPass(1);
+    EXPECT_THAT(
+        [this] {
+            static_cast<void>(demon_renderer_.countVisiblePixelsPoly(cornersOneToThree(), rows_));
+        },
+        ThrowsMessage<common::CFatalError>(StrEq("Can't use demonZFacetCount in shadow mode!")));
 }
 
 TEST_F(CDemonRendererCountTest, APixelBehindTheDepthsIsNot) {

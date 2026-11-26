@@ -16,8 +16,8 @@ namespace nocturne::engine {
 using platform::SMRGLPrimitiveQuad;
 
 // The original drew only a polygon's first four corners on the straight path, reading past them
-// for one of more, and quit past 1999 polygons facing the camera.
-// deferred: the shadow pass's depth-only straight path, with setShadowPass's callers
+// for one of more, and quit past 1999 polygons facing the camera. In the shadow pass the straight
+// path draws only the depth, into the light's map, the corners keeping their texture coordinates.
 // deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
 //   CCharacter::renderEthereal
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
@@ -29,6 +29,14 @@ void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primiti
     if (face_capture_enabled_ || plane_culling_enabled_ || culling_mode == 0) {
         for (const SMRGLPrimitiveQuad &poly : primitives) {
             renderTexturedPoly(poly, render_flags);
+        }
+        return;
+    }
+    if (shadow_pass_) {
+        const SPolygonState state = getShadowState();
+        for (const SMRGLPrimitiveQuad &poly : primitives) {
+            renderTriangleSimple(vertex_buffer_, takeIndices(poly), state, special_, three_d_,
+                                 texture_);
         }
         return;
     }

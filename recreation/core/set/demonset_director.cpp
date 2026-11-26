@@ -88,8 +88,8 @@ constexpr std::array<SBoxFace, 6> kBoxFaces = {{
 // worked out at the x87's precision. The last switch's area flag is set only when it switches.
 // The cameras are scored through the software rasteriser. The original also listed the actors
 // near the one shown that block the director, which nothing read, and pointed the screen's depth
-// rows at each thumb's and back, where here the thumb's rows go to the count.
-// deferred: scoring with the shadow pass off, with setShadowPass's callers
+// rows at each thumb's and back, where here the thumb's rows go to the count. The scoring runs
+// with the shadow pass off.
 // nocedit 0x005751d0
 int CDemonSet::evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_mode) {
     if (actor == nullptr) {
@@ -148,8 +148,11 @@ int CDemonSet::evaluateVirtualDirector(CDemonActor *actor, int force_evaluation_
     const int area = findVdirBoxAtPosition(world_centre);
     const bool external_renderer = owners_.special.getUseExternalRenderer();
     owners_.special.setUseExternalRenderer(false);
+    const int shadow_pass = owners_.renderer.isShadowPass();
+    owners_.renderer.setShadowPass(0);
     scoreCameras(*actor, {.area = area, .radius = radius, .outline = outline}, count,
                  force_evaluation_mode);
+    owners_.renderer.setShadowPass(shadow_pass);
     owners_.special.setUseExternalRenderer(external_renderer);
     if (next_scored_camera_ < camera_count) {
         return 0;

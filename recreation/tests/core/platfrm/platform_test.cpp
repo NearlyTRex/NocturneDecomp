@@ -350,6 +350,18 @@ TEST_F(CPlatformBackgroundTest, ARestingPlatformIsDrawnIntoTheBackdrop) {
     EXPECT_EQ(platform_.getOneShotState(), EOneShotState::kNo);
 }
 
+// Nothing goes into a light's map, and a finished one-shot is not marked drawn there.
+TEST_F(CPlatformBackgroundTest, TheShadowPassDrawsNoPlatform) {
+    demon_renderer_.setShadowPass(1);
+    readPlatform({.rests_in_backdrop = true});
+    platform_.renderBackground(1, render_owners_);
+    EXPECT_FALSE(drawn());
+    readPlatform({.one_shot = EOneShotState::kDone});
+    platform_.renderBackground(1, render_owners_);
+    EXPECT_EQ(platform_.getOneShotState(), EOneShotState::kDone);
+    demon_renderer_.setShadowPass(0);
+}
+
 TEST_F(CPlatformBackgroundTest, APlatformMovingEitherWayIsLeftOut) {
     for (const EPlatformState state :
          {EPlatformState::kMovingToEnd, EPlatformState::kMovingToStart}) {

@@ -10,14 +10,7 @@ namespace {
 TEST(CoreDstrenderFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&renderDepth16BitConditional),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
-    static_assert(
-        std::is_same_v<decltype(&renderTexturedAlphaMMXScanline),
-                       void (*)(const engine::SSoftwareEdge &, const engine::SSoftwareEdge &, int,
-                                engine::IScreenDevice &, const engine::C2d &,
-                                const engine::SCurrentTexture &)>);
     static_assert(std::is_same_v<decltype(&renderZBufferFill16xUnrolled),
-                                 void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
-    static_assert(std::is_same_v<decltype(&renderScreenDepthTestInterlacedProfiled),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);
     static_assert(std::is_same_v<decltype(&renderPerspectiveCorrectTextured16xCached),
                                  void (*)(engine::SSoftwareEdge *, engine::SSoftwareEdge *, int)>);

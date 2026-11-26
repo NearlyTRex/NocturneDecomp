@@ -716,12 +716,11 @@ TEST_F(CDemonCameraCompositeTest, TheBackdropIsLitAndFoggedOntoTheScreen) {
     for (std::size_t row = 1; row + 1 < height_; ++row) {
         std::vector<std::uint32_t> expected(width_);
         if (row % 2 == 0) {
-            blendLightmapPerPxU32toU32BB12Px2MMX(expected, backdropRow(row), displayRow(light, row),
-                                                 displayRow(tables_.fog_mix, row), look());
+            blendLightRow32Even(expected, backdropRow(row), displayRow(light, row),
+                                displayRow(tables_.fog_mix, row), look());
         } else {
-            blendLightmapPerPxU64toU32AmbientPx2MMX(expected, backdropRow(row),
-                                                    displayRow(light, row),
-                                                    displayRow(tables_.fog_mix, row), look());
+            blendLightRow32Odd(expected, backdropRow(row), displayRow(light, row),
+                               displayRow(tables_.fog_mix, row), look());
         }
         EXPECT_THAT(screenRow(row), ::testing::ElementsAreArray(expected)) << "row " << row;
     }
@@ -734,13 +733,12 @@ TEST_F(CDemonCameraCompositeTest, AtAScaleOfTwoTheDisplaysPixelsAreShared) {
     camera_.lockAndRenderToBuffer(0);
     const std::vector<std::uint8_t> &light = tables_.blurred_light;
     std::vector<std::uint32_t> even(width_);
-    blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(even, backdropRow(2), displayRow(light, 1),
-                                                  displayRow(tables_.fog_mix, 1), look());
+    blendHalfLightRow32Even(even, backdropRow(2), displayRow(light, 1),
+                            displayRow(tables_.fog_mix, 1), look());
     EXPECT_THAT(screenRow(2), ::testing::ElementsAreArray(even));
     std::vector<std::uint32_t> odd(width_);
-    blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(odd, backdropRow(5), displayRow(light, 2),
-                                                      displayRow(light, 3),
-                                                      displayRow(tables_.fog_mix, 2), look());
+    blendHalfLightRow32Odd(odd, backdropRow(5), displayRow(light, 2), displayRow(light, 3),
+                           displayRow(tables_.fog_mix, 2), look());
     EXPECT_THAT(screenRow(5), ::testing::ElementsAreArray(odd));
 }
 
@@ -750,12 +748,12 @@ TEST_F(CDemonCameraCompositeTest, ASixteenBitScreenTakesItsOwnPixels) {
     camera_.lockAndRenderToBuffer(0);
     const std::vector<std::uint8_t> &light = tables_.blurred_light;
     std::vector<std::uint16_t> even(width_);
-    blendLightmapPerPxU32toU16pBB12Px2MMX(even, backdropRow(2), displayRow(light, 2),
-                                          displayRow(tables_.fog_mix, 2), look(), masks_);
+    blendLightRow16Even(even, backdropRow(2), displayRow(light, 2), displayRow(tables_.fog_mix, 2),
+                        look(), masks_);
     EXPECT_THAT(screenRow16(2), ::testing::ElementsAreArray(even));
     std::vector<std::uint16_t> odd(width_);
-    blendLightmapPerPxU64toU16pAmbientPx2MMX(odd, backdropRow(3), displayRow(light, 3),
-                                             displayRow(tables_.fog_mix, 3), look(), masks_);
+    blendLightRow16Odd(odd, backdropRow(3), displayRow(light, 3), displayRow(tables_.fog_mix, 3),
+                       look(), masks_);
     EXPECT_THAT(screenRow16(3), ::testing::ElementsAreArray(odd));
 }
 
@@ -764,13 +762,12 @@ TEST_F(CDemonCameraCompositeTest, ASixteenBitScreenAtAScaleOfTwoSharesTheDisplay
     camera_.lockAndRenderToBuffer(0);
     const std::vector<std::uint8_t> &light = tables_.blurred_light;
     std::vector<std::uint16_t> even(width_);
-    blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(even, backdropRow(2), displayRow(light, 1),
-                                                  displayRow(tables_.fog_mix, 1), look(), masks_);
+    blendHalfLightRow16Even(even, backdropRow(2), displayRow(light, 1),
+                            displayRow(tables_.fog_mix, 1), look(), masks_);
     EXPECT_THAT(screenRow16(2), ::testing::ElementsAreArray(even));
     std::vector<std::uint16_t> odd(width_);
-    blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(odd, backdropRow(5), displayRow(light, 2),
-                                                   displayRow(light, 3),
-                                                   displayRow(tables_.fog_mix, 2), look(), masks_);
+    blendHalfLightRow16Odd(odd, backdropRow(5), displayRow(light, 2), displayRow(light, 3),
+                           displayRow(tables_.fog_mix, 2), look(), masks_);
     EXPECT_THAT(screenRow16(5), ::testing::ElementsAreArray(odd));
 }
 

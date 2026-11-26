@@ -1,4 +1,4 @@
-#include "core/dstrender/dstrender.h"
+#include "engine/drender/drender.h"
 #include "engine/softwareedge.h"
 #include "engine/texture/currenttexture.h"
 #include "tests/mocks/engine/twodfixture.h"
@@ -7,22 +7,30 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <span>
 #include <string>
+#include <type_traits>
 
-namespace nocturne::core {
+namespace nocturne::engine {
 namespace {
 
 using ::testing::Return;
 
 constexpr std::uint16_t kFar = 0xffff;
 
-class DstrenderScanlineTest : public engine::C2dFixture {
+TEST(TexturedAlpha, PublicInterface) {
+    static_assert(std::is_same_v<decltype(&drawShadowCutoutRow),
+                                 void (*)(const SSoftwareEdge &, const SSoftwareEdge &, int,
+                                          IScreenDevice &, const C2d &, const SCurrentTexture &)>);
+}
+
+class DstrenderScanlineTest : public C2dFixture {
 protected:
     void SetUp() override {
         givenFile("art\\vga.act", greyPalette());
-        givenFile("fog\\vga.map", std::string(engine::C2d::kColorCubeSize, '\0'));
+        givenFile("fog\\vga.map", std::string(C2d::kColorCubeSize, '\0'));
         givenWritable("fog\\vga.lte", written_);
         ON_CALL(screen_, initializeGraphicsSystem).WillByDefault(Return(1));
         ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(rows_)));
@@ -44,43 +52,39 @@ protected:
     std::array<void *, 2> rows_{};
     std::array<std::uint8_t, 0x100> texels_{};
     std::array<std::uint8_t, 0x100> opacity_{};
-    engine::SCurrentTexture texture_;
+    SCurrentTexture texture_;
 };
 
 // The whole depth is written where the texel's colour index is not zero, through the right
 // edge's pixel: texel 0 is a hole.
 TEST_F(DstrenderScanlineTest, TexturedAlphaDrawsThroughTheRightEdge) {
-    renderTexturedAlphaMMXScanline(
-        {.x_current = 0, .u_current = 0x8000, .depth_current = 100},
-        {.x_current = 2 << 16, .u_current = 0x38000, .depth_current = 100}, 1, screen_, two_d_,
-        texture_);
+    drawShadowCutoutRow({.x_current = 0, .u_current = 0x8000, .depth_current = 100},
+                        {.x_current = 2 << 16, .u_current = 0x38000, .depth_current = 100}, 1,
+                        screen_, two_d_, texture_);
     EXPECT_EQ(row_, (std::array<std::uint16_t, 8>{kFar, 100, 100, kFar, kFar, kFar, kFar, kFar}));
 }
 
 TEST_F(DstrenderScanlineTest, TexturedAlphaTakesCoverageFromAnOpacityMap) {
     opacity_[0] = 1;
     texture_.opacity = opacity_;
-    renderTexturedAlphaMMXScanline(
-        {.x_current = 0, .u_current = 0x8000, .depth_current = 100},
-        {.x_current = 1 << 16, .u_current = 0x28000, .depth_current = 100}, 1, screen_, two_d_,
-        texture_);
+    drawShadowCutoutRow({.x_current = 0, .u_current = 0x8000, .depth_current = 100},
+                        {.x_current = 1 << 16, .u_current = 0x28000, .depth_current = 100}, 1,
+                        screen_, two_d_, texture_);
     EXPECT_EQ(row_[0], 100);
     EXPECT_EQ(row_[1], kFar);
 }
 
 TEST_F(DstrenderScanlineTest, TexturedAlphaKeepsWhatIsNearer) {
     row_[1] = 50;
-    renderTexturedAlphaMMXScanline(
-        {.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100},
-        {.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100}, 1, screen_, two_d_,
-        texture_);
-    renderTexturedAlphaMMXScanline(
-        {.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100},
-        {.x_current = 2 << 16, .u_current = 0x28000, .depth_current = 100}, 1, screen_, two_d_,
-        texture_);
+    drawShadowCutoutRow({.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100},
+                        {.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100}, 1,
+                        screen_, two_d_, texture_);
+    drawShadowCutoutRow({.x_current = 1 << 16, .u_current = 0x18000, .depth_current = 100},
+                        {.x_current = 2 << 16, .u_current = 0x28000, .depth_current = 100}, 1,
+                        screen_, two_d_, texture_);
     EXPECT_EQ(row_[1], 50);
     EXPECT_EQ(row_[2], 100);
 }
 
 } // namespace
-} // namespace nocturne::core
+} // namespace nocturne::engine

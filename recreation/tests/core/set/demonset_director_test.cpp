@@ -279,6 +279,17 @@ TEST_F(CDemonSetDirectorTest, TheExternalRendererIsLeftAsItWas) {
     EXPECT_THAT(set_.getCameraScores(), ElementsAre(132.0F));
 }
 
+// The cameras are scored with the shadow pass off, then it is as it was: in it, counting the box's
+// pixels is fatal.
+TEST_F(CDemonSetDirectorTest, TheShadowPassIsLeftAsItWas) {
+    givenCameras(cameraAt("sees", "0,0,-10", kWideBox), 1);
+    clipping_renderer_.setShadowPass(1);
+    expectSwitch(1);
+    EXPECT_EQ(clipping_renderer_.isShadowPass(), 1);
+    EXPECT_THAT(set_.getCameraScores(), ElementsAre(132.0F));
+    clipping_renderer_.setShadowPass(0);
+}
+
 // Ten a second for each camera: four at a quarter second is all of them.
 TEST_F(CDemonSetDirectorTest, UnforcedTheCamerasAreScoredAFewAFrame) {
     givenUnseeingCameras();

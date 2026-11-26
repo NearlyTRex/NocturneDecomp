@@ -31,11 +31,10 @@ void CKeyFramedModel::rotateAndLightVertices(int frame_index, CDemonSet &set) co
 }
 
 // The original read the first texture of a model that has none. A model with no frames still
-// culls by winding when the box free left behind has a diagonal past 250.
+// culls by winding when the box free left behind has a diagonal past 250. In the shadow pass each
+// part goes whole, without a texture.
 // deferred: skipping the parts an instance hides, with the writers of its part flags,
 //   CVehicle::archive and CLightActor
-// deferred: batching each part whole without a texture in the shadow pass, with
-//   setShadowPass's callers
 // unverified: the diagonal's float roundings at the 250 threshold, by running the test against
 //   nocedit's own code with boxes either side of it
 // nocedit 0x00477980
@@ -52,10 +51,11 @@ void CKeyFramedModel::submitToRenderer(int render_flags, engine::CDemonRenderer 
     }
     int current_texture = -1;
     std::size_t first = 0;
+    const bool shadow_pass = renderer.isShadowPass() != 0;
     for (const SPart &part : parts_) {
         const std::size_t end = first + static_cast<std::size_t>(part.poly_count);
-        if (textures_.size() < 2) {
-            if (!textures_.empty()) {
+        if (textures_.size() < 2 || shadow_pass) {
+            if (!shadow_pass && !textures_.empty()) {
                 renderer.captureTexture(textures_.front());
             }
             set.renderPrimitiveBatch(std::span(polygons_).subspan(first, end - first),

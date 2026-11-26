@@ -157,5 +157,16 @@ TEST_F(CBoundingBox3DVisibilityTest, ABoxDeepInTheFogIsHidden) {
     EXPECT_TRUE(box_.isVisible(render_owners_));
 }
 
+// The shadow pass draws into a light's map, here the screen's rows all far, which the fog does
+// not reach.
+TEST_F(CBoundingBox3DVisibilityTest, InTheShadowPassTheFogHidesNothing) {
+    CFogCamera thick{cameraOwners(), 65001};
+    set_parts_.tables.scene_camera = &thick;
+    pixels_.fill(0xffffffffU);
+    demon_renderer_.setShadowPass(1);
+    EXPECT_TRUE(box_.isVisible(render_owners_));
+    demon_renderer_.setShadowPass(0);
+}
+
 } // namespace
 } // namespace nocturne::core

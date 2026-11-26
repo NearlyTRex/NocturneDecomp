@@ -16,6 +16,7 @@
 #include "core/location.h"
 #include "core/oneshotstate.h"
 #include "core/xform/xform.h"
+#include "engine/drender/demonrenderer.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -134,8 +135,8 @@ std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
 
 // A platform on a course has no ends of its own to read.
 // A platform that rests between moves is drawn into the backdrop while it rests and no move is
-// raised; any other only once its one move is done, and from then on.
-// deferred: nothing drawn in the shadow pass, with setShadowPass's callers
+// raised; any other only once its one move is done, and from then on. Nothing is drawn in the
+// shadow pass.
 // deferred: marking a resting platform drawn into the backdrop, with renderOpaque and process
 // deferred: the draw lit per pixel with the fog sampled at its place, while recomputeFog is set,
 //   with getFogValueAtPosition and the set's per-pixel lighting
@@ -144,7 +145,7 @@ std::unique_ptr<CDemonActor> CPlatform::create(CActor &classes) {
 // bw2 0x005191d0
 // bw3 0x00512200
 void CPlatform::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
-    if (layer_flag == 0) {
+    if (owners.renderer.isShadowPass() != 0 || layer_flag == 0) {
         return;
     }
     if (render_in_background_when_not_moving_) {

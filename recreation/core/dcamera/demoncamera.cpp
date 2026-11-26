@@ -437,31 +437,26 @@ void CDemonCamera::compositeLightmapToFramebuffer(int frame_time) {
         if (sixteen) {
             const std::span<std::uint16_t> output(static_cast<std::uint16_t *>(row), width);
             if (shared && even) {
-                blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(output, backdrop, light_row, fog_row,
-                                                              look, masks);
+                blendHalfLightRow16Even(output, backdrop, light_row, fog_row, look, masks);
             } else if (shared) {
-                blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(output, backdrop, light_row,
-                                                               light_below, fog_row, look, masks);
+                blendHalfLightRow16Odd(output, backdrop, light_row, light_below, fog_row, look,
+                                       masks);
             } else if (even) {
-                blendLightmapPerPxU32toU16pBB12Px2MMX(output, backdrop, light_row, fog_row, look,
-                                                      masks);
+                blendLightRow16Even(output, backdrop, light_row, fog_row, look, masks);
             } else {
-                blendLightmapPerPxU64toU16pAmbientPx2MMX(output, backdrop, light_row, fog_row, look,
-                                                         masks);
+                blendLightRow16Odd(output, backdrop, light_row, fog_row, look, masks);
             }
             continue;
         }
         const std::span<std::uint32_t> output(static_cast<std::uint32_t *>(row), width);
         if (shared && even) {
-            blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(output, backdrop, light_row, fog_row,
-                                                          look);
+            blendHalfLightRow32Even(output, backdrop, light_row, fog_row, look);
         } else if (shared) {
-            blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(output, backdrop, light_row,
-                                                              light_below, fog_row, look);
+            blendHalfLightRow32Odd(output, backdrop, light_row, light_below, fog_row, look);
         } else if (even) {
-            blendLightmapPerPxU32toU32BB12Px2MMX(output, backdrop, light_row, fog_row, look);
+            blendLightRow32Even(output, backdrop, light_row, fog_row, look);
         } else {
-            blendLightmapPerPxU64toU32AmbientPx2MMX(output, backdrop, light_row, fog_row, look);
+            blendLightRow32Odd(output, backdrop, light_row, fog_row, look);
         }
     }
 }
@@ -489,8 +484,8 @@ void CDemonCamera::blurCoronaBufferAndClearEdges() {
     const auto height = static_cast<std::size_t>(display_height_);
     const std::span<std::uint8_t> blurred = tables.blurred_light;
     for (std::size_t row = 1; row + 1 < height; ++row) {
-        verticalBlur3TapMMXStride320(blurred.subspan(row * SCameraTables::kFogPlaneWidth),
-                                     tables.corona_light, row, width);
+        blurLightRow(blurred.subspan(row * SCameraTables::kFogPlaneWidth), tables.corona_light, row,
+                     width);
     }
     for (std::size_t row = 0; row < height; ++row) {
         blurred[row * SCameraTables::kFogPlaneWidth] = 0;
@@ -719,8 +714,8 @@ void CDemonCamera::blendFogPlanes(int plane, int alpha) {
     const auto width = static_cast<std::size_t>(display_width_);
     for (std::size_t row = 0; std::cmp_less(row, display_height_); ++row) {
         const std::size_t at = row * SCameraTables::kFogPlaneWidth;
-        alphaBlendPixelsMMX(std::span(tables.fog_mix).subspan(at, width), first.subspan(at, width),
-                            second.subspan(at, width), weight);
+        mixBytes(std::span(tables.fog_mix).subspan(at, width), first.subspan(at, width),
+                 second.subspan(at, width), weight);
     }
 }
 

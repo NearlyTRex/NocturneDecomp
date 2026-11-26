@@ -52,6 +52,15 @@ std::vector<int> CDemonRenderer::takeCorners(const SMRGLPrimitiveQuad &poly) {
     return vertex_indices;
 }
 
+std::vector<int> CDemonRenderer::takeIndices(const SMRGLPrimitiveQuad &poly) {
+    std::vector<int> vertex_indices;
+    vertex_indices.reserve(poly.vertices.size());
+    for (const platform::SMRGLVertex &corner : poly.vertices) {
+        vertex_indices.push_back(corner.vertex_index);
+    }
+    return vertex_indices;
+}
+
 SPolygonState CDemonRenderer::getPerspectiveState(std::uint32_t render_flags) const {
     SPolygonState state;
     state.mode.render_flags = render_flags;
@@ -71,8 +80,8 @@ SPolygonState CDemonRenderer::getPerspectiveState(std::uint32_t render_flags) co
 }
 
 // Both builds also quit on a projection mode other than perspective, which nothing sets.
-// deferred: the shadow pass sending an untextured polygon down the depth-only route, with
-//   setShadowPass's callers
+// deferred: the shadow pass sending a polygon fogged but untextured down the depth-only route,
+//   with a shadow-pass draw that keeps the fog's flag without the texture's
 // nocedit 0x0048a740
 void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
                                      const SPolygonState &state) {
@@ -105,7 +114,7 @@ void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
     }
 }
 
-// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// In the shadow pass only the depth is drawn, into the light's map.
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
 //   fog setup
 // nocedit 0x0048ae10
@@ -115,13 +124,15 @@ void CDemonRenderer::renderTexturedDirect(const platform::SMRGLHeaderPrimitive &
         return;
     }
     clipAndFillPoly(prim.vertex_indices,
-                    getPerspectiveState(static_cast<std::uint32_t>(
-                        render_flags == -1 ? kDefaultTexturedFlags : render_flags)));
+                    shadow_pass_ ? getShadowState()
+                                 : getPerspectiveState(static_cast<std::uint32_t>(
+                                       render_flags == -1 ? kDefaultTexturedFlags : render_flags)));
 }
 
+// In the shadow pass only the depth is drawn, into the light's map, and the corners keep their
+// texture coordinates.
 // deferred: handing the polygon to processQuadPrimitive while texture capture is on, with
 //   setTextureCaptureMode's callers
-// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
 // deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
 //   CCharacter::renderEthereal
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
@@ -131,13 +142,18 @@ void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int rend
     if (!isFacing(poly.surface_normal)) {
         return;
     }
+    if (shadow_pass_) {
+        clipAndFillPoly(takeIndices(poly), getShadowState());
+        return;
+    }
     const std::vector<int> vertex_indices = takeCorners(poly);
     clipAndFillPoly(vertex_indices,
                     getPerspectiveState(static_cast<std::uint32_t>(
                         render_flags == -1 ? kDefaultTexturedFlags : render_flags)));
 }
 
-// deferred: the shadow pass's depth-only draw, with setShadowPass's callers
+// In the shadow pass only the depth is drawn, into the light's map, and the corners keep their
+// texture coordinates.
 // deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
 //   CCharacter::renderEthereal
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
@@ -147,11 +163,16 @@ void CDemonRenderer::renderAlphaBlendedPoly(const SMRGLPrimitiveQuad &poly) {
     if (!isFacing(poly.surface_normal)) {
         return;
     }
+    if (shadow_pass_) {
+        clipAndFillPoly(takeIndices(poly), getShadowState());
+        return;
+    }
     const std::vector<int> vertex_indices = takeCorners(poly);
     clipAndFillPoly(vertex_indices, getPerspectiveState(kAlphaBlendedFlags));
 }
 
-// deferred: the shadow pass's textured-alpha depth draw, with setShadowPass's callers
+// In the shadow pass only the depth of the texture's solid texels is drawn, into the light's map,
+// with the corners' texture coordinates left as the buffer has them.
 // deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
 //   CCharacter::renderEthereal
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
@@ -167,6 +188,18 @@ void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
         corners.push_back(&vertex_buffer_[static_cast<std::size_t>(corner.vertex_index)]);
     }
     if (isWhollyPastASide(corners)) {
+        return;
+    }
+    if (shadow_pass_) {
+        SPolygonState state;
+        state.mode.render_flags = common::kRenderTextured;
+        state.mode.vertex_preprocess_mode = SScanlineMode::kNoPreprocess;
+        state.vertex_processing = face_capture_enabled_;
+        state.draw_scanline = [this](const SSoftwareEdge &left, const SSoftwareEdge &right, int y) {
+            drawShadowCutoutRow(left, right, y, screen_, two_d_, texture_);
+            return false;
+        };
+        clipAndFillPoly(takeIndices(poly), state);
         return;
     }
     const std::vector<int> vertex_indices = takeCorners(poly);

@@ -3,10 +3,12 @@
 #include "common/math/extendedfloat.h"
 #include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
+#include "core/actor/actorrenderowners.h"
 #include "core/actor/collisiontype.h"
 #include "core/actor/demonactortype.h"
 #include "core/box/boundingbox3d.h"
 #include "core/flame/flametype.h"
+#include "engine/drender/demonrenderer.h"
 
 #include <memory>
 #include <string>
@@ -111,13 +113,13 @@ void CFlame::archive(CActorArchive &actor_archive) {
 
 // deferred: whether a lit torch of more than unit size draws its corona, unless a flame within 5
 //   already does, and clearing that and the visibility check first, with renderTransparent
-// deferred: nothing tested in the shadow pass, with setShadowPass's callers
+// Nothing is tested in the shadow pass.
 // nocedit 0x004caa80
 // bw1 0x004b8ac0
 // bw2 0x004a0210
 // bw3 0x004a6a50
 void CFlame::renderBackground(int layer_flag, const SActorRenderOwners &owners) {
-    if (layer_flag == 0) {
+    if (owners.renderer.isShadowPass() != 0 || layer_flag == 0) {
         return;
     }
     is_visible_ = renderIfBoxVisible(owners, [] {});
