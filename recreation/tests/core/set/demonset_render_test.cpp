@@ -557,7 +557,7 @@ protected:
 };
 
 TEST_F(CDemonSetTrainTest, TheTrainsGroundIsDrawnWithTheGeometryAndInTheFrame) {
-    ASSERT_TRUE(set_.getPlayerOnTrain());
+    ASSERT_TRUE(set_.isAboardMovingVehicle());
     set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
     EXPECT_TRUE(groundDrawn());
     showTheCamera();

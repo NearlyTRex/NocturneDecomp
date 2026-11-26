@@ -277,7 +277,7 @@ public:
     [[nodiscard]] bool getUseWorldGeometry() const;
     [[nodiscard]] const std::string &getWorldGeometryName() const;
     [[nodiscard]] EWeatherType getWeatherType() const;
-    [[nodiscard]] bool getPlayerOnTrain() const;
+    [[nodiscard]] bool isAboardMovingVehicle() const;
     [[nodiscard]] std::span<const C3DSLight> getLights() const;
     // The mission's actors in this set, which the mission owns.
     [[nodiscard]] std::span<CDemonActor *const> getActors() const;
@@ -337,6 +337,9 @@ private:
     void loadLightsAndCameras(common::CTextScanner &scanner);
     void loadRoomsAndGround(common::CTextScanner &scanner, std::string_view geometry_name);
     void loadVdirBoxesAndVisibility(common::CTextScanner &scanner);
+    // The recreation's own blocks after the file's end: the moving ground, with the defaults or
+    // what the terrain block asks for.
+    void loadExtensions(common::CTextScanner &scanner);
     void showMissingGeometryWarning();
     static void skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner);
     int findVdirBoxRoot(int box_index);
@@ -384,7 +387,13 @@ private:
     bool use_world_geometry_ = false;
     std::string world_geometry_name_ = "none";
     EWeatherType weather_type_ = EWeatherType::WEATHER_TYPE_NONE;
-    bool player_on_train_ = false;
+    // The original's player_on_train: the set is aboard something that moves, as Nocturne's train
+    // is, which a geometry whose name starts "train" says. Its rails are heard going by with the
+    // fog's drift, and it has a moving ground of the defaults unless the file gives its own.
+    bool aboard_moving_vehicle_ = false;
+    // Whether the set has a moving ground to draw: aboard a moving vehicle, or a set whose file asks
+    // for one.
+    bool has_terrain_ = false;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
     std::vector<CDemonActor *> renderable_actors_;

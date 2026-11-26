@@ -118,10 +118,32 @@ TEST_F(CGroundLoadTest, AMissingFileIsFatal) {
 TEST_F(CGroundLoadTest, TheTerrainLoadsTheJunkGroundAndFreesIt) {
     givenGround(std::string("\x01\x01\x01\x01", 4), std::string(8, '\0'));
     CTerrain terrain(ground_);
-    terrain.init();
+    terrain.init({.width = 2, .height = 2});
     EXPECT_THAT(heights(), ElementsAre(128, 128, 128, 128));
+    EXPECT_EQ(terrain.getScrollPerSecond(), 0x6270);
     terrain.free();
     EXPECT_THAT(ground_.getTerrainData(), IsEmpty());
+}
+
+// A set may name a ground of its own and its speed.
+TEST_F(CGroundLoadTest, TheTerrainLoadsTheGroundItIsGiven) {
+    givenFile("data\\dunes.raw", std::string("\x02\x02\x02\x02", 4));
+    givenFile("data\\dunes.clr", std::string(8, '\0'));
+    givenFile("data\\dunes.tex", "1\nsand.raw\n");
+    CTerrain terrain(ground_);
+    terrain.init({.ground = "dunes.jnk", .scroll_per_second = -0x1000, .width = 2, .height = 2});
+    EXPECT_THAT(heights(), ElementsAre(256, 256, 256, 256));
+    EXPECT_EQ(terrain.getScrollPerSecond(), -0x1000);
+}
+
+// Its grid is the size the settings give, whatever the ground was made at.
+TEST_F(CGroundLoadTest, TheTerrainSizesTheGroundAsItIsTold) {
+    givenGround(std::string(8, '\x01'), std::string(16, '\0'));
+    CTerrain terrain(ground_);
+    terrain.init({.width = 4, .height = 2});
+    EXPECT_EQ(ground_.getWidth(), 4);
+    EXPECT_EQ(ground_.getHeight(), 2);
+    EXPECT_EQ(heights().size(), 8U);
 }
 
 } // namespace

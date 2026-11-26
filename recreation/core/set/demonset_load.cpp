@@ -22,12 +22,16 @@
 
 #include <algorithm>
 #include <array>
+#include <bit>
+#include <charconv>
+#include <cmath>
 #include <cstddef>
 #include <format>
 #include <optional>
 #include <span>
 #include <string>
 #include <string_view>
+#include <system_error>
 #include <vector>
 
 namespace nocturne::core {
@@ -123,6 +127,101 @@ void scanBox(CTextScanner &scanner, common::CVector3f &position, common::CVector
     rotation_matrix.buildRotationMatrix(angles);
 }
 
+// A set whose geometry's name starts so is aboard a moving vehicle, as Nocturne's train is.
+constexpr std::string_view kMovingVehiclePrefix = "train";
+// The recreation's blocks' labels, and a block's distances' world units to 24.8.
+constexpr std::string_view kTerrainBlock = "terrain";
+constexpr float kWorldToFixed = 256.0F;
+
+std::string_view trimSpaces(std::string_view text) {
+    constexpr std::string_view kSpaces = " \t";
+    const std::size_t first = text.find_first_not_of(kSpaces);
+    if (first == std::string_view::npos) {
+        return {};
+    }
+    return text.substr(first, text.find_last_not_of(kSpaces) - first + 1);
+}
+
+// A block's value line split at its commas, each part trimmed of the spaces around it.
+std::vector<std::string_view> splitValues(std::string_view line) {
+    std::vector<std::string_view> values;
+    std::size_t start = 0;
+    for (std::size_t comma = line.find(','); comma != std::string_view::npos;
+         comma = line.find(',', start)) {
+        values.push_back(trimSpaces(line.substr(start, comma - start)));
+        start = comma + 1;
+    }
+    values.push_back(trimSpaces(line.substr(start)));
+    return values;
+}
+
+// The whole of the text as a number; none for anything else, empty included.
+template <typename T>
+std::optional<T> parseNumber(std::string_view text) {
+    T number{};
+    const auto [end, error] = std::from_chars(text.data(), text.data() + text.size(), number);
+    if (error != std::errc{} || end != text.data() + text.size()) {
+        return std::nullopt;
+    }
+    return number;
+}
+
+// A distance in world units, in 24.8 rounded to nearest.
+std::optional<int> parseDistance(std::string_view text) {
+    const std::optional<float> units = parseNumber<float>(text);
+    if (!units) {
+        return std::nullopt;
+    }
+    return static_cast<int>(std::lround(*units * kWorldToFixed));
+}
+
+// A grid side in cells: a power of two, as the ground wraps by masking.
+std::optional<int> parseGridSize(std::string_view text) {
+    const std::optional<int> cells = parseNumber<int>(text);
+    if (!cells || *cells <= 0 || !std::has_single_bit(static_cast<unsigned>(*cells))) {
+        return std::nullopt;
+    }
+    return cells;
+}
+
+// "ground,speed,width,height,origin x,origin z": the ground's file, how many world units a second
+// it scrolls along z, its grid's cells across and along, and the ground's point in world units
+// the camera is drawn over. Any value left out, empty or not one takes the default.
+STerrainSettings scanTerrainSettings(std::string_view line) {
+    STerrainSettings settings;
+    const std::vector<std::string_view> values = splitValues(line);
+    const auto value = [&values](std::size_t index) {
+        return index < values.size() ? values[index] : std::string_view{};
+    };
+    if (!value(0).empty()) {
+        settings.ground = value(0);
+    }
+    settings.scroll_per_second = parseDistance(value(1)).value_or(settings.scroll_per_second);
+    settings.width = parseGridSize(value(2)).value_or(settings.width);
+    settings.height = parseGridSize(value(3)).value_or(settings.height);
+    settings.origin_x = parseDistance(value(4)).value_or(settings.origin_x);
+    settings.origin_z = parseDistance(value(5)).value_or(settings.origin_z);
+    return settings;
+}
+
+// What the recreation's blocks after the file's end asked for.
+struct SSetBlocks {
+    std::optional<STerrainSettings> terrain;
+};
+
+// Every line after the visibility lists: a line that is a block's label, in any case and spaces
+// around it, takes the next line as its values; any other line is passed over. A block given
+// twice keeps its last.
+SSetBlocks readSetBlocks(CTextScanner &scanner) {
+    SSetBlocks blocks;
+    while (!scanner.atEnd()) {
+        if (common::equalsIgnoringAsciiCase(trimSpaces(scanner.readLine()), kTerrainBlock)) {
+            blocks.terrain = scanTerrainSettings(scanner.readLine());
+        }
+    }
+    return blocks;
+}
+
 // The geometry's name with everything from its first '.' replaced.
 std::string thumbsFilename(std::string_view geometry_filename) {
     return std::format("{}.zth", geometry_filename.substr(0, geometry_filename.find('.')));
@@ -151,6 +250,7 @@ void CDemonSet::load(std::string_view filename) {
     loadLightsAndCameras(scanner);
     loadRoomsAndGround(scanner, geometry_name);
     loadVdirBoxesAndVisibility(scanner);
+    loadExtensions(scanner);
 
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Loading set geometry"),
                                   false);
@@ -239,7 +339,7 @@ void CDemonSet::loadEnvironment(CTextScanner &scanner, std::string_view geometry
     owners_.water.setWaveAnimationEnabled(wave_animation_enabled);
 }
 
-// The sky, the world geometry, the weather, and whether the player rides the train.
+// The sky, the world geometry, the weather, and whether the set is aboard a moving vehicle.
 void CDemonSet::loadSky(CTextScanner &scanner, std::string_view geometry_name) {
     if (set_file_version_ < kSkyFlagVersion) {
         has_sky_ = true;
@@ -268,12 +368,8 @@ void CDemonSet::loadSky(CTextScanner &scanner, std::string_view geometry_name) {
         scanner.skipLine();
         weather_type_ = scanWeatherType(scanner, weather_type_);
     }
-    player_on_train_ = common::startsWithIgnoringAsciiCase(geometry_name, "train");
-    if (player_on_train_) {
-        owners_.terrain.init();
-    } else {
-        owners_.terrain.free();
-    }
+    aboard_moving_vehicle_ =
+        common::startsWithIgnoringAsciiCase(geometry_name, kMovingVehiclePrefix);
 }
 
 void CDemonSet::loadLightsAndCameras(CTextScanner &scanner) {
@@ -348,6 +444,21 @@ void CDemonSet::loadVdirBoxesAndVisibility(CTextScanner &scanner) {
         for (C3DSCamera &camera : cameras_) {
             camera.loadPVS(scanner);
         }
+    }
+}
+
+// After the visibility lists, where the original stops reading, a file may end with blocks of
+// the recreation's own (docs/formats/set.md). The terrain block gives the set a moving
+// ground of its own, whatever its geometry is called, as "junk.jnk,98.4375,256,256,1032,0" gives
+// Nocturne's defaults; without it, only a set aboard a moving vehicle has one, with the defaults.
+// The original set the terrain up as it read the weather, before the lights.
+void CDemonSet::loadExtensions(CTextScanner &scanner) {
+    const SSetBlocks blocks = readSetBlocks(scanner);
+    has_terrain_ = aboard_moving_vehicle_ || blocks.terrain.has_value();
+    if (has_terrain_) {
+        owners_.terrain.init(blocks.terrain.value_or(STerrainSettings{}));
+    } else {
+        owners_.terrain.free();
     }
 }
 

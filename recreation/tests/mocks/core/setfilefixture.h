@@ -30,6 +30,8 @@ struct SSetFile {
     std::string sky = "0";
     // The water's height and tile size: none at height 0.
     std::string water = "0,16";
+    // Whatever follows the file's end, as the recreation's own blocks.
+    std::string tail{};
 
     [[nodiscard]] std::string text() const {
         const std::string label = version >= 11 ? "label\n" : "";
@@ -54,7 +56,7 @@ struct SSetFile {
         file += version >= 5 ? "vdir\n" + vdir_boxes : "";
         file += version == 14 ? "stray\nstray\n" : "";
         file += version >= 20 ? "pvs\n" + pvs : "";
-        return file;
+        return file + tail;
     }
 };
 

@@ -35,6 +35,9 @@ public:
     CGround(const CGround &) = delete;
     CGround &operator=(const CGround &) = delete;
 
+    // The grid's size in cells, which the next init takes; each a power of two, as the height
+    // lookup and the draw wrap by masking.
+    void setSize(int width, int height);
     // A grid of zeroes and an empty texture list, for load to fill.
     void init();
     // No grid and an empty texture list.

@@ -4,6 +4,7 @@
 #include "common/serial/binarywriter.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/set/demonset.h"
+#include "core/terrain/terrain.h"
 #include "tests/mocks/core/setfilefixture.h"
 
 #include <gmock/gmock.h>
@@ -64,7 +65,7 @@ TEST_F(CDemonSetLoadTest, ACurrentFileGivesEverySetting) {
     EXPECT_TRUE(set_.getUseWorldGeometry());
     EXPECT_EQ(set_.getWorldGeometryName(), "city.geo");
     EXPECT_EQ(set_.getWeatherType(), EWeatherType::WEATHER_TYPE_SNOW);
-    EXPECT_FALSE(set_.getPlayerOnTrain());
+    EXPECT_FALSE(set_.isAboardMovingVehicle());
     EXPECT_EQ(set_.getDefaultRoomSize(), 3);
     EXPECT_EQ(set_.getDefaultGroundType(), 5);
     EXPECT_EQ(set_.getDefaultMasterReverb(), 6);
@@ -219,11 +220,103 @@ TEST_F(CDemonSetLoadTest, ATrainSetPutsTheTerrainDown) {
     givenFile("data\\junk.clr", "");
     givenFile("data\\junk.tex", "0\n");
     load({.geometry = "train.geo"});
-    EXPECT_TRUE(set_.getPlayerOnTrain());
+    EXPECT_TRUE(set_.isAboardMovingVehicle());
     EXPECT_EQ(set_parts_.ground.getTerrainData().size(), std::size_t{0x100} * 0x100);
     load({});
-    EXPECT_FALSE(set_.getPlayerOnTrain());
+    EXPECT_FALSE(set_.isAboardMovingVehicle());
     EXPECT_TRUE(set_parts_.ground.getTerrainData().empty());
+}
+
+// A train set without a terrain block has Nocturne's ground at Nocturne's speed.
+TEST_F(CDemonSetLoadTest, ATrainSetWithoutATerrainBlockTakesTheDefaults) {
+    givenFile("data\\junk.raw", std::string(4, '\x01'));
+    givenFile("data\\junk.clr", "");
+    givenFile("data\\junk.tex", "0\n");
+    load({.geometry = "train.geo"});
+    EXPECT_TRUE(set_parts_.terrain.isInitialized());
+    EXPECT_EQ(set_parts_.ground.getTerrainData()[0].height, 128);
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 0x6270);
+}
+
+// After the file's end, a terrain block, its label in any case and after any lines, gives any set
+// a moving ground of its own: here the dunes, scrolling 50 units a second. It isn't the train.
+class CDemonSetTerrainBlockTest : public CDemonSetLoadTest {
+protected:
+    CDemonSetTerrainBlockTest() {
+        givenFile("data\\junk.raw", std::string(4, '\x01'));
+        givenFile("data\\junk.clr", "");
+        givenFile("data\\junk.tex", "0\n");
+        givenFile("data\\dunes.raw", std::string(4, '\x02'));
+        givenFile("data\\dunes.clr", "");
+        givenFile("data\\dunes.tex", "0\n");
+    }
+
+    void loadWith(const std::string &settings) {
+        load({.tail = "\nnotes\n  Terrain  \n" + settings + "\n"});
+    }
+
+    [[nodiscard]] int groundHeight() const {
+        return set_parts_.ground.getTerrainData()[0].height;
+    }
+};
+
+TEST_F(CDemonSetTerrainBlockTest, ABlockGivesTheSetItsOwnGroundAndSpeed) {
+    loadWith(" dunes.jnk , 50 ");
+    EXPECT_FALSE(set_.isAboardMovingVehicle());
+    EXPECT_TRUE(set_parts_.terrain.isInitialized());
+    EXPECT_EQ(groundHeight(), 256);
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 50 * 256);
+}
+
+// Left empty, or not a number, a part takes its default.
+TEST_F(CDemonSetTerrainBlockTest, APartLeftOutTakesItsDefault) {
+    loadWith("dunes.jnk");
+    EXPECT_EQ(groundHeight(), 256);
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 0x6270);
+    loadWith(",12.5");
+    EXPECT_EQ(groundHeight(), 128);
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 12.5 * 256);
+    loadWith("dunes.jnk,fast");
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 0x6270);
+    loadWith("dunes.jnk,50mph");
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 0x6270);
+    loadWith("");
+    EXPECT_EQ(groundHeight(), 128);
+    EXPECT_EQ(set_parts_.terrain.getSettings(), STerrainSettings{});
+}
+
+// The block also gives the grid's size and the ground's point the camera is drawn over.
+TEST_F(CDemonSetTerrainBlockTest, ABlockGivesTheGridsSizeAndThePointToDrawOver) {
+    loadWith("dunes.jnk,50,2,4,-3.5,10");
+    const STerrainSettings &settings = set_parts_.terrain.getSettings();
+    EXPECT_EQ(settings.width, 2);
+    EXPECT_EQ(settings.height, 4);
+    EXPECT_EQ(set_parts_.ground.getTerrainData().size(), 8U);
+    EXPECT_EQ(settings.origin_x, -896);
+    EXPECT_EQ(settings.origin_z, 10 * 256);
+}
+
+// A size that isn't a power of two of cells, the ground's wrap being a mask, takes the default.
+TEST_F(CDemonSetTerrainBlockTest, AGridSizeNotAPowerOfTwoTakesTheDefault) {
+    loadWith("dunes.jnk,50,3,0");
+    EXPECT_EQ(set_parts_.terrain.getSettings().width, 256);
+    EXPECT_EQ(set_parts_.terrain.getSettings().height, 256);
+    loadWith("dunes.jnk,50,-4,wide");
+    EXPECT_EQ(set_parts_.terrain.getSettings().width, 256);
+    EXPECT_EQ(set_parts_.terrain.getSettings().height, 256);
+}
+
+// A block given twice keeps its last.
+TEST_F(CDemonSetTerrainBlockTest, ABlockGivenTwiceKeepsItsLast) {
+    load({.tail = "\nterrain\ndunes.jnk,50\nterrain\n,20\n"});
+    EXPECT_EQ(groundHeight(), 128);
+    EXPECT_EQ(set_parts_.terrain.getScrollPerSecond(), 20 * 256);
+}
+
+// Lines after the file's end that aren't a terrain block leave the set without a moving ground.
+TEST_F(CDemonSetTerrainBlockTest, OtherLinesAfterTheEndAreLeftAlone) {
+    load({.tail = "\nnotes\n"});
+    EXPECT_FALSE(set_parts_.terrain.isInitialized());
 }
 
 TEST_F(CDemonSetLoadTest, TheEnviroModelIsLoadedWhenTheSetUsesOneAndFreedWithTheNext) {

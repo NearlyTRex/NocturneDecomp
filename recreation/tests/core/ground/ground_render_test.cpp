@@ -183,7 +183,7 @@ TEST_F(CGroundRenderTest, AColourPicksItsTextureByItsLowBits) {
     EXPECT_EQ(texture_.dimension, 32);
 }
 
-// The train's terrain over the same ground.
+// A terrain over the same 4 by 4 ground.
 class CTerrainRenderTest : public CGroundRenderTest {
 protected:
     void drawTerrainFrom(const common::CVector3f &camera) {
@@ -191,13 +191,19 @@ protected:
         terrain_.render(0, {.renderer = demon_renderer_, .special = special_, .matrix = matrix_});
     }
 
+    // The defaults at the test ground's size, and with the speed given.
+    [[nodiscard]] static STerrainSettings
+    small(int scroll_per_second = STerrainSettings::kDefaultScrollPerSecond) {
+        return {.scroll_per_second = scroll_per_second, .width = 4, .height = 4};
+    }
+
     CTerrain terrain_{ground_};
 };
 
-// The camera is taken over the ground's point (0, 2056), at the ground's height there, 128;
+// The camera is taken over the ground's point (1032, 0), at the ground's height there, 128;
 // a point five cells ahead, 384 high, lies 2304 below it. The camera is back after.
 TEST_F(CTerrainRenderTest, TheGroundIsDrawnAsIfTheCameraWereOverItsOrigin) {
-    terrain_.init();
+    terrain_.init(small());
     EXPECT_TRUE(terrain_.isInitialized());
     drawTerrainFrom({.x = 0.0F, .y = 10.0F, .z = 0.0F});
     EXPECT_EQ(vertexAt(0, 5).projected_vertex.transformed_x, 0);
@@ -209,7 +215,7 @@ TEST_F(CTerrainRenderTest, TheGroundIsDrawnAsIfTheCameraWereOverItsOrigin) {
 // camera back by: its cell, -12 and a bit, is taken as -13, so the point five cells ahead of
 // that is 8816 ahead of the camera. Past 0x8000000 the scroll wraps, and init starts it over.
 TEST_F(CTerrainRenderTest, TheGroundScrollsWithTheFrameTimeAndWraps) {
-    terrain_.init();
+    terrain_.init(small());
     terrain_.process(0x10000);
     EXPECT_EQ(terrain_.getScroll(), 0x6270);
     drawTerrainFrom({.x = 0.0F, .y = 10.0F, .z = 0.0F});
@@ -218,14 +224,37 @@ TEST_F(CTerrainRenderTest, TheGroundScrollsWithTheFrameTimeAndWraps) {
     // 0x14d0 seconds is 0x8000000 less 0x6270 plus a little past it.
     terrain_.process(0x14d0 * 0x10000);
     EXPECT_EQ(terrain_.getScroll(), (0x6270 * 0x14d1) - 0x8000000);
-    terrain_.init();
+    terrain_.init(small());
     EXPECT_EQ(terrain_.getScroll(), 0);
+}
+
+// Over a point of its own the camera is taken there instead: over (0, 1) the ground is an eighth
+// of a row up its slope of 256 a row, 32 high, and the point five cells ahead, 256 high, lies a
+// unit back along z.
+TEST_F(CTerrainRenderTest, TheGroundIsDrawnOverThePointItIsGiven) {
+    STerrainSettings settings = small();
+    settings.origin_x = 0;
+    settings.origin_z = 256;
+    terrain_.init(settings);
+    EXPECT_EQ(terrain_.getSettings(), settings);
+    drawTerrainFrom({.x = 0.0F, .y = 10.0F, .z = 0.0F});
+    EXPECT_EQ(vertexAt(0, 5).projected_vertex.transformed_y, 256 - ((10 * 256) + 32));
+    EXPECT_EQ(vertexAt(0, 5).projected_vertex.transformed_z, (5 * kCell) - 256);
+}
+
+// A set's own speed scrolls the ground backward as well, which wraps the other way.
+TEST_F(CTerrainRenderTest, AGroundScrollingBackwardWrapsTheOtherWay) {
+    terrain_.init(small(-0x6270));
+    terrain_.process(0x10000);
+    EXPECT_EQ(terrain_.getScroll(), -0x6270);
+    terrain_.process(0x14d0 * 0x10000);
+    EXPECT_EQ(terrain_.getScroll(), 0x8000000 - (0x6270 * 0x14d1));
 }
 
 TEST_F(CTerrainRenderTest, WithoutTheGroundNothingIsDrawn) {
     vertexAt(0, 5).r = 7;
     drawTerrainFrom({.x = 0.0F, .y = 10.0F, .z = 0.0F});
-    terrain_.init();
+    terrain_.init(small());
     terrain_.free();
     EXPECT_FALSE(terrain_.isInitialized());
     drawTerrainFrom({.x = 0.0F, .y = 10.0F, .z = 0.0F});

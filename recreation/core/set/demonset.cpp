@@ -100,8 +100,8 @@ EWeatherType CDemonSet::getWeatherType() const {
     return weather_type_;
 }
 
-bool CDemonSet::getPlayerOnTrain() const {
-    return player_on_train_;
+bool CDemonSet::isAboardMovingVehicle() const {
+    return aboard_moving_vehicle_;
 }
 
 std::span<const C3DSLight> CDemonSet::getLights() const {

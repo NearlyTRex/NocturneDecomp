@@ -123,8 +123,8 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
 //   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
 //   crop's focus tracking
-// Waving water is drawn over the frame between the opaque and the tinted actors, on the train the
-// terrain after them, and still water into the backdrop.
+// Waving water is drawn over the frame between the opaque and the tinted actors, a set's moving
+// ground after them, and still water into the backdrop.
 // deferred: the gore's particles and the fire's effects, in each mirror too, and the weather's
 //   particles, with CGore::renderParticles, CFireEffect::render and CWeather::renderParticles
 // deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the
@@ -165,7 +165,7 @@ void CDemonSet::renderScene() {
         water.render(0, getWaterOwners());
     }
     renderTransparentActors();
-    if (player_on_train_) {
+    if (has_terrain_) {
         owners_.terrain.render(0, getGroundDrawOwners());
     }
     camera.beginBackgroundScene();
@@ -247,8 +247,8 @@ bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim
 // draws a PVS already set, whichever camera set it.
 // deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
 // Outside the shadow pass the software renderer finds the water's visible tiles, and draws still
-// water blended in and, on the train, the terrain. The original's switch to leave the water out
-// is the editors' alone.
+// water blended in and a set's moving ground. The original's switch to leave the water out is
+// the editors' alone.
 // deferred: drawing in software the mirror list, the environment model and the sky dome before
 //   the water, with buildMirrorList, the enviro model's prepareForRender and renderSkyDome
 // deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with
@@ -285,7 +285,7 @@ void CDemonSet::renderSceneGeometry(float frustum_param, int render_mode) {
         if (!water.getWaveAnimationEnabled()) {
             water.render(1, getWaterOwners());
         }
-        if (player_on_train_) {
+        if (has_terrain_) {
             owners_.terrain.render(1, getGroundDrawOwners());
         }
     }

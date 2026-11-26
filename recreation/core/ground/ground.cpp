@@ -81,6 +81,11 @@ CGround::CGround(const engine::CDosIo &dosio, int width, int height)
 // nocedit 0x004eeee0
 CGround::~CGround() = default;
 
+void CGround::setSize(int width, int height) {
+    width_ = width;
+    height_ = height;
+}
+
 // A grid whose size in bytes doesn't fit an int is out of memory; the original's could wrap to
 // a short buffer it then wrote past. new can't fail quietly, so the second check is gone.
 // nocedit 0x004eef00
