@@ -37,6 +37,25 @@
       }
     },
     {
+      "name": "game-release",
+      "displayName": "The game as it ships: -O3 with ThinLTO, for any machine of its processor",
+      "inherits": "default",
+      "cacheVariables": {
+        "NOCTURNE_RECREATION_GAME": "ON",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NOCTURNE_RECREATION_LTO": "ON",
+        "NOCTURNE_RECREATION_CPU_LEVEL": "portable"
+      }
+    },
+    {
+      "name": "game-release-modern",
+      "displayName": "The release game for machines of the last decade or so, with wider vectors",
+      "inherits": "game-release",
+      "cacheVariables": {
+        "NOCTURNE_RECREATION_CPU_LEVEL": "modern"
+      }
+    },
+    {
       "name": "game-debug",
       "displayName": "The game at -O0 but for its hot rendering paths, for stepping through",
       "inherits": "default",
@@ -66,6 +85,8 @@
     { "name": "default", "configurePreset": "default" },
     { "name": "coverage", "configurePreset": "coverage" },
     { "name": "game", "configurePreset": "game" },
+    { "name": "game-release", "configurePreset": "game-release" },
+    { "name": "game-release-modern", "configurePreset": "game-release-modern" },
     { "name": "game-debug", "configurePreset": "game-debug" },
     { "name": "asan", "configurePreset": "asan" },
     { "name": "ci", "configurePreset": "ci" }

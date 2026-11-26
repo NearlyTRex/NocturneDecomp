@@ -70,6 +70,29 @@ if(NOCTURNE_RECREATION_SANITIZE)
     target_link_options(nocturne_recreation_options INTERFACE ${_sanitize_flags})
 endif()
 
+# How the optimiser may use the processor; see cmake/cpulevel.cmake for the tiers. Vectorising
+# keeps every float result as written, since nothing allows reassociation, so builds of different
+# tiers still play in lockstep together.
+include(cmake/cpulevel.cmake)
+nocturne_apply_cpu_level(nocturne_recreation_options)
+option(NOCTURNE_RECREATION_VECTORIZE "Let the optimiser vectorise loops" ON)
+option(NOCTURNE_RECREATION_VECTORIZE_REMARKS
+       "Report which of the hot paths' loops vectorised and why the rest did not" OFF)
+option(NOCTURNE_RECREATION_LTO
+       "Link-time optimisation across the tree (ThinLTO, with lld but on a Mac, whose linker has it)"
+       OFF)
+if(NOT NOCTURNE_RECREATION_VECTORIZE)
+    target_compile_options(nocturne_recreation_options INTERFACE
+        -fno-vectorize -fno-slp-vectorize)
+endif()
+if(NOCTURNE_RECREATION_LTO)
+    target_compile_options(nocturne_recreation_options INTERFACE -flto=thin)
+    target_link_options(nocturne_recreation_options INTERFACE -flto=thin)
+    if(NOT APPLE)
+        target_link_options(nocturne_recreation_options INTERFACE -fuse-ld=lld)
+    endif()
+endif()
+
 set(_sources "")
 set(_headers "")
 foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
@@ -83,21 +106,28 @@ foreach(_module IN LISTS NOCTURNE_RECREATION_MODULES)
     list(APPEND _headers ${_module_headers})
 endforeach()
 
-# The software renderer's per-pixel and per-polygon loops, the frame's conversion and the
-# hardware renderer: at a Debug build's -O0 they hold the frame rate to a crawl, so they build
-# at -O2 there, as the decomp's game_modules.cmake builds its own, and the rest stays
-# debuggable.
+# The software renderer's per-pixel and per-polygon loops, the backdrop's light maps and their
+# rows, the frame's conversion and the hardware renderer: at a Debug build's -O0 they hold the
+# frame rate to a crawl, so they build at -O2 there, as the decomp's game_modules.cmake builds
+# its own, and the rest stays debuggable. Every loop over a frame's or a map's pixels lives in
+# one of these; a new one goes into one of them or brings its file onto the list.
 set(_hot_paths
     "/engine/(2d|3d|clipper|drender|font|matrix|prim|special|zraster)/"
-    "/engine/rasteredges\\.cpp$" "/common/(render|video)/" "/platform/(gl|sdl)/")
+    "/engine/rasteredges\\.cpp$" "/core/dstrender/" "/core/dcamera/demoncamera_lightmap\\.cpp$"
+    "/common/(render|video)/" "/platform/(gl|sdl)/")
 string(JOIN "|" _hot_regex ${_hot_paths})
+set(_vectorize_remarks -Rpass=loop-vectorize -Rpass-missed=loop-vectorize
+    -Rpass-analysis=loop-vectorize)
 function(nocturne_optimize_hot_paths)
-    if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
-        return()
-    endif()
     foreach(_source IN LISTS ARGN)
-        if(_source MATCHES "${_hot_regex}")
-            set_source_files_properties("${_source}" PROPERTIES COMPILE_OPTIONS -O2)
+        if(NOT _source MATCHES "${_hot_regex}")
+            continue()
+        endif()
+        if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+            set_property(SOURCE "${_source}" APPEND PROPERTY COMPILE_OPTIONS -O2)
+        endif()
+        if(NOCTURNE_RECREATION_VECTORIZE_REMARKS)
+            set_property(SOURCE "${_source}" APPEND PROPERTY COMPILE_OPTIONS ${_vectorize_remarks})
         endif()
     endforeach()
 endfunction()

@@ -184,6 +184,13 @@ protected:
 
 private:
     static constexpr float kDefaultMaxDistance = 999.9F;
+    // The tallest frame the software renderer draws; a taller screen is scaled up to.
+    static constexpr int kMaxFramebufferHeight = 480;
+
+    // The light-map palette's level at the index, an index past its ends taking the end's.
+    [[nodiscard]] int paletteLevel(int index) const;
+    // The fog's colour, as the palette has it, to the hardware renderer.
+    void passFogColor() const;
 
     // The camera's depths into the screen's over the rows and columns of the rectangle, which is
     // inside the frame.

@@ -108,6 +108,13 @@ def test_the_gates_named_run_with_the_jobs_given(tmp_path, shell_traced_env):
     assert jobs_seen(tmp_path) == ["12 12"] * 3
 
 
+# Named, the release gate builds the shipping preset; the gates run unnamed leave it out (ALL_GATES).
+def test_the_release_gate_builds_the_shipping_preset(tmp_path, shell_traced_env):
+    result, calls = recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates", "release")
+    assert (result.returncode, calls) == (0, ["cmake --preset game-release",
+                                              "cmake --build --preset game-release --target nocturne"])
+
+
 def test_the_jobs_can_come_from_the_environment(tmp_path, shell_traced_env):
     recreation(tmp_path, root_with(tmp_path), shell_traced_env, "gates", "format",
                cmake = JOBS_CMAKE, RECREATION_JOBS = "2")

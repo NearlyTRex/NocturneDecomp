@@ -18,12 +18,15 @@
 #   RECREATION_PRESET=ci ./recreation.sh build
 #   ./recreation.sh gates            # every gate, one after another
 #   ./recreation.sh gates tidy game  # some: coverage, tidy, format and game
+#   ./recreation.sh gates release    # the shipping build, asked for by name
 #   ./recreation.sh gates --jobs 4   # at most 4 at once (or RECREATION_JOBS=4)
 #
 # The game runs from the repo root, where its data files are, as the decomp's
 # run script does. The gates are the checks a change must pass: the tests at
 # full coverage, clang-tidy over the whole tree, clang-format, and the game
-# built on the ci preset. They run in turn and stop at the first that fails or
+# built on the ci preset. The release gate builds the game as it ships, on the
+# game-release preset at -O3 with link-time optimisation; it is the slowest, so
+# it runs only when named. They run in turn and stop at the first that fails or
 # at Ctrl+C. Compiles and tests run at most half the cores at once, and
 # clang-tidy, the hungriest, at most 6, unless told otherwise; all at low
 # priority, so the machine keeps its memory and stays usable. Fewer jobs take
@@ -83,6 +86,10 @@ gate() {
         game)
             gate_cmake --build --preset ci --target nocturne
             ;;
+        release)
+            gate_cmake --preset game-release >/dev/null
+            gate_cmake --build --preset game-release --target nocturne
+            ;;
     esac
 }
 
@@ -110,9 +117,9 @@ gates() {
     local name
     for name in "$@"; do
         case "$name" in
-            coverage | tidy | format | game) ;;
+            coverage | tidy | format | game | release) ;;
             *)
-                echo "recreation.sh: unknown gate '$name' (coverage, tidy, format or game)" >&2
+                echo "recreation.sh: unknown gate '$name' (coverage, tidy, format, game or release)" >&2
                 exit 2
                 ;;
         esac
@@ -144,7 +151,7 @@ case "$command" in
         run
         ;;
     -h|--help)
-        sed -n '2,30p' "$0" | sed 's/^# \{0,1\}//'
+        sed -n '2,/^[^#]/{/^#/p}' "$0" | sed 's/^# \{0,1\}//'
         ;;
     *)
         echo "recreation.sh: unknown command '$command' (build, run, gates, or nothing for build and run)" >&2
