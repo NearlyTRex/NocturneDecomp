@@ -68,7 +68,8 @@ public:
     // depth but not writing it; skips a polygon wholly past a side of the view.
     void renderBlendedPoly(const platform::SMRGLPrimitiveQuad &poly);
     void renderOverlayDirect(platform::SMRGLHeaderPrimitive *prim);
-    void setCameraOrigin(common::CVector3i *origin);
+    // The camera's place in the world, in 24.8.
+    void setCameraOrigin(const common::CVector3i &origin);
     void setCameraOriginFromScaledPoint(const common::CVector3f &point);
     // Builds the camera's rotation from angles in radians, as setupCameraAndProjection takes it.
     void setupSceneRendering(const common::CVector3f &euler_angles);

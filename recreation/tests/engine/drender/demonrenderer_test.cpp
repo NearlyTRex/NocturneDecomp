@@ -67,7 +67,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderOverlayDirect),
                                  void (CDemonRenderer::*)(platform::SMRGLHeaderPrimitive *)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOrigin),
-                                 void (CDemonRenderer::*)(common::CVector3i *)>);
+                                 void (CDemonRenderer::*)(const common::CVector3i &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setCameraOriginFromScaledPoint),
                                  void (CDemonRenderer::*)(const common::CVector3f &)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setupSceneRendering),

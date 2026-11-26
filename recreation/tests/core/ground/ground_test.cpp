@@ -19,9 +19,10 @@ TEST(CGround, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CGround::init), void (CGround::*)()>);
     static_assert(std::is_same_v<decltype(&CGround::free), void (CGround::*)()>);
     static_assert(std::is_same_v<decltype(&CGround::load), void (CGround::*)(std::string_view)>);
-    static_assert(std::is_same_v<decltype(&CGround::render), void (CGround::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CGround::getHeightAtPosition), int (CGround::*)(int, int)>);
+        std::is_same_v<decltype(&CGround::render), void (CGround::*)(const SGroundDrawOwners &)>);
+    static_assert(
+        std::is_same_v<decltype(&CGround::getHeightAtPosition), int (CGround::*)(int, int) const>);
 }
 
 } // namespace

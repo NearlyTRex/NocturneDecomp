@@ -524,6 +524,48 @@ TEST_F(CDemonSetWaterTest, TheFrameDrawsWavingWaterOverItAndStillWaterIntoTheBac
     EXPECT_EQ(draws(), shown + 2);
 }
 
+// The same set on the train: its geometry is train.geo, so the junk ground is loaded with it.
+class CDemonSetTrainTest : public CDemonSetBackgroundTest {
+protected:
+    CDemonSetTrainTest() {
+        constexpr std::size_t kCells = std::size_t{256} * 256;
+        givenFile("data\\junk.raw", std::string(kCells, '\0'));
+        givenFile("data\\junk.clr", std::string(kCells * 2, '\0'));
+        givenFile("data\\junk.tex", "1\nsand.raw\n");
+        givenFile("art\\SAND.RAW", std::string(std::size_t{32} * 32, '\x01'));
+        givenFile("data\\train.geo",
+                  geoFile(CDemonRaytrace::kGeoFileFormatVersion, {.x = 1, .y = 1, .z = 1}, {{}}));
+        givenFile("models\\train.set", SSetFile{.geometry = "train.geo",
+                                                .cameras = "1\n" + cameraText("cam"),
+                                                .pvs = "1\n\t0\n"}
+                                           .text());
+        set_.load("train.set");
+        set_parts_.camera->init(kFrameHeight);
+    }
+
+    // Whether the ground's grid has been drawn since its vertices were last cleared.
+    [[nodiscard]] bool groundDrawn() const {
+        return std::ranges::any_of(vertex_buffer_,
+                                   [](const SRenderVertex &vertex) { return vertex.r == 0x3fff; });
+    }
+
+    void clearVertices() {
+        for (SRenderVertex &vertex : vertex_buffer_) {
+            vertex.r = 0;
+        }
+    }
+};
+
+TEST_F(CDemonSetTrainTest, TheTrainsGroundIsDrawnWithTheGeometryAndInTheFrame) {
+    ASSERT_TRUE(set_.getPlayerOnTrain());
+    set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
+    EXPECT_TRUE(groundDrawn());
+    showTheCamera();
+    clearVertices();
+    set_.renderScene();
+    EXPECT_TRUE(groundDrawn());
+}
+
 TEST_F(CDemonSetSceneGeometryTest, TheSceneIsLitFromAboveAndInFront) {
     set_.renderSceneGeometry(9999.9F, CDemonSet::kDrawReachedGeometry);
     EXPECT_EQ(light_.getLightDirection(), (common::CVector3i{.x = 0, .y = -46333, .z = 46333}));

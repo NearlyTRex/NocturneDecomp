@@ -28,12 +28,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 7 | `CMoon::update`, `CMoon::render` | 17 | 120 | 17616 | 86 | 16 | 71.6% | 40 | 20 |
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
-| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 174 | 67 | 30.0% | 268 | 49 |
+| 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 35 | 6 | 83.3% | 24 | 17 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 187 | 67 | 32.2% | 268 | 49 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 20 | 6 | 76.9% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 43 | 17 | 22.7% | 69 | 12 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 44 | 17 | 23.2% | 69 | 12 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -45,13 +45,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 37 | 9 | 13.3% | 162 | 17 |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% | 116 | 8 |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 17 | 289 | 19797 | 52 | 8 | 17.9% | 135 | 10 |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 65 | 11 | 24.9% | 146 | 19 |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 66 | 10 | 25.2% | 146 | 19 |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 132 | 18 |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 161 | 45 |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1309** | **239** | **29.1%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1326** | **236** | **29.5%** | **2032** | **382** |
 
 ## Step 0: Math value types
 
@@ -1396,12 +1396,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `load` 0x004ef030 (267)
     - BW: [x] bw1 0x004e7340 = bw2 0x004caac0 = bw3 0x004cfcd0 (logic-change)
 
-### `core/terrain.cpp` (2 functions, 23 instructions, 0 done, 2 partial)
+### `core/terrain.cpp` (2 functions, 23 instructions, 2 done, 0 partial)
 - class `CTerrain`
-  - [~] `free` 0x005e1f30 (7)
-    - deferred: noting the terrain is gone, with render
-  - [~] `init` 0x005e1ef0 (16)
-    - deferred: restarting the animation and noting the terrain is there, with process and render
+  - [x] `free` 0x005e1f30 (7)
+  - [x] `init` 0x005e1ef0 (16)
 
 ### `core/set.cpp` (2 functions, 949 instructions, 1 done, 1 partial)
 - class `CDemonSet`
@@ -2070,9 +2068,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00456cd0 = bw2 0x00445620 = bw3 0x00452e20 (logic-change)
   - [x] `buildAndRenderTrianglePrimitive` 0x004566e0 (39)
 
-### `engine/special.cpp` (7 functions, 258 instructions, 6 done, 0 partial)
+### `engine/special.cpp` (7 functions, 258 instructions, 7 done, 0 partial)
 - free functions
-  - [ ] `transformPoint` 0x005b5a25 (205)
+  - [x] `transformPoint` 0x005b5a25 (205)
   - [x] `beginScene` 0x005b7280 (6)
   - [x] `clearZBuffer` 0x005b7be0 (6)
   - [x] `endScene` 0x005b72a0 (6)
@@ -2149,29 +2147,29 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setupMirrorReflection` 0x005214c0 (991)
     - BW: [ ] bw1 0x005188e0 = bw2 0x004f9990 = bw3 0x004f40b0 (logic-change)
 
-### `core/texlist.cpp` (1 functions, 14 instructions, 0 done, 0 partial)
+### `core/texlist.cpp` (1 functions, 14 instructions, 1 done, 0 partial)
 - class `CTextureList`
-  - [ ] `captureTexture` 0x005dc270 (14)
+  - [x] `captureTexture` 0x005dc270 (14)
 
-### `core/ground.cpp` (11 functions, 1109 instructions, 0 done, 0 partial)
+### `core/ground.cpp` (11 functions, 1109 instructions, 9 done, 0 partial)
 - free functions
   - [ ] `getGroundTypeCode` 0x004eece0 (33)
     - BW: [ ] bw1 0x004e7010 = bw3 0x004cf9a0 (logic-change); [ ] bw2 0x004ca7c0 (logic-change)
   - [ ] `getGroundTypeColor` 0x004eee20 (29)
 - class `CGround`
-  - [ ] `getVertexIndex` 0x004ef380 (10)
-  - [ ] `transformAndStoreVertex` 0x004ef3a0 (83)
-  - [ ] `transformAndStoreVertices` 0x004ef490 (321)
-  - [ ] `setQuadTextureCoordinates` 0x004ef880 (62)
-  - [ ] `renderTerrainPrimitive` 0x004ef970 (8)
-  - [ ] `renderTerrainQuad` 0x004ef990 (158)
-  - [ ] `renderVisibleTerrain` 0x004efb70 (117)
-  - [ ] `render` 0x004efc90 (56)
-  - [ ] `getHeightAtPosition` 0x004efd30 (232)
+  - [x] `getVertexIndex` 0x004ef380 (10)
+  - [x] `transformAndStoreVertex` 0x004ef3a0 (83)
+  - [x] `transformAndStoreVertices` 0x004ef490 (321)
+  - [x] `setQuadTextureCoordinates` 0x004ef880 (62)
+  - [x] `renderTerrainPrimitive` 0x004ef970 (8)
+  - [x] `renderTerrainQuad` 0x004ef990 (158)
+  - [x] `renderVisibleTerrain` 0x004efb70 (117)
+  - [x] `render` 0x004efc90 (56)
+  - [x] `getHeightAtPosition` 0x004efd30 (232)
 
-### `core/terrain.cpp` (1 functions, 86 instructions, 0 done, 0 partial)
+### `core/terrain.cpp` (1 functions, 86 instructions, 1 done, 0 partial)
 - class `CTerrain`
-  - [ ] `render` 0x005e1f50 (86)
+  - [x] `render` 0x005e1f50 (86)
     - BW: [ ] bw1 0x0059f3e0 = bw2 0x0057b860 = bw3 0x005723d0 (logic-change)
 
 ### `core/dstrendr.cpp` (7 functions, 558 instructions, 4 done, 0 partial)
@@ -2212,7 +2210,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `resetRestoreMemoryAllocator` 0x004729c0 (3)
   - [x] `getRestoreMemory` 0x00472950 (31)
 
-### `engine/drender.cpp` (28 functions, 1059 instructions, 7 done, 3 partial)
+### `engine/drender.cpp` (28 functions, 1059 instructions, 8 done, 3 partial)
 - class `CDemonRenderer`
   - [ ] `renderVertexAlphaDirect` 0x0048bad0 (64)
   - [ ] `applyDirectTransform` 0x0048c4a0 (42)
@@ -2240,7 +2238,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `calculateProjectionFactor` 0x0048c870 (8)
   - [ ] `setAlphaMask` 0x0048cdf0 (5)
   - [ ] `enableAdvancedCulling` 0x0048ce10 (4)
-  - [ ] `setCameraOrigin` 0x0048c130 (12)
+  - [x] `setCameraOrigin` 0x0048c130 (12)
   - [x] `renderSolidColorPoly` 0x0048a8a0 (56)
   - [~] `renderDecalPoly` 0x0048b420 (93)
     - deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with CCharacter::renderEthereal
@@ -2483,7 +2481,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00552d40 = bw2 0x00531a90 = bw3 0x005386d0 (logic-change)
   - [~] `renderSceneGeometry` 0x0056a190 (204)
     - deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
-    - deferred: drawing in software the mirror list, the environment model and the sky dome before the water and, on the train, the terrain after it, with buildMirrorList, the enviro model's prepareForRender, renderSkyDome and CTerrain::render
+    - deferred: drawing in software the mirror list, the environment model and the sky dome before the water, with buildMirrorList, the enviro model's prepareForRender and renderSkyDome
     - deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and CGlass::renderBrokenGlass
     - deferred: the shadow pass drawing only the mirrors, while mirrors are on, with setupMirrorRendering and CMirror::renderMirrorQuadDepth
     - BW: [x] bw2 0x0052d0e0 (operand-change); [x] bw3 0x00533b80 (operand-change)
@@ -3080,9 +3078,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [ ] `getGameDeltaTime` 0x0042f9e0 (3)
 
-### `core/terrain.cpp` (1 functions, 16 instructions, 0 done, 0 partial)
+### `core/terrain.cpp` (1 functions, 16 instructions, 1 done, 0 partial)
 - class `CTerrain`
-  - [ ] `process` 0x005e2050 (16)
+  - [x] `process` 0x005e2050 (16)
 
 ### `core/water.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
 - class `CWater`
@@ -3355,7 +3353,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the shown camera's view set up again once a mirror has marked it, with markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
     - deferred: the dynamic lights', the globes' and the queued globes' coronas drawn, in each mirror too, with renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
     - deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the crop's focus tracking
-    - deferred: the gore's particles and the fire's effects, in each mirror too, on the train the terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render, CTerrain::render and CWeather::renderParticles
+    - deferred: the gore's particles and the fire's effects, in each mirror too, and the weather's particles, with CGore::renderParticles, CFireEffect::render and CWeather::renderParticles
     - deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
     - deferred: the gore's and the fire's decals before the still water, and each glass's backdrop after it, drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals and CGlass
     - deferred: the local hero's weapon and item drawn in their panels, with CInventory::renderSelectedItems
@@ -6598,10 +6596,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004e6900 = bw3 0x004cf290 (logic-change); [ ] bw2 0x004ca0f0 (logic-change)
   - [x] `staticInit` 0x004ee4a0 (9)
 
-### `core/ground.cpp` (5 functions, 378 instructions, 3 done, 1 partial)
+### `core/ground.cpp` (5 functions, 378 instructions, 4 done, 0 partial)
 - class `CGround`
-  - [~] `ctor` 0x004eee80 (23)
-    - deferred: the 30 by 30 grid render draws and the scales it draws at, with render
+  - [x] `ctor` 0x004eee80 (23)
   - [x] `dtor` 0x004eeee0 (8)
   - [ ] `getNormalAtPosition` 0x004effb0 (248)
     - BW: [ ] bw1 0x004e82a0 = bw2 0x004cba20 = bw3 0x004d0c30 (logic-change)

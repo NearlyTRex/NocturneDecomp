@@ -284,6 +284,7 @@ struct SFireEffectOwners;
 struct SFog;
 struct SFogGrid;
 struct SGameActionInfo;
+struct SGroundDrawOwners;
 struct SGameOwners;
 struct SGameSessionOwners;
 struct SIniDataOwners;

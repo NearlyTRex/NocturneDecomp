@@ -326,6 +326,8 @@ private:
     // What the water is drawn with: the set's renderer, geometry and lights, the camera's tables,
     // the game's frame time and the console.
     [[nodiscard]] SWaterOwners getWaterOwners() const;
+    // What the train's terrain is drawn with: the set's renderer and transform.
+    [[nodiscard]] SGroundDrawOwners getGroundDrawOwners() const;
     // Frees the enviro model and the terrain.
     void clear();
     std::string loadHeader(common::CTextScanner &scanner);

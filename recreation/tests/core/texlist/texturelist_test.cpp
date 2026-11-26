@@ -19,7 +19,7 @@ TEST(CTextureList, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CTextureList::load), void (CTextureList::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CTextureList::captureTexture),
-                                 void (CTextureList::*)(std::uint32_t)>);
+                                 void (CTextureList::*)(engine::CDemonRenderer &, std::uint32_t)>);
 }
 
 } // namespace

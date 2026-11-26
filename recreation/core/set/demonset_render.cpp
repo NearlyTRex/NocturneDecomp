@@ -8,9 +8,11 @@
 #include "core/dlight/demonlight.h"
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
+#include "core/ground/ground.h"
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
+#include "core/terrain/terrain.h"
 #include "core/water/water.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/special/special.h"
@@ -121,11 +123,10 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
 //   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
 //   crop's focus tracking
-// Waving water is drawn over the frame between the opaque and the tinted actors, and still water
-// into the backdrop after them.
-// deferred: the gore's particles and the fire's effects, in each mirror too, on the train the
-//   terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render,
-//   CTerrain::render and CWeather::renderParticles
+// Waving water is drawn over the frame between the opaque and the tinted actors, on the train the
+// terrain after them, and still water into the backdrop.
+// deferred: the gore's particles and the fire's effects, in each mirror too, and the weather's
+//   particles, with CGore::renderParticles, CFireEffect::render and CWeather::renderParticles
 // deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the
 //   light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
 // deferred: the gore's and the fire's decals before the still water, and each glass's backdrop
@@ -164,6 +165,9 @@ void CDemonSet::renderScene() {
         water.render(0, getWaterOwners());
     }
     renderTransparentActors();
+    if (player_on_train_) {
+        owners_.terrain.render(0, getGroundDrawOwners());
+    }
     camera.beginBackgroundScene();
     if (!water.getWaveAnimationEnabled()) {
         water.render(0, getWaterOwners());
@@ -243,10 +247,10 @@ bool CDemonSet::renderSinglePrimitive(const platform::SMRGLHeaderPrimitive &prim
 // draws a PVS already set, whichever camera set it.
 // deferred: the ambient light at a quarter, with CLight::calculateLighting's callers
 // Outside the shadow pass the software renderer finds the water's visible tiles, and draws still
-// water blended in. The original's switch to leave the water out is the editors' alone.
+// water blended in and, on the train, the terrain. The original's switch to leave the water out
+// is the editors' alone.
 // deferred: drawing in software the mirror list, the environment model and the sky dome before
-//   the water and, on the train, the terrain after it, with buildMirrorList, the enviro model's
-//   prepareForRender, renderSkyDome and CTerrain::render
+//   the water, with buildMirrorList, the enviro model's prepareForRender and renderSkyDome
 // deferred: each mirror's depth, its broken glass, and the geometry reflected in it, with
 //   setupMirrorRendering, restoreCameraAfterMirror, CMirror::renderMirrorQuadDepth and
 //   CGlass::renderBrokenGlass
@@ -281,7 +285,14 @@ void CDemonSet::renderSceneGeometry(float frustum_param, int render_mode) {
         if (!water.getWaveAnimationEnabled()) {
             water.render(1, getWaterOwners());
         }
+        if (player_on_train_) {
+            owners_.terrain.render(1, getGroundDrawOwners());
+        }
     }
+}
+
+SGroundDrawOwners CDemonSet::getGroundDrawOwners() const {
+    return {.renderer = owners_.renderer, .special = owners_.special, .matrix = owners_.matrix};
 }
 
 SWaterOwners CDemonSet::getWaterOwners() const {

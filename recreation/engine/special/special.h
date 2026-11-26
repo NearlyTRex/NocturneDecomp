@@ -70,7 +70,9 @@ public:
     // clip flags instead, and inv_z and screen_y keep what they held.
     void transformAndProjectPoint(platform::SProjectedVertex &output,
                                   const common::CVector3i &input) const;
-    void transformPoint(platform::SProjectedVertex *output, common::CVector3i *input);
+    // The same for a world point in 24.8, from the camera's origin rather than the point it is
+    // drawn relative to.
+    void transformPoint(platform::SProjectedVertex &output, const common::CVector3i &input) const;
     int loadExternalRenderer();
     int kill();
     int lockFrame();
@@ -116,6 +118,9 @@ private:
                                                       std::uint8_t *);
 
     void fillBridge();
+    // The point into eye space from the origin, clip flags or its place on the screen.
+    void transformFrom(platform::SProjectedVertex &output, const common::CVector3i &input,
+                       const common::CVector3i &origin) const;
     int passCurrentTexture(TextureEntry entry, platform::SMRGLTextureBasic &texture,
                            std::span<std::uint8_t> palette);
     [[nodiscard]] std::optional<std::uint32_t>

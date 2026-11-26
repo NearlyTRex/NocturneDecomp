@@ -7,13 +7,21 @@
 #include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "engine/dosio/dosio.h"
+#include "engine/drender/demonrenderer.h"
 
 #include <algorithm>
 #include <cstddef>
+#include <cstdint>
 #include <optional>
 #include <string>
 
 namespace nocturne::core {
+namespace {
+
+// A ground cell's colour picks its texture by its low 12 bits.
+constexpr std::uint32_t kTextureIndexMask = 0xfff;
+
+} // namespace
 
 // nocedit 0x005dbdd0
 // bw1 0x005960b0
@@ -56,6 +64,15 @@ void CTextureList::load(std::string_view filename) {
             line.resize(comma);
         }
         texture_entries_[i].texture_name = common::toUpperAscii(line);
+    }
+}
+
+// The original read past its list for an index the list lacks.
+// nocedit 0x005dc270
+void CTextureList::captureTexture(engine::CDemonRenderer &renderer, std::uint32_t texture_index) {
+    const std::size_t entry = texture_index & kTextureIndexMask;
+    if (entry < texture_entries_.size()) {
+        renderer.captureTexture(texture_entries_[entry]);
     }
 }
 

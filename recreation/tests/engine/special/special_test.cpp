@@ -70,9 +70,9 @@ TEST(CSpecial, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSpecial::transformAndProjectPoint),
                                  void (CSpecial::*)(platform::SProjectedVertex &,
                                                     const common::CVector3i &) const>);
-    static_assert(
-        std::is_same_v<decltype(&CSpecial::transformPoint),
-                       void (CSpecial::*)(platform::SProjectedVertex *, common::CVector3i *)>);
+    static_assert(std::is_same_v<decltype(&CSpecial::transformPoint),
+                                 void (CSpecial::*)(platform::SProjectedVertex &,
+                                                    const common::CVector3i &) const>);
     static_assert(std::is_same_v<decltype(&CSpecial::loadExternalRenderer), int (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::kill), int (CSpecial::*)()>);
     static_assert(std::is_same_v<decltype(&CSpecial::lockFrame), int (CSpecial::*)()>);

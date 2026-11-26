@@ -49,8 +49,8 @@ protected:
         ASSERT_EQ(special_.setResolutionAndColorTable(4, 1, 32), 1);
     }
 
-    // As many corners as the sky dome takes.
-    static constexpr std::size_t kVertexCount = 68;
+    // As many corners as the ground's grid takes, 62 rows of 62 after the first 32.
+    static constexpr std::size_t kVertexCount = 4096;
     std::vector<platform::SRenderVertex> vertex_buffer_ =
         std::vector<platform::SRenderVertex>(kVertexCount);
     std::vector<std::vector<int>> geometry_clips_;

@@ -54,7 +54,18 @@ int getClipFlags(int x, int y, int z) {
 // left the eye-space point in six scratch globals nothing reads.
 // nocedit 0x005b575c
 void CSpecial::transformAndProjectPoint(SProjectedVertex &output, const CVector3i &input) const {
-    const CVector3i &origin = matrix_.getRelativeOrigin();
+    transformFrom(output, input, matrix_.getRelativeOrigin());
+}
+
+// The original ran an MMX copy of the same arithmetic when the CPU had MMX, and the other copy
+// left the eye-space point in scratch globals nothing reads.
+// nocedit 0x005b5a25
+void CSpecial::transformPoint(SProjectedVertex &output, const CVector3i &input) const {
+    transformFrom(output, input, matrix_.getCameraOrigin());
+}
+
+void CSpecial::transformFrom(SProjectedVertex &output, const CVector3i &input,
+                             const CVector3i &origin) const {
     const CVector3i relative{.x = wrappingSubtract(input.x, origin.x),
                              .y = wrappingSubtract(input.y, origin.y),
                              .z = wrappingSubtract(input.z, origin.z)};

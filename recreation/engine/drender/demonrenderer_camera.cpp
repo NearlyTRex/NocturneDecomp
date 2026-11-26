@@ -45,6 +45,11 @@ CVector3i toFixedRow(const CVector3f &row) {
 
 } // namespace
 
+// nocedit 0x0048c130
+void CDemonRenderer::setCameraOrigin(const CVector3i &origin) {
+    matrix_.setCameraOrigin(origin.x, origin.y, origin.z);
+}
+
 // nocedit 0x0048c150
 void CDemonRenderer::setCameraOriginFromScaledPoint(const CVector3f &point) {
     const CVector3i origin = toFixed(point);
