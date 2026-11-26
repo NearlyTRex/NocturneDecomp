@@ -56,6 +56,40 @@ constexpr int kMediumFontWidth = 800;
 constexpr float kSmallFontLift = 7.0F;
 // The gap the bars keep from the battery gauge, in HUD pixels.
 constexpr int kBatteryGap = 4;
+// The layout the status bars' and the death banner's places are shares of.
+constexpr int kLayoutWidth = 640;
+constexpr int kLayoutHeight = 480;
+
+// What an element keeps clear of at the frame's start and end along an axis.
+struct SClearance {
+    int start = 0;
+    int end = 0;
+};
+
+// Where an element length long starts on an axis of the frame: inset in from the anchored edge
+// and clear of what is there, or inset along from the middle.
+int alignOnAxis(EHudAlign align, int frame_start, int frame_length, int length, int inset,
+                SClearance clear = {}) {
+    switch (align) {
+    case EHudAlign::Start:
+        return frame_start + clear.start + inset;
+    case EHudAlign::End:
+        return frame_start + frame_length - clear.end - inset - length;
+    default:
+        return frame_start + ((frame_length - length) / 2) + inset;
+    }
+}
+
+int scaleInset(int inset, float scale) {
+    return static_cast<int>(std::lround(static_cast<float>(inset) * scale));
+}
+
+// The letterbox bars down the frame, each widened by extra: the bottom one is up in either mode,
+// the top one unless the script asked for the bottom alone.
+SClearance getLetterboxClearance(ELetterbox mode, int letterbox, int extra = 0) {
+    return {.start = (mode == ELetterbox::Bottom ? 0 : letterbox) + extra,
+            .end = letterbox + extra};
+}
 // The death banner's red, in 5-5-5, which the colour cube maps to the palette's nearest.
 constexpr std::size_t kBannerColor555 = 0x7c00;
 
@@ -205,7 +239,8 @@ SScriptScreen CGame::getScriptScreen(const SGameSessionOwners &session) const {
             .display = session.display};
 }
 
-// Centred above the frame's bottom; below 480 camera columns in the small editor font.
+// Where the game's [hud.message] places it: by default centred above the frame's bottom; below
+// 480 camera columns in the small editor font.
 void CGame::renderMessageLine(const SGameSessionOwners &session, const common::SViewport &frame,
                               int letterbox) {
     if (message_timer_ == 0.0F) {
@@ -219,20 +254,25 @@ void CGame::renderMessageLine(const SGameSessionOwners &session, const common::S
     const engine::CBitFont::SWrappedText wrapped = font.wrapTextScaled(
         message_text_, kMaxMessageLines, kMessageLineWidth, frame.width * 9 / 10, scale);
     const int pitch = wrapped.line_pitch;
-    int y = frame.y + frame.height - (static_cast<int>(wrapped.lines.size()) * pitch) - letterbox -
-            pitch;
+    const engine::SHudPlace place =
+        owners_.content.message_line.value_or(engine::SMessageLine{}).place;
+    const EHudAlign down = getDown(place.anchor);
+    int y = alignOnAxis(down, frame.y, frame.height, static_cast<int>(wrapped.lines.size()) * pitch,
+                        scaleInset(place.y, scale),
+                        getLetterboxClearance(letterbox_mode, letterbox, pitch));
     if (small) {
         y -= static_cast<int>(std::lround(kSmallFontLift * scale));
     }
     for (const std::string &line : wrapped.lines) {
-        const int x = frame.x + ((frame.width - font.getTextWidthScaled(line, scale)) / 2);
+        const int x = alignOnAxis(getAcross(place.anchor), frame.x, frame.width,
+                                  font.getTextWidthScaled(line, scale), scaleInset(place.x, scale));
         font.drawTextScaled(line, x, y, kTextColor, kShadowColor, scale);
         y += pitch;
     }
 }
 
-// The story's year and title at the frame's bottom left, as the packages' chapter title gives
-// them; a game without one shows none.
+// The story's year and title, as the packages' chapter title gives them, by default at the
+// frame's bottom left; a game without one shows none.
 void CGame::renderChapterTitle(const common::SViewport &frame, int letterbox) {
     const std::optional<engine::SChapterTitle> &title = owners_.content.chapter_title;
     if (!(chapter_title_timer_ > 0.0F) || !title) {
@@ -244,35 +284,51 @@ void CGame::renderChapterTitle(const common::SViewport &frame, int letterbox) {
     const int height = font.getCharHeightScaled(kMeasureChar, scale);
     const auto gap =
         static_cast<int>(std::lround(static_cast<float>(font.getCharWidth(kMeasureChar)) * scale));
+    const std::string text = formatChapterTitle(title->format, chapter_year_, chapter_title_);
     owners_.three_d.setRenderAlpha(title->alpha);
-    font.drawTextScaled(formatChapterTitle(title->format, chapter_year_, chapter_title_),
-                        frame.x + (gap * title->inset_across),
-                        frame.y + frame.height - letterbox - height - (gap * title->inset_up),
+    font.drawTextScaled(text,
+                        alignOnAxis(getAcross(title->place.anchor), frame.x, frame.width,
+                                    font.getTextWidthScaled(text, scale), gap * title->place.x),
+                        alignOnAxis(getDown(title->place.anchor), frame.y, frame.height, height,
+                                    gap * title->place.y,
+                                    getLetterboxClearance(letterbox_mode, letterbox)),
                         title->colour, title->shadow, scale);
 }
 
-// Stacked up from the frame's bottom left, each named over its fill, right of a battery gauge
-// placed in that corner.
+// Where the game's [hud.status_bars] places them, by default stacked up from the frame's bottom
+// left, each named over its fill, and clear of a battery gauge placed from the same anchor.
 void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SViewport &frame) {
     if (status_lines_.empty()) {
         return;
     }
     engine::CBitFont &font = getStatusBarFont(owners_.fonts, frame.width);
     const int bar_height = std::max(frame.height / 40, font.getCharHeight(kMeasureChar));
-    int left = frame.x + (frame.width / 80);
-    const engine::SBattery battery = owners_.content.battery.value_or(engine::SBattery{});
-    if (battery.gauge && battery.place.corner == engine::EHudCorner::BottomLeft) {
+    const int bar_width = frame.width / 4;
+    const engine::SHudPlace place =
+        owners_.content.status_bars.value_or(engine::SStatusBars{}).place;
+    const EHudAlign across = getAcross(place.anchor);
+    int left =
+        alignOnAxis(across, frame.x, frame.width, bar_width, place.x * frame.width / kLayoutWidth);
+    const bool has_gauge = owners_.content.battery.value_or(engine::SBattery{}).gauge;
+    const engine::SHudPlace gauge_place =
+        owners_.content.battery_gauge.value_or(engine::SBatteryGauge{}).place;
+    if (has_gauge && gauge_place.anchor == place.anchor && across != EHudAlign::Middle) {
         const int ui_scale = engine::getUiScale(owners_.screen.getWindowHeight());
         const engine::CAlphaBitmap &picture =
             session.inventory_assets.getBitmap(EInventoryBitmap::kBattery);
-        const common::SViewport gauge = getBatteryGaugeBox(frame, battery.place, picture.getWidth(),
+        const common::SViewport gauge = getBatteryGaugeBox(frame, gauge_place, picture.getWidth(),
                                                            picture.getHeight(), ui_scale);
-        left = std::max(left, gauge.x + gauge.width + (kBatteryGap * ui_scale));
+        const int gap = kBatteryGap * ui_scale;
+        left = across == EHudAlign::Start ? std::max(left, gauge.x + gauge.width + gap)
+                                          : std::min(left, gauge.x - gap - bar_width);
     }
-    const int right = left + (frame.width / 4);
-    int bottom = frame.y + frame.height - (frame.height / 80);
+    const int right = left + bar_width;
+    const EHudAlign down = getDown(place.anchor);
+    int top = alignOnAxis(down, frame.y, frame.height, bar_height,
+                          place.y * frame.height / kLayoutHeight);
+    const int step = (bar_height * 3 / 2) * (down == EHudAlign::End ? -1 : 1);
     for (const SStatusLine &line : status_lines_) {
-        const int top = bottom - bar_height;
+        const int bottom = top + bar_height;
         owners_.two_d.fillRectWithBorder(left, top, right, bottom, 0, 0);
         const auto filled =
             static_cast<int>(std::lround(static_cast<float>(right - left + 1) * line.value));
@@ -280,15 +336,15 @@ void CGame::renderStatusBars(const SGameSessionOwners &session, const common::SV
             owners_.two_d.fillRectColor(left, top, left + filled, bottom, getBarColor(line.value));
         }
         font.drawText(line.name, left, top, kTextColor, kShadowColor);
-        bottom -= bar_height * 3 / 2;
+        top += step;
     }
 }
 
-// The game's banner while the local hero is dead, centred a quarter of the way down the scene's
-// picture, clear of the message line and the Game Over dialog, as the decomp's HUD places it; the
-// original drew it two lines up from the screen's bottom. The Blair Witch games give none.
+// The game's banner while the local hero is dead, where its place puts it: by default high in the
+// scene's picture, clear of the message line and the Game Over dialog, as the decomp's HUD places
+// it; the original drew it two lines up from the screen's bottom. The Blair Witch games give none.
 void CGame::renderDeathBanner(const SGameSessionOwners &session) {
-    const std::optional<std::string> &banner = owners_.content.death_banner;
+    const std::optional<engine::SDeathBanner> &banner = owners_.content.death_banner;
     if (!banner ||
         session.mission.getLocalHero()->getDeathState() != EDeathState::DEATH_STATE_DEAD) {
         return;
@@ -300,12 +356,16 @@ void CGame::renderDeathBanner(const SGameSessionOwners &session) {
     const float scale = engine::getUiTextScale(frame.height);
     const auto height =
         static_cast<int>(std::lround(static_cast<float>(font.getMaxCharHeight()) * scale));
-    const std::string_view text = session.messages.getLocalizedString(*banner);
+    const std::string_view text = session.messages.getLocalizedString(banner->text);
     const int width = font.getTextWidthScaled(text, scale);
+    const engine::SHudPlace &place = banner->place;
+    const int x = alignOnAxis(getAcross(place.anchor), frame.x, frame.width, width,
+                              place.x * frame.width / kLayoutWidth);
+    const int y = alignOnAxis(getDown(place.anchor), frame.y, frame.height, height,
+                              place.y * frame.height / kLayoutHeight);
     owners_.three_d.setRenderAlpha(kFullAlpha);
-    font.drawTextScaled(text, frame.x + ((frame.width - width) / 2),
-                        frame.y + ((frame.height - height) / 4),
-                        owners_.two_d.getColorCubeLookup()[kBannerColor555], kShadowColor, scale);
+    font.drawTextScaled(text, x, y, owners_.two_d.getColorCubeLookup()[kBannerColor555],
+                        kShadowColor, scale);
 }
 
 } // namespace nocturne::core

@@ -7,18 +7,22 @@ title = "Blair Witch Volume I"
 copyright = "Blair Witch Volume I: Rustin Parr 2000 Terminal Reality Inc.  Patent Pending."
 copyright_os_font = "Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending."
 
+# ==================================================================================================
+# menu: the front end's styles, the title backdrop, credits, startup and the menus
+# ==================================================================================================
+
 # Three animated title models over a still backdrop, with title frames; Nocturne's loading moon
 # and credits column; a list of its story, then a difficulty
-[front_end]
-title_backdrop = "figure_scene"
+[menu.styles]
+backdrop ="figure_scene"
 loading_indicator = "moon"
 credits = "column_scroll"
-story_select = "story_list"
+select = "story_list"
 
 # titlescreen_bw over the layout; the three figures before a fixed camera, a frame on each time
 # it is drawn (head-of-horror code 666 shows Taylor's head alone); the title's 30 frames along
 # its foot, 12 a second
-[title_backdrop.figure_scene]
+[menu.backdrop.figure_scene]
 # "stretch" fills a wide screen, the figures and title stretching with the backdrop
 fit = "keep_aspect"
 backdrop = "titlescreen_bw"
@@ -48,7 +52,7 @@ frame_alpha = 0xffff
 frame_rate = 12
 frame_wrap = 30
 
-[credits]
+[menu.credits]
 text = "credits.txt"
 # The image keeps its shape against the screen's left, its column running on to the right edge
 fit = "keep_aspect"
@@ -56,7 +60,7 @@ anchor = "left"
 image = "stats"
 music = "splash-music-44.wav"
 
-[credits.column_scroll]
+[menu.credits.column_scroll]
 font = "theme"
 column_left = 414
 column_to_screen_edge = true
@@ -72,7 +76,7 @@ end_line = "end"
 marker = "\\"
 heading = "b"
 
-[startup]
+[menu.startup]
 picture = "fangs"
 fit = "keep_aspect"
 picture_alpha = 0x8000
@@ -188,27 +192,67 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-# Puzzle and combat difficulty lines on the Options page
-[menu.features]
-difficulty = true
+# ==================================================================================================
+# hud: each element where its place puts it
+# ==================================================================================================
 
-# Each session opens on an iris, the screen black for three frames first
-[iris_fade]
-opens_session = true
-black_frames = 3
+# The hero's health bar at the top right while the inventory shows
+[hud.health_bar]
+place = { anchor = "top_right", x = 4, y = 4 }
+
+# The weapon and item panels in the scene camera's bottom-right corner
+[hud.inventory]
+place = { anchor = "bottom_right", x = 0, y = 0 }
+
+# The other characters' bars stacked up from the bottom left
+[hud.status_bars]
+place = { anchor = "bottom_left", x = 8, y = 6 }
+
+# The message line centred above the bottom letterbox bar
+[hud.message]
+place = { anchor = "bottom", x = 0, y = 0 }
+
+# The story's year and title for eight seconds, two glyphs in and one up from the bottom left, as
+# Nocturne's
+[hud.chapter_title]
+seconds = 8
+format = "{year} - {title}"
+colour = 0xf8
+shadow = 0
+alpha = 0xffff
+place = { anchor = "bottom_left", x = 2, y = 1 }
+
+[[hud.chapter_title.font]]
+below_height = 384
+font = "small_editor"
+
+[[hud.chapter_title.font]]
+below_height = 480
+font = "tiny"
+
+[[hud.chapter_title.font]]
+font = "medium"
+
+# ==================================================================================================
+# features: how the game's own features behave
+# ==================================================================================================
 
 # No battery gauge, though the inventory still keeps a charge
-[battery]
+[features.battery]
 gauge = false
 
 # Doc lights her guns, so Graphic Options has the flashlight halo and range; BW1 dropped the halo
 # line and forced it off, but kept the code
-[flashlight]
+[features.flashlight]
 options = true
 
-# The hero's health bar at the top right while the inventory shows
-[health_bar]
-place = { corner = "top_right", x = 4, y = 4 }
+# Puzzle and combat difficulty lines on the gameplay page
+[features.difficulty]
+options = true
+
+# ==================================================================================================
+# controls: the modes and their default keys, and the bindings page's rows
+# ==================================================================================================
 
 # No mode aims by hand. The keyboard binds Fire and Jump both to Space.
 [[controls.mode]]
@@ -452,8 +496,17 @@ label = "Item description"
 action = "next_ammo"
 label = "Next ammo"
 
+# ==================================================================================================
+# looks: the iris, the bitmap fonts, the pick lists and the dialogs
+# ==================================================================================================
+
+# Each session opens on an iris, the screen black for three frames first
+[looks.iris]
+opens_session = true
+black_frames = 3
+
 # Nocturne's six fonts, unchanged
-[[font]]
+[[looks.font]]
 id = "medium"
 file = "nocfont.raw"
 width = 0x136
@@ -465,7 +518,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = "tiny"
 file = "nocsmall.raw"
 width = 0xf8
@@ -477,7 +530,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "theme"
 file = "menufont.raw"
 width = 0xfa
@@ -490,7 +543,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "small_editor"
 file = "fnte_pfd.RAW"
 width = 0x94
@@ -502,7 +555,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "console"
 file = "fnte_f.RAW"
 width = 0x94
@@ -513,7 +566,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = "micro"
 file = "micro.raw"
 width = 0x94
@@ -524,7 +577,7 @@ y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x02
@@ -545,18 +598,18 @@ double_click_ticks = 0x48000
 # BW1 cycles palette indices 0, 0xff, 2 and 0xfd; until a key takes indices, the cube colours
 # nearest the same black, white, green and magenta
 # BW1's pointer cycles through palette entries as they are, not the nearest to cube colours
-[list.pointer]
+[looks.list.pointer]
 palette_colours = [0x00, 0xff, 0x02, 0xfd]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x00
 track_border_colour = 0x07
 
-[dialog]
+[looks.dialog]
 content_colour = 0x00
 border_colour = 0x07
 title_colour = 0xfb
@@ -578,13 +631,17 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
+# ==================================================================================================
+# stories: the loading pictures and indicator, the story select and the stories
+# ==================================================================================================
+
 # One picture, the moon in its top right
-[[loading]]
+[[stories.loading]]
 fit = "keep_aspect"
 id = "load1"
 moon = { x = 484, y = 22, tint = [0xd700, 0xdc00, 0xe000] }
 
-[loading_indicator.moon]
+[stories.loading_indicator.moon]
 model = "moon.kfm"
 glow_texture = "MOONGLOW.RAW"
 window_size = 60
@@ -605,65 +662,49 @@ status_colour = 0xf8
 
 # The story, then a difficulty under its title; Cancel goes back to the story. The binary also
 # probes blairhero.pod, whose answer nothing uses, so every install is whole.
-[story_select.story_list]
+[stories.select.story_list]
 full_install_probe = "blairhero.pod"
 loading_frames = 10
 
-[[story_select.story_list.difficulty]]
+[[stories.select.story_list.difficulty]]
 label = "Normal Puzzles, Normal Combat"
 puzzle = 0
 combat = 0
 
-[[story_select.story_list.difficulty]]
+[[stories.select.story_list.difficulty]]
 label = "Normal Puzzles, Hard Combat"
 puzzle = 0
 combat = 1
 
-[[story_select.story_list.difficulty]]
+[[stories.select.story_list.difficulty]]
 label = "Hard Puzzles, Normal Combat"
 puzzle = 1
 combat = 0
 
-[[story_select.story_list.difficulty]]
+[[stories.select.story_list.difficulty]]
 label = "Hard Puzzles, Hard Combat"
 puzzle = 1
 combat = 1
 
-[chapter_title]
-seconds = 8
-format = "{year} - {title}"
-colour = 0xf8
-shadow = 0
-alpha = 0xffff
-inset_across = 2
-inset_up = 1
-
-[[chapter_title.font]]
-below_height = 384
-font = "small_editor"
-
-[[chapter_title.font]]
-below_height = 480
-font = "tiny"
-
-[[chapter_title.font]]
-font = "medium"
-
 # One story of one mission, never locked. The difficulty list's title is quoted; the chapter
 # title BW1 shows in play is not.
-[[story]]
+[[stories.story]]
 id = "rustin_parr"
 name = "The Rustin Parr Investigation"
 title = "'The Rustin Parr Investigation'"
 year = 1941
 loading = "load1"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "The Rustin Parr Investigation"
 mission = "hq-bw1.msn"
 
+# ==================================================================================================
+# text: the menus' labels and their translations
+# ==================================================================================================
+
 # The menus' text, by the id the code asks for, as Nocturne's: every line BW1 has it words alike
-[labels]
+[text.labels]
 loading = "Loading..."
 choose_story = "Choose a story to play"
 

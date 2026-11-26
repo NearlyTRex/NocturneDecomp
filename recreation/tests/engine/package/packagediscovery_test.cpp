@@ -112,7 +112,7 @@ TEST_F(CPackageDiscoveryTest, TheBaseManifestCarriesItsReleasesGameContent) {
     const SPackageDiscovery found = discover();
     EXPECT_EQ(found.packages.front().manifest.game.front_end.title_backdrop, "sky_scene");
     EXPECT_THAT(files_.bytes("nocturne.toml"),
-                HasSubstr("[front_end]\ntitle_backdrop = 'sky_scene'\n"));
+                HasSubstr("[menu.styles]\nbackdrop = 'sky_scene'\n"));
 }
 
 // A build whose game content changed brings the manifests it wrote up to it.
@@ -120,14 +120,14 @@ TEST_F(CPackageDiscoveryTest, AWrittenManifestWithOtherGameContentIsWrittenAgain
     releases_.front().content.front_end.title_backdrop = "sky_scene";
     files_.givenFile("nocturne.toml",
                      std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
-                                 "front_end.title_backdrop = \"old\"\n"
+                                 "menu.styles.backdrop = \"old\"\n"
                                  "[[pod]]\npath = \"STARTUP.POD\"\n",
                                  kWrittenByGame));
     const SPackageDiscovery found = discover();
     EXPECT_EQ(found.packages.front().manifest.game.front_end.title_backdrop, "sky_scene");
     EXPECT_THAT(found.notes,
                 ::testing::Contains("nocturne.toml is written again with English's game content"));
-    EXPECT_THAT(files_.bytes("nocturne.toml"), HasSubstr("title_backdrop = 'sky_scene'"));
+    EXPECT_THAT(files_.bytes("nocturne.toml"), HasSubstr("backdrop = 'sky_scene'"));
 }
 
 TEST_F(CPackageDiscoveryTest, AWrittenManifestWithItsReleasesContentIsLeftAsItIs) {
@@ -143,7 +143,7 @@ TEST_F(CPackageDiscoveryTest, AWrittenManifestWithItsReleasesContentIsLeftAsItIs
 TEST_F(CPackageDiscoveryTest, OnlyAWrittenManifestOfAKnownReleaseTakesItsContent) {
     releases_.front().content.front_end.title_backdrop = "sky_scene";
     files_.givenFile("nocturne.toml", "id = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
-                                      "front_end.title_backdrop = \"mine\"\n"
+                                      "menu.styles.backdrop = \"mine\"\n"
                                       "[[pod]]\npath = \"STARTUP.POD\"\n");
     files_.givenFile("mods/old/nocturne.toml",
                      std::format("{}\nid = \"old\"\nrelease = \"1998-xx\"\n", kWrittenByGame));

@@ -115,6 +115,8 @@ public:
     [[nodiscard]] bool getInMission() const;
     // The packages' menus; without them, fatal.
     [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
+    // The game has the puzzle and combat difficulty, BW1's alone.
+    [[nodiscard]] bool hasDifficultyOptions() const;
     // The game's text for a label id.
     [[nodiscard]] std::string label(std::string_view id) const;
 

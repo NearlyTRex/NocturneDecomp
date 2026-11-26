@@ -54,17 +54,17 @@ size = 9226502
 modified = 971392850
 xxh3 = 'fce7062534d6cabdffa401c36697a314'
 
-[front_end]
-title_backdrop = 'tiled_scroll'
+[menu.styles]
+backdrop = 'tiled_scroll'
 loading_indicator = 'icon'
 credits = 'two_column'
-story_select = 'direct_start'
+select = 'direct_start'
 
-[credits]
+[menu.credits]
 text = 'credits.txt'
 fit = 'keep_aspect'
 
-[credits.two_column]
+[menu.credits.two_column]
 font = 'theme'
 centre_left = 100
 centre_right = 400
@@ -164,10 +164,7 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-[menu.features]
-difficulty = false
-
-[[font]]
+[[looks.font]]
 id = 'medium'
 file = 'nocfont.raw'
 width = 0x136
@@ -179,7 +176,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = 'tiny'
 file = 'nocsmall.raw'
 width = 0xf8
@@ -191,7 +188,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'theme'
 file = 'menufont.raw'
 width = 0xfa
@@ -203,7 +200,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'small_editor'
 file = 'fnte_pfd.RAW'
 width = 0x94
@@ -215,7 +212,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'console'
 file = 'fnte_f.RAW'
 width = 0x94
@@ -226,7 +223,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = 'micro'
 file = 'micro.raw'
 width = 0x94
@@ -237,7 +234,7 @@ y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = 'menu'
 file = 'BW3_font.raw'
 width = 0xfa
@@ -248,7 +245,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }, { offset = 0, first = 0x
 space_width = 8
 shadow_x = 2
 
-[[font]]
+[[looks.font]]
 id = 'small_menu'
 file = 'BW3_font2.raw'
 width = 0xfa
@@ -452,22 +449,27 @@ label = 'Draw'
 [[controls.binding]]
 action = 'weapon1'
 label = 'Select conventional weapons'
+help = 'Cycle conventional weapons'
 
 [[controls.binding]]
 action = 'weapon2'
 label = 'Select staves'
+help = 'Cycle staves'
 
 [[controls.binding]]
 action = 'weapon3'
 label = 'Select Christian weapons'
+help = 'Cycle Christian weapons'
 
 [[controls.binding]]
 action = 'weapon4'
 label = 'Select Shaman weapons'
+help = 'Cycle Shaman weapons'
 
 [[controls.binding]]
 action = 'weapon5'
 label = 'Select Pagan weapons'
+help = 'Cycle Pagan weapons'
 
 [[controls.binding]]
 action = 'next_weapon'
@@ -485,7 +487,7 @@ label = 'Next item'
 action = 'prev_item'
 label = 'Previous item'
 
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x2
@@ -503,18 +505,18 @@ width_share = 7
 width_parts = 8
 double_click_ticks = 294912
 
-[list.pointer]
+[looks.list.pointer]
 palette_colours = [0x0, 0xff, 0x2, 0xfd]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x0
 track_border_colour = 0x7
 
-[dialog]
+[looks.dialog]
 content_colour = 0x0
 border_colour = 0x7
 title_colour = 0xfb
@@ -536,7 +538,7 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-[title_backdrop.tiled_scroll]
+[menu.backdrop.tiled_scroll]
 fit = 'keep_aspect'
 tile = 'bwp3_menu_scroll'
 columns = [320, -320]
@@ -559,7 +561,7 @@ hand_alpha_high = 0xffff
 hand_alpha_step = 500
 overlay = 'BWP3_mainmenu'
 
-[startup]
+[menu.startup]
 picture = 'fangs'
 fit = 'keep_aspect'
 picture_alpha = 0x8000
@@ -570,7 +572,7 @@ label_colour = 0xf8
 movie_directory = 'video'
 movie = 'opening.avi'
 
-[loading_indicator.icon]
+[stories.loading_indicator.icon]
 x = 75
 y = 298
 width = 128
@@ -580,43 +582,68 @@ alpha_end = 0xffff
 frames = 12
 always_random = true
 
-[story_select.direct_start]
+[stories.select.direct_start]
 loading_frames = 10
 
-[[loading]]
+[looks.iris]
+opens_session = true
+black_frames = 3
+
+[features.battery]
+gauge = false
+
+[features.flashlight]
+options = false
+
+[features.difficulty]
+options = false
+
+[hud.health_bar]
+place = { anchor = 'top_right', x = 4, y = 4 }
+
+[hud.inventory]
+place = { anchor = 'bottom_right', x = 0, y = 0 }
+
+[hud.status_bars]
+place = { anchor = 'bottom_left', x = 8, y = 6 }
+
+[hud.message]
+place = { anchor = 'bottom', x = 0, y = 0 }
+
+[[stories.loading]]
 id = 'load_0'
 fit = 'keep_aspect'
 random = true
 icon = 'L_demon'
 
-[[loading]]
+[[stories.loading]]
 id = 'load_1'
 fit = 'keep_aspect'
 random = true
 icon = 'L_cross'
 
-[[loading]]
+[[stories.loading]]
 id = 'load_2'
 fit = 'keep_aspect'
 random = true
 icon = 'L_stick'
 
-[[loading]]
+[[stories.loading]]
 id = 'load_3'
 fit = 'keep_aspect'
 random = true
 icon = 'L_shaman'
 
-[[story]]
+[[stories.story]]
 id = 'elly_kedward'
 name = 'The Elly Kedward Tale'
 title = 'The Elly Kedward Tale'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = 'The Elly Kedward Tale'
 mission = 'town_act1.msn'
 
-[labels]
+[text.labels]
 'bindings_add' = 'Add binding'
 'bindings_close' = 'Close'
 'bindings_hotkeys' = 'Hotkeys'
@@ -695,9 +722,6 @@ mission = 'town_act1.msn'
 'graphic_api_none' = '3D API : None'
 'graphic_bits_per_pixel' = 'Bits Per Pixel : '
 'graphic_card' = '3D Card : '
-'graphic_halo_complex' = 'Flashlight halo : Complex'
-'graphic_halo_off' = 'Flashlight halo : Off'
-'graphic_halo_simple' = 'Flashlight halo : Simple'
 'graphic_no_card' = 'No 3D Hardware detected'
 'graphic_select_card' = 'Select 3D card'
 'graphic_sharpness' = 'Sharpness : '
@@ -735,6 +759,14 @@ mission = 'town_act1.msn'
 'hotkey_script_resume' = 'Resume script (script debug)'
 'hotkey_script_run' = 'Run or stop script (script debug)'
 'hotkey_script_view' = 'Script view'
+'keys_help_mute' = 'Toggle mute'
+'keys_help_pause' = 'Pause game'
+'keys_help_quick_load' = 'Quick load'
+'keys_help_quick_save' = 'Quick save'
+'keys_help_restore' = 'Restore game'
+'keys_help_save' = 'Save game'
+'keys_help_title' = 'Quick help'
+'keys_help_toggle' = 'Toggle help'
 'loading' = 'Loading...'
 'main_multiplayer' = 'MULTIPLAYER'
 'main_options' = 'OPTIONS'

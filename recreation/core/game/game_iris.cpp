@@ -107,7 +107,7 @@ void CGame::updateFadeTransition() {
         return;
     case EIrisFade::Starting:
         ++iris_black_frames_;
-        if (iris_black_frames_ >= getIrisFadeContent().black_frames) {
+        if (iris_black_frames_ >= getIrisContent().black_frames) {
             iris_fade_ = EIrisFade::Opening;
         }
         return;
@@ -134,8 +134,8 @@ EIrisFade CGame::getIrisFade() const {
     return iris_fade_;
 }
 
-engine::SIrisFade CGame::getIrisFadeContent() const {
-    return owners_.content.iris_fade.value_or(engine::SIrisFade{});
+engine::SIris CGame::getIrisContent() const {
+    return owners_.content.iris.value_or(engine::SIris{});
 }
 
 // An opening iris keeps the centre it began with. The original re-centred it every frame too, so

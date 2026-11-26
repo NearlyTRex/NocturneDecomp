@@ -36,7 +36,7 @@ struct SMoonOwners {
     const engine::SGameContent &content;
 };
 
-// The menu's title backdrop, in the style the packages' [front_end] names. sky_scene: the moon
+// The menu's title backdrop, in the style the packages' [menu.styles] names. sky_scene: the moon
 // turning into place, bats flying their courses across it once it has, two layers of cloud
 // drifting over, and the title's animation on top. figure_scene: a still picture with animated
 // models before a fixed camera, and the title's animation on top. tiled_scroll: a picture tiled

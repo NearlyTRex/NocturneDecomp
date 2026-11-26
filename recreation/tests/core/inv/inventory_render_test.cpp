@@ -360,15 +360,29 @@ TEST_F(CInventoryRender480Test, AnItemsPanelShowsTheHealthBar) {
     EXPECT_NE(pixel(620, 30), kBackground);
 }
 
-// The game's [health_bar] places it.
+// The game's [hud.health_bar] places it.
 TEST_F(CInventoryRender480Test, TheGamePlacesTheHealthBar) {
     game_parts_.getContent().health_bar =
-        engine::SHealthBar{.place = {.corner = engine::EHudCorner::BottomLeft, .x = 4, .y = 4}};
+        engine::SHealthBar{.place = {.anchor = engine::EHudAnchor::BottomLeft, .x = 4, .y = 4}};
     load(-1);
     inventory_.resetInventoryDisplayTimer();
     render();
     EXPECT_NE(pixel(10, 420), kBackground);
     EXPECT_EQ(pixel(620, 30), kBackground);
+}
+
+// The game's [hud.inventory] places the panels: at the top left, 10 and 20 camera pixels in,
+// the count sits 16 in from that panel's corner.
+TEST_F(CInventoryRender480Test, TheGamePlacesThePanels) {
+    game_parts_.getContent().inventory_panel =
+        engine::SInventoryPanel{.place = {.anchor = engine::EHudAnchor::TopLeft, .x = 10, .y = 20}};
+    holdPistol();
+    load(0);
+    inventory_.resetWeaponSwitchTimers(false);
+    watchText();
+    EXPECT_CALL(small_text_,
+                drawText(std::string_view("20"), 10 + 96 - 16, 20 + 96 - 16 - smallLine(), _, _));
+    render();
 }
 
 // The letterbox hides the inventory.

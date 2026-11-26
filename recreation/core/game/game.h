@@ -279,7 +279,7 @@ private:
     void showCustomizableKeys(const SGameSessionOwners &session);
     // Two black pixels round the screen's edge.
     void drawScreenBorder();
-    [[nodiscard]] engine::SIrisFade getIrisFadeContent() const;
+    [[nodiscard]] engine::SIris getIrisContent() const;
     // The screen the script's letterbox and subtitles are measured on and drawn to.
     [[nodiscard]] SScriptScreen getScriptScreen(const SGameSessionOwners &session) const;
     // What the local hero's inventory is drawn with, in the scene's picture.

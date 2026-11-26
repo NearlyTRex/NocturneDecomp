@@ -148,7 +148,7 @@ TEST_F(CDFontTest, TheMenuFontIsTheThemeFontLargeAndTheSmallEditorFontSmall) {
     EXPECT_EQ(fonts_.getMenuFont(), fonts_.getSmallEditorFont());
 }
 
-// The game's menus name the two; either can be any [[font]].
+// The game's menus name the two; either can be any [[looks.font]].
 TEST_F(CDFontTest, TheMenuFontsAreTheOnesTheMenusName) {
     fonts_.initFonts();
     engine::SMenuLayout &menu = common::required(content_.menu);

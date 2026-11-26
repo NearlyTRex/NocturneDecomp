@@ -3234,7 +3234,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw2 0x004dbc60 (logic-change)
   - [x] `toggleDetailView` 0x00501500 (34)
   - [~] `renderAllItems` 0x00500690 (890)
-    - deferred: the battery gauge while the hero's own flashlight or goggles are on, filled by its charge, where the game's [battery] places it, with the per-hero flashlight and goggles switches
+    - deferred: the battery gauge while the hero's own flashlight or goggles are on, filled by its charge, where the game's [hud.battery_gauge] places it, with the per-hero flashlight and goggles switches
     - deferred: the film reel's name in the item's panel, with CFilmReel
     - deferred: the message, such as a pickup's help, under the top letterbox bar, with CInventory::addItem
     - deferred: BW1's and BW3's panels and message put away while the field notes show, with CFieldNotes
@@ -6920,7 +6920,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: each light gun not in hand processed for the frame, with CLightGun::process
     - deferred: the message counted down and emptied when its time is up, with CInventory::addItem
     - deferred: BW1's panels and message put away while the goggles, the field notes, a puzzle or the letterbox are up, its light gun's rounds showing its panel too, and the SPS sounds played by how near each character is, with the SPS meter, CFieldNotes and CPuzzle
-    - deferred: BW2's held weapon per player, and its battery's drain over 500 seconds and charge over 15, with BW2's shared inventory and the [battery] drain and charge
+    - deferred: BW2's held weapon per player, and its battery's drain over 500 seconds and charge over 15, with BW2's shared inventory and the [features.battery] drain and charge
     - deferred: BW3's panel shown when the hero's own mana or rounds change, and the voodoo sounds played by how near each enemy is, with BW3's hero ammunition and the SPS meter
     - BW: [ ] bw1 0x004f9f10 (logic-change); [ ] bw2 0x004dccd0 (logic-change); [ ] bw3 0x004dcdb0 (logic-change)
   - [ ] `createAmmoFromWeapon` 0x004fe900 (70)

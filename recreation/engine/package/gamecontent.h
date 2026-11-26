@@ -522,18 +522,24 @@ struct SDirectStart {
     bool operator==(const SDirectStart &) const = default;
 };
 
-// A corner of the HUD's frame, the scene's picture, that an element is placed from.
-enum class EHudCorner : std::uint8_t {
+// The point of the HUD's frame, the scene's picture, that an element is placed from: a corner,
+// the middle of an edge, or the middle.
+enum class EHudAnchor : std::uint8_t {
     TopLeft,
+    Top,
     TopRight,
+    Left,
+    Centre,
+    Right,
     BottomLeft,
+    Bottom,
     BottomRight,
 };
 
-// Where a HUD element goes: its box x and y HUD pixels in from the corner, a HUD pixel being a
-// 640x480 one drawn at the HUD's whole-number scale.
+// Where a HUD element goes: its box x and y in from the anchor's edges, or right and down from
+// the middle along an axis the anchor centres on. Each element says its unit.
 struct SHudPlace {
-    EHudCorner corner = EHudCorner::TopLeft;
+    EHudAnchor anchor = EHudAnchor::TopLeft;
     int x = 0;
     int y = 0;
 
@@ -545,18 +551,62 @@ struct SBattery {
     // Its gauge on the HUD, Nocturne's alone: BW1 and BW3 keep a charge but draw none, and BW2
     // kept the code but never shows it.
     bool gauge = true;
-    // The gauge's box, its battery picture's size.
-    SHudPlace place{.corner = EHudCorner::BottomLeft, .x = 4, .y = 4};
 
     bool operator==(const SBattery &) const = default;
 };
 
+// The battery's gauge on the HUD, while the battery has one.
+struct SBatteryGauge {
+    // The gauge's box, its battery picture's size, in HUD pixels: 640x480 ones at the HUD's
+    // whole-number scale.
+    SHudPlace place{.anchor = EHudAnchor::BottomLeft, .x = 4, .y = 4};
+
+    bool operator==(const SBatteryGauge &) const = default;
+};
+
 // The local hero's health bar while the inventory shows.
 struct SHealthBar {
-    // The bar's box, its pictures' size.
-    SHudPlace place{.corner = EHudCorner::TopRight, .x = 4, .y = 4};
+    // The bar's box, its pictures' size, in HUD pixels.
+    SHudPlace place{.anchor = EHudAnchor::TopRight, .x = 4, .y = 4};
 
     bool operator==(const SHealthBar &) const = default;
+};
+
+// The inventory's weapon and item panels.
+struct SInventoryPanel {
+    // The panels' box, the inventory's size, in the scene camera's pixels laid onto the frame at
+    // its height.
+    SHudPlace place{.anchor = EHudAnchor::BottomRight, .x = 0, .y = 0};
+
+    bool operator==(const SInventoryPanel &) const = default;
+};
+
+// The bars of the other heroes' and characters' health, and any the script shows.
+struct SStatusBars {
+    // The first bar's corner, the rest stacked away from the anchor's edge, in 640x480 shares of
+    // the frame.
+    SHudPlace place{.anchor = EHudAnchor::BottomLeft, .x = 8, .y = 6};
+
+    bool operator==(const SStatusBars &) const = default;
+};
+
+// The message line, such as an item's pickup.
+struct SMessageLine {
+    // The text's block, a line clear of the letterbox bar on the anchor's edge, in 640x480 pixels
+    // at the HUD's text scale; each line is centred on an anchor that centres across.
+    SHudPlace place{.anchor = EHudAnchor::Bottom, .x = 0, .y = 0};
+
+    bool operator==(const SMessageLine &) const = default;
+};
+
+// The line over the frame while the local hero is dead.
+struct SDeathBanner {
+    std::string text;
+    // In 640x480 shares of the frame: by default centred across and about a quarter of the way
+    // down, clear of the message line and the Game Over dialog.
+    SHudPlace place{.anchor = EHudAnchor::Top, .x = 0, .y = 112};
+
+    bool operator==(const SDeathBanner &) const = default;
 };
 
 // The flashlight, as the game has it.
@@ -568,15 +618,15 @@ struct SFlashlight {
     bool operator==(const SFlashlight &) const = default;
 };
 
-// How the game's iris fade runs.
-struct SIrisFade {
+// The iris the game fades its scenes in and out through.
+struct SIris {
     // The session opens on an iris; BW2's starts on its scene.
     bool opens_session = true;
     // The frames an opening iris holds the screen black before it widens: Nocturne's one, BW1's
     // and BW3's three.
     int black_frames = 1;
 
-    bool operator==(const SIrisFade &) const = default;
+    bool operator==(const SIris &) const = default;
 };
 
 // The font the chapter title takes on a screen shorter than below_height; 0 for any height.
@@ -595,9 +645,8 @@ struct SChapterTitle {
     int colour = 0;
     int shadow = 0;
     int alpha = 0;
-    // Glyph widths in from the left and up from the foot.
-    int inset_across = 0;
-    int inset_up = 0;
+    // Clear of the letterbox bar on the anchor's edge, in glyph widths at the HUD's text scale.
+    SHudPlace place{.anchor = EHudAnchor::BottomLeft, .x = 0, .y = 0};
     // The first whose height the screen is under; the last has none.
     std::vector<SChapterTitleFont> fonts;
 
@@ -658,7 +707,7 @@ struct SMenuTitle {
     int shadow = 0;
     int gap_lines = 0;
     std::optional<SMenuDrop> drop;
-    // A [[font]] id; empty for the items' font.
+    // A [[looks.font]] id; empty for the items' font.
     std::string font;
 
     bool operator==(const SMenuTitle &) const = default;
@@ -686,7 +735,7 @@ struct SMenuPoint {
 };
 
 struct SMenuItems {
-    // A [[font]] id, for the lines under a title.
+    // A [[looks.font]] id, for the lines under a title.
     std::string font;
     // Those of a list without a title, as BW3's main menu; empty for font.
     std::string untitled_font;
@@ -791,12 +840,12 @@ struct SMenuAttract {
     bool operator==(const SMenuAttract &) const = default;
 };
 
-// The menu lines a game shows for features only some games have.
-struct SMenuFeatures {
-    // The options page's puzzle and combat difficulty lines, before Credits.
-    bool difficulty = false;
+// The puzzle and combat difficulty, BW1's alone.
+struct SDifficulty {
+    // The gameplay page's puzzle and combat difficulty lines.
+    bool options = false;
 
-    bool operator==(const SMenuFeatures &) const = default;
+    bool operator==(const SDifficulty &) const = default;
 };
 
 // What the menus play: one sample for an output rate of 30000Hz or less, one for the rest.
@@ -819,7 +868,7 @@ struct SMenuLayout {
     // The title backdrop moves on behind a titled page, the options and theirs, as Nocturne's
     // and BW2's; BW1's and BW3's only drew it there, so it held still.
     bool animate_titled_backdrop = false;
-    // The [[font]] ids the Menu text setting picks between for the menus' lists and dialogs.
+    // The [[looks.font]] ids the Menu text setting picks between for the menus' lists and dialogs.
     std::string text_font_large;
     std::string text_font_small;
     // Beside the title art, or none.
@@ -842,7 +891,6 @@ struct SMenuLayout {
     SMenuSlider slider;
     // None plays no movies.
     std::optional<SMenuAttract> attract;
-    SMenuFeatures features;
     SMenuMusic music;
 
     bool operator==(const SMenuLayout &) const = default;
@@ -965,14 +1013,20 @@ struct SGameContent {
     std::optional<std::string> copyright;
     // With the (c), which only the OS fonts have.
     std::optional<std::string> copyright_os_font;
-    // Over the frame while the local hero is dead; none shows nothing.
-    std::optional<std::string> death_banner;
+    // None shows nothing.
+    std::optional<SDeathBanner> death_banner;
     // None runs Nocturne's.
-    std::optional<SIrisFade> iris_fade;
+    std::optional<SIris> iris;
     // Each feature none of whose table a package gives is Nocturne's.
     std::optional<SBattery> battery;
     std::optional<SFlashlight> flashlight;
+    std::optional<SDifficulty> difficulty;
+    // Each HUD element none of whose table a package gives is where Nocturne's is.
+    std::optional<SBatteryGauge> battery_gauge;
     std::optional<SHealthBar> health_bar;
+    std::optional<SInventoryPanel> inventory_panel;
+    std::optional<SStatusBars> status_bars;
+    std::optional<SMessageLine> message_line;
     std::optional<SGameCredits> credits;
     std::optional<SMenuLayout> menu;
     // By id; a later package's replaces an earlier one's with the same id.

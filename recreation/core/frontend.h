@@ -13,7 +13,7 @@
 
 namespace nocturne::core {
 
-// The front-end part styles this build draws, as a package's [front_end] names them: CMoon's 3D
+// The front-end part styles this build draws, as a package's [menu.styles] names them: CMoon's 3D
 // sky scene or figure scene behind the menus, CLevelLoader's moon, rollCredits's scrolling
 // column, and showChapterSelect's list of stories and their chapters.
 inline constexpr std::string_view kSkySceneBackdrop = "sky_scene";
@@ -28,7 +28,7 @@ inline constexpr std::string_view kFadeLoopCredits = "fade_loop";
 inline constexpr std::string_view kStoryListSelect = "story_list";
 inline constexpr std::string_view kDirectStartSelect = "direct_start";
 
-// The menus' text for a label id, as the packages' [labels] give it, then looked up in the
+// The menus' text for a label id, as the packages' [text.labels] give it, then looked up in the
 // message file as any other text; an id no package gives is fatal.
 [[nodiscard]] std::string getLabel(const engine::SGameContent &content,
                                    const support::CNewMsg &messages, std::string_view id);

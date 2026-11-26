@@ -116,7 +116,7 @@ void CInventory::resetInventoryDisplayTimer() {
 //   letterbox are up, its light gun's rounds showing its panel too, and the SPS sounds played by
 //   how near each character is, with the SPS meter, CFieldNotes and CPuzzle
 // deferred: BW2's held weapon per player, and its battery's drain over 500 seconds and charge
-//   over 15, with BW2's shared inventory and the [battery] drain and charge
+//   over 15, with BW2's shared inventory and the [features.battery] drain and charge
 // deferred: BW3's panel shown when the hero's own mana or rounds change, and the voodoo sounds
 //   played by how near each enemy is, with BW3's hero ammunition and the SPS meter
 // nocedit 0x004ffad0

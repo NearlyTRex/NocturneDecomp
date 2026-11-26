@@ -148,8 +148,8 @@ TEST_F(COverlay480Test, WithoutABatteryGaugeTheBarsKeepTheFramesMargin) {
 
 // A gauge the game places in another corner leaves the bars where they are.
 TEST_F(COverlay480Test, AGaugeElsewhereLeavesTheBarsAtTheFramesMargin) {
-    game_parts_.getContent().battery =
-        engine::SBattery{.gauge = true, .place = {.corner = engine::EHudCorner::TopLeft}};
+    game_parts_.getContent().battery_gauge =
+        engine::SBatteryGauge{.place = {.anchor = engine::EHudAnchor::TopLeft}};
     watchText();
     EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 8, 462, _, _));
     game_.setStatusDisplay("Doc", 1.0F, 2.0F);
@@ -514,6 +514,87 @@ TEST_F(COverlay480Test, ABarGoesWhenItsTimeIsUp) {
     game_.setStatusDisplay("second", 1.0F, 0.1F);
     game_.setStatusDisplay("third", 1.0F, 1.0F);
     step(kEighthSecond);
+    render();
+}
+
+// From the top right, 8 and 6 in as 640x480 shares, the bars stack down: the first 640 - 8 - 160
+// across, and the next a bar and a half below.
+TEST_F(COverlay480Test, TheGamePlacesTheBarsAndTheyStackAwayFromTheirEdge) {
+    game_parts_.getContent().status_bars =
+        engine::SStatusBars{.place = {.anchor = engine::EHudAnchor::TopRight, .x = 8, .y = 6}};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 472, 6, _, _));
+    EXPECT_CALL(small_text_, drawText(std::string_view("Ann"), 472, 24, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    game_.setStatusDisplay("Ann", 1.0F, 2.0F);
+    render();
+}
+
+// Centred, the first bar sits in the middle and the rest stack down.
+TEST_F(COverlay480Test, CentredBarsStackDownFromTheMiddle) {
+    game_parts_.getContent().status_bars =
+        engine::SStatusBars{.place = {.anchor = engine::EHudAnchor::Centre}};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 240, 234, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
+// Bars and gauge both at the bottom right: the bars end the gap of 4 short of the gauge's box,
+// 12 wide and 4 in, so at 640 - 4 - 12 - 4 - 160.
+TEST_F(COverlay480Test, BarsSharingTheGaugesRightAnchorEndShortOfIt) {
+    game_parts_.getContent().battery_gauge =
+        engine::SBatteryGauge{.place = {.anchor = engine::EHudAnchor::BottomRight, .x = 4, .y = 4}};
+    game_parts_.getContent().status_bars =
+        engine::SStatusBars{.place = {.anchor = engine::EHudAnchor::BottomRight, .x = 8, .y = 6}};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 460, 462, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
+// A gauge in the middle of an edge doesn't push centred bars aside.
+TEST_F(COverlay480Test, CentredBarsIgnoreACentredGauge) {
+    game_parts_.getContent().battery_gauge =
+        engine::SBatteryGauge{.place = {.anchor = engine::EHudAnchor::Bottom}};
+    game_parts_.getContent().status_bars =
+        engine::SStatusBars{.place = {.anchor = engine::EHudAnchor::Bottom, .x = 0, .y = 6}};
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Doc"), 240, 462, _, _));
+    game_.setStatusDisplay("Doc", 1.0F, 2.0F);
+    render();
+}
+
+// From the top the message keeps a line clear of the edge, and of the top letterbox bar when it
+// is up; with the bottom bar alone, the top edge.
+TEST_F(COverlay480Test, AMessageAtTheTopKeepsClearOfTheTopBar) {
+    game_parts_.getContent().message_line =
+        engine::SMessageLine{.place = {.anchor = engine::EHudAnchor::Top}};
+    watchText();
+    ON_CALL(theme_text_, getStringWidth(_)).WillByDefault(Return(100));
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 270, 5, _, _));
+    game_.displayMessage("Hello", 3.0F);
+    render();
+    letterboxUp();
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 270, 72, _, _));
+    render();
+    letterboxUp(ELetterbox::Bottom);
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 270, 5, _, _));
+    render();
+}
+
+// Left and right, the message's lines keep to that edge; in the middle down, the block is centred.
+TEST_F(COverlay480Test, AMessageKeepsToTheEdgeItIsPlacedOn) {
+    watchText();
+    ON_CALL(theme_text_, getStringWidth(_)).WillByDefault(Return(100));
+    game_.displayMessage("Hello", 3.0F);
+    game_parts_.getContent().message_line =
+        engine::SMessageLine{.place = {.anchor = engine::EHudAnchor::Left, .x = 4, .y = 0}};
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 4, 237, _, _));
+    render();
+    game_parts_.getContent().message_line =
+        engine::SMessageLine{.place = {.anchor = engine::EHudAnchor::Right, .x = 4, .y = 0}};
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Hello"), 536, 237, _, _));
     render();
 }
 

@@ -171,7 +171,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.set.setGamma(gamma);
     clearOverlay();
     static_cast<void>(session.set.evaluateVirtualDirector(session.script.getFocusActor(), 1));
-    if (getIrisFadeContent().opens_session) {
+    if (getIrisContent().opens_session) {
         beginFadeIn(session.script.getFocusActor(), session.camera);
     } else {
         iris_fade_ = EIrisFade::Idle;

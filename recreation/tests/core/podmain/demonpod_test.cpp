@@ -301,7 +301,7 @@ TEST_F(CDemonPodTest, TheLoadedPackagesContentIsMergedInLoadOrder) {
     givenMod("mods/extra", "id = \"extra\"\ncopyright = \"Extra\"\n"
                            "[[pod]]\npath = \"EXTRA.POD\"\n");
     givenPod("mods/extra/EXTRA.POD", {{.name = "data\\x.txt", .data = "x"}});
-    givenMod("mods/broken", "id = \"broken\"\nfront_end.title_backdrop = \"no_such_style\"\n"
+    givenMod("mods/broken", "id = \"broken\"\nmenu.styles.backdrop = \"no_such_style\"\n"
                             "required = [\"GONE.POD\"]\n");
     load();
     const engine::SGameContent &content = pod().getGameContent();
@@ -310,9 +310,10 @@ TEST_F(CDemonPodTest, TheLoadedPackagesContentIsMergedInLoadOrder) {
 }
 
 TEST_F(CDemonPodTest, WhatTheMergedContentLacksIsNoted) {
-    givenMod("mods/extra", "id = \"extra\"\n[[story]]\nid = \"s\"\nname = \"S\"\ntitle = \"T\"\n"
-                           "loading = \"gone\"\n[[story.chapter]]\nname = \"C\"\n"
-                           "mission = \"c.msn\"\n");
+    givenMod("mods/extra",
+             "id = \"extra\"\n[[stories.story]]\nid = \"s\"\nname = \"S\"\ntitle = \"T\"\n"
+             "loading = \"gone\"\n[[stories.story.chapter]]\nname = \"C\"\n"
+             "mission = \"c.msn\"\n");
     load();
     EXPECT_THAT(notes_, Contains(EndsWith("the story s names a loading picture gone no package "
                                           "has")));

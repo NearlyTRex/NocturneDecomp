@@ -179,19 +179,19 @@ size = 19531716
 modified = 971745980
 xxh3 = '4c7f7739c676f4f5c03d5457583f96b4'
 
-[front_end]
-title_backdrop = 'figure_scene'
+[menu.styles]
+backdrop = 'figure_scene'
 loading_indicator = 'progress_bar'
 credits = 'fade_loop'
-story_select = 'direct_start'
+select = 'direct_start'
 
-[credits]
+[menu.credits]
 text = 'credits.txt'
 fit = 'keep_aspect'
 image = 'title_bw'
 music = 'XBLAIRMENU.WAV'
 
-[credits.fade_loop]
+[menu.credits.fade_loop]
 font = 'theme'
 image_x = 10
 image_y = 7
@@ -297,10 +297,7 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-[menu.features]
-difficulty = false
-
-[[font]]
+[[looks.font]]
 id = 'medium'
 file = 'nocfont.raw'
 width = 0x136
@@ -312,7 +309,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = 'tiny'
 file = 'nocsmall.raw'
 width = 0xf8
@@ -324,7 +321,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'theme'
 file = 'menufont.raw'
 width = 0xfa
@@ -336,7 +333,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'small_editor'
 file = 'fnte_pfd.RAW'
 width = 0x94
@@ -348,7 +345,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'console'
 file = 'fnte_f.RAW'
 width = 0x94
@@ -359,7 +356,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = 'micro'
 file = 'micro.raw'
 width = 0x94
@@ -510,6 +507,7 @@ label = 'Turn right'
 [[controls.binding]]
 action = 'fire'
 label = 'Fire Gun/ Action'
+help = 'Fire / Action'
 
 [[controls.binding]]
 action = 'use_item'
@@ -522,6 +520,7 @@ label = 'Lantern'
 [[controls.binding]]
 action = 'draw'
 label = 'Draw Gun'
+help = 'Draw'
 
 [[controls.binding]]
 action = 'point_up'
@@ -570,8 +569,9 @@ label = 'Next ammo'
 [[controls.binding]]
 action = 'drop'
 label = 'Drop item or weapon'
+help = 'Drop Item or Weapon'
 
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x2
@@ -589,18 +589,18 @@ width_share = 7
 width_parts = 8
 double_click_ticks = 294912
 
-[list.pointer]
+[looks.list.pointer]
 cube_colours = [0x0, 0x7fff, 0x3e0, 0x7c1f]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x0
 track_border_colour = 0x7
 
-[dialog]
+[looks.dialog]
 content_colour = 0x0
 border_colour = 0x7
 title_colour = 0xfb
@@ -622,7 +622,7 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-[title_backdrop.figure_scene]
+[menu.backdrop.figure_scene]
 fit = 'keep_aspect'
 steps_per_second = 60
 cheat_code = 666
@@ -643,7 +643,7 @@ frame_alpha = 0xffff
 frame_rate = 12
 frame_wrap = 74
 
-[startup]
+[menu.startup]
 picture = 'test_logo'
 fit = 'keep_aspect'
 picture_alpha = 0xffff
@@ -654,7 +654,7 @@ label_colour = 0xf8
 movie_directory = 'video'
 movie = 'opening.avi'
 
-[loading_indicator.progress_bar]
+[stories.loading_indicator.progress_bar]
 height = 20
 frame_colour = 0x0
 trough_colour = 0x0
@@ -664,26 +664,51 @@ status_box_colour = 0x0
 status_font = 'theme'
 status_colour = 0xf8
 
-[story_select.direct_start]
+[stories.select.direct_start]
 loading_frames = 10
 
-[[loading]]
+[looks.iris]
+opens_session = false
+black_frames = 1
+
+[features.battery]
+gauge = false
+
+[features.flashlight]
+options = false
+
+[features.difficulty]
+options = false
+
+[hud.health_bar]
+place = { anchor = 'top_right', x = 4, y = 4 }
+
+[hud.inventory]
+place = { anchor = 'bottom_right', x = 0, y = 0 }
+
+[hud.status_bars]
+place = { anchor = 'bottom_left', x = 8, y = 6 }
+
+[hud.message]
+place = { anchor = 'bottom', x = 0, y = 0 }
+
+[[stories.loading]]
 id = 'loadscreen'
 fit = 'keep_aspect'
 moon = { x = 24, y = 405, tint = [0xd700, 0xdc00, 0xe000] }
 
-[[story]]
+[[stories.story]]
 id = 'coffin_rock'
 name = 'Coffin Rock'
 title = 'Coffin Rock'
 year = 1886
 loading = 'loadscreen'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = 'Coffin Rock'
 mission = 'awakening.msn'
 
-[labels]
+[text.labels]
 'bindings_add' = 'Add binding'
 'bindings_close' = 'Close'
 'bindings_hotkeys' = 'Hotkeys'
@@ -762,9 +787,6 @@ mission = 'awakening.msn'
 'graphic_api_none' = '3D API : None'
 'graphic_bits_per_pixel' = 'Bits per pixel : '
 'graphic_card' = '3D Card : '
-'graphic_halo_complex' = 'Flashlight halo : Complex'
-'graphic_halo_off' = 'Flashlight halo : Off'
-'graphic_halo_simple' = 'Flashlight halo : Simple'
 'graphic_no_card' = 'No 3D Hardware detected'
 'graphic_select_card' = 'Select 3D card'
 'graphic_sharpness' = 'Sharpness : '
@@ -802,6 +824,14 @@ mission = 'awakening.msn'
 'hotkey_script_resume' = 'Resume script (script debug)'
 'hotkey_script_run' = 'Run or stop script (script debug)'
 'hotkey_script_view' = 'Script view'
+'keys_help_mute' = 'Toggle mute'
+'keys_help_pause' = 'Pause game'
+'keys_help_quick_load' = 'Quick load'
+'keys_help_quick_save' = 'Quick save'
+'keys_help_restore' = 'Restore game'
+'keys_help_save' = 'Save game'
+'keys_help_title' = 'Quick help'
+'keys_help_toggle' = 'Toggle help'
 'loading' = 'Loading...'
 'main_multiplayer' = 'M U L T I P L A Y E R'
 'main_options' = 'O P T I O N S'

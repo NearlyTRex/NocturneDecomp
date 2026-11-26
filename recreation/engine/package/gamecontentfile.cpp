@@ -12,6 +12,7 @@
 #include <cstddef>
 #include <expected>
 #include <format>
+#include <functional>
 #include <initializer_list>
 #include <limits>
 #include <map>
@@ -48,11 +49,18 @@ constexpr std::array<std::pair<std::string_view, EFooterCorner>, 4> kFooterCorne
      {"bottom_right", EFooterCorner::BottomRight},
      {"top_left", EFooterCorner::TopLeft},
      {"top_right", EFooterCorner::TopRight}}};
-constexpr std::array<std::pair<std::string_view, EHudCorner>, 4> kHudCorners{
-    {{"top_left", EHudCorner::TopLeft},
-     {"top_right", EHudCorner::TopRight},
-     {"bottom_left", EHudCorner::BottomLeft},
-     {"bottom_right", EHudCorner::BottomRight}}};
+constexpr std::array<std::pair<std::string_view, EHudAnchor>, 9> kHudAnchors{
+    {{"top_left", EHudAnchor::TopLeft},
+     {"top", EHudAnchor::Top},
+     {"top_right", EHudAnchor::TopRight},
+     {"left", EHudAnchor::Left},
+     {"centre", EHudAnchor::Centre},
+     {"right", EHudAnchor::Right},
+     {"bottom_left", EHudAnchor::BottomLeft},
+     {"bottom", EHudAnchor::Bottom},
+     {"bottom_right", EHudAnchor::BottomRight}}};
+// How far a place may sit from its anchor, either way: a 640x480 frame's width.
+constexpr int kMaxHudOffset = 640;
 constexpr std::array<std::pair<std::string_view, EFooterEdge>, 3> kFooterEdges{
     {{"screen", EFooterEdge::Screen},
      {"layout", EFooterEdge::Layout},
@@ -1060,16 +1068,16 @@ TomlResult<SDialogLook> readDialog(const toml::table &table) {
     return dialog;
 }
 
-TomlResult<SMenuFeatures> readMenuFeatures(const toml::table &table) {
-    constexpr std::string_view kWhere = "menu: features: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"difficulty"}); !keys) {
+TomlResult<SDifficulty> readDifficulty(const toml::table &table) {
+    constexpr std::string_view kWhere = "difficulty: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"options"}); !keys) {
         return std::unexpected(keys.error());
     }
-    const TomlResult<bool> difficulty = readRequiredBoolean(table, kWhere, "difficulty");
-    if (!difficulty) {
-        return std::unexpected(difficulty.error());
+    const TomlResult<bool> options = readRequiredBoolean(table, kWhere, "options");
+    if (!options) {
+        return std::unexpected(options.error());
     }
-    return SMenuFeatures{.difficulty = *difficulty};
+    return SDifficulty{.options = *options};
 }
 
 // A one-character string, as a marker in the text.
@@ -1409,7 +1417,7 @@ constexpr std::array<std::string_view, 34> kSkySceneKeys{
     "frame_height", "frame_alpha",         "frame_rate",    "frame_wrap"};
 
 TomlResult<SSkyScene> readSkyScene(const toml::table &table) {
-    constexpr std::string_view kWhere = "title_backdrop: sky_scene: ";
+    constexpr std::string_view kWhere = "backdrop: sky_scene: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {}, kSkySceneKeys); !keys) {
         return std::unexpected(keys.error());
     }
@@ -1557,7 +1565,7 @@ constexpr std::array<std::string_view, 24> kFigureSceneKeys{"fit",
                                                             "frame_wrap"};
 
 TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
-    constexpr std::string_view kWhere = "title_backdrop: figure_scene: ";
+    constexpr std::string_view kWhere = "backdrop: figure_scene: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {}, kFigureSceneKeys); !keys) {
         return std::unexpected(keys.error());
     }
@@ -1664,9 +1672,9 @@ TomlResult<SFigureScene> readFigureScene(const toml::table &table) {
     return figure;
 }
 
-// [title_backdrop] holds a table for each style's values.
+// [menu.backdrop] holds a table for each style's values.
 TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
-    constexpr std::string_view kWhere = "title_backdrop: tiled_scroll: ";
+    constexpr std::string_view kWhere = "backdrop: tiled_scroll: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere,
                                                   {"fit",
                                                    "anchor",
@@ -1775,7 +1783,7 @@ TomlResult<STiledScroll> readTiledScroll(const toml::table &table) {
 }
 
 TomlResult<void> readTitleBackdrop(const toml::table &table, SGameContent &content) {
-    constexpr std::string_view kWhere = "title_backdrop: ";
+    constexpr std::string_view kWhere = "backdrop: ";
     if (TomlResult<void> keys =
             rejectUnknownKeys(table, kWhere, {"sky_scene", "figure_scene", "tiled_scroll"});
         !keys) {
@@ -2229,7 +2237,7 @@ TomlResult<SMoonIndicator> readMoonIndicator(const toml::table &table) {
     return moon;
 }
 
-// [loading_indicator] holds a table for each style's values; the style the front end names is
+// [stories.loading_indicator] holds a table for each style's values; the style named is
 // checked for its own when a level loads.
 TomlResult<void> readLoadingIndicator(const toml::table &table, SGameContent &content) {
     constexpr std::string_view kWhere = "loading_indicator: ";
@@ -2309,7 +2317,7 @@ TomlResult<std::vector<SStoryDifficulty>> readDifficulties(const toml::table &ta
 }
 
 TomlResult<SStorySelect> readStoryList(const toml::table &table) {
-    constexpr std::string_view kWhere = "story_select: story_list: ";
+    constexpr std::string_view kWhere = "select: story_list: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
             table, kWhere, {"full_install_probe", "loading_frames", "difficulty"});
         !keys) {
@@ -2337,9 +2345,9 @@ TomlResult<SStorySelect> readStoryList(const toml::table &table) {
     return select;
 }
 
-// [story_select] holds a table for each style's values.
+// [stories.select] holds a table for each style's values.
 TomlResult<SDirectStart> readDirectStart(const toml::table &table) {
-    constexpr std::string_view kWhere = "story_select: direct_start: ";
+    constexpr std::string_view kWhere = "select: direct_start: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"loading_frames"}); !keys) {
         return std::unexpected(keys.error());
     }
@@ -2357,7 +2365,7 @@ TomlResult<SDirectStart> readDirectStart(const toml::table &table) {
 
 // Each style's table, as many as the package gives.
 TomlResult<void> readStorySelect(const toml::table &table, SGameContent &content) {
-    constexpr std::string_view kWhere = "story_select: ";
+    constexpr std::string_view kWhere = "select: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"story_list", "direct_start"});
         !keys) {
         return std::unexpected(keys.error());
@@ -2430,8 +2438,8 @@ TomlResult<std::vector<SChapterTitleFont>> readChapterTitleFonts(const toml::tab
     return fonts;
 }
 
-TomlResult<SIrisFade> readIrisFade(const toml::table &table) {
-    constexpr std::string_view kWhere = "iris_fade: ";
+TomlResult<SIris> readIris(const toml::table &table) {
+    constexpr std::string_view kWhere = "iris: ";
     if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"opens_session", "black_frames"});
         !keys) {
         return std::unexpected(keys.error());
@@ -2440,7 +2448,7 @@ TomlResult<SIrisFade> readIrisFade(const toml::table &table) {
     if (!opens) {
         return std::unexpected(opens.error());
     }
-    SIrisFade iris{.opens_session = *opens};
+    SIris iris{.opens_session = *opens};
     if (TomlResult<void> read = readIntegers(table, kWhere,
                                              {{.key = "black_frames",
                                                .field = &iris.black_frames,
@@ -2463,54 +2471,65 @@ TomlResult<SHudPlace> readHudPlace(const toml::table &table, std::string_view wh
         return fallback;
     }
     const std::string inner = std::format("{}place: ", where);
-    if (TomlResult<void> keys = rejectUnknownKeys(**found, inner, {"corner", "x", "y"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(**found, inner, {"anchor", "x", "y"}); !keys) {
         return std::unexpected(keys.error());
     }
-    if (!(*found)->contains("corner")) {
-        return std::unexpected(std::format("{}corner: missing", inner));
+    if (!(*found)->contains("anchor")) {
+        return std::unexpected(std::format("{}anchor: missing", inner));
     }
-    TomlResult<EHudCorner> corner =
-        readKeyword(**found, inner, "corner", fallback.corner, kHudCorners);
-    if (!corner) {
-        return std::unexpected(corner.error());
+    TomlResult<EHudAnchor> anchor =
+        readKeyword(**found, inner, "anchor", EHudAnchor::TopLeft, kHudAnchors);
+    if (!anchor) {
+        return std::unexpected(anchor.error());
     }
-    SHudPlace place{.corner = *corner};
-    if (TomlResult<void> read =
-            readIntegers(**found, inner,
-                         {{.key = "x", .field = &place.x, .low = 0, .high = kMaxPictureX},
-                          {.key = "y", .field = &place.y, .low = 0, .high = kMaxPictureY}});
+    SHudPlace place{.anchor = *anchor};
+    if (TomlResult<void> read = readIntegers(
+            **found, inner,
+            {{.key = "x", .field = &place.x, .low = -kMaxHudOffset, .high = kMaxHudOffset},
+             {.key = "y", .field = &place.y, .low = -kMaxHudOffset, .high = kMaxHudOffset}});
         !read) {
         return std::unexpected(read.error());
     }
     return place;
 }
 
+// A table of an element's place alone, Nocturne's when it is left out.
+template <typename T>
+TomlResult<T> readPlaceTable(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"place"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    return readHudPlace(table, where, T{}.place).transform([](const SHudPlace &place) {
+        return T{.place = place};
+    });
+}
+
+TomlResult<SDeathBanner> readDeathBanner(const toml::table &table) {
+    constexpr std::string_view kWhere = "death_banner: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"text", "place"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    TomlResult<std::string> text = readRequiredString(table, kWhere, "text");
+    if (!text) {
+        return std::unexpected(text.error());
+    }
+    TomlResult<SHudPlace> place = readHudPlace(table, kWhere, SDeathBanner{}.place);
+    if (!place) {
+        return std::unexpected(place.error());
+    }
+    return SDeathBanner{.text = std::move(*text), .place = *place};
+}
+
 TomlResult<SBattery> readBattery(const toml::table &table) {
     constexpr std::string_view kWhere = "battery: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"gauge", "place"}); !keys) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"gauge"}); !keys) {
         return std::unexpected(keys.error());
     }
     const TomlResult<bool> gauge = readRequiredBoolean(table, kWhere, "gauge");
     if (!gauge) {
         return std::unexpected(gauge.error());
     }
-    const TomlResult<SHudPlace> place = readHudPlace(table, kWhere, SBattery{}.place);
-    if (!place) {
-        return std::unexpected(place.error());
-    }
-    return SBattery{.gauge = *gauge, .place = *place};
-}
-
-TomlResult<SHealthBar> readHealthBar(const toml::table &table) {
-    constexpr std::string_view kWhere = "health_bar: ";
-    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"place"}); !keys) {
-        return std::unexpected(keys.error());
-    }
-    const TomlResult<SHudPlace> place = readHudPlace(table, kWhere, SHealthBar{}.place);
-    if (!place) {
-        return std::unexpected(place.error());
-    }
-    return SHealthBar{.place = *place};
+    return SBattery{.gauge = *gauge};
 }
 
 TomlResult<SFlashlight> readFlashlight(const toml::table &table) {
@@ -2528,12 +2547,16 @@ TomlResult<SFlashlight> readFlashlight(const toml::table &table) {
 TomlResult<SChapterTitle> readChapterTitle(const toml::table &table) {
     constexpr std::string_view kWhere = "chapter_title: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere,
-            {"seconds", "format", "colour", "shadow", "alpha", "inset_across", "inset_up", "font"});
+            table, kWhere, {"seconds", "format", "colour", "shadow", "alpha", "place", "font"});
         !keys) {
         return std::unexpected(keys.error());
     }
     SChapterTitle title;
+    TomlResult<SHudPlace> place = readHudPlace(table, kWhere, title.place);
+    if (!place) {
+        return std::unexpected(place.error());
+    }
+    title.place = *place;
     TomlResult<std::string> format = readRequiredString(table, kWhere, "format");
     if (!format) {
         return std::unexpected(format.error());
@@ -2544,9 +2567,7 @@ TomlResult<SChapterTitle> readChapterTitle(const toml::table &table) {
             {{.key = "seconds", .field = &title.seconds, .low = 1, .high = kMaxTitleSeconds},
              {.key = "colour", .field = &title.colour, .low = 0, .high = kMaxColour},
              {.key = "shadow", .field = &title.shadow, .low = kNoMenuShadow, .high = kMaxColour},
-             {.key = "alpha", .field = &title.alpha, .low = 0, .high = kMaxAlpha},
-             {.key = "inset_across", .field = &title.inset_across, .low = 0, .high = kMaxLines},
-             {.key = "inset_up", .field = &title.inset_up, .low = 0, .high = kMaxLines}});
+             {.key = "alpha", .field = &title.alpha, .low = 0, .high = kMaxAlpha}});
         !read) {
         return std::unexpected(read.error());
     }
@@ -2575,9 +2596,11 @@ TomlResult<SMenuLayout> readMenu(const toml::table &table) {
     constexpr std::string_view kWhere = "menu: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
             table, kWhere,
-            {"left", "align", "top", "titled_top", "animate_titled_backdrop", "text_fonts",
-             "trademark", "page_tops", "title", "item", "footer", "calibration", "options", "sound",
-             "slider", "attract", "features", "music"});
+            {"left",       "align",       "top",       "titled_top", "animate_titled_backdrop",
+             "text_fonts", "trademark",   "page_tops", "title",      "item",
+             "footer",     "calibration", "options",   "sound",      "slider",
+             "attract",    "music",       "styles",    "backdrop",   "credits",
+             "startup"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -2674,12 +2697,6 @@ TomlResult<void> readMenuPanels(const toml::table &table, SMenuLayout &menu) {
         }
         menu.attract = std::move(*read);
     }
-    TomlResult<SMenuFeatures> features =
-        readMenuPart<SMenuFeatures>(table, "features", readMenuFeatures);
-    if (!features) {
-        return std::unexpected(features.error());
-    }
-    menu.features = *features;
     TomlResult<SMenuMusic> music = readMenuPart<SMenuMusic>(table, "music", readMenuMusic);
     if (!music) {
         return std::unexpected(music.error());
@@ -2713,17 +2730,19 @@ TomlResult<void> readMenuTextFonts(const toml::table &table, SMenuLayout &menu) 
 
 // The style each part names, by key.
 auto getFrontEndParts(auto &parts) {
-    return std::array{std::pair{"title_backdrop", &parts.title_backdrop},
+    return std::array{std::pair{"backdrop", &parts.title_backdrop},
                       std::pair{"loading_indicator", &parts.loading_indicator},
                       std::pair{"credits", &parts.credits},
-                      std::pair{"story_select", &parts.story_select}};
+                      std::pair{"select", &parts.story_select}};
 }
 
-// A part a package names can't be empty; one it leaves out an earlier package names.
+// A part a package names can't be empty; one it leaves out an earlier package names. Each style
+// names the table it is drawn by: [menu.backdrop.X], [stories.loading_indicator.X],
+// [menu.credits.X] and [stories.select.X].
 TomlResult<SFrontEndParts> readFrontEnd(const toml::table &table) {
-    constexpr std::string_view kWhere = "front_end: ";
+    constexpr std::string_view kWhere = "styles: ";
     if (TomlResult<void> keys = rejectUnknownKeys(
-            table, kWhere, {"title_backdrop", "loading_indicator", "credits", "story_select"});
+            table, kWhere, {"backdrop", "loading_indicator", "credits", "select"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -2962,8 +2981,7 @@ TomlResult<void> readLabels(const toml::table &table, SGameContent &content) {
 auto getGameStrings(auto &content) {
     return std::array{std::pair{"title", &content.title},
                       std::pair{"copyright", &content.copyright},
-                      std::pair{"copyright_os_font", &content.copyright_os_font},
-                      std::pair{"death_banner", &content.death_banner}};
+                      std::pair{"copyright_os_font", &content.copyright_os_font}};
 }
 
 TomlResult<void> readGameStrings(const toml::table &table, SGameContent &content) {
@@ -3085,13 +3103,12 @@ std::string formatMenu(const SMenuLayout &menu) {
         text += std::format("\n[menu.attract]\ndirectory = {}\nmovies = {}\n",
                             quoteToml(attract->directory), formatTomlList(attract->movies));
     }
-    text += std::format("\n[menu.features]\ndifficulty = {}\n", menu.features.difficulty);
     return text;
 }
 
 std::string formatList(const SListLook &list) {
     std::string text = std::format(
-        "\n[list]\nitem_colour = 0x{:x}\ndisabled_colour = 0x{:x}\nselected_colour = 0x{:x}\n"
+        "\n[looks.list]\nitem_colour = 0x{:x}\ndisabled_colour = 0x{:x}\nselected_colour = 0x{:x}\n"
         "confirmed_colour = 0x{:x}\nseparator_colour = 0x{:x}\nalpha = 0x{:x}\nshadow = {}\n"
         "column_padding = {}\nmargin_width = {}\nmargin_height = {}\nfield_gap_divisor = {}\n"
         "row_extra = {}\nreserved_lines = {}\nwidth_share = {}\nwidth_parts = {}\n"
@@ -3101,22 +3118,22 @@ std::string formatList(const SListLook &list) {
         list.margin_height, list.field_gap_divisor, list.row_extra, list.reserved_lines,
         list.width_share, list.width_parts, list.double_click_ticks);
     const SPointerLook &pointer = list.pointer;
-    text += std::format("\n[list.pointer]\n{} = [0x{:x}, 0x{:x}, 0x{:x}, 0x{:x}]\n"
+    text += std::format("\n[looks.list.pointer]\n{} = [0x{:x}, 0x{:x}, 0x{:x}, 0x{:x}]\n"
                         "size = {}\ndefault_height = {}\n",
                         pointer.palette_indices ? "palette_colours" : "cube_colours",
                         pointer.colours[0], pointer.colours[1], pointer.colours[2],
                         pointer.colours[3], pointer.size, pointer.default_height);
     const SScrollBarLook &bar = list.scroll_bar;
-    text += std::format("\n[list.scroll_bar]\nfirst_repeat_ticks = 0x{:x}\nrepeat_ticks = 0x{:x}\n"
-                        "track_fill_colour = 0x{:x}\ntrack_border_colour = 0x{:x}\n",
-                        bar.first_repeat_ticks, bar.repeat_ticks, bar.track_fill_colour,
-                        bar.track_border_colour);
+    text += std::format(
+        "\n[looks.list.scroll_bar]\nfirst_repeat_ticks = 0x{:x}\nrepeat_ticks = 0x{:x}\n"
+        "track_fill_colour = 0x{:x}\ntrack_border_colour = 0x{:x}\n",
+        bar.first_repeat_ticks, bar.repeat_ticks, bar.track_fill_colour, bar.track_border_colour);
     return text;
 }
 
 std::string formatDialog(const SDialogLook &dialog) {
     return std::format(
-        "\n[dialog]\ncontent_colour = 0x{:x}\nborder_colour = 0x{:x}\ntitle_colour = 0x{:x}\n"
+        "\n[looks.dialog]\ncontent_colour = 0x{:x}\nborder_colour = 0x{:x}\ntitle_colour = 0x{:x}\n"
         "text_colour = 0x{:x}\nwarning_colour = 0x{:x}\nwindow_status_colour = 0x{:x}\n"
         "status_colour = 0x{:x}\nprogress_background_colour = 0x{:x}\n"
         "progress_border_colour = 0x{:x}\nprogress_fill_colour = 0x{:x}\n"
@@ -3140,11 +3157,12 @@ std::string formatFont(const SFontSpec &font) {
             std::format("{}{{ offset = {}, first = 0x{:x}, last = 0x{:x} }}",
                         offsets.empty() ? "" : ", ", offset.offset, offset.first, offset.last);
     }
-    std::string text = std::format(
-        "\n[[font]]\nid = {}\nfile = {}\nwidth = 0x{:x}\nheight = 0x{:x}\ntransparent = 0x{:x}\n"
-        "own_colours = {}\ny_offsets = [{}]\nspace_width = {}\nshadow_x = {}\n",
-        quoteToml(font.id), quoteToml(font.file), font.width, font.height, font.transparent,
-        font.own_colours, offsets, font.space_width, font.shadow_x);
+    std::string text =
+        std::format("\n[[looks.font]]\nid = {}\nfile = {}\nwidth = 0x{:x}\nheight = "
+                    "0x{:x}\ntransparent = 0x{:x}\n"
+                    "own_colours = {}\ny_offsets = [{}]\nspace_width = {}\nshadow_x = {}\n",
+                    quoteToml(font.id), quoteToml(font.file), font.width, font.height,
+                    font.transparent, font.own_colours, offsets, font.space_width, font.shadow_x);
     if (font.os_font) {
         text += std::format("os_font = {{ height = {}, y_offset1 = {}, y_offset2 = {} }}\n",
                             font.os_font->height, font.os_font->y_offset1, font.os_font->y_offset2);
@@ -3178,7 +3196,7 @@ std::string formatControls(const SControls &controls) {
 
 std::string formatSkyScene(const SSkyScene &sky) {
     std::string text = std::format(
-        "\n[title_backdrop.sky_scene]\nmodel = {}\ncheat_model = {}\ncheat_code = {}\n"
+        "\n[menu.backdrop.sky_scene]\nmodel = {}\ncheat_model = {}\ncheat_code = {}\n"
         "start_phase = {}\nturn_per_second = {}\nrest_phase = {}\nprojection = {}\nswing = {}\n"
         "depth = {}\nmoon_light = [{}, {}, {}]\nmoon_ambient = 0x{:x}\nmoon_flat = 0x{:x}\n",
         quoteToml(sky.model), quoteToml(sky.cheat_model), sky.cheat_code, sky.start_phase,
@@ -3213,7 +3231,7 @@ std::string formatNumbers(const std::array<T, Count> &values) {
 
 std::string formatTiledScroll(const STiledScroll &scroll) {
     return std::format(
-        "\n[title_backdrop.tiled_scroll]\n{}tile = {}\ncolumns = [{}, {}]\nrows = [{}, {}]\n"
+        "\n[menu.backdrop.tiled_scroll]\n{}tile = {}\ncolumns = [{}, {}]\nrows = [{}, {}]\n"
         "step_x = {}\nstep_y = {}\nsteps_per_second = {}\nwrap_x_above = {}\nwrap_x_to = {}\n"
         "wrap_y_below = {}\nwrap_y_to = {}\nhand = {}\nhand_x = {}\nhand_y = {}\nhand_width = {}\n"
         "hand_height = {}\nhand_alpha_start = 0x{:x}\nhand_alpha_low = {}\n"
@@ -3233,7 +3251,7 @@ std::string formatFigureScene(const SFigureScene &figure) {
                               quoteToml(model.file), model.frame_wrap);
     }
     std::string text =
-        std::format("\n[title_backdrop.figure_scene]\n{}", formatPictureFit(figure.fit));
+        std::format("\n[menu.backdrop.figure_scene]\n{}", formatPictureFit(figure.fit));
     if (!figure.backdrop.empty()) {
         text += std::format("backdrop = {}\nbackdrop_alpha = 0x{:x}\n", quoteToml(figure.backdrop),
                             figure.backdrop_alpha);
@@ -3261,7 +3279,7 @@ std::string formatFigureScene(const SFigureScene &figure) {
 
 std::string formatStory(const SGameStory &story) {
     std::string text =
-        std::format("\n[[story]]\nid = {}\nname = {}\ntitle = {}\n", quoteToml(story.id),
+        std::format("\n[[stories.story]]\nid = {}\nname = {}\ntitle = {}\n", quoteToml(story.id),
                     quoteToml(story.name), quoteToml(story.title));
     if (story.year != 0) {
         text += std::format("year = {}\n", story.year);
@@ -3277,7 +3295,7 @@ std::string formatStory(const SGameStory &story) {
         text += std::format("requires = {}\n", formatTomlList(story.required_stories));
     }
     for (const SGameChapter &chapter : story.chapters) {
-        text += std::format("\n[[story.chapter]]\nname = {}\nmission = {}\n",
+        text += std::format("\n[[stories.story.chapter]]\nname = {}\nmission = {}\n",
                             quoteToml(chapter.name), quoteToml(chapter.mission));
         if (chapter.needs_full_install) {
             text += "needs_full_install = true\n";
@@ -3290,7 +3308,7 @@ std::string formatFrontEndParts(const SFrontEndParts &parts) {
     if (parts == SFrontEndParts{}) {
         return {};
     }
-    std::string text = "\n[front_end]\n";
+    std::string text = "\n[menu.styles]\n";
     for (const auto &[key, field] : getFrontEndParts(parts)) {
         if (*field) {
             text += std::format("{} = {}\n", key, quoteToml(**field));
@@ -3301,7 +3319,7 @@ std::string formatFrontEndParts(const SFrontEndParts &parts) {
 
 std::string formatColumnScroll(const SCreditsColumnScroll &scroll) {
     return std::format(
-        "\n[credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
+        "\n[menu.credits.column_scroll]\nfont = {}\ncolumn_left = {}\n"
         "column_to_screen_edge = {}\ntop_strip_bottom = {}\n"
         "bottom_strip_top = {}\nstrip_colour = 0x{:x}\ntext_colour = 0x{:x}\n"
         "heading_colour = 0x{:x}\nshadow_colour = {}\nscroll_speed = {}\nstart_y = {}\n"
@@ -3315,7 +3333,7 @@ std::string formatColumnScroll(const SCreditsColumnScroll &scroll) {
 
 std::string formatTwoColumn(const SCreditsTwoColumn &two) {
     return std::format(
-        "\n[credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
+        "\n[menu.credits.two_column]\nfont = {}\ncentre_left = {}\ncentre_right = {}\n"
         "left_x = {}\nright_x = {}\nleft_column = {}\nright_column = {}\n"
         "top_strip_bottom = {}\nbottom_strip_top = {}\nstrip_colour = 0x{:x}\n"
         "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
@@ -3330,7 +3348,7 @@ std::string formatTwoColumn(const SCreditsTwoColumn &two) {
 
 std::string formatFadeLoop(const SCreditsFadeLoop &fade) {
     return std::format(
-        "\n[credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
+        "\n[menu.credits.fade_loop]\nfont = {}\nimage_x = {}\nimage_y = {}\n"
         "text_colour = 0x{:x}\nheading_colour = 0x{:x}\nshadow_colour = {}\n"
         "scroll_speed = {}\nstart_y = {}\nloop_below = {}\nrestart_y = {}\n"
         "fade_centre = {}\nfade_reach = {}\nend_line = {}\nmarker = {}\nheading = {}\n",
@@ -3341,7 +3359,7 @@ std::string formatFadeLoop(const SCreditsFadeLoop &fade) {
 }
 
 std::string formatCredits(const SGameCredits &credits) {
-    std::string text = std::format("\n[credits]\ntext = {}\n{}", quoteToml(credits.text),
+    std::string text = std::format("\n[menu.credits]\ntext = {}\n{}", quoteToml(credits.text),
                                    formatPictureFit(credits.fit));
     if (!credits.image.empty()) {
         text += std::format("image = {}\n", quoteToml(credits.image));
@@ -3362,7 +3380,7 @@ std::string formatCredits(const SGameCredits &credits) {
 }
 
 std::string formatStartup(const SStartup &startup) {
-    return std::format("\n[startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
+    return std::format("\n[menu.startup]\npicture = {}\n{}picture_alpha = 0x{:x}\nlabel_x = {}\n"
                        "label_y = {}\nlabel_font = {}\nlabel_colour = 0x{:x}\n"
                        "movie_directory = {}\nmovie = {}\n",
                        quoteToml(startup.picture), formatPictureFit(startup.fit),
@@ -3376,7 +3394,7 @@ std::string formatLoadingIndicators(const SGameContent &content) {
     std::string text;
     if (const std::optional<SMoonIndicator> &moon = content.moon_indicator) {
         text += std::format(
-            "\n[loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
+            "\n[stories.loading_indicator.moon]\nmodel = {}\nglow_texture = {}\nwindow_size = {}\n"
             "corner_x = {}\ncorner_y = {}\ncorner_size = {}\n"
             "default_tint = [0x{:x}, 0x{:x}, 0x{:x}]\nfull_projection = {}\n"
             "window_projection = {}\ndepth = {}\nlight_reach = {}\nambient = 0x{:x}\n"
@@ -3389,17 +3407,18 @@ std::string formatLoadingIndicators(const SGameContent &content) {
     }
     if (const std::optional<SProgressBarIndicator> &bar = content.progress_bar_indicator) {
         text +=
-            std::format("\n[loading_indicator.progress_bar]\nheight = {}\n"
+            std::format("\n[stories.loading_indicator.progress_bar]\nheight = {}\n"
                         "frame_colour = 0x{:x}\ntrough_colour = 0x{:x}\nbar_colour = 0x{:x}\n{}",
                         bar->height, bar->frame_colour, bar->trough_colour, bar->bar_colour,
                         formatLoadingStatus(bar->status));
     }
     if (const std::optional<SIconIndicator> &icon = content.icon_indicator) {
-        text += std::format("\n[loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
-                            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
-                            "always_random = {}\n",
-                            icon->x, icon->y, icon->width, icon->height, icon->alpha_start,
-                            icon->alpha_end, icon->frames, icon->always_random);
+        text += std::format(
+            "\n[stories.loading_indicator.icon]\nx = {}\ny = {}\nwidth = {}\nheight = {}\n"
+            "alpha_start = {}\nalpha_end = 0x{:x}\nframes = {}\n"
+            "always_random = {}\n",
+            icon->x, icon->y, icon->width, icon->height, icon->alpha_start, icon->alpha_end,
+            icon->frames, icon->always_random);
     }
     return text;
 }
@@ -3409,34 +3428,60 @@ std::string formatStoryStart(const SGameContent &content) {
     std::string text;
     if (const std::optional<SStorySelect> &select = content.story_select) {
         text += std::format(
-            "\n[story_select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
+            "\n[stories.select.story_list]\nfull_install_probe = {}\nloading_frames = {}\n",
             quoteToml(select->full_install_probe), select->loading_frames);
         for (const SStoryDifficulty &difficulty : select->difficulties) {
-            text += std::format(
-                "\n[[story_select.story_list.difficulty]]\nlabel = {}\npuzzle = {}\ncombat = {}\n",
-                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
+            text += std::format("\n[[stories.select.story_list.difficulty]]\nlabel = {}\npuzzle = "
+                                "{}\ncombat = {}\n",
+                                quoteToml(difficulty.label), difficulty.puzzle, difficulty.combat);
         }
     }
     if (const std::optional<SDirectStart> &start = content.direct_start) {
-        text += std::format("\n[story_select.direct_start]\nloading_frames = {}\n",
+        text += std::format("\n[stories.select.direct_start]\nloading_frames = {}\n",
                             start->loading_frames);
     }
     return text;
 }
 
 std::string formatHudPlace(const SHudPlace &place) {
-    return std::format("place = {{ corner = {}, x = {}, y = {} }}\n",
-                       quoteToml(getKeywordName(place.corner, kHudCorners)), place.x, place.y);
+    return std::format("place = {{ anchor = {}, x = {}, y = {} }}\n",
+                       quoteToml(getKeywordName(place.anchor, kHudAnchors)), place.x, place.y);
+}
+
+// The place of an element a package gives.
+template <typename T>
+std::optional<SHudPlace> optionalPlace(const std::optional<T> &element) {
+    return element.transform([](const T &given) { return given.place; });
+}
+
+// The tables of the HUD elements' places, and the death banner.
+std::string formatHudPlaces(const SGameContent &content) {
+    std::string text;
+    if (const std::optional<SDeathBanner> &banner = content.death_banner) {
+        text += std::format("\n[hud.death_banner]\ntext = {}\n{}", quoteToml(banner->text),
+                            formatHudPlace(banner->place));
+    }
+    for (const auto &[key, place] :
+         {std::pair{"battery_gauge", optionalPlace(content.battery_gauge)},
+          std::pair{"health_bar", optionalPlace(content.health_bar)},
+          std::pair{"inventory", optionalPlace(content.inventory_panel)},
+          std::pair{"status_bars", optionalPlace(content.status_bars)},
+          std::pair{"message", optionalPlace(content.message_line)}}) {
+        if (place) {
+            text += std::format("\n[hud.{}]\n{}", key, formatHudPlace(*place));
+        }
+    }
+    return text;
 }
 
 std::string formatChapterTitle(const SChapterTitle &title) {
     std::string text =
-        std::format("\n[chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
-                    "shadow = {}\nalpha = 0x{:x}\ninset_across = {}\ninset_up = {}\n",
+        std::format("\n[hud.chapter_title]\nseconds = {}\nformat = {}\ncolour = 0x{:x}\n"
+                    "shadow = {}\nalpha = 0x{:x}\n{}",
                     title.seconds, quoteToml(title.format), title.colour, title.shadow, title.alpha,
-                    title.inset_across, title.inset_up);
+                    formatHudPlace(title.place));
     for (const SChapterTitleFont &font : title.fonts) {
-        text += std::format("\n[[chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
+        text += std::format("\n[[hud.chapter_title.font]]\nfont = {}\n", quoteToml(font.font));
         if (font.below_height != 0) {
             text += std::format("below_height = {}\n", font.below_height);
         }
@@ -3445,7 +3490,7 @@ std::string formatChapterTitle(const SChapterTitle &title) {
 }
 
 std::string formatLoadingPicture(const SLoadingPicture &picture) {
-    std::string text = std::format("\n[[loading]]\nid = {}\n{}", quoteToml(picture.id),
+    std::string text = std::format("\n[[stories.loading]]\nid = {}\n{}", quoteToml(picture.id),
                                    formatPictureFit(picture.fit));
     if (picture.moon) {
         text += std::format("moon = {{ x = {}, y = {}, tint = {} }}\n", picture.moon->x,
@@ -3464,53 +3509,18 @@ std::string formatLoadingPicture(const SLoadingPicture &picture) {
 std::string formatTextTables(const SGameContent &content) {
     std::string text;
     if (!content.labels.empty()) {
-        text += "\n[labels]\n";
+        text += "\n[text.labels]\n";
         for (const auto &[english, label] : content.labels) {
             text += std::format("{} = {}\n", quoteToml(english), quoteToml(label));
         }
     }
     for (const auto &[language, translation] : content.translations) {
-        text += std::format("\n[translation.{}]\n", quoteToml(language));
+        text += std::format("\n[text.translation.{}]\n", quoteToml(language));
         for (const auto &[english, translated] : translation) {
             text += std::format("{} = {}\n", quoteToml(english), quoteToml(translated));
         }
     }
     return text;
-}
-
-// The front end, credits, menu, list and dialog tables.
-TomlResult<void> readGameLooks(const toml::table &table, SGameContent &content) {
-    TomlResult<std::optional<SFrontEndParts>> front_end =
-        readOptionalTable<SFrontEndParts>(table, "front_end", readFrontEnd);
-    if (!front_end) {
-        return std::unexpected(front_end.error());
-    }
-    content.front_end = std::move(*front_end).value_or(SFrontEndParts{});
-    TomlResult<std::optional<SGameCredits>> credits =
-        readOptionalTable<SGameCredits>(table, "credits", readCredits);
-    if (!credits) {
-        return std::unexpected(credits.error());
-    }
-    content.credits = std::move(*credits);
-    TomlResult<std::optional<SMenuLayout>> menu =
-        readOptionalTable<SMenuLayout>(table, "menu", readMenu);
-    if (!menu) {
-        return std::unexpected(menu.error());
-    }
-    content.menu = *menu;
-    TomlResult<std::optional<SListLook>> list =
-        readOptionalTable<SListLook>(table, "list", readList);
-    if (!list) {
-        return std::unexpected(list.error());
-    }
-    content.list = *list;
-    TomlResult<std::optional<SDialogLook>> dialog =
-        readOptionalTable<SDialogLook>(table, "dialog", readDialog);
-    if (!dialog) {
-        return std::unexpected(dialog.error());
-    }
-    content.dialog = *dialog;
-    return {};
 }
 
 // A table the content reads only when it's there.
@@ -3527,58 +3537,169 @@ TomlResult<void> readPresentTable(const toml::table &table, std::string_view key
     return read(**found, content);
 }
 
-// The title backdrop, startup, loading indicator, story select and chapter title tables.
-TomlResult<void> readGameScreens(const toml::table &table, SGameContent &content) {
-    if (TomlResult<void> read =
-            readPresentTable(table, "title_backdrop", content, readTitleBackdrop);
+// The [key] table, read by read into field, which is left as it was without the table.
+template <typename T, typename Read>
+TomlResult<void> readInto(const toml::table &table, std::string_view key, Read read,
+                          std::optional<T> &field) {
+    TomlResult<std::optional<T>> value = readOptionalTable<T>(table, key, read);
+    if (!value) {
+        return std::unexpected(value.error());
+    }
+    field = std::move(*value);
+    return {};
+}
+
+// A table of an element's place alone, read into field.
+template <typename T>
+TomlResult<void> readPlaceInto(const toml::table &table, std::string_view key,
+                               std::optional<T> &field) {
+    const std::string where = std::format("{}: ", key);
+    return readInto<T>(
+        table, key, [&where](const toml::table &found) { return readPlaceTable<T>(found, where); },
+        field);
+}
+
+// The first error of a section's reads, each a step that reads one of its tables.
+template <std::size_t Count>
+TomlResult<void> readSteps(const std::array<std::function<TomlResult<void>()>, Count> &steps) {
+    for (const std::function<TomlResult<void>()> &step : steps) {
+        if (TomlResult<void> read = step(); !read) {
+            return read;
+        }
+    }
+    return {};
+}
+
+// The menu section's tables beside its own layout.
+constexpr std::array<std::string_view, 4> kMenuSectionTables{"styles", "backdrop", "credits",
+                                                             "startup"};
+
+// [menu]: the parts' styles, the title backdrop, the credits, startup, and the menus' layout when
+// the table has keys of its own.
+TomlResult<void> readMenuSection(const toml::table &table, SGameContent &content) {
+    TomlResult<std::optional<SFrontEndParts>> styles =
+        readOptionalTable<SFrontEndParts>(table, "styles", readFrontEnd);
+    if (!styles) {
+        return std::unexpected(std::format("menu: {}", styles.error()));
+    }
+    content.front_end = std::move(*styles).value_or(SFrontEndParts{});
+    if (TomlResult<void> read = readSteps<3>(
+            {[&] { return readPresentTable(table, "backdrop", content, readTitleBackdrop); },
+             [&] { return readInto<SGameCredits>(table, "credits", readCredits, content.credits); },
+             [&] { return readInto<SStartup>(table, "startup", readStartup, content.startup); }});
         !read) {
-        return read;
+        return std::unexpected(std::format("menu: {}", read.error()));
     }
-    TomlResult<std::optional<SStartup>> startup =
-        readOptionalTable<SStartup>(table, "startup", readStartup);
-    if (!startup) {
-        return std::unexpected(startup.error());
+    const bool has_layout = std::ranges::any_of(table, [](const auto &entry) {
+        return !std::ranges::contains(kMenuSectionTables, entry.first.str());
+    });
+    if (!has_layout) {
+        return {};
     }
-    content.startup = std::move(*startup);
-    if (TomlResult<void> read =
-            readPresentTable(table, "loading_indicator", content, readLoadingIndicator);
-        !read) {
-        return read;
+    TomlResult<SMenuLayout> menu = readMenu(table);
+    if (!menu) {
+        return std::unexpected(menu.error());
     }
-    if (TomlResult<void> read = readPresentTable(table, "story_select", content, readStorySelect);
-        !read) {
-        return read;
+    content.menu = std::move(*menu);
+    return {};
+}
+
+// [hud]: each element's place, and the death banner's and chapter title's text.
+TomlResult<void> readHudSection(const toml::table &table, SGameContent &content) {
+    return readSteps<7>({
+        [&] { return readPlaceInto(table, "battery_gauge", content.battery_gauge); },
+        [&] { return readPlaceInto(table, "health_bar", content.health_bar); },
+        [&] { return readPlaceInto(table, "inventory", content.inventory_panel); },
+        [&] { return readPlaceInto(table, "status_bars", content.status_bars); },
+        [&] { return readPlaceInto(table, "message", content.message_line); },
+        [&] {
+            return readInto<SDeathBanner>(table, "death_banner", readDeathBanner,
+                                          content.death_banner);
+        },
+        [&] {
+            return readInto<SChapterTitle>(table, "chapter_title", readChapterTitle,
+                                           content.chapter_title);
+        },
+    });
+}
+
+// [features]: how the game's own features behave.
+TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &content) {
+    return readSteps<3>({
+        [&] { return readInto<SBattery>(table, "battery", readBattery, content.battery); },
+        [&] {
+            return readInto<SFlashlight>(table, "flashlight", readFlashlight, content.flashlight);
+        },
+        [&] {
+            return readInto<SDifficulty>(table, "difficulty", readDifficulty, content.difficulty);
+        },
+    });
+}
+
+// [looks]: the iris, the fonts, the pick lists and the dialogs.
+TomlResult<void> readLooksSection(const toml::table &table, SGameContent &content) {
+    return readSteps<4>({
+        [&] { return readInto<SIris>(table, "iris", readIris, content.iris); },
+        [&] -> TomlResult<void> {
+            TomlResult<std::vector<SFontSpec>> fonts =
+                readListById<SFontSpec>(table, "font", readFont);
+            if (!fonts) {
+                return std::unexpected(fonts.error());
+            }
+            content.fonts = std::move(*fonts);
+            return {};
+        },
+        [&] { return readInto<SListLook>(table, "list", readList, content.list); },
+        [&] { return readInto<SDialogLook>(table, "dialog", readDialog, content.dialog); },
+    });
+}
+
+// [stories]: the loading pictures and indicator, the story select and the stories.
+TomlResult<void> readStoriesSection(const toml::table &table, SGameContent &content) {
+    return readSteps<4>({
+        [&] -> TomlResult<void> {
+            TomlResult<std::vector<SLoadingPicture>> loading =
+                readListById<SLoadingPicture>(table, "loading", readLoading);
+            if (!loading) {
+                return std::unexpected(loading.error());
+            }
+            content.loading = std::move(*loading);
+            return {};
+        },
+        [&] { return readPresentTable(table, "loading_indicator", content, readLoadingIndicator); },
+        [&] { return readPresentTable(table, "select", content, readStorySelect); },
+        [&] -> TomlResult<void> {
+            TomlResult<std::vector<SGameStory>> stories =
+                readListById<SGameStory>(table, "story", readStory);
+            if (!stories) {
+                return std::unexpected(stories.error());
+            }
+            content.stories = std::move(*stories);
+            return {};
+        },
+    });
+}
+
+// [text]: the labels and their translations.
+TomlResult<void> readTextSection(const toml::table &table, SGameContent &content) {
+    return readSteps<2>({[&] { return readLabels(table, content); },
+                         [&] { return readTranslations(table, content); }});
+}
+
+// The section's table, read by read with its errors named under it; none reads as empty.
+TomlResult<void> readSection(const toml::table &table, std::string_view section,
+                             SGameContent &content,
+                             TomlResult<void> (*read)(const toml::table &, SGameContent &)) {
+    const TomlResult<const toml::table *> found = readTable(table, "", section);
+    if (!found) {
+        return std::unexpected(found.error());
     }
-    TomlResult<std::optional<SChapterTitle>> chapter_title =
-        readOptionalTable<SChapterTitle>(table, "chapter_title", readChapterTitle);
-    if (!chapter_title) {
-        return std::unexpected(chapter_title.error());
+    if (*found == nullptr) {
+        return {};
     }
-    content.chapter_title = std::move(*chapter_title);
-    TomlResult<std::optional<SIrisFade>> iris_fade =
-        readOptionalTable<SIrisFade>(table, "iris_fade", readIrisFade);
-    if (!iris_fade) {
-        return std::unexpected(iris_fade.error());
+    if (TomlResult<void> result = read(**found, content); !result) {
+        return std::unexpected(std::format("{}: {}", section, result.error()));
     }
-    content.iris_fade = *iris_fade;
-    TomlResult<std::optional<SBattery>> battery =
-        readOptionalTable<SBattery>(table, "battery", readBattery);
-    if (!battery) {
-        return std::unexpected(battery.error());
-    }
-    content.battery = *battery;
-    TomlResult<std::optional<SFlashlight>> flashlight =
-        readOptionalTable<SFlashlight>(table, "flashlight", readFlashlight);
-    if (!flashlight) {
-        return std::unexpected(flashlight.error());
-    }
-    content.flashlight = *flashlight;
-    TomlResult<std::optional<SHealthBar>> health_bar =
-        readOptionalTable<SHealthBar>(table, "health_bar", readHealthBar);
-    if (!health_bar) {
-        return std::unexpected(health_bar.error());
-    }
-    content.health_bar = *health_bar;
     return {};
 }
 
@@ -3589,41 +3710,24 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
     if (TomlResult<void> strings = readGameStrings(table, content); !strings) {
         return std::unexpected(strings.error());
     }
-    if (TomlResult<void> looks = readGameLooks(table, content); !looks) {
-        return std::unexpected(looks.error());
+    // The menu's layout names its own errors under the section.
+    if (TomlResult<void> menu = readPresentTable(table, "menu", content, readMenuSection); !menu) {
+        return std::unexpected(menu.error());
     }
-    if (TomlResult<void> screens = readGameScreens(table, content); !screens) {
-        return std::unexpected(screens.error());
+    for (const auto &[section, read] :
+         {std::pair{"hud", &readHudSection}, std::pair{"features", &readFeaturesSection},
+          std::pair{"looks", &readLooksSection}, std::pair{"stories", &readStoriesSection},
+          std::pair{"text", &readTextSection}}) {
+        if (TomlResult<void> result = readSection(table, section, content, read); !result) {
+            return std::unexpected(result.error());
+        }
     }
-    TomlResult<std::vector<SFontSpec>> fonts = readListById<SFontSpec>(table, "font", readFont);
-    if (!fonts) {
-        return std::unexpected(fonts.error());
-    }
-    content.fonts = std::move(*fonts);
     TomlResult<std::optional<SControls>> controls =
         readOptionalTable<SControls>(table, "controls", readControls);
     if (!controls) {
         return std::unexpected(controls.error());
     }
     content.controls = std::move(*controls);
-    TomlResult<std::vector<SLoadingPicture>> loading =
-        readListById<SLoadingPicture>(table, "loading", readLoading);
-    if (!loading) {
-        return std::unexpected(loading.error());
-    }
-    content.loading = std::move(*loading);
-    TomlResult<std::vector<SGameStory>> stories =
-        readListById<SGameStory>(table, "story", readStory);
-    if (!stories) {
-        return std::unexpected(stories.error());
-    }
-    content.stories = std::move(*stories);
-    if (TomlResult<void> labels = readLabels(table, content); !labels) {
-        return std::unexpected(labels.error());
-    }
-    if (TomlResult<void> translations = readTranslations(table, content); !translations) {
-        return std::unexpected(translations.error());
-    }
     return content;
 }
 
@@ -3683,20 +3787,20 @@ std::string formatGameContentTables(const SGameContent &content) {
     if (const std::optional<SChapterTitle> &title = content.chapter_title) {
         text += formatChapterTitle(*title);
     }
-    if (const std::optional<SIrisFade> &iris = content.iris_fade) {
-        text += std::format("\n[iris_fade]\nopens_session = {}\nblack_frames = {}\n",
+    if (const std::optional<SIris> &iris = content.iris) {
+        text += std::format("\n[looks.iris]\nopens_session = {}\nblack_frames = {}\n",
                             iris->opens_session, iris->black_frames);
     }
     if (const std::optional<SBattery> &battery = content.battery) {
-        text += std::format("\n[battery]\ngauge = {}\n{}", battery->gauge,
-                            formatHudPlace(battery->place));
+        text += std::format("\n[features.battery]\ngauge = {}\n", battery->gauge);
     }
     if (const std::optional<SFlashlight> &flashlight = content.flashlight) {
-        text += std::format("\n[flashlight]\noptions = {}\n", flashlight->options);
+        text += std::format("\n[features.flashlight]\noptions = {}\n", flashlight->options);
     }
-    if (const std::optional<SHealthBar> &health_bar = content.health_bar) {
-        text += std::format("\n[health_bar]\n{}", formatHudPlace(health_bar->place));
+    if (const std::optional<SDifficulty> &difficulty = content.difficulty) {
+        text += std::format("\n[features.difficulty]\noptions = {}\n", difficulty->options);
     }
+    text += formatHudPlaces(content);
     for (const SLoadingPicture &picture : content.loading) {
         text += formatLoadingPicture(picture);
     }

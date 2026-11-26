@@ -325,6 +325,25 @@ TEST_F(CChapterTitleTest, AStorysYearAndTitleShowForEightSeconds) {
     game_.renderOverlay(session_);
 }
 
+// From the top right its insets keep it two widths in from the right and one down from the top;
+// in the middle they move it right and down from there.
+TEST_F(CChapterTitleTest, TheGamePlacesTheTitle) {
+    chooseToStart(EChapterSelectMode::kStories, {kReturn});
+    watchTitle();
+    engine::SChapterTitle &title = common::required(game_parts_.getContent().chapter_title);
+    title.place.anchor = engine::EHudAnchor::TopRight;
+    int right_x = 0;
+    EXPECT_CALL(medium_text_, drawText(_, _, 2, _, _))
+        .WillOnce(::testing::DoAll(::testing::SaveArg<1>(&right_x), Return(0)));
+    game_.renderOverlay(session_);
+    // The title's width, from where its right end sits.
+    const int width = 640 - 4 - right_x;
+    ASSERT_GT(width, 0);
+    title.place.anchor = engine::EHudAnchor::Centre;
+    EXPECT_CALL(medium_text_, drawText(_, ((640 - width) / 2) + 4, 238, _, _));
+    game_.renderOverlay(session_);
+}
+
 TEST_F(CChapterTitleTest, EachStoryHasItsYear) {
     chooseToStart(EChapterSelectMode::kStories, {kDown, kDown, kDown, kReturn});
     watchTitle();

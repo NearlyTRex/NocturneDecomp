@@ -4,17 +4,21 @@
 
 title = "Blair Witch Volume II"
 
+# ==================================================================================================
+# menu: the front end's styles, the title backdrop, credits, startup and the menus
+# ==================================================================================================
+
 # The title's frames alone over a fixed camera; a bar across the top while a level loads; credits
 # that fade in and out about the screen's middle and loop; START begins its one story
-[front_end]
-title_backdrop = "figure_scene"
+[menu.styles]
+backdrop ="figure_scene"
 loading_indicator = "progress_bar"
 credits = "fade_loop"
-story_select = "direct_start"
+select = "direct_start"
 
 # BW1's scene without its backdrop or figures: the title's 75 frames over the top of the cleared
 # screen, 12 a second, wrapping at 74 (head-of-horror code 666 is only cleared)
-[title_backdrop.figure_scene]
+[menu.backdrop.figure_scene]
 fit = "keep_aspect"
 steps_per_second = 60
 cheat_code = 666
@@ -39,13 +43,13 @@ frame_wrap = 74
 
 # title_bw at 10,7; every line centred and faded by its distance from the middle, 32 pixels a
 # second up from the foot, starting again from 500 once past -2500, until the music ends
-[credits]
+[menu.credits]
 text = "credits.txt"
 fit = "keep_aspect"
 image = "title_bw"
 music = "XBLAIRMENU.WAV"
 
-[credits.fade_loop]
+[menu.credits.fade_loop]
 font = "theme"
 image_x = 10
 image_y = 7
@@ -63,7 +67,7 @@ marker = "\\"
 heading = "b"
 
 # test_logo opaque; BW2 measured "Loading..." and never drew it, as Nocturne did
-[startup]
+[menu.startup]
 picture = "test_logo"
 fit = "keep_aspect"
 picture_alpha = 0xffff
@@ -179,26 +183,46 @@ border_colour = 0xff
 text_colour = 0xff
 text_shadow = 0
 
-[menu.features]
-difficulty = false
+# ==================================================================================================
+# hud: each element where its place puts it
+# ==================================================================================================
 
-# A session starts on its scene, any iris put away; its scripts begin none
-[iris_fade]
-opens_session = false
-black_frames = 1
+# The hero's health bar at the top right while the inventory shows
+[hud.health_bar]
+place = { anchor = "top_right", x = 4, y = 4 }
+
+# The weapon and item panels in the scene camera's bottom-right corner
+[hud.inventory]
+place = { anchor = "bottom_right", x = 0, y = 0 }
+
+# The other characters' bars stacked up from the bottom left
+[hud.status_bars]
+place = { anchor = "bottom_left", x = 8, y = 6 }
+
+# The message line centred above the bottom letterbox bar
+[hud.message]
+place = { anchor = "bottom", x = 0, y = 0 }
+
+# ==================================================================================================
+# features: how the game's own features behave
+# ==================================================================================================
 
 # No battery gauge: BW2 draws it only while the flashlight or the goggles are on, and its hero
 # turns on neither, though its levels still hold batteries
-[battery]
+[features.battery]
 gauge = false
 
 # Lazarus carries a lantern and never lights a weapon, so there is no flashlight halo or range
-[flashlight]
+[features.flashlight]
 options = false
 
-# The hero's health bar at the top right while the inventory shows
-[health_bar]
-place = { corner = "top_right", x = 4, y = 4 }
+# No puzzle or combat difficulty
+[features.difficulty]
+options = false
+
+# ==================================================================================================
+# controls: the modes and their default keys, and the bindings page's rows
+# ==================================================================================================
 
 # No mode aims by hand. Infrared, map, jump and the fourth and fifth weapons start unbound.
 [[controls.mode]]
@@ -408,8 +432,17 @@ action = "drop"
 label = "Drop item or weapon"
 help = "Drop Item or Weapon"
 
+# ==================================================================================================
+# looks: the iris, the bitmap fonts, the pick lists and the dialogs
+# ==================================================================================================
+
+# A session starts on its scene, any iris put away; its scripts begin none
+[looks.iris]
+opens_session = false
+black_frames = 1
+
 # Nocturne's six fonts, unchanged; BW2's seventh, dochand.raw, nothing draws yet
-[[font]]
+[[looks.font]]
 id = "medium"
 file = "nocfont.raw"
 width = 0x136
@@ -421,7 +454,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = "tiny"
 file = "nocsmall.raw"
 width = 0xf8
@@ -433,7 +466,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "theme"
 file = "menufont.raw"
 width = 0xfa
@@ -446,7 +479,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "small_editor"
 file = "fnte_pfd.RAW"
 width = 0x94
@@ -458,7 +491,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "console"
 file = "fnte_f.RAW"
 width = 0x94
@@ -469,7 +502,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = "micro"
 file = "micro.raw"
 width = 0x94
@@ -480,7 +513,7 @@ y_offsets = [{ offset = 1, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x02
@@ -498,18 +531,18 @@ width_share = 7
 width_parts = 8
 double_click_ticks = 0x48000
 
-[list.pointer]
+[looks.list.pointer]
 cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x00
 track_border_colour = 0x07
 
-[dialog]
+[looks.dialog]
 content_colour = 0x00
 border_colour = 0x07
 title_colour = 0xfb
@@ -531,16 +564,20 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
+# ==================================================================================================
+# stories: the loading pictures and indicator, the story select and the stories
+# ==================================================================================================
+
 # One picture for every level. Its moon window is BW2's, where the progress bar draws no moon,
 # but which keeps the status line off the picture.
-[[loading]]
+[[stories.loading]]
 fit = "keep_aspect"
 id = "loadscreen"
 moon = { x = 24, y = 405, tint = [0xd700, 0xdc00, 0xe000] }
 
 # Across the top: a black frame 20 rows deep, a black trough a pixel in, and the bar in colour 4
 # a pixel further in; Nocturne's status line when the screen is the indicator's
-[loading_indicator.progress_bar]
+[stories.loading_indicator.progress_bar]
 height = 20
 frame_colour = 0x00
 trough_colour = 0x00
@@ -551,24 +588,28 @@ status_font = "theme"
 status_colour = 0xf8
 
 # Ten loading frames before the story's one mission
-[story_select.direct_start]
+[stories.select.direct_start]
 loading_frames = 10
 
 # The story's year: the binary's 1941 (0x795) is BW1's, left in its table, and never shown, as
 # BW2 shows no chapter title
-[[story]]
+[[stories.story]]
 id = "coffin_rock"
 name = "Coffin Rock"
 title = "Coffin Rock"
 year = 1886
 loading = "loadscreen"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Coffin Rock"
 mission = "awakening.msn"
 
+# ==================================================================================================
+# text: the menus' labels and their translations
+# ==================================================================================================
+
 # The menus' text, by the id the code asks for, as Nocturne's: every line BW2 has it words alike
-[labels]
+[text.labels]
 loading = "Loading..."
 choose_story = "Choose a story to play"
 

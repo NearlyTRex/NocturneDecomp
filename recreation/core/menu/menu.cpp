@@ -235,6 +235,10 @@ const engine::SMenuLayout &CMenu::getMenuLayout() const {
     return *owners_.content.menu;
 }
 
+bool CMenu::hasDifficultyOptions() const {
+    return owners_.content.difficulty.value_or(engine::SDifficulty{}).options;
+}
+
 // The OS fonts' copyright when the packages give one, else the bitmap fonts'.
 std::string_view CMenu::getCopyright() const {
     const engine::SGameContent &content = owners_.content;

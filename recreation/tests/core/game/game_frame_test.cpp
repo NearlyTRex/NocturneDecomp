@@ -485,9 +485,9 @@ TEST_F(CGameFrameDebugTest, TheFrameHasABlackBorderTwoPixelsWide) {
     EXPECT_EQ(inside, static_cast<std::size_t>(((kWidth - 4) * 2) + ((kHeight - 6) * 2)));
 }
 
-// The game's banner, centred a quarter of the way down in the colour cube's red, while the local
-// hero is dead and not before.
-TEST_F(CGameFrameDebugTest, ADeadHeroShowsTheGamesBannerAQuarterDown) {
+// The game's banner, centred across and 112 640x480 shares down, in the colour cube's red, while
+// the local hero is dead and not before.
+TEST_F(CGameFrameDebugTest, ADeadHeroShowsTheGamesBannerHighInTheFrame) {
     ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
     ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
     auto &test_hero = static_cast<CTestHero &>(hero());
@@ -498,8 +498,25 @@ TEST_F(CGameFrameDebugTest, ADeadHeroShowsTheGamesBannerAQuarterDown) {
     frame();
     engine::CBitFont &font = *game_parts_.getFonts().getMediumFont();
     const std::string_view text = "You're dead.  Game over.";
-    font.drawText(text, (kWidth - font.getTextWidth(text)) / 2,
-                  (kHeight - font.getMaxCharHeight()) / 4,
+    font.drawText(text, (kWidth - font.getTextWidth(text)) / 2, 112 * kHeight / 480,
+                  game_parts_.getTwoD().getColorCubeLookup()[0x7c00], 0);
+    EXPECT_EQ(pixels(), shown);
+}
+
+// A banner the game places goes there, its insets 640x480 shares of the frame.
+TEST_F(CGameFrameDebugTest, AGamePlacesItsBanner) {
+    ON_CALL(raw_input_, getMouseX()).WillByDefault(Return(kWidth - 1));
+    ON_CALL(raw_input_, getMouseY()).WillByDefault(Return(kHeight - 1));
+    common::required(game_parts_.getContent().death_banner).place =
+        engine::SHudPlace{.anchor = engine::EHudAnchor::TopLeft, .x = 64, .y = 48};
+    static_cast<CTestHero &>(hero()).death_state = EDeathState::DEATH_STATE_DEAD;
+    frame();
+    const std::vector<std::uint32_t> shown = pixels();
+    static_cast<CTestHero &>(hero()).death_state = EDeathState::DEATH_STATE_DYING;
+    frame();
+    engine::CBitFont &font = *game_parts_.getFonts().getMediumFont();
+    const std::string_view text = "You're dead.  Game over.";
+    font.drawText(text, 64 * kWidth / 640, 48 * kHeight / 480,
                   game_parts_.getTwoD().getColorCubeLookup()[0x7c00], 0);
     EXPECT_EQ(pixels(), shown);
 }
@@ -827,8 +844,7 @@ TEST_F(CGameIrisTest, AnIrisOpensFromBlackAcrossTheScreen) {
 
 // BW1's and BW3's hold the screen black for three frames.
 TEST_F(CGameIrisTest, TheGameSaysHowManyFramesTheIrisStartsBlack) {
-    game_parts_.getContent().iris_fade =
-        engine::SIrisFade{.opens_session = true, .black_frames = 3};
+    game_parts_.getContent().iris = engine::SIris{.opens_session = true, .black_frames = 3};
     game_.beginFadeIn(nullptr, session_.camera);
     game_.updateFadeTransition();
     game_.updateFadeTransition();

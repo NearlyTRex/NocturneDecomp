@@ -98,13 +98,13 @@ TEST(PackageManifest, CarriesGameContentAroundItsPods) {
                                          .two_column = {}};
     const std::string text = formatPackageManifest(manifest);
     EXPECT_LT(text.find("copyright"), text.find("[[pod]]"));
-    EXPECT_GT(text.find("[front_end]"), text.find("[[pod]]"));
-    EXPECT_GT(text.find("[credits]"), text.find("[[pod]]"));
+    EXPECT_GT(text.find("[menu.styles]"), text.find("[[pod]]"));
+    EXPECT_GT(text.find("[menu.credits]"), text.find("[[pod]]"));
     EXPECT_EQ(parsePackageManifest(text), manifest);
 }
 
 TEST(PackageManifest, ABrokenGameTableIsTheManifestsError) {
-    EXPECT_EQ(errorOf("id = \"a\"\n[credits]\ntext = 1"), "credits: text: not a string");
+    EXPECT_EQ(errorOf("id = \"a\"\n[menu.credits]\ntext = 1"), "menu: credits: text: not a string");
 }
 
 TEST(PackageManifest, WritesOnlyTheFieldsItHas) {
@@ -237,8 +237,8 @@ TEST(ReleaseCatalog, LoadingTheCatalogueGivesItsReleasesAndABrokenOneIsFatal) {
 }
 
 TEST(ReleaseCatalog, EachReleaseTakesItsGamesContent) {
-    const std::array games{SEmbeddedGame{.id = "f", .text = "front_end.title_backdrop = \"other\""},
-                           SEmbeddedGame{.id = "g", .text = "front_end.title_backdrop = \"mine\""}};
+    const std::array games{SEmbeddedGame{.id = "f", .text = "menu.styles.backdrop = \"other\""},
+                           SEmbeddedGame{.id = "g", .text = "menu.styles.backdrop = \"mine\""}};
     const std::vector<SRelease> releases = loadReleaseCatalog(kRelease, games);
     ASSERT_EQ(releases.size(), 1U);
     EXPECT_EQ(releases.front().content.front_end.title_backdrop, "mine");

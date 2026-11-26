@@ -253,20 +253,20 @@ size = 11550130
 modified = 946710000
 xxh3 = 'b8a086b973c62dd8e71eafb51015af35'
 
-[front_end]
-title_backdrop = 'sky_scene'
+[menu.styles]
+backdrop = 'sky_scene'
 loading_indicator = 'moon'
 credits = 'column_scroll'
-story_select = 'story_list'
+select = 'story_list'
 
-[credits]
+[menu.credits]
 text = 'credits.txt'
 fit = 'keep_aspect'
 anchor = 'left'
 image = 'stats'
 music = 'faded-remix.mp3'
 
-[credits.column_scroll]
+[menu.credits.column_scroll]
 font = 'theme'
 column_left = 414
 column_to_screen_edge = true
@@ -372,10 +372,7 @@ text_shadow = 0
 directory = 'video'
 movies = ['noc1.avi', 'noc2.avi', 'noc3.avi', 'noc4.avi']
 
-[menu.features]
-difficulty = false
-
-[[font]]
+[[looks.font]]
 id = 'medium'
 file = 'nocfont.raw'
 width = 0x136
@@ -387,7 +384,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = 'tiny'
 file = 'nocsmall.raw'
 width = 0xf8
@@ -399,7 +396,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'theme'
 file = 'menufont.raw'
 width = 0xfa
@@ -411,7 +408,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'small_editor'
 file = 'fnte_pfd.RAW'
 width = 0x94
@@ -423,7 +420,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = 'console'
 file = 'fnte_f.RAW'
 width = 0x94
@@ -434,7 +431,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = 'micro'
 file = 'micro.raw'
 width = 0x94
@@ -614,22 +611,27 @@ label = 'Jump'
 [[controls.binding]]
 action = 'weapon1'
 label = 'Select pistol weapons'
+help = 'Cycle pistol weapons'
 
 [[controls.binding]]
 action = 'weapon2'
 label = 'Select assault weapons'
+help = 'Cycle assault weapons'
 
 [[controls.binding]]
 action = 'weapon3'
 label = 'Select flame weapons'
+help = 'Cycle flame weapons'
 
 [[controls.binding]]
 action = 'weapon4'
 label = 'Select grenade weapons'
+help = 'Cycle grenade weapons'
 
 [[controls.binding]]
 action = 'weapon5'
 label = 'Select melee weapons'
+help = 'Cycle melee weapons'
 
 [[controls.binding]]
 action = 'next_weapon'
@@ -659,7 +661,7 @@ label = 'Next ammo'
 action = 'map'
 label = 'Map'
 
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x2
@@ -677,18 +679,18 @@ width_share = 7
 width_parts = 8
 double_click_ticks = 294912
 
-[list.pointer]
+[looks.list.pointer]
 cube_colours = [0x0, 0x7fff, 0x3e0, 0x7c1f]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x0
 track_border_colour = 0x7
 
-[dialog]
+[looks.dialog]
 content_colour = 0x0
 border_colour = 0x7
 title_colour = 0xfb
@@ -710,7 +712,7 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-[title_backdrop.sky_scene]
+[menu.backdrop.sky_scene]
 model = 'moon.kfm'
 cheat_model = 'taylor_head.kfm'
 cheat_code = 666
@@ -746,7 +748,7 @@ frame_alpha = 48000
 frame_rate = 12
 frame_wrap = 60
 
-[startup]
+[menu.startup]
 picture = 'fangs'
 fit = 'keep_aspect'
 picture_alpha = 0x8000
@@ -757,7 +759,7 @@ label_colour = 0xf8
 movie_directory = 'video'
 movie = 'opening.avi'
 
-[loading_indicator.moon]
+[stories.loading_indicator.moon]
 model = 'moon.kfm'
 glow_texture = 'MOONGLOW.RAW'
 window_size = 90
@@ -776,54 +778,85 @@ status_box_colour = 0x0
 status_font = 'theme'
 status_colour = 0xf8
 
-[story_select.story_list]
+[stories.select.story_list]
 full_install_probe = 'enemy.pod'
 loading_frames = 10
 
-[chapter_title]
+[hud.chapter_title]
 seconds = 8
 format = '{year} - {title}'
 colour = 0xf8
 shadow = 0
 alpha = 0xffff
-inset_across = 2
-inset_up = 1
+place = { anchor = 'bottom_left', x = 2, y = 1 }
 
-[[chapter_title.font]]
+[[hud.chapter_title.font]]
 font = 'small_editor'
 below_height = 384
 
-[[chapter_title.font]]
+[[hud.chapter_title.font]]
 font = 'tiny'
 below_height = 480
 
-[[chapter_title.font]]
+[[hud.chapter_title.font]]
 font = 'medium'
 
-[[loading]]
+[looks.iris]
+opens_session = true
+black_frames = 1
+
+[features.battery]
+gauge = true
+
+[features.flashlight]
+options = true
+
+[features.difficulty]
+options = false
+
+[hud.death_banner]
+text = "You're dead.  Game over."
+place = { anchor = 'top', x = 0, y = 112 }
+
+[hud.battery_gauge]
+place = { anchor = 'bottom_left', x = 4, y = 4 }
+
+[hud.health_bar]
+place = { anchor = 'top_right', x = 4, y = 4 }
+
+[hud.inventory]
+place = { anchor = 'bottom_right', x = 0, y = 0 }
+
+[hud.status_bars]
+place = { anchor = 'bottom_left', x = 8, y = 6 }
+
+[hud.message]
+place = { anchor = 'bottom', x = 0, y = 0 }
+
+[[stories.loading]]
 id = 'load1'
 fit = 'keep_aspect'
 moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 id = 'load2'
 fit = 'keep_aspect'
 moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 id = 'load3'
 fit = 'keep_aspect'
 moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 id = 'load4'
 fit = 'keep_aspect'
 moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
 
-[[story]]
+[[stories.story]]
 id = 'volume1'
 name = "Volume 1 - 'Dark Reign of the Vampire King'"
 title = "'Dark Reign of the Vampire King'"
@@ -831,27 +864,27 @@ year = 1927
 loading = 'load1'
 unlock = { key = 'Act1Code', code = 0x331 }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Your New Partner'"
 mission = 'hq-act1.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Sentinels'"
 mission = 'gtown.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'Werewolf Forest'"
 mission = 'forest.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Castle Gaustadt'"
 mission = 'castle1.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Dungeon'"
 mission = 'dungeon.msn'
 
-[[story]]
+[[stories.story]]
 id = 'volume2'
 name = "Volume 2 - 'Tomb of the Underground God'"
 title = "'Tomb of the Underground God'"
@@ -859,36 +892,36 @@ year = 1931
 loading = 'load2'
 unlock = { key = 'Act2Code', code = 0x3cc }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Train to Redeye'"
 mission = 'train.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Zombie Town'"
 mission = 'town.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'Underground Mine'"
 mission = 'mine.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Hidden Entrance'"
 mission = 'trans.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Temple of the God'"
 mission = 'temple.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 6 - 'Epilogue'"
 mission = 'town2.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter X - 'Failure'"
 mission = 'hq-act2b.msn'
 needs_full_install = true
 
-[[story]]
+[[stories.story]]
 id = 'volume3'
 name = "Volume 3 - 'Windy City Massacre'"
 title = "'Windy City Massacre'"
@@ -896,51 +929,51 @@ year = 1933
 loading = 'load3'
 unlock = { key = 'Act3Code', code = 0x3ac }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = 'hq-act3.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Chicago River'"
 mission = 'chicago1.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'The Vendome'"
 mission = 'speak.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Night on the Town'"
 mission = 'chicago2.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Water Works'"
 mission = 'wworks.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 6 - 'Windy City'"
 mission = 'chicago3.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 7 - 'Crescent Theater'"
 mission = 'theater.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 8 - 'Rooftop to Rooftop'"
 mission = 'chicago4.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 9 - 'Warehouse of Hell'"
 mission = 'ware2.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 10 - 'Mobster Factory'"
 mission = 'factory.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 11 - 'Not You Again'"
 mission = 'intfact.msn'
 
-[[story]]
+[[stories.story]]
 id = 'volume4'
 name = "Volume 4 - 'The House on the Edge of Hell'"
 title = "'The House on the Edge of Hell'"
@@ -948,34 +981,34 @@ year = 1935
 loading = 'load4'
 unlock = { key = 'Act4Code', code = 0xd6 }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = 'hq-act4.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Graveyard'"
 mission = 'grave.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'House of Hell'"
 mission = 'mansion.msn'
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Back from Hell'"
 mission = 'hq-act4b.msn'
 
-[[story]]
+[[stories.story]]
 id = 'epilogue'
 name = "Volume 5 - 'Epilogue'"
 title = "'Epilogue'"
 year = 1942
 requires = ['volume1', 'volume2', 'volume3', 'volume4']
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = 'hq-act5.msn'
 
-[labels]
+[text.labels]
 'bindings_add' = 'Add binding'
 'bindings_close' = ''
 'bindings_hotkeys' = 'Hotkeys'
@@ -1054,6 +1087,9 @@ mission = 'hq-act5.msn'
 'graphic_api_none' = '3D API : None'
 'graphic_bits_per_pixel' = 'Bits per pixel : '
 'graphic_card' = '3D Card : '
+'graphic_flashlight_long' = 'Long'
+'graphic_flashlight_original' = 'Original'
+'graphic_flashlight_range' = 'Flashlight range : '
 'graphic_halo_complex' = 'Flashlight halo : Complex'
 'graphic_halo_off' = 'Flashlight halo : Off'
 'graphic_halo_simple' = 'Flashlight halo : Simple'
@@ -1094,6 +1130,14 @@ mission = 'hq-act5.msn'
 'hotkey_script_resume' = 'Resume script (script debug)'
 'hotkey_script_run' = 'Run or stop script (script debug)'
 'hotkey_script_view' = 'Script view'
+'keys_help_mute' = 'Toggle mute'
+'keys_help_pause' = 'Pause game'
+'keys_help_quick_load' = 'Quick load'
+'keys_help_quick_save' = 'Quick save'
+'keys_help_restore' = 'Restore game'
+'keys_help_save' = 'Save game'
+'keys_help_title' = 'Quick help'
+'keys_help_toggle' = 'Toggle help'
 'loading' = 'Loading...'
 'main_multiplayer' = 'M U L T I P L A Y E R'
 'main_options' = 'O P T I O N S'

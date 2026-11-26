@@ -44,11 +44,15 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.front_end = getShippedGameContent().front_end;
     base.copyright = "Base";
     base.copyright_os_font = "(c) Base";
-    base.death_banner = "Dead";
-    base.iris_fade = SIrisFade{.opens_session = false, .black_frames = 3};
+    base.death_banner =
+        SDeathBanner{.text = "Dead", .place = {.anchor = EHudAnchor::Centre, .x = 0, .y = 0}};
+    base.iris = SIris{.opens_session = false, .black_frames = 3};
     base.battery = SBattery{.gauge = false};
     base.flashlight = SFlashlight{.options = false};
-    base.health_bar = SHealthBar{.place = {.corner = EHudCorner::TopLeft, .x = 1, .y = 2}};
+    base.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
+    base.inventory_panel = SInventoryPanel{.place = {.anchor = EHudAnchor::Top, .x = 1, .y = 2}};
+    base.status_bars = SStatusBars{.place = {.anchor = EHudAnchor::Left, .x = 1, .y = 2}};
+    base.message_line = SMessageLine{.place = {.anchor = EHudAnchor::Right, .x = 1, .y = 2}};
     base.credits = SGameCredits{.text = "a.txt",
                                 .image = "a",
                                 .fit = {},
@@ -70,11 +74,14 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     EXPECT_EQ(merged.front_end.loading_indicator, "progress_bar");
     EXPECT_EQ(merged.copyright, "Mod");
     EXPECT_EQ(merged.copyright_os_font, "(c) Base");
-    EXPECT_EQ(merged.death_banner, "Dead");
-    EXPECT_EQ(merged.iris_fade, base.iris_fade);
+    EXPECT_EQ(merged.death_banner, base.death_banner);
+    EXPECT_EQ(merged.iris, base.iris);
     EXPECT_EQ(merged.battery, base.battery);
     EXPECT_EQ(merged.flashlight, base.flashlight);
     EXPECT_EQ(merged.health_bar, base.health_bar);
+    EXPECT_EQ(merged.inventory_panel, base.inventory_panel);
+    EXPECT_EQ(merged.status_bars, base.status_bars);
+    EXPECT_EQ(merged.message_line, base.message_line);
     EXPECT_EQ(merged.credits, base.credits);
     EXPECT_EQ(merged.menu, mod.menu);
 }

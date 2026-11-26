@@ -61,10 +61,15 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
         mergeValue(content.copyright, from->copyright);
         mergeValue(content.copyright_os_font, from->copyright_os_font);
         mergeValue(content.death_banner, from->death_banner);
-        mergeValue(content.iris_fade, from->iris_fade);
+        mergeValue(content.iris, from->iris);
         mergeValue(content.battery, from->battery);
+        mergeValue(content.battery_gauge, from->battery_gauge);
+        mergeValue(content.difficulty, from->difficulty);
         mergeValue(content.flashlight, from->flashlight);
         mergeValue(content.health_bar, from->health_bar);
+        mergeValue(content.inventory_panel, from->inventory_panel);
+        mergeValue(content.status_bars, from->status_bars);
+        mergeValue(content.message_line, from->message_line);
         mergeValue(content.credits, from->credits);
         mergeValue(content.menu, from->menu);
         mergeById(content.fonts, from->fonts);

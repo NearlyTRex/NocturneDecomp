@@ -37,7 +37,7 @@ front-end-bindings, fe-load = front-end-loading. Paths are relative to `recreati
    (0xd7,0xdc,0xe0), and whether BW pre-shifts it is unchecked.
 6. **Not ported:** save/load pickers, pause menu, act stats and the continue prompt. The
    continue prompt's values below are nocedit's.
-7. **Part styles.** The manifest's `[front_end]` table names a style per part
+7. **Part styles.** The manifest's `[menu.styles]` table names a style per part
    (`title_backdrop`, `loading_indicator`), each merged on its own, so a mod can change one.
    `checkFrontEnd` (`core/main/main.cpp`) refuses a style this build doesn't draw; the built
    ones are in `core/frontend.h`. Each further part (credits, story select, continue prompt)

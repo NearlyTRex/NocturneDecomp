@@ -99,7 +99,7 @@ void CGameplayPage::build(std::vector<SMenuLine> &lines) {
         add(lines, EGameplayLine::Rating,
             label(game.nudity_flag != 0 ? "gameplay_rating_mature" : "gameplay_rating_teen"));
     }
-    if (getMenu().getMenuLayout().features.difficulty) {
+    if (getMenu().hasDifficultyOptions()) {
         add(lines, EGameplayLine::PuzzleDifficulty,
             label(kPuzzleDifficultyLabels.at(keepMode(owners_.game.puzzle_difficulty_mode))));
         add(lines, EGameplayLine::CombatDifficulty,

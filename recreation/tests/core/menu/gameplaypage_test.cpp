@@ -88,9 +88,7 @@ TEST_F(CGameplayPageTest, AQuimbyBuildHasNoRating) {
 // BW1's: the puzzle and combat difficulties close the page, each stepping between normal and
 // hard whichever way.
 TEST_F(CGameplayPageTest, AGameWithDifficultiesStepsThemOnTheirLines) {
-    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
-    ASSERT_TRUE(menu.has_value());
-    menu->features.difficulty = true;
+    game_parts_.getContent().difficulty = engine::SDifficulty{.options = true};
     game_.combat_difficulty_mode = 1;
     const std::vector<std::string> lines = texts();
     ASSERT_EQ(lines.size(), 9U);
@@ -109,9 +107,7 @@ TEST_F(CGameplayPageTest, AGameWithDifficultiesStepsThemOnTheirLines) {
 
 // Any mode but hard reads, and is kept, as normal.
 TEST_F(CGameplayPageTest, ADifficultyThatIsntHardIsNormal) {
-    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
-    ASSERT_TRUE(menu.has_value());
-    menu->features.difficulty = true;
+    game_parts_.getContent().difficulty = engine::SDifficulty{.options = true};
     game_.puzzle_difficulty_mode = 5;
     EXPECT_EQ(text(kPuzzleDifficulty), "Puzzle difficulty: Normal");
     EXPECT_EQ(game_.puzzle_difficulty_mode, 0);

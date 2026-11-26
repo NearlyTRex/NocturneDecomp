@@ -13,6 +13,33 @@ namespace {
 
 constexpr int kFullAlpha = 0xffff;
 
+// An element's start and end edges along an axis of the frame from start running length.
+struct SSpan {
+    int start = 0;
+    int end = 0;
+};
+
+SSpan placeAlong(EHudAlign align, int frame_start, int frame_length, int inset, int length,
+                 float scale) {
+    const float size = static_cast<float>(length) * scale;
+    const float offset = static_cast<float>(inset) * scale;
+    float start = 0.0F;
+    switch (align) {
+    case EHudAlign::Start:
+        start = static_cast<float>(frame_start) + offset;
+        break;
+    case EHudAlign::End:
+        start = static_cast<float>(frame_start + frame_length) - offset - size;
+        break;
+    default:
+        start = static_cast<float>(frame_start) + ((static_cast<float>(frame_length) - size) / 2) +
+                offset;
+        break;
+    }
+    return {.start = static_cast<int>(std::lround(start)),
+            .end = static_cast<int>(std::lround(start + size))};
+}
+
 } // namespace
 
 common::SViewport getHudFrame(common::EWidescreen widescreen, int width, int height) {
@@ -31,25 +58,52 @@ int getFadeAlpha(float timer) {
     return kFullAlpha;
 }
 
+EHudAlign getAcross(engine::EHudAnchor anchor) {
+    switch (anchor) {
+    case engine::EHudAnchor::TopLeft:
+    case engine::EHudAnchor::Left:
+    case engine::EHudAnchor::BottomLeft:
+        return EHudAlign::Start;
+    case engine::EHudAnchor::TopRight:
+    case engine::EHudAnchor::Right:
+    case engine::EHudAnchor::BottomRight:
+        return EHudAlign::End;
+    default:
+        return EHudAlign::Middle;
+    }
+}
+
+EHudAlign getDown(engine::EHudAnchor anchor) {
+    switch (anchor) {
+    case engine::EHudAnchor::TopLeft:
+    case engine::EHudAnchor::Top:
+    case engine::EHudAnchor::TopRight:
+        return EHudAlign::Start;
+    case engine::EHudAnchor::BottomLeft:
+    case engine::EHudAnchor::Bottom:
+    case engine::EHudAnchor::BottomRight:
+        return EHudAlign::End;
+    default:
+        return EHudAlign::Middle;
+    }
+}
+
 common::SViewport placeHudBox(const common::SViewport &frame, const engine::SHudPlace &place,
-                              int width, int height, int ui_scale) {
-    const bool right = place.corner == engine::EHudCorner::TopRight ||
-                       place.corner == engine::EHudCorner::BottomRight;
-    const bool bottom = place.corner == engine::EHudCorner::BottomLeft ||
-                        place.corner == engine::EHudCorner::BottomRight;
-    const int inset_x = place.x * ui_scale;
-    const int inset_y = place.y * ui_scale;
-    return {.x = right ? frame.x + frame.width - inset_x - width : frame.x + inset_x,
-            .y = bottom ? frame.y + frame.height - inset_y - height : frame.y + inset_y,
-            .width = width,
-            .height = height};
+                              int width, int height, float scale) {
+    const SSpan across =
+        placeAlong(getAcross(place.anchor), frame.x, frame.width, place.x, width, scale);
+    const SSpan down =
+        placeAlong(getDown(place.anchor), frame.y, frame.height, place.y, height, scale);
+    return {.x = across.start,
+            .y = down.start,
+            .width = across.end - across.start,
+            .height = down.end - down.start};
 }
 
 common::SViewport getBatteryGaugeBox(const common::SViewport &frame, const engine::SHudPlace &place,
                                      int picture_width, int picture_height, int ui_scale) {
-    const int width = std::max(picture_width, kBatteryGaugeRight) * ui_scale;
-    const int height = std::max(picture_height, kBatteryGaugeFoot) * ui_scale;
-    return placeHudBox(frame, place, width, height, ui_scale);
+    return placeHudBox(frame, place, std::max(picture_width, kBatteryGaugeRight),
+                       std::max(picture_height, kBatteryGaugeFoot), static_cast<float>(ui_scale));
 }
 
 } // namespace nocturne::core

@@ -217,8 +217,7 @@ TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
 TEST_F(CGameSessionTest, TheSessionOpensOnTheIrisAsTheGameSays) {
     play();
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
-    game_parts_.getContent().iris_fade =
-        engine::SIrisFade{.opens_session = false, .black_frames = 1};
+    game_parts_.getContent().iris = engine::SIris{.opens_session = false, .black_frames = 1};
     play();
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
 }

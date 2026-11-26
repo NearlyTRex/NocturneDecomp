@@ -84,24 +84,22 @@ std::optional<EInventoryBitmap> getAmmoIcon(const CWeapon &weapon) {
     return found == kRounds.end() ? icon : std::optional(found->second);
 }
 
-// The panel's box on the screen: the camera's space laid onto the frame at the frame's height,
-// its bottom-right corner on the frame's, and the panel in that corner.
+// The camera's pixels laid onto the frame at its height.
+float getCameraScale(const SInventoryHud &hud) {
+    return static_cast<float>(hud.frame.height) /
+           static_cast<float>(hud.camera.getFramebufferHeight());
+}
+
+// The panel's box on the screen, where the game's [hud.inventory] places it: by default the
+// camera's space's bottom-right corner, as the original drew the panels in the camera's corner.
 common::SViewport getPanelBox(const SInventoryHud &hud, int width, int height) {
-    const float scale = static_cast<float>(hud.frame.height) /
-                        static_cast<float>(hud.camera.getFramebufferHeight());
-    const int right = hud.frame.x + hud.frame.width;
-    const int bottom = hud.frame.y + hud.frame.height;
-    const auto left = static_cast<int>(
-        std::lround(static_cast<float>(right) - (static_cast<float>(width) * scale)));
-    const auto top = static_cast<int>(
-        std::lround(static_cast<float>(bottom) - (static_cast<float>(height) * scale)));
-    return {.x = left, .y = top, .width = right - left, .height = bottom - top};
+    return placeHudBox(hud.frame,
+                       hud.content.inventory_panel.value_or(engine::SInventoryPanel{}).place, width,
+                       height, getCameraScale(hud));
 }
 
 int toScreen(const SInventoryHud &hud, int camera_pixels) {
-    const float scale = static_cast<float>(hud.frame.height) /
-                        static_cast<float>(hud.camera.getFramebufferHeight());
-    return static_cast<int>(std::lround(static_cast<float>(camera_pixels) * scale));
+    return static_cast<int>(std::lround(static_cast<float>(camera_pixels) * getCameraScale(hud)));
 }
 
 // A panel's box and its text's spacing on the screen. The quick view is a square as tall as the
@@ -156,9 +154,9 @@ void drawDescription(engine::C2d &two_d, engine::CBitFont &font, std::string_vie
 
 // Drawn as the decomp's HUD draws it: each panel's text in the panel's box, the camera's space
 // laid onto the corner of the scene's picture, at the HUD's text scale, and the health bar and its
-// pictures at the HUD's scale where the game's [health_bar] places it.
+// pictures at the HUD's scale where the game's [hud.health_bar] places it.
 // deferred: the battery gauge while the hero's own flashlight or goggles are on, filled by its
-//   charge, where the game's [battery] places it, with the per-hero flashlight and goggles
+//   charge, where the game's [hud.battery_gauge] places it, with the per-hero flashlight and goggles
 //   switches
 // deferred: the film reel's name in the item's panel, with CFilmReel
 // deferred: the message, such as a pickup's help, under the top letterbox bar, with
@@ -288,8 +286,8 @@ void CInventory::renderHealthBar(const SInventoryHud &hud) const {
     const int width = fill.getWidth() * ui_scale;
     const int height = fill.getHeight() * ui_scale;
     const common::SViewport bar =
-        placeHudBox(hud.frame, hud.content.health_bar.value_or(engine::SHealthBar{}).place, width,
-                    height, ui_scale);
+        placeHudBox(hud.frame, hud.content.health_bar.value_or(engine::SHealthBar{}).place,
+                    fill.getWidth(), fill.getHeight(), static_cast<float>(ui_scale));
     // The original cut the fill at its last row's index, not its height.
     const auto last_row = static_cast<float>(fill.getHeight() - 1);
     const auto lost = static_cast<int>(std::lround(last_row - (last_row * health)));

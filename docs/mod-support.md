@@ -32,43 +32,105 @@ playable when the recreation does.
 ## Game content in the manifest
 
 What the original binary hard-coded about its own game lives in the manifest, so another game
-or a mod can change it without code. Nocturne's is `recreation/data/games/nocturne.toml`.
-
-| Key | What it sets |
-|---|---|
-| `title`, `copyright` | The game's name and copyright line |
-| `death_banner` | The line over the frame while the hero is dead; Nocturne's only, the Blair Witch games show none |
-| `[battery]` | The flashlight's battery: `gauge`, its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it), and the gauge's `place`. Without it, Nocturne's |
-| `[health_bar]` | Where the hero's health bar goes: `place`. A HUD element's `place` is `{ corner = "top_left", x = 4, y = 4 }`: a corner of the scene's picture (`top_left`, `top_right`, `bottom_left`, `bottom_right`) and the element's box x and y 640x480 pixels in from it, drawn at the HUD's scale. Without it, Nocturne's |
-| `[flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns). Without it, Nocturne's |
-| `[iris_fade]` | Whether a session opens on the iris (`opens_session`: BW2's doesn't) and how many frames it starts black (`black_frames`: Nocturne's 1, BW1's and BW3's 3). Without it, Nocturne's |
-| `[front_end]` | The style of each front-end part, named for how it is drawn: `title_backdrop` (Nocturne's `sky_scene`, BW1's and BW2's `figure_scene`, BW3's `tiled_scroll`), `loading_indicator` (Nocturne's and BW1's `moon`, BW2's `progress_bar`, BW3's `icon`), `credits` (Nocturne's and BW1's `column_scroll`, BW2's `fade_loop`, BW3's `two_column`) and `story_select` (Nocturne's and BW1's `story_list`, BW2's and BW3's `direct_start`). A mod can change one part and keep the rest |
-| `[menu]` | Where the menus sit and how they look: alignment, a point per main-menu line, colours, fonts, spacing, glow, a drop copy under each line, each page's top, where the copyright and build line go, calibration, slider, sound page, music and attract movies, and in `[menu.features]` whether the options page has the puzzle and combat difficulty lines (`difficulty`, BW1's) |
-| `[controls]` | The control modes the Control line steps through (`keyboard`, `keyboard_mouse`, `gamepad`), each with its label, aim and default codes per action, and the bindings page's rows, which the F1 keys help lists too, by a row's `help` where its name there differs. The actions and hotkeys are the engine's, the Blair Witch games' own included: compass, field notes, quick turn, SPS, drop, action and voodoo doll |
-| `[[font]]` | Each bitmap font by role (`medium`, `tiny`, `theme`, `small_editor`, `console`, `micro`), or of the game's own under any other id: its sheet, spacing, character offsets, shadow and OS font size. A mod's font replaces the one with its id |
-| `[list]`, `[dialog]` | How pick lists, dialog windows, prompts, the progress bar, scroll bars and buttons look |
-| `[labels]` | The menus' text by id (`main_play = "P L A Y"`), before translation. Every game lists every id; a mod can change one |
-| `[title_backdrop.sky_scene]` | The menus' moon, bats, clouds and title animation |
-| `[title_backdrop.figure_scene]` | A still backdrop with animated models before a fixed camera, and the title animation; the backdrop and models are optional |
-| `[title_backdrop.tiled_scroll]` | A picture tiled and scrolling, a picture over it fading in and out, and an overlay |
-| `[startup]` | The picture and "Loading..." label while the game starts, and the opening movie |
-| `[[loading]]` | Loading screens: each picture, with its moon placement and tint or its icon |
-| `[loading_indicator.moon]` | The loading moon's model, glow, windows, light and status line |
-| `[loading_indicator.progress_bar]` | The loading bar's size and colours, and its status line's box, font and colour |
-| `[loading_indicator.icon]` | Where the loading picture's icon sits, its size, and how it fades in |
-| `[[story]]`, `[[story.chapter]]` | The episodes, their chapters and missions, and unlock codes |
-| `[story_select.story_list]`, `[story_select.direct_start]`, `[chapter_title]` | How START picks a story and its difficulty, or starts the first story at once, and how the chosen story's title shows over the game |
-| `[credits]` | Credits text, image and music, and in `[credits.column_scroll]`, `[credits.fade_loop]` or `[credits.two_column]` how they scroll and look |
-| `[translation.<lang>]` | Text translations, picked by `language=` in `nocturne.ini` |
+or a mod can change it without code. Each game's file is in `recreation/data/games/`, Nocturne's
+`nocturne.toml`. Past the game's name and copyright, every table belongs to a section and is
+named under it, `[hud.health_bar]` in `hud`, so a table's name says where it is documented and
+where it sits in the games' files, which are laid out in the same order. A table a package
+leaves out is Nocturne's.
 
 When several packages set these, a scalar takes the last value set, stories and loading screens
 merge by id, and labels and translations merge per key.
 
-Each still picture's table (`[startup]`, `[[loading]]`, `[title_backdrop.figure_scene]`,
-`[title_backdrop.tiled_scroll]`, `[credits]`, `[menu.calibration]`) says how it fills a wide
-screen: `fit = "keep_aspect"` with an optional `anchor = "centre" | "left" | "right"`, or
-`fit = "stretch"`. What stands on the picture, such as BW1's figures or the credits' lines,
-moves with it. A footer line's `edge = "backdrop"` keeps it in the title picture's corner.
+### The game
+
+| Key | What it sets |
+|---|---|
+| `title`, `copyright`, `copyright_os_font` | The game's name and copyright line, the last with the (c) only the OS fonts have |
+
+### `menu`: the front end
+
+| Key | What it sets |
+|---|---|
+| `[menu.styles]` | The style of each front-end part, named for how it is drawn and for the table it is drawn from: `backdrop` (Nocturne's `sky_scene`, BW1's and BW2's `figure_scene`, BW3's `tiled_scroll`), `loading_indicator` (Nocturne's and BW1's `moon`, BW2's `progress_bar`, BW3's `icon`), `credits` (Nocturne's and BW1's `column_scroll`, BW2's `fade_loop`, BW3's `two_column`) and `select` (Nocturne's and BW1's `story_list`, BW2's and BW3's `direct_start`). A mod can change one part and keep the rest |
+| `[menu.backdrop.sky_scene]` | The menus' moon, bats, clouds and title animation |
+| `[menu.backdrop.figure_scene]` | A still backdrop with animated models before a fixed camera, and the title animation; the backdrop and models are optional |
+| `[menu.backdrop.tiled_scroll]` | A picture tiled and scrolling, a picture over it fading in and out, and an overlay |
+| `[menu.credits]` | Credits text, image and music, and in `[menu.credits.column_scroll]`, `[menu.credits.fade_loop]` or `[menu.credits.two_column]` how they scroll and look |
+| `[menu.startup]` | The picture and "Loading..." label while the game starts, and the opening movie |
+| `[menu]` and its other tables | Where the menus sit and how they look: alignment, a point per main-menu line, colours, fonts, spacing, glow, a drop copy under each line, each page's top, where the copyright and build line go, calibration, slider, sound page, music and attract movies |
+
+Each still picture's table (`[menu.startup]`, `[[stories.loading]]`,
+`[menu.backdrop.figure_scene]`, `[menu.backdrop.tiled_scroll]`, `[menu.credits]`,
+`[menu.calibration]`) says how it fills a wide screen: `fit = "keep_aspect"` with an optional
+`anchor = "centre" | "left" | "right"`, or `fit = "stretch"`. What stands on the picture, such as
+BW1's figures or the credits' lines, moves with it. A footer line's `edge = "backdrop"` keeps it
+in the title picture's corner.
+
+### `hud`: in play
+
+| Key | What it sets |
+|---|---|
+| `[hud.battery_gauge]` | The flashlight battery's gauge, while `[features.battery]` has one: `place` |
+| `[hud.health_bar]` | The hero's health bar while the inventory shows: `place` |
+| `[hud.inventory]` | The inventory's weapon and item panels: `place` |
+| `[hud.status_bars]` | The other heroes' and characters' bars: `place`, the rest stacked away from its edge |
+| `[hud.message]` | The message line, such as an item's pickup: `place` |
+| `[hud.death_banner]` | The line over the frame while the hero is dead (`text`; Nocturne's only, the Blair Witch games show none) and its `place` |
+| `[hud.chapter_title]` | The chosen story's year and title over the game: how long, its format, colour, shadow, alpha and fonts by screen height, and its `place` |
+
+Every HUD element has a `place`, `{ anchor = "top_left", x = 4, y = 4 }`: a point of the scene's
+picture (`top_left`, `top`, `top_right`, `left`, `centre`, `right`, `bottom_left`, `bottom`,
+`bottom_right`) and the element's box x and y in from that edge, or right and down from the middle
+along an axis the anchor centres on; negative values go the other way. Each element counts in its
+own unit, so its default stays where the game put it at every resolution:
+
+| Element | Unit |
+|---|---|
+| `battery_gauge`, `health_bar` | HUD pixels: 640x480 ones at the HUD's whole-number scale |
+| `inventory` | The scene camera's pixels laid onto the frame at its height |
+| `status_bars`, `death_banner` | 640x480 shares of the frame |
+| `message` | 640x480 pixels at the HUD's text scale, a line clear of the letterbox bar on its edge |
+| `chapter_title` | Glyph widths at the HUD's text scale, clear of the letterbox bar on its edge |
+
+### `features`: how the game's own features behave
+
+| Key | What it sets |
+|---|---|
+| `[features.battery]` | The flashlight's battery: `gauge`, whether it has its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it) |
+| `[features.flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns) |
+| `[features.difficulty]` | The puzzle and combat difficulty: `options`, the gameplay page's lines for them (BW1's alone) |
+
+### `controls`
+
+| Key | What it sets |
+|---|---|
+| `[controls]` | The control modes the Control line steps through (`keyboard`, `keyboard_mouse`, `gamepad`), each with its label, aim and default codes per action, and the bindings page's rows, which the F1 keys help lists too, by a row's `help` where its name there differs. The actions and hotkeys are the engine's, the Blair Witch games' own included: compass, field notes, quick turn, SPS, drop, action and voodoo doll |
+
+### `looks`
+
+| Key | What it sets |
+|---|---|
+| `[looks.iris]` | The iris scenes fade in and out through: whether a session opens on it (`opens_session`: BW2's doesn't) and how many frames it starts black (`black_frames`: Nocturne's 1, BW1's and BW3's 3) |
+| `[[looks.font]]` | Each bitmap font by role (`medium`, `tiny`, `theme`, `small_editor`, `console`, `micro`), or of the game's own under any other id: its sheet, spacing, character offsets, shadow and OS font size. A mod's font replaces the one with its id |
+| `[looks.list]`, `[looks.dialog]` | How pick lists, dialog windows, prompts, the progress bar, scroll bars and buttons look |
+
+### `stories`: loading and the stories
+
+| Key | What it sets |
+|---|---|
+| `[[stories.loading]]` | Loading screens: each picture, with its moon placement and tint or its icon |
+| `[stories.loading_indicator.moon]` | The loading moon's model, glow, windows, light and status line |
+| `[stories.loading_indicator.progress_bar]` | The loading bar's size and colours, and its status line's box, font and colour |
+| `[stories.loading_indicator.icon]` | Where the loading picture's icon sits, its size, and how it fades in |
+| `[stories.select.story_list]`, `[stories.select.direct_start]` | How START picks a story and its difficulty, or starts the first story at once |
+| `[[stories.story]]`, `[[stories.story.chapter]]` | The episodes, their chapters and missions, and unlock codes |
+
+### `text`
+
+| Key | What it sets |
+|---|---|
+| `[text.labels]` | The menus' text by id (`main_play = "P L A Y"`), before translation. Every game lists every id; a mod can change one |
+| `[text.translation.<lang>]` | Text translations, picked by `language=` in `nocturne.ini` |
 
 ## The Blair Witch games
 

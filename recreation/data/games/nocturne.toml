@@ -4,19 +4,21 @@
 title = "Nocturne"
 copyright = "Nocturne 1999 Terminal Reality Inc.  Patent Pending."
 copyright_os_font = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending."
-# Over the frame while the hero is dead; the Blair Witch games show none
-death_banner = "You're dead.  Game over."
+
+# ==================================================================================================
+# menu: the front end's styles, the title backdrop, credits, startup and the menus
+# ==================================================================================================
 
 # The turning moon with bats and clouds behind the menus; the moon in a corner while a level
 # loads; the credits in a column up the right of their picture; START lists the stories, then
 # the chosen one's chapters
-[front_end]
-title_backdrop = "sky_scene"
+[menu.styles]
+backdrop ="sky_scene"
 loading_indicator = "moon"
 credits = "column_scroll"
-story_select = "story_list"
+select = "story_list"
 
-[credits]
+[menu.credits]
 text = "credits.txt"
 # The image keeps its shape against the screen's left, its column running on to the right edge
 fit = "keep_aspect"
@@ -26,7 +28,7 @@ music = "faded-remix.mp3"
 
 # Up the right of the image at 32 pixels a second from its foot, between black strips over its
 # top and bottom, until the line "end"; a line starting "\b" is a heading
-[credits.column_scroll]
+[menu.credits.column_scroll]
 font = "theme"
 column_left = 414
 column_to_screen_edge = true
@@ -44,7 +46,7 @@ heading = "b"
 
 # The moon turning into place, 30 bats flying three courses across it once it has, two layers of
 # cloud drifting over, and the title's 30 frames on top, 12 a second; past them, held on the first
-[title_backdrop.sky_scene]
+[menu.backdrop.sky_scene]
 model = "moon.kfm"
 cheat_model = "taylor_head.kfm"
 cheat_code = 666
@@ -82,7 +84,7 @@ frame_wrap = 60
 
 # The fangs at half alpha while archives unpack and the game loads, "Loading..." centred on
 # them, then the opening movie
-[startup]
+[menu.startup]
 picture = "fangs"
 fit = "keep_aspect"
 picture_alpha = 0x8000
@@ -206,27 +208,75 @@ text_shadow = 0
 directory = "video"
 movies = ["noc1.avi", "noc2.avi", "noc3.avi", "noc4.avi"]
 
-# Nocturne has no puzzle or combat difficulty
-[menu.features]
-difficulty = false
-
-# Each session opens on an iris, the screen black for one frame first
-[iris_fade]
-opens_session = true
-black_frames = 1
+# ==================================================================================================
+# hud: each element where its place puts it
+# ==================================================================================================
 
 # The flashlight's battery gauge at the HUD's bottom left
-[battery]
-gauge = true
-place = { corner = "bottom_left", x = 4, y = 4 }
+[hud.battery_gauge]
+place = { anchor = "bottom_left", x = 4, y = 4 }
 
 # The hero's health bar at the top right while the inventory shows
-[health_bar]
-place = { corner = "top_right", x = 4, y = 4 }
+[hud.health_bar]
+place = { anchor = "top_right", x = 4, y = 4 }
+
+# The weapon and item panels in the scene camera's bottom-right corner
+[hud.inventory]
+place = { anchor = "bottom_right", x = 0, y = 0 }
+
+# The other heroes' and characters' bars stacked up from the bottom left
+[hud.status_bars]
+place = { anchor = "bottom_left", x = 8, y = 6 }
+
+# The message line centred above the bottom letterbox bar
+[hud.message]
+place = { anchor = "bottom", x = 0, y = 0 }
+
+# Over the frame while the hero is dead, centred high up; the Blair Witch games show none
+[hud.death_banner]
+text = "You're dead.  Game over."
+place = { anchor = "top", x = 0, y = 112 }
+
+# Eight seconds of "1927 - 'Dark Reign of the Vampire King'", two glyphs in and one up from the
+# game's bottom left, in smaller fonts on shorter screens
+[hud.chapter_title]
+seconds = 8
+format = "{year} - {title}"
+colour = 0xf8
+shadow = 0
+alpha = 0xffff
+place = { anchor = "bottom_left", x = 2, y = 1 }
+
+[[hud.chapter_title.font]]
+below_height = 384
+font = "small_editor"
+
+[[hud.chapter_title.font]]
+below_height = 480
+font = "tiny"
+
+[[hud.chapter_title.font]]
+font = "medium"
+
+# ==================================================================================================
+# features: how the game's own features behave
+# ==================================================================================================
+
+# The flashlight's battery has its gauge on the HUD
+[features.battery]
+gauge = true
 
 # The Stranger lights his guns, so Graphic Options has the flashlight halo and range
-[flashlight]
+[features.flashlight]
 options = true
+
+# No puzzle or combat difficulty
+[features.difficulty]
+options = false
+
+# ==================================================================================================
+# controls: the modes and their default keys, and the bindings page's rows
+# ==================================================================================================
 
 # The control modes the Control line steps through, in order: each one's label, whether it aims
 # by hand, and the codes each play action starts bound to, as the INI stores them. The hotkeys'
@@ -453,10 +503,19 @@ label = "Next ammo"
 action = "map"
 label = "Map"
 
+# ==================================================================================================
+# looks: the iris, the bitmap fonts, the pick lists and the dialogs
+# ==================================================================================================
+
+# Each session opens on an iris, the screen black for one frame first
+[looks.iris]
+opens_session = true
+black_frames = 1
+
 # The bitmap fonts, by the role the game's code asks for: their sheets, how far runs of
 # characters sit down, the space's width and the shadow's offset, and the OS font each takes
 # when OS text is on. The console draws in its sheet's own colours, the rest in the text colour.
-[[font]]
+[[looks.font]]
 id = "medium"
 file = "nocfont.raw"
 width = 0x136
@@ -468,7 +527,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 14, y_offset1 = 2, y_offset2 = 2 }
 
-[[font]]
+[[looks.font]]
 id = "tiny"
 file = "nocsmall.raw"
 width = 0xf8
@@ -480,7 +539,7 @@ space_width = 5
 shadow_x = 2
 os_font = { height = 12, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "theme"
 file = "menufont.raw"
 width = 0xfa
@@ -493,7 +552,7 @@ space_width = 8
 shadow_x = 2
 os_font = { height = 18, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "small_editor"
 file = "fnte_pfd.RAW"
 width = 0x94
@@ -505,7 +564,7 @@ space_width = 4
 shadow_x = 1
 os_font = { height = 10, y_offset1 = 0, y_offset2 = 0 }
 
-[[font]]
+[[looks.font]]
 id = "console"
 file = "fnte_f.RAW"
 width = 0x94
@@ -516,7 +575,7 @@ y_offsets = [{ offset = 3, first = 0x20, last = 0x7e }]
 space_width = 4
 shadow_x = 1
 
-[[font]]
+[[looks.font]]
 id = "micro"
 file = "micro.raw"
 width = 0x94
@@ -528,7 +587,7 @@ space_width = 4
 shadow_x = 1
 
 # The pick lists every list in the menus and the editor draws
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x02
@@ -548,20 +607,20 @@ width_parts = 8
 double_click_ticks = 0x48000
 
 # The colour cube's black, white, green and magenta
-[list.pointer]
+[looks.list.pointer]
 cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
 size = 9
 default_height = 11
 
 # A quarter second before a held press repeats, then a thirtieth between repeats
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000
 repeat_ticks = 0x9999
 track_fill_colour = 0x00
 track_border_colour = 0x07
 
 # The windows, prompts, progress bar and controls of every dialog
-[dialog]
+[looks.dialog]
 content_colour = 0x00
 border_colour = 0x07
 title_colour = 0xfb
@@ -583,32 +642,36 @@ button_margin_divisor = 80
 prompt_padding_chars = 4
 prompt_padding_lines = 2
 
-[[loading]]
+# ==================================================================================================
+# stories: the loading pictures and indicator, the story select and the stories
+# ==================================================================================================
+
+[[stories.loading]]
 fit = "keep_aspect"
 id = "load1"
 moon = { x = 120, y = 130, tint = [0x8200, 0xc800, 0xf400] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 fit = "keep_aspect"
 id = "load2"
 moon = { x = 484, y = 66, tint = [0x8200, 0xbd00, 0xff00] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 fit = "keep_aspect"
 id = "load3"
 moon = { x = 159, y = 1, tint = [0x9e00, 0xe100, 0xff00] }
 random = true
 
-[[loading]]
+[[stories.loading]]
 fit = "keep_aspect"
 id = "load4"
 moon = { x = 379, y = 68, tint = [0x6b00, 0x9a00, 0xff00] }
 
 # The moon turning in its light with a glow before it: in a picture's window, in the top-right
 # corner, or over the whole screen above a black status box
-[loading_indicator.moon]
+[stories.loading_indicator.moon]
 model = "moon.kfm"
 glow_texture = "MOONGLOW.RAW"
 window_size = 90
@@ -628,33 +691,11 @@ status_font = "theme"
 status_colour = 0xf8
 
 # Without enemy.pod the install is partial; ten loading frames before the chosen mission
-[story_select.story_list]
+[stories.select.story_list]
 full_install_probe = "enemy.pod"
 loading_frames = 10
 
-# Eight seconds of "1927 - 'Dark Reign of the Vampire King'", two glyphs in and one up from the
-# game's bottom left, in smaller fonts on shorter screens
-[chapter_title]
-seconds = 8
-format = "{year} - {title}"
-colour = 0xf8
-shadow = 0
-alpha = 0xffff
-inset_across = 2
-inset_up = 1
-
-[[chapter_title.font]]
-below_height = 384
-font = "small_editor"
-
-[[chapter_title.font]]
-below_height = 480
-font = "tiny"
-
-[[chapter_title.font]]
-font = "medium"
-
-[[story]]
+[[stories.story]]
 id = "volume1"
 name = "Volume 1 - 'Dark Reign of the Vampire King'"
 title = "'Dark Reign of the Vampire King'"
@@ -662,27 +703,27 @@ year = 1927
 loading = "load1"
 unlock = { key = "Act1Code", code = 0x331 }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Your New Partner'"
 mission = "hq-act1.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Sentinels'"
 mission = "gtown.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'Werewolf Forest'"
 mission = "forest.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Castle Gaustadt'"
 mission = "castle1.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Dungeon'"
 mission = "dungeon.msn"
 
-[[story]]
+[[stories.story]]
 id = "volume2"
 name = "Volume 2 - 'Tomb of the Underground God'"
 title = "'Tomb of the Underground God'"
@@ -690,36 +731,36 @@ year = 1931
 loading = "load2"
 unlock = { key = "Act2Code", code = 0x3cc }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Train to Redeye'"
 mission = "train.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Zombie Town'"
 mission = "town.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'Underground Mine'"
 mission = "mine.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Hidden Entrance'"
 mission = "trans.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Temple of the God'"
 mission = "temple.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 6 - 'Epilogue'"
 mission = "town2.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter X - 'Failure'"
 mission = "hq-act2b.msn"
 needs_full_install = true
 
-[[story]]
+[[stories.story]]
 id = "volume3"
 name = "Volume 3 - 'Windy City Massacre'"
 title = "'Windy City Massacre'"
@@ -727,51 +768,51 @@ year = 1933
 loading = "load3"
 unlock = { key = "Act3Code", code = 0x3ac }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = "hq-act3.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Chicago River'"
 mission = "chicago1.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'The Vendome'"
 mission = "speak.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Night on the Town'"
 mission = "chicago2.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 5 - 'Water Works'"
 mission = "wworks.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 6 - 'Windy City'"
 mission = "chicago3.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 7 - 'Crescent Theater'"
 mission = "theater.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 8 - 'Rooftop to Rooftop'"
 mission = "chicago4.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 9 - 'Warehouse of Hell'"
 mission = "ware2.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 10 - 'Mobster Factory'"
 mission = "factory.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 11 - 'Not You Again'"
 mission = "intfact.msn"
 
-[[story]]
+[[stories.story]]
 id = "volume4"
 name = "Volume 4 - 'The House on the Edge of Hell'"
 title = "'The House on the Edge of Hell'"
@@ -779,36 +820,40 @@ year = 1935
 loading = "load4"
 unlock = { key = "Act4Code", code = 0xd6 }
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = "hq-act4.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 2 - 'Graveyard'"
 mission = "grave.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 3 - 'House of Hell'"
 mission = "mansion.msn"
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 4 - 'Back from Hell'"
 mission = "hq-act4b.msn"
 
-[[story]]
+[[stories.story]]
 id = "epilogue"
 name = "Volume 5 - 'Epilogue'"
 title = "'Epilogue'"
 year = 1942
 requires = ["volume1", "volume2", "volume3", "volume4"]
 
-[[story.chapter]]
+[[stories.story.chapter]]
 name = "Chapter 1 - 'Headquarters'"
 mission = "hq-act5.msn"
 
+# ==================================================================================================
+# text: the menus' labels and their translations
+# ==================================================================================================
+
 # The menus' text, by the id the code asks for; the message file then looks each up as English.
 # A trailing space is part of the text a number or name follows.
-[labels]
+[text.labels]
 loading = "Loading..."
 choose_story = "Choose a story to play"
 

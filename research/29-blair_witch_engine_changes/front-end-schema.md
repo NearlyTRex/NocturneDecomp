@@ -2,11 +2,11 @@
 
 The manifest keys that carry every front-end value, shown with Nocturne's. Each value's source
 line and BW change are in [front-end-inventory.md](front-end-inventory.md). Built so far:
-`[front_end]`'s `title_backdrop`, `loading_indicator`, `credits` and `story_select`; `[labels]`;
-every `[menu]` table below not marked *not built*; `[list]` and `[dialog]`; `[credits]` with
-`[credits.column_scroll]`; `[story_select.story_list]` with its difficulties, and
-`[chapter_title]`; `[title_backdrop.sky_scene]`; `[loading_indicator.moon]`; `[startup]`; and
-the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
+`[menu.styles]`' `backdrop`, `loading_indicator`, `credits` and `select`; `[text.labels]`;
+every `[menu]` table below not marked *not built*; `[looks.list]` and `[looks.dialog]`; `[menu.credits]` with
+`[menu.credits.column_scroll]`; `[stories.select.story_list]` with its difficulties, and
+`[hud.chapter_title]`; `[menu.backdrop.sky_scene]`; `[stories.loading_indicator.moon]`; `[menu.startup]`; and
+the `[[stories.loading]]`, `[[stories.story]]` and `[text.translation]` tables. The rest is design.
 
 ## Rules
 
@@ -14,7 +14,7 @@ the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
   no defaults. A table missing one of its keys fails to read, the error naming the key; a table
   no package gives is fatal when the game first needs it. A table marked *optional* turns its
   feature off when no package gives it.
-- **Merging.** `[front_end]` merges part by part. Every other table, with the tables inside it,
+- **Merging.** `[menu.styles]` merges part by part. Every other table, with the tables inside it,
   is replaced whole by a later package's, so a package changing one `[menu]` value gives all of
   `[menu]`. A list is replaced whole; stories and loading pictures merge by id; labels and
   translations key by key.
@@ -25,36 +25,36 @@ the `[[loading]]`, `[[story]]` and `[translation]` tables. The rest is design.
   (left out), `left` or `right`; or `fit = "stretch"`, over the whole screen, with no anchor.
   What stands on the picture goes with it: positions given on it, the figures, the hand and
   overlay, the loading moon's window and the credits' lines. Text and the moon's window keep
-  their shape, sized by the picture's height. The tables: `[startup]`, each `[[loading]]`,
-  `[title_backdrop.figure_scene]`, `[title_backdrop.tiled_scroll]`, `[credits]` and
+  their shape, sized by the picture's height. The tables: `[menu.startup]`, each `[[stories.loading]]`,
+  `[menu.backdrop.figure_scene]`, `[menu.backdrop.tiled_scroll]`, `[menu.credits]` and
   `[menu.calibration]`. Every game keeps its pictures' shape, the calibration image stretched.
-- **Fonts** are named by their `[[font]]` id.
+- **Fonts** are named by their `[[looks.font]]` id.
 - **Labels** are the menus' text, keyed by an id the code asks for (`main_play`,
-  `sound_effects`, `hotkey_pause`). Every game lists every id, so the four manifests' `[labels]`
+  `sound_effects`, `hotkey_pause`). Every game lists every id, so the four manifests' `[text.labels]`
   have the same keys; the text is the game's own ("P L A Y" in Nocturne, BW1 and BW2, "PLAY" in
   BW3), which the message file then translates. An id no package gives is fatal. Mission, set
   and editor text isn't labelled; the message file translates it as written.
 - **Lines.** Each page's lines are one shared list in code, the recreation's lines and the
-  originals' together. `[menu.features]` switches on the lines for a feature only some games
-  have.
+  originals' together. A `[features.*]` table switches on the lines for a feature only some
+  games have.
 - **Part values.** A part's style takes its values from a table named for the part and style,
-  such as `[title_backdrop.sky_scene]`, so a mod can give values for another style.
+  such as `[menu.backdrop.sky_scene]`, so a mod can give values for another style.
 
-## `[front_end]`
+## `[menu.styles]`
 
 ```toml
-[front_end]
-title_backdrop = "sky_scene"      # sky_scene | figure_scene | tiled_scroll (BW2 is figure_scene)
+[menu.styles]
+backdrop = "sky_scene"            # sky_scene | figure_scene | tiled_scroll (BW2 is figure_scene)
 loading_indicator = "moon"        # moon | progress_bar | icon
 credits = "column_scroll"         # column_scroll | fade_loop | two_column
-story_select = "story_list"       # story_list | direct_start
+select = "story_list"             # story_list | direct_start
 continue_prompt = "text"          # text | wait | none
 ```
 
 ## Fonts
 
 ```toml
-[[font]]
+[[looks.font]]
 id = "theme"                      # also: medium, tiny, small_editor, console, micro
 file = "menufont.raw"
 width = 0xfa
@@ -74,7 +74,7 @@ the theme font's size with palette index 2 clear). A later package's font replac
 one's with the same id.
 
 Not built: BW1-3's `hand` font (dochand.raw), which only the field notes draw with; it comes
-with them as a `[[font]]`. The Menu text setting's two fonts are `[menu]`'s `text_fonts`.
+with them as a `[[looks.font]]`. The Menu text setting's two fonts are `[menu]`'s `text_fonts`.
 
 ## Menus
 
@@ -139,12 +139,10 @@ y = 1
 low_rate = "splash-music-22.wav"  # BW2: XBLAIRMENU.wav for both
 high_rate = "splash-music-44.wav"
 
-[menu.features]
-difficulty = false                # BW1's puzzle and combat difficulty lines, on the Gameplay page
-crosshair = false                 # not built: BW3's
-health_numbers = false            # not built: BW3's
-point_and_click = false           # not built: BW1's and BW3's control mode
-mouse_only = false                # not built: BW2's control mode
+[features.difficulty]
+options = false                   # BW1's puzzle and combat difficulty lines, on the Gameplay page
+# not built: BW3's crosshair and health numbers, BW1's and BW3's point-and-click control mode,
+# BW2's mouse-only control mode, each a [features.*] table of its own
 
 [menu.page_tops]                  # a titled page's own top, by id: options, gameplay, display,
                                   # graphic, sound, controls; one not listed takes titled_top
@@ -193,7 +191,7 @@ directory = "video"
 movies = ["noc1.avi", "noc2.avi", "noc3.avi", "noc4.avi"]
 
 
-[labels]                          # id = the game's text, e.g. main_play = "P L A Y"
+[text.labels]                          # id = the game's text, e.g. main_play = "P L A Y"
 ```
 
 Nocturne's manifest lists no page tops, so every titled page sits at `titled_top`, as the
@@ -240,7 +238,7 @@ The pick lists, windows, prompts, progress bar, scroll bars and bevelled control
 front-end and editor dialog draws. Times are game-clock ticks, 18 x 65536 a second.
 
 ```toml
-[list]
+[looks.list]
 item_colour = 0xff
 disabled_colour = 0xf8
 selected_colour = 0x02
@@ -258,18 +256,18 @@ width_share = 7                   # seven eighths of the screen's width
 width_parts = 8
 double_click_ticks = 0x48000      # a quarter second
 
-[list.pointer]
+[looks.list.pointer]
 cube_colours = [0x0000, 0x7fff, 0x03e0, 0x7c1f]
 size = 9
 default_height = 11
 
-[list.scroll_bar]
+[looks.list.scroll_bar]
 first_repeat_ticks = 0x48000      # a quarter second, then a thirtieth
 repeat_ticks = 0x9999
 track_fill_colour = 0x00
 track_border_colour = 0x07
 
-[dialog]
+[looks.dialog]
 content_colour = 0x00
 border_colour = 0x07
 title_colour = 0xfb
@@ -293,21 +291,21 @@ prompt_padding_lines = 2
 ```
 
 The prompts' titles ("Message", "Warning", "Error") are editor text the message file translates. The list's font is the editor
-font, `small_editor`. `[list.pointer]` takes `cube_colours`, the nearest palette entries to four
+font, `small_editor`. `[looks.list.pointer]` takes `cube_colours`, the nearest palette entries to four
 5-5-5 colours (Nocturne, BW2), or `palette_colours`, the entries themselves (BW1 and BW3's
 `[0, 0xff, 2, 0xfd]`).
 
 ## Credits
 
 ```toml
-[credits]
+[menu.credits]
 text = "credits.txt"
 image = "stats"
 fit = "keep_aspect"               # Nocturne's and BW1's kept against the screen's left
 anchor = "left"
 music = "faded-remix.mp3"
 
-[credits.column_scroll]           # the column runs from column_left to the picture's right
+[menu.credits.column_scroll]           # the column runs from column_left to the picture's right
 font = "theme"
 column_left = 414
 column_to_screen_edge = true      # or on, with its strips, to the screen's (Nocturne, BW1)
@@ -327,7 +325,7 @@ heading = "b"                     # after; with heading after, the line is a hea
 `column_scroll` ends with its music or on Cancel and draws its image at the layout's top left.
 
 ```toml
-[credits.fade_loop]               # BW2's (bw2 CGame::rollCredits 0x004be430)
+[menu.credits.fade_loop]               # BW2's (bw2 CGame::rollCredits 0x004be430)
 font = "theme"
 image_x = 10                      # the image's top left
 image_y = 7
@@ -348,7 +346,7 @@ heading = "b"
 Every line is centred across the layout. As `column_scroll`, a line is drawn from row 0 to above
 479 less a line, and the screen is redrawn only when the rounded scroll moves.
 ```toml
-[credits.two_column]              # BW3's (bw3 CGame::rollCredits 0x004c02a0); [credits] image
+[menu.credits.two_column]              # BW3's (bw3 CGame::rollCredits 0x004c02a0); [menu.credits] image
 font = "theme"                    # and music left out
 centre_left = 100                 # a line centred between these, as drawTextCenterInBounds
 centre_right = 400
@@ -374,16 +372,16 @@ BW3's credits leave the menu's music playing and end on Escape alone.
 ## Stories and the chapter title
 
 ```toml
-[story_select.story_list]
+[stories.select.story_list]
 full_install_probe = "enemy.pod"  # without it the install is partial
 loading_frames = 10
 
-[[story_select.story_list.difficulty]]  # optional: BW1's picker under the story's title
+[[stories.select.story_list.difficulty]]  # optional: BW1's picker under the story's title
 label = "Normal Puzzles, Hard Combat"   # Cancel goes back to the stories
 puzzle = 0                        # the modes it sets: 0 normal, 1 hard
 combat = 1
 
-[chapter_title]                   # optional: BW3 shows none
+[hud.chapter_title]                   # optional: BW3 shows none
 seconds = 8
 format = "{year} - {title}"       # a story with no year shows its title alone
 colour = 0xf8
@@ -392,34 +390,34 @@ alpha = 0xffff
 inset_across = 2                  # glyph widths in from the left, and up from the foot
 inset_up = 1
 
-[[chapter_title.font]]            # the first whose height the screen is under; the last any
+[[hud.chapter_title.font]]            # the first whose height the screen is under; the last any
 below_height = 384
 font = "small_editor"
 
-[[chapter_title.font]]
+[[hud.chapter_title.font]]
 below_height = 480
 font = "tiny"
 
-[[chapter_title.font]]
+[[hud.chapter_title.font]]
 font = "medium"
 ```
 
 The story list's title ("Choose a story to play") is a label. The difficulty modes are the
-game's `puzzle_difficulty_mode` and `combat_difficulty_mode`; with `[menu.features]`
-`difficulty` the Gameplay page lists them last and steps each between normal and hard. BW1 listed
+game's `puzzle_difficulty_mode` and `combat_difficulty_mode`; with `[features.difficulty]`
+`options` the Gameplay page lists them last and steps each between normal and hard. BW1 listed
 them on its Options page before Credits, and only showed them.
 `direct_start` (BW2's, bw2 `CGame::showChapterSelect` 0x004bc840) begins the first story's first
-chapter with no list, from `[story_select.direct_start]`'s `loading_frames`; Control alone still
+chapter with no list, from `[stories.select.direct_start]`'s `loading_frames`; Control alone still
 opens the mission browser. BW2's year for it, 0x795 (1941), is BW1's left in its table, and
 never shown, since BW2 shows no chapter title; its manifest gives the story's own year, 1886.
 Not built: the modes' ini keys (BW1's and BW2's puzzleDifficultyMode and combatDifficultyMode). A story has one
 `title` for its list and its chapter title; BW1 quotes the first and not the second
 (bw1 `CGame::showChapterSelect` 0x004d7250), and its manifest takes the quoted one.
 
-## Title backdrop: `[title_backdrop.sky_scene]`
+## Title backdrop: `[menu.backdrop.sky_scene]`
 
 ```toml
-[title_backdrop.sky_scene]
+[menu.backdrop.sky_scene]
 model = "moon.kfm"
 cheat_model = "taylor_head.kfm"   # the head-of-horror cheat's
 cheat_code = 666
@@ -460,12 +458,12 @@ The real numbers are the x87's doubles, compared before they are rounded to floa
 from the manifest gives the same turn and timing as the constant did. The bats' quarter-turn yaw
 and their ambient curve along a course are the style's, in code.
 
-## Title backdrop: `[title_backdrop.figure_scene]`
+## Title backdrop: `[menu.backdrop.figure_scene]`
 
 BW1's (bw1 `CMoon::init` 0x00521c50, `update` 0x00521dd0, `render` 0x00521e40).
 
 ```toml
-[title_backdrop.figure_scene]
+[menu.backdrop.figure_scene]
 fit = "keep_aspect"               # the figures and title stand on the backdrop and go with it
 backdrop = "titlescreen_bw"       # over the whole picture
 backdrop_alpha = 0xffff
@@ -507,7 +505,7 @@ backdrop, models or cheat model, which are optional: the same camera, light, fla
 ambient, and its 75 frames `blairwitch_00` to `_74`, 640x282 at 0,0, 12 a second, wrapping at 74.
 The cheat code is only cleared.
 ```toml
-[title_backdrop.tiled_scroll]     # BW3's (bw3 CMoon 0x004f94a0, 0x004f9670)
+[menu.backdrop.tiled_scroll]     # BW3's (bw3 CMoon 0x004f94a0, 0x004f9670)
 fit = "keep_aspect"               # the tiles, hand and overlay as one picture
 tile = "bwp3_menu_scroll"         # 640x480, drawn at each column and row
 columns = [320, -320]
@@ -535,10 +533,10 @@ overlay = "BWP3_mainmenu"         # over everything
 BW3 also loaded BW1's 30 `blair_` frames, never drew them, and set BW1's camera and light with
 nothing in 3D. Its timer wrapped at the half it was tested against, so its glow is always on.
 
-## Loading indicator: `[loading_indicator.moon]`
+## Loading indicator: `[stories.loading_indicator.moon]`
 
 ```toml
-[loading_indicator.moon]
+[stories.loading_indicator.moon]
 model = "moon.kfm"
 glow_texture = "MOONGLOW.RAW"
 window_size = 90                  # a picture's moon window
@@ -557,7 +555,7 @@ status_box_colour = 0x00
 status_font = "theme"
 status_colour = 0xf8
 
-[loading_indicator.progress_bar]  # BW2's (bw2 CLevelLoader::update 0x004e1600)
+[stories.loading_indicator.progress_bar]  # BW2's (bw2 CLevelLoader::update 0x004e1600)
 height = 20                       # the frame's rows from the top, scaled with the layout
 frame_colour = 0x00               # the frame across the screen's top
 trough_colour = 0x00              # a pixel in
@@ -569,7 +567,7 @@ status_colour = 0xf8
 ```
 
 ```toml
-[loading_indicator.icon]          # BW3's (bw3 CLevelLoader::show 0x004dfc50, update 0x004e0000)
+[stories.loading_indicator.icon]          # BW3's (bw3 CLevelLoader::show 0x004dfc50, update 0x004e0000)
 x = 75                            # the picture's icon, at its point on the picture
 y = 298
 width = 128
@@ -580,10 +578,10 @@ frames = 12                       # the updates of any loading screen, whatever 
 always_random = true              # every loading screen picks a picture marked random
 ```
 
-A `[[loading]]` picture names its `icon` (BW3's `L_demon`, `L_cross`, `L_stick`, `L_shaman`).
+A `[[stories.loading]]` picture names its `icon` (BW3's `L_demon`, `L_cross`, `L_stick`, `L_shaman`).
 The icon draws no moon and no status line.
 
-The `[[loading]]` pictures stay as they are, and a random pick draws from those marked
+The `[[stories.loading]]` pictures stay as they are, and a random pick draws from those marked
 `random`. The progress bar draws no moon, but a picture's moon window still keeps the status
 line off the screen, as BW2's single picture's does. BW1 and BW3 drew the indicator only on a
 480-line screen (bw1 `CLevelLoader::update` 0x004fe9c0); the recreation draws it at any size,
@@ -592,7 +590,7 @@ placed on the picture as the screen shows it.
 ## Startup
 
 ```toml
-[startup]
+[menu.startup]
 picture = "fangs"                 # while archives unpack and the game loads
 fit = "keep_aspect"               # the label at label_x, label_y on it
 picture_alpha = 0x8000
@@ -607,10 +605,10 @@ movie = "opening.avi"
 Every game draws its `loading` label ("Loading..."); the originals measured it
 and never drew it.
 
-## Continue prompt: `[continue_prompt]`
+## Continue prompt: `[menu.continue_prompt]`
 
 ```toml
-[continue_prompt]
+[menu.continue_prompt]
 text = "Press any key to continue..."
 position = { right = 0x27f, bottom = 0x1db }
 colour = 0xf8
