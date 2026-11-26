@@ -17,9 +17,11 @@ namespace {
 // Every pass's bit, which a mask of all of them sets on every actor.
 constexpr std::uint32_t kAllPasses = 0xffffffffU;
 // An actor is listed while its opaque or tinted pass has something to draw, whichever pass the
-// list is for.
+// list is for, and while spotlights are shown, while it is in one.
 constexpr std::uint32_t kAlwaysDrawnPasses =
     SDrawnTransform::kOpaquePass | SDrawnTransform::kTransparentPass;
+constexpr std::uint32_t kSpotlightPasses =
+    SDrawnTransform::kSpotlightPass | SDrawnTransform::kLitBySpotlight;
 
 // An actor to draw and how far its box's middle is from the camera, squared.
 struct SDisplayEntry {
@@ -50,8 +52,7 @@ void CDemonSet::snapshotActorTransformState(CDemonActor &actor) {
 // and the game is never in the editor, whose hidden actors the original passed over.
 // unverified: the order left among actors at the same distance, which the original's Watcom
 //   _qsort decides, by running its _qsort on such a list in the machine-code oracle
-// deferred: the dynamic lights', the goggles' and the spotlights' passes, with addDynamicLight,
-//   the goggles and setCameraView's spotlights
+// deferred: the dynamic lights' and the goggles' pass, with addDynamicLight and the goggles
 // deferred: listing the local hero only while netplay has it in the world (the decomp's
 //   nocturne_net_respawn_hero_in_world), with CNetGame's sessions
 // deferred: the time the list took, in profile mode, with processHotkeys
@@ -60,6 +61,7 @@ void CDemonSet::buildDisplayList(std::uint32_t dirty_flags_mask) {
     common::CVector3f camera;
     owners_.renderer.getCameraOriginWorld(&camera);
     std::vector<SDisplayEntry> entries;
+    const std::uint32_t listed = kAlwaysDrawnPasses | (spotlights_.empty() ? 0U : kSpotlightPasses);
     for (CDemonActor *actor : renderable_actors_) {
         if (actor == local_hero_) {
             continue;
@@ -72,7 +74,7 @@ void CDemonSet::buildDisplayList(std::uint32_t dirty_flags_mask) {
             drawn.dirty_flags |= dirty_flags_mask;
         }
         actor->setDrawnTransform(drawn);
-        if ((drawn.dirty_flags & kAlwaysDrawnPasses) == 0) {
+        if ((drawn.dirty_flags & listed) == 0) {
             continue;
         }
         CBoundingBox3D box;

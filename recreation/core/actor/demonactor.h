@@ -24,13 +24,16 @@ enum class EActorLifecycleState : std::uint8_t {
 };
 
 // Where an actor was when last drawn, and which passes must draw it again, a bit each; a new
-// actor is at the origin with every pass due. The scene's opaque and tinted passes keep their
-// bit set while the actor drew something in them.
+// actor is at the origin with every pass due. The scene's opaque and tinted passes and the
+// spotlights' keep their bit set while the actor drew something in them; once it drew into any
+// spotlight's map it stays lit by one until the camera changes.
 struct SDrawnTransform {
     static constexpr std::uint32_t kEveryPass = 0x1f;
+    static constexpr std::uint32_t kSpotlightPass = 0x2;
     static constexpr std::uint32_t kOpaquePass = 0x4;
     static constexpr std::uint32_t kTransparentPass = 0x8;
     static constexpr std::uint32_t kBackgroundPass = 0x10;
+    static constexpr std::uint32_t kLitBySpotlight = 0x20;
 
     common::CVector3f position;
     common::CVector3f orientation;

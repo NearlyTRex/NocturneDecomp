@@ -2,6 +2,7 @@
 #include "common/math/vector3i.h"
 #include "core/actor/actorrenderowners.h"
 #include "core/actor/demonactor.h"
+#include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dcube/cubedrawowners.h"
 #include "core/dlight/demonlight.h"
@@ -31,6 +32,10 @@ constexpr int kUntinted = 0x10000;
 constexpr std::uint32_t kScenePasses =
     SDrawnTransform::kOpaquePass | SDrawnTransform::kTransparentPass;
 
+// The passes a spotlight's display list is built for.
+constexpr std::uint32_t kSpotlightPasses =
+    SDrawnTransform::kSpotlightPass | SDrawnTransform::kLitBySpotlight;
+
 // The pass's bit kept on the actor while it drew something in it.
 void markPass(CDemonActor &actor, std::uint32_t pass, bool drew) {
     SDrawnTransform drawn = actor.getDrawnTransform();
@@ -39,6 +44,41 @@ void markPass(CDemonActor &actor, std::uint32_t pass, bool drew) {
 }
 
 } // namespace
+
+// While shadows are on, each shown spotlight that is on has the actors in its view drawn into
+// its map, over what the map kept, nearest first; one that draws something there stays lit by a
+// spotlight. The original also reset the raytrace's drawing mode, which only the editor changes.
+// deferred: each dynamic light's map drawn with the set's geometry and its actors, in each mirror
+//   too, with addDynamicLight
+// deferred: the gore's particles and the fire's effects drawn into each spotlight's map, with
+//   CGore::renderParticles and CFireEffect::render
+// deferred: the time it took, printed while profiling, with processHotkeys' profile mode
+// nocedit 0x0056be80
+void CDemonSet::renderStaticLights() {
+    if (owners_.game.shadow_flag == 0) {
+        return;
+    }
+    SCameraTables &tables = owners_.light_owners.camera.tables;
+    for (const SShownSpotlight &shown : spotlights_) {
+        CDemonLight &light = *shown.light;
+        if (!light.isLightEnabled()) {
+            continue;
+        }
+        light.beginScene(1);
+        buildDisplayList(kSpotlightPasses);
+        tables.shadow_light = &light;
+        for (CDemonActor *actor : sorted_render_actors_) {
+            const bool drew = actor->renderOpaque() != 0;
+            markPass(*actor, SDrawnTransform::kSpotlightPass, drew);
+            if (drew) {
+                markPass(*actor, SDrawnTransform::kLitBySpotlight, true);
+            }
+            owners_.renderer.enableFaceCapture(true);
+        }
+        tables.shadow_light = nullptr;
+        light.endScene(0);
+    }
+}
 
 // The game is never in the editor, where the original drew every actor's background as though
 // not asked for its own layer.
@@ -52,6 +92,7 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
     const SActorRenderOwners render_owners{.renderer = owners_.renderer,
                                            .three_d = owners_.three_d,
                                            .special = owners_.special,
+                                           .two_d = owners_.two_d,
                                            .set = *this,
                                            .camera_tables = owners_.light_owners.camera.tables,
                                            .events = owners_.events};
@@ -88,7 +129,7 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 //   and CGlass
 // deferred: the local hero's weapon and item drawn in their panels, with
 //   CInventory::renderSelectedItems
-// deferred: the spotlights' dirty regions put back, with CDemonLight::restoreDirtyRegions
+// The spotlights' maps get their master depths back where the actors were drawn into them.
 // deferred: the time the scene's parts took, printed while profiling, with processHotkeys'
 //   profile mode
 // deferred: the virtual directors drawn while debugging, with renderVirtualDirectors
@@ -116,6 +157,9 @@ void CDemonSet::renderScene() {
     camera.setupPerspectiveAndFog(nullptr, nullptr);
     renderTransparentActors();
     camera.endScene(0);
+    for (const SShownSpotlight &shown : spotlights_) {
+        shown.light->restoreDirtyRegions();
+    }
     for (CDemonActor *actor : actors_) {
         SDrawnTransform drawn = actor->getDrawnTransform();
         drawn.position = actor->getLocation().position;

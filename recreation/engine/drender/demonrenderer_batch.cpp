@@ -33,7 +33,8 @@ void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primiti
         return;
     }
     if (shadow_pass_) {
-        const SPolygonState state = getShadowState();
+        SPolygonState state = getShadowState();
+        state.depth_bias = rasterizer_depth_bias_;
         for (const SMRGLPrimitiveQuad &poly : primitives) {
             renderTriangleSimple(vertex_buffer_, takeIndices(poly), state, special_, three_d_,
                                  texture_);

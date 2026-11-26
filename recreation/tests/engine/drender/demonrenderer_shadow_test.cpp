@@ -152,6 +152,24 @@ TEST_F(CDemonRendererShadowTest, TheBatchsStraightPathDrawsOnlyTheDepths) {
     expectTheCornersKeptTheirCoordinates();
 }
 
+// The rasteriser's bias pushes each depth back before it is drawn, 0x8000 in 24.8 being 0x80 once
+// shifted into the map, both one polygon at a time and on the batch's straight path.
+TEST_F(CDemonRendererShadowTest, TheBiasPushesTheDepthsDrawnBack) {
+    EXPECT_EQ(demon_renderer_.getRasterizerDepthBias(), 0);
+    demon_renderer_.renderTexturedDirect({.surface_normal = {}, .vertex_indices = {1, 2, 3}}, -1);
+    const std::uint16_t unbiased = mapAt(0, 0);
+    map_.fill(kFar);
+    demon_renderer_.setRasterizerDepthBias(0x8000);
+    EXPECT_EQ(demon_renderer_.getRasterizerDepthBias(), 0x8000);
+    demon_renderer_.renderTexturedDirect({.surface_normal = {}, .vertex_indices = {1, 2, 3}}, -1);
+    EXPECT_EQ(mapAt(0, 0), unbiased - 0x80);
+    map_.fill(kFar);
+    demon_renderer_.setRenderingState(true);
+    const std::vector<SMRGLPrimitiveQuad> polys{over({1, 2, 3}), over({1, 3, 2})};
+    demon_renderer_.renderQuadBatch(polys, -1);
+    EXPECT_EQ(mapAt(0, 0), unbiased - 0x80);
+}
+
 // The profiled test asks the light's map, not the screen's depths.
 TEST_F(CDemonRendererShadowTest, AProfiledPolygonIsShownWhereItIsNearerThanTheMap) {
     depths_.fill(0xffffffffU);

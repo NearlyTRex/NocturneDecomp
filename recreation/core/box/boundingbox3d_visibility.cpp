@@ -4,7 +4,9 @@
 #include "core/box/boundingbox3d.h"
 #include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dlight/demonlight.h"
 #include "core/set/demonset.h"
+#include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/special/special.h"
@@ -13,6 +15,7 @@
 #include "platform/projectedvertex.h"
 #include "platform/rendervertex.h"
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -42,6 +45,8 @@ constexpr std::uint32_t kAllSides = 0xff;
 constexpr int kFoggedOut = 65000;
 // 24.8 to world units.
 constexpr float kFixedToWorld = 1.0F / 256.0F;
+// A projected point's screen position is 16.16.
+constexpr int kScreenFractionBits = 16;
 
 // The face's plane through the box's corner on its side, in 24.8.
 platform::SClipPlane facePlane(const SBoxFace &face, const common::CVector3i &low,
@@ -57,16 +62,14 @@ platform::SClipPlane facePlane(const SBoxFace &face, const common::CVector3i &lo
 
 } // namespace
 
-// In the shadow pass the fog does not hide the box.
-// deferred: the shadow pass's test of the box's corners on the light's map, with
-//   isVisibleWithShadow and renderStaticLights' current shadow light
+// In the shadow pass the fog does not hide the box, but the light's map must show it.
 // nocedit 0x004204f0
 bool CBoundingBox3D::isVisible(const SActorRenderOwners &owners) const {
     if (!isVisibleWithCamera(owners)) {
         return false;
     }
     if (owners.renderer.isShadowPass() != 0) {
-        return true;
+        return isVisibleWithShadow(owners);
     }
     const common::CVector3f centre{
         .x = (min.x + max.x) * 0.5F, .y = (min.y + max.y) * 0.5F, .z = (min.z + max.z) * 0.5F};
@@ -83,6 +86,65 @@ bool CBoundingBox3D::isVisible(const SActorRenderOwners &owners) const {
     }
     tables.scene_camera->setupPerspectiveAndFog(&world_centre, &projected_centre);
     return tables.perspective_reciprocal <= kFoggedOut;
+}
+
+// nocedit 0x00420320
+bool CBoundingBox3D::isVisibleWithShadow(const SActorRenderOwners &owners) {
+    const CDemonLight *light = owners.camera_tables.shadow_light;
+    if (light == nullptr) {
+        return true;
+    }
+    const engine::SProjectionParams &view = owners.two_d.getProjection();
+    const int left_edge = view.center_x_fixed - view.half_width_fixed;
+    const int right_edge = view.center_x_fixed + view.half_width_fixed;
+    const int top_edge = view.center_y_fixed + view.neg_half_height_fixed;
+    const int bottom_edge = view.center_y_fixed - view.neg_half_height_fixed;
+    int x_min = right_edge;
+    int x_max = left_edge;
+    int y_min = bottom_edge;
+    int y_max = top_edge;
+    const std::span<const platform::SRenderVertex> vertices = owners.renderer.getVertexBuffer();
+    for (std::uint32_t corner = 0; corner < kCorners; ++corner) {
+        const platform::SProjectedVertex &point = vertices[corner].projected_vertex;
+        if (point.screen_x >= 0) {
+            x_min = std::min(x_min, point.screen_x);
+            x_max = std::max(x_max, point.screen_x);
+            y_min = std::min(y_min, point.screen_y);
+            y_max = std::max(y_max, point.screen_y);
+            continue;
+        }
+        const int depth = point.transformed_z;
+        const auto project = [depth](int along, int half, int centre) {
+            return static_cast<int>((static_cast<std::int64_t>(along) * half) / depth) + centre;
+        };
+        if (-depth < point.transformed_x && point.transformed_x < depth) {
+            const int x = project(point.transformed_x, view.half_width_fixed, view.center_x_fixed);
+            x_min = std::min(x_min, x);
+            x_max = std::max(x_max, x);
+        }
+        if (-depth < point.transformed_y && point.transformed_y < depth) {
+            const int y =
+                project(point.transformed_y, view.neg_half_height_fixed, view.center_y_fixed);
+            y_min = std::min(y_min, y);
+            y_max = std::max(y_max, y);
+        }
+        if (depth <= point.transformed_x) {
+            x_max = right_edge;
+        }
+        if (point.transformed_x <= -depth) {
+            x_min = left_edge;
+        }
+        if (depth <= point.transformed_y) {
+            y_min = top_edge;
+        }
+        if (point.transformed_y <= -depth) {
+            y_max = bottom_edge;
+        }
+    }
+    return light->testShadowMapRegion({.x_min = x_min >> kScreenFractionBits,
+                                       .x_max = x_max >> kScreenFractionBits,
+                                       .y_min = y_min >> kScreenFractionBits,
+                                       .y_max = y_max >> kScreenFractionBits});
 }
 
 // Retail's body. The editor's went through the scene camera's testVisibility, which swapped in

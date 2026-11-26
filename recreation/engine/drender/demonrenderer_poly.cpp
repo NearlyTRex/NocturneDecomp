@@ -18,6 +18,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 #include <vector>
 
 namespace nocturne::engine {
@@ -83,8 +84,8 @@ SPolygonState CDemonRenderer::getPerspectiveState(std::uint32_t render_flags) co
 // deferred: the shadow pass sending a polygon fogged but untextured down the depth-only route,
 //   with a shadow-pass draw that keeps the fog's flag without the texture's
 // nocedit 0x0048a740
-void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices,
-                                     const SPolygonState &state) {
+void CDemonRenderer::clipAndFillPoly(std::span<const int> vertex_indices, SPolygonState state) {
+    state.depth_bias = rasterizer_depth_bias_;
     const std::uint32_t flags = state.mode.render_flags;
     const bool textured = (flags & (common::kRenderTextured | common::kRenderSmooth)) != 0;
     if (!face_capture_enabled_) {
@@ -199,7 +200,7 @@ void CDemonRenderer::renderDestReadBlendPoly(const SMRGLPrimitiveQuad &poly) {
             drawShadowCutoutRow(left, right, y, screen_, two_d_, texture_);
             return false;
         };
-        clipAndFillPoly(takeIndices(poly), state);
+        clipAndFillPoly(takeIndices(poly), std::move(state));
         return;
     }
     const std::vector<int> vertex_indices = takeCorners(poly);

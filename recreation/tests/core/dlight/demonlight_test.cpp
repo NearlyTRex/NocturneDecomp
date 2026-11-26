@@ -1,6 +1,8 @@
 #include "common/error/fatalerror.h"
 #include "common/math/matrix3x3i.h"
 #include "common/math/vector3i.h"
+#include "core/dcamera/cameratables.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/dfilter/demonfilter.h"
 #include "core/dlight/demonlight.h"
 #include "engine/drender/demonrenderer.h"
@@ -11,6 +13,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -69,8 +72,10 @@ TEST(CDemonLight, PublicInterface) {
                                  void (CDemonLight::*)(const CDemonFilter &, int, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonLight::initializeVisibilityBuffer),
                                  void (CDemonLight::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonLight::testShadowMapRegion), int (CDemonLight::*)(CRect *)>);
+    static_assert(std::is_same_v<decltype(&CDemonLight::testShadowMapRegion),
+                                 bool (CDemonLight::*)(const CRect &) const>);
+    static_assert(std::is_same_v<decltype(&CDemonLight::getMasterZBuffer),
+                                 std::span<const std::uint16_t> (CDemonLight::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonLight::setVolumetricIntensity),
                                  void (CDemonLight::*)(float)>);
     static_assert(std::is_same_v<decltype(&CDemonLight::drawShadowDepthBuffer),
@@ -272,6 +277,147 @@ TEST_F(CDemonLightSceneTest, APointInTheLightFallsOnItsEntryMarkedSeen) {
               std::optional<std::size_t>((11 * 256) + 11));
     light_.initializeVisibilityBuffer();
     EXPECT_EQ(light_.getLightmapVisibilityBits()[(3 * 256 / 8) + 1], 0U);
+}
+
+// A scene that keeps the map pushes every draw's depths back by a half until one clears it.
+TEST_F(CDemonLightSceneTest, AKeptMapPushesTheDepthsBackUntilAMapIsCleared) {
+    light_.beginScene(1);
+    light_.endScene(0);
+    EXPECT_EQ(demon_renderer_.getRasterizerDepthBias(), 0x8000);
+    light_.beginScene(0);
+    light_.endScene(0);
+    EXPECT_EQ(demon_renderer_.getRasterizerDepthBias(), 0);
+}
+
+// The master depths are the map as it was, taken from the shared budget, and go with the map.
+TEST_F(CDemonLightSceneTest, TheMasterDepthsAreTheMapAsItWas) {
+    EXPECT_TRUE(light_.getMasterZBuffer().empty());
+    light_.beginScene(0);
+    static_cast<std::uint16_t *>(rows_[2])[3] = 0x0400;
+    light_.endScene(0);
+    light_.allocMasterZBuffer();
+    ASSERT_EQ(light_.getMasterZBuffer().size(), std::size_t{256} * 256);
+    EXPECT_EQ(light_.getMasterZBuffer()[(2 * 256) + 3], 0x0400U);
+    EXPECT_EQ(parts_.tables.restore_memory_used, (std::size_t{256} * 256) + 8);
+    light_.freeMasterZBuffer();
+    EXPECT_TRUE(light_.getMasterZBuffer().empty());
+    light_.allocMasterZBuffer();
+    light_.free();
+    EXPECT_TRUE(light_.getMasterZBuffer().empty());
+}
+
+// Inside the light's scene, the outermost background scene draws into the master depths with only
+// depths drawn, and closing it puts the map's rows back and the shadow pass off.
+TEST_F(CDemonLightSceneTest, ItsBackgroundSceneDrawsIntoTheMasterDepths) {
+    light_.allocMasterZBuffer();
+    light_.beginScene(1);
+    light_.beginBackgroundScene();
+    EXPECT_EQ(rows_[0], light_.getMasterZBuffer().data());
+    EXPECT_EQ(rows_[255], light_.getMasterZBuffer().data() + (std::ptrdiff_t{255} * 256));
+    EXPECT_EQ(rows_[256], &markers_[256]);
+    EXPECT_EQ(demon_renderer_.isShadowPass(), 1);
+    light_.beginBackgroundScene();
+    EXPECT_EQ(parts_.tables.background_scene_depth, 2);
+    light_.endBackgroundScene();
+    EXPECT_EQ(rows_[0], light_.getMasterZBuffer().data());
+    light_.endBackgroundScene();
+    EXPECT_EQ(parts_.tables.background_scene_depth, 0);
+    EXPECT_EQ(rows_[0], light_.getShadowDepthBuffer().data());
+    EXPECT_EQ(demon_renderer_.isShadowPass(), 0);
+    light_.endScene(0);
+    EXPECT_EQ(rows_[0], markers_.data());
+}
+
+TEST_F(CDemonLightSceneTest, ABackgroundSceneNeedsTheLightsSceneAndMasterDepths) {
+    EXPECT_THAT([this] { light_.beginBackgroundScene(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonLight::beginBackgroundScene - Scene not open")));
+    light_.beginScene(1);
+    EXPECT_THAT([this] { light_.beginBackgroundScene(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonLight::beginBackgroundScene - No master Z buffer")));
+}
+
+// After a scene that kept the map, each rectangle drawn into, as far as it is on the map, gets
+// the master depths back; the rest of the map keeps what was drawn.
+class CDemonLightRestoreTest : public CDemonLightSceneTest {
+protected:
+    CDemonLightRestoreTest() {
+        light_.beginScene(0);
+        light_.endScene(0);
+        light_.allocMasterZBuffer();
+        light_.beginScene(1);
+        std::ranges::fill(drawn(), kDrawn);
+    }
+
+    [[nodiscard]] std::span<std::uint16_t> drawn() const {
+        return {static_cast<std::uint16_t *>(rows_[0]), std::size_t{256} * 256};
+    }
+
+    static constexpr std::uint16_t kDrawn = 0x0100;
+};
+
+TEST_F(CDemonLightRestoreTest, EachRectangleOnTheMapGetsTheMasterDepthsBack) {
+    light_.pushRect({.x_min = -4, .x_max = 1, .y_min = 250, .y_max = 300});
+    light_.pushRect({.x_min = 10, .x_max = 12, .y_min = 5, .y_max = 5});
+    light_.pushRect({.x_min = 300, .x_max = 310, .y_min = 0, .y_max = 0});
+    light_.endScene(0);
+    light_.restoreDirtyRegions();
+    EXPECT_EQ(depthAt(0, 250), 0xffffU);
+    EXPECT_EQ(depthAt(1, 255), 0xffffU);
+    EXPECT_EQ(depthAt(2, 250), kDrawn);
+    EXPECT_EQ(depthAt(0, 249), kDrawn);
+    EXPECT_EQ(depthAt(10, 5), 0xffffU);
+    EXPECT_EQ(depthAt(12, 5), 0xffffU);
+    EXPECT_EQ(depthAt(13, 5), kDrawn);
+    EXPECT_EQ(depthAt(11, 4), kDrawn);
+    EXPECT_EQ(depthAt(255, 0), kDrawn);
+    EXPECT_TRUE(light_.getDirtyRects().empty());
+}
+
+TEST_F(CDemonLightRestoreTest, PastTheRectanglesItKeepsTheWholeMapGetsThemBack) {
+    for (std::size_t rect = 0; rect <= CDemonCamera::kMaxDirtyRects; ++rect) {
+        light_.pushRect({.x_min = 0, .x_max = 0, .y_min = 0, .y_max = 0});
+    }
+    light_.endScene(0);
+    light_.restoreDirtyRegions();
+    EXPECT_EQ(depthAt(255, 255), 0xffffU);
+    EXPECT_EQ(depthAt(128, 7), 0xffffU);
+    EXPECT_FALSE(light_.getDirtyRectsOverflowed());
+}
+
+// A scene that cleared the map has nothing to put back, but its rectangles are forgotten.
+TEST_F(CDemonLightSceneTest, AClearedMapIsLeftAsDrawn) {
+    light_.beginScene(0);
+    static_cast<std::uint16_t *>(rows_[5])[5] = 0x0100;
+    light_.pushRect({.x_min = 5, .x_max = 5, .y_min = 5, .y_max = 5});
+    light_.endScene(0);
+    light_.restoreDirtyRegions();
+    EXPECT_EQ(depthAt(5, 5), 0x0100U);
+    EXPECT_TRUE(light_.getDirtyRects().empty());
+}
+
+TEST_F(CDemonLightSceneTest, PuttingTheMasterDepthsBackNeedsThem) {
+    light_.beginScene(1);
+    light_.endScene(0);
+    EXPECT_THAT([this] { light_.restoreDirtyRegions(); },
+                ::testing::ThrowsMessage<common::CFatalError>(
+                    ::testing::StrEq("CDemonLight::blitZBuffer - No master Z buffer")));
+}
+
+// The rectangle is tested a byte of eight entries at a time, rounded toward zero; a row past the
+// map's end is unseen.
+TEST_F(CDemonLightSceneTest, ARegionIsSeenWhereItsBytesOfTheVisibilityBitsAre) {
+    light_.setShadowBoundsMode(0);
+    static_cast<void>(
+        light_.projectLightAndMarkVisibility({.x = 20 << 16, .y = 3 << 16, .z = 1}, false, false));
+    EXPECT_TRUE(light_.testShadowMapRegion({.x_min = 16, .x_max = 16, .y_min = 3, .y_max = 3}));
+    EXPECT_TRUE(light_.testShadowMapRegion({.x_min = 0, .x_max = 40, .y_min = 0, .y_max = 10}));
+    EXPECT_FALSE(light_.testShadowMapRegion({.x_min = 24, .x_max = 40, .y_min = 0, .y_max = 10}));
+    EXPECT_FALSE(light_.testShadowMapRegion({.x_min = 16, .x_max = 23, .y_min = 4, .y_max = 10}));
+    EXPECT_FALSE(light_.testShadowMapRegion({.x_min = 0, .x_max = 255, .y_min = 4, .y_max = 300}));
+    EXPECT_FALSE(light_.testShadowMapRegion({.x_min = -9, .x_max = 7, .y_min = 0, .y_max = 3}));
+    EXPECT_FALSE(light_.testShadowMapRegion({.x_min = 16, .x_max = 16, .y_min = 4, .y_max = 3}));
 }
 
 // Behind the light, or off its map, or for a circular shadow outside its circle, there is none.

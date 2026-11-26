@@ -76,6 +76,7 @@ protected:
     SActorRenderOwners render_owners_{.renderer = demon_renderer_,
                                       .three_d = three_d_,
                                       .special = special_,
+                                      .two_d = two_d_,
                                       .set = set_,
                                       .camera_tables = set_parts_.tables,
                                       .events = set_parts_.events};

@@ -121,6 +121,10 @@ public:
     // light's scene points at its shadow map, and textures are off.
     void setShadowPass(int value);
     [[nodiscard]] int isShadowPass() const;
+    // What every polygon's depths are pushed back by as the software rasteriser draws them, in
+    // 24.8 of the 24.8 depth, until it is set again; 0 at first.
+    void setRasterizerDepthBias(int bias);
+    [[nodiscard]] int getRasterizerDepthBias() const;
     void clipAndDrawLine3D(int vertex_index1, int vertex_index2);
     void setAlphaMask(int alpha_mask);
     int getAlphaMask();
@@ -154,7 +158,8 @@ private:
     // The shadow pass's draw: untextured, the corners' depths as they are, and only the depth
     // drawn, into the light's map.
     [[nodiscard]] SPolygonState getShadowState() const;
-    void clipAndFillPoly(std::span<const int> vertex_indices, const SPolygonState &state);
+    // The polygon drawn with the state, its depths pushed back by the rasteriser's bias.
+    void clipAndFillPoly(std::span<const int> vertex_indices, SPolygonState state);
     void renderFacetList(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                          int render_flags);
 
@@ -172,6 +177,7 @@ private:
     GeometryClipper clip_geometry_;
     bool plane_culling_enabled_ = true;
     bool shadow_pass_ = false;
+    int rasterizer_depth_bias_ = 0;
     // Ghidra's name; whether corners may come in eye space, as the vertex processing flag says.
     bool face_capture_enabled_ = true;
 };

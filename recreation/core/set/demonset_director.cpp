@@ -6,6 +6,8 @@
 #include "core/actor/demonactor.h"
 #include "core/box/boundingbox3d.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dlight/demonlight.h"
+#include "core/dlight/dlight.h"
 #include "core/dskybox/dskybox.h"
 #include "core/game/game.h"
 #include "core/location.h"
@@ -321,9 +323,9 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 
 // Switching to the camera already shown leaves the camera shown before it and its hold as they
 // were, where the original held that camera back again (the decomp's windowed reswitch fix).
-// deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights'
-//   master z-buffers and resetting their restore memory, with restoreDirtyRegions,
-//   freeMasterZBuffer and resetRestoreMemoryAllocator
+// The last camera's spotlights get their master depths back and let them go, and the budget for
+// them starts over.
+// deferred: restoring the dynamic lights' dirty regions, with addDynamicLight
 // deferred: the full lighting mode and the directional light ratio while the background draws,
 //   and no omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's
 //   windowed reswitch fix), with lightVerticies' quality modes, the spatial lights and
@@ -334,10 +336,10 @@ float CDemonSet::calculateActorVisibility(std::size_t camera_index, const CDemon
 // deferred: the still water, in hardware after the geometry and in the lit frame, with
 //   CWater::render
 // deferred: the omni lights the camera sees, with the spatial lights
-// deferred: each shown spotlight's master depths kept and the actors drawn into its shadow map
-//   before its light is precomputed, then the scene's static lights' shadow maps, with
-//   allocMasterZBuffer, CDemonLight's background scenes, restoreDirtyRegions and
-//   renderStaticLights
+// Each shown spotlight keeps its map as master depths, which the actors' backgrounds are drawn
+// into and its map takes back, before its light is precomputed; once the lit frame is drawn,
+// the actors are drawn into the spotlights' maps. Retail has no panning camera, for which the
+// original left the lights unprecomputed.
 // deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio
 //   off for the lit frame, with lightVerticies' quality modes
 // deferred: the gore and fire decals in the lit frame, with CGore::renderDecals,
@@ -354,6 +356,13 @@ void CDemonSet::setCameraView(int index) {
         common::displayErrorAndQuit(
             std::format("CDemonSet::setCameraView - invalid index: {}", index));
     }
+    for (const SShownSpotlight &shown : spotlights_) {
+        shown.light->restoreDirtyRegions();
+    }
+    for (const SShownSpotlight &shown : spotlights_) {
+        shown.light->freeMasterZBuffer();
+    }
+    resetRestoreMemoryAllocator(owners_.light_owners.camera.tables);
     if (index != selected_camera_index_) {
         previous_best_camera_timer_ = kPreviousBestHold;
         previous_best_camera_index_ = selected_camera_index_;
@@ -385,7 +394,15 @@ void CDemonSet::setCameraView(int index) {
     gatherSpotlights(static_cast<std::size_t>(index));
     process();
     for (const SShownSpotlight &shown : spotlights_) {
-        owners_.camera.precomputeLight(*shown.light, shown.bounds);
+        CDemonLight &light = *shown.light;
+        light.allocMasterZBuffer();
+        light.beginScene(1);
+        light.beginBackgroundScene();
+        renderBackgroundActors(1);
+        light.endBackgroundScene();
+        light.endScene(0);
+        light.restoreDirtyRegions();
+        owners_.camera.precomputeLight(light, shown.bounds);
     }
     owners_.camera.beginScene(1);
     owners_.camera.beginBackgroundScene();
@@ -395,6 +412,7 @@ void CDemonSet::setCameraView(int index) {
     renderBackgroundActors(1);
     owners_.camera.endBackgroundScene(0);
     owners_.camera.endScene(0);
+    renderStaticLights();
     for (CDemonActor *actor : actors_) {
         snapshotActorTransformState(*actor);
     }

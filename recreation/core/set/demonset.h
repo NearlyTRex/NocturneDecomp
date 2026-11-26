@@ -115,6 +115,9 @@ public:
     // The camera sized for that many lines, and the camera shown again.
     void reinitCamera(int screen_height);
     void processActors();
+    // The actors' shadows: while shadows are on, the actors drawn into each shown spotlight's map
+    // that is on, which the next frame's scene lights the backdrop through, and its master depths
+    // put back after.
     void renderStaticLights();
     // The frame's scene over the shown camera's backdrop: the depths the actors drew over last
     // frame put back, then the actors drawn opaque and then tinted, farthest first and the local

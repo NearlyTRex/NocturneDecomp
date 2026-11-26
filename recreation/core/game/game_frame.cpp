@@ -59,8 +59,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   the automap stepped after the clock (the decomp's AUTOMAP), with the automap
 // deferred: the sound processed after the game, with CSound::process
 // deferred: retail's force feedback stepped after the sound, with CForceFeedback::processEvent
-// deferred: the static lights drawn while the goggles are off, with
-//   CDemonSet::renderStaticLights
+// The actors are drawn into the spotlights' maps for the next frame's scene.
+// deferred: the static lights left undrawn while the goggles are on, with the goggles
 // deferred: the frame not drawn while the cheat turns drawing off, with processCheatCodes
 // deferred: the goggles' view, with CDemonSet::renderGogglesView
 // deferred: BW1-3's field notes or puzzle drawn in the scene's place, or monster vision's view,
@@ -103,6 +103,7 @@ void CGame::processFrame(const SGameSessionOwners &session) {
     slewLocalHero(session);
     updateDT();
     session.net_game.processServerFrame();
+    session.set.renderStaticLights();
     static_cast<void>(session.renderer.setRenderAlpha(kOpaque));
     renderFrame(session);
     if (external) {

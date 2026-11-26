@@ -15,6 +15,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 
 namespace nocturne::engine {
 namespace {
@@ -213,7 +214,7 @@ void CDemonRenderer::renderSolidColorDepthDirect(const platform::SMRGLHeaderPrim
         drawSolidColorRow(left, right, y, screen_, reciprocals, color);
         return false;
     };
-    clipAndFillPoly(prim.vertex_indices, state);
+    clipAndFillPoly(prim.vertex_indices, std::move(state));
 }
 
 // The textures go off with it: nothing in the shadow pass is textured.
@@ -226,6 +227,15 @@ void CDemonRenderer::setShadowPass(int value) {
 // nocedit 0x0048cae0
 int CDemonRenderer::isShadowPass() const {
     return shadow_pass_ ? 1 : 0;
+}
+
+// The original's g_RasterizerDepthBias, which a light's scene sets.
+void CDemonRenderer::setRasterizerDepthBias(int bias) {
+    rasterizer_depth_bias_ = bias;
+}
+
+int CDemonRenderer::getRasterizerDepthBias() const {
+    return rasterizer_depth_bias_;
 }
 
 // A visibility test, not a draw: the rendered-triangle count is left as it was. In the shadow
@@ -262,7 +272,7 @@ bool CDemonRenderer::renderDepthProfiledDirect(const platform::SMRGLHeaderPrimit
     if (hardware) {
         setShadowPass(1);
     }
-    clipAndFillPoly(prim.vertex_indices, state);
+    clipAndFillPoly(prim.vertex_indices, std::move(state));
     if (hardware) {
         setShadowPass(shadow_pass);
     }

@@ -1,10 +1,14 @@
 #include "common/error/fatalerror.h"
+#include "core/actor/demonactor.h"
+#include "core/dcamera/cameratables.h"
+#include "core/dcamera/demoncamera.h"
 #include "core/dcamera/fog.h"
 #include "core/dfilter/filtercache.h"
 #include "core/dlight/demonlight.h"
 #include "core/dlight/lightglow.h"
 #include "core/dlight/lightmappixel.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/game/game.h"
 #include "core/rect.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -16,6 +20,7 @@
 #include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/setfilefixture.h"
 #include "tests/mocks/core/setparts.h"
+#include "tests/mocks/core/testactor.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 
 #include <gmock/gmock.h>
@@ -218,6 +223,149 @@ TEST_F(CDemonSetSpotlightTest, TheSceneAddsTheLightOfEachShownSpotlightThatIsOn)
     lamp.setLightEnabled(false);
     set_.renderScene();
     EXPECT_EQ(set_parts_.tables.corona_light[(5 * 320) + 7], start);
+}
+
+// The same set with two actors: the first draws something wherever it is drawn, the second
+// nothing, and each notes the light whose scene each of its draws is in.
+class CDemonSetSpotlightActorTest : public CDemonSetSpotlightTest {
+protected:
+    CDemonSetSpotlightActorTest() {
+        for (CTestActor *actor : {&drawing_, &empty_}) {
+            actor->setRenderable(true);
+            actor->onRenderBackground([this](int /*layer_flag*/) { noteBackground(); });
+        }
+        drawing_.onRenderOpaque([this] {
+            noteOpaque(drawing_lights_);
+            return 1;
+        });
+        empty_.onRenderOpaque([this] {
+            noteOpaque(empty_lights_);
+            return 0;
+        });
+        set_.setActors({&drawing_, &empty_});
+        set_.buildActorTypeLists();
+    }
+
+    // The background drawn into a light's master depths, with only depths drawn.
+    void noteBackground() {
+        const CDemonCamera *scene = set_parts_.tables.scene_camera;
+        if (scene != &*set_parts_.camera && rows_[0] != pixels_.data()) {
+            EXPECT_EQ(demon_renderer_.isShadowPass(), 1);
+            background_lights_.push_back(scene);
+        }
+    }
+
+    void noteOpaque(std::vector<const CDemonLight *> &lights) const {
+        if (set_parts_.tables.shadow_light != nullptr) {
+            EXPECT_EQ(set_parts_.tables.scene_camera, set_parts_.tables.shadow_light);
+            EXPECT_EQ(demon_renderer_.isShadowPass(), 1);
+        }
+        lights.push_back(set_parts_.tables.shadow_light);
+    }
+
+    [[nodiscard]] std::size_t mapSize() const {
+        return master(0).getShadowDepthBuffer().size();
+    }
+
+    CTestActor drawing_{kTestLeafType};
+    CTestActor empty_{kTestLeafType};
+    std::vector<const CDemonCamera *> background_lights_;
+    std::vector<const CDemonLight *> drawing_lights_;
+    std::vector<const CDemonLight *> empty_lights_;
+};
+
+// Each shown spotlight keeps its map as master depths from the shared budget, which the actors'
+// backgrounds are drawn into; once the frame is lit the actors are drawn into each map that is
+// on, here only the lamp's, as showing the camera turned the moon off.
+TEST_F(CDemonSetSpotlightActorTest, ShowingACameraKeepsEachSpotlightsMasterDepths) {
+    set_.setCameraView(0);
+    EXPECT_EQ(master(0).getMasterZBuffer().size(), mapSize());
+    EXPECT_TRUE(master(1).getMasterZBuffer().empty());
+    EXPECT_EQ(master(2).getMasterZBuffer().size(), master(2).getShadowDepthBuffer().size());
+    EXPECT_EQ(set_parts_.tables.restore_memory_used,
+              mapSize() + master(2).getShadowDepthBuffer().size() + 16);
+    EXPECT_EQ(background_lights_,
+              (std::vector<const CDemonCamera *>{&master(0), &master(0), &master(2), &master(2)}));
+    EXPECT_FALSE(master(2).isLightEnabled());
+    EXPECT_EQ(drawing_lights_, std::vector<const CDemonLight *>{&master(0)});
+    EXPECT_EQ(set_parts_.tables.shadow_light, nullptr);
+    EXPECT_EQ(demon_renderer_.getRasterizerDepthBias(), 0x8000);
+}
+
+// One that drew in a spotlight stays lit by one until the camera changes; one that drew nothing
+// loses the spotlight's pass but keeps having been lit.
+TEST_F(CDemonSetSpotlightActorTest, EachActorKeepsItsSpotlightBitWhileItDrewThere) {
+    set_.setCameraView(0);
+    master(2).setLightEnabled(true);
+    SDrawnTransform lit = empty_.getDrawnTransform();
+    lit.dirty_flags = SDrawnTransform::kSpotlightPass | SDrawnTransform::kLitBySpotlight;
+    empty_.setDrawnTransform(lit);
+    set_.renderStaticLights();
+    EXPECT_EQ(drawing_.getDrawnTransform().dirty_flags &
+                  (SDrawnTransform::kSpotlightPass | SDrawnTransform::kLitBySpotlight),
+              SDrawnTransform::kSpotlightPass | SDrawnTransform::kLitBySpotlight);
+    EXPECT_EQ(empty_.getDrawnTransform().dirty_flags, SDrawnTransform::kLitBySpotlight);
+    EXPECT_EQ(empty_lights_.back(), &master(2));
+}
+
+// Without the spotlight's passes due, an actor where it was drawn is left out of the light's
+// list; with only having been lit by one, it is drawn again.
+TEST_F(CDemonSetSpotlightActorTest, AnActorOnceLitIsDrawnIntoTheSpotlightsAgain) {
+    set_.setCameraView(0);
+    master(2).setLightEnabled(true);
+    for (CTestActor *actor : {&drawing_, &empty_}) {
+        SDrawnTransform drawn = actor->getDrawnTransform();
+        drawn.dirty_flags = 0;
+        actor->setDrawnTransform(drawn);
+    }
+    SDrawnTransform lit = drawing_.getDrawnTransform();
+    lit.dirty_flags = SDrawnTransform::kLitBySpotlight;
+    drawing_.setDrawnTransform(lit);
+    drawing_lights_.clear();
+    empty_lights_.clear();
+    set_.renderStaticLights();
+    EXPECT_EQ(drawing_lights_, (std::vector<const CDemonLight *>{&master(0), &master(2)}));
+    EXPECT_TRUE(empty_lights_.empty());
+}
+
+// With shadows off nothing is drawn into the maps, and a spotlight that is off is passed over.
+TEST_F(CDemonSetSpotlightActorTest, OnlyShadowsOnDrawTheSpotlightsThatAreOn) {
+    set_.setCameraView(0);
+    master(2).setLightEnabled(true);
+    drawing_lights_.clear();
+    CGame &game = set_parts_.classes.getGame();
+    game.shadow_flag = 0;
+    set_.renderStaticLights();
+    EXPECT_TRUE(drawing_lights_.empty());
+    game.shadow_flag = 1;
+    master(0).setLightEnabled(false);
+    set_.renderStaticLights();
+    EXPECT_EQ(drawing_lights_, std::vector<const CDemonLight *>{&master(2)});
+}
+
+// What the actors drew into a spotlight's map is put back after the scene, and before the next
+// camera is shown, so its master depths are taken from the map as the set left it.
+TEST_F(CDemonSetSpotlightActorTest, TheMapsGetTheirMasterDepthsBack) {
+    set_.setCameraView(0);
+    CDemonLight &lamp = master(0);
+    const auto width = static_cast<std::size_t>(lamp.getShadowMapWidth());
+    const std::uint16_t master_depth = lamp.getMasterZBuffer()[(3 * width) + 4];
+    drawing_.onRenderOpaque([this, &lamp] {
+        if (set_parts_.tables.shadow_light == &lamp) {
+            static_cast<std::uint16_t *>(rows_[3])[4] = 0x0123;
+            lamp.pushRect({.x_min = 4, .x_max = 4, .y_min = 3, .y_max = 3});
+        }
+        return 1;
+    });
+    set_.renderStaticLights();
+    ASSERT_EQ(lamp.getShadowDepthBuffer()[(3 * width) + 4], 0x0123U);
+    set_.renderScene();
+    EXPECT_EQ(lamp.getShadowDepthBuffer()[(3 * width) + 4], master_depth);
+    set_.renderStaticLights();
+    set_.setCameraView(0);
+    EXPECT_EQ(lamp.getMasterZBuffer()[(3 * width) + 4], master_depth);
+    EXPECT_EQ(set_parts_.tables.restore_memory_used,
+              mapSize() + master(2).getShadowDepthBuffer().size() + 16);
 }
 
 // Shown before its master lights are made, a set shows no spotlight and leaves them alone.

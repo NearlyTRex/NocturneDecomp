@@ -16,6 +16,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 #include <vector>
 
 namespace nocturne::engine {
@@ -88,7 +89,7 @@ int CDemonRenderer::countVisiblePixelsPoly(const platform::SMRGLPrimitiveQuad &p
         countDepthRow(left, right, depth_rows[static_cast<std::size_t>(y)], reciprocals, counter);
         return false;
     };
-    clipAndFillPoly(vertex_indices, state);
+    clipAndFillPoly(vertex_indices, std::move(state));
     return counter;
 }
 

@@ -4,9 +4,12 @@
 #include "core/box/boundingbox3d.h"
 #include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
+#include "core/dlight/demonlight.h"
+#include "engine/drender/demonrenderer.h"
 #include "platform/mrglheaderprimitive.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/projectedvertex.h"
+#include "platform/rendervertex.h"
 #include "tests/mocks/core/actorrenderfixture.h"
 
 #include <gmock/gmock.h>
@@ -16,6 +19,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <span>
+#include <utility>
 #include <vector>
 
 namespace nocturne::core {
@@ -166,6 +170,73 @@ TEST_F(CBoundingBox3DVisibilityTest, InTheShadowPassTheFogHidesNothing) {
     demon_renderer_.setShadowPass(1);
     EXPECT_TRUE(box_.isVisible(render_owners_));
     demon_renderer_.setShadowPass(0);
+}
+
+// While the actors are drawn into a spotlight's map, a box is drawn only where the screen
+// rectangle around its corners covers a map entry the camera saw: a corner off the screen
+// takes the rectangle to the edges it is past.
+class CBoundingBox3DShadowTest : public CBoundingBox3DVisibilityTest {
+protected:
+    CBoundingBox3DShadowTest() {
+        light_.init();
+        light_.setShadowBoundsMode(0);
+        pixels_.fill(0xffffffffU);
+        // What the geometry clip leaves of a box's face partly off the screen.
+        for (const auto &[x, y] : {std::pair{0, 0}, std::pair{8, 0}, std::pair{0, 8}}) {
+            platform::SRenderVertex corner;
+            corner.projected_vertex = {
+                .transformed_z = 0x1000, .inv_z = 0x1200, .screen_x = x << 16, .screen_y = y << 16};
+            clipped_.push_back(corner);
+        }
+        demon_renderer_.setShadowPass(1);
+        set_parts_.tables.shadow_light = &light_;
+    }
+
+    // The light goes before the tables that point at it.
+    void TearDown() override {
+        set_parts_.tables.shadow_light = nullptr;
+        demon_renderer_.setShadowPass(0);
+    }
+
+    void seeEntry(int x, int y) {
+        static_cast<void>(light_.projectLightAndMarkVisibility({.x = x << 16, .y = y << 16, .z = 1},
+                                                               false, false));
+    }
+
+    CDemonLight light_{
+        set_parts_.light_parts.owners(screen_, special_, demon_renderer_, dosio_, matrix_, two_d_),
+        256, 256};
+};
+
+TEST_F(CBoundingBox3DShadowTest, ABoxOverWhatTheCameraSawIsDrawn) {
+    EXPECT_FALSE(box_.isVisible(render_owners_));
+    seeEntry(3, 3);
+    EXPECT_TRUE(box_.isVisible(render_owners_));
+}
+
+TEST_F(CBoundingBox3DShadowTest, ABoxPastTheScreensSidesReachesItsEdges) {
+    seeEntry(0, 3);
+    seeEntry(7, 3);
+    seeEntry(3, 0);
+    seeEntry(3, 7);
+    const CBoundingBox3D wide{.min = {.x = -100.0F, .y = -3.0F, .z = 4.0F},
+                              .max = {.x = 100.0F, .y = 3.0F, .z = 6.0F}};
+    EXPECT_TRUE(wide.isVisible(render_owners_));
+    const CBoundingBox3D tall{.min = {.x = -3.0F, .y = -100.0F, .z = 4.0F},
+                              .max = {.x = 3.0F, .y = 100.0F, .z = 6.0F}};
+    EXPECT_TRUE(tall.isVisible(render_owners_));
+    light_.initializeVisibilityBuffer();
+    EXPECT_FALSE(wide.isVisible(render_owners_));
+    EXPECT_FALSE(tall.isVisible(render_owners_));
+}
+
+// Outside a spotlight's pass any box the camera sees is drawn.
+TEST_F(CBoundingBox3DShadowTest, WithoutASpotlightEveryBoxIsDrawn) {
+    set_parts_.tables.shadow_light = nullptr;
+    EXPECT_TRUE(box_.isVisible(render_owners_));
+    const CBoundingBox3D wide{.min = {.x = -100.0F, .y = -3.0F, .z = 4.0F},
+                              .max = {.x = 100.0F, .y = 3.0F, .z = 6.0F}};
+    EXPECT_TRUE(wide.isVisible(render_owners_));
 }
 
 } // namespace

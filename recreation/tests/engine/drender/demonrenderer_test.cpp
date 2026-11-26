@@ -129,6 +129,10 @@ TEST(CDemonRenderer, PublicInterface) {
         std::is_same_v<decltype(&CDemonRenderer::setShadowPass), void (CDemonRenderer::*)(int)>);
     static_assert(
         std::is_same_v<decltype(&CDemonRenderer::isShadowPass), int (CDemonRenderer::*)() const>);
+    static_assert(std::is_same_v<decltype(&CDemonRenderer::setRasterizerDepthBias),
+                                 void (CDemonRenderer::*)(int)>);
+    static_assert(std::is_same_v<decltype(&CDemonRenderer::getRasterizerDepthBias),
+                                 int (CDemonRenderer::*)() const>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::clipAndDrawLine3D),
                                  void (CDemonRenderer::*)(int, int)>);
     static_assert(

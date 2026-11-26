@@ -69,6 +69,12 @@ struct SCameraTables {
     CDemonCamera *kept_camera = nullptr;
     // The fog in front of what is drawn next, 0 to 0xffff; none in a background scene.
     int perspective_reciprocal = 0;
+    // The spotlight whose map the actors are being drawn into, which a box must fall on to be
+    // drawn; none outside that pass.
+    CDemonLight *shadow_light = nullptr;
+    // How many depths the spotlights' master depths have taken from the shared budget since the
+    // camera last changed.
+    std::size_t restore_memory_used = 0;
 };
 
 } // namespace nocturne::core

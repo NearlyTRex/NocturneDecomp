@@ -48,8 +48,12 @@ public:
     // intensity picks.
     void init();
     void free();
+    // The master depths: the map as it is now, which its dirty regions go back to, taken from the
+    // spotlights' shared budget.
     void allocMasterZBuffer();
     void freeMasterZBuffer();
+    // Empty without master depths.
+    [[nodiscard]] std::span<const std::uint16_t> getMasterZBuffer() const;
     // The light's scene: drawn from the light, the screen's rows its shadow map's while it is
     // open, which only depths are drawn into, the beam's aspect stretching its view, the map
     // cleared unless told to skip it. One open is fatal.
@@ -57,8 +61,13 @@ public:
     // Closes it, the screen's rows back, its reach the farthest depth drawn unless it kept the
     // map. Not open is fatal.
     void endScene(int restore_viewport_state);
+    // Inside the light's scene, the outermost of the scenes nested in it draws into the master
+    // depths instead of the map, which nothing then puts back. Without master depths it is fatal.
     void beginBackgroundScene();
     void endBackgroundScene();
+    // For a scene that kept the map, the master depths back over every rectangle drawn into since
+    // it began, or over the whole map once there were too many; the rectangles are forgotten
+    // either way.
     void restoreDirtyRegions();
     // The shadow map entry the projected point in 16.16, on an odd row or column rounded on by a
     // quarter or a half, falls on, marked seen; none in front of the light or outside its map,
@@ -79,7 +88,9 @@ public:
     void applyFilter(const CDemonFilter &filter, int filter_index, int filter_pos_x,
                      int filter_pos_y);
     void initializeVisibilityBuffer();
-    int testShadowMapRegion(CRect *rect);
+    // Whether any of the map's entries in the rectangle, taken to whole bytes of the visibility
+    // bits, was seen from the camera.
+    [[nodiscard]] bool testShadowMapRegion(const CRect &rect) const;
     // From 0 to 1; picks the filter the beam takes.
     void setVolumetricIntensity(float intensity);
     void drawShadowDepthBuffer(int screen_x, int screen_y, int brightness_offset);
@@ -126,6 +137,8 @@ private:
                                                  float scale) const;
     void blendFilterIntoBuffer(std::span<const std::uint8_t> levels, int filter_pos_x,
                                int filter_pos_y);
+    // The master depths back over the rectangle, which is inside the map.
+    void blitZBuffer(const CRect &source_rect);
 
     std::span<const CDemonFilter> global_filters_;
     std::span<const CDemonFilter> player_filters_;
@@ -150,8 +163,10 @@ private:
     std::span<SLightMapPixel> light_map_;
     std::array<int, kDisplayRows> left_extents_{};
     std::array<int, kDisplayRows> right_extents_{};
-    // The screen's rows the scene took over.
+    // The screen's rows the scene took over, and those its background scene took over in turn.
     std::vector<void *> saved_screen_rows_;
+    std::vector<void *> saved_background_rows_;
+    std::vector<std::uint16_t> master_zbuffer_;
 };
 
 } // namespace nocturne::core

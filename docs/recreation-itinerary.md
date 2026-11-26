@@ -29,8 +29,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 158 | 65 | 27.2% | 268 | 49 |
-| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 19 | 7 | 73.0% | 14 | 8 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 170 | 64 | 29.3% | 268 | 49 |
+| 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 20 | 6 | 76.9% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
 | 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 43 | 17 | 22.7% | 69 | 12 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1292** | **238** | **28.7%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1305** | **236** | **29.0%** | **2032** | **382** |
 
 ## Step 0: Math value types
 
@@ -2191,25 +2191,24 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `render` 0x005ea320 (346)
     - BW: [ ] bw1 0x005a9f10 = bw2 0x005862e0 (logic-change); [ ] bw3 0x00577760 (logic-change)
 
-### `core/dlight.cpp` (15 functions, 1123 instructions, 5 done, 1 partial)
+### `core/dlight.cpp` (15 functions, 1123 instructions, 15 done, 0 partial)
 - class `CDemonLight`
-  - [ ] `testShadowMapRegion` 0x00476000 (75)
+  - [x] `testShadowMapRegion` 0x00476000 (75)
   - [x] `applyFilter` 0x00474770 (218)
   - [x] `projectLightAndMarkVisibility` 0x00473270 (88)
   - [x] `initializeVisibilityBuffer` 0x00475fc0 (16)
-  - [ ] `allocMasterZBuffer` 0x004729d0 (32)
-  - [ ] `freeMasterZBuffer` 0x00472a50 (7)
-  - [~] `beginScene` 0x00472a80 (129)
-    - deferred: the rasteriser's depths pushed back by a half for a scene that keeps the map, with the actors' shadows in renderStaticLights
+  - [x] `allocMasterZBuffer` 0x004729d0 (32)
+  - [x] `freeMasterZBuffer` 0x00472a50 (7)
+  - [x] `beginScene` 0x00472a80 (129)
   - [x] `endScene` 0x00472d30 (75)
-  - [ ] `beginBackgroundScene` 0x00472e40 (68)
-  - [ ] `endBackgroundScene` 0x00472f30 (30)
-  - [ ] `blitZBuffer` 0x00472c70 (60)
-  - [ ] `restoreDirtyRegions` 0x00472f80 (211)
+  - [x] `beginBackgroundScene` 0x00472e40 (68)
+  - [x] `endBackgroundScene` 0x00472f30 (30)
+  - [x] `blitZBuffer` 0x00472c70 (60)
+  - [x] `restoreDirtyRegions` 0x00472f80 (211)
   - [x] `clearCircularShadowMapEdges` 0x004735c0 (80)
 - free functions
-  - [ ] `resetRestoreMemoryAllocator` 0x004729c0 (3)
-  - [ ] `getRestoreMemory` 0x00472950 (31)
+  - [x] `resetRestoreMemoryAllocator` 0x004729c0 (3)
+  - [x] `getRestoreMemory` 0x00472950 (31)
 
 ### `engine/drender.cpp` (28 functions, 1059 instructions, 5 done, 2 partial)
 - class `CDemonRenderer`
@@ -2453,7 +2452,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
     - BW: [ ] bw3 0x0057d1a0 (logic-change)
 
-### `core/set.cpp` (27 functions, 2403 instructions, 8 done, 5 partial)
+### `core/set.cpp` (27 functions, 2403 instructions, 8 done, 6 partial)
 - class `CDemonSet`
   - [ ] `getReverbPresetAtPosition` 0x0056fac0 (77)
     - BW: [ ] bw1 0x00554440 = bw3 0x00539dd0 (logic-change); [ ] bw2 0x00533190 (logic-change)
@@ -2490,19 +2489,21 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `isCameraPanning` 0x00571320 (21)
   - [~] `buildDisplayList` 0x0056fbd0 (291)
     - unverified: the order left among actors at the same distance, which the original's Watcom _qsort decides, by running its _qsort on such a list in the machine-code oracle
-    - deferred: the dynamic lights', the goggles' and the spotlights' passes, with addDynamicLight, the goggles and setCameraView's spotlights
+    - deferred: the dynamic lights' and the goggles' pass, with addDynamicLight and the goggles
     - deferred: listing the local hero only while netplay has it in the world (the decomp's nocturne_net_respawn_hero_in_world), with CNetGame's sessions
     - deferred: the time the list took, in profile mode, with processHotkeys
     - BW: [ ] bw1 0x005545a0 = bw2 0x005332f0 = bw3 0x00539f30 (logic-change)
-  - [ ] `renderStaticLights` 0x0056be80 (231)
+  - [~] `renderStaticLights` 0x0056be80 (231)
+    - deferred: each dynamic light's map drawn with the set's geometry and its actors, in each mirror too, with addDynamicLight
+    - deferred: the gore's particles and the fire's effects drawn into each spotlight's map, with CGore::renderParticles and CFireEffect::render
+    - deferred: the time it took, printed while profiling, with processHotkeys' profile mode
   - [x] `process` 0x0056f940 (100)
   - [~] `setCameraView` 0x0056ae50 (639)
-    - deferred: restoring the dynamic lights' and spotlights' dirty regions, freeing the spotlights' master z-buffers and resetting their restore memory, with restoreDirtyRegions, freeMasterZBuffer and resetRestoreMemoryAllocator
+    - deferred: restoring the dynamic lights' dirty regions, with addDynamicLight
     - deferred: the full lighting mode and the directional light ratio while the background draws, and no omni or corona lights gathered yet, the coronas kept for the same camera (the decomp's windowed reswitch fix), with lightVerticies' quality modes, the spatial lights and addCoronaGlobe
     - deferred: the actors' backgrounds lit without the quality modes while the depths are taken (g_InMirrorRenderPass), with lightVerticies' quality modes
     - deferred: the still water, in hardware after the geometry and in the lit frame, with CWater::render
     - deferred: the omni lights the camera sees, with the spatial lights
-    - deferred: each shown spotlight's master depths kept and the actors drawn into its shadow map before its light is precomputed, then the scene's static lights' shadow maps, with allocMasterZBuffer, CDemonLight's background scenes, restoreDirtyRegions and renderStaticLights
     - deferred: the normal lighting mode, no perspective reciprocal and the directional light ratio off for the lit frame, with lightVerticies' quality modes
     - deferred: the gore and fire decals in the lit frame, with CGore::renderDecals, CFireEffect::renderDecals and their decal pools' writers
     - deferred: checking the camera's or the set's reverb preset, with CSound::setReverbPreset (the preset's EAX volume, decay time and damping went only to DirectSound)
@@ -2513,7 +2514,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [ ] `qsortByDisplayListEntry` 0x0056fba0 (18)
 
-### `core/box.cpp` (11 functions, 944 instructions, 3 done, 4 partial)
+### `core/box.cpp` (11 functions, 944 instructions, 5 done, 3 partial)
 - class `CBox`
   - [~] `ctor` 0x0041dc50 (45)
     - deferred: the eight scrape points, the mass and the world velocity, with CBox::processPhysics
@@ -2531,11 +2532,10 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00421af0 = bw2 0x0041bb80 = bw3 0x0041ee30 (logic-change)
   - [ ] `doesSphereIntersect` 0x004215f0 (35)
     - BW: [ ] bw1 0x00421b90 = bw2 0x0041bc20 = bw3 0x0041eed0 (logic-change)
-  - [ ] `isVisibleWithShadow` 0x00420320 (147)
+  - [x] `isVisibleWithShadow` 0x00420320 (147)
   - [x] `isVisibleWithCamera` 0x00420680 (136)
     - BW: [ ] bw1 0x00420990 = bw2 0x0041aa20 = bw3 0x0041dcd0 (logic-change)
-  - [~] `isVisible` 0x004204f0 (128)
-    - deferred: the shadow pass's test of the box's corners on the light's map, with isVisibleWithShadow and renderStaticLights' current shadow light
+  - [x] `isVisible` 0x004204f0 (128)
     - BW: [ ] bw1 0x004207b0 = bw2 0x0041a840 = bw3 0x0041daf0 (logic-change)
   - [x] `getMaximumBound` 0x00421060 (29)
 
@@ -2752,10 +2752,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `generateFogGrid` 0x0044bba0 (179)
 
-### `core/dlight.cpp` (5 functions, 190 instructions, 3 done, 2 partial)
+### `core/dlight.cpp` (5 functions, 190 instructions, 4 done, 1 partial)
 - class `CDemonLight`
-  - [~] `free` 0x004728b0 (44)
-    - deferred: letting go of the master z-buffer, with allocMasterZBuffer
+  - [x] `free` 0x004728b0 (44)
     - BW: [x] bw1 0x00462670 = bw2 0x00449e70 = bw3 0x0045c380 (logic-change)
   - [x] `init` 0x004727c0 (64)
     - BW: [x] bw1 0x00462590 = bw2 0x00449d90 = bw3 0x0045c2a0 (logic-change)
@@ -2775,7 +2774,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/set.cpp` (1 functions, 184 instructions, 0 done, 1 partial)
 - class `CDemonSet`
   - [~] `initScene` 0x0056aa10 (184)
-    - deferred: resetting the shadow restore allocator, with allocMasterZBuffer
     - deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and buildMirrorList
     - deferred: no omni or corona lights gathered, with the spatial lights and addCoronaGlobe
     - BW: [ ] bw2 0x0052d980 (logic-change)
@@ -3357,7 +3355,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites
     - deferred: the gore's and the fire's decals, the still water and each glass's backdrop drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals, CWater::render and CGlass
     - deferred: the local hero's weapon and item drawn in their panels, with CInventory::renderSelectedItems
-    - deferred: the spotlights' dirty regions put back, with CDemonLight::restoreDirtyRegions
     - deferred: the time the scene's parts took, printed while profiling, with processHotkeys' profile mode
     - deferred: the virtual directors drawn while debugging, with renderVirtualDirectors
     - BW: [x] bw1 0x00550580 = bw3 0x00535da0 (logic-change); [x] bw2 0x0052f2a0 (logic-change)
@@ -3451,7 +3448,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the world held still while the automap shows, its frame effects cleared instead, and the automap stepped after the clock (the decomp's AUTOMAP), with the automap
     - deferred: the sound processed after the game, with CSound::process
     - deferred: retail's force feedback stepped after the sound, with CForceFeedback::processEvent
-    - deferred: the static lights drawn while the goggles are off, with CDemonSet::renderStaticLights
+    - deferred: the static lights left undrawn while the goggles are on, with the goggles
     - deferred: the frame not drawn while the cheat turns drawing off, with processCheatCodes
     - deferred: the goggles' view, with CDemonSet::renderGogglesView
     - deferred: BW1-3's field notes or puzzle drawn in the scene's place, or monster vision's view, with CFieldNotes, CPuzzle and CDemonSet::renderMonsterVisionView

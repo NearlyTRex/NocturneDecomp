@@ -2,8 +2,10 @@
 
 #include "common/error/error.h"
 #include "common/math/fixed.h"
+#include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dfilter/demonfilter.h"
+#include "core/dlight/dlight.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 
@@ -13,6 +15,7 @@
 #include <optional>
 #include <span>
 #include <string>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -37,6 +40,8 @@ constexpr float kDepthToWorld = 1.0F / 256.0F;
 constexpr int kScreenFractionBits = 16;
 constexpr int kOddColumnRounding = 0x4000;
 constexpr int kOddRowRounding = 0x8000;
+// Half a depth, in the rasteriser's 24.8 of the 24.8 depth.
+constexpr int kKeptMapDepthBias = 0x8000;
 
 [[nodiscard]] int log2Floor(int value) {
     int shift = 0;
@@ -76,13 +81,13 @@ void CDemonLight::init() {
 }
 
 // The original went on pointing the beam at the filter buffer it had freed.
-// deferred: letting go of the master z-buffer, with allocMasterZBuffer
 // nocedit 0x004728b0
 // bw1 0x00462670
 // bw2 0x00449e70
 // bw3 0x0045c380
 void CDemonLight::free() {
     shadow_depth_buffer_.clear();
+    freeMasterZBuffer();
     lightmap_visibility_bits_.clear();
     filter_buffer_.clear();
     precomputed_lighting_textures_ = {};
@@ -251,8 +256,9 @@ bool CDemonLight::hasFilterBuffer() const {
     return !filter_buffer_.empty();
 }
 
-// deferred: the rasteriser's depths pushed back by a half for a scene that keeps the map, with
-//   the actors' shadows in renderStaticLights
+// A scene that keeps the map draws the actors into it, each depth pushed back by a half so an
+// actor doesn't shadow its own lit side; the push stays on every draw until a scene clears its
+// map, as the original's global did.
 // nocedit 0x00472a80
 void CDemonLight::beginScene(int skip_clear_buffers) {
     if (isSceneOpen()) {
@@ -280,6 +286,7 @@ void CDemonLight::beginScene(int skip_clear_buffers) {
     }
     updateTransformMatrices();
     renderer.setShadowPass(1);
+    renderer.setRasterizerDepthBias(skip_clear_buffers == 0 ? 0 : kKeptMapDepthBias);
 }
 
 // nocedit 0x00472d30
@@ -360,6 +367,121 @@ CDemonLight::projectLightAndMarkVisibility(const common::CVector3i &projected_co
 // nocedit 0x00475fc0
 void CDemonLight::initializeVisibilityBuffer() {
     std::ranges::fill(lightmap_visibility_bits_, 0);
+}
+
+// The visibility bits a row past the map's end would read are taken as unseen, where the
+// original read on past them.
+// nocedit 0x00476000
+bool CDemonLight::testShadowMapRegion(const CRect &rect) const {
+    const int first = rect.x_min / kBitsPerByteInt;
+    const int last = rect.x_max / kBitsPerByteInt;
+    const int row_bytes = shadow_map_width_ / kBitsPerByteInt;
+    int row_start = (rect.y_min * shadow_map_width_) / kBitsPerByteInt;
+    for (int y = rect.y_min; y <= rect.y_max; ++y) {
+        for (int column = first; column <= last; ++column) {
+            const int at = row_start + column;
+            if (at >= 0 && std::cmp_less(at, lightmap_visibility_bits_.size()) &&
+                lightmap_visibility_bits_[static_cast<std::size_t>(at)] != 0) {
+                return true;
+            }
+        }
+        row_start += row_bytes;
+    }
+    return false;
+}
+
+// The original's check that the light had none looked at a buffer only the camera fills, so a
+// light's master depths are taken afresh.
+// nocedit 0x004729d0
+void CDemonLight::allocMasterZBuffer() {
+    getRestoreMemory(getOwners().tables, shadow_depth_buffer_.size());
+    master_zbuffer_ = shadow_depth_buffer_;
+}
+
+// nocedit 0x00472a50
+void CDemonLight::freeMasterZBuffer() {
+    master_zbuffer_.clear();
+}
+
+std::span<const std::uint16_t> CDemonLight::getMasterZBuffer() const {
+    return master_zbuffer_;
+}
+
+// The original also saved and restored the rows as the scene began them, which beginScene keeps.
+// nocedit 0x00472e40
+void CDemonLight::beginBackgroundScene() {
+    if (!isSceneOpen()) {
+        common::displayErrorAndQuit("CDemonLight::beginBackgroundScene - Scene not open");
+    }
+    SCameraTables &tables = getOwners().tables;
+    ++tables.background_scene_depth;
+    if (tables.background_scene_depth != 1) {
+        return;
+    }
+    const std::span<void *> rows = getOwners().screen.getScreenRows();
+    const auto height = static_cast<std::size_t>(shadow_map_height_);
+    saved_background_rows_.assign(rows.begin(), rows.begin() + static_cast<std::ptrdiff_t>(height));
+    if (master_zbuffer_.empty()) {
+        common::displayErrorAndQuit("CDemonLight::beginBackgroundScene - No master Z buffer");
+    }
+    const auto width = static_cast<std::size_t>(shadow_map_width_);
+    for (std::size_t row = 0; row < height; ++row) {
+        rows[row] = master_zbuffer_.data() + (row * width);
+    }
+    getOwners().renderer.setShadowPass(1);
+}
+
+// nocedit 0x00472f30
+void CDemonLight::endBackgroundScene() {
+    SCameraTables &tables = getOwners().tables;
+    --tables.background_scene_depth;
+    if (tables.background_scene_depth != 0) {
+        return;
+    }
+    std::ranges::copy(saved_background_rows_, getOwners().screen.getScreenRows().begin());
+    getOwners().renderer.setShadowPass(0);
+}
+
+// The original's test that the rectangle met the light's viewport always passed for the whole
+// map, the one rectangle it was given. Its copy went to 8-byte boundaries.
+// nocedit 0x00472c70
+void CDemonLight::blitZBuffer(const CRect &source_rect) {
+    const auto width = static_cast<std::size_t>(shadow_map_width_);
+    const std::size_t count = static_cast<std::size_t>(source_rect.x_max - source_rect.x_min) + 1;
+    for (int y = source_rect.y_min; y <= source_rect.y_max; ++y) {
+        const std::size_t from =
+            (static_cast<std::size_t>(y) * width) + static_cast<std::size_t>(source_rect.x_min);
+        std::copy_n(master_zbuffer_.begin() + static_cast<std::ptrdiff_t>(from), count,
+                    shadow_depth_buffer_.begin() + static_cast<std::ptrdiff_t>(from));
+    }
+}
+
+// The original merged each row's rectangles into spans before copying them, which puts back the
+// same depths.
+// nocedit 0x00472f80
+void CDemonLight::restoreDirtyRegions() {
+    if (getSkipClearBuffers()) {
+        if (master_zbuffer_.empty()) {
+            common::displayErrorAndQuit("CDemonLight::blitZBuffer - No master Z buffer");
+        }
+        if (getDirtyRectsOverflowed()) {
+            blitZBuffer({.x_min = 0,
+                         .x_max = shadow_map_width_ - 1,
+                         .y_min = 0,
+                         .y_max = shadow_map_height_ - 1});
+        } else {
+            for (const CRect &rect : getDirtyRects()) {
+                const CRect inside{.x_min = std::max(rect.x_min, 0),
+                                   .x_max = std::min(rect.x_max, shadow_map_width_ - 1),
+                                   .y_min = std::max(rect.y_min, 0),
+                                   .y_max = std::min(rect.y_max, shadow_map_height_ - 1)};
+                if (inside.x_min <= inside.x_max) {
+                    blitZBuffer(inside);
+                }
+            }
+        }
+    }
+    forgetDirtyRects();
 }
 
 std::span<SLightMapPixel> CDemonLight::getLightMap() const {

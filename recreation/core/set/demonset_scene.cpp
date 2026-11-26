@@ -41,13 +41,13 @@ constexpr std::string_view kMoonPrefix = "moon";
 
 // The original quit when the last scene's master lights were still there; this scene's replace
 // them.
-// deferred: resetting the shadow restore allocator, with allocMasterZBuffer
 // deferred: forgetting the dynamic lights and the mirror glass actors, with addDynamicLight and
 //   buildMirrorList
 // deferred: no omni or corona lights gathered, with the spatial lights and addCoronaGlobe
 // nocedit 0x0056aa10
 void CDemonSet::initScene() {
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Initializing scene"), false);
+    resetRestoreMemoryAllocator(owners_.light_owners.camera.tables);
     owners_.filter_cache.free();
     owners_.flashlight.setVolumetricIntensity(owners_.flashlight.getVolumetricIntensity());
     owners_.camera.initLookupTable();

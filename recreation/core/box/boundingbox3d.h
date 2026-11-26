@@ -41,6 +41,10 @@ public:
 
 private:
     [[nodiscard]] bool isVisibleWithCamera(const SActorRenderOwners &owners) const;
+    // In the shadow pass, whether the screen rectangle around the eight corners the camera test
+    // projected, a corner off the screen taken to the edges it is past, covers a map entry the
+    // camera saw; any box passes outside a spotlight's pass.
+    [[nodiscard]] static bool isVisibleWithShadow(const SActorRenderOwners &owners);
 
     static constexpr std::uint32_t kCornerMaxX = 1;
     static constexpr std::uint32_t kCornerMaxY = 2;
