@@ -108,9 +108,13 @@ public:
     void addLightmapToCorona(CDemonLight *light_source);
     int isCoronaSufficientlyVisible(CDemonLight *light_source);
     CRect *computeLightExtentBounds(CDemonLight *light, CRect *out_bounds);
+    // The coronas' light started over at the effect's level, and the fog over the display mixed
+    // from the drifting fog's two planes as far as it has drifted between them.
     void processCorona();
-    // The backdrop and its light onto the screen, and the hardware renderer's scene begun.
-    void lockAndRenderToBuffer();
+    // The backdrop lit by the coronas' blurred light and fogged onto the screen, past 480 lines
+    // into the renderer's hold buffer, the fog drifting on by the frame's time in 65536ths of a
+    // second, and the hardware renderer's scene begun.
+    void lockAndRenderToBuffer(int frame_time);
     void renderGlobeCoronas(CDemonGlobe *globe, int force_render);
     int isBoundingBoxVisible(common::CVector3f *position, common::CVector3f *orientation,
                              common::CVector3f *bbox_min, common::CVector3f *bbox_max);
@@ -159,6 +163,13 @@ private:
     // inside the frame.
     void restoreDepths(const CRect &rect);
     void forgetDirtyRects();
+    void compositeLightmapToFramebuffer(int frame_time);
+    // The coronas' light blurred, the display's edges left dark.
+    void blurCoronaBufferAndClearEdges();
+    // Each display row of the fog between the plane and the next, alpha of 0xffff being the next.
+    void blendFogPlanes(int plane, int alpha);
+    // The fog's colour, 8-8-8 as the screen's pixels place it.
+    [[nodiscard]] std::uint32_t getFogColor() const;
 
     // Fills the camera tables' fog grid afresh from the CRT stream.
     void generateFogGrid();

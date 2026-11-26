@@ -117,7 +117,6 @@ std::uint32_t channel(std::uint32_t color, int shift) {
 } // namespace
 
 // A short palette or image leaves the rest black, where the original kept the last one's.
-// deferred: clearing the coronas' blurred light, with compositeLightmapToFramebuffer
 // nocedit 0x0044f3e0
 // bw1 0x0044fff0
 // bw2 0x0043e930
@@ -147,6 +146,7 @@ void CDemonCamera::loadImage(std::string_view filename) {
                       image.begin());
     scaleImageToFramebuffer(image, colors);
     uploadBackdropTexture(image, palette);
+    std::ranges::fill(owners_.tables.blurred_light, 0);
     if (owners_.screen.getWindowHeight() == kSmallWindowHeight) {
         shrinkFogPlanes(owners_.tables.fog_planes, owners_.tables.fog_plane_count);
     }

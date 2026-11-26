@@ -290,6 +290,24 @@ int CSpecial::restoreZBuffer(int slot, int left, int top, int right, int bottom)
     return renderer_.restoreZBuffer(slot, left, top, right, bottom);
 }
 
+// The original asked the renderer whenever its DLL was loaded, which in this engine is while it
+// renders.
+// nocedit 0x005b7df0
+int CSpecial::lockHoldBuffer() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.lockHoldBuffer();
+}
+
+// nocedit 0x005b7e10
+int CSpecial::unlockHoldBuffer() {
+    if (!use_external_renderer_) {
+        return 0;
+    }
+    return renderer_.unlockHoldBuffer();
+}
+
 // Software drawing since the last present goes into the renderer's image first. The renderer
 // usually points the rows at that image already, so the copy may run a row onto itself.
 // The original's skip_buffer_copy parameter, which skipped the copy, is not in retail.

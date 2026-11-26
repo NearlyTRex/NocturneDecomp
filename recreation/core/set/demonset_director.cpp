@@ -388,6 +388,7 @@ void CDemonSet::setCameraView(int index) {
     for (CDemonActor *actor : actors_) {
         snapshotActorTransformState(*actor);
     }
+    corona_due_ = true;
 }
 
 // nocedit 0x00575b00

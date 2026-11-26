@@ -29,11 +29,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 33 | 8 | 78.5% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 146 | 65 | 25.2% | 268 | 49 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 147 | 64 | 25.3% | 268 | 49 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 18 | 8 | 69.2% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 27 | 16 | 14.2% | 69 | 12 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 42 | 17 | 22.2% | 69 | 12 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1261** | **239** | **28.1%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1277** | **239** | **28.4%** | **2032** | **382** |
 
 ## Step 0: Math value types
 
@@ -1993,7 +1993,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `loadAndUpdateTexture` 0x005dd930 (13)
 
-### `core/dcamera.cpp` (26 functions, 3719 instructions, 11 done, 7 partial)
+### `core/dcamera.cpp` (26 functions, 3719 instructions, 12 done, 6 partial)
 - class `CDemonCamera`
   - [~] `setupPerspectiveAndFog` 0x004537d0 (73)
     - deferred: the fog's colour from the lightmap palette as the solid colour, with getFogValueAtPosition
@@ -2028,8 +2028,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `restoreAlphaTransform` 0x00453a70 (109)
   - [ ] `precomputeNormals` 0x0044e360 (330)
     - BW: [ ] bw1 0x0044ef30 = bw2 0x0043d870 = bw3 0x0044b070 (logic-change)
-  - [~] `loadImage` 0x0044f3e0 (921)
-    - deferred: clearing the coronas' blurred light, with compositeLightmapToFramebuffer
+  - [x] `loadImage` 0x0044f3e0 (921)
     - BW: [x] bw1 0x0044fff0 = bw2 0x0043e930 = bw3 0x0044c130 (logic-change)
   - [x] `initCameraFog` 0x00453640 (55)
   - [x] `saveZBufferScanlines` 0x00454450 (28)
@@ -3158,33 +3157,33 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [x] bw1 0x005439b0 = bw2 0x005218a0 = bw3 0x00528fc0 (logic-change)
   - [ ] `renderEditor` 0x00559d80 (146)
 
-### `core/dstrendr.cpp` (12 functions, 1957 instructions, 0 done, 0 partial)
+### `core/dstrendr.cpp` (12 functions, 1957 instructions, 10 done, 0 partial)
 - free functions
-  - [ ] `alphaBlendPixelsMMX` 0x00492e8a (45)
-  - [ ] `verticalBlur3TapMMXStride320` 0x00492042 (81)
+  - [x] `alphaBlendPixelsMMX` 0x00492e8a (45)
+  - [x] `verticalBlur3TapMMXStride320` 0x00492042 (81)
   - [ ] `blendLightmapSharedU32toU32NoBiasPx1MMX` 0x00491f90 (38)
   - [ ] `blendLightmapSharedU32toU16pNoBiasPx1MMX` 0x004937b6 (49)
-  - [ ] `blendHBilerpLightmapSharedU64toU64pBB12Px2MMX` 0x004917bc (256)
-  - [ ] `blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX` 0x00491c9a (156)
-  - [ ] `blendLightmapPerPxU32toU32BB12Px2MMX` 0x004926e1 (266)
-  - [ ] `blendLightmapPerPxU64toU32AmbientPx2MMX` 0x00492bd5 (150)
-  - [ ] `blendHBilerpLightmapSharedU64toU16pBB56Px2MMX` 0x00492f03 (279)
-  - [ ] `blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX` 0x00493450 (179)
-  - [ ] `blendLightmapPerPxU32toU16pBB12Px2MMX` 0x00493860 (287)
-  - [ ] `blendLightmapPerPxU64toU16pAmbientPx2MMX` 0x00493dc4 (171)
+  - [x] `blendHBilerpLightmapSharedU64toU64pBB12Px2MMX` 0x004917bc (256)
+  - [x] `blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX` 0x00491c9a (156)
+  - [x] `blendLightmapPerPxU32toU32BB12Px2MMX` 0x004926e1 (266)
+  - [x] `blendLightmapPerPxU64toU32AmbientPx2MMX` 0x00492bd5 (150)
+  - [x] `blendHBilerpLightmapSharedU64toU16pBB56Px2MMX` 0x00492f03 (279)
+  - [x] `blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX` 0x00493450 (179)
+  - [x] `blendLightmapPerPxU32toU16pBB12Px2MMX` 0x00493860 (287)
+  - [x] `blendLightmapPerPxU64toU16pAmbientPx2MMX` 0x00493dc4 (171)
 
-### `engine/special.cpp` (3 functions, 38 instructions, 1 done, 0 partial)
+### `engine/special.cpp` (3 functions, 38 instructions, 3 done, 0 partial)
 - free functions
   - [x] `restoreZBuffer` 0x005b7d20 (26)
-  - [ ] `lockHoldBuffer` 0x005b7df0 (6)
-  - [ ] `unlockHoldBuffer` 0x005b7e10 (6)
+  - [x] `lockHoldBuffer` 0x005b7df0 (6)
+  - [x] `unlockHoldBuffer` 0x005b7e10 (6)
 
 ### `core/dglobe.cpp` (1 functions, 132 instructions, 0 done, 0 partial)
 - class `CDemonGlobe`
   - [ ] `renderCorona` 0x00471400 (132)
     - BW: [ ] bw1 0x0045ea60 = bw2 0x00448900 = bw3 0x0045abd0 (logic-change)
 
-### `core/dcamera.cpp` (17 functions, 2231 instructions, 2 done, 1 partial)
+### `core/dcamera.cpp` (17 functions, 2231 instructions, 5 done, 2 partial)
 - class `CDemonCamera`
   - [ ] `clearFramebufferAndWorkBuffers` 0x00453c90 (44)
   - [x] `restoreZBufferRect` 0x0044c780 (74)
@@ -3192,14 +3191,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderLightCoronas` 0x00450ac0 (251)
     - BW: [ ] bw1 0x004516c0 = bw2 0x00440000 = bw3 0x0044d800 (logic-change)
   - [ ] `addLightmapToCorona` 0x00450e30 (122)
-  - [ ] `blendFogPlanes` 0x00453160 (83)
-  - [ ] `processCorona` 0x00451130 (46)
-  - [ ] `blurCoronaBufferAndClearEdges` 0x004509b0 (63)
+  - [x] `blendFogPlanes` 0x00453160 (83)
+  - [~] `processCorona` 0x00451130 (46)
+    - deferred: a still fog's one plane copied into the fog over the display, scaled to it (the decomp's fog plane scale fix), once a light has drawn its corona over the backdrop, with renderLightCoronas and saveBackdrop
+  - [x] `blurCoronaBufferAndClearEdges` 0x004509b0 (63)
   - [ ] `blendLightmapPixel32` 0x00453d10 (50)
   - [ ] `blendLightmapPixel16` 0x00453db0 (51)
-  - [ ] `compositeLightmapToFramebuffer` 0x00453270 (271)
-  - [~] `lockAndRenderToBuffer` 0x004511c0 (44)
-    - deferred: the backdrop and the corona's light map composited onto the screen, the frame or, past 480 lines, the renderer's hold buffer locked around it, with compositeLightmapToFramebuffer and CSpecial's hold buffer
+  - [~] `compositeLightmapToFramebuffer` 0x00453270 (271)
+    - deferred: the fog grid's drift moved on as the fog drifts to its next plane, with updateFogScrollOffset's reader getFogValueAtPosition
+    - deferred: the backdrop moved on the screen as the camera shakes, with initCameraShake
+    - deferred: the backdrop's edge pixels blended one at a time, with precomputeNormals' edge list
+  - [x] `lockAndRenderToBuffer` 0x004511c0 (44)
   - [ ] `renderGlobeCoronas` 0x004518f0 (576)
     - BW: [ ] bw1 0x00452550 = bw2 0x00440e90 = bw3 0x0044e690 (logic-change)
 - free functions
@@ -3358,7 +3360,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `restoreCameraView` 0x00570c70 (14)
   - [~] `renderScene` 0x0056c1a0 (620)
     - deferred: the shown camera's view set up again once a mirror has marked it, with markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
-    - deferred: while shadows are on or a camera has just been shown, the corona buffer processed, the spotlights' light maps added to it and the dynamic lights', the globes' and the queued globes' coronas drawn, in each mirror too, with processCorona, addLightmapToCorona, renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
+    - deferred: the spotlights' light maps added to the coronas and the dynamic lights', the globes' and the queued globes' coronas drawn, in each mirror too, with addLightmapToCorona, renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
     - deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the crop's focus tracking
     - deferred: the gore's particles and the fire's effects, in each mirror too, the animated water, on the train the terrain, and the weather's particles, with CGore::renderParticles, CFireEffect::render, CWater::render, CTerrain::render and CWeather::renderParticles
     - deferred: each dynamic light's bloom, and after the backgrounds its glow sprites, fogged at the light, in each mirror too, with renderLightBloomQuad and renderLightGlowSprites

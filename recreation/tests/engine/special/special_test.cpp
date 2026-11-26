@@ -543,6 +543,8 @@ TEST_F(CSpecialTest, WithTheRendererOffTheFrameCallsDoNothing) {
     EXPECT_EQ(special_.endScene(), 0);
     EXPECT_EQ(special_.masterZBuffer(0), 0);
     EXPECT_EQ(special_.restoreZBuffer(0, 0, 0, 1, 1), 0);
+    EXPECT_EQ(special_.lockHoldBuffer(), 0);
+    EXPECT_EQ(special_.unlockHoldBuffer(), 0);
     special_.presentToExternalRenderer();
 }
 
@@ -570,6 +572,10 @@ TEST_F(CSpecialTest, ClearAndUnlockReturnTheRenderersResult) {
     EXPECT_EQ(special_.masterZBuffer(2), 8);
     EXPECT_CALL(renderer_, restoreZBuffer(1, 2, 3, 4, 5)).WillOnce(Return(9));
     EXPECT_EQ(special_.restoreZBuffer(1, 2, 3, 4, 5), 9);
+    EXPECT_CALL(renderer_, lockHoldBuffer()).WillOnce(Return(10));
+    EXPECT_EQ(special_.lockHoldBuffer(), 10);
+    EXPECT_CALL(renderer_, unlockHoldBuffer()).WillOnce(Return(11));
+    EXPECT_EQ(special_.unlockHoldBuffer(), 11);
 }
 
 // The mode's setup locked the frame, so the first present has nothing to copy.

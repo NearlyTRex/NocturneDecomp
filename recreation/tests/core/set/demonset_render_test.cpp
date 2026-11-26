@@ -8,6 +8,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dskybox/dskybox.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/game/game.h"
 #include "core/location.h"
 #include "core/rect.h"
 #include "core/set/demonset.h"
@@ -23,6 +24,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -145,7 +147,9 @@ protected:
                   geoFile(CDemonRaytrace::kGeoFileFormatVersion, {.x = 1, .y = 1, .z = 1}, {{}}));
         set_.load("test.set");
         set_parts_.camera->init(kFrameHeight);
-        frame_rows_.fill(screen_row_.data());
+        for (std::size_t row = 0; row < frame_rows_.size(); ++row) {
+            frame_rows_.at(row) = frame_.at(row).data();
+        }
         depth_rows_.fill(depth_row_.data());
         ON_CALL(screen_, getScreenRows()).WillByDefault(Return(std::span<void *>(frame_rows_)));
         ON_CALL(screen_, getZBufferRows())
@@ -177,6 +181,7 @@ protected:
     }
 
     static constexpr int kFrameHeight = 48;
+    std::array<std::array<std::uint32_t, 64>, kFrameHeight> frame_{};
     std::array<void *, kFrameHeight> frame_rows_{};
     std::array<std::uint32_t, 64> depth_row_{};
     std::array<std::uint32_t *, kFrameHeight> depth_rows_{};
@@ -313,6 +318,25 @@ protected:
         showTheCamera();
     }
 };
+
+// The coronas start over in the first scene after a camera is shown, and in every scene while
+// shadows are on.
+TEST_F(CDemonSetFrameTest, TheCoronasStartOverOnceACameraIsShownOrWithShadowsOn) {
+    CGame &game = set_parts_.classes.getGame();
+    game.shadow_flag = 0;
+    const int start = set_parts_.camera->getCoronaBlendFactor() / 0x400;
+    ASSERT_NE(start, 9);
+    std::vector<std::uint8_t> &light = set_parts_.tables.corona_light;
+    std::ranges::fill(light, 9);
+    set_.renderScene();
+    EXPECT_EQ(light[0], start);
+    std::ranges::fill(light, 9);
+    set_.renderScene();
+    EXPECT_EQ(light[0], 9);
+    game.shadow_flag = 1;
+    set_.renderScene();
+    EXPECT_EQ(light[0], start);
+}
 
 // Farthest first each renderable actor draws opaque, tinted by its scale and with the render
 // alpha full, then each transparent one draws tinted; the flat colour is left untinted, and the

@@ -4,6 +4,7 @@
 #include "common/math/vector3i.h"
 #include "core/box/boundingbox3d.h"
 #include "core/charactr/deathstate.h"
+#include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
 #include "core/dtrace/demonraytrace.h"
@@ -22,6 +23,7 @@
 #include "engine/font/bitfont.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/package/gamecontent.h"
+#include "engine/special/pixel16.h"
 #include "engine/special/special.h"
 #include "engine/texture/texture.h"
 #include "sound/sndmain/sampleinfo.h"
@@ -67,9 +69,14 @@ using ::testing::ThrowsMessage;
 
 // A paused frame of a session whose one hero stands at the origin, a quarter second since the
 // last, in a set of one camera, shown, with the scene camera's transform taken from an open and
-// closed scene.
+// closed scene. The scene's backdrop is black and unlit, its fog a sixteenth of the palette's
+// level 0x40 everywhere, so it paints each row but the first and last kScene.
 class CGameFrameTest : public CMissionFixture {
 protected:
+    static constexpr std::uint32_t kScene = 0x040404;
+    static constexpr std::uint8_t kSceneFog = 16;
+    static constexpr int kFogLevel = 0x40;
+
     CGameFrameTest() {
         givenSessionAssets();
         auto placeholder = std::make_unique<CHeroPlaceholder>();
@@ -83,6 +90,11 @@ protected:
         showACamera();
         session_.camera.beginScene(1);
         session_.camera.endScene(1);
+        SCameraTables &tables = set_parts_.tables;
+        session_.camera.setEffectIntensity(0.0F);
+        tables.fog_color_index = {.r = kFogLevel, .g = kFogLevel, .b = kFogLevel};
+        tables.lightmap_palette.at(kFogLevel) = 0x40404040U;
+        std::ranges::fill(tables.fog_mix, kSceneFog);
         // As the session loads them, so a frame finds them at the screen's size.
         inventory_assets_.loadAssets();
         game_.slamDT(kQuarterSecond);
@@ -91,6 +103,11 @@ protected:
 
     [[nodiscard]] CHero &hero() {
         return *mission_.getLocalHero();
+    }
+
+    // What the scene leaves on the row, the screen's fill on the first and last.
+    [[nodiscard]] static std::uint32_t sceneAt(int y) {
+        return y > 0 && y < kHeight - 1 ? kScene : kBackground;
     }
 
     void hold(EInputCodeType code) {
@@ -175,7 +192,7 @@ TEST_F(CGameFrameTest, ThePausedFrameDrawsTheOverlayAndThePointer) {
         std::size_t count = 0;
         for (int y = 0; y < screen_.getWindowHeight(); ++y) {
             for (int x = 0; x < screen_.getWindowWidth(); ++x) {
-                count += screen_.pixel(x, y) != kBackground ? 1U : 0U;
+                count += screen_.pixel(x, y) != sceneAt(y) ? 1U : 0U;
             }
         }
         return count;
@@ -186,7 +203,7 @@ TEST_F(CGameFrameTest, ThePausedFrameDrawsTheOverlayAndThePointer) {
     game_.processFrame(session_);
     const std::size_t pointer = drawn();
     EXPECT_GT(pointer, 0U);
-    EXPECT_NE(screen_.pixel(kWidth / 2, kHeight / 4), kBackground);
+    EXPECT_NE(screen_.pixel(kWidth / 2, kHeight / 4), sceneAt(kHeight / 4));
     game_.displayMessage("Paused", 10.0F);
     screen_.fill(kBackground);
     game_.processFrame(session_);
@@ -263,7 +280,7 @@ protected:
         std::size_t count = 0;
         for (int y = 0; y < screen_.getWindowHeight(); ++y) {
             for (int x = 0; x < screen_.getWindowWidth(); ++x) {
-                count += screen_.pixel(x, y) != kBackground ? 1U : 0U;
+                count += screen_.pixel(x, y) != sceneAt(y) ? 1U : 0U;
             }
         }
         return count;
@@ -293,7 +310,7 @@ TEST_F(CGameFrameDebugTest, F4SavesTheSceneAsNumberedPngs) {
     EXPECT_EQ(first->rgb.size(), static_cast<std::size_t>(kWidth * kHeight * 3));
     for (int y = 0; y < kHeight; ++y) {
         for (int x = 0; x < kWidth; ++x) {
-            ASSERT_EQ(first->pixel(x, y), kBackground) << x << ", " << y;
+            ASSERT_EQ(first->pixel(x, y), sceneAt(y)) << x << ", " << y;
         }
     }
     frameWith(EInputCodeType::DIK_F4);
@@ -481,7 +498,7 @@ TEST_F(CGameFrameDebugTest, TheFrameHasABlackBorderTwoPixelsWide) {
         for (int x = 0; x < kWidth; ++x) {
             const int edge = std::min({x, y, kWidth - 1 - x, kHeight - 1 - y});
             border += edge < 2 && screen_.pixel(x, y) == 0U ? 1U : 0U;
-            inside += edge == 2 && screen_.pixel(x, y) == kBackground ? 1U : 0U;
+            inside += edge == 2 && screen_.pixel(x, y) == sceneAt(y) ? 1U : 0U;
         }
     }
     EXPECT_EQ(border,
@@ -655,7 +672,7 @@ TEST_F(CGameMovieTest, CtrlVStartsAndStopsTheMovieAFrameAFile) {
     EXPECT_TRUE(game_.isMovieRecording());
     const std::string &first = written_["movie\\noc00000.raw"];
     ASSERT_EQ(first.size(), static_cast<std::size_t>((kWidth / 2) * (kHeight / 2) * 3));
-    EXPECT_EQ(first.substr(kSecondRowSecondPixel, 3), "\x12\x34\x56");
+    EXPECT_EQ(first.substr(kSecondRowSecondPixel, 3), "\x04\x04\x04");
     frame();
     EXPECT_TRUE(wrote(1));
     frameWithCtrlV();
@@ -678,19 +695,16 @@ TEST_F(CGameMovieTest, TheFileItWroteIsNamedOverTheFrame) {
 }
 
 // Each of the movie's pixels is the mean of the block of the screen's it covers: the second
-// pixel down and across, clear of the border, is the mean of the screen's 2x2 block at 2, 2.
+// pixel down and across, clear of the border, is the mean of the screen's 2x2 block at 2, 2,
+// whose first pixel's thicker fog paints it 0x0c0c0c.
 TEST_F(CGameMovieTest, APixelIsTheMeanOfItsBlock) {
     arm();
-    screen_.fill(kBackground);
-    static_cast<std::uint32_t *>(screen_.getScreenRows()[2])[2] = 0xff0000;
+    set_parts_.tables.fog_mix.at((2 * SCameraTables::kFogPlaneWidth) + 2) = kSceneFog * 3;
     hold(EInputCodeType::DIK_LCONTROL);
     hold(EInputCodeType::DIK_V);
     game_.processFrame(session_);
     const std::string &frame = written_["movie\\noc00000.raw"];
-    const std::string pixel = frame.substr(kSecondRowSecondPixel, 3);
-    EXPECT_EQ(pixel[0], static_cast<char>(((0x12 * 3) + 0xff) / 4));
-    EXPECT_EQ(pixel[1], static_cast<char>((0x34 * 3) / 4));
-    EXPECT_EQ(pixel[2], static_cast<char>((0x56 * 3) / 4));
+    EXPECT_EQ(frame.substr(kSecondRowSecondPixel, 3), std::string(3, ((4 * 3) + 0x0c) / 4));
 }
 
 // Wider and taller than the screen, each pixel is the one its block starts on: the fifth down
@@ -701,7 +715,7 @@ TEST_F(CGameMovieTest, AMovieLargerThanTheScreenRepeatsItsPixels) {
     const std::string &frame = written_["movie\\noc00000.raw"];
     ASSERT_EQ(frame.size(), static_cast<std::size_t>(kWidth * kHeight * 12));
     EXPECT_EQ(frame.substr(static_cast<std::size_t>(((4 * kWidth * 2) + 4) * 3), 3),
-              "\x12\x34\x56");
+              "\x04\x04\x04");
 }
 
 TEST_F(CGameMovieTest, TheMovieStopsAtItsFrameLimit) {
@@ -819,7 +833,7 @@ TEST_F(CGameIrisTest, AGameStartsWithNoIris) {
     game_.updateFadeTransition();
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
     frame();
-    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), sceneAt(kMiddleY));
 }
 
 // Black for its one frame, then widening from nothing until it is wider than the screen.
@@ -865,8 +879,8 @@ TEST_F(CGameIrisTest, AnOpeningIrisBlacksOutsideItsDisc) {
     ASSERT_LT(radius, static_cast<float>(kMiddleY - 4));
     frame();
     const int reach = static_cast<int>(radius);
-    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
-    EXPECT_EQ(screen_.pixel(kMiddleX + reach - 1, kMiddleY), kBackground);
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), sceneAt(kMiddleY));
+    EXPECT_EQ(screen_.pixel(kMiddleX + reach - 1, kMiddleY), sceneAt(kMiddleY));
     EXPECT_EQ(screen_.pixel(kMiddleX + reach + 1, kMiddleY), 0U);
     EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY - reach - 1), 0U);
     EXPECT_EQ(screen_.pixel(4, 4), 0U);
@@ -881,7 +895,7 @@ TEST_F(CGameIrisTest, AnOpeningIrisKeepsTheCentreItBeganWith) {
     game_.updateFadeTransition();
     placeHeroAt(150, 100);
     frame();
-    EXPECT_EQ(screen_.pixel(30, 20), kBackground);
+    EXPECT_EQ(screen_.pixel(30, 20), sceneAt(20));
     EXPECT_EQ(screen_.pixel(150, 100), 0U);
 }
 
@@ -890,7 +904,7 @@ TEST_F(CGameIrisTest, AClosingIrisNarrowsToBlack) {
     game_.beginFadeOut(nullptr, session_.camera);
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Closing);
     frame();
-    EXPECT_EQ(screen_.pixel(4, 4), kBackground);
+    EXPECT_EQ(screen_.pixel(4, 4), sceneAt(4));
     game_.slamDT(kQuarterSecond);
     auto radius = static_cast<float>(kWidth);
     int frames = 0;
@@ -920,7 +934,7 @@ TEST_F(CGameIrisTest, AClosingIrisFollowsTheFocus) {
     ASSERT_EQ(game_.getIrisFade(), EIrisFade::Closing);
     placeHeroAt(150, 100);
     frame();
-    EXPECT_EQ(screen_.pixel(150, 100), kBackground);
+    EXPECT_EQ(screen_.pixel(150, 100), sceneAt(100));
     EXPECT_EQ(screen_.pixel(30, 20), 0U);
 }
 
@@ -936,7 +950,7 @@ TEST_F(CGameIrisTest, AFocusOffTheScreenLeavesTheMiddle) {
     game_.slamDT(2.0F);
     game_.updateFadeTransition();
     frame();
-    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), kBackground);
+    EXPECT_EQ(screen_.pixel(kMiddleX, kMiddleY), sceneAt(kMiddleY));
 }
 
 // At 16 bits the disc's outside goes black too, where the original left it.
@@ -952,7 +966,7 @@ TEST_F(CGameIrisTest, SixteenBitPixelsAreBlackedToo) {
             static_cast<std::size_t>(kWidth));
     };
     EXPECT_EQ(row(4)[4], 0U);
-    EXPECT_EQ(row(kMiddleY)[kMiddleX], kBackground & 0xffffU);
+    EXPECT_EQ(row(kMiddleY)[kMiddleX], engine::packPixel16(kScene, screen_.getColorMasks()));
 }
 
 } // namespace

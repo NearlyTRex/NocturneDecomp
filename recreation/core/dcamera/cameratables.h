@@ -42,6 +42,16 @@ struct SCameraTables {
     std::vector<std::uint8_t> fog_planes = std::vector<std::uint8_t>(kFogPlaneSize * kMaxFogPlanes);
     // 16 for a fog that drifts, 1 for one that doesn't.
     int fog_plane_count = 0;
+    // The drifting fog's plane, and how far it is toward the next, 0x10000 being all the way.
+    int fog_drift_plane = 0;
+    int fog_drift_fraction = 0;
+    // The fog over the display, between the drifting fog's two planes, row by row 320 wide.
+    std::vector<std::uint8_t> fog_mix = std::vector<std::uint8_t>(kFogPlaneSize);
+    // The coronas' light over the display, from the effect's level up, and its blur, which lights
+    // the backdrop; the blur has a row to spare, which a row's last pixel pair reads into.
+    std::vector<std::uint8_t> corona_light = std::vector<std::uint8_t>(kFogPlaneSize);
+    std::vector<std::uint8_t> blurred_light =
+        std::vector<std::uint8_t>(kFogPlaneSize + kFogPlaneWidth);
     // The texture the backdrop's image is copied into for the hardware renderer.
     platform::SMRGLTextureBasic backdrop_texture{.texture_name = "BACKGND.RAW"};
     // Each light-map level after gamma, the level repeated in all four bytes.

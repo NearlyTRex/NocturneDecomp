@@ -7,6 +7,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
+#include "core/dstrender/dstrender.h"
 #include "core/rect.h"
 #include "engine/matrix/matrix.h"
 #include "tests/mocks/core/notportedcalls.h"
@@ -96,8 +97,8 @@ TEST(CDemonCamera, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCamera::computeLightExtentBounds),
                                  CRect *(CDemonCamera::*)(CDemonLight *, CRect *)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::processCorona), void (CDemonCamera::*)()>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCamera::lockAndRenderToBuffer), void (CDemonCamera::*)()>);
+    static_assert(std::is_same_v<decltype(&CDemonCamera::lockAndRenderToBuffer),
+                                 void (CDemonCamera::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::renderGlobeCoronas),
                                  void (CDemonCamera::*)(CDemonGlobe *, int)>);
     static_assert(std::is_same_v<decltype(&CDemonCamera::isBoundingBoxVisible),
@@ -123,6 +124,8 @@ TEST(CDemonCamera, PublicInterface) {
         std::is_same_v<decltype(&CDemonCamera::restoreZBufferScanlines), void (CDemonCamera::*)()>);
 }
 
+using ::testing::_;
+using ::testing::Each;
 using ::testing::Return;
 
 // The level each palette entry repeats in all four bytes.
@@ -603,12 +606,246 @@ TEST_F(CDemonCameraTest, AScenesKeptBuffersMakeItsCameraTheMarkedOne) {
     EXPECT_EQ(tables_.scene_camera, &camera_);
 }
 
-// The backdrop's composite isn't ported yet; through Direct3D the renderer's scene begins.
-TEST_F(CDemonCameraTest, LockingTheFrameBeginsTheHardwareRenderersScene) {
-    camera_.lockAndRenderToBuffer();
+// A camera framing screen_height lines over a 32-bit screen of its frame's size, the screen's
+// pixels all kUntouched, with a backdrop of the pattern given, a gamma of one, the coronas'
+// light all 40 and the fog row by row from 3 up.
+class CDemonCameraCompositeTest : public CDemonCameraTest {
+protected:
+    static constexpr std::uint32_t kUntouched = 0x12345678;
+
+    void frame(int screen_height, int bits_per_pixel = 32) {
+        ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(screen_height));
+        camera_.init(screen_height);
+        camera_.initLookupTable();
+        width_ = static_cast<std::size_t>(camera_.getFramebufferWidth());
+        height_ = static_cast<std::size_t>(camera_.getFramebufferHeight());
+        pixels_.assign(width_ * height_, kUntouched);
+        rows_.clear();
+        for (std::size_t row = 0; row < height_; ++row) {
+            rows_.push_back(pixels_.data() + (row * width_));
+        }
+        bits_per_pixel_ = bits_per_pixel;
+        ON_CALL(screen_, getScreenRows()).WillByDefault([this] { return std::span(rows_); });
+        ON_CALL(screen_, getBitsPerPixel()).WillByDefault([this] { return bits_per_pixel_; });
+        ON_CALL(screen_, setBitsPerPixel(_)).WillByDefault([this](int bits) {
+            bits_per_pixel_ = bits;
+        });
+        ON_CALL(screen_, getColorMasks()).WillByDefault(::testing::ReturnRef(masks_));
+        ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(screen_height));
+        camera_.beginScene(1);
+        camera_.beginBackgroundScene();
+        for (std::size_t row = 0; row < height_; ++row) {
+            for (std::size_t column = 0; column < width_; ++column) {
+                static_cast<std::uint32_t *>(rows_[row])[column] =
+                    static_cast<std::uint32_t>((row * 0x10101) ^ (column * 0x30507));
+            }
+        }
+        camera_.endBackgroundScene(0);
+        camera_.endScene(1);
+        std::ranges::fill(tables_.corona_light, 40);
+        for (std::size_t at = 0; at < tables_.fog_mix.size(); ++at) {
+            tables_.fog_mix[at] =
+                static_cast<std::uint8_t>(3 + (at / SCameraTables::kFogPlaneWidth));
+        }
+    }
+
+    [[nodiscard]] SLightmapLook look() const {
+        return {.palette = tables_.lightmap_palette, .fog_color = fogColor()};
+    }
+
+    // The fog's palette levels, as the screen places a 32-bit pixel's channels.
+    [[nodiscard]] std::uint32_t fogColor() const {
+        const auto level = [this](int index) {
+            return tables_.lightmap_palette.at(static_cast<std::size_t>(index)) & 0xffU;
+        };
+        if (bits_per_pixel_ != 32) {
+            return (level(tables_.fog_color_index.r) << 16U) |
+                   (level(tables_.fog_color_index.g) << 8U) | level(tables_.fog_color_index.b);
+        }
+        return (level(tables_.fog_color_index.r)
+                << static_cast<unsigned>(channels_.red.bit_position)) |
+               (level(tables_.fog_color_index.g)
+                << static_cast<unsigned>(channels_.green.bit_position)) |
+               (level(tables_.fog_color_index.b)
+                << static_cast<unsigned>(channels_.blue.bit_position));
+    }
+
+    [[nodiscard]] std::span<const std::uint32_t> backdropRow(std::size_t row) const {
+        return camera_.getFramebuffer().subspan(row * width_, width_);
+    }
+
+    [[nodiscard]] static std::span<const std::uint8_t>
+    displayRow(const std::vector<std::uint8_t> &plane, std::size_t row) {
+        return std::span(plane).subspan(row * SCameraTables::kFogPlaneWidth);
+    }
+
+    [[nodiscard]] std::span<const std::uint32_t> screenRow(std::size_t row) const {
+        return std::span(pixels_).subspan(row * width_, width_);
+    }
+
+    [[nodiscard]] std::span<const std::uint16_t> screenRow16(std::size_t row) const {
+        return {static_cast<const std::uint16_t *>(rows_[row]), width_};
+    }
+
+    engine::SColorMasks masks_{.red_mask32 = 0xf80000,
+                               .green_mask32 = 0xfc00,
+                               .blue_mask32 = 0xf8,
+                               .blue_bit_shift = 3,
+                               .total_dither_shift = 8,
+                               .green_blue_dither_shift = 5};
+    int bits_per_pixel_ = 32;
+    std::size_t width_ = 0;
+    std::size_t height_ = 0;
+    std::vector<std::uint32_t> pixels_;
+    std::vector<void *> rows_;
+};
+
+// At a scale of one each row of the frame but the first and last is blended onto the screen, the
+// even rows with their dither and the odd with theirs, by the coronas' light blurred dark at the
+// display's edges and the fog's row.
+TEST_F(CDemonCameraCompositeTest, TheBackdropIsLitAndFoggedOntoTheScreen) {
+    frame(48);
+    camera_.lockAndRenderToBuffer(0);
+    EXPECT_THAT(screenRow(0), Each(kUntouched));
+    EXPECT_THAT(screenRow(height_ - 1), Each(kUntouched));
+    const std::vector<std::uint8_t> &light = tables_.blurred_light;
+    EXPECT_EQ(light[0], 0);
+    EXPECT_EQ(light[SCameraTables::kFogPlaneWidth + 1], 40);
+    EXPECT_EQ(light[SCameraTables::kFogPlaneWidth + width_ - 1], 0);
+    EXPECT_EQ(light[(SCameraTables::kFogPlaneWidth * (height_ - 1)) + 1], 0);
+    for (std::size_t row = 1; row + 1 < height_; ++row) {
+        std::vector<std::uint32_t> expected(width_);
+        if (row % 2 == 0) {
+            blendLightmapPerPxU32toU32BB12Px2MMX(expected, backdropRow(row), displayRow(light, row),
+                                                 displayRow(tables_.fog_mix, row), look());
+        } else {
+            blendLightmapPerPxU64toU32AmbientPx2MMX(expected, backdropRow(row),
+                                                    displayRow(light, row),
+                                                    displayRow(tables_.fog_mix, row), look());
+        }
+        EXPECT_THAT(screenRow(row), ::testing::ElementsAreArray(expected)) << "row " << row;
+    }
+}
+
+// At a scale of two the frame's rows share the display's pixels: an odd row is also blended with
+// the display row below.
+TEST_F(CDemonCameraCompositeTest, AtAScaleOfTwoTheDisplaysPixelsAreShared) {
+    frame(480);
+    camera_.lockAndRenderToBuffer(0);
+    const std::vector<std::uint8_t> &light = tables_.blurred_light;
+    std::vector<std::uint32_t> even(width_);
+    blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(even, backdropRow(2), displayRow(light, 1),
+                                                  displayRow(tables_.fog_mix, 1), look());
+    EXPECT_THAT(screenRow(2), ::testing::ElementsAreArray(even));
+    std::vector<std::uint32_t> odd(width_);
+    blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(odd, backdropRow(5), displayRow(light, 2),
+                                                      displayRow(light, 3),
+                                                      displayRow(tables_.fog_mix, 2), look());
+    EXPECT_THAT(screenRow(5), ::testing::ElementsAreArray(odd));
+}
+
+// A 16-bit screen takes 16-bit pixels, by its masks, the fog's colour 8-8-8 red highest.
+TEST_F(CDemonCameraCompositeTest, ASixteenBitScreenTakesItsOwnPixels) {
+    frame(48, 16);
+    camera_.lockAndRenderToBuffer(0);
+    const std::vector<std::uint8_t> &light = tables_.blurred_light;
+    std::vector<std::uint16_t> even(width_);
+    blendLightmapPerPxU32toU16pBB12Px2MMX(even, backdropRow(2), displayRow(light, 2),
+                                          displayRow(tables_.fog_mix, 2), look(), masks_);
+    EXPECT_THAT(screenRow16(2), ::testing::ElementsAreArray(even));
+    std::vector<std::uint16_t> odd(width_);
+    blendLightmapPerPxU64toU16pAmbientPx2MMX(odd, backdropRow(3), displayRow(light, 3),
+                                             displayRow(tables_.fog_mix, 3), look(), masks_);
+    EXPECT_THAT(screenRow16(3), ::testing::ElementsAreArray(odd));
+}
+
+TEST_F(CDemonCameraCompositeTest, ASixteenBitScreenAtAScaleOfTwoSharesTheDisplaysPixels) {
+    frame(480, 16);
+    camera_.lockAndRenderToBuffer(0);
+    const std::vector<std::uint8_t> &light = tables_.blurred_light;
+    std::vector<std::uint16_t> even(width_);
+    blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(even, backdropRow(2), displayRow(light, 1),
+                                                  displayRow(tables_.fog_mix, 1), look(), masks_);
+    EXPECT_THAT(screenRow16(2), ::testing::ElementsAreArray(even));
+    std::vector<std::uint16_t> odd(width_);
+    blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(odd, backdropRow(5), displayRow(light, 2),
+                                                   displayRow(light, 3),
+                                                   displayRow(tables_.fog_mix, 2), look(), masks_);
+    EXPECT_THAT(screenRow16(5), ::testing::ElementsAreArray(odd));
+}
+
+// The fog drifts four planes a second, in 65536ths of a plane, past the last plane to the first.
+TEST_F(CDemonCameraCompositeTest, TheFogDriftsOnByTheFramesTime) {
+    frame(48);
+    tables_.fog_drift_plane = 15;
+    tables_.fog_drift_fraction = 0xfff0;
+    camera_.lockAndRenderToBuffer(4);
+    EXPECT_EQ(tables_.fog_drift_fraction, 0x10000);
+    EXPECT_EQ(tables_.fog_drift_plane, 15);
+    camera_.lockAndRenderToBuffer(1);
+    EXPECT_EQ(tables_.fog_drift_fraction, 4);
+    EXPECT_EQ(tables_.fog_drift_plane, 0);
+    camera_.lockAndRenderToBuffer(0x4000);
+    EXPECT_EQ(tables_.fog_drift_plane, 1);
+}
+
+// Through the hardware renderer the frame is locked around the composite, and its scene begun.
+TEST_F(CDemonCameraCompositeTest, TheFrameIsLockedAroundTheComposite) {
+    frame(48);
     startRenderer();
+    const ::testing::InSequence order;
+    EXPECT_CALL(renderer_, lockFrame());
+    EXPECT_CALL(renderer_, unlockFrame());
     EXPECT_CALL(renderer_, beginScene());
-    camera_.lockAndRenderToBuffer();
+    camera_.lockAndRenderToBuffer(0);
+}
+
+// Past 480 lines the renderer's hold buffer takes the composite; without one the game can't go
+// on.
+TEST_F(CDemonCameraCompositeTest, PastFourHundredAndEightyLinesTheHoldBufferIsLocked) {
+    frame(480);
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(600));
+    EXPECT_THAT([this] { camera_.lockAndRenderToBuffer(0); },
+                ::testing::ThrowsMessage<common::CFatalError>(::testing::StrEq(
+                    "Unable to lock hold buffer.   Please set 640x480 as your resolution.")));
+    startRenderer();
+    const ::testing::InSequence order;
+    EXPECT_CALL(renderer_, lockHoldBuffer()).WillOnce(Return(1));
+    EXPECT_CALL(renderer_, unlockHoldBuffer());
+    EXPECT_CALL(renderer_, lockFrame()).Times(0);
+    camera_.lockAndRenderToBuffer(0);
+}
+
+// The coronas start at the effect's level over 1024, and a drifting fog over the display is mixed
+// from its plane and the next as far as it has drifted, a whole plane's drift as the next's.
+TEST_F(CDemonCameraCompositeTest, TheCoronasStartAtTheEffectsLevelAndTheFogIsMixed) {
+    frame(48);
+    camera_.setEffectIntensity(0.5F);
+    tables_.fog_plane_count = 16;
+    const auto plane = [this](std::size_t index) {
+        return std::span(tables_.fog_planes).subspan(index * SCameraTables::kFogPlaneSize);
+    };
+    std::ranges::fill(plane(3).first(SCameraTables::kFogPlaneSize), 10);
+    std::ranges::fill(plane(4).first(SCameraTables::kFogPlaneSize), 200);
+    tables_.fog_drift_plane = 3;
+    tables_.fog_drift_fraction = 0x8000;
+    camera_.processCorona();
+    EXPECT_THAT(tables_.corona_light, Each(31));
+    EXPECT_EQ(tables_.fog_mix[0], 104);
+    EXPECT_EQ(tables_.fog_mix[(SCameraTables::kFogPlaneWidth * (height_ - 1)) + width_ - 1], 104);
+    EXPECT_EQ(tables_.fog_mix[width_], 3);
+    EXPECT_EQ(tables_.fog_mix[SCameraTables::kFogPlaneWidth * height_], 3 + height_);
+    tables_.fog_drift_fraction = 0x10000;
+    camera_.processCorona();
+    EXPECT_EQ(tables_.fog_mix[0], 199);
+}
+
+// A still fog's plane isn't mixed.
+TEST_F(CDemonCameraCompositeTest, AStillFogIsLeftAsItWas) {
+    frame(48);
+    tables_.fog_plane_count = 1;
+    camera_.processCorona();
+    EXPECT_EQ(tables_.fog_mix[0], 3);
 }
 
 } // namespace

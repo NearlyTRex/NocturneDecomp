@@ -5,6 +5,7 @@
 #include "core/dcamera/demoncamera.h"
 #include "core/dcube/cubedrawowners.h"
 #include "core/dtrace/demonraytrace.h"
+#include "core/game/game.h"
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -68,9 +69,10 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // Retail has no panning camera, for which the original drew nothing.
 // deferred: the shown camera's view set up again once a mirror has marked it, with
 //   markMirrorCameraDirty's caller CGlass::shatter and restoreCameraView
-// deferred: while shadows are on or a camera has just been shown, the corona buffer processed,
-//   the spotlights' light maps added to it and the dynamic lights', the globes' and the queued
-//   globes' coronas drawn, in each mirror too, with processCorona, addLightmapToCorona,
+// The coronas start over while shadows are on, which the game's shadowFlag has them by default,
+// or once a camera has just been shown.
+// deferred: the spotlights' light maps added to the coronas and the dynamic lights', the globes'
+//   and the queued globes' coronas drawn, in each mirror too, with addLightmapToCorona,
 //   renderLightCoronas, renderGlobeCoronas, addDynamicLight and addQueuedCoronaGlobe
 // deferred: the pan-and-scan crop told where the script's focus actor is in the shot, the
 //   camera, the letterbox and the player's look (the decomp's widescreen_focus.h), with the
@@ -98,7 +100,11 @@ void CDemonSet::renderScene() {
     CDemonCamera &camera = owners_.camera;
     camera.restoreZBufferRectArray();
     camera.beginScene(1);
-    camera.lockAndRenderToBuffer();
+    if (corona_due_ || owners_.game.shadow_flag != 0) {
+        corona_due_ = false;
+        camera.processCorona();
+    }
+    camera.lockAndRenderToBuffer(owners_.game.getDeltaTimeInt());
     buildDisplayList(kScenePasses);
     renderOpaqueActors();
     camera.setupPerspectiveAndFog(nullptr, nullptr);

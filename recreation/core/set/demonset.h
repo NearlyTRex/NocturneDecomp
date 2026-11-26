@@ -129,7 +129,7 @@ public:
                                    common::CVector3f *position_offset, int vertex_index);
     // Marks the screen box the renderer's first vertex_count vertices reach on the camera whose
     // scene keeps its buffers, for its depths to be put back before the next scene.
-    void pushScreenBoundsToCamera(int vertex_count);
+    void pushScreenBoundsToCamera(int vertex_count) const;
     // Puts each vertex into the renderer's buffer in eye space and on the screen, and turns face
     // capture off when every one is in view, then marks the screen box they reach.
     void rotateVerticies(std::span<const common::CVector3i> input_vertices);
@@ -384,6 +384,8 @@ private:
     std::vector<float> camera_scores_;
     CDemonActor *local_hero_ = nullptr;
     std::vector<CDemonActor *> sorted_render_actors_;
+    // A camera has been shown since the scene last started its coronas over.
+    bool corona_due_ = false;
 };
 
 } // namespace nocturne::core

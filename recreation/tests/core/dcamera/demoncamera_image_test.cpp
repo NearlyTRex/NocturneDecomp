@@ -121,13 +121,16 @@ TEST_F(CDemonCameraImageTest, WithoutAPaletteNothingIsLoaded) {
     EXPECT_EQ(tables_.fog_grid.planes[0][0][0], 0);
 }
 
-// Below 32 bits the colours are 8-8-8, red highest. At 480 lines each pixel is the image's.
+// Below 32 bits the colours are 8-8-8, red highest. At 480 lines each pixel is the image's. The
+// coronas' blurred light starts dark.
 TEST_F(CDemonCameraImageTest, ThePaletteMayBeWithTheArtAndAt480LinesTheImageIsCopied) {
     camera_.init(480);
+    std::ranges::fill(tables_.blurred_light, 7);
     givenFile("art\\cam.ACT", palette({{1, 1, 2, 3}}));
     givenFile("art\\cam.raw", image([](std::size_t, std::size_t) { return 1; }));
     camera_.loadImage("cam.raw");
     EXPECT_THAT(camera_.getFramebuffer(), Each(0x010203U));
+    EXPECT_THAT(tables_.blurred_light, Each(0));
 }
 
 TEST_F(CDemonCameraImageTest, AtFullDepthTheColoursGoWhereTheScreensChannelsAre) {

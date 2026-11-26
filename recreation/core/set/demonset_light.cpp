@@ -114,7 +114,7 @@ void CDemonSet::rotateVerticies(std::span<const CVector3i> input_vertices) {
 // rectangle is empty. A vertex out of view reaches where it projects along an axis it is in view
 // on, and the view's edge on a side it is past.
 // nocedit 0x0056e5d0
-void CDemonSet::pushScreenBoundsToCamera(int vertex_count) {
+void CDemonSet::pushScreenBoundsToCamera(int vertex_count) const {
     CDemonCamera *const camera = owners_.light_owners.camera.tables.kept_camera;
     if (camera == nullptr) {
         return;

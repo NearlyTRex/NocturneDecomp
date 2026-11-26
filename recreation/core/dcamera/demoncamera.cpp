@@ -7,6 +7,7 @@
 #include "core/dcamera/fog.h"
 #include "core/dcamera/foggrid.h"
 #include "core/dcamera/gammacurve.h"
+#include "core/dstrender/dstrender.h"
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
@@ -43,6 +44,17 @@ constexpr int kBackgroundBitsPerPixel = 32;
 constexpr int kRedBitPosition = 16;
 constexpr int kGreenBitPosition = 8;
 constexpr int kBlueBitPosition = 0;
+constexpr int kSixteenBitsPerPixel = 16;
+constexpr int kThirtyTwoBitsPerPixel = 32;
+// The drifting fog moves 4 planes a second, in 65536ths of a plane.
+constexpr int kFogDriftRate = 4;
+constexpr int kWholeFogPlane = 0x10000;
+// The effect's intensity to the coronas' starting light, 0 to 63.
+constexpr int kCoronaLevelDivisor = 0x400;
+
+[[nodiscard]] int getNextFogPlane(int plane) {
+    return plane + 1 < static_cast<int>(SCameraTables::kMaxFogPlanes) ? plane + 1 : 0;
+}
 
 [[nodiscard]] std::uint32_t repeatLevel(int level) {
     const auto byte = static_cast<std::uint32_t>(level) & 0xffU;
@@ -329,7 +341,7 @@ void CDemonCamera::restoreDepths(const CRect &rect) {
     }
     const std::span<std::uint32_t *> depth_rows = owners_.screen.getZBufferRows();
     const auto width = static_cast<std::size_t>(framebuffer_width_);
-    const auto count = static_cast<std::size_t>(rect.x_max - rect.x_min + 1);
+    const std::size_t count = static_cast<std::size_t>(rect.x_max - rect.x_min) + 1;
     for (int row = rect.y_min; row <= rect.y_max; ++row) {
         const std::size_t from =
             (static_cast<std::size_t>(row) * width) + static_cast<std::size_t>(rect.x_min);
@@ -338,13 +350,157 @@ void CDemonCamera::restoreDepths(const CRect &rect) {
     }
 }
 
-// deferred: the backdrop and the corona's light map composited onto the screen, the frame or,
-//   past 480 lines, the renderer's hold buffer locked around it, with
-//   compositeLightmapToFramebuffer and CSpecial's hold buffer
 // nocedit 0x004511c0
-void CDemonCamera::lockAndRenderToBuffer() {
-    if (owners_.special.getUseDirect3D()) {
-        static_cast<void>(owners_.special.beginScene());
+void CDemonCamera::lockAndRenderToBuffer(int frame_time) {
+    engine::CSpecial &special = owners_.special;
+    const bool held = owners_.screen.getWindowHeight() > kMaxFramebufferHeight;
+    if (!held) {
+        static_cast<void>(special.lockFrame());
+    } else if (special.lockHoldBuffer() == 0) {
+        common::displayErrorAndQuit(
+            "Unable to lock hold buffer.   Please set 640x480 as your resolution.");
+    }
+    compositeLightmapToFramebuffer(frame_time);
+    if (held) {
+        static_cast<void>(special.unlockHoldBuffer());
+    } else {
+        static_cast<void>(special.unlockFrame());
+    }
+    if (special.getUseDirect3D()) {
+        static_cast<void>(special.beginScene());
+    }
+}
+
+// Rows 1 to the frame's last but one, as the original drew them.
+// deferred: the fog grid's drift moved on as the fog drifts to its next plane, with
+//   updateFogScrollOffset's reader getFogValueAtPosition
+// deferred: the backdrop moved on the screen as the camera shakes, with initCameraShake
+// deferred: the backdrop's edge pixels blended one at a time, with precomputeNormals' edge list
+// nocedit 0x00453270
+void CDemonCamera::compositeLightmapToFramebuffer(int frame_time) {
+    SCameraTables &tables = owners_.tables;
+    tables.fog_drift_fraction += frame_time * kFogDriftRate;
+    if (tables.fog_drift_fraction > kWholeFogPlane) {
+        tables.fog_drift_fraction -= kWholeFogPlane;
+        tables.fog_drift_plane = getNextFogPlane(tables.fog_drift_plane);
+    }
+    blurCoronaBufferAndClearEdges();
+    const SLightmapLook look{.palette = tables.lightmap_palette, .fog_color = getFogColor()};
+    const bool sixteen = owners_.screen.getBitsPerPixel() == kSixteenBitsPerPixel;
+    const std::span<void *> rows = owners_.screen.getScreenRows();
+    const engine::SColorMasks &masks = owners_.screen.getColorMasks();
+    const auto width = static_cast<std::size_t>(framebuffer_width_);
+    const std::span<const std::uint8_t> light = tables.blurred_light;
+    const std::span<const std::uint8_t> fog = tables.fog_mix;
+    for (int y = 1; y < framebuffer_height_ - 1; ++y) {
+        const std::size_t display_row =
+            static_cast<std::size_t>(y) >> static_cast<unsigned>(tables.downscale_iterations);
+        const std::span<const std::uint8_t> light_row =
+            light.subspan(display_row * SCameraTables::kFogPlaneWidth);
+        const std::span<const std::uint8_t> light_below =
+            light.subspan((display_row + 1) * SCameraTables::kFogPlaneWidth);
+        const std::span<const std::uint8_t> fog_row =
+            fog.subspan(display_row * SCameraTables::kFogPlaneWidth);
+        const std::span<const std::uint32_t> backdrop(
+            framebuffer_.data() + (static_cast<std::size_t>(y) * width), width);
+        void *const row = rows[static_cast<std::size_t>(y)];
+        const bool even = (y % 2) == 0;
+        const bool shared = scale_factor_ != 1;
+        if (sixteen) {
+            const std::span<std::uint16_t> output(static_cast<std::uint16_t *>(row), width);
+            if (shared && even) {
+                blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(output, backdrop, light_row, fog_row,
+                                                              look, masks);
+            } else if (shared) {
+                blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(output, backdrop, light_row,
+                                                               light_below, fog_row, look, masks);
+            } else if (even) {
+                blendLightmapPerPxU32toU16pBB12Px2MMX(output, backdrop, light_row, fog_row, look,
+                                                      masks);
+            } else {
+                blendLightmapPerPxU64toU16pAmbientPx2MMX(output, backdrop, light_row, fog_row, look,
+                                                         masks);
+            }
+            continue;
+        }
+        const std::span<std::uint32_t> output(static_cast<std::uint32_t *>(row), width);
+        if (shared && even) {
+            blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(output, backdrop, light_row, fog_row,
+                                                          look);
+        } else if (shared) {
+            blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(output, backdrop, light_row,
+                                                              light_below, fog_row, look);
+        } else if (even) {
+            blendLightmapPerPxU32toU32BB12Px2MMX(output, backdrop, light_row, fog_row, look);
+        } else {
+            blendLightmapPerPxU64toU32AmbientPx2MMX(output, backdrop, light_row, fog_row, look);
+        }
+    }
+}
+
+// The original's 16-bit fog colour took red, green and blue in that order from the top.
+std::uint32_t CDemonCamera::getFogColor() const {
+    const CColor3i &index = owners_.tables.fog_color_index;
+    const auto level = [this](int at) {
+        return static_cast<std::uint32_t>(paletteLevel(owners_.tables, at));
+    };
+    if (owners_.screen.getBitsPerPixel() != kThirtyTwoBitsPerPixel) {
+        return (level(index.r) << kRedBitPosition) | (level(index.g) << kGreenBitPosition) |
+               level(index.b);
+    }
+    const engine::SColorChannels &channels = owners_.screen.getColorChannels();
+    return (level(index.b) << static_cast<unsigned>(channels.blue.bit_position)) |
+           (level(index.r) << static_cast<unsigned>(channels.red.bit_position)) |
+           (level(index.g) << static_cast<unsigned>(channels.green.bit_position));
+}
+
+// nocedit 0x004509b0
+void CDemonCamera::blurCoronaBufferAndClearEdges() {
+    SCameraTables &tables = owners_.tables;
+    const auto width = static_cast<std::size_t>(display_width_);
+    const auto height = static_cast<std::size_t>(display_height_);
+    const std::span<std::uint8_t> blurred = tables.blurred_light;
+    for (std::size_t row = 1; row + 1 < height; ++row) {
+        verticalBlur3TapMMXStride320(blurred.subspan(row * SCameraTables::kFogPlaneWidth),
+                                     tables.corona_light, row, width);
+    }
+    for (std::size_t row = 0; row < height; ++row) {
+        blurred[row * SCameraTables::kFogPlaneWidth] = 0;
+        blurred[(row * SCameraTables::kFogPlaneWidth) + width - 1] = 0;
+    }
+    for (std::size_t column = 0; column < width; ++column) {
+        blurred[column] = 0;
+        blurred[((height - 1) * SCameraTables::kFogPlaneWidth) + column] = 0;
+    }
+}
+
+// deferred: a still fog's one plane copied into the fog over the display, scaled to it (the
+//   decomp's fog plane scale fix), once a light has drawn its corona over the backdrop, with
+//   renderLightCoronas and saveBackdrop
+// nocedit 0x00451130
+void CDemonCamera::processCorona() {
+    SCameraTables &tables = owners_.tables;
+    std::ranges::fill(tables.corona_light,
+                      static_cast<std::uint8_t>(corona_blend_factor_ / kCoronaLevelDivisor));
+    if (tables.fog_plane_count > 1) {
+        blendFogPlanes(tables.fog_drift_plane, tables.fog_drift_fraction);
+    }
+}
+
+// nocedit 0x00453160
+void CDemonCamera::blendFogPlanes(int plane, int alpha) {
+    SCameraTables &tables = owners_.tables;
+    const std::span<const std::uint8_t> planes = tables.fog_planes;
+    const std::span<const std::uint8_t> first =
+        planes.subspan(static_cast<std::size_t>(plane) * SCameraTables::kFogPlaneSize);
+    const std::span<const std::uint8_t> second = planes.subspan(
+        static_cast<std::size_t>(getNextFogPlane(plane)) * SCameraTables::kFogPlaneSize);
+    const int weight = std::clamp(alpha, 0, kWholeFogPlane - 1);
+    const auto width = static_cast<std::size_t>(display_width_);
+    for (std::size_t row = 0; std::cmp_less(row, display_height_); ++row) {
+        const std::size_t at = row * SCameraTables::kFogPlaneWidth;
+        alphaBlendPixelsMMX(std::span(tables.fog_mix).subspan(at, width), first.subspan(at, width),
+                            second.subspan(at, width), weight);
     }
 }
 
