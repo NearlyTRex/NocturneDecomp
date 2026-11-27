@@ -68,6 +68,11 @@ CInventoryAssets::CInventoryAssets(const SInventoryAssetsOwners &owners) : owner
 }
 
 // The square ends are read as tall as the inventory is, on both sides.
+// deferred: BW1's SPS picture sps100x82 and its 16 frames spsf, spsl, spsm and spss 1 to 4, and
+//   BW1's and BW2's compass_background, halved on a small screen, and compass_arrow.raw, the SPS
+//   state reset, with the SPS meter and the compass
+// deferred: BW3's health, frame and mana bars phb_h, phb_o and phb_m, its SPS picture dcb2 and its
+//   16 frames sps00 to sps15 in place of Nocturne's 14, with BW3's health bar and the SPS meter
 // nocedit 0x004fd220
 void CInventoryAssets::loadAssets() {
     screen_height_ = owners_.screen.getWindowHeight();

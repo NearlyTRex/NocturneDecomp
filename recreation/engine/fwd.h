@@ -98,5 +98,6 @@ struct SRGBColorPalette;
 struct SSoftwareEdge;
 struct SStoryUnlock;
 struct STextureOwners;
+struct SWeaponSpec;
 
 } // namespace nocturne::engine

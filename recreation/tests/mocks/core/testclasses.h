@@ -37,6 +37,11 @@ public:
         return game_parts_.getGame();
     }
 
+    // The game's content, which a test may change before making an actor.
+    [[nodiscard]] engine::SGameContent &getContent() {
+        return game_parts_.getContent();
+    }
+
     // The game's clock, whose time the game's frame time follows.
     [[nodiscard]] engine::MockGameClock &getClock() {
         return clock_;

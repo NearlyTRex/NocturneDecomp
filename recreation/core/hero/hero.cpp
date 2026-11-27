@@ -1,10 +1,13 @@
 #include "core/hero/hero.h"
 
+#include "core/actor/actor.h"
 #include "core/actor/actorarchive.h"
 #include "core/actor/demonactortype.h"
 #include "core/charactr/healthbarmode.h"
+#include "core/game/game.h"
 #include "core/hero/herocontroltype.h"
 #include "core/hero/herotask.h"
+#include "engine/package/gamecontent.h"
 
 #include <format>
 #include <string>
@@ -81,8 +84,12 @@ constinit const CDemonActorType CHero::kType =
 //   the Stranger's rules: only while the selected weapon takes a light, drawing it when switched
 //   on with the weapon away, and off with a click on holstering (the decomp's gun_flashlight.h),
 //   with CNetGame::applySimFrameHistory
+// The inventory starts in the description view where the game's [hud.inventory] says, as BW1's
+// and BW3's constructors set it.
 // nocedit 0x004f2340
-CHero::CHero(CActor &classes) : CCharacter(classes) {
+CHero::CHero(CActor &classes)
+    : CCharacter(classes),
+      inventory_(classes.getGame().getContent().inventory_detail_view.value_or(false)) {
     setHealthBarMode(EHealthBarMode::kWhenHurt);
 }
 

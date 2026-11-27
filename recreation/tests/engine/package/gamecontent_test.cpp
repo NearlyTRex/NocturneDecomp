@@ -53,6 +53,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.flashlight = SFlashlight{.options = false};
     base.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
     base.inventory_panel = SInventoryPanel{.place = {.anchor = EHudAnchor::Top, .x = 1, .y = 2}};
+    base.inventory_detail_view = true;
     base.status_bars = SStatusBars{.place = {.anchor = EHudAnchor::Left, .x = 1, .y = 2}};
     base.message_line = SMessageLine{.place = {.anchor = EHudAnchor::Right, .x = 1, .y = 2}};
     base.credits = SGameCredits{.text = "a.txt",
@@ -82,6 +83,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     EXPECT_EQ(merged.flashlight, base.flashlight);
     EXPECT_EQ(merged.health_bar, base.health_bar);
     EXPECT_EQ(merged.inventory_panel, base.inventory_panel);
+    EXPECT_EQ(merged.inventory_detail_view, base.inventory_detail_view);
     EXPECT_EQ(merged.status_bars, base.status_bars);
     EXPECT_EQ(merged.message_line, base.message_line);
     EXPECT_EQ(merged.credits, base.credits);
@@ -101,11 +103,25 @@ TEST(GameContent, AStoryOrPictureWithAnIdTakenReplacesItWhereItStands) {
                                   .turn_x = std::nullopt,
                                   .turn_y = turn_y,
                                   .turn_z = std::nullopt,
-                                  .distance = distance};
+                                  .distance = distance,
+                                  .spin = std::nullopt};
     };
+    const auto weapon = [](std::string_view id, std::string_view class_name) {
+        return SWeaponSpec{.id = std::string(id),
+                           .class_name = std::string(class_name),
+                           .model = {},
+                           .actor = {},
+                           .name = {},
+                           .description = {},
+                           .counted = {},
+                           .names_rounds = {}};
+    };
+    base.weapons = {weapon("pistol", "CGun"), weapon("melee", "CMelee")};
+    mod.weapons = {weapon("melee", "CAxe"), weapon("colonel_sidearm", "CGun")};
     base.inventory_views = {view("axe1.kfm", 1.0, {}), view("ax.kfm", 2.0, {})};
     mod.inventory_views = {view("ax.kfm", 10.0, {}), view("lamp.kfm", {}, 3.0)};
     const SGameContent merged = merge({&base, &mod}).content;
+    EXPECT_THAT(merged.weapons, ElementsAre(base.weapons[0], mod.weapons[0], mod.weapons[1]));
     EXPECT_THAT(merged.inventory_views, ElementsAre(base.inventory_views[0], mod.inventory_views[0],
                                                     mod.inventory_views[1]));
     EXPECT_THAT(merged.stories,

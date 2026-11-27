@@ -284,6 +284,190 @@ options = true
 options = false
 
 # ==================================================================================================
+# weapons: each weapon the missions place, by its class and model. The language's itemlist.txt
+# names and describes a model it has a row for; the name and description here stand in for one
+# it lacks. A melee weapon's damage, attack and sounds are the mission's, on each of its actors
+# ==================================================================================================
+
+# The guns; the pistols and long guns name the rounds they load
+[[weapons.weapon]]
+id = "pistol"
+class = "CGun"
+model = "gat.kfm"
+name = "Pistol"
+description = "45 caliber.  Stranger's favorite."
+names_rounds = true
+
+# The network game's heroes' own weapons, by their actors' names, whose text comes ahead of the
+# item list's for their models (the decomp's hero_weapon.h)
+[[weapons.weapon]]
+id = "colonel_sidearm"
+class = "CGun"
+actor = "Colonel_sidearm"
+name = "Colonel's Sidearm"
+description = "His service pistol.  It never runs dry."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "scat_pistol"
+class = "CGun"
+actor = "Scat_pistol"
+name = "Scat's Pistol"
+description = "A pistol for when the Baron won't do.  It never runs dry."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "moloch_amulet"
+class = "CShovel"
+model = "amulet.kfm"
+actor = "Moloch_amulet"
+name = "Moloch's Amulet"
+description = "Draw to change between man and demon.  Fire to strike as the demon."
+counted = false
+
+# Gabriella's own, which the item list has no row for (the decomp's hero_weapon.h)
+[[weapons.weapon]]
+id = "gabriella_pistol"
+class = "CGun"
+model = "gabgun.kfm"
+name = "Gabriella's Pistol"
+description = "Her own sidearm.  Takes ordinary pistol rounds."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "shotgun"
+class = "CShotgun"
+model = "shotgun.kfm"
+name = "Shotgun"
+description = "Best at close range."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "crossbow"
+class = "CCrossbow"
+model = "crossbow.kfm"
+name = "Crossbow"
+description = "Weapon of choice for a vampire hunter."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "tommy_gun"
+class = "CTommyGun"
+model = "tommygun.kfm"
+name = "Tommy gun"
+description = "Thompson submachine gun."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "elephant_gun"
+class = "CElephantGun"
+model = "elephantgun.kfm"
+name = "Elephant Gun"
+description = "Large rifle that packs a massive punch."
+names_rounds = true
+
+[[weapons.weapon]]
+id = "flamethrower"
+class = "CFlameThrower"
+model = "flamegun.kfm"
+name = "Flame-thrower"
+description = "Shoots a stream of flaming gasoline."
+
+[[weapons.weapon]]
+id = "cre"
+class = "CLightGun"
+model = "cre.kfm"
+name = "Charged Radiance Emitter"
+description = "Vaporizes vampires and blinds nocturnal creatures."
+
+[[weapons.weapon]]
+id = "dynamite_bundle"
+class = "CDynamite"
+model = "dynamitebundle.kfm"
+name = "Bundle of Dynamite"
+description = "Can be used to blow things up."
+
+[[weapons.weapon]]
+id = "dynamite_stick"
+class = "CDynamite"
+model = "dynamitestick.kfm"
+name = "Stick of Dynamite"
+description = "Just light and throw."
+
+# Scat's summoning of the Baron and the shovel, which fire nothing, show no count, as the decomp's
+# hero_weapon.h has them
+[[weapons.weapon]]
+id = "baron"
+class = "CBaronWeapon"
+counted = false
+
+[[weapons.weapon]]
+id = "shovel"
+class = "CShovel"
+model = "shoveit.kfm"
+name = "Shovel"
+description = "More useful as a weapon than a digging tool."
+counted = false
+
+# The melee weapons, which show no count
+[[weapons.weapon]]
+id = "woodsman_axe"
+class = "CMelee"
+model = "ax.kfm"
+name = "Woodsman's Axe"
+description = "Useful as both weapon and chopping tool."
+counted = false
+
+[[weapons.weapon]]
+id = "axe"
+class = "CMelee"
+model = "axe1.kfm"
+name = "Axe"
+description = "Useful as both weapon and chopping tool."
+counted = false
+
+[[weapons.weapon]]
+id = "holy_relic"
+class = "CMelee"
+model = "holyitem.kfm"
+name = "Holy Relic"
+description = "A bladed relic of holy design."
+counted = false
+
+[[weapons.weapon]]
+id = "wooden_stake"
+class = "CMelee"
+model = "stakelong.kfm"
+name = "Wooden stake"
+description = "Typically used for killing vampires."
+counted = false
+
+[[weapons.weapon]]
+id = "bladed_weapon"
+class = "CMelee"
+model = "tort1.kfm"
+name = "Bladed Weapon"
+description = "A fierce-looking bladed weapon."
+counted = false
+
+# The mansion's polearm, which the item list has no row for; the recreation's own text
+[[weapons.weapon]]
+id = "polearm"
+class = "CMelee"
+model = "polearm1.kfm"
+name = "Polearm"
+description = "A long-hafted blade for stabbing at a distance."
+counted = false
+
+[[weapons.weapon]]
+id = "melee_shovel"
+class = "CMelee"
+model = "shoveit.kfm"
+name = "Shovel"
+description = "More useful as a weapon than a digging tool."
+counted = false
+
+# ==================================================================================================
 # controls: the modes and their default keys, and the bindings page's rows
 # ==================================================================================================
 

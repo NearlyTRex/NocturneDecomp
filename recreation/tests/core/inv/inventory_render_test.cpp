@@ -64,9 +64,11 @@ protected:
                       Fixture::weaponFields("gat.kfm", 20, ammo_type));
     }
 
-    void holdWeapon(const CDemonActorType &type, int ammo_count = 12) {
+    // A weapon of the class, of a model no game lists unless given one.
+    void holdWeapon(const CDemonActorType &type, int ammo_count = 12,
+                    std::string_view model = "tommy.kfm") {
         Fixture::hold(std::make_unique<CTestWeapon>(this->actor_, type), "Weapon",
-                      Fixture::weaponFields("tommy.kfm", ammo_count, 0));
+                      Fixture::weaponFields(model, ammo_count, 0));
     }
 
     void holdHealth(std::string_view name, int uses, float health) {
@@ -154,6 +156,22 @@ TEST_F(CInventoryRender480Test, TheRoundsNameShowsWithTheCountWhileAsked) {
     render();
 }
 
+// A hero's own weapon, by its actor's name, is named and described ahead of the item list's row
+// for its model.
+TEST_F(CInventoryRender480Test, AHerosOwnWeaponComesAheadOfTheItemList) {
+    hold(std::make_unique<CGun>(actor_), "Colonel_sidearm", weaponFields("gat.kfm", 20, 0));
+    load(0);
+    ASSERT_EQ(inventory_.getSelectedWeapon()->getActorName(), "Colonel_sidearm");
+    inventory_.toggleDetailView();
+    inventory_.resetWeaponSwitchTimers(false);
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Colonel's Sidearm"), 448, 400, _, _));
+    EXPECT_CALL(small_text_, drawText(std::string_view("His service pistol.  It never runs dry. "
+                                                       "Bullets are loaded."),
+                                      448, _, _, _));
+    render();
+}
+
 // The description view takes the inventory's full width, 0xd0, and keeps the count alone; a gun's
 // description ends with the rounds it loads.
 TEST_F(CInventoryRender480Test, TheDescriptionViewDescribesTheWeapon) {
@@ -169,17 +187,32 @@ TEST_F(CInventoryRender480Test, TheDescriptionViewDescribesTheWeapon) {
     render();
 }
 
-// A long gun's description names its rounds too; a model the item list lacks asks to be added.
+// A long gun's description names its rounds too. A model the item list lacks takes the game's
+// name and description for it; rounds the list lacks ask to be added.
 TEST_F(CInventoryRender480Test, ALongGunsDescriptionNamesItsRounds) {
+    holdWeapon(kTestTommyType, 12, "tommygun.kfm");
+    load(0);
+    inventory_.toggleDetailView();
+    inventory_.resetWeaponSwitchTimers(false);
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("Tommy gun"), 448, 400, _, _));
+    EXPECT_CALL(small_text_, drawText(std::string_view("Thompson submachine gun. Add to dict: "
+                                                       "bullet.kfm are loaded."),
+                                      448, _, _, _));
+    render();
+}
+
+// A weapon no game lists shows its count and describes itself alone; with nothing to name it,
+// it asks to be added.
+TEST_F(CInventoryRender480Test, AnUnlistedWeaponShowsItsCountAndNoRounds) {
     holdWeapon(kTestTommyType);
     load(0);
     inventory_.toggleDetailView();
     inventory_.resetWeaponSwitchTimers(false);
     watchText();
-    EXPECT_CALL(small_text_, drawText(std::string_view("Add to dict: tommy.kfm"), 448, 400, _, _));
-    EXPECT_CALL(small_text_, drawText(std::string_view("Add to dict: tommy.kfm Add to dict: "
-                                                       "bullet.kfm are loaded."),
-                                      448, _, _, _));
+    EXPECT_CALL(small_text_, drawText(std::string_view("12"), _, _, _, _));
+    EXPECT_CALL(small_text_, drawText(std::string_view("Add to dict: tommy.kfm"), 448, _, _, _))
+        .Times(2);
     render();
 }
 
@@ -195,10 +228,11 @@ TEST_F(CInventoryRender480Test, ALightGunShowsItsCharge) {
     render();
 }
 
-// A melee weapon, the Baron and the shovel fire nothing, so they show no count or icon.
+// Nocturne's axe and shovel fire nothing, so they show no count or icon.
 TEST_F(CInventoryRender480Test, AWeaponThatFiresNothingShowsNoCount) {
-    for (const CDemonActorType *type : {&kTestMeleeType, &kTestShovelType}) {
-        holdWeapon(*type);
+    for (const auto &[type, model] :
+         {std::pair{&kTestMeleeType, "axe1.kfm"}, std::pair{&kTestShovelType, "shoveit.kfm"}}) {
+        holdWeapon(*type, 12, model);
         load(0);
         inventory_.resetWeaponSwitchTimers(false);
         watchText();
@@ -369,6 +403,24 @@ TEST_F(CInventoryRender480Test, TheGamePlacesTheHealthBar) {
     render();
     EXPECT_NE(pixel(10, 420), kBackground);
     EXPECT_EQ(pixel(620, 30), kBackground);
+}
+
+// The game's [[weapons.weapon]] say which weapons show no count.
+TEST_F(CInventoryRender480Test, TheGamesWeaponsSayWhatShowsNoCount) {
+    game_parts_.getContent().weapons = {{.id = "club",
+                                         .class_name = "CGun",
+                                         .model = {},
+                                         .actor = {},
+                                         .name = {},
+                                         .description = {},
+                                         .counted = false,
+                                         .names_rounds = {}}};
+    holdPistol();
+    load(0);
+    inventory_.resetWeaponSwitchTimers(false);
+    watchText();
+    EXPECT_CALL(small_text_, drawText(std::string_view("20"), _, _, _, _)).Times(0);
+    render();
 }
 
 // The game's [hud.inventory] places the panels: at the top left, 10 and 20 camera pixels in,

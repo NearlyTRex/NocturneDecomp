@@ -4,6 +4,8 @@
 #include "core/inv/inventory.h"
 #include "core/lightgun/lightgun.h"
 #include "core/weapon/weapon.h"
+#include "core/weapon/weaponspecs.h"
+#include "engine/package/gamecontent.h"
 
 #include <algorithm>
 #include <array>
@@ -29,8 +31,9 @@ void countDown(float &timer, float delta_time) {
 
 // Only the local hero's inventory is drawn, so the original's check that this was the local
 // hero's, here and in the other timers' resets, is dropped: another's times are never read.
-// deferred: BW1's, BW2's and BW3's item panel left alone while the goggles are on, a first press
-//   only showing the panel and the next choosing, with the Blair Witch goggles
+// deferred: BW1's and BW3's item panel left alone while the goggles are on, and a first press
+//   only showing the panel and the next choosing; with nothing chosen, the first item taken, BW3
+//   showing its panel only when it wasn't up and BW1 not at all; with the Blair Witch goggles
 // deferred: BW2's selection for each of its players, from the items that player owns, ammunition
 //   included, with BW2's shared inventory
 // nocedit 0x004fec10
@@ -113,12 +116,14 @@ void CInventory::resetInventoryDisplayTimer() {
 // deferred: each light gun not in hand processed for the frame, with CLightGun::process
 // deferred: the message counted down and emptied when its time is up, with CInventory::addItem
 // deferred: BW1's panels and message put away while the goggles, the field notes, a puzzle or the
-//   letterbox are up, its light gun's rounds showing its panel too, and the SPS sounds played by
-//   how near each character is, with the SPS meter, CFieldNotes and CPuzzle
+//   letterbox are up, its light gun's rounds showing its panel too, its light pistols processed
+//   with its light guns, no battery drained or charged, and the SPS sounds played by how near
+//   each character is, with the SPS meter, CFieldNotes, CPuzzle and the Blair Witch light pistol
 // deferred: BW2's held weapon per player, and its battery's drain over 500 seconds and charge
 //   over 15, with BW2's shared inventory and the [features.battery] drain and charge
-// deferred: BW3's panel shown when the hero's own mana or rounds change, and the voodoo sounds
-//   played by how near each enemy is, with BW3's hero ammunition and the SPS meter
+// deferred: BW3's panel shown when the hero's own mana or rounds change, its panels and message
+//   put away as BW1's are, no battery or light guns, and the voodoo sounds played by how near
+//   each enemy is, with BW3's hero ammunition, the SPS meter, CFieldNotes and CPuzzle
 // nocedit 0x004ffad0
 void CInventory::updateInventory(float delta_time) {
     if (const auto *weapon = castToClass<CWeapon>(selected_weapon_)) {
@@ -147,32 +152,6 @@ void CInventory::updateSelectedWeaponAmmoDisplay() {
     ammo_->setAmmoCount(weapon->getAmmoCount());
     ammo_->setAmmoType(weapon->getAmmoType());
     ammo_->setWeaponClass(weapon->getActorClassName());
-}
-
-// deferred: BW1's and BW2's rifle among the long guns and flashlight with the dynamite, and BW1's
-//   light pistol among the beams, with the Blair Witch weapons
-// deferred: BW2's crosses out of the melee weapons and in a category 6 of their own, with the
-//   Blair Witch crosses
-// deferred: BW3's category read from the weapon itself, with BW3's weapons
-// deferred: category 5 taking any weapon, with CInventory::selectWeapon
-// nocedit 0x004ffe70
-bool CInventory::isWeaponInCategory(const CDemonActor &weapon, EWeaponCategory category) {
-    struct SCategoryClasses {
-        EWeaponCategory category;
-        std::array<std::string_view, 4> classes;
-    };
-    constexpr std::array<SCategoryClasses, 5> kCategories{{
-        {.category = EWeaponCategory::kPistol, .classes = {"CGun"}},
-        {.category = EWeaponCategory::kLongGun,
-         .classes = {"CShotgun", "CCrossbow", "CTommyGun", "CElephantGun"}},
-        {.category = EWeaponCategory::kBeam, .classes = {"CFlameThrower", "CLightGun"}},
-        {.category = EWeaponCategory::kMelee, .classes = {"CMelee"}},
-        {.category = EWeaponCategory::kDynamite, .classes = {"CDynamite"}},
-    }};
-    const auto *found = std::ranges::find(kCategories, category, &SCategoryClasses::category);
-    return std::ranges::any_of(found->classes, [&weapon](std::string_view class_name) {
-        return !class_name.empty() && isOfClass(&weapon, class_name);
-    });
 }
 
 } // namespace nocturne::core

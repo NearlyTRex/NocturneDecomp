@@ -125,6 +125,17 @@ TEST(CHero, AHeroIsSteeredByTheGameToKillUntilToldOtherwise) {
     EXPECT_EQ(hero.getPushedObject(), nullptr);
 }
 
+// The game's [hud.inventory] says whether a hero's panels start in the description view, as
+// BW1's and BW3's do; Nocturne's don't.
+TEST(CHero, AHerosPanelsStartInTheViewTheGameSays) {
+    CTestClasses classes;
+    CTestHero nocturnes(classes.get());
+    EXPECT_FALSE(nocturnes.getInventory().isDetailView());
+    classes.getContent().inventory_detail_view = true;
+    CTestHero blair_witchs(classes.get());
+    EXPECT_TRUE(blair_witchs.getInventory().isDetailView());
+}
+
 // A hero Gabriel, whose actor fields name the actors Box and Hook, read with CCharacter's
 // fields as version 1, only its hit points.
 class CHeroArchiveTest : public ::testing::Test {

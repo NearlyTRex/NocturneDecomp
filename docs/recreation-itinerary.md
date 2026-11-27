@@ -29,11 +29,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 35 | 6 | 83.3% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 187 | 67 | 32.2% | 268 | 49 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 187 | 66 | 32.2% | 268 | 49 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 20 | 6 | 76.9% | 14 | 8 |
-| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 17 | 1 | 62.9% | 7 | 1 |
+| 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 2 | 59.2% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 51 | 19 | 26.9% | 69 | 12 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 50 | 20 | 26.4% | 69 | 14 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -41,17 +41,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 20 | Not reached from startup: `support/` | 2 | 24 | 593 | 3 | 1 | 12.5% | 2 | 0 |
 | 21 | Not reached from startup: `cockpit/` | 4 | 178 | 11527 | 0 | 0 | 0.0% | 24 | 0 |
 | 22 | Not reached from startup: `shape/` | 2 | 42 | 3178 | 4 | 2 | 9.5% | 14 | 1 |
-| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 295 | 16062 | 70 | 13 | 23.7% | 161 | 20 |
+| 23 | Not reached from startup: `core/` (part 1 of 9) | 18 | 295 | 16062 | 69 | 14 | 23.3% | 161 | 20 |
 | 24 | Not reached from startup: `core/` (part 2 of 9) | 11 | 277 | 24965 | 37 | 9 | 13.3% | 162 | 17 |
 | 25 | Not reached from startup: `core/` (part 3 of 9) | 24 | 278 | 24134 | 53 | 7 | 19.0% | 116 | 8 |
 | 26 | Not reached from startup: `core/` (part 4 of 9) | 17 | 289 | 19797 | 52 | 8 | 17.9% | 135 | 10 |
-| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 66 | 10 | 25.2% | 146 | 19 |
+| 27 | Not reached from startup: `core/` (part 5 of 9) | 21 | 261 | 17995 | 64 | 12 | 24.5% | 146 | 19 |
 | 28 | Not reached from startup: `core/` (part 6 of 9) | 17 | 297 | 21844 | 46 | 11 | 15.4% | 132 | 18 |
 | 29 | Not reached from startup: `core/` (part 7 of 9) | 20 | 296 | 26063 | 79 | 12 | 26.6% | 161 | 45 |
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1338** | **236** | **29.8%** | **2032** | **382** |
+| | **All** | | **4487** | **402625** | **1333** | **240** | **29.7%** | **2032** | **384** |
 
 ## Step 0: Math value types
 
@@ -1842,7 +1842,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `getKeyDisplayName` 0x005134e0 (161)
     - BW: [ ] bw1 0x0050d220 = bw3 0x004eaa60 (logic-change)
 
-### `core/inv.cpp` (15 functions, 2404 instructions, 1 done, 7 partial)
+### `core/inv.cpp` (15 functions, 2404 instructions, 1 done, 6 partial)
 - class `CInventory`
   - [ ] `findItemByName` 0x004fe9d0 (35)
     - BW: [ ] bw2 0x004db830 (logic-change)
@@ -1853,22 +1853,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004f8d00 (logic-change); [ ] bw2 0x004db8e0 (logic-change); [ ] bw3 0x004dbaa0 (operand-change)
   - [ ] `removeMatchingKeys` 0x005014a0 (43)
   - [~] `clear` 0x004fd0e0 (46)
-    - deferred: BW1's SPS and compass flags and its second ammunition cache cleared, with the SPS meter and the compass
-    - deferred: BW2's selections cleared for each of its four players, with BW2's shared inventory
+    - deferred: BW1's SPS and compass flags and its cached goggles and light gun cleared, with the SPS meter, the compass and the goggles
+    - deferred: BW2's selections cleared for each of its five players, and its SPS and compass flags, with BW2's shared inventory and the compass
     - deferred: BW3's SPS flag cleared, with the SPS meter
     - BW: [ ] bw1 0x004f6fa0 (logic-change); [ ] bw2 0x004da860 (logic-change); [ ] bw3 0x004da440 (logic-change)
   - [~] `initialize` 0x004fd190 (41)
-    - deferred: BW3's caches of the hero's own two kinds of rounds cleared, with BW3's hero ammunition
+    - deferred: BW3's caches of the hero's own two kinds of rounds cleared, and its angles from a float pi, with BW3's hero ammunition
     - BW: [ ] bw3 0x004da4e0 (logic-change)
   - [~] `updateSelectedWeaponAmmoDisplay` 0x004ffe10 (28)
     - deferred: BW2's held weapon per player, with BW2's shared inventory
     - deferred: BW3's counter keeping the rounds it named, its count and kind alone changed, with BW3's hero ammunition
     - BW: [ ] bw2 0x004dd020 (logic-change); [ ] bw3 0x004dd2d0 (logic-change)
-  - [~] `isWeaponInCategory` 0x004ffe70 (114)
-    - deferred: BW1's and BW2's rifle among the long guns and flashlight with the dynamite, and BW1's light pistol among the beams, with the Blair Witch weapons
-    - deferred: BW2's crosses out of the melee weapons and in a category 6 of their own, with the Blair Witch crosses
-    - deferred: BW3's category read from the weapon itself, with BW3's weapons
-    - deferred: category 5 taking any weapon, with CInventory::selectWeapon
+  - [ ] `isWeaponInCategory` 0x004ffe70 (114)
     - BW: [ ] bw1 0x004fa540 (logic-change); [ ] bw2 0x004dd0a0 (logic-change); [ ] bw3 0x004dd310 (logic-change)
   - [x] `resetWeaponSwitchTimers` 0x004fffa0 (16)
   - [ ] `selectWeapon` 0x004feb10 (99)
@@ -1879,9 +1875,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [~] `getItemModel` 0x004fcda0 (107)
     - deferred: classifying CKeyActor, CGasMask, CFilmReel, CTrap and CBattery by their models, with each class's model
     - deferred: BW1's CGoggles classified after the gas mask, with the Blair Witch goggles
-    - BW: [ ] bw1 0x004f60c0 (logic-change); [x] bw2 0x004d9db0 (const-change); [ ] bw3 0x004d9d20 (logic-change)
+    - BW: [ ] bw1 0x004f60c0 (logic-change); [x] bw2 0x004d9db0 (const-change); [x] bw3 0x004d9d20 (logic-change)
   - [~] `getItemDisplayName` 0x004fcf00 (43)
-    - deferred: a hero's own item read by its actor or model name ahead of the list, Moloch's amulet, the Colonel's sidearm, Scat's pistol and Gabriella's pistol (the decomp's hero_weapon.h, HERO_WEAPON), with the network game's heroes' weapons
+    - deferred: the heroes given those weapons, with the network game's heroes' weapons
   - [~] `getItemDescription` 0x004fcf70 (43)
     - deferred: a hero's own item's description ahead of the list (the decomp's hero_weapon.h, HERO_WEAPON), with the network game's heroes' weapons
 
@@ -2816,10 +2812,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CGore`
   - [x] `loadAssets` 0x004ede60 (65)
 
-### `core/inv.cpp` (2 functions, 220 instructions, 2 done, 0 partial)
+### `core/inv.cpp` (2 functions, 220 instructions, 1 done, 1 partial)
 - free functions
   - [x] `loadItem` 0x004fcfe0 (15)
-  - [x] `loadAssets` 0x004fd220 (205)
+  - [~] `loadAssets` 0x004fd220 (205)
+    - deferred: BW1's SPS picture sps100x82 and its 16 frames spsf, spsl, spsm and spss 1 to 4, and BW1's and BW2's compass_background, halved on a small screen, and compass_arrow.raw, the SPS state reset, with the SPS meter and the compass
+    - deferred: BW3's health, frame and mana bars phb_h, phb_o and phb_m, its SPS picture dcb2 and its 16 frames sps00 to sps15 in place of Nocturne's 14, with BW3's health bar and the SPS meter
     - BW: [ ] bw1 0x004f70e0 (logic-change); [ ] bw2 0x004da990 (logic-change); [ ] bw3 0x004da570 (logic-change)
 
 ### `core/dlight.cpp` (1 functions, 20 instructions, 0 done, 1 partial)
@@ -3209,11 +3207,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `qsortByCapturedFaceDepthAscending` 0x0048da20 (19)
   - [x] `qsortByCapturedFaceDepthDescending` 0x0048da50 (19)
 
-### `core/inv.cpp` (9 functions, 1899 instructions, 5 done, 3 partial)
+### `core/inv.cpp` (9 functions, 1899 instructions, 4 done, 4 partial)
 - class `CInventory`
   - [x] `resetItemSwitchTimers` 0x004ffff0 (9)
   - [~] `selectItem` 0x004fec10 (102)
-    - deferred: BW1's, BW2's and BW3's item panel left alone while the goggles are on, a first press only showing the panel and the next choosing, with the Blair Witch goggles
+    - deferred: BW1's and BW3's item panel left alone while the goggles are on, and a first press only showing the panel and the next choosing; with nothing chosen, the first item taken, BW3 showing its panel only when it wasn't up and BW1 not at all; with the Blair Witch goggles
     - deferred: BW2's selection for each of its players, from the items that player owns, ammunition included, with BW2's shared inventory
     - BW: [ ] bw1 0x004f8ec0 (logic-change); [ ] bw2 0x004dbb50 (logic-change); [ ] bw3 0x004dbc40 (logic-change)
   - [ ] `cycleWeaponOfSameClass` 0x004fed10 (93)
@@ -3231,15 +3229,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004fae10 (logic-change); [ ] bw2 0x004dd9b0 (logic-change); [ ] bw3 0x004dda90 (logic-change)
   - [~] `renderItemModel` 0x004fee00 (319)
     - deferred: switching the set to quick lighting for the model and back again, with setRenderingMode
-    - deferred: a key stood up a quarter turn about x and twice as far back, with CKeyActor's model
-    - BW: [ ] bw1 0x004f90d0 (logic-change); [ ] bw2 0x004dbd80 (logic-change); [ ] bw3 0x004dbe70 (logic-change)
-  - [x] `renderSelectedItems` 0x00500370 (234)
+    - deferred: a key stood up a quarter turn about x and twice as far back, and BW3's three quarters, with CKeyActor's model
+    - deferred: BW3's staffs half as far back and shifted down, its Exorcism, SPS and Bind Evil twice as far, its crosses, staffs, Heal, Exorcism and SPS without the panel's spin, and Bind Evil and Exorcism turned, with BW3's weapons
+    - deferred: BW3's journal box turned three quarters about x and a quarter about y and z, from a turn left unset first, with BW3's box items
+    - BW: [x] bw1 0x004f90d0 (logic-change); [x] bw2 0x004dbd80 (logic-change); [ ] bw3 0x004dbe70 (logic-change)
+  - [~] `renderSelectedItems` 0x00500370 (234)
+    - deferred: BW2's weapon and item for the player group in play, with BW2's shared inventory
     - BW: [ ] bw2 0x004dd670 (logic-change)
 - free functions
   - [x] `drawWeaponIconBackground` 0x00500050 (109)
-    - BW: [ ] bw1 0x004fa770 = bw2 0x004dd320 = bw3 0x004dd3f0 (logic-change)
+    - BW: [x] bw1 0x004fa770 = bw2 0x004dd320 = bw3 0x004dd3f0 (logic-change)
   - [x] `drawItemIconBackground` 0x005001e0 (109)
-    - BW: [ ] bw1 0x004fa930 = bw3 0x004dd5b0 (logic-change)
+    - BW: [x] bw1 0x004fa930 = bw3 0x004dd5b0 (logic-change)
 
 ### `core/setdir.cpp` (1 functions, 187 instructions, 0 done, 0 partial)
 - class `CDemonSet`
@@ -4949,7 +4950,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `render` 0x004210b0 (270)
     - BW: [ ] bw1 0x00421670 = bw2 0x0041b700 = bw3 0x0041e9b0 (logic-change)
 
-### `core/boxactor.cpp` (33 functions, 1770 instructions, 13 done, 2 partial)
+### `core/boxactor.cpp` (33 functions, 1770 instructions, 12 done, 3 partial)
 - class `CBoxActor`
   - [~] `ctor` 0x00421700 (49)
     - deferred: the looping sound's handle, with CBoxActor::process
@@ -4965,8 +4966,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x00422600 = bw2 0x0041c690 (logic-change); [ ] bw3 0x0041f9f0 (logic-change)
   - [x] `getBoundingBox` 0x00421fe0 (39)
     - BW: [x] bw1 0x00422700 = bw3 0x0041fb30 (logic-change); [x] bw2 0x0041c790 (logic-change)
-  - [x] `archive` 0x00422060 (171)
-    - BW: [ ] bw1 0x00422760 (logic-change); [ ] bw2 0x0041c7f0 (logic-change); [ ] bw3 0x0041fb90 (logic-change)
+  - [~] `archive` 0x00422060 (171)
+    - deferred: BW3's fade time and fade event, versions 17 and 18, and a box once carried taken into the inventory instead, with BW3's box fading
+    - BW: [x] bw1 0x00422760 (logic-change); [x] bw2 0x0041c7f0 (logic-change); [ ] bw3 0x0041fb90 (logic-change)
   - [x] `getBlockVirtualDirectorFlag` 0x00422330 (3)
   - [ ] `getCollisionType` 0x00422340 (24)
     - BW: [ ] bw2 0x0041caf0 (operand-change)
@@ -6900,13 +6902,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `staticInit` 0x004f9830 (9)
   - [ ] `setVector` 0x004fa900 (8)
 
-### `core/inv.cpp` (13 functions, 1155 instructions, 5 done, 2 partial)
+### `core/inv.cpp` (13 functions, 1155 instructions, 3 done, 4 partial)
 - class `CInventory`
-  - [x] `ctor` 0x004fd020 (18)
+  - [~] `ctor` 0x004fd020 (18)
+    - deferred: BW1's goggles, light gun, compass and SPS fields and BW3's mana cache, compass and SPS fields cleared, with the goggles, BW3's hero ammunition, the compass and the SPS meter
+    - deferred: BW2's player group and each item's group cleared, and five players' selections, with BW2's shared inventory
     - BW: [ ] bw1 0x004f6ed0 (logic-change); [ ] bw2 0x004da760 (logic-change); [ ] bw3 0x004da360 (logic-change)
   - [ ] `save` 0x004ff210 (133)
     - BW: [ ] bw2 0x004dc2c0 (logic-change)
-  - [x] `load` 0x004ff400 (221)
+  - [~] `load` 0x004ff400 (221)
+    - deferred: BW2's held weapon taken for the player group in play, with BW2's shared inventory
     - BW: [x] bw1 0x004f97a0 = bw3 0x004dc750 (logic-change); [ ] bw2 0x004dc4b0 (logic-change)
   - [x] `dtor` 0x004fd0c0 (8)
   - [x] `setupItems` 0x004ff780 (42)
@@ -6918,9 +6923,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the battery drained while the hero's own flashlight or goggles are on, by 100 over 30 seconds and each battery's discharge time, and charged otherwise, by 100 over 120 seconds and each battery's recharge time, held to 0..100 and kept full by the cheat menu's infinite battery (the decomp's hero_light.h, NETPLAY; CHEAT_MENU), with the per-hero flashlight and goggles switches and CBattery's times
     - deferred: each light gun not in hand processed for the frame, with CLightGun::process
     - deferred: the message counted down and emptied when its time is up, with CInventory::addItem
-    - deferred: BW1's panels and message put away while the goggles, the field notes, a puzzle or the letterbox are up, its light gun's rounds showing its panel too, and the SPS sounds played by how near each character is, with the SPS meter, CFieldNotes and CPuzzle
+    - deferred: BW1's panels and message put away while the goggles, the field notes, a puzzle or the letterbox are up, its light gun's rounds showing its panel too, its light pistols processed with its light guns, no battery drained or charged, and the SPS sounds played by how near each character is, with the SPS meter, CFieldNotes, CPuzzle and the Blair Witch light pistol
     - deferred: BW2's held weapon per player, and its battery's drain over 500 seconds and charge over 15, with BW2's shared inventory and the [features.battery] drain and charge
-    - deferred: BW3's panel shown when the hero's own mana or rounds change, and the voodoo sounds played by how near each enemy is, with BW3's hero ammunition and the SPS meter
+    - deferred: BW3's panel shown when the hero's own mana or rounds change, its panels and message put away as BW1's are, no battery or light guns, and the voodoo sounds played by how near each enemy is, with BW3's hero ammunition, the SPS meter, CFieldNotes and CPuzzle
     - BW: [ ] bw1 0x004f9f10 (logic-change); [ ] bw2 0x004dccd0 (logic-change); [ ] bw3 0x004dcdb0 (logic-change)
   - [ ] `createAmmoFromWeapon` 0x004fe900 (70)
     - BW: [ ] bw1 0x004f8b70 (logic-change); [ ] bw2 0x004db760 (logic-change); [ ] bw3 0x004db8d0 (logic-change)
@@ -6931,6 +6936,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [~] `staticInit` 0x004fcc30 (85)
     - deferred: the inventory's 14 bitmaps, with this constructor
+    - deferred: BW1's compass and SPS pictures and its 16 SPS frames, BW2's compass picture and a bitmap nothing loads, and BW3's health, mana and SPS bar pictures and its 16 SPS frames in place of Nocturne's 14, with the compass and the SPS meter
     - BW: [ ] bw1 0x004f5ef0 (logic-change); [ ] bw2 0x004d9c00 (logic-change); [ ] bw3 0x004d9c90 (logic-change)
 
 ### `core/keyactor.cpp` (13 functions, 252 instructions, 1 done, 0 partial)

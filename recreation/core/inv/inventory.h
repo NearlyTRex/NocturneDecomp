@@ -55,9 +55,13 @@ public:
     // How long the panel a switch or a pickup shows stays up, in seconds.
     static constexpr float kDisplaySeconds = 5.0F;
 
+    // The panels start in the description view when detail_view, as BW1's and BW3's do.
     // deferred: the inventory's 14 bitmaps, with this constructor
+    // deferred: BW1's compass and SPS pictures and its 16 SPS frames, BW2's compass picture and a
+    //   bitmap nothing loads, and BW3's health, mana and SPS bar pictures and its 16 SPS frames in
+    //   place of Nocturne's 14, with the compass and the SPS meter
     // nocedit 0x004fcc30
-    CInventory();
+    explicit CInventory(bool detail_view = false);
     ~CInventory();
     CInventory(const CInventory &) = delete;
     CInventory &operator=(const CInventory &) = delete;
@@ -71,6 +75,8 @@ public:
     CDemonActor *findItemByName(char *item_name);
     int hasItemOfClass(char *class_name);
     void removeItem(CDemonActor *item_to_remove, int should_delete_actor);
+    // The weapon keys' groups each game has are in research/29-blair_witch_engine_changes/
+    // weapon-groups.md.
     void selectWeapon(CDemonActor *specific_weapon, int weapon_category, int direction);
     // The next item, by direction, that is neither a weapon nor ammunition, its panel shown; the
     // first such item when none is selected.
@@ -120,22 +126,11 @@ public:
 private:
     static constexpr float kFullBattery = 100.0F;
 
-    // The classes a weapon category takes, the numbers scripts select them by.
-    enum class EWeaponCategory : std::uint8_t {
-        kPistol = 0,
-        kLongGun = 1,
-        kBeam = 2,
-        kMelee = 3,
-        kDynamite = 4,
-    };
-
     void clear();
     // The item's panel shown, the weapon's put away.
     void resetItemSwitchTimers();
     // The counter takes the held weapon's rounds.
     void updateSelectedWeaponAmmoDisplay();
-    [[nodiscard]] static bool isWeaponInCategory(const CDemonActor &weapon,
-                                                 EWeaponCategory category);
 
     // A panel's picture in the camera's space, its bottom-right corner at right and bottom: the
     // model's size and its inset from that corner.
@@ -162,7 +157,8 @@ private:
     void renderItemText(const SInventoryHud &hud, engine::CBitFont &font) const;
     void renderHealthBar(const SInventoryHud &hud) const;
     [[nodiscard]] bool hasSmallPanels(const SInventoryHud &hud) const;
-    // The weapon's name, description and, for a gun, the rounds it loads.
+    // The weapon's name, description and, where the game's weapons say, the rounds it loads, as
+    // the original's pistols and long guns did.
     [[nodiscard]] std::string getWeaponDescription(const SInventoryHud &hud) const;
 
     std::vector<std::unique_ptr<CDemonActor>> items_;

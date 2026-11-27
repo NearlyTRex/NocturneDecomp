@@ -591,6 +591,8 @@ struct SInventoryItemView {
     std::optional<double> turn_y;
     std::optional<double> turn_z;
     std::optional<double> distance;
+    // False leaves the panel's own turn out, so turn_y is the whole of it.
+    std::optional<bool> spin;
 
     bool operator==(const SInventoryItemView &) const = default;
 };
@@ -862,6 +864,27 @@ struct SDifficulty {
     bool operator==(const SDifficulty &) const = default;
 };
 
+// A weapon the game knows: a weapon actor of the class, or one it derives from, and of the model
+// and the actor's name when they are given, matched in either case. Each value an actor takes
+// comes from the most specific weapon that gives it: one naming the actor first, then one naming
+// the model, then the one of the nearest class. A package's weapon of an id replaces an earlier
+// one.
+struct SWeaponSpec {
+    std::string id;
+    std::string class_name;
+    std::string model;
+    std::string actor;
+    // Its name and description where the item list has no row for its model; empty for none.
+    std::string name;
+    std::string description;
+    // Whether its panel shows its count; a weapon none gives it for does.
+    std::optional<bool> counted;
+    // Whether its description names the rounds it loads; a weapon none gives it for doesn't.
+    std::optional<bool> names_rounds;
+
+    bool operator==(const SWeaponSpec &) const = default;
+};
+
 // What the menus play: one sample for an output rate of 30000Hz or less, one for the rest.
 struct SMenuMusic {
     std::string low_rate;
@@ -1035,12 +1058,16 @@ struct SGameContent {
     std::optional<SBattery> battery;
     std::optional<SFlashlight> flashlight;
     std::optional<SDifficulty> difficulty;
+    // [[weapons.weapon]], by id.
+    std::vector<SWeaponSpec> weapons;
     // Each HUD element none of whose table a package gives is where Nocturne's is.
     std::optional<SBatteryGauge> battery_gauge;
     std::optional<SHealthBar> health_bar;
     std::optional<SInventoryPanel> inventory_panel;
     // [[hud.inventory.view]], by model.
     std::vector<SInventoryItemView> inventory_views;
+    // Whether a hero's panels start in the description view; none is Nocturne's, off.
+    std::optional<bool> inventory_detail_view;
     std::optional<SStatusBars> status_bars;
     std::optional<SMessageLine> message_line;
     std::optional<SGameCredits> credits;

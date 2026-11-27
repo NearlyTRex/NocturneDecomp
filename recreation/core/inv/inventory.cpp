@@ -35,8 +35,12 @@ constexpr double kTwo = 2.0;
 
 } // namespace
 
+// deferred: BW1's goggles, light gun, compass and SPS fields and BW3's mana cache, compass and SPS
+//   fields cleared, with the goggles, BW3's hero ammunition, the compass and the SPS meter
+// deferred: BW2's player group and each item's group cleared, and five players' selections, with
+//   BW2's shared inventory
 // nocedit 0x004fd020
-CInventory::CInventory() = default;
+CInventory::CInventory(bool detail_view) : detail_view_(detail_view) {}
 
 // The items go with it, as clear destroyed them.
 // nocedit 0x004fd0c0
@@ -44,9 +48,10 @@ CInventory::~CInventory() = default;
 
 // The original took each item out through removeItem, destroying it unless the mission still held
 // it.
-// deferred: BW1's SPS and compass flags and its second ammunition cache cleared, with the SPS
-//   meter and the compass
-// deferred: BW2's selections cleared for each of its four players, with BW2's shared inventory
+// deferred: BW1's SPS and compass flags and its cached goggles and light gun cleared, with the
+//   SPS meter, the compass and the goggles
+// deferred: BW2's selections cleared for each of its five players, and its SPS and compass flags,
+//   with BW2's shared inventory and the compass
 // deferred: BW3's SPS flag cleared, with the SPS meter
 // nocedit 0x004fd0e0
 void CInventory::clear() {
@@ -57,7 +62,8 @@ void CInventory::clear() {
 }
 
 // Each angle is a draw from the C library's generator, so a hundred are drawn.
-// deferred: BW3's caches of the hero's own two kinds of rounds cleared, with BW3's hero ammunition
+// deferred: BW3's caches of the hero's own two kinds of rounds cleared, and its angles from a
+//   float pi, with BW3's hero ammunition
 // nocedit 0x004fd190
 // bw1 0x004f7050
 // bw2 0x004da900
@@ -78,6 +84,7 @@ void CInventory::initialize(common::CWatcomRandom &crt_random, CActor &classes) 
 // stayed the last one read, and a weapon whatever its stack held; here they are 0 and none. More
 // than its items overran them. It took the carried items off the mission's list after, with
 // loadItems; here each comes off as it is claimed.
+// deferred: BW2's held weapon taken for the player group in play, with BW2's shared inventory
 // nocedit 0x004ff400
 // bw1 0x004f97a0
 // bw3 0x004dc750

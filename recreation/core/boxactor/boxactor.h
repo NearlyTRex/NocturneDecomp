@@ -53,6 +53,8 @@ public:
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
     // To draw it.
     [[nodiscard]] CKeyFramedModelInstance &getModel();
+    // The box's whole turn in the item panels.
+    [[nodiscard]] const common::CVector3f &getPanelOrientation() const;
     // 0 for a box the physics doesn't move.
     [[nodiscard]] float getWeightInPounds() const;
     // The model's animation rate, in frames a second.
@@ -103,6 +105,8 @@ private:
     int allowed_melee_attack_types_ = 0;
     std::string push_sound_;
     bool block_virtual_director_ = false;
+    // BW1's and BW2's turn for the item panels, in radians; Nocturne's files have none.
+    common::CVector3f panel_orientation_;
 };
 
 } // namespace nocturne::core

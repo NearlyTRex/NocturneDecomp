@@ -1,4 +1,5 @@
 #include "common/math/vector3i.h"
+#include "core/boxactor/boxactor.h"
 #include "core/gun/gun.h"
 #include "core/health/healthitem.h"
 #include "core/inv/inv.h"
@@ -253,8 +254,13 @@ TEST_F(CInventoryPanels480Test, TheSetsLightIsPutBack) {
 // A view of its own turns the model edge on, so none of its faces is drawn.
 TEST_F(CInventoryPanels480Test, AModelsViewTurnsIt) {
     game_parts_.getContent().inventory_views = {
-        {.id = "lamp.kfm", .turn_x = 45.0, .turn_y = {}, .turn_z = {}, .distance = {}},
-        {.id = "MED.KFM", .turn_x = 0.0, .turn_y = 90.0, .turn_z = {}, .distance = 8.0}};
+        {.id = "lamp.kfm", .turn_x = 45.0, .turn_y = {}, .turn_z = {}, .distance = {}, .spin = {}},
+        {.id = "MED.KFM",
+         .turn_x = 0.0,
+         .turn_y = 90.0,
+         .turn_z = {},
+         .distance = 8.0,
+         .spin = {}}};
     showMedkit();
     renderPanels();
     EXPECT_EQ(opaqueFaces(), 0U);
@@ -271,11 +277,37 @@ TEST_F(CInventoryPanels480Test, AWeaponPutAwayDrawsOnlyTheItemsPanel) {
     EXPECT_EQ(backgrounds().size(), 1U);
 }
 
+// BW1's and BW2's box turns by its own orientation in the item's panel: a quarter about y turns
+// it edge on.
+TEST_F(CInventoryPanels480Test, ABoxTurnsByItsOwnOrientation) {
+    actor_.setSavedVersion(CBoxActor::kType, 16);
+    hold(std::make_unique<CBoxActor>(actor_), "Crate",
+         "\"med.kfm\"\n0\n0\n0,0,0\n\"\"\n\"\"\n2\n\"(none)\"\n0\n\"(none)\"\n0\n{\nv\n1\ns\n"
+         "0,0,0\n0,0,0\n0,0,0\n0\n0,0,0\n0,0,0\n0\n}\n1\n1\n0\n0\n\"(none)\"\n\"\"\n0\n\"\"\n0\n"
+         "0,0,1.5707964\n");
+    load(-1);
+    inventory_.selectItem(1);
+    precacheHeld();
+    renderPanels();
+    EXPECT_EQ(backgrounds().size(), 1U);
+    EXPECT_EQ(opaqueFaces(), 0U);
+}
+
+// A view without the panel's spin shows the weapon's model face on.
+TEST_F(CInventoryPanels480Test, AViewMayLeaveThePanelsSpinOut) {
+    game_parts_.getContent().inventory_views = {
+        {.id = "gat.kfm", .turn_x = {}, .turn_y = {}, .turn_z = {}, .distance = {}, .spin = false}};
+    showPistol();
+    renderPanels();
+    EXPECT_GT(opaqueFaces(), 0U);
+}
+
 // The weapon's panel turns its model side on, a gun standing twice as far back.
 TEST_F(CInventoryPanels480Test, TheWeaponsPanelIsDrawnToo) {
     showPistol();
     renderPanels();
     EXPECT_EQ(backgrounds().size(), 1U);
+    EXPECT_EQ(opaqueFaces(), 0U);
 }
 
 } // namespace

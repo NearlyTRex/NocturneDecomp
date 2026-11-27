@@ -14,9 +14,9 @@ namespace nocturne::engine {
 // The keys a manifest takes for its game content, beside its own: the game's strings, then a
 // table for each section, the menus, the HUD, the game's features, the controls, the looks, the
 // loading screens and stories, and the text.
-inline constexpr std::array<std::string_view, 10> kGameContentKeys{
-    "title",    "copyright", "copyright_os_font", "menu", "hud", "features",
-    "controls", "looks",     "stories",           "text"};
+inline constexpr std::array<std::string_view, 11> kGameContentKeys{
+    "title",    "copyright", "copyright_os_font", "menu", "hud",    "features",
+    "controls", "looks",     "stories",           "text", "weapons"};
 
 // The game content among the table's keys, the others left alone.
 [[nodiscard]] TomlResult<SGameContent> readGameContent(const toml::table &table);

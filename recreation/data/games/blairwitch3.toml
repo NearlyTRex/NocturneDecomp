@@ -190,9 +190,20 @@ text_shadow = 0
 [hud.health_bar]
 place = { anchor = "top_right", x = 4, y = 4 }
 
-# The weapon and item panels in the scene camera's bottom-right corner
+# The weapon and item panels in the scene camera's bottom-right corner, starting in the
+# description view
 [hud.inventory]
 place = { anchor = "bottom_right", x = 0, y = 0 }
+detail_view = true
+
+# The two axes turned a quarter back about x and z in their panel, as Nocturne's
+[[hud.inventory.view]]
+model = "axe1.kfm"
+turn = { x = -90, z = -90 }
+
+[[hud.inventory.view]]
+model = "ax.kfm"
+turn = { x = -90, z = -90 }
 
 # The other characters' bars stacked up from the bottom left
 [hud.status_bars]
@@ -217,6 +228,133 @@ options = false
 # No puzzle or combat difficulty
 [features.difficulty]
 options = false
+
+# ==================================================================================================
+# weapons: each weapon the missions place or the cheats give, by its class and model. The
+# itemlist.txt names and describes a model it has a row for; the name and description here,
+# Nocturne's for its models, stand in for one it lacks. A melee weapon's damage, attack and sounds
+# are the mission's, on each of its actors
+# ==================================================================================================
+
+[[weapons.weapon]]
+id = "flintlock"
+class = "CFlintlock"
+model = "flintlock.kfm"
+name = "Flintlock"
+description = "Late 1700's colonial flintlock."
+
+[[weapons.weapon]]
+id = "blunderbus"
+class = "CBlunderbus"
+model = "blunderbus.kfm"
+name = "Blunderbus"
+description = "Two handed Shotgun style colonial rifle."
+
+[[weapons.weapon]]
+id = "fire_staff"
+class = "CFirestaff"
+model = "f_staff.kfm"
+name = "Fire Staff"
+description = "Staff that creates a deadly ring of fire."
+
+[[weapons.weapon]]
+id = "lightning_staff"
+class = "CLightStaff"
+model = "l_staff.kfm"
+name = "Lightning Staff"
+description = "Shoots lightning bolts."
+
+[[weapons.weapon]]
+id = "burning_cross"
+class = "CBurncross"
+model = "burncross.kfm"
+name = "Burning Cross"
+description = "Catches enemies on fire."
+
+[[weapons.weapon]]
+id = "holy_cross"
+class = "CHolycross"
+model = "holycross.kfm"
+name = "Holy Cross"
+description = "Melee weapon."
+
+[[weapons.weapon]]
+id = "exorcism"
+class = "CExorcism"
+model = "exo_bible.kfm"
+name = "Exorcism Bible"
+description = "Allows Prye to perform exorcisms on evil."
+
+[[weapons.weapon]]
+id = "storm"
+class = "CStorm"
+model = "rainvial.kfm"
+name = "Rain Vial"
+description = "Magic rain vial that creates violent storms."
+
+[[weapons.weapon]]
+id = "bind_evil"
+class = "CBindEvil"
+model = "bindbox.kfm"
+name = "Bind Evil"
+description = "A box full of magical stones that bind all evil creatures within its range."
+
+[[weapons.weapon]]
+id = "disease"
+class = "CDisease"
+model = "diseasebag.kfm"
+name = "Bag of Disease"
+description = "A bag containing an unknown ailment."
+
+[[weapons.weapon]]
+id = "heal"
+class = "CHeal"
+model = "heal_stick.kfm"
+name = "Heal Stick"
+description = "Restores some health back to Prye at the cost of some mana."
+
+[[weapons.weapon]]
+id = "voodoo_doll"
+class = "CSps"
+model = "voodoo_d.kfm"
+name = "Voodoo Doll"
+description = "Detects the presence of evil creatures."
+
+[[weapons.weapon]]
+id = "shovel"
+class = "CShovel"
+model = "shoveit.kfm"
+name = "Shovel"
+description = "More useful as a weapon than a digging tool."
+
+[[weapons.weapon]]
+id = "melee_weapon"
+class = "CMelee"
+model = "melee.kfm"
+name = "Melee Weapon"
+description = "Two handed melee weapon."
+
+[[weapons.weapon]]
+id = "woodsman_axe"
+class = "CMelee"
+model = "ax.kfm"
+name = "Woodsman's Axe"
+description = "Useful as both weapon and chopping tool."
+
+# Baal's, which no item list names; the recreation's own text
+[[weapons.weapon]]
+id = "bone_staff"
+class = "CMelee"
+model = "bone_staff.kfm"
+name = "Bone Staff"
+description = "Baal's staff of bone."
+
+[[weapons.weapon]]
+id = "melee_shovel"
+class = "CMelee"
+model = "shoveit.kfm"
+name = "Shovel"
+description = "More useful as a weapon than a digging tool."
 
 # ==================================================================================================
 # controls: the modes and their default keys, and the bindings page's rows

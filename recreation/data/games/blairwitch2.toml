@@ -195,6 +195,25 @@ place = { anchor = "top_right", x = 4, y = 4 }
 [hud.inventory]
 place = { anchor = "bottom_right", x = 0, y = 0 }
 
+# The melee weapons turned in their panel as the original did by name; the cross's turn is
+# whole, without the panel's own
+[[hud.inventory.view]]
+model = "axe1.kfm"
+turn = { x = -90, z = -180 }
+
+[[hud.inventory.view]]
+model = "ax2.kfm"
+turn = { x = -45, z = -90 }
+
+[[hud.inventory.view]]
+model = "melee.kfm"
+turn = { x = -45, z = -180 }
+
+[[hud.inventory.view]]
+model = "cross1.kfm"
+turn = { y = 180 }
+spin = false
+
 # The other characters' bars stacked up from the bottom left
 [hud.status_bars]
 place = { anchor = "bottom_left", x = 8, y = 6 }
@@ -219,6 +238,54 @@ options = false
 # No puzzle or combat difficulty
 [features.difficulty]
 options = false
+
+# ==================================================================================================
+# weapons: each weapon a hero holds, by the missions or the cheats, by its class and model. The
+# language's itemlist.txt names and describes a model it has a row for, as it has for all of
+# these. A melee weapon's damage, attack and sounds are the mission's, on each of its actors
+# ==================================================================================================
+
+# The revolver names the rounds it loads
+[[weapons.weapon]]
+id = "revolver"
+class = "CGun"
+model = "revolver.kfm"
+name = "Revolver"
+description = "A Colt revolver"
+names_rounds = true
+
+# The saber, the axe and the crosses, all melee weapons, show no count
+[[weapons.weapon]]
+id = "saber"
+class = "CMelee"
+model = "melee.kfm"
+name = "Saber"
+description = "A Union officer's saber"
+counted = false
+
+[[weapons.weapon]]
+id = "axe"
+class = "CMeleeAxe"
+model = "ax2.kfm"
+name = "Axe"
+description = "A large axe."
+counted = false
+
+[[weapons.weapon]]
+id = "cross"
+class = "CCross"
+model = "cross1.kfm"
+name = "Cross"
+description = "A tarnished silver cross."
+counted = false
+
+[[weapons.weapon]]
+id = "simple_cross"
+class = "CSimpleCross"
+model = "cross1.kfm"
+name = "Cross"
+description = "A tarnished silver cross."
+counted = false
 
 # ==================================================================================================
 # controls: the modes and their default keys, and the bindings page's rows

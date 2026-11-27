@@ -3461,14 +3461,20 @@ std::string formatHudPlaces(const SGameContent &content) {
         text += std::format("\n[hud.death_banner]\ntext = {}\n{}", quoteToml(banner->text),
                             formatHudPlace(banner->place));
     }
-    for (const auto &[key, place] :
-         {std::pair{"battery_gauge", optionalPlace(content.battery_gauge)},
-          std::pair{"health_bar", optionalPlace(content.health_bar)},
-          std::pair{"inventory", optionalPlace(content.inventory_panel)},
-          std::pair{"status_bars", optionalPlace(content.status_bars)},
-          std::pair{"message", optionalPlace(content.message_line)}}) {
-        if (place) {
-            text += std::format("\n[hud.{}]\n{}", key, formatHudPlace(*place));
+    // The inventory's table also holds whether its panels start in the description view.
+    std::string inventory_extra;
+    if (const std::optional<bool> &detail_view = content.inventory_detail_view) {
+        inventory_extra = std::format("detail_view = {}\n", *detail_view);
+    }
+    for (const auto &[key, place, extra] :
+         {std::tuple{"battery_gauge", optionalPlace(content.battery_gauge), std::string()},
+          std::tuple{"health_bar", optionalPlace(content.health_bar), std::string()},
+          std::tuple{"inventory", optionalPlace(content.inventory_panel), inventory_extra},
+          std::tuple{"status_bars", optionalPlace(content.status_bars), std::string()},
+          std::tuple{"message", optionalPlace(content.message_line), std::string()}}) {
+        if (place || !extra.empty()) {
+            text +=
+                std::format("\n[hud.{}]\n{}{}", key, place ? formatHudPlace(*place) : "", extra);
         }
     }
     for (const SInventoryItemView &view : content.inventory_views) {
@@ -3485,6 +3491,29 @@ std::string formatHudPlaces(const SGameContent &content) {
         }
         if (const std::optional<double> &distance = view.distance) {
             text += std::format("distance = {}\n", *distance);
+        }
+        if (const std::optional<bool> &spin = view.spin) {
+            text += std::format("spin = {}\n", *spin);
+        }
+    }
+    return text;
+}
+
+// A [[weapons.weapon]], its empty texts and unset flags left out.
+std::string formatWeapon(const SWeaponSpec &weapon) {
+    std::string text = std::format("\n[[weapons.weapon]]\nid = {}\nclass = {}\n",
+                                   quoteToml(weapon.id), quoteToml(weapon.class_name));
+    for (const auto &[key, value] :
+         {std::pair{"model", weapon.model}, std::pair{"actor", weapon.actor},
+          std::pair{"name", weapon.name}, std::pair{"description", weapon.description}}) {
+        if (!value.empty()) {
+            text += std::format("{} = {}\n", key, quoteToml(value));
+        }
+    }
+    for (const auto &[key, value] :
+         {std::pair{"counted", weapon.counted}, std::pair{"names_rounds", weapon.names_rounds}}) {
+        if (value) {
+            text += std::format("{} = {}\n", key, *value);
         }
     }
     return text;
@@ -3637,7 +3666,8 @@ TomlResult<std::optional<double>> readOptionalReal(const toml::table &table, std
 // A model's view: its file, its turn's angles about x, y and z, and its distance, more than 0.
 TomlResult<SInventoryItemView> readInventoryItemView(const toml::table &table,
                                                      std::string_view where) {
-    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"model", "turn", "distance"});
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(table, where, {"model", "turn", "distance", "spin"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -3673,11 +3703,16 @@ TomlResult<SInventoryItemView> readInventoryItemView(const toml::table &table,
         return std::unexpected(std::format("{}distance: not more than 0", where));
     }
     view.distance = *distance;
+    TomlResult<std::optional<bool>> spin = readBoolean(table, where, "spin");
+    if (!spin) {
+        return std::unexpected(spin.error());
+    }
+    view.spin = *spin;
     return view;
 }
 
-// [hud.inventory]: the panels' place, which a package without one leaves as it was, and each
-// model's view.
+// [hud.inventory]: the panels' place and whether they start in the description view, each of
+// which a package without it leaves as it was, and each model's view.
 TomlResult<void> readInventoryPanels(const toml::table &table, SGameContent &content) {
     constexpr std::string_view kWhere = "inventory: ";
     const TomlResult<const toml::table *> found = readTable(table, "", "inventory");
@@ -3688,8 +3723,17 @@ TomlResult<void> readInventoryPanels(const toml::table &table, SGameContent &con
         return {};
     }
     const toml::table &inventory = **found;
-    if (TomlResult<void> keys = rejectUnknownKeys(inventory, kWhere, {"place", "view"}); !keys) {
+    if (TomlResult<void> keys =
+            rejectUnknownKeys(inventory, kWhere, {"place", "detail_view", "view"});
+        !keys) {
         return std::unexpected(keys.error());
+    }
+    TomlResult<std::optional<bool>> detail_view = readBoolean(inventory, kWhere, "detail_view");
+    if (!detail_view) {
+        return std::unexpected(detail_view.error());
+    }
+    if (detail_view->has_value()) {
+        content.inventory_detail_view = *detail_view;
     }
     if (inventory.contains("place")) {
         TomlResult<SHudPlace> place = readHudPlace(inventory, kWhere, SInventoryPanel{}.place);
@@ -3745,6 +3789,71 @@ TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &con
             return readInto<SDifficulty>(table, "difficulty", readDifficulty, content.difficulty);
         },
     });
+}
+
+// A weapon: its id, its class, the model and actor it is narrowed to, its name and description,
+// and how its panel shows.
+TomlResult<SWeaponSpec> readWeapon(const toml::table &table, std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(
+            table, where,
+            {"id", "class", "model", "actor", "name", "description", "counted", "names_rounds"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    TomlResult<std::string> id = readId(table, where);
+    if (!id) {
+        return std::unexpected(id.error());
+    }
+    TomlResult<std::string> class_name = readRequiredString(table, where, "class");
+    if (!class_name) {
+        return std::unexpected(class_name.error());
+    }
+    SWeaponSpec weapon{.id = std::move(*id),
+                       .class_name = std::move(*class_name),
+                       .model = {},
+                       .actor = {},
+                       .name = {},
+                       .description = {},
+                       .counted = std::nullopt,
+                       .names_rounds = std::nullopt};
+    for (const auto &[key, field] :
+         {std::pair{"model", &weapon.model}, std::pair{"actor", &weapon.actor},
+          std::pair{"name", &weapon.name}, std::pair{"description", &weapon.description}}) {
+        TomlResult<std::optional<std::string>> given = readString(table, where, key);
+        if (!given) {
+            return std::unexpected(given.error());
+        }
+        *field = given->value_or("");
+    }
+    for (const auto &[key, field] :
+         {std::pair{"counted", &weapon.counted}, std::pair{"names_rounds", &weapon.names_rounds}}) {
+        TomlResult<std::optional<bool>> given = readBoolean(table, where, key);
+        if (!given) {
+            return std::unexpected(given.error());
+        }
+        *field = *given;
+    }
+    return weapon;
+}
+
+// [weapons]: the weapons the game knows, each a [[weapons.weapon]].
+TomlResult<void> readWeaponsSection(const toml::table &table, SGameContent &content) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, "", {"weapon"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<std::vector<const toml::table *>> weapons = readTables(table, "", "weapon");
+    if (!weapons) {
+        return std::unexpected(weapons.error());
+    }
+    for (std::size_t i = 0; i < weapons->size(); ++i) {
+        TomlResult<SWeaponSpec> weapon =
+            readWeapon(*(*weapons)[i], std::format("weapon {}: ", i + 1));
+        if (!weapon) {
+            return std::unexpected(weapon.error());
+        }
+        content.weapons.push_back(std::move(*weapon));
+    }
+    return {};
 }
 
 // [looks]: the iris, the fonts, the pick lists and the dialogs.
@@ -3828,7 +3937,7 @@ TomlResult<SGameContent> readGameContent(const toml::table &table) {
     for (const auto &[section, read] :
          {std::pair{"hud", &readHudSection}, std::pair{"features", &readFeaturesSection},
           std::pair{"looks", &readLooksSection}, std::pair{"stories", &readStoriesSection},
-          std::pair{"text", &readTextSection}}) {
+          std::pair{"text", &readTextSection}, std::pair{"weapons", &readWeaponsSection}}) {
         if (TomlResult<void> result = readSection(table, section, content, read); !result) {
             return std::unexpected(result.error());
         }
@@ -3912,6 +4021,9 @@ std::string formatGameContentTables(const SGameContent &content) {
         text += std::format("\n[features.difficulty]\noptions = {}\n", difficulty->options);
     }
     text += formatHudPlaces(content);
+    for (const SWeaponSpec &weapon : content.weapons) {
+        text += formatWeapon(weapon);
+    }
     for (const SLoadingPicture &picture : content.loading) {
         text += formatLoadingPicture(picture);
     }

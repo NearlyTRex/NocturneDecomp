@@ -692,6 +692,63 @@ place = { anchor = 'bottom_left', x = 8, y = 6 }
 [hud.message]
 place = { anchor = 'bottom', x = 0, y = 0 }
 
+[[hud.inventory.view]]
+model = 'axe1.kfm'
+turn = { x = -90, z = -180 }
+
+[[hud.inventory.view]]
+model = 'ax2.kfm'
+turn = { x = -45, z = -90 }
+
+[[hud.inventory.view]]
+model = 'melee.kfm'
+turn = { x = -45, z = -180 }
+
+[[hud.inventory.view]]
+model = 'cross1.kfm'
+turn = { y = 180 }
+spin = false
+
+[[weapons.weapon]]
+id = 'revolver'
+class = 'CGun'
+model = 'revolver.kfm'
+name = 'Revolver'
+description = 'A Colt revolver'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'saber'
+class = 'CMelee'
+model = 'melee.kfm'
+name = 'Saber'
+description = "A Union officer's saber"
+counted = false
+
+[[weapons.weapon]]
+id = 'axe'
+class = 'CMeleeAxe'
+model = 'ax2.kfm'
+name = 'Axe'
+description = 'A large axe.'
+counted = false
+
+[[weapons.weapon]]
+id = 'cross'
+class = 'CCross'
+model = 'cross1.kfm'
+name = 'Cross'
+description = 'A tarnished silver cross.'
+counted = false
+
+[[weapons.weapon]]
+id = 'simple_cross'
+class = 'CSimpleCross'
+model = 'cross1.kfm'
+name = 'Cross'
+description = 'A tarnished silver cross.'
+counted = false
+
 [[stories.loading]]
 id = 'loadscreen'
 fit = 'keep_aspect'

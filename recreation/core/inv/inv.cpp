@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <format>
+#include <optional>
 #include <span>
 #include <string>
 
@@ -60,6 +61,7 @@ std::string getMissingItemText(const CDemonActor &actor) {
 // are never items there, so the wider check stands for every game.
 // nocedit 0x004fcda0
 // bw2 0x004d9db0
+// bw3 0x004d9d20
 const CKeyFramedModelInstance &getItemModel(const CDemonActor &actor) {
     return findItemModel(actor);
 }
@@ -68,17 +70,21 @@ CKeyFramedModelInstance &getItemModel(CDemonActor &actor) {
     return findItemModel(actor);
 }
 
-// deferred: a hero's own item read by its actor or model name ahead of the list, Moloch's amulet,
-//   the Colonel's sidearm, Scat's pistol and Gabriella's pistol (the decomp's hero_weapon.h,
-//   HERO_WEAPON), with the network game's heroes' weapons
+// A weapon the list lacks takes the text the caller gives, as the game's [[weapons.weapon]] give
+// it; a hero's own weapon's text, Moloch's amulet, the Colonel's sidearm and Scat's pistol, comes
+// ahead of the list from the caller (the decomp's hero_weapon.h, HERO_WEAPON).
+// deferred: the heroes given those weapons, with the network game's heroes' weapons
 // nocedit 0x004fcf00
 // bw1 0x004f62e0
 // bw2 0x004d9f10
 // bw3 0x004d9e40
-std::string getItemDisplayName(const CDemonActor &actor,
-                               std::span<const SInventoryItemInfo> items) {
+std::string getItemDisplayName(const CDemonActor &actor, std::span<const SInventoryItemInfo> items,
+                               const std::optional<std::string> &unlisted) {
     const SInventoryItemInfo *info = findItemInfo(actor, items);
-    return info == nullptr ? getMissingItemText(actor) : info->display_name;
+    if (info != nullptr) {
+        return info->display_name;
+    }
+    return unlisted.value_or(getMissingItemText(actor));
 }
 
 // deferred: a hero's own item's description ahead of the list (the decomp's hero_weapon.h,
@@ -87,10 +93,13 @@ std::string getItemDisplayName(const CDemonActor &actor,
 // bw1 0x004f6350
 // bw2 0x004d9f80
 // bw3 0x004d9eb0
-std::string getItemDescription(const CDemonActor &actor,
-                               std::span<const SInventoryItemInfo> items) {
+std::string getItemDescription(const CDemonActor &actor, std::span<const SInventoryItemInfo> items,
+                               const std::optional<std::string> &unlisted) {
     const SInventoryItemInfo *info = findItemInfo(actor, items);
-    return info == nullptr ? getMissingItemText(actor) : info->description;
+    if (info != nullptr) {
+        return info->description;
+    }
+    return unlisted.value_or(getMissingItemText(actor));
 }
 
 } // namespace nocturne::core

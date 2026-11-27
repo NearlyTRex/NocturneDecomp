@@ -92,21 +92,25 @@ own unit, so its default stays where the game put it at every resolution:
 | `message` | 640x480 pixels at the HUD's text scale, a line clear of the letterbox bar on its edge |
 | `chapter_title` | Glyph widths at the HUD's text scale, clear of the letterbox bar on its edge |
 
-A `[hud.inventory]` without a `place` leaves the panels where an earlier package put them, so a
-package can add views alone. Each `[[hud.inventory.view]]` says how one model shows in the
-panels; a later package's view of the same model, in any case, replaces it:
+`[hud.inventory]` also takes `detail_view = true`, for a hero's panels to start in the
+description view, as BW1's and BW3's do; Nocturne's start in the quick view. Each key it leaves
+out keeps what an earlier package gave, so a package can add views alone. Each
+`[[hud.inventory.view]]` says how one model shows in the panels; a later package's view of the
+same model, in any case, replaces it:
 
 ```toml
 [[hud.inventory.view]]
 model = "axe1.kfm"            # the item's model, as itemlist.txt names it
 turn = { x = -90, z = -90 }   # degrees about each axis; y adds to the panel's own spin
 distance = 2                  # the camera's distance in the model's largest half-extents
+spin = false                  # the panel's own spin left out, so turn's y is the whole of it
 ```
 
 Each value left out takes the item's class's own: no turn, and a distance of 4 for a gun, 2 for
-anything else. The weapon's panel turns its model side on, 90° about y; the item's doesn't.
-Nocturne's manifest turns its two axes, `axe1.kfm` and `ax.kfm`, as the original did by their
-names.
+anything else. The weapon's panel turns its model side on, 90° about y; the item's doesn't. A
+box from a BW1 or BW2 file turns by its own `camOrient` in place of the panel's spin. Each
+game's manifest turns its models as the original did by their names: Nocturne's, BW1's and BW3's
+two axes, and BW2's axes, melee weapon and cross.
 
 ### `features`: how the game's own features behave
 
@@ -115,6 +119,36 @@ names.
 | `[features.battery]` | The flashlight's battery: `gauge`, whether it has its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it) |
 | `[features.flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns) |
 | `[features.difficulty]` | The puzzle and combat difficulty: `options`, the gameplay page's lines for them (BW1's alone) |
+
+### `weapons`: the weapons the game knows
+
+Each `[[weapons.weapon]]` is one weapon, by an `id` of its own; a later package's weapon of the
+same id replaces it, so a package can change one weapon or add another of an existing class:
+
+```toml
+[[weapons.weapon]]
+id = "colonel_sidearm"   # any unique id
+class = "CGun"           # the weapon class, or one it derives from
+model = "colt.kfm"       # optional: only a weapon of this model
+actor = "Sidearm"        # optional: only a weapon actor of this name
+counted = false          # optional: its panel shows no count (shown when none says)
+names_rounds = true      # optional: its description names the rounds it loads (not when none says)
+```
+
+An actor is each weapon whose class it is of and whose model and name, where given, it has, in
+either case. Each value it takes comes from the most specific of them that gives it: a weapon
+naming the actor first, then one naming its model, then the one of the nearest class. So a hero's
+own weapon, like the sidearm above, only says what differs from the weapon of its model.
+
+A weapon's `name` and `description` show where the language's `itemlist.txt` has no row for its
+model; a weapon naming its actor is that actor's own, and its text comes ahead of the item
+list's.
+
+Each game's manifest lists the weapons it can hold, by its missions or its cheats: Nocturne's
+pistols and long guns name their rounds and its melee weapons, the Baron's and the shovel show no
+count; BW1's add the rifle, and its flashlight shows no count; BW2's are the revolver, the sword
+and the axe. The original also grouped weapons by the weapon key that cycles them, which comes
+with weapon selection.
 
 ### `controls`
 

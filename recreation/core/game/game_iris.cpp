@@ -134,6 +134,10 @@ EIrisFade CGame::getIrisFade() const {
     return iris_fade_;
 }
 
+const engine::SGameContent &CGame::getContent() const {
+    return owners_.content;
+}
+
 engine::SIris CGame::getIrisContent() const {
     return owners_.content.iris.value_or(engine::SIris{});
 }

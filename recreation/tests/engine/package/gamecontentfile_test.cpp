@@ -62,9 +62,36 @@ SGameContent fullContent() {
     content.inventory_panel =
         SInventoryPanel{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
     content.inventory_views = {
-        {.id = "axe1.kfm", .turn_x = -90.0, .turn_y = {}, .turn_z = -90.5, .distance = {}},
-        {.id = "lamp.kfm", .turn_x = {}, .turn_y = 45.0, .turn_z = {}, .distance = 1.5},
-        {.id = "rock.kfm", .turn_x = {}, .turn_y = {}, .turn_z = {}, .distance = {}}};
+        {.id = "axe1.kfm",
+         .turn_x = -90.0,
+         .turn_y = {},
+         .turn_z = -90.5,
+         .distance = {},
+         .spin = {}},
+        {.id = "lamp.kfm",
+         .turn_x = {},
+         .turn_y = 45.0,
+         .turn_z = {},
+         .distance = 1.5,
+         .spin = false},
+        {.id = "rock.kfm", .turn_x = {}, .turn_y = {}, .turn_z = {}, .distance = {}, .spin = true}};
+    content.inventory_detail_view = true;
+    content.weapons = {{.id = "pistol",
+                        .class_name = "CGun",
+                        .model = {},
+                        .actor = {},
+                        .name = {},
+                        .description = {},
+                        .counted = {},
+                        .names_rounds = true},
+                       {.id = "colonel_sidearm",
+                        .class_name = "CGun",
+                        .model = "colt.kfm",
+                        .actor = "Sidearm",
+                        .name = "The Colonel's Sidearm",
+                        .description = "His own \"45\".",
+                        .counted = false,
+                        .names_rounds = {}}};
     content.status_bars = SStatusBars{.place = {.anchor = EHudAnchor::Right, .x = 3, .y = -4}};
     content.message_line = SMessageLine{.place = {.anchor = EHudAnchor::BottomLeft, .x = 5}};
     content.credits = getShippedGameContent().credits;
@@ -148,10 +175,36 @@ TEST(GameContentFile, AViewsModelIsKeptInLowerCase) {
     const auto content = parseGameContent(
         "[[hud.inventory.view]]\nmodel = 'AXE1.KFM'\nturn = { x = -90, z = -90 }\n");
     ASSERT_TRUE(content.has_value()) << content.error();
-    EXPECT_THAT(
-        content->inventory_views,
-        ::testing::ElementsAre(SInventoryItemView{
-            .id = "axe1.kfm", .turn_x = -90.0, .turn_y = {}, .turn_z = -90.0, .distance = {}}));
+    EXPECT_THAT(content->inventory_views,
+                ::testing::ElementsAre(SInventoryItemView{.id = "axe1.kfm",
+                                                          .turn_x = -90.0,
+                                                          .turn_y = {},
+                                                          .turn_z = -90.0,
+                                                          .distance = {},
+                                                          .spin = {}}));
+}
+
+// An inventory table of the description view alone leaves the panels' place as it was.
+TEST(GameContentFile, AnInventoryTableOfTheViewAloneLeavesThePlace) {
+    const auto content = parseGameContent("[hud.inventory]\ndetail_view = true\n");
+    ASSERT_TRUE(content.has_value()) << content.error();
+    EXPECT_EQ(content->inventory_detail_view, true);
+    EXPECT_EQ(content->inventory_panel, std::nullopt);
+    EXPECT_EQ(formatGameContentTables(*content), "\n[hud.inventory]\ndetail_view = true\n");
+}
+
+// A weapon needs only its id and class.
+TEST(GameContentFile, AWeaponNeedsOnlyItsIdAndClass) {
+    const auto content = parseGameContent("[[weapons.weapon]]\nid = 'rifle'\nclass = 'CRifle'\n");
+    ASSERT_TRUE(content.has_value()) << content.error();
+    EXPECT_THAT(content->weapons, ::testing::ElementsAre(SWeaponSpec{.id = "rifle",
+                                                                     .class_name = "CRifle",
+                                                                     .model = {},
+                                                                     .actor = {},
+                                                                     .name = {},
+                                                                     .description = {},
+                                                                     .counted = {},
+                                                                     .names_rounds = {}}));
 }
 
 TEST(GameContentFile, NoContentWritesNothing) {
@@ -366,6 +419,31 @@ INSTANTIATE_TEST_SUITE_P(
                  "hud: inventory: view 1: distance: not a number"},
         SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\ndistance = 0",
                  "hud: inventory: view 1: distance: not more than 0"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\nspin = 1",
+                 "hud: inventory: view 1: spin: not true or false"},
+        SBadCase{"[hud.inventory]\ndetail_view = 'yes'",
+                 "hud: inventory: detail_view: not true or false"},
+        SBadCase{"weapons = 1", "weapons: not a [weapons] table"},
+        SBadCase{"[weapons]\ngun = 1", "weapons: gun: not a key this file takes"},
+        SBadCase{"[weapons]\nweapon = 1", "weapons: weapon: not a list of [[weapon]] tables"},
+        SBadCase{"[[weapons.weapon]]\nclass = 'CGun'", "weapons: weapon 1: id: missing"},
+        SBadCase{"[[weapons.weapon]]\nid = 'a b'\nclass = 'CGun'",
+                 "weapons: weapon 1: id: only letters, digits, '.', '_' and '-'"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'", "weapons: weapon 1: class: missing"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\nammo = 1",
+                 "weapons: weapon 1: ammo: not a key this file takes"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\nmodel = 1",
+                 "weapons: weapon 1: model: not a string"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\nactor = 1",
+                 "weapons: weapon 1: actor: not a string"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\nname = 1",
+                 "weapons: weapon 1: name: not a string"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\ndescription = 1",
+                 "weapons: weapon 1: description: not a string"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\ncounted = 0",
+                 "weapons: weapon 1: counted: not true or false"},
+        SBadCase{"[[weapons.weapon]]\nid = 'gun'\nclass = 'CGun'\nnames_rounds = 'yes'",
+                 "weapons: weapon 1: names_rounds: not true or false"},
         SBadCase{"[hud.status_bars]\nplace = 1", "hud: status_bars: place: not a [place] table"},
         SBadCase{"[hud.message]\nplace = { y = 1 }", "hud: message: place: anchor: missing"},
         SBadCase{"hud.death_banner = 'Dead'", "hud: death_banner: not a [death_banner] table"},

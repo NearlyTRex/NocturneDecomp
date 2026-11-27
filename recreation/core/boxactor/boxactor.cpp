@@ -40,6 +40,8 @@ constexpr int kUseEventVersion = 12;
 constexpr int kMeleeVersion = 13;
 constexpr int kPushSoundVersion = 14;
 constexpr int kBlockDirectorVersion = 15;
+// BW1's and BW2's, which Nocturne never wrote.
+constexpr int kPanelOrientationVersion = 16;
 // A box still to be set up from its model when the mission starts.
 constexpr int kBoxToSetUp = -1;
 
@@ -74,7 +76,13 @@ std::unique_ptr<CDemonActor> CBoxActor::create(CActor &classes) {
     return std::make_unique<CBoxActor>(classes);
 }
 
+// Nocturne's version 15 is written; BW1's and BW2's 16 is read too, with the box's turn in the item
+// panels.
+// deferred: BW3's fade time and fade event, versions 17 and 18, and a box once carried taken into
+//   the inventory instead, with BW3's box fading
 // nocedit 0x00422060
+// bw1 0x00422760
+// bw2 0x0041c7f0
 void CBoxActor::archive(CActorArchive &actor_archive) {
     CDemonActor::archive(actor_archive);
     actor_archive.archiveKeyframedModelInstance(model_, "modelName");
@@ -139,6 +147,13 @@ void CBoxActor::archive(CActorArchive &actor_archive) {
     if (version >= kBlockDirectorVersion) {
         actor_archive.archiveFlag(block_virtual_director_, "blockVirtualDirectorFlag");
     }
+    if (version >= kPanelOrientationVersion) {
+        actor_archive.archiveOrientation(panel_orientation_, "camOrient");
+    }
+}
+
+const common::CVector3f &CBoxActor::getPanelOrientation() const {
+    return panel_orientation_;
 }
 
 // The frame is still the first here, so only a model with no frames moves it: to -1.

@@ -7,6 +7,7 @@
 #include "core/actor/actor_functions.h"
 #include "core/actor/demonactor.h"
 #include "core/box/boundingbox3d.h"
+#include "core/boxactor/boxactor.h"
 #include "core/dcamera/cameratables.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dmodel/keyframedmodel.h"
@@ -134,6 +135,7 @@ float getHalfExtent(const CBoundingBox3D &bounds) {
 // onto the box [hud.inventory] places the panels' text in, as the decomp's HUD draws them, or,
 // without the hardware renderer's overlay, the panels are drawn at the box's own pixels. The
 // original drew only the local hero's.
+// deferred: BW2's weapon and item for the player group in play, with BW2's shared inventory
 // nocedit 0x00500370
 void CInventory::renderSelectedItems(const SInventoryHud &hud,
                                      const SInventoryPanelOwners &owners) {
@@ -204,14 +206,22 @@ void CInventory::renderPanel(const SInventoryHud &hud, const SInventoryPanelOwne
                     bottom - model.size - model.inset, model.size, spin, alpha);
 }
 
+// The Blair Witch games scaled the corners into 640x480 on a taller window, which the overlay's
+// layout does here.
 // nocedit 0x00500050
+// bw1 0x004fa770
+// bw2 0x004dd320
+// bw3 0x004dd3f0
 void CInventory::drawWeaponIconBackground(const SInventoryHud &hud,
                                           const SInventoryPanelOwners &owners, const CRect &rect,
                                           int alpha) {
     drawPanelBackground(hud, owners, rect, alpha, kWeaponBackgroundTexels);
 }
 
+// As the weapon's, BW1's and BW3's scaled into 640x480.
 // nocedit 0x005001e0
+// bw1 0x004fa930
+// bw3 0x004dd5b0
 void CInventory::drawItemIconBackground(const SInventoryHud &hud,
                                         const SInventoryPanelOwners &owners, const CRect &rect,
                                         int alpha) {
@@ -224,8 +234,19 @@ void CInventory::drawItemIconBackground(const SInventoryHud &hud,
 // the original left the panels' light on the set.
 // deferred: switching the set to quick lighting for the model and back again, with
 //   setRenderingMode
-// deferred: a key stood up a quarter turn about x and twice as far back, with CKeyActor's model
+// BW1's and BW2's turn a box by its own orientation and their games' models by name, which their
+// manifests' views give; BW2's cross takes its turn whole, without the panel's. Their viewport
+// was scaled into 640x480 on a wider window, which the overlay's layout does here.
+// deferred: a key stood up a quarter turn about x and twice as far back, and BW3's three quarters,
+//   with CKeyActor's model
+// deferred: BW3's staffs half as far back and shifted down, its Exorcism, SPS and Bind Evil twice
+//   as far, its crosses, staffs, Heal, Exorcism and SPS without the panel's spin, and Bind Evil
+//   and Exorcism turned, with BW3's weapons
+// deferred: BW3's journal box turned three quarters about x and a quarter about y and z, from a
+//   turn left unset first, with BW3's box items
 // nocedit 0x004fee00
+// bw1 0x004f90d0
+// bw2 0x004dbd80
 void CInventory::renderItemModel(const SInventoryHud &hud, const SInventoryPanelOwners &owners,
                                  CDemonActor &item, int x, int y, int size, float spin, int alpha) {
     CDemonSet &set = owners.set;
@@ -258,9 +279,18 @@ void CInventory::renderItemModel(const SInventoryHud &hud, const SInventoryPanel
         return static_cast<float>((view != nullptr ? view->*axis : std::nullopt).value_or(0.0) *
                                   std::numbers::pi / kDegreesPerHalfTurn);
     };
-    const common::CVector3f turned{.x = turn(&engine::SInventoryItemView::turn_x),
-                                   .y = spin + turn(&engine::SInventoryItemView::turn_y),
-                                   .z = turn(&engine::SInventoryItemView::turn_z)};
+    // A box turns by its own orientation, which Nocturne's files leave at none, in place of the
+    // panel's.
+    common::CVector3f base{.x = 0.0F, .y = spin, .z = 0.0F};
+    if (const auto *box = castToClass<CBoxActor>(&item)) {
+        base = box->getPanelOrientation();
+    }
+    if (view != nullptr && !view->spin.value_or(true)) {
+        base.y = 0.0F;
+    }
+    const common::CVector3f turned{.x = base.x + turn(&engine::SInventoryItemView::turn_x),
+                                   .y = base.y + turn(&engine::SInventoryItemView::turn_y),
+                                   .z = base.z + turn(&engine::SInventoryItemView::turn_z)};
     const common::CVector3f centre{.x = (bounds.min.x + bounds.max.x) * -0.5F,
                                    .y = (bounds.min.y + bounds.max.y) * -0.5F,
                                    .z = (bounds.min.z + bounds.max.z) * -0.5F};

@@ -14,6 +14,7 @@
 #include "core/inv/inventorylayout.h"
 #include "core/lightgun/lightgun.h"
 #include "core/weapon/weapon.h"
+#include "core/weapon/weaponspecs.h"
 #include "engine/2d/2d.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/font/bitfont.h"
@@ -55,10 +56,6 @@ struct SPanelSpacing {
 };
 constexpr SPanelSpacing kFullSpacing{.text_pad = 0x10, .wrap_margin = 0x70, .ammo_inset = 0x24};
 constexpr SPanelSpacing kSmallSpacing{.text_pad = 8, .wrap_margin = 0x28, .ammo_inset = 0x12};
-
-// The weapon classes that show no count: melee weapons, and the Baron and the shovel, which fire
-// nothing (the decomp's hero_weapon.h).
-constexpr std::array<std::string_view, 2> kUncountedWeapons{"CBaronWeapon", "CShovel"};
 
 // The ammunition icon a gun shows: a later match wins, and a pistol's silver, lithium and mercury
 // rounds take the lithium, mercury and silver pictures, as in the original.
@@ -188,11 +185,17 @@ bool CInventory::hasSmallPanels(const SInventoryHud &hud) const {
 
 std::string CInventory::getWeaponDescription(const SInventoryHud &hud) const {
     const std::span<const SInventoryItemInfo> items = hud.assets.getItems();
-    const std::string name = getItemDisplayName(*selected_weapon_, items);
-    const std::string description = getItemDescription(*selected_weapon_, items);
-    if (!isWeaponInCategory(*selected_weapon_, EWeaponCategory::kMelee) &&
-        (isWeaponInCategory(*selected_weapon_, EWeaponCategory::kPistol) ||
-         isWeaponInCategory(*selected_weapon_, EWeaponCategory::kLongGun))) {
+    // A hero's own weapon's text comes ahead of the item list's; any other fills its gaps.
+    const std::optional<SWeaponText> given_name = getWeaponName(hud.content, *selected_weapon_);
+    const std::optional<SWeaponText> given_description =
+        getWeaponDescriptionText(hud.content, *selected_weapon_);
+    const std::string name =
+        getActorsOwnText(given_name)
+            .value_or(getItemDisplayName(*selected_weapon_, items, getText(given_name)));
+    const std::string description =
+        getActorsOwnText(given_description)
+            .value_or(getItemDescription(*selected_weapon_, items, getText(given_description)));
+    if (doesWeaponNameRounds(hud.content, *selected_weapon_)) {
         return std::format("{}\n\n{} {}{}", name, description, getItemDisplayName(*ammo_, items),
                            hud.messages.getLocalizedString(" are loaded."));
     }
@@ -200,7 +203,11 @@ std::string CInventory::getWeaponDescription(const SInventoryHud &hud) const {
 }
 
 // The light gun's charge, or a gun's count, by the icon of the rounds it takes, in the panel's
-// corner, and its description over the panel in the description view.
+// corner, and its description over the panel in the description view. The original left the
+// count off melee weapons by their category; the game's [[weapons.weapon]] say which show one,
+// each game's melee weapons, BW2's crosses among them, and, as the decomp's hero_weapon.h did,
+// Nocturne's Baron's and shovel, which fire nothing, leaving it off. A weapon the item list has
+// no row for takes the game's name and description for it.
 void CInventory::renderWeaponText(const SInventoryHud &hud, engine::CBitFont &font) const {
     const SPanelText panel = getPanelText(hud, hasSmallPanels(hud), detail_view_);
     const common::SViewport &box = panel.box;
@@ -209,10 +216,7 @@ void CInventory::renderWeaponText(const SInventoryHud &hud, engine::CBitFont &fo
         const auto percent =
             static_cast<int>(std::lround(static_cast<double>(light_gun->getChargeRatio()) * 100.0));
         drawInCorner(font, std::format("{}%", percent), box, panel.pad, panel.text_scale);
-    } else if (!isWeaponInCategory(*weapon, EWeaponCategory::kMelee) &&
-               std::ranges::none_of(kUncountedWeapons, [weapon](std::string_view class_name) {
-                   return isOfClass(weapon, class_name);
-               })) {
+    } else if (isWeaponCounted(hud.content, *weapon)) {
         if (const std::optional<EInventoryBitmap> icon = getAmmoIcon(*weapon)) {
             engine::CAlphaBitmap &picture = hud.assets.getBitmap(*icon);
             const int ui_scale = engine::getUiScale(hud.screen.getWindowHeight());

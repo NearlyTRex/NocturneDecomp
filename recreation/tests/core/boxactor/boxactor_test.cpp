@@ -172,6 +172,16 @@ TEST_F(CBoxActorArchiveTest, ABoxActorIsReadWithItsBox) {
     EXPECT_EQ(box_.getAllowedMeleeAttackTypes(), 6);
     EXPECT_EQ(box_.getPushSound(), "scrape.wav");
     EXPECT_EQ(box_.getBlockVirtualDirectorFlag(), 1);
+    EXPECT_TRUE(box_.getPanelOrientation().equals({}));
+}
+
+// BW1's and BW2's version 16 ends with the box's turn in the item panels, x, z and y.
+TEST_F(CBoxActorArchiveTest, ABlairWitchBoxHasItsTurnInThePanels) {
+    read(16, "\t\"CRE.KFM\"\n\t50\n\t10\n\t1,2,3\n\t\"\"\n\t\"\"\n\t4\n\t\"(none)\"\n\t0\n"
+             "\t\"(none)\"\n\t5\n\t{\n\t\tboxVersion\n\t\t1\n\t\tboxStateInfo\n\t\t1,2,3\n"
+             "\t\t0,0,0\n\t\t4,5,6\n\t\t7\n\t\t0,0,0\n\t\t0,0,0\n\t\t1\n\t}\n\t0\n\t0\n\t1\n"
+             "\t1\n\t\"(none)\"\n\t\"\"\n\t6\n\t\"\"\n\t1\n\t0.5,1.5,2.5    // camOrient\n");
+    EXPECT_TRUE(box_.getPanelOrientation().equals({.x = 0.5F, .y = 2.5F, .z = 1.5F}));
 }
 
 // The fields every version has, up to the colliding sound, then whether it can be carried.

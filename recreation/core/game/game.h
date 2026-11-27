@@ -115,6 +115,8 @@ public:
     void updateDT();
     // updateDT's time, in 16.16 seconds and in seconds.
     [[nodiscard]] int getDeltaTimeInt() const;
+    // The packages' content.
+    [[nodiscard]] const engine::SGameContent &getContent() const;
     [[nodiscard]] float getDeltaTimeFloat() const;
     // A line centred above the bottom of the screen for duration seconds, fading in its last;
     // empty text takes the line down.

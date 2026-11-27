@@ -848,12 +848,156 @@ place = { anchor = 'top_right', x = 4, y = 4 }
 
 [hud.inventory]
 place = { anchor = 'bottom_right', x = 0, y = 0 }
+detail_view = true
 
 [hud.status_bars]
 place = { anchor = 'bottom_left', x = 8, y = 6 }
 
 [hud.message]
 place = { anchor = 'bottom', x = 0, y = 0 }
+
+[[hud.inventory.view]]
+model = 'axe1.kfm'
+turn = { x = -90, z = -90 }
+
+[[hud.inventory.view]]
+model = 'ax.kfm'
+turn = { x = -90, z = -90 }
+
+[[weapons.weapon]]
+id = 'luger'
+class = 'CGun'
+model = 'gat.kfm'
+name = 'Pistol'
+description = 'P08 Luger.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'flashlight_luger'
+class = 'CGun'
+model = 'liteluger.kfm'
+name = 'Pistol'
+description = 'P08 Luger w/ attached flashlight.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'plain_luger'
+class = 'CGun'
+model = 'luger.kfm'
+name = 'Pistol'
+description = 'P08 Luger.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'rifle'
+class = 'CRifle'
+model = 'litedeslile.kfm'
+name = 'Rifle'
+description = 'Delisle Carbine rifle w/ attached flashlight.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'shotgun'
+class = 'CShotgun'
+model = 'shotgun.kfm'
+name = 'Shotgun'
+description = 'Best at close range.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'crossbow'
+class = 'CCrossbow'
+model = 'crossbow.kfm'
+name = 'Crossbow'
+description = 'Weapon of choice for a vampire hunter.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'tommy_gun'
+class = 'CTommyGun'
+model = 'tommygun.kfm'
+name = 'Tommy gun'
+description = 'Thompson submachine gun.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'elephant_gun'
+class = 'CElephantGun'
+model = 'elephantgun.kfm'
+name = 'Elephant Gun'
+description = 'Large rifle that packs a massive punch.'
+names_rounds = true
+
+[[weapons.weapon]]
+id = 'flamethrower'
+class = 'CFlameThrower'
+model = 'flamegun.kfm'
+name = 'Flame-thrower'
+description = 'Shoots a stream of flaming gasoline.'
+
+[[weapons.weapon]]
+id = 'ecre'
+class = 'CLightGun'
+model = 'ecre.kfm'
+name = 'Enhanced Charged Radiance Emitter'
+description = 'Longer battery life, quicker recharge than its predecessor.'
+
+[[weapons.weapon]]
+id = 'ecre_pistol'
+class = 'CLightPis'
+model = 'ecre_pistol.kfm'
+name = 'Enhanced Charged Radiance Emitter Pistol'
+description = 'Less power than the rifle version, but more portable.'
+
+[[weapons.weapon]]
+id = 'dynamite_bundle'
+class = 'CDynamite'
+model = 'dynamitebundle.kfm'
+name = 'Bundle of Dynamite'
+description = 'Can be used to blow things up.'
+
+[[weapons.weapon]]
+id = 'baron'
+class = 'CBaronWeapon'
+counted = false
+
+[[weapons.weapon]]
+id = 'flashlight'
+class = 'CFlashlight'
+model = 'flashlit.kfm'
+name = 'Flashlight'
+counted = false
+
+[[weapons.weapon]]
+id = 'fire_axe'
+class = 'CMelee'
+model = 'axe1.kfm'
+name = 'Firemans Axe'
+counted = false
+
+[[weapons.weapon]]
+id = 'electric_prod'
+class = 'CMelee'
+model = 'prod.kfm'
+name = 'Electric Prod'
+description = 'A mostly non-lethal device for keeping animals at bay.'
+counted = false
+
+[[weapons.weapon]]
+id = 'wooden_stake'
+class = 'CMelee'
+model = 'stakelong.kfm'
+name = 'Wooden stake'
+description = 'Typically used for killing vampires.'
+counted = false
+
+[[weapons.weapon]]
+id = 'melee_shovel'
+class = 'CMelee'
+model = 'shoveit.kfm'
+name = 'Shovel'
+description = 'More useful as a weapon than a digging tool.'
+counted = false
 
 [[stories.loading]]
 id = 'load1'
