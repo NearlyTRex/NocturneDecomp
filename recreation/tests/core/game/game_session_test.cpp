@@ -68,7 +68,7 @@ protected:
 
     void play() {
         EXPECT_THAT([this] { static_cast<void>(game_.runGameSession(session_)); },
-                    ThrowsMessage<common::CFatalError>(StrEq("CGame::process is not ported yet")));
+                    ThrowsMessage<common::CFatalError>(StrEq("CGore::process is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
@@ -214,10 +214,11 @@ TEST_F(CGameSessionTest, TheOverlayIsClearedAsTheSessionStarts) {
     }
 }
 
-// Nocturne's, BW1's and BW3's sessions open on the iris; BW2's puts any iris away.
+// Nocturne's, BW1's and BW3's sessions open on the iris, which the first frame starts opening;
+// BW2's puts any iris away.
 TEST_F(CGameSessionTest, TheSessionOpensOnTheIrisAsTheGameSays) {
     play();
-    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Starting);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Opening);
     game_parts_.getContent().iris = engine::SIris{.opens_session = false, .black_frames = 1};
     play();
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
@@ -246,7 +247,8 @@ TEST_F(CGameSessionTest, TheSceneIsSetUpAtAGammaHeldInRange) {
     game_.time_scale_factor = 2.0F;
     play();
     EXPECT_EQ(game_.gamma, 0x8000);
-    EXPECT_EQ(game_.is_processing, 0);
+    // Cleared, then set again by the first frame's sim frame, which waits on the gore's.
+    EXPECT_EQ(game_.is_processing, 1);
     EXPECT_EQ(game_.time_scale_factor, 1.0F);
     EXPECT_EQ(set_.getIntensityToValueLookupTable()[0x4000], 0x8000);
     EXPECT_EQ(set_.getActiveFog().color_index, set_.getSceneFog().color_index);

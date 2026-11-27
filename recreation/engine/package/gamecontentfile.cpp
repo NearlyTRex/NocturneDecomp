@@ -93,6 +93,8 @@ constexpr int kMaxFrames = 1000;
 constexpr int kMaxTitleSeconds = 600;
 // A few seconds of frames.
 constexpr int kMaxIrisBlackFrames = 300;
+// Far more script steps than a frame's run needs.
+constexpr int kMaxScriptStepsPerFrame = 100000;
 // The colour cube's last entry, 15 bits of red, green and blue.
 constexpr int kMaxCubeColour = 0x7fff;
 // A minute of game-clock ticks, far more than any delay needs.
@@ -1078,6 +1080,23 @@ TomlResult<SDifficulty> readDifficulty(const toml::table &table) {
         return std::unexpected(options.error());
     }
     return SDifficulty{.options = *options};
+}
+
+TomlResult<SScriptRun> readScriptRun(const toml::table &table) {
+    constexpr std::string_view kWhere = "script: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"steps_per_frame"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    SScriptRun run;
+    if (TomlResult<void> read = readIntegers(table, kWhere,
+                                             {{.key = "steps_per_frame",
+                                               .field = &run.steps_per_frame,
+                                               .low = 1,
+                                               .high = kMaxScriptStepsPerFrame}});
+        !read) {
+        return std::unexpected(read.error());
+    }
+    return run;
 }
 
 // A one-character string, as a marker in the text.
@@ -3780,7 +3799,7 @@ TomlResult<void> readHudSection(const toml::table &table, SGameContent &content)
 
 // [features]: how the game's own features behave.
 TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &content) {
-    return readSteps<3>({
+    return readSteps<4>({
         [&] { return readInto<SBattery>(table, "battery", readBattery, content.battery); },
         [&] {
             return readInto<SFlashlight>(table, "flashlight", readFlashlight, content.flashlight);
@@ -3788,6 +3807,7 @@ TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &con
         [&] {
             return readInto<SDifficulty>(table, "difficulty", readDifficulty, content.difficulty);
         },
+        [&] { return readInto<SScriptRun>(table, "script", readScriptRun, content.script); },
     });
 }
 
@@ -4019,6 +4039,9 @@ std::string formatGameContentTables(const SGameContent &content) {
     }
     if (const std::optional<SDifficulty> &difficulty = content.difficulty) {
         text += std::format("\n[features.difficulty]\noptions = {}\n", difficulty->options);
+    }
+    if (const std::optional<SScriptRun> &script = content.script) {
+        text += std::format("\n[features.script]\nsteps_per_frame = {}\n", script->steps_per_frame);
     }
     text += formatHudPlaces(content);
     for (const SWeaponSpec &weapon : content.weapons) {

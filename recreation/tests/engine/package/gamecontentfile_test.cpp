@@ -58,6 +58,7 @@ SGameContent fullContent() {
         SBatteryGauge{.place = {.anchor = EHudAnchor::TopRight, .x = 9, .y = 12}};
     content.flashlight = SFlashlight{.options = false};
     content.difficulty = SDifficulty{.options = true};
+    content.script = SScriptRun{.steps_per_frame = 1551};
     content.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::Left, .x = 639, .y = 479}};
     content.inventory_panel =
         SInventoryPanel{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
@@ -462,6 +463,11 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[features.difficulty]\nlines = 1",
                  "features: difficulty: lines: not a key this file takes"},
         SBadCase{"[features.difficulty]", "features: difficulty: options: missing"},
+        SBadCase{"[features.script]\nsteps = 1",
+                 "features: script: steps: not a key this file takes"},
+        SBadCase{"[features.script]", "features: script: steps_per_frame: missing"},
+        SBadCase{"[features.script]\nsteps_per_frame = 0",
+                 "features: script: steps_per_frame: not from 1 to 100000"},
         SBadCase{"looks.iris = 1", "looks: iris: not a [iris] table"},
         SBadCase{"[looks.iris]\nspeed = 1", "looks: iris: speed: not a key this file takes"},
         SBadCase{"[looks.iris]\nblack_frames = 1", "looks: iris: opens_session: missing"},
@@ -1255,6 +1261,7 @@ TEST(GameContentFile, BlairWitchOnesFrontEndReads) {
     EXPECT_EQ(content->menu->titled_top, 25);
     EXPECT_EQ(content->menu->page_tops.at("graphic"), 50);
     EXPECT_EQ(content->difficulty, SDifficulty{.options = true});
+    EXPECT_EQ(content->script, SScriptRun{.steps_per_frame = 1551});
     EXPECT_FALSE(content->menu->attract.has_value());
     ASSERT_TRUE(content->controls.has_value());
     EXPECT_EQ(content->controls->modes.size(), 3U);

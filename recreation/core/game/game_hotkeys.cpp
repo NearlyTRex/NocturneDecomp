@@ -74,7 +74,7 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 //   asking, not while letterboxed or loading in a network game, with CGame::saveGame and
 //   promptLoadGame
 // deferred: the script debug keys while not paused: running or stopping the script in the script
-//   view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
+//   view, resuming it, and resetting its dialog, with CScript::resetDialogState
 // nocedit 0x004dcee0
 void CGame::processHotkeys(const SGameSessionOwners &session) {
     if (developer_mode && takeAction(EGameAction::EditMode)) {

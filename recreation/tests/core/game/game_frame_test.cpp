@@ -2,6 +2,8 @@
 #include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
+#include "common/random/watcomrandom.h"
+#include "core/actor/actor.h"
 #include "core/box/boundingbox3d.h"
 #include "core/charactr/deathstate.h"
 #include "core/dcamera/cameratables.h"
@@ -10,11 +12,13 @@
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
 #include "core/game/irisfade.h"
+#include "core/game/letterbox.h"
 #include "core/hero/hero.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/location.h"
 #include "core/mission/demonmission.h"
 #include "core/rect.h"
+#include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "core/skeleton/deformablemodelmanager.h"
@@ -120,11 +124,22 @@ protected:
     ::testing::NiceMock<engine::MockRawInput> &game_input_ = game_parts_.getRawInput();
 };
 
-// The rest of the frame waits for the game's processing.
+// The game's frame runs a sim frame seeded from the CRT's next draw and runs the script, then
+// waits for the gore's.
 TEST_F(CGameFrameTest, AnUnpausedFrameProcessesTheGame) {
+    givenFile("world\\m1.scr", "letterbox(true)\nidle\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    common::CWatcomRandom draws = crt_random_;
+    const auto seed = static_cast<std::uint32_t>(draws.rand());
     game_.is_paused = false;
     EXPECT_THAT([this] { game_.processFrame(session_); },
-                ThrowsMessage<common::CFatalError>(StrEq("CGame::process is not ported yet")));
+                ThrowsMessage<common::CFatalError>(StrEq("CGore::process is not ported yet")));
+    EXPECT_EQ(game_.is_processing, 1);
+    // The frame's first sim draw is the one that seed gives.
+    const float drawn = actor_.getRandomFloatFromRange(0.0F, 1.0F);
+    actor_.setRandomSeed(seed);
+    EXPECT_EQ(drawn, actor_.getRandomFloatFromRange(0.0F, 1.0F));
+    EXPECT_EQ(game_.letterbox_mode, ELetterbox::On);
 }
 
 // The frame draws the scene, whose beginning forgets the rectangles marked before it.

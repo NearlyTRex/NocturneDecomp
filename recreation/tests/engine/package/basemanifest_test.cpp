@@ -64,6 +64,7 @@ protected:
                      .battery = {},
                      .flashlight = {},
                      .difficulty = {},
+                     .script = {},
                      .weapons = {},
                      .battery_gauge = {},
                      .health_bar = {},

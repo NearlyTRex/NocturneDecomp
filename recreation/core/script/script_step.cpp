@@ -52,7 +52,7 @@ std::optional<CScript::SSyntaxError> CScript::validateSyntax() {
     initRuntime();
     while (next_cmd_ < parsed_lines_.size()) {
         const std::size_t index = next_cmd_;
-        if (CommandResult result = step(); !result) {
+        if (StepResult result = step(); !result) {
             return SSyntaxError{.line_number = parsed_lines_[index].line_number,
                                 .message = std::move(result.error())};
         }
@@ -80,7 +80,7 @@ void CScript::executeInitSection() {
     next_cmd_ = *start;
     for (int steps = 1;; ++steps) {
         const std::size_t index = next_cmd_;
-        if (CommandResult result = step(); !result) {
+        if (StepResult result = step(); !result) {
             const SScriptLine &line = parsed_lines_[index];
             common::displayErrorAndQuit(
                 std::format("Error processing script.\nLine: {}\nText: {}\nWhat's wrong: {}\n",
@@ -98,8 +98,7 @@ void CScript::executeInitSection() {
 
 // deferred: clearing the wait and dialogue timers and the time a message shows for, with
 //   processTimer and startDialogLine
-// deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and
-//   the loop warning, with process and skipCinematic
+// deferred: clearing the skip label, with skipCinematic
 // The cameras follow the local hero.
 // deferred: following the first hero placed in an area when the local hero is in none (the
 //   decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
@@ -122,6 +121,10 @@ void CScript::initRuntime() {
         ambient += kQuietAmbient;
     }
     owners_.sound.playAmbientSound(ambient);
+    mission_ended_ = false;
+    call_stack_.clear();
+    loop_warning_shown_ = false;
+    state_ = EState::Running;
 }
 
 CDemonActor *CScript::getFocusActor() const {
@@ -131,8 +134,6 @@ CDemonActor *CScript::getFocusActor() const {
 // The original first set a placeholder message, which every error replaces.
 // deferred: resetting the wait and dialogue timers once a command finishes, with processTimer
 //   and startDialogLine
-// deferred: staying on a command that hasn't finished, and the overrun past the end of the
-//   script, while running, with process
 // deferred: running advanceLightFilter, createExplosion, deleteActor, displayBitmap,
 //   hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn,
 //   gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient,
@@ -169,7 +170,8 @@ CDemonActor *CScript::getFocusActor() const {
 //   from the hero, with CInventory::findItemByName and removeItem
 // deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't,
 //   with CInventory::selectWeapon
-// deferred: running setActorVariable, storing the actor in the variable, with process
+// deferred: running setActorVariable, storing the actor in the variable, with
+//   CEventList::setActorVariable
 // deferred: running setCharacterHealth, setting the character's health as a share of its most,
 //   with its hit points
 // deferred: setFocusActor making the actor the focus, the network camera's choice of it
@@ -203,29 +205,26 @@ CDemonActor *CScript::getFocusActor() const {
 //   processTimer and setSpeaker
 // deferred: noting a line the dialogue database doesn't hold in the script's pick list, while
 //   checking too, with the script editor
-// deferred: running breakPoint, showing where the script stopped and stopping it, with process
 // deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
-// deferred: running chainToMission, naming the next mission and ending this one, with process
-// deferred: running clearActorVariable, clearing the variable, with process
-// deferred: running debug, showing the message, with process
-// deferred: running else, skipping the statement after it, with process
-// deferred: running end, ending the mission and noting it for the helper-death fix, with process
+// deferred: running chainToMission, naming the next mission and ending this one, with
+//   CDemonMission::setMissionName
+// deferred: running clearActorVariable, clearing the variable, with
+//   CEventList::setActorVariable
+// deferred: end noting the mission's end for the helper-death fix (the decomp's
+//   helper_death.h), with CGame::runGameSession's Game Over menu
 // deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's
 //   fades
-// deferred: running finishedAct and rollCredits, ending the act, with process
+// deferred: running finishedAct and rollCredits, ending the act and the mission, with
+//   runGameSession's act completion
 // deferred: running getIniInt, reading the INI value into the counter, with CEventList's
 //   counters
-// deferred: running gosub and return, calling and returning through the call stack, with process
-// deferred: running goto, jumping to the label, with process
-// deferred: running gtfo, showing the message and ending the mission, with process
-// deferred: running idle, stopping for the frame after moving past it, with process
 // deferred: letterbox setting what the letterbox allows: the heroes' damage, the enemies'
 //   attacks and the hero's controls, the script's saved command and input flag, with their
 //   readers
 // deferred: letterbox turning the goggles off and choosing the focus's camera again, with the
 //   goggles
 // deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-// deferred: running setIniInt, writing the INI value, with process
+// deferred: running setIniInt, writing the INI value, with CIniFile::setInteger
 // deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
 // deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
 // deferred: running setTimeFactor, setting the game's speed, with CGame's time scale
@@ -233,7 +232,7 @@ CDemonActor *CScript::getFocusActor() const {
 //   processTimer
 // deferred: running wait, holding the script for its time, with processTimer
 // nocedit 0x0055a810
-CScript::CommandResult CScript::step() {
+CScript::StepResult CScript::step() {
     if (next_cmd_ >= parsed_lines_.size()) {
         common::displayErrorAndQuit(
             "CScript::step - Invalid instruction pointer!\n(This is an internal script processing "
@@ -248,8 +247,30 @@ CScript::CommandResult CScript::step() {
                          .line_number = line.line_number,
                          .running = !checking_,
                          .owners = owners_,
-                         .focus = focus_actor_};
-    const char first = line.text.front();
+                         .focus = focus_actor_,
+                         .end = EScriptStepEnd::Done};
+    if (CommandResult result = stepLine(statement, index); !result) {
+        return std::unexpected(result.error());
+    }
+    switch (statement.end) {
+    case EScriptStepEnd::Done:
+        if (!checking_ && next_cmd_ >= parsed_lines_.size()) {
+            return std::unexpected("Overrun past the end of the script.");
+        }
+        break;
+    case EScriptStepEnd::Holds:
+        next_cmd_ = index;
+        break;
+    case EScriptStepEnd::Yields:
+        break;
+    }
+    return statement.end;
+}
+
+// The line's brace, label, check switch or command.
+CScript::CommandResult CScript::stepLine(SStatement &statement, std::size_t index) {
+    const std::string_view text = statement.line;
+    const char first = text.front();
     if (first == '{' || first == '}') {
         return {};
     }
@@ -257,7 +278,7 @@ CScript::CommandResult CScript::step() {
     if (first == ':') {
         return checking_ ? checkLabel(index, statement) : CommandResult{};
     }
-    const std::string_view word = leadingWord(line.text);
+    const std::string_view word = leadingWord(text);
     // Both leave a running script alone.
     const bool check_on = common::equalsIgnoringAsciiCase(word, "syntaxCheckOn");
     if (check_on || common::equalsIgnoringAsciiCase(word, "syntaxCheckOff")) {
@@ -355,25 +376,6 @@ std::optional<std::size_t> CScript::skipCommands(std::size_t start) const {
         }
     }
     return std::nullopt;
-}
-
-CScript::CommandResult CScript::checkElse(CScript &script, SStatement &statement) {
-    if (!script.skipCommands(script.next_cmd_)) {
-        return std::unexpected(std::format(
-            "Can't skip next command after else statement on line {}", statement.line_number));
-    }
-    return {};
-}
-
-// goto and gosub take the rest of the line as the label.
-CScript::CommandResult CScript::checkJumpLabel(CScript &script, SStatement &statement) {
-    if (!script.findLabelIndex(statement.rest)) {
-        return std::unexpected(std::format("Undefined label {} used in {} statement on line {}",
-                                           statement.rest, statement.command,
-                                           statement.line_number));
-    }
-    statement.rest = {};
-    return {};
 }
 
 CScript::CommandResult CScript::checkSetSkipLabel(CScript &script, SStatement &statement) {

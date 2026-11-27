@@ -340,6 +340,19 @@ TEST_F(COverlay480Test, AMessageIsCentredAboveTheFramesFoot) {
     render();
 }
 
+// A running script's breakpoint says on the message line where it stopped.
+TEST_F(COverlay480Test, AScriptsBreakPointSaysWhereItStopped) {
+    givenFile("world\\m1.scr", "\nbreakPoint\nidle\n");
+    ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    game_.slamDT(1.0F);
+    script_.process();
+    watchText();
+    ON_CALL(theme_text_, getStringWidth(_)).WillByDefault(Return(100));
+    EXPECT_CALL(theme_text_, drawText(std::string_view("Script breakpoint reached at line 2"), 270,
+                                      470, kTextColor, kShadowColor));
+    render();
+}
+
 TEST_F(COverlay480Test, AMessageOfSeveralLinesStacksThemALineApart) {
     watchText();
     ON_CALL(theme_text_, getStringWidth(_)).WillByDefault(Return(30));

@@ -66,6 +66,7 @@ SMergedGameContent mergeGameContent(std::span<const SGameContent *const> in_orde
         mergeValue(content.battery_gauge, from->battery_gauge);
         mergeValue(content.difficulty, from->difficulty);
         mergeValue(content.flashlight, from->flashlight);
+        mergeValue(content.script, from->script);
         mergeValue(content.health_bar, from->health_bar);
         mergeValue(content.inventory_panel, from->inventory_panel);
         mergeById(content.inventory_views, from->inventory_views);

@@ -7,6 +7,7 @@
 #include "shape/fwd.h"
 
 #include <cstddef>
+#include <cstdint>
 #include <cstdio>
 #include <expected>
 #include <optional>
@@ -61,6 +62,10 @@ struct SDialogEntry {
     bool operator==(const SDialogEntry &) const = default;
 };
 
+// How a step leaves a running script: moved on, held on the command for a later frame, or moved
+// past it with the frame's run over.
+enum class EScriptStepEnd : std::uint8_t { Done, Holds, Yields };
+
 // The line a step is checking: the whole of it, the command's name as the command table spells
 // it, what follows the name, which a check moves past what it reads, the line in the file, and
 // the script's owners, which the check looks things up in.
@@ -74,6 +79,8 @@ struct SScriptStatement {
     const SScriptOwners &owners;
     // The script's focus, which the iris fades centre on.
     CDemonActor *focus = nullptr;
+    // What the command, running, leaves the script to do.
+    EScriptStepEnd end = EScriptStepEnd::Done;
 };
 
 class CScript {
@@ -89,6 +96,9 @@ public:
     CScript &operator=(CScript &&) = delete;
 
     void clear();
+    // The frame's run: steps until a command holds or yields, the script stops or the mission
+    // ends, the game's steps a frame at most, warning once of a loop that ran out of them. An
+    // error is shown, and stops the script.
     void process();
     // Each bar's height as far as it has slid in.
     [[nodiscard]] int getLetterboxHeight(const SScriptScreen &screen) const;
@@ -142,15 +152,31 @@ private:
                                                 std::string_view sound_name,
                                                 std::string_view dialog_text) const;
 
+    // A step: what it leaves the script to do, or its error.
+    using StepResult = std::expected<EScriptStepEnd, std::string>;
+    // At a breakpoint or an error, until it runs again.
+    enum class EState : std::uint8_t { Running, Stopped };
+
     [[nodiscard]] std::optional<SSyntaxError> validateSyntax();
-    [[nodiscard]] CommandResult step();
+    [[nodiscard]] StepResult step();
+    [[nodiscard]] CommandResult stepLine(SStatement &statement, std::size_t index);
     [[nodiscard]] CommandResult stepCommand(SStatement &statement, std::string_view word);
     [[nodiscard]] CommandResult checkLabel(std::size_t index, const SStatement &statement) const;
     [[nodiscard]] std::optional<std::size_t> findLabelIndex(std::string_view label_name) const;
     [[nodiscard]] std::optional<std::size_t> skipCommands(std::size_t start) const;
     [[nodiscard]] static const SCommand *findCommand(std::string_view name);
     static CommandResult checkElse(CScript &script, SStatement &statement);
-    static CommandResult checkJumpLabel(CScript &script, SStatement &statement);
+    static CommandResult checkGoto(CScript &script, SStatement &statement);
+    static CommandResult checkGosub(CScript &script, SStatement &statement);
+    static CommandResult checkReturn(CScript &script, SStatement &statement);
+    static CommandResult checkIdle(CScript &script, SStatement &statement);
+    static CommandResult checkBreakPoint(CScript &script, SStatement &statement);
+    static CommandResult checkDebug(CScript &script, SStatement &statement);
+    static CommandResult checkEnd(CScript &script, SStatement &statement);
+    static CommandResult checkGtfo(CScript &script, SStatement &statement);
+    // The label goto and gosub name, which is the rest of the line.
+    [[nodiscard]] std::expected<std::size_t, std::string>
+    findJumpLabel(SStatement &statement) const;
     static CommandResult checkSetSkipLabel(CScript &script, SStatement &statement);
     static CommandResult checkSay(CScript &script, SStatement &statement);
     static CommandResult checkDbSay(CScript &script, SStatement &statement);
@@ -174,6 +200,13 @@ private:
     float letterbox_extension_ = 0.0F;
     // The last letterbox the script set, which the bars keep as they slide out.
     ELetterbox previous_letterbox_ = ELetterbox::Off;
+    EState state_ = EState::Running;
+    // Set by end and gtfo: the script runs no more.
+    bool mission_ended_ = false;
+    // Where each gosub returns to, the latest last.
+    std::vector<std::size_t> call_stack_;
+    // A run out of steps warns once a mission.
+    bool loop_warning_shown_ = false;
 };
 
 } // namespace nocturne::core

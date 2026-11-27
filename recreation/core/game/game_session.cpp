@@ -136,7 +136,7 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   dead or unplaced client watching the host's hero (the decomp's NETPLAY), with getDeathState
 //   and fadeIn
 // deferred: the session ending when the script ends the mission, a network mission is pending or
-//   a chapter reload is asked, with CScript::step's end and showFullscreenBitmap
+//   a chapter reload is asked, with the play loop and showFullscreenBitmap
 // deferred: the fullscreen bitmap and its wait for a key, with showFullscreenBitmap
 // deferred: the sound started after the first frame, with CSound::init
 // deferred: the Game Over menu after a death, with Load game and Quit, and the host's

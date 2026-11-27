@@ -82,6 +82,9 @@ struct SGameSessionOwners {
     platform::IHeap &heap;
     // What the keys help's, the death banner's and the inventory's text is translated by.
     const support::CNewMsg &messages;
+    // What each sim frame's seed is drawn from, and what it seeds.
+    common::CWatcomRandom &crt_random;
+    CActor &actor;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the
@@ -269,6 +272,8 @@ private:
     };
 
     void clearOverlay();
+    // A sim frame: the game moved on by the frame's time.
+    void process(const SGameSessionOwners &session);
     void slewLocalHero(const SGameSessionOwners &session);
     void renderFrame(const SGameSessionOwners &session);
     // The frame is the scene's picture: its 4:3 column when pillarboxed, else the whole screen.

@@ -83,7 +83,8 @@ int CNetGame::syncPlayers(int sync_stage) {
 //   answering, trimming the sim history to the slowest player, recording this frame's seed, time
 //   step and inputs, and sending each client up to five frames it lacks, with
 //   CNetGame::initializeNetworkToHost
-// deferred: keeping the seed for the sim frame to start from, with CGame::process
+// deferred: keeping the seed, which CGame::process seeds a network game's frame from, with
+//   CNetGame::initializeNetworkToHost and initializeNetworkToJoin
 // nocedit 0x00543150
 // bw1 0x0052fee0
 // bw2 0x0050ecb0

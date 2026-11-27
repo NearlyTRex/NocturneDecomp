@@ -864,6 +864,15 @@ struct SDifficulty {
     bool operator==(const SDifficulty &) const = default;
 };
 
+// The mission script, as the game runs it.
+struct SScriptRun {
+    // The most steps a frame's run takes, its loop warned of past them: Nocturne's and BW2's
+    // 201, BW1's and BW3's 1551.
+    int steps_per_frame = 201;
+
+    bool operator==(const SScriptRun &) const = default;
+};
+
 // A weapon the game knows: a weapon actor of the class, or one it derives from, and of the model
 // and the actor's name when they are given, matched in either case. Each value an actor takes
 // comes from the most specific weapon that gives it: one naming the actor first, then one naming
@@ -1058,6 +1067,7 @@ struct SGameContent {
     std::optional<SBattery> battery;
     std::optional<SFlashlight> flashlight;
     std::optional<SDifficulty> difficulty;
+    std::optional<SScriptRun> script;
     // [[weapons.weapon]], by id.
     std::vector<SWeaponSpec> weapons;
     // Each HUD element none of whose table a package gives is where Nocturne's is.

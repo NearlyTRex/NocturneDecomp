@@ -178,7 +178,9 @@ protected:
                                 .textures = textures_,
                                 .deformable_models = deformable_models_,
                                 .heap = heap_,
-                                .messages = messages_};
+                                .messages = messages_,
+                                .crt_random = crt_random_,
+                                .actor = actor_};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

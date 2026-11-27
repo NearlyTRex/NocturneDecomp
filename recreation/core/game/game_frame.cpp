@@ -1,6 +1,5 @@
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
-#include "core/actor/notported.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -83,7 +82,7 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
-// deferred: the pointer left undrawn in an unpaused frame, with CGame::process
+// deferred: the pointer left undrawn in an unpaused frame, with the rest of CGame::process
 // deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the
 //   point-and-click control mode
 // deferred: BW1-3's screen cleared in the frame the goggles or monster vision go off, with
@@ -102,10 +101,11 @@ void CGame::processFrame(const SGameSessionOwners &session) {
                                 .hud = hud};
     session.set.renderScene(&local);
     session.net_game.processClientFrame();
-    if (!is_paused) {
-        quitNotPorted("CGame", "process");
+    if (is_paused) {
+        slewLocalHero(session);
+    } else {
+        process(session);
     }
-    slewLocalHero(session);
     updateDT();
     session.net_game.processServerFrame();
     session.set.renderStaticLights();

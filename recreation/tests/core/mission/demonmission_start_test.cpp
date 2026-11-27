@@ -171,7 +171,7 @@ protected:
     void run() {
         givenSessionAssets();
         EXPECT_THAT([this] { mission_.run(game_, session_); },
-                    ThrowsMessage<common::CFatalError>(StrEq("CGame::process is not ported yet")));
+                    ThrowsMessage<common::CFatalError>(StrEq("CGore::process is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

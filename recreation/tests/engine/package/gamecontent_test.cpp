@@ -51,6 +51,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     base.iris = SIris{.opens_session = false, .black_frames = 3};
     base.battery = SBattery{.gauge = false};
     base.flashlight = SFlashlight{.options = false};
+    base.script = SScriptRun{.steps_per_frame = 1551};
     base.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
     base.inventory_panel = SInventoryPanel{.place = {.anchor = EHudAnchor::Top, .x = 1, .y = 2}};
     base.inventory_detail_view = true;
@@ -81,6 +82,7 @@ TEST(GameContent, ALaterPackagesValuesWinAndUnsetOnesLeaveTheEarlier) {
     EXPECT_EQ(merged.iris, base.iris);
     EXPECT_EQ(merged.battery, base.battery);
     EXPECT_EQ(merged.flashlight, base.flashlight);
+    EXPECT_EQ(merged.script, base.script);
     EXPECT_EQ(merged.health_bar, base.health_bar);
     EXPECT_EQ(merged.inventory_panel, base.inventory_panel);
     EXPECT_EQ(merged.inventory_detail_view, base.inventory_detail_view);

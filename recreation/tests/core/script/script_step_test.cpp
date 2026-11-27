@@ -176,6 +176,13 @@ TEST_F(CScriptInitSectionTest, ASectionWithoutItsEndIsFatal) {
 // Run past its last line, the script has nowhere to go.
 TEST_F(CScriptInitSectionTest, AnEndBeforeTheSectionRunsOffTheScript) {
     expectRunQuits(":initSectionEnd\n:initSection\n{\n",
+                   "Error processing script.\nLine: 3\nText: {\nWhat's wrong: Overrun past the "
+                   "end of the script.\n");
+}
+
+// A command that yields moves past itself, so the section can still run off the script.
+TEST_F(CScriptInitSectionTest, ARunPastTheLastLineHasNowhereToGo) {
+    expectRunQuits(":initSectionEnd\n:initSection\nidle\n",
                    "CScript::step - Invalid instruction pointer!\n(This is an internal script "
                    "processing error,\nand doesn't mean there's anything wrong with the\nscript "
                    "file.)");
@@ -206,8 +213,8 @@ TEST_F(CScriptInitSectionTest, ACheckedScriptRunsItsSectionToo) {
 }
 
 TEST_F(CScriptInitSectionTest, RunningACommandNotPortedYetQuits) {
-    expectRunQuits(":initSection\nidle\n:initSectionEnd\n",
-                   "CScript::step running idle is not ported yet");
+    expectRunQuits(":initSection\nwait(1)\n:initSectionEnd\n",
+                   "CScript::step running wait is not ported yet");
 }
 
 // Each begins the game's iris; checking alone begins none.

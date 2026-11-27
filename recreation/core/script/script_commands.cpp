@@ -69,10 +69,6 @@ Result checkMissionName(CScript & /*script*/, SScriptStatement &statement) {
     return checkArgument(statement, kMaxMissionName);
 }
 
-Result checkText(CScript & /*script*/, SScriptStatement &statement) {
-    return checkArgument(statement, kMaxText);
-}
-
 // "(sound)": the sound name, played as the set's ambient sound when running.
 Result checkSetAmbientSound(CScript & /*script*/, SScriptStatement &statement) {
     const std::expected<std::string, std::string> sound =
@@ -365,7 +361,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
             .name = "attachActorToPlatform", .check = &checkAttachActorToPlatform, .runs = true},
         SCommand{.name = "beginFadeIn", .check = &checkBeginFadeIn, .runs = true},
         SCommand{.name = "beginFadeOut", .check = &checkBeginFadeOut, .runs = true},
-        SCommand{.name = "breakPoint", .check = &checkNothing},
+        SCommand{.name = "breakPoint", .check = &checkBreakPoint, .runs = true},
         SCommand{.name = "cancelCameraHold", .check = &checkNothing},
         SCommand{.name = "cancelWalkTo", .check = &checkCancelWalkTo},
         SCommand{.name = "chainToMission", .check = &checkMissionName},
@@ -373,16 +369,16 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "createExplosion", .check = &checkEventCommand},
         SCommand{.name = "dbSay", .check = &checkDbSay},
         SCommand{.name = "dbStartSay", .check = &checkDbSay},
-        SCommand{.name = "debug", .check = &checkText},
+        SCommand{.name = "debug", .check = &checkDebug, .runs = true},
         SCommand{.name = "deleteActor", .check = &checkEventCommand},
         SCommand{.name = "dismember", .check = &checkDismember},
         SCommand{.name = "display", .check = &checkDisplay, .runs = true},
         SCommand{.name = "displayBitmap", .check = &checkEventCommand},
-        SCommand{.name = "else", .check = &checkElse},
+        SCommand{.name = "else", .check = &checkElse, .runs = true},
         SCommand{.name = "enableCamera", .check = &checkEnableCamera},
         SCommand{.name = "enableCameraGroup", .check = &checkEnableCameraGroup, .runs = true},
         SCommand{.name = "enableHealthBar", .check = &checkEnableHealthBar},
-        SCommand{.name = "end", .check = &checkNothing},
+        SCommand{.name = "end", .check = &checkEnd, .runs = true},
         SCommand{.name = "fadeAmbientSound", .check = &checkEventCommand},
         SCommand{.name = "fadeIn", .check = &checkNothing},
         SCommand{.name = "fadeOut", .check = &checkNothing},
@@ -395,12 +391,12 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "gesture", .check = &checkGesture},
         SCommand{.name = "getIniInt", .check = &checkGetIniInt},
         SCommand{.name = "getTriggerActor", .check = &checkGetTriggerActor},
-        SCommand{.name = "gosub", .check = &checkJumpLabel},
-        SCommand{.name = "goto", .check = &checkJumpLabel},
-        SCommand{.name = "gtfo", .check = &checkText},
+        SCommand{.name = "gosub", .check = &checkGosub, .runs = true},
+        SCommand{.name = "goto", .check = &checkGoto, .runs = true},
+        SCommand{.name = "gtfo", .check = &checkGtfo, .runs = true},
         SCommand{.name = "holsterWeapon", .check = &checkHolsterWeapon},
         SCommand{.name = "hurtCharacter", .check = &checkEventCommand},
-        SCommand{.name = "idle", .check = &checkNothing},
+        SCommand{.name = "idle", .check = &checkIdle, .runs = true},
         SCommand{.name = "if", .check = &checkCondition},
         SCommand{.name = "incCounter", .check = &checkEventCommand},
         SCommand{.name = "killCharacter", .check = &checkEventCommand},
@@ -419,7 +415,7 @@ const CScript::SCommand *CScript::findCommand(std::string_view name) {
         SCommand{.name = "removeAllItemsFromInventory", .check = &checkRemoveAllItemsFromInventory},
         SCommand{.name = "removeItemFromInventory", .check = &checkRemoveItemFromInventory},
         SCommand{.name = "removeKeys", .check = &checkRemoveKeys},
-        SCommand{.name = "return", .check = &checkNothing},
+        SCommand{.name = "return", .check = &checkReturn, .runs = true},
         SCommand{.name = "rollCredits", .check = &checkRollCredits},
         SCommand{.name = "say", .check = &checkSay},
         SCommand{.name = "selectWeapon", .check = &checkSelectWeapon},

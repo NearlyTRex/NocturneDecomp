@@ -119,6 +119,7 @@ two axes, and BW2's axes, melee weapon and cross.
 | `[features.battery]` | The flashlight's battery: `gauge`, whether it has its gauge on the HUD (Nocturne's alone; BW2 kept the code but its hero never turns on what shows it) |
 | `[features.flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns) |
 | `[features.difficulty]` | The puzzle and combat difficulty: `options`, the gameplay page's lines for them (BW1's alone) |
+| `[features.script]` | The mission script: `steps_per_frame`, from 1 to 100000, the most steps a frame's run takes before the script warns of a loop (Nocturne's and BW2's 201, BW1's and BW3's 1551) |
 
 ### `weapons`: the weapons the game knows
 
