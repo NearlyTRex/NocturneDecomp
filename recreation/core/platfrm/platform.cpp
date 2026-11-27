@@ -43,6 +43,8 @@ constexpr int kMovementVersion = 8;
 constexpr int kPushVersion = 9;
 constexpr int kFogVersion = 10;
 constexpr int kShadowVersion = 11;
+// Before the actors it carries.
+constexpr int kProcessOrder = 50;
 
 } // namespace
 
@@ -50,13 +52,15 @@ constexpr int kShadowVersion = 11;
 constinit const CDemonActorType CPlatform::kType =
     makeActorType("CPlatform", &CDemonActor::kType, &CPlatform::create, kVersion);
 
-// The ends start where the actor is made, at the origin, and turned as it is.
-// deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and
-//   the attached actors' places, with CPlatform::process
+// The ends start where the actor is made, at the origin, and turned as it is. A platform is
+// processed before the actors it carries.
+// deferred: the slew mode the editor sets, being drawn in the background and the attached
+//   actors' places, with CPlatform::process
 // nocedit 0x0054c850
 CPlatform::CPlatform(CActor &classes)
     : model_(classes.getKeyFramedModels()), course_(classes.getDosIo()) {
     model_.setModelName("slider1.kfm");
+    setProcessOrder(kProcessOrder);
 }
 
 // Each actor read is attached again, so one read twice is carried once.

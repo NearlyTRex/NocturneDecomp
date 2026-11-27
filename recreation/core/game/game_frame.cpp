@@ -43,7 +43,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 } // namespace
 
 // The scene is drawn, the game moved on unless paused, the clock and the network game served,
-// and the 2D drawn over it. Paused, the hero is flown by the slew keys instead.
+// and the 2D drawn over it. Paused, the hero is flown by the slew keys instead, and the pointer
+// drawn.
 // deferred: a cinematic skip's or a pending sim frame's frame, unpaused and not drawn: the
 //   client's frame, the game processed, the clock stepped a quarter second while skipping and by
 //   updateDT otherwise, then the server's frame, with skipCinematic and CNetGame's sim frames
@@ -82,7 +83,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
-// deferred: the pointer left undrawn in an unpaused frame, with the rest of CGame::process
 // deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the
 //   point-and-click control mode
 // deferred: BW1-3's screen cleared in the frame the goggles or monster vision go off, with
@@ -170,7 +170,9 @@ void CGame::renderFrame(const SGameSessionOwners &session) {
     if (console_enabled) {
         renderConsole(session);
     }
-    session.editor_tools.drawMousePointer(false);
+    if (is_paused) {
+        session.editor_tools.drawMousePointer(false);
+    }
     static_cast<void>(special.unlockFrame());
 }
 

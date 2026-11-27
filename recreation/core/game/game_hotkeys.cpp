@@ -60,8 +60,8 @@ void stepAmbientLight(const SGameSessionOwners &session, float step) {
 // deferred: nothing while a modal dialog is up, with the pause menu's network dialogs
 // deferred: edit mode and its cameras left alone while a cinematic skips, and the agreed skip
 //   polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
-// deferred: the script's change of focus forgotten as edit mode ends, with
-//   CDemonMission::process's
+// deferred: the script's change of focus forgotten as edit mode ends, with the teleport
+//   CDemonMission::process takes from setTeleportTarget
 // deferred: the sound shut down as the game pauses and started again as it resumes, with
 //   CSound::shutdown and CSound::init
 // deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the

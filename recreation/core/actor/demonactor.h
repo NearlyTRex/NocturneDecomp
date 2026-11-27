@@ -177,10 +177,20 @@ public:
     [[nodiscard]] const common::CVector3i &getScale() const;
     void setScale(const common::CVector3i &scale);
 
+    // The set processes its actors by this, lowest first, those of one order as it lists them.
+    [[nodiscard]] int getProcessOrder() const;
+    // Left out when the set processes its actors.
+    [[nodiscard]] bool isProcessDisabled() const;
+
     // A scale of 1 in 16.16.
     static constexpr int kUnitScale = 0x10000;
+    // Most actors' process order; platforms come before them and triggers after.
+    static constexpr int kDefaultProcessOrder = 100;
 
 protected:
+    void setProcessOrder(int process_order);
+    void setProcessDisabled(bool process_disabled);
+
     // In the actor's place and turn, draws only while its box is visible; whether it was.
     bool renderIfBoxVisible(const SActorRenderOwners &owners, const std::function<void()> &draw);
 
@@ -197,6 +207,9 @@ private:
     bool collision_disabled_ = false;
     SDrawnTransform drawn_transform_;
     common::CVector3i scale_{.x = kUnitScale, .y = kUnitScale, .z = kUnitScale};
+    // The original's health field, which the set processes its actors in the order of.
+    int process_order_ = kDefaultProcessOrder;
+    bool process_disabled_ = false;
 };
 
 } // namespace nocturne::core

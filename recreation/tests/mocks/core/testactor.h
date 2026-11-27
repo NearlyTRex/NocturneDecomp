@@ -28,6 +28,22 @@ public:
         ++collision_updates_;
     }
 
+    // Without one, the actor processes as every actor does.
+    void process(float delta_time) override {
+        if (on_process_) {
+            on_process_(delta_time);
+            return;
+        }
+        CDemonActor::process(delta_time);
+    }
+
+    void onProcess(std::function<void(float)> on_process) {
+        on_process_ = std::move(on_process);
+    }
+
+    using CDemonActor::setProcessDisabled;
+    using CDemonActor::setProcessOrder;
+
     [[nodiscard]] int getSetupCount() const {
         return setup_count_;
     }
@@ -85,6 +101,7 @@ public:
 private:
     const CDemonActorType &type_;
     std::function<void(CActorArchive &)> on_archive_;
+    std::function<void(float)> on_process_;
     std::function<void(int)> on_render_background_;
     std::function<int()> on_render_opaque_;
     std::function<int()> on_render_transparent_;

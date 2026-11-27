@@ -57,8 +57,7 @@ constinit const CDemonActorType CDemonActor::kType =
     makeActorType("CDemonActor", nullptr, nullptr, kVersion);
 
 // deferred: the defaults the constructor gives the orientation's matrix, and the platform,
-//   rendering (but for the transparency), health and footstep fields, with the steps that read
-//   them
+//   rendering (but for the transparency) and footstep fields, with the steps that read them
 // nocedit 0x004088b0
 // bw1 0x004085c0
 // bw3 0x00408600
@@ -246,6 +245,22 @@ const common::CVector3i &CDemonActor::getScale() const {
 
 void CDemonActor::setScale(const common::CVector3i &scale) {
     scale_ = scale;
+}
+
+int CDemonActor::getProcessOrder() const {
+    return process_order_;
+}
+
+void CDemonActor::setProcessOrder(int process_order) {
+    process_order_ = process_order;
+}
+
+bool CDemonActor::isProcessDisabled() const {
+    return process_disabled_;
+}
+
+void CDemonActor::setProcessDisabled(bool process_disabled) {
+    process_disabled_ = process_disabled;
 }
 
 // Files before version 7 held a field of view, which is read and dropped.

@@ -167,12 +167,12 @@ protected:
     }
 
     // Runs the mission, which, with no script started to give the cameras a focus, shows the first
-    // camera and stops at the first frame's processing.
+    // camera and stops after the first frame, where the play loop goes on.
     void run() {
         givenSessionAssets();
-        EXPECT_THAT([this] { mission_.run(game_, session_); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonSet::processActors is not ported yet")));
+        EXPECT_THAT(
+            [this] { mission_.run(game_, session_); },
+            ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

@@ -1,4 +1,3 @@
-#include "common/error/fatalerror.h"
 #include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
 #include "common/math/vector3i.h"
@@ -42,6 +41,7 @@
 #include "tests/mocks/core/missionfixture.h"
 #include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testhero.h"
 #include "tests/mocks/engine/twodfixture.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -70,8 +70,6 @@ namespace {
 using engine::EInputCodeType;
 using ::testing::_;
 using ::testing::Return;
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 // A paused frame of a session whose one hero stands at the origin, a quarter second since the
 // last, in a set of one camera, shown, with the scene camera's transform taken from an open and
@@ -126,9 +124,9 @@ protected:
     ::testing::NiceMock<engine::MockRawInput> &game_input_ = game_parts_.getRawInput();
 };
 
-// The game's frame runs a sim frame seeded from the CRT's next draw, runs the script, scrolls the
-// terrain a quarter second at Nocturne's speed and ends a spent lightning flash, then waits for
-// the actors'.
+// The game's frame runs a sim frame seeded from the CRT's next draw: it runs the script, scrolls
+// the terrain a quarter second at Nocturne's speed, ends a spent lightning flash, processes the
+// set's actors and lists them again, the sim frame over.
 TEST_F(CGameFrameTest, AnUnpausedFrameProcessesTheGame) {
     givenFile("world\\m1.scr", "letterbox(true)\nidle\n");
     ASSERT_TRUE(script_.loadScript("m1.scr", true));
@@ -136,15 +134,23 @@ TEST_F(CGameFrameTest, AnUnpausedFrameProcessesTheGame) {
     ASSERT_TRUE(set_parts_.weather.isLightningActive());
     common::CWatcomRandom draws = crt_random_;
     const auto seed = static_cast<std::uint32_t>(draws.rand());
+    // An actor of the set's that draws from the sim stream as it processes.
+    CTestActor probe{kTestBaseType};
+    float drawn = 0.0F;
+    probe.onProcess([this, &drawn](float /*delta_time*/) {
+        drawn = actor_.getRandomFloatFromRange(0.0F, 1.0F);
+    });
+    set_.setActors({&probe});
+    // The set reads the frame's time from its own game.
+    set_parts_.classes.getGame().slamDT(kQuarterSecond);
     game_.is_paused = false;
-    EXPECT_THAT(
-        [this] { game_.processFrame(session_); },
-        ThrowsMessage<common::CFatalError>(StrEq("CDemonSet::processActors is not ported yet")));
-    EXPECT_EQ(game_.is_processing, 1);
+    game_.processFrame(session_);
+    EXPECT_EQ(game_.is_processing, 0);
+    EXPECT_THAT(set_.getActors(), ::testing::ElementsAre(&hero()));
+    game_.is_processing = 1;
     EXPECT_EQ(set_parts_.terrain.getScroll(), STerrainSettings::kDefaultScrollPerSecond / 4);
     EXPECT_FALSE(set_parts_.weather.isLightningActive());
     // The frame's first sim draw is the one that seed gives.
-    const float drawn = actor_.getRandomFloatFromRange(0.0F, 1.0F);
     actor_.setRandomSeed(seed);
     EXPECT_EQ(drawn, actor_.getRandomFloatFromRange(0.0F, 1.0F));
     EXPECT_EQ(game_.letterbox_mode, ELetterbox::On);
@@ -232,6 +238,13 @@ TEST_F(CGameFrameTest, ThePausedFrameDrawsTheOverlayAndThePointer) {
     screen_.fill(kBackground);
     game_.processFrame(session_);
     EXPECT_GT(drawn(), pointer);
+    // Unpaused, the frame leaves the pointer out.
+    game_.displayMessage("", 0.0F);
+    game_.is_paused = false;
+    set_.setActors({});
+    screen_.fill(kBackground);
+    game_.processFrame(session_);
+    EXPECT_EQ(screen_.pixel(kWidth / 2, kHeight / 4), sceneAt(kHeight / 4));
 }
 
 // With the hardware renderer, the frame is drawn into its locked screen.

@@ -86,6 +86,20 @@ void CDemonMission::buildSetActorList() {
     giveSetActors(std::move(in_set));
 }
 
+// The set's actors are listed again each frame, so one whose creation event comes appears.
+// deferred: the actors queued for deletion removed first, with markActorToDelete
+// deferred: a pending teleport putting the local hero at its place and, in another set,
+//   "Changing sets..." shown while that set loads with its lights and scene and the script's
+//   focus marked changed; BW1 and BW3 blank the frames instead and BW2 shows nothing, with
+//   setTeleportTarget
+// nocedit 0x00524250
+// bw1 0x0051b8d0
+// bw2 0x004fc940
+// bw3 0x004f70a0
+void CDemonMission::process() {
+    buildActiveSetActorList();
+}
+
 // An actor whose creation event is "none" in any case, or empty, needs only its chance.
 // nocedit 0x00524120
 // bw1 0x0051b7b0

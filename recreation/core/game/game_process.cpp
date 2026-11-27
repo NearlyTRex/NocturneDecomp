@@ -1,7 +1,7 @@
 #include "common/random/watcomrandom.h"
 #include "core/actor/actor.h"
-#include "core/actor/notported.h"
 #include "core/game/game.h"
+#include "core/mission/demonmission.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/terrain/terrain.h"
@@ -35,10 +35,8 @@ namespace nocturne::core {
 // deferred: the cheat codes, with processCheatCodes
 // deferred: BW1-3's field notes and puzzle stepped, and the actors left still while BW1's and
 //   BW3's field notes show, with CFieldNotes and CPuzzle
-// deferred: the actors' frames, the goggles' look and the heroes' goggles published (the decomp's
-//   GOGGLE_LOOK and NETPLAY), with CDemonSet::processActors
-// deferred: the mission's frame, with CDemonMission::process
-// deferred: the sim frame's end, with CDemonSet::processActors
+// deferred: the goggles' look stepped and the heroes' goggles published after the actors' frames
+//   (the decomp's GOGGLE_LOOK and NETPLAY), with the goggles
 // deferred: the play time counted, with displayActStats and saveGame
 // nocedit 0x004e3190
 // bw1 0x004d8060
@@ -53,7 +51,9 @@ void CGame::process(const SGameSessionOwners &session) {
     session.water.process();
     session.terrain.process(getDeltaTimeInt());
     session.weather.update(session.camera);
-    quitNotPorted("CDemonSet", "processActors");
+    session.set.processActors();
+    session.mission.process();
+    is_processing = 0;
 }
 
 } // namespace nocturne::core

@@ -67,9 +67,9 @@ protected:
     }
 
     void play() {
-        EXPECT_THAT([this] { static_cast<void>(game_.runGameSession(session_)); },
-                    ThrowsMessage<common::CFatalError>(
-                        StrEq("CDemonSet::processActors is not ported yet")));
+        EXPECT_THAT(
+            [this] { static_cast<void>(game_.runGameSession(session_)); },
+            ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
@@ -189,8 +189,12 @@ TEST_F(CGameSessionTest, SpookHouseTurnsDeveloperModeOnToo) {
 }
 
 // The frame's hotkeys come before its controls; Gamma up held raises the gamma the session began
-// at.
+// at, its message drawn over the frame in the game's fonts.
 TEST_F(CGameSessionTest, EachFrameReadsTheHotkeys) {
+    drawGameOnto(game_parts_, screen_,
+                 [this](const std::string &name, const std::string &contents) {
+                     givenFile(name, contents);
+                 });
     game_.gamma = 0x8000;
     game_parts_.hold(engine::EInputCodeType::DIK_F12, true);
     play();
@@ -248,8 +252,7 @@ TEST_F(CGameSessionTest, TheSceneIsSetUpAtAGammaHeldInRange) {
     game_.time_scale_factor = 2.0F;
     play();
     EXPECT_EQ(game_.gamma, 0x8000);
-    // Cleared, then set again by the first frame's sim frame, which waits on the actors'.
-    EXPECT_EQ(game_.is_processing, 1);
+    EXPECT_EQ(game_.is_processing, 0);
     EXPECT_EQ(game_.time_scale_factor, 1.0F);
     EXPECT_EQ(set_.getIntensityToValueLookupTable()[0x4000], 0x8000);
     EXPECT_EQ(set_.getActiveFog().color_index, set_.getSceneFog().color_index);

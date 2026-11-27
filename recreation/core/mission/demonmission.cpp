@@ -12,9 +12,8 @@ CDemonMission::CDemonMission(const SMissionOwners &owners) : owners_(owners) {}
 CDemonMission::~CDemonMission() = default;
 
 // nocedit also clears skip_gore_load_flag and show_waypoint_coverage, editor fields retail lacks.
-// deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
-//   process
-// deferred: emptying the queue of actors to delete, with markActorToDelete and process
+// deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget
+// deferred: emptying the queue of actors to delete, with markActorToDelete
 // deferred: clearing actor_lookup_count, with saveActor
 // The original let go of any actors without destroying them.
 // nocedit 0x00522c80

@@ -17,8 +17,7 @@ namespace nocturne::core {
 // deferred: the local hero being the one netplay gives this machine, and the set loaded being
 //   the area netplay respawns it in (the decomp's nocturne_net_respawn_world_area), with
 //   CNetGame's sessions
-// deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and
-//   process
+// deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget
 // deferred: clearing the letterbox, with CGame's readers of it
 // nocedit 0x00524760
 bool CDemonMission::startMission() {

@@ -34,6 +34,8 @@ constexpr int kDamageWildcardVersion = 11;
 
 // How far the box reaches below the trigger's floor and above its height.
 constexpr float kBoxMargin = 0.1F;
+// After the actors it watches.
+constexpr int kProcessOrder = 150;
 // What a hero or actor trigger's test radius reaches past the box's diagonal.
 constexpr double kTestRadiusMargin = 10.0;
 
@@ -43,11 +45,13 @@ constexpr double kTestRadiusMargin = 10.0;
 constinit const CDemonActorType CTrigger::kType =
     makeActorType("CTrigger", &CDemonActor::kType, &CTrigger::create, kVersion);
 
-// deferred: the defaults the constructor gives CDemonActor's health, and the trigger's previous
-//   state, event flag, cached and triggering actors and damage cooldown, with the steps that
-//   read them
+// A trigger is processed after the actors it watches.
+// deferred: the defaults the constructor gives the trigger's previous state, event flag, cached
+//   and triggering actors and damage cooldown, with the steps that read them
 // nocedit 0x005df840
-CTrigger::CTrigger() = default;
+CTrigger::CTrigger() {
+    setProcessOrder(kProcessOrder);
+}
 
 // nocedit 0x005e1660
 // bw2 0x00577840
@@ -68,8 +72,8 @@ std::unique_ptr<CDemonActor> CTrigger::create(CActor & /*classes*/) {
 
 // An event of "none" in any case is none. The original draws a trigger as transparent while the
 // mission is in the editor, which the game never is.
+// A trigger with neither event isn't processed.
 // deferred: no event raised and no actor held yet, with CTrigger::process
-// deferred: not processed with neither event, with CDemonSet::processActors
 // nocedit 0x005df990
 void CTrigger::setup() {
     CDemonActor::setup();
@@ -83,6 +87,7 @@ void CTrigger::setup() {
             event->clear();
         }
     }
+    setProcessDisabled(on_event_.empty() && off_event_.empty());
 }
 
 // nocedit 0x005e0630

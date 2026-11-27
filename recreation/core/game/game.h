@@ -66,7 +66,7 @@ struct SGameSessionOwners {
     CNetGame &net_game;
     CLevelLoader &level_loader;
     engine::CKeys &keys;
-    const CDemonMission &mission;
+    CDemonMission &mission;
     // Where developer mode is asked for.
     platform::IEnvironment &environment;
     // What the mute hotkey stops and starts.
