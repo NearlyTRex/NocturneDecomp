@@ -180,7 +180,10 @@ protected:
                                 .heap = heap_,
                                 .messages = messages_,
                                 .crt_random = crt_random_,
-                                .actor = actor_};
+                                .actor = actor_,
+                                .water = set_parts_.water,
+                                .terrain = set_parts_.terrain,
+                                .weather = set_parts_.weather};
 
     // Every texture and picture the session loads on disk, 32 by 32, and every model it finds
     // the one model.

@@ -22,6 +22,8 @@
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
 #include "core/skeleton/deformablemodelmanager.h"
+#include "core/terrain/terrain.h"
+#include "core/weather/weather.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
 #include "engine/font/bitfont.h"
@@ -124,17 +126,23 @@ protected:
     ::testing::NiceMock<engine::MockRawInput> &game_input_ = game_parts_.getRawInput();
 };
 
-// The game's frame runs a sim frame seeded from the CRT's next draw and runs the script, then
-// waits for the gore's.
+// The game's frame runs a sim frame seeded from the CRT's next draw, runs the script, scrolls the
+// terrain a quarter second at Nocturne's speed and ends a spent lightning flash, then waits for
+// the actors'.
 TEST_F(CGameFrameTest, AnUnpausedFrameProcessesTheGame) {
     givenFile("world\\m1.scr", "letterbox(true)\nidle\n");
     ASSERT_TRUE(script_.loadScript("m1.scr", true));
+    set_parts_.weather.createLightningStrike(-1.0F, false, session_.camera);
+    ASSERT_TRUE(set_parts_.weather.isLightningActive());
     common::CWatcomRandom draws = crt_random_;
     const auto seed = static_cast<std::uint32_t>(draws.rand());
     game_.is_paused = false;
-    EXPECT_THAT([this] { game_.processFrame(session_); },
-                ThrowsMessage<common::CFatalError>(StrEq("CGore::process is not ported yet")));
+    EXPECT_THAT(
+        [this] { game_.processFrame(session_); },
+        ThrowsMessage<common::CFatalError>(StrEq("CDemonSet::processActors is not ported yet")));
     EXPECT_EQ(game_.is_processing, 1);
+    EXPECT_EQ(set_parts_.terrain.getScroll(), STerrainSettings::kDefaultScrollPerSecond / 4);
+    EXPECT_FALSE(set_parts_.weather.isLightningActive());
     // The frame's first sim draw is the one that seed gives.
     const float drawn = actor_.getRandomFloatFromRange(0.0F, 1.0F);
     actor_.setRandomSeed(seed);

@@ -13,8 +13,13 @@ public:
     // nocedit 0x005eeaa0
     explicit CWeather(CActor &actor);
 
-    void update();
-    void createLightningStrike(float flash_timer, int play_sound);
+    // A frame of the storm: a flash dims back to the scene's light, a lightning strike or thunder
+    // comes when its countdown runs out, and between them sub-flashes light the scene through the
+    // camera, further apart as the storm goes on, unless the events say noLightningFlash.
+    void update(CDemonCamera &camera);
+    // A flash for flash_timer seconds over the scene's light, and the next lightning 10 to 20
+    // seconds away.
+    void createLightningStrike(float flash_timer, bool play_sound, CDemonCamera &camera);
     void renderParticles();
     // Rain falls at 40 units a second, anything else at 5; the next lightning is 10 to 20 seconds
     // away and its sub-flashes 2 to 10 apart.
@@ -31,7 +36,15 @@ public:
     [[nodiscard]] float getSubFlashInterval() const;
 
 private:
+    // The next lightning 10 to 20 seconds away, heard and not seen, the sub-flashes starting again
+    // at once and a second apart at most.
+    void createThunder();
+    // Whether the events hold noLightningFlash.
+    [[nodiscard]] bool isFlashBarred() const;
+
     CActor &actor_;
+    // The scene's light a flash dims back to, as the camera's effect intensity was at its start.
+    float base_ambient_ = 0.0F;
     EWeatherType weather_type_{};
     float particle_speed_ = 0.0F;
     bool lightning_active_ = false;

@@ -467,7 +467,10 @@ private:
                                              .heap = heap_,
                                              .messages = messages_,
                                              .crt_random = crt_random_,
-                                             .actor = actor_};
+                                             .actor = actor_,
+                                             .water = water_,
+                                             .terrain = terrain_,
+                                             .weather = weather_};
     core::SChapterSelectOwners chapter_select_owners_{.messages = messages_,
                                                       .editor_tools = editor_tools_,
                                                       .pick_list = pick_list_owners_,

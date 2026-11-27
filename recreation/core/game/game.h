@@ -85,6 +85,10 @@ struct SGameSessionOwners {
     // What each sim frame's seed is drawn from, and what it seeds.
     common::CWatcomRandom &crt_random;
     CActor &actor;
+    // What each sim frame moves on besides the set.
+    CWater &water;
+    CTerrain &terrain;
+    CWeather &weather;
 };
 
 // What chapter select reads the stories' unlock codes from, offers its lists with, and loads the

@@ -144,6 +144,13 @@ void CWater::calculateVisibleTiles(const SWaterOwners &owners) {
                                       static_cast<double>(visible_area_)));
 }
 
+// The water moves only as it is drawn; its frame does nothing, in every game.
+// nocedit 0x005e9ed0
+// bw1 0x005a9a90
+// bw2 0x00585e60
+// bw3 0x005772e0
+void CWater::process() {}
+
 // The original also kept how far the ripples were between frames, which nothing read.
 // deferred: the polygon colour set to 1 for the hardware's still water, with
 //   setCurrentPolygonColor's reader clipAndDrawLine3D

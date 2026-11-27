@@ -68,7 +68,8 @@ protected:
 
     void play() {
         EXPECT_THAT([this] { static_cast<void>(game_.runGameSession(session_)); },
-                    ThrowsMessage<common::CFatalError>(StrEq("CGore::process is not ported yet")));
+                    ThrowsMessage<common::CFatalError>(
+                        StrEq("CDemonSet::processActors is not ported yet")));
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
@@ -247,7 +248,7 @@ TEST_F(CGameSessionTest, TheSceneIsSetUpAtAGammaHeldInRange) {
     game_.time_scale_factor = 2.0F;
     play();
     EXPECT_EQ(game_.gamma, 0x8000);
-    // Cleared, then set again by the first frame's sim frame, which waits on the gore's.
+    // Cleared, then set again by the first frame's sim frame, which waits on the actors'.
     EXPECT_EQ(game_.is_processing, 1);
     EXPECT_EQ(game_.time_scale_factor, 1.0F);
     EXPECT_EQ(set_.getIntensityToValueLookupTable()[0x4000], 0x8000);
