@@ -88,6 +88,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   point-and-click control mode
 // deferred: BW1-3's screen cleared in the frame the goggles or monster vision go off, with
 //   CDemonSet::renderMonsterVisionView
+// deferred: the local hero's item panels left out of the scene in the editor, with the editor's
+//   mission mode
 // nocedit 0x004da100
 void CGame::processFrame(const SGameSessionOwners &session) {
     owners_.special.setRenderedTriangleCount(0);
@@ -95,7 +97,10 @@ void CGame::processFrame(const SGameSessionOwners &session) {
     if (external) {
         owners_.screen.openScreenDevice();
     }
-    session.set.renderScene();
+    const SInventoryHud hud = getInventoryHud(session);
+    const SSceneInventory local{.inventory = session.mission.getLocalHero()->getInventory(),
+                                .hud = hud};
+    session.set.renderScene(&local);
     session.net_game.processClientFrame();
     if (!is_paused) {
         quitNotPorted("CGame", "process");

@@ -185,15 +185,17 @@ void CDemonRenderer::renderTexturedDirect(const platform::SMRGLHeaderPrimitive &
 }
 
 // In the shadow pass only the depth is drawn, into the light's map, and the corners keep their
-// texture coordinates.
-// deferred: handing the polygon to processQuadPrimitive while texture capture is on, with
-//   setTextureCaptureMode's callers
+// texture coordinates. While capturing the polygon is kept instead.
 // deferred: keeping the buffer's own texture coordinates while skip_uv_extraction is set, with
 //   CCharacter::renderEthereal
 // deferred: the scanline's light level and solid colour, 0 until set, with the scene camera's
 //   fog setup
 // nocedit 0x0048aeb0
 void CDemonRenderer::renderTexturedPoly(const SMRGLPrimitiveQuad &poly, int render_flags) {
+    if (texture_capture_ != ETextureCapture::Off) {
+        processQuadPrimitive(poly, render_flags == -1 ? kDefaultTexturedFlags : render_flags);
+        return;
+    }
     if (!isFacing(poly.surface_normal)) {
         return;
     }

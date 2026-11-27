@@ -15,6 +15,7 @@
 #include <span>
 #include <string>
 #include <type_traits>
+#include <utility>
 
 namespace nocturne::core {
 namespace {
@@ -24,8 +25,10 @@ using ::testing::ThrowsMessage;
 
 TEST(CoreInvFunctions, PublicInterface) {
     static_assert(std::is_same_v<decltype(&freeInventory), void (*)()>);
-    static_assert(std::is_same_v<decltype(&getItemModel),
-                                 const CKeyFramedModelInstance &(*)(const CDemonActor &)>);
+    // Each overload, chosen by the pointer it is taken into.
+    [[maybe_unused]] const CKeyFramedModelInstance &(*const shown)(const CDemonActor &) =
+        &getItemModel;
+    [[maybe_unused]] CKeyFramedModelInstance &(*const drawn)(CDemonActor &) = &getItemModel;
     static_assert(
         std::is_same_v<decltype(&getItemDisplayName),
                        std::string (*)(const CDemonActor &, std::span<const SInventoryItemInfo>)>);
@@ -47,9 +50,24 @@ TEST(CoreInvFunctions, AnItemIsShownWithItsOwnModel) {
     EXPECT_EQ(&getItemModel(health), &health.getModel());
 }
 
+// The same models, to draw.
+TEST(CoreInvFunctions, AnItemsModelCanBeDrawn) {
+    CTestClasses classes;
+    CGun gun{classes.get()};
+    CAmmo ammo{classes.get()};
+    CBoxActor box{classes.get()};
+    CHealthItem health{classes.get()};
+    EXPECT_EQ(&getItemModel(gun), &gun.getModel());
+    EXPECT_EQ(&getItemModel(ammo), &ammo.getModel());
+    EXPECT_EQ(&getItemModel(box), &box.getModel());
+    EXPECT_EQ(&getItemModel(health), &health.getModel());
+}
+
 TEST(CoreInvFunctions, AnActorThatIsNoItemIsFatal) {
     CTestActor actor{kTestBaseType};
     actor.setActorName("Door");
+    EXPECT_THAT([&] { static_cast<void>(getItemModel(std::as_const(actor))); },
+                ThrowsMessage<common::CFatalError>(StrEq("getModel - Can't classify : Door")));
     EXPECT_THAT([&] { static_cast<void>(getItemModel(actor)); },
                 ThrowsMessage<common::CFatalError>(StrEq("getModel - Can't classify : Door")));
 }

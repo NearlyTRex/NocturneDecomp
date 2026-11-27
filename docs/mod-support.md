@@ -72,7 +72,7 @@ in the title picture's corner.
 |---|---|
 | `[hud.battery_gauge]` | The flashlight battery's gauge, while `[features.battery]` has one: `place` |
 | `[hud.health_bar]` | The hero's health bar while the inventory shows: `place` |
-| `[hud.inventory]` | The inventory's weapon and item panels: `place` |
+| `[hud.inventory]` | The inventory's weapon and item panels: `place`, and `[[hud.inventory.view]]` for how a model shows in them (below) |
 | `[hud.status_bars]` | The other heroes' and characters' bars: `place`, the rest stacked away from its edge |
 | `[hud.message]` | The message line, such as an item's pickup: `place` |
 | `[hud.death_banner]` | The line over the frame while the hero is dead (`text`; Nocturne's only, the Blair Witch games show none) and its `place` |
@@ -91,6 +91,22 @@ own unit, so its default stays where the game put it at every resolution:
 | `status_bars`, `death_banner` | 640x480 shares of the frame |
 | `message` | 640x480 pixels at the HUD's text scale, a line clear of the letterbox bar on its edge |
 | `chapter_title` | Glyph widths at the HUD's text scale, clear of the letterbox bar on its edge |
+
+A `[hud.inventory]` without a `place` leaves the panels where an earlier package put them, so a
+package can add views alone. Each `[[hud.inventory.view]]` says how one model shows in the
+panels; a later package's view of the same model, in any case, replaces it:
+
+```toml
+[[hud.inventory.view]]
+model = "axe1.kfm"            # the item's model, as itemlist.txt names it
+turn = { x = -90, z = -90 }   # degrees about each axis; y adds to the panel's own spin
+distance = 2                  # the camera's distance in the model's largest half-extents
+```
+
+Each value left out takes the item's class's own: no turn, and a distance of 4 for a gun, 2 for
+anything else. The weapon's panel turns its model side on, 90° about y; the item's doesn't.
+Nocturne's manifest turns its two axes, `axe1.kfm` and `ax.kfm`, as the original did by their
+names.
 
 ### `features`: how the game's own features behave
 

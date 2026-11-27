@@ -5,6 +5,7 @@
 #include "engine/fwd.h"
 #include "engine/polygonstate.h"
 #include "platform/fwd.h"
+#include "platform/inputface.h"
 
 #include <cstdint>
 #include <functional>
@@ -144,9 +145,18 @@ public:
     void renderQuadBatch(std::span<const platform::SMRGLPrimitiveQuad> primitives,
                          int render_flags);
     void renderFaceList(platform::SInputFace *face_array, int face_count, int render_flags);
-    void setTextureCaptureMode(int enable_advanced_mode);
+    // The triangle with its own 0.16 texture coordinates, through the perspective scanline; -1
+    // takes kDefaultTexturedFlags. While capturing it is kept instead.
+    void renderTexturedFace(const platform::SInputFace &face, int render_flags);
+    // From here the textured polygons and faces are kept, each triangle with the texture current
+    // as it came and its nearest corner's depth, not drawn, until processCapturedFaces draws them
+    // in depth order: the farthest first, or the nearest first when nearest_first. Nothing is
+    // kept in the shadow pass.
+    void setTextureCaptureMode(bool nearest_first);
+    // The kept triangles drawn and capture ended, culling by winding while face capture is on.
     void processCapturedFaces();
-    // Makes the texture current for the polygons that follow.
+    // Makes the texture current for the polygons that follow; while capturing it is kept for the
+    // triangles that follow it.
     void captureTexture(platform::SMRGLTextureBasic &texture);
     // The texture made current last: its texels and palette are the cache's own.
     [[nodiscard]] const SCurrentTexture &getSelectedTexture() const;
@@ -156,6 +166,24 @@ public:
     int depthTest(platform::SRenderVertex *vertex_ptr);
 
 private:
+    enum class ETextureCapture : std::uint8_t { Off, FarthestFirst, NearestFirst };
+
+    // A kept triangle: the texture it was drawn with among the kept ones, none before the first.
+    struct SCapturedFace {
+        platform::SInputFace face;
+        int texture = -1;
+        int render_flags = 0;
+        int depth = 0;
+    };
+
+    [[nodiscard]] static bool isNearerCapturedFace(const SCapturedFace &first,
+                                                   const SCapturedFace &second);
+    [[nodiscard]] static bool isFartherCapturedFace(const SCapturedFace &first,
+                                                    const SCapturedFace &second);
+    // The polygon's first three corners kept, and with four or more its first, third and fourth.
+    void processQuadPrimitive(const platform::SMRGLPrimitiveQuad &poly, int render_flags);
+    // Kept unless it faces away or, while face capture is on, lies wholly past one side.
+    void captureFace(const platform::SInputFace &face, int render_flags);
     [[nodiscard]] bool isFacing(const platform::SClipPlane &surface_normal) const;
     // The polygon's corner indices, each corner given the polygon's texture coordinates.
     std::vector<int> takeCorners(const platform::SMRGLPrimitiveQuad &poly);
@@ -189,6 +217,9 @@ private:
     int rasterizer_depth_bias_ = 0;
     // Ghidra's name; whether corners may come in eye space, as the vertex processing flag says.
     bool face_capture_enabled_ = true;
+    ETextureCapture texture_capture_ = ETextureCapture::Off;
+    std::vector<SCapturedFace> captured_faces_;
+    std::vector<platform::SMRGLTextureBasic *> captured_textures_;
 };
 
 } // namespace nocturne::engine

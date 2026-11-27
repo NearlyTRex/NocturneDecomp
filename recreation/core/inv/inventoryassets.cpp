@@ -115,6 +115,10 @@ void CInventoryAssets::loadItems() {
     }
 }
 
+platform::SMRGLTextureBasic &CInventoryAssets::getPanelTexture() {
+    return panel_texture_;
+}
+
 int CInventoryAssets::getScreenHeight() const {
     return screen_height_;
 }

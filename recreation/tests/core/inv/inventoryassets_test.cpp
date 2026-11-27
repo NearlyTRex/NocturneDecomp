@@ -125,5 +125,9 @@ TEST_F(CInventoryAssetsTest, WithoutAnItemListThereAreNoItems) {
     EXPECT_TRUE(assets_.getItems().empty());
 }
 
+TEST_F(CInventoryAssetsTest, ThePanelsTextureIsTheInventorysOwn) {
+    EXPECT_EQ(assets_.getPanelTexture().texture_name, "INV3D.RAW");
+}
+
 } // namespace
 } // namespace nocturne::core

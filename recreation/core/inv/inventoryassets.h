@@ -3,6 +3,7 @@
 #include "core/fwd.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/fwd.h"
+#include "platform/mrgltexturebasic.h"
 
 #include <cstdint>
 #include <span>
@@ -69,6 +70,8 @@ public:
     // To draw it.
     [[nodiscard]] engine::CAlphaBitmap &getBitmap(EInventoryBitmap bitmap);
     [[nodiscard]] std::span<const SInventoryItemInfo> getItems() const;
+    // The item panels' backgrounds, both in one texture.
+    [[nodiscard]] platform::SMRGLTextureBasic &getPanelTexture();
 
 private:
     void loadItems();
@@ -79,6 +82,7 @@ private:
     int height_ = kDefaultHeight;
     std::vector<engine::CAlphaBitmap> bitmaps_;
     std::vector<SInventoryItemInfo> items_;
+    platform::SMRGLTextureBasic panel_texture_{.texture_name = "INV3D.RAW"};
 };
 
 } // namespace nocturne::core

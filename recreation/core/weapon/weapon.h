@@ -51,6 +51,8 @@ public:
     virtual void updateLighting();
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
+    // To draw it.
+    [[nodiscard]] CKeyFramedModelInstance &getModel();
     [[nodiscard]] EWeaponState getWeaponState() const;
     [[nodiscard]] int getAmmoCount() const;
     [[nodiscard]] EAmmoType getAmmoType() const;

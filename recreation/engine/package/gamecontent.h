@@ -581,6 +581,20 @@ struct SInventoryPanel {
     bool operator==(const SInventoryPanel &) const = default;
 };
 
+// How a model is shown in the item panels, each value left out taking the item's class's own:
+// turned about x, y and z in degrees, the y turn on top of the panel's own, and drawn this many
+// times its largest half-extent back. A package's view of a model replaces an earlier one.
+struct SInventoryItemView {
+    // The model's file, in lower case.
+    std::string id;
+    std::optional<double> turn_x;
+    std::optional<double> turn_y;
+    std::optional<double> turn_z;
+    std::optional<double> distance;
+
+    bool operator==(const SInventoryItemView &) const = default;
+};
+
 // The bars of the other heroes' and characters' health, and any the script shows.
 struct SStatusBars {
     // The first bar's corner, the rest stacked away from the anchor's edge, in 640x480 shares of
@@ -1025,6 +1039,8 @@ struct SGameContent {
     std::optional<SBatteryGauge> battery_gauge;
     std::optional<SHealthBar> health_bar;
     std::optional<SInventoryPanel> inventory_panel;
+    // [[hud.inventory.view]], by model.
+    std::vector<SInventoryItemView> inventory_views;
     std::optional<SStatusBars> status_bars;
     std::optional<SMessageLine> message_line;
     std::optional<SGameCredits> credits;

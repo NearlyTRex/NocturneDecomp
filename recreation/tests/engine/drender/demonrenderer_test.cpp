@@ -150,7 +150,7 @@ TEST(CDemonRenderer, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonRenderer::renderFaceList),
                                  void (CDemonRenderer::*)(platform::SInputFace *, int, int)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::setTextureCaptureMode),
-                                 void (CDemonRenderer::*)(int)>);
+                                 void (CDemonRenderer::*)(bool)>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::processCapturedFaces),
                                  void (CDemonRenderer::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonRenderer::captureTexture),

@@ -19,6 +19,25 @@
 namespace nocturne::core {
 namespace {
 
+// The item's model, const as the item is.
+template <typename Actor>
+auto &findItemModel(Actor &actor) {
+    if (auto *weapon = castToClass<CWeapon>(&actor)) {
+        return weapon->getModel();
+    }
+    if (auto *ammo = castToClass<CAmmo>(&actor)) {
+        return ammo->getModel();
+    }
+    if (auto *box = castToClass<CBoxActor>(&actor)) {
+        return box->getModel();
+    }
+    if (auto *health = castToClass<CHealthItem>(&actor)) {
+        return health->getModel();
+    }
+    common::displayErrorAndQuit(
+        std::format("getModel - Can't classify : {}", actor.getActorName()));
+}
+
 const SInventoryItemInfo *findItemInfo(const CDemonActor &actor,
                                        std::span<const SInventoryItemInfo> items) {
     const std::string &model = getItemModel(actor).getModelName();
@@ -42,20 +61,11 @@ std::string getMissingItemText(const CDemonActor &actor) {
 // nocedit 0x004fcda0
 // bw2 0x004d9db0
 const CKeyFramedModelInstance &getItemModel(const CDemonActor &actor) {
-    if (const auto *weapon = castToClass<CWeapon>(&actor)) {
-        return weapon->getModel();
-    }
-    if (const auto *ammo = castToClass<CAmmo>(&actor)) {
-        return ammo->getModel();
-    }
-    if (const auto *box = castToClass<CBoxActor>(&actor)) {
-        return box->getModel();
-    }
-    if (const auto *health = castToClass<CHealthItem>(&actor)) {
-        return health->getModel();
-    }
-    common::displayErrorAndQuit(
-        std::format("getModel - Can't classify : {}", actor.getActorName()));
+    return findItemModel(actor);
+}
+
+CKeyFramedModelInstance &getItemModel(CDemonActor &actor) {
+    return findItemModel(actor);
 }
 
 // deferred: a hero's own item read by its actor or model name ahead of the list, Moloch's amulet,

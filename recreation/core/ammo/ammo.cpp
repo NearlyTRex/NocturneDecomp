@@ -108,6 +108,10 @@ const CKeyFramedModelInstance &CAmmo::getModel() const {
     return model_;
 }
 
+CKeyFramedModelInstance &CAmmo::getModel() {
+    return model_;
+}
+
 const std::string &CAmmo::getWeaponClassName() const {
     return weapon_class_name_;
 }

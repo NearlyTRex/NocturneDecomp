@@ -3471,6 +3471,22 @@ std::string formatHudPlaces(const SGameContent &content) {
             text += std::format("\n[hud.{}]\n{}", key, formatHudPlace(*place));
         }
     }
+    for (const SInventoryItemView &view : content.inventory_views) {
+        text += std::format("\n[[hud.inventory.view]]\nmodel = {}\n", quoteToml(view.id));
+        std::string turn;
+        for (const auto &[key, angle] : {std::pair{"x", view.turn_x}, std::pair{"y", view.turn_y},
+                                         std::pair{"z", view.turn_z}}) {
+            if (angle) {
+                turn += std::format("{}{} = {}", turn.empty() ? "" : ", ", key, *angle);
+            }
+        }
+        if (!turn.empty()) {
+            text += std::format("turn = {{ {} }}\n", turn);
+        }
+        if (const std::optional<double> &distance = view.distance) {
+            text += std::format("distance = {}\n", *distance);
+        }
+    }
     return text;
 }
 
@@ -3604,12 +3620,107 @@ TomlResult<void> readMenuSection(const toml::table &table, SGameContent &content
     return {};
 }
 
-// [hud]: each element's place, and the death banner's and chapter title's text.
+// A finite number, or none without the key.
+TomlResult<std::optional<double>> readOptionalReal(const toml::table &table, std::string_view where,
+                                                   std::string_view key) {
+    const toml::node *node = table.get(key);
+    if (node == nullptr) {
+        return std::optional<double>{};
+    }
+    const std::optional<double> value = node->value<double>();
+    if (!value || !std::isfinite(*value)) {
+        return std::unexpected(std::format("{}{}: not a number", where, key));
+    }
+    return value;
+}
+
+// A model's view: its file, its turn's angles about x, y and z, and its distance, more than 0.
+TomlResult<SInventoryItemView> readInventoryItemView(const toml::table &table,
+                                                     std::string_view where) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"model", "turn", "distance"});
+        !keys) {
+        return std::unexpected(keys.error());
+    }
+    TomlResult<std::string> model = readRequiredString(table, where, "model");
+    if (!model) {
+        return std::unexpected(model.error());
+    }
+    SInventoryItemView view;
+    std::ranges::transform(*model, std::back_inserter(view.id), common::foldAscii);
+    const TomlResult<const toml::table *> turn = readTable(table, where, "turn");
+    if (!turn) {
+        return std::unexpected(turn.error());
+    }
+    if (*turn != nullptr) {
+        const std::string turn_where = std::format("{}turn: ", where);
+        if (TomlResult<void> keys = rejectUnknownKeys(**turn, turn_where, {"x", "y", "z"}); !keys) {
+            return std::unexpected(keys.error());
+        }
+        for (const auto &[key, field] : {std::pair{"x", &view.turn_x}, std::pair{"y", &view.turn_y},
+                                         std::pair{"z", &view.turn_z}}) {
+            TomlResult<std::optional<double>> angle = readOptionalReal(**turn, turn_where, key);
+            if (!angle) {
+                return std::unexpected(angle.error());
+            }
+            *field = *angle;
+        }
+    }
+    TomlResult<std::optional<double>> distance = readOptionalReal(table, where, "distance");
+    if (!distance) {
+        return std::unexpected(distance.error());
+    }
+    if (distance->has_value() && **distance <= 0.0) {
+        return std::unexpected(std::format("{}distance: not more than 0", where));
+    }
+    view.distance = *distance;
+    return view;
+}
+
+// [hud.inventory]: the panels' place, which a package without one leaves as it was, and each
+// model's view.
+TomlResult<void> readInventoryPanels(const toml::table &table, SGameContent &content) {
+    constexpr std::string_view kWhere = "inventory: ";
+    const TomlResult<const toml::table *> found = readTable(table, "", "inventory");
+    if (!found) {
+        return std::unexpected(found.error());
+    }
+    if (*found == nullptr) {
+        return {};
+    }
+    const toml::table &inventory = **found;
+    if (TomlResult<void> keys = rejectUnknownKeys(inventory, kWhere, {"place", "view"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    if (inventory.contains("place")) {
+        TomlResult<SHudPlace> place = readHudPlace(inventory, kWhere, SInventoryPanel{}.place);
+        if (!place) {
+            return std::unexpected(place.error());
+        }
+        content.inventory_panel = SInventoryPanel{.place = *place};
+    }
+    const TomlResult<std::vector<const toml::table *>> views =
+        readTables(inventory, kWhere, "view");
+    if (!views) {
+        return std::unexpected(views.error());
+    }
+    for (std::size_t i = 0; i < views->size(); ++i) {
+        TomlResult<SInventoryItemView> view =
+            readInventoryItemView(*(*views)[i], std::format("{}view {}: ", kWhere, i + 1));
+        if (!view) {
+            return std::unexpected(view.error());
+        }
+        content.inventory_views.push_back(std::move(*view));
+    }
+    return {};
+}
+
+// [hud]: each element's place, the item panels' views, and the death banner's and chapter
+// title's text.
 TomlResult<void> readHudSection(const toml::table &table, SGameContent &content) {
     return readSteps<7>({
         [&] { return readPlaceInto(table, "battery_gauge", content.battery_gauge); },
         [&] { return readPlaceInto(table, "health_bar", content.health_bar); },
-        [&] { return readPlaceInto(table, "inventory", content.inventory_panel); },
+        [&] { return readInventoryPanels(table, content); },
         [&] { return readPlaceInto(table, "status_bars", content.status_bars); },
         [&] { return readPlaceInto(table, "message", content.message_line); },
         [&] {

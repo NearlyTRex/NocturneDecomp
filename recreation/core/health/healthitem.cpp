@@ -86,6 +86,10 @@ const CKeyFramedModelInstance &CHealthItem::getModel() const {
     return model_;
 }
 
+CKeyFramedModelInstance &CHealthItem::getModel() {
+    return model_;
+}
+
 int CHealthItem::getUseCount() const {
     return use_count_;
 }

@@ -34,6 +34,18 @@ struct SInventoryHud {
     bool letterbox_up = false;
 };
 
+// What the item panels' models are drawn with, into the scene: the scene's renderer, the set
+// that lights them, the scene camera and its tables, the trig the light turns by, and the
+// frame's time, in 1/65536 seconds, it turns with.
+struct SInventoryPanelOwners {
+    engine::CDemonRenderer &renderer;
+    CDemonSet &set;
+    CDemonCamera &camera;
+    SCameraTables &camera_tables;
+    const engine::CMatrix &matrix;
+    int delta_time = 0;
+};
+
 // What a hero carries: the items, which it owns, the weapon it holds, the ammunition counter that
 // names the weapon's rounds, and its flashlight's battery.
 class CInventory {
@@ -84,7 +96,9 @@ public:
     void resetWeaponSwitchTimers(bool show_ammo_name);
     // The health bar shown.
     void resetInventoryDisplayTimer();
-    void renderSelectedItems();
+    // The weapon's and the item's panels while they show: each its background and its item's
+    // model turning in it, fading with the panel, in the box the panels' text goes in.
+    void renderSelectedItems(const SInventoryHud &hud, const SInventoryPanelOwners &owners);
     // The panels' text and the health bar, over the finished scene.
     void renderAllItems(const SInventoryHud &hud) const;
     int checkHasMatchingKey(std::uint32_t key_mask, int show_message);
@@ -123,6 +137,27 @@ private:
     [[nodiscard]] static bool isWeaponInCategory(const CDemonActor &weapon,
                                                  EWeaponCategory category);
 
+    // A panel's picture in the camera's space, its bottom-right corner at right and bottom: the
+    // model's size and its inset from that corner.
+    struct SPanelModel {
+        int size = 0;
+        int inset = 0;
+    };
+    void renderPanel(const SInventoryHud &hud, const SInventoryPanelOwners &owners,
+                     CDemonActor &item, const SPanelModel &model, float spin, float timer,
+                     std::array<int, 2> corner);
+    // The model in a square viewport at x and y, lit by a turning light, turned spin about y,
+    // and drawn through texture capture while not opaque.
+    void renderItemModel(const SInventoryHud &hud, const SInventoryPanelOwners &owners,
+                         CDemonActor &item, int x, int y, int size, float spin, int alpha);
+    // The panels' two backgrounds in the panel texture, from the first corner to the second
+    // inclusive.
+    static void drawWeaponIconBackground(const SInventoryHud &hud,
+                                         const SInventoryPanelOwners &owners, const CRect &rect,
+                                         int alpha);
+    static void drawItemIconBackground(const SInventoryHud &hud,
+                                       const SInventoryPanelOwners &owners, const CRect &rect,
+                                       int alpha);
     void renderWeaponText(const SInventoryHud &hud, engine::CBitFont &font) const;
     void renderItemText(const SInventoryHud &hud, engine::CBitFont &font) const;
     void renderHealthBar(const SInventoryHud &hud) const;
@@ -142,6 +177,8 @@ private:
     float item_highlight_timer_ = 0.0F;
     float inventory_display_timer_ = 0.0F;
     float ammo_detail_timer_ = 0.0F;
+    // The panels' light's angle, in the trig tables' units.
+    int panel_light_angle_ = 0;
 };
 
 } // namespace nocturne::core

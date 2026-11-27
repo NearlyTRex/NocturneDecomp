@@ -88,13 +88,6 @@ int CDemonRenderer::setRenderAlpha(int render_alpha) {
     return three_d_.setRenderAlpha(render_alpha);
 }
 
-// deferred: recording the texture while texture capture is on, with setTextureCaptureMode's
-//   callers
-// nocedit 0x0048db80
-void CDemonRenderer::captureTexture(platform::SMRGLTextureBasic &texture) {
-    textures_.ensureTextureLoaded(texture);
-}
-
 const SCurrentTexture &CDemonRenderer::getSelectedTexture() const {
     return texture_;
 }

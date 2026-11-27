@@ -61,12 +61,18 @@ void CDemonRenderer::renderFacetList(std::span<const SMRGLPrimitiveQuad> primiti
     }
 }
 
-// deferred: sending each polygon to processQuadPrimitive while texture capture is on, with
-//   setTextureCaptureMode's callers
+// While capturing each polygon is kept instead.
 // nocedit 0x0048ce90
 void CDemonRenderer::renderQuadBatch(std::span<const SMRGLPrimitiveQuad> primitives,
                                      int render_flags) {
-    renderFacetList(primitives, render_flags == -1 ? kDefaultTexturedFlags : render_flags);
+    const int flags = render_flags == -1 ? kDefaultTexturedFlags : render_flags;
+    if (texture_capture_ == ETextureCapture::Off) {
+        renderFacetList(primitives, flags);
+        return;
+    }
+    for (const SMRGLPrimitiveQuad &poly : primitives) {
+        processQuadPrimitive(poly, flags);
+    }
 }
 
 } // namespace nocturne::engine

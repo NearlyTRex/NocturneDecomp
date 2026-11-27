@@ -80,7 +80,8 @@ TEST(CInventory, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&CInventory::resetInventoryDisplayTimer), void (CInventory::*)()>);
     static_assert(
-        std::is_same_v<decltype(&CInventory::renderSelectedItems), void (CInventory::*)()>);
+        std::is_same_v<decltype(&CInventory::renderSelectedItems),
+                       void (CInventory::*)(const SInventoryHud &, const SInventoryPanelOwners &)>);
     static_assert(std::is_same_v<decltype(&CInventory::renderAllItems),
                                  void (CInventory::*)(const SInventoryHud &) const>);
     static_assert(std::is_same_v<decltype(&CInventory::checkHasMatchingKey),

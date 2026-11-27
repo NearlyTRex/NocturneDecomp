@@ -51,6 +51,8 @@ public:
     void resolveRayPush(common::CVector3f *ray_origin, common::CVector3f *ray_direction);
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
+    // To draw it.
+    [[nodiscard]] CKeyFramedModelInstance &getModel();
     // 0 for a box the physics doesn't move.
     [[nodiscard]] float getWeightInPounds() const;
     // The model's animation rate, in frames a second.

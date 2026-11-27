@@ -115,6 +115,10 @@ const CKeyFramedModelInstance &CWeapon::getModel() const {
     return model_;
 }
 
+CKeyFramedModelInstance &CWeapon::getModel() {
+    return model_;
+}
+
 EWeaponState CWeapon::getWeaponState() const {
     return weapon_state_;
 }

@@ -35,6 +35,8 @@ public:
     int useItem(CCharacter *user);
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
+    // To draw it.
+    [[nodiscard]] CKeyFramedModelInstance &getModel();
     // How many times the item can be used.
     [[nodiscard]] int getUseCount() const;
     // The hit points each use gives back.

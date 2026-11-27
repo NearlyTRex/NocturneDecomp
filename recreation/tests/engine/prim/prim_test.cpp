@@ -1,10 +1,12 @@
 #include "engine/prim/prim.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
+#include "platform/trianglepackedindices.h"
 
 #include <gtest/gtest.h>
 
 #include <array>
+#include <cstdint>
 #include <span>
 #include <type_traits>
 #include <vector>
@@ -32,7 +34,8 @@ TEST(EnginePrimFunctions, PublicInterface) {
                                  bool (*)(std::span<const SRenderVertex>,
                                           const platform::SMRGLPrimitiveQuad &, int)>);
     static_assert(std::is_same_v<decltype(&getTriangleWindingFromPackedIndices),
-                                 int (*)(platform::STrianglePackedIndices *)>);
+                                 bool (*)(std::span<const SRenderVertex>,
+                                          const platform::STrianglePackedIndices &, int)>);
     static_assert(
         std::is_same_v<decltype(&findEdgeInBuffer),
                        SSoftwareEdge *(*)(std::span<SSoftwareEdge>, int, const SSoftwareEdge *)>);
@@ -152,6 +155,17 @@ TEST(EnginePrimFunctions, APolygonsWindingIsItsFirstThreeCornersInTheBuffer) {
     EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 2, 0), 1));
     EXPECT_FALSE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 1));
     EXPECT_TRUE(calculateTriangleWindingOrderFromIndices(buffer, polygon(1, 0, 2), 2));
+}
+
+TEST(EnginePrimFunctions, APackedTrianglesWindingIsItsCornersInTheBuffer) {
+    const std::array<SRenderVertex, 3> buffer{onScreen(0, 10), onScreen(0, 0), onScreen(10, 0)};
+    const auto triangle = [](std::uint16_t a, std::uint16_t b, std::uint16_t c) {
+        return platform::STrianglePackedIndices{
+            .vertex_index_0 = a, .vertex_index_1 = b, .vertex_index_2 = c};
+    };
+    EXPECT_TRUE(getTriangleWindingFromPackedIndices(buffer, triangle(1, 2, 0), 1));
+    EXPECT_FALSE(getTriangleWindingFromPackedIndices(buffer, triangle(1, 0, 2), 1));
+    EXPECT_TRUE(getTriangleWindingFromPackedIndices(buffer, triangle(1, 0, 2), 2));
 }
 
 TEST(EnginePrimFunctions, AnyOtherCullingModeKeepsAnticlockwiseTriangles) {

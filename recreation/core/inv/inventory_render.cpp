@@ -11,6 +11,7 @@
 #include "core/inv/inv.h"
 #include "core/inv/inventory.h"
 #include "core/inv/inventoryassets.h"
+#include "core/inv/inventorylayout.h"
 #include "core/lightgun/lightgun.h"
 #include "core/weapon/weapon.h"
 #include "engine/2d/2d.h"
@@ -84,26 +85,11 @@ std::optional<EInventoryBitmap> getAmmoIcon(const CWeapon &weapon) {
     return found == kRounds.end() ? icon : std::optional(found->second);
 }
 
-// The camera's pixels laid onto the frame at its height.
-float getCameraScale(const SInventoryHud &hud) {
-    return static_cast<float>(hud.frame.height) /
-           static_cast<float>(hud.camera.getFramebufferHeight());
-}
-
-// The panel's box on the screen, where the game's [hud.inventory] places it: by default the
-// camera's space's bottom-right corner, as the original drew the panels in the camera's corner.
-common::SViewport getPanelBox(const SInventoryHud &hud, int width, int height) {
-    return placeHudBox(hud.frame,
-                       hud.content.inventory_panel.value_or(engine::SInventoryPanel{}).place, width,
-                       height, getCameraScale(hud));
-}
-
 int toScreen(const SInventoryHud &hud, int camera_pixels) {
     return static_cast<int>(std::lround(static_cast<float>(camera_pixels) * getCameraScale(hud)));
 }
 
-// A panel's box and its text's spacing on the screen. The quick view is a square as tall as the
-// panel; the description view is the inventory's own width.
+// A panel's box and its text's spacing on the screen.
 struct SPanelText {
     common::SViewport box;
     int pad = 0;
@@ -114,9 +100,7 @@ struct SPanelText {
 
 SPanelText getPanelText(const SInventoryHud &hud, bool small, bool detail_view) {
     const SPanelSpacing &spacing = small ? kSmallSpacing : kFullSpacing;
-    const int height = small ? hud.assets.getHeight() / 2 : hud.assets.getHeight();
-    const int width = detail_view ? hud.assets.getWidth() : height;
-    return {.box = getPanelBox(hud, width, height),
+    return {.box = getPanelBox(hud, getPanelSize(hud, small, detail_view)),
             .pad = toScreen(hud, spacing.text_pad),
             .wrap_margin = toScreen(hud, spacing.wrap_margin),
             .ammo_inset = toScreen(hud, spacing.ammo_inset),

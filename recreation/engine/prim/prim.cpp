@@ -3,6 +3,7 @@
 #include "common/math/fixed.h"
 #include "platform/mrglprimitivequad.h"
 #include "platform/rendervertex.h"
+#include "platform/trianglepackedindices.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -84,6 +85,16 @@ bool calculateTriangleWindingOrderFromIndices(std::span<const SRenderVertex> ver
         return vertices[static_cast<std::size_t>(triangle.vertices[i].vertex_index)];
     };
     return calculateTriangleWindingOrder(corner(0), corner(1), corner(2), culling_mode);
+}
+
+// The original repeated calculateTriangleWindingOrder's arithmetic over the global buffer.
+// nocedit 0x005523f0
+bool getTriangleWindingFromPackedIndices(std::span<const SRenderVertex> vertices,
+                                         const platform::STrianglePackedIndices &triangle,
+                                         int culling_mode) {
+    return calculateTriangleWindingOrder(vertices[triangle.vertex_index_0],
+                                         vertices[triangle.vertex_index_1],
+                                         vertices[triangle.vertex_index_2], culling_mode);
 }
 
 // nocedit 0x00552150

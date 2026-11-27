@@ -67,6 +67,7 @@ protected:
                      .battery_gauge = {},
                      .health_bar = {},
                      .inventory_panel = {},
+                     .inventory_views = {},
                      .status_bars = {},
                      .message_line = {},
                      .credits = {},

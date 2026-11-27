@@ -61,6 +61,10 @@ SGameContent fullContent() {
     content.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::Left, .x = 639, .y = 479}};
     content.inventory_panel =
         SInventoryPanel{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
+    content.inventory_views = {
+        {.id = "axe1.kfm", .turn_x = -90.0, .turn_y = {}, .turn_z = -90.5, .distance = {}},
+        {.id = "lamp.kfm", .turn_x = {}, .turn_y = 45.0, .turn_z = {}, .distance = 1.5},
+        {.id = "rock.kfm", .turn_x = {}, .turn_y = {}, .turn_z = {}, .distance = {}}};
     content.status_bars = SStatusBars{.place = {.anchor = EHudAnchor::Right, .x = 3, .y = -4}};
     content.message_line = SMessageLine{.place = {.anchor = EHudAnchor::BottomLeft, .x = 5}};
     content.credits = getShippedGameContent().credits;
@@ -124,8 +128,9 @@ TEST(GameContentFile, AnElementWithoutAPlaceTakesNocturnes) {
               (SHudPlace{.anchor = EHudAnchor::BottomLeft, .x = 4, .y = 4}));
     EXPECT_EQ(common::required(content->health_bar).place,
               (SHudPlace{.anchor = EHudAnchor::TopRight, .x = 4, .y = 4}));
-    EXPECT_EQ(common::required(content->inventory_panel).place,
-              (SHudPlace{.anchor = EHudAnchor::BottomRight, .x = 0, .y = 0}));
+    // The inventory's table may only add views, so without a place it leaves the panels where an
+    // earlier package put them.
+    EXPECT_EQ(content->inventory_panel, std::nullopt);
     EXPECT_EQ(common::required(content->status_bars).place,
               (SHudPlace{.anchor = EHudAnchor::BottomLeft, .x = 8, .y = 6}));
     EXPECT_EQ(common::required(content->message_line).place,
@@ -135,6 +140,18 @@ TEST(GameContentFile, AnElementWithoutAPlaceTakesNocturnes) {
         (SDeathBanner{.text = "Dead", .place = {.anchor = EHudAnchor::Top, .x = 0, .y = 112}}));
     EXPECT_EQ(common::required(content->chapter_title).place,
               (SHudPlace{.anchor = EHudAnchor::BottomLeft, .x = 0, .y = 0}));
+}
+
+// A view's model is kept in lower case, which a later package's view of it in any case replaces;
+// an angle may be whole.
+TEST(GameContentFile, AViewsModelIsKeptInLowerCase) {
+    const auto content = parseGameContent(
+        "[[hud.inventory.view]]\nmodel = 'AXE1.KFM'\nturn = { x = -90, z = -90 }\n");
+    ASSERT_TRUE(content.has_value()) << content.error();
+    EXPECT_THAT(
+        content->inventory_views,
+        ::testing::ElementsAre(SInventoryItemView{
+            .id = "axe1.kfm", .turn_x = -90.0, .turn_y = {}, .turn_z = -90.0, .distance = {}}));
 }
 
 TEST(GameContentFile, NoContentWritesNothing) {
@@ -331,6 +348,24 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[hud.health_bar]\nplace = { anchor = 'top_left', x = -641, y = 1 }",
                  "hud: health_bar: place: x: not from -640 to 640"},
         SBadCase{"[hud.inventory]\nsize = 1", "hud: inventory: size: not a key this file takes"},
+        SBadCase{"hud.inventory = 1", "hud: inventory: not a [inventory] table"},
+        SBadCase{"[hud.inventory]\nplace = { y = 1 }", "hud: inventory: place: anchor: missing"},
+        SBadCase{"[hud.inventory]\nview = 1",
+                 "hud: inventory: view: not a list of [[view]] tables"},
+        SBadCase{"[[hud.inventory.view]]\nturn = { x = 1 }",
+                 "hud: inventory: view 1: model: missing"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\nzoom = 1",
+                 "hud: inventory: view 1: zoom: not a key this file takes"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\nturn = 1",
+                 "hud: inventory: view 1: turn: not a [turn] table"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\nturn = { w = 1 }",
+                 "hud: inventory: view 1: turn: w: not a key this file takes"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\nturn = { y = 'left' }",
+                 "hud: inventory: view 1: turn: y: not a number"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\ndistance = nan",
+                 "hud: inventory: view 1: distance: not a number"},
+        SBadCase{"[[hud.inventory.view]]\nmodel = 'a.kfm'\ndistance = 0",
+                 "hud: inventory: view 1: distance: not more than 0"},
         SBadCase{"[hud.status_bars]\nplace = 1", "hud: status_bars: place: not a [place] table"},
         SBadCase{"[hud.message]\nplace = { y = 1 }", "hud: message: place: anchor: missing"},
         SBadCase{"hud.death_banner = 'Dead'", "hud: death_banner: not a [death_banner] table"},

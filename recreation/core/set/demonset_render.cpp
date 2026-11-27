@@ -9,6 +9,7 @@
 #include "core/dtrace/demonraytrace.h"
 #include "core/game/game.h"
 #include "core/ground/ground.h"
+#include "core/inv/inventory.h"
 #include "core/location.h"
 #include "core/set/demonset.h"
 #include "core/setutil/3dscamera.h"
@@ -132,8 +133,8 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // deferred: the gore's and the fire's decals before the still water, and each glass's backdrop
 //   after it, drawn into the camera's frame, with CGore::renderDecals, CFireEffect::renderDecals
 //   and CGlass
-// deferred: the local hero's weapon and item drawn in their panels, with
-//   CInventory::renderSelectedItems
+// The item panels go over the scene last; the original drew them for the local hero outside the
+// editor, which the game checks.
 // The spotlights' maps get their master depths back where the actors were drawn into them.
 // deferred: the time the scene's parts took, printed while profiling, with processHotkeys'
 //   profile mode
@@ -142,7 +143,7 @@ void CDemonSet::renderBackgroundActors(int layer_flag) {
 // bw1 0x00550580
 // bw2 0x0052f2a0
 // bw3 0x00535da0
-void CDemonSet::renderScene() {
+void CDemonSet::renderScene(const SSceneInventory *local_inventory) {
     checkCameraSelected();
     CDemonCamera &camera = owners_.camera;
     camera.restoreZBufferRectArray();
@@ -173,6 +174,15 @@ void CDemonSet::renderScene() {
         water.render(0, getWaterOwners());
     }
     camera.endBackgroundScene(0);
+    if (local_inventory != nullptr) {
+        local_inventory->inventory.renderSelectedItems(
+            local_inventory->hud, {.renderer = owners_.renderer,
+                                   .set = *this,
+                                   .camera = camera,
+                                   .camera_tables = owners_.light_owners.camera.tables,
+                                   .matrix = owners_.matrix,
+                                   .delta_time = owners_.game.getDeltaTimeInt()});
+    }
     camera.endScene(0);
     for (const SShownSpotlight &shown : spotlights_) {
         shown.light->restoreDirtyRegions();

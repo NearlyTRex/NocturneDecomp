@@ -6,7 +6,9 @@
 #include <gtest/gtest.h>
 
 #include <array>
+#include <optional>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace nocturne::engine {
@@ -93,7 +95,19 @@ TEST(GameContent, AStoryOrPictureWithAnIdTakenReplacesItWhereItStands) {
     SGameContent mod;
     mod.stories = {story("one", "First"), story("three", "Three")};
     mod.loading = {picture("a", false), picture("c", true)};
+    const auto view = [](std::string_view model, std::optional<double> turn_y,
+                         std::optional<double> distance) {
+        return SInventoryItemView{.id = std::string(model),
+                                  .turn_x = std::nullopt,
+                                  .turn_y = turn_y,
+                                  .turn_z = std::nullopt,
+                                  .distance = distance};
+    };
+    base.inventory_views = {view("axe1.kfm", 1.0, {}), view("ax.kfm", 2.0, {})};
+    mod.inventory_views = {view("ax.kfm", 10.0, {}), view("lamp.kfm", {}, 3.0)};
     const SGameContent merged = merge({&base, &mod}).content;
+    EXPECT_THAT(merged.inventory_views, ElementsAre(base.inventory_views[0], mod.inventory_views[0],
+                                                    mod.inventory_views[1]));
     EXPECT_THAT(merged.stories,
                 ElementsAre(story("one", "First"), story("two", "Two"), story("three", "Three")));
     EXPECT_THAT(merged.loading,

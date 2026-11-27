@@ -5,6 +5,7 @@
 #include "common/text/scanformat.h"
 #include "common/text/textlines.h"
 #include "common/text/textscanner.h"
+#include "common/text/values.h"
 #include "core/dcamera/dcamera.h"
 #include "core/dmodel/keyframedmodel.h"
 #include "core/dtrace/demonraytrace.h"
@@ -23,7 +24,6 @@
 #include <algorithm>
 #include <array>
 #include <bit>
-#include <charconv>
 #include <cmath>
 #include <cstddef>
 #include <format>
@@ -31,7 +31,6 @@
 #include <span>
 #include <string>
 #include <string_view>
-#include <system_error>
 #include <vector>
 
 namespace nocturne::core {
@@ -133,42 +132,9 @@ constexpr std::string_view kMovingVehiclePrefix = "train";
 constexpr std::string_view kTerrainBlock = "terrain";
 constexpr float kWorldToFixed = 256.0F;
 
-std::string_view trimSpaces(std::string_view text) {
-    constexpr std::string_view kSpaces = " \t";
-    const std::size_t first = text.find_first_not_of(kSpaces);
-    if (first == std::string_view::npos) {
-        return {};
-    }
-    return text.substr(first, text.find_last_not_of(kSpaces) - first + 1);
-}
-
-// A block's value line split at its commas, each part trimmed of the spaces around it.
-std::vector<std::string_view> splitValues(std::string_view line) {
-    std::vector<std::string_view> values;
-    std::size_t start = 0;
-    for (std::size_t comma = line.find(','); comma != std::string_view::npos;
-         comma = line.find(',', start)) {
-        values.push_back(trimSpaces(line.substr(start, comma - start)));
-        start = comma + 1;
-    }
-    values.push_back(trimSpaces(line.substr(start)));
-    return values;
-}
-
-// The whole of the text as a number; none for anything else, empty included.
-template <typename T>
-std::optional<T> parseNumber(std::string_view text) {
-    T number{};
-    const auto [end, error] = std::from_chars(text.data(), text.data() + text.size(), number);
-    if (error != std::errc{} || end != text.data() + text.size()) {
-        return std::nullopt;
-    }
-    return number;
-}
-
 // A distance in world units, in 24.8 rounded to nearest.
 std::optional<int> parseDistance(std::string_view text) {
-    const std::optional<float> units = parseNumber<float>(text);
+    const std::optional<float> units = common::parseNumber<float>(text);
     if (!units) {
         return std::nullopt;
     }
@@ -177,7 +143,7 @@ std::optional<int> parseDistance(std::string_view text) {
 
 // A grid side in cells: a power of two, as the ground wraps by masking.
 std::optional<int> parseGridSize(std::string_view text) {
-    const std::optional<int> cells = parseNumber<int>(text);
+    const std::optional<int> cells = common::parseNumber<int>(text);
     if (!cells || *cells <= 0 || !std::has_single_bit(static_cast<unsigned>(*cells))) {
         return std::nullopt;
     }
@@ -189,10 +155,8 @@ std::optional<int> parseGridSize(std::string_view text) {
 // the camera is drawn over. Any value left out, empty or not one takes the default.
 STerrainSettings scanTerrainSettings(std::string_view line) {
     STerrainSettings settings;
-    const std::vector<std::string_view> values = splitValues(line);
-    const auto value = [&values](std::size_t index) {
-        return index < values.size() ? values[index] : std::string_view{};
-    };
+    const std::vector<std::string_view> values = common::splitValues(line);
+    const auto value = [&values](std::size_t index) { return common::getValue(values, index); };
     if (!value(0).empty()) {
         settings.ground = value(0);
     }
@@ -215,7 +179,8 @@ struct SSetBlocks {
 SSetBlocks readSetBlocks(CTextScanner &scanner) {
     SSetBlocks blocks;
     while (!scanner.atEnd()) {
-        if (common::equalsIgnoringAsciiCase(trimSpaces(scanner.readLine()), kTerrainBlock)) {
+        if (common::equalsIgnoringAsciiCase(common::trimSpaces(scanner.readLine()),
+                                            kTerrainBlock)) {
             blocks.terrain = scanTerrainSettings(scanner.readLine());
         }
     }

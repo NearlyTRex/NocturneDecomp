@@ -225,6 +225,10 @@ const CKeyFramedModelInstance &CBoxActor::getModel() const {
     return model_;
 }
 
+CKeyFramedModelInstance &CBoxActor::getModel() {
+    return model_;
+}
+
 float CBoxActor::getWeightInPounds() const {
     return weight_in_pounds_;
 }

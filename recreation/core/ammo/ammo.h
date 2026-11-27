@@ -43,6 +43,8 @@ public:
     void setAmmoType(EAmmoType ammo_type);
 
     [[nodiscard]] const CKeyFramedModelInstance &getModel() const;
+    // To draw it.
+    [[nodiscard]] CKeyFramedModelInstance &getModel();
     // The weapon class the rounds are for.
     [[nodiscard]] const std::string &getWeaponClassName() const;
     [[nodiscard]] int getAmmoCount() const;

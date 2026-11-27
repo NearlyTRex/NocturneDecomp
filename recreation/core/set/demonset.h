@@ -85,6 +85,12 @@ struct SDemonSetOwners {
     engine::CConsole &console;
 };
 
+// The inventory whose item panels the scene draws, and the HUD they are laid out in.
+struct SSceneInventory {
+    CInventory &inventory;
+    const SInventoryHud &hud;
+};
+
 class CDemonSet {
 public:
     // A camera's depth thumb: 64 by 48 depths, row by row.
@@ -123,8 +129,9 @@ public:
     void renderStaticLights();
     // The frame's scene over the shown camera's backdrop: the depths the actors drew over last
     // frame put back, then the actors drawn opaque and then tinted, farthest first and the local
-    // hero last, and each one's place noted as drawn. A camera must be shown.
-    void renderScene();
+    // hero last, the local inventory's item panels when given, and each one's place noted as
+    // drawn. A camera must be shown.
+    void renderScene(const SSceneInventory *local_inventory = nullptr);
     void renderGogglesView();
     void addDynamicLight(CDemonLight *light);
     void addCoronaGlobe(CDemonGlobe *globe);
