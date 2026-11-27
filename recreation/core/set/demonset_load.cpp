@@ -2,6 +2,7 @@
 #include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
 #include "common/text/ascii.h"
+#include "common/text/path.h"
 #include "common/text/scanformat.h"
 #include "common/text/textlines.h"
 #include "common/text/textscanner.h"
@@ -128,8 +129,15 @@ void scanBox(CTextScanner &scanner, common::CVector3f &position, common::CVector
 
 // A set whose geometry's name starts so is aboard a moving vehicle, as Nocturne's train is.
 constexpr std::string_view kMovingVehiclePrefix = "train";
-// The recreation's blocks' labels, and a block's distances' world units to 24.8.
+// Sets whose geometry has one of these stems play their ambient sound quieter, at that volume,
+// as Nocturne's mill and town do.
+constexpr std::array kQuietAmbientStems{std::string_view("smill"), std::string_view("town")};
+constexpr float kQuietAmbientVolume = 0.85F;
+// The recreation's blocks' labels, a block's values that turn it off, and a block's distances'
+// world units to 24.8.
 constexpr std::string_view kTerrainBlock = "terrain";
+constexpr std::string_view kAmbientBlock = "ambient";
+constexpr std::string_view kOff = "off";
 constexpr float kWorldToFixed = 256.0F;
 
 // A distance in world units, in 24.8 rounded to nearest.
@@ -168,9 +176,31 @@ STerrainSettings scanTerrainSettings(std::string_view line) {
     return settings;
 }
 
+// "sound,volume", either left out for what the set plays without the block, or "off" for no
+// sound.
+struct SAmbientBlock {
+    bool off = false;
+    std::string sound;
+    std::optional<float> volume;
+};
+
+// A volume is a plain number, 0 or more, as a sound name's '@' modifier takes.
+SAmbientBlock scanAmbientBlock(std::string_view line) {
+    if (common::equalsIgnoringAsciiCase(common::trimSpaces(line), kOff)) {
+        return {.off = true, .sound = {}, .volume = std::nullopt};
+    }
+    const std::vector<std::string_view> values = common::splitValues(line);
+    std::optional<float> volume = common::parseNumber<float>(common::getValue(values, 1));
+    if (volume && *volume < 0.0F) {
+        volume.reset();
+    }
+    return {.off = false, .sound = std::string(common::getValue(values, 0)), .volume = volume};
+}
+
 // What the recreation's blocks after the file's end asked for.
 struct SSetBlocks {
     std::optional<STerrainSettings> terrain;
+    std::optional<SAmbientBlock> ambient;
 };
 
 // Every line after the visibility lists: a line that is a block's label, in any case and spaces
@@ -179,9 +209,11 @@ struct SSetBlocks {
 SSetBlocks readSetBlocks(CTextScanner &scanner) {
     SSetBlocks blocks;
     while (!scanner.atEnd()) {
-        if (common::equalsIgnoringAsciiCase(common::trimSpaces(scanner.readLine()),
-                                            kTerrainBlock)) {
+        const std::string_view label = common::trimSpaces(scanner.readLine());
+        if (common::equalsIgnoringAsciiCase(label, kTerrainBlock)) {
             blocks.terrain = scanTerrainSettings(scanner.readLine());
+        } else if (common::equalsIgnoringAsciiCase(label, kAmbientBlock)) {
+            blocks.ambient = scanAmbientBlock(scanner.readLine());
         }
     }
     return blocks;
@@ -215,7 +247,7 @@ void CDemonSet::load(std::string_view filename) {
     loadLightsAndCameras(scanner);
     loadRoomsAndGround(scanner, geometry_name);
     loadVdirBoxesAndVisibility(scanner);
-    loadExtensions(scanner);
+    loadExtensions(scanner, geometry_name);
 
     owners_.loading_screen.update(owners_.messages.getLocalizedString("Loading set geometry"),
                                   false);
@@ -417,7 +449,10 @@ void CDemonSet::loadVdirBoxesAndVisibility(CTextScanner &scanner) {
 // ground of its own, whatever its geometry is called, as "junk.jnk,98.4375,256,256,1032,0" gives
 // Nocturne's defaults; without it, only a set aboard a moving vehicle has one, with the defaults.
 // The original set the terrain up as it read the weather, before the lights.
-void CDemonSet::loadExtensions(CTextScanner &scanner) {
+// The ambient block names the set's ambient sound and its volume; without it, or for a value it
+// leaves out, the sound is the geometry's stem as a .wav, as the original's script start made
+// it, and the mill's and the town's quieter.
+void CDemonSet::loadExtensions(CTextScanner &scanner, std::string_view geometry_name) {
     const SSetBlocks blocks = readSetBlocks(scanner);
     has_terrain_ = aboard_moving_vehicle_ || blocks.terrain.has_value();
     if (has_terrain_) {
@@ -425,6 +460,27 @@ void CDemonSet::loadExtensions(CTextScanner &scanner) {
     } else {
         owners_.terrain.free();
     }
+    const SAmbientBlock ambient = blocks.ambient.value_or(SAmbientBlock{});
+    if (ambient.off) {
+        ambient_sound_.clear();
+        return;
+    }
+    const std::string_view stem = common::pathStem(geometry_name);
+    const bool quiet = std::ranges::any_of(kQuietAmbientStems, [stem](std::string_view quiet_stem) {
+        return common::equalsIgnoringAsciiCase(stem, quiet_stem);
+    });
+    ambient_sound_ = ambient.sound.empty() ? std::format("{}.wav", stem) : ambient.sound;
+    std::optional<float> volume = ambient.volume;
+    if (!volume && quiet) {
+        volume = kQuietAmbientVolume;
+    }
+    if (volume) {
+        ambient_sound_ += std::format("@{}", *volume);
+    }
+}
+
+const std::string &CDemonSet::getAmbientSound() const {
+    return ambient_sound_;
 }
 
 void CDemonSet::showMissingGeometryWarning() {

@@ -307,6 +307,9 @@ public:
     [[nodiscard]] std::span<const SVDBox> getVdirBoxes() const;
     // The raytrace geometry's .GEO file, as the last load named it.
     [[nodiscard]] const std::string &getGeometryFilename() const;
+    // The sound the script's start plays as the set's ambient sound, with any volume as its '@'
+    // modifier; empty for none.
+    [[nodiscard]] const std::string &getAmbientSound() const;
     // The camera's depth thumb, kThumbWidth * kThumbHeight depths.
     [[nodiscard]] std::span<const std::uint32_t> getThumb(std::size_t camera_index) const;
     // For each 16.16 intensity below one, its level after gamma, at least 0x100; empty until
@@ -345,8 +348,8 @@ private:
     void loadRoomsAndGround(common::CTextScanner &scanner, std::string_view geometry_name);
     void loadVdirBoxesAndVisibility(common::CTextScanner &scanner);
     // The recreation's own blocks after the file's end: the moving ground, with the defaults or
-    // what the terrain block asks for.
-    void loadExtensions(common::CTextScanner &scanner);
+    // what the terrain block asks for, and the ambient sound.
+    void loadExtensions(common::CTextScanner &scanner, std::string_view geometry_name);
     void showMissingGeometryWarning();
     static void skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner);
     int findVdirBoxRoot(int box_index);
@@ -401,6 +404,7 @@ private:
     // Whether the set has a moving ground to draw: aboard a moving vehicle, or a set whose file asks
     // for one.
     bool has_terrain_ = false;
+    std::string ambient_sound_;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
     std::vector<CDemonActor *> renderable_actors_;

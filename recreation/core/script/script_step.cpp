@@ -1,6 +1,5 @@
 #include "common/error/error.h"
 #include "common/text/ascii.h"
-#include "common/text/path.h"
 #include "core/actor/notported.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -27,8 +26,6 @@ constexpr std::size_t kMaxSkipLabelLength = 100;
 constexpr int kMaxInitSectionSteps = 10000;
 // The hero this machine plays, as a game without netplay always has it.
 constexpr std::size_t kLocalHero = 0;
-// The volume some sets' ambient sound plays at, as a sound name's modifier.
-constexpr std::string_view kQuietAmbient = "@0.85";
 
 // The run of letters and digits a line starts with: a command matches when the line starts with
 // its name and the next character is neither.
@@ -106,7 +103,8 @@ void CScript::executeInitSection() {
 // deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
 // deferred: letting the heroes be damaged and the enemies attack, with CGame's readers of them
 // The letterbox is down and drawn so, and no line is shown.
-// The set's ambient sound is its geometry's stem as a .wav, the mill's and the town's quieter.
+// The set's ambient sound is the one its file gives, or its geometry's stem as a .wav, the
+// mill's and the town's quieter.
 // nocedit 0x0055a540
 void CScript::initRuntime() {
     next_cmd_ = 0;
@@ -114,13 +112,7 @@ void CScript::initRuntime() {
     focus_actor_ = owners_.mission.getHero(kLocalHero);
     owners_.game.letterbox_mode = ELetterbox::Off;
     letterbox_extension_ = 0.0F;
-    std::string ambient =
-        std::format("{}.wav", common::pathStem(owners_.set.getGeometryFilename()));
-    if (common::equalsIgnoringAsciiCase(ambient, "smill.wav") ||
-        common::equalsIgnoringAsciiCase(ambient, "town.wav")) {
-        ambient += kQuietAmbient;
-    }
-    owners_.sound.playAmbientSound(ambient);
+    owners_.sound.playAmbientSound(owners_.set.getAmbientSound());
     mission_ended_ = false;
     call_stack_.clear();
     loop_warning_shown_ = false;

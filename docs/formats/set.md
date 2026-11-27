@@ -316,12 +316,34 @@ A set with the block has a moving ground whatever its geometry is called. A set 
 one only if its geometry's name starts `train` (Nocturne's own train sets), with the defaults:
 `junk.jnk,98.4375,256,256,1032,0`.
 
+### `ambient`
+
+The sound the set plays all the while, which the mission script's start makes the set's ambient
+sound (a script's `setAmbientSound` can change it later).
+
+```
+ambient
+<sound>,<volume>
+```
+
+| Value | Meaning | Default |
+|---|---|---|
+| `sound` | The sound's name, as a script names one. | The geometry's name before its extension, with `.wav` |
+| `volume` | Its volume, a number 0 or more, as a sound name's `@` modifier: 1 is as recorded. | As recorded, or 0.85 for the geometries below |
+
+The values line `off`, in any case, gives the set no ambient sound.
+
+A value the block leaves out, or a volume that is not a number 0 or more, is what the set plays
+without the block. Without it, the sound is the geometry's own, and a geometry named `smill` or
+`town` (Nocturne's mill and town, in any case) plays it at 0.85, as the original did.
+
 ### Planned
 
 `vehicle` (the moving vehicle's noises, volumes and the inside/outside test, on or off for any
 set) and `water` (the water's lapping, its file and volume curve) will come with the sound code
-that plays them; their syntax is not settled. Each will take `off`, as will `terrain`; a block
-always wins over the geometry-name fallbacks, which apply only to files without it.
+that plays them; their syntax is not settled. Each will take `off`, as `ambient` does and
+`terrain` will; a block always wins over the geometry-name fallbacks, which apply only to files
+without it.
 
 ## Example
 

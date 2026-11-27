@@ -319,6 +319,38 @@ TEST_F(CDemonSetTerrainBlockTest, OtherLinesAfterTheEndAreLeftAlone) {
     EXPECT_FALSE(set_parts_.terrain.isInitialized());
 }
 
+// Without an ambient block a set plays its geometry's stem as a .wav, the mill and the town in
+// any case at 0.85.
+TEST_F(CDemonSetLoadTest, ASetWithoutAnAmbientBlockPlaysItsGeometrysSound) {
+    load({});
+    EXPECT_EQ(set_.getAmbientSound(), "pier.wav");
+    load({.geometry = "smill.geo"});
+    EXPECT_EQ(set_.getAmbientSound(), "smill.wav@0.85");
+    load({.geometry = "TOWN.GEO"});
+    EXPECT_EQ(set_.getAmbientSound(), "TOWN.wav@0.85");
+}
+
+// The block names the sound and its volume; a value left out, or a volume that is no number 0 or
+// more, is what the set plays without the block.
+TEST_F(CDemonSetLoadTest, AnAmbientBlockGivesTheSoundAndItsVolume) {
+    load({.tail = "\n  Ambient  \n rain.wav , 0.5 \n"});
+    EXPECT_EQ(set_.getAmbientSound(), "rain.wav@0.5");
+    load({.tail = "\nambient\nrain.wav\n"});
+    EXPECT_EQ(set_.getAmbientSound(), "rain.wav");
+    load({.geometry = "town.geo", .tail = "\nambient\n,1\n"});
+    EXPECT_EQ(set_.getAmbientSound(), "town.wav@1");
+    load({.geometry = "town.geo", .tail = "\nambient\nrain.wav,loud\n"});
+    EXPECT_EQ(set_.getAmbientSound(), "rain.wav@0.85");
+    load({.tail = "\nambient\n,-1\n"});
+    EXPECT_EQ(set_.getAmbientSound(), "pier.wav");
+}
+
+// off, in any case, gives the set no ambient sound.
+TEST_F(CDemonSetLoadTest, AnAmbientBlockOfOffPlaysNone) {
+    load({.geometry = "town.geo", .tail = "\nambient\n OFF \n"});
+    EXPECT_EQ(set_.getAmbientSound(), "");
+}
+
 TEST_F(CDemonSetLoadTest, TheEnviroModelIsLoadedWhenTheSetUsesOneAndFreedWithTheNext) {
     givenFile("models\\moon.kfm", std::string(kMoonModel));
     load({.enviro = "1,moon.kfm"});
