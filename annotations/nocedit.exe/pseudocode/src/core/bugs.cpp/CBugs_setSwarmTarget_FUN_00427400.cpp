@@ -43,9 +43,9 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDe
   if (this_ptr->deformable_model_ptr != (CDeformableModelInstance *)0x0) {
     this_ptr->state = BUGS_STATE_ATTACK;
     this_ptr->swarm_target = target;
-    iVar1 = this_ptr->swarm_target->health;
+    iVar1 = this_ptr->swarm_target->process_order;
     this_ptr->lod_index = 0;
-    (this_ptr->base).base.base.health = iVar1 + 1;
+    (this_ptr->base).base.base.process_order = iVar1 + 1;
     do {
       pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                          (this_ptr->deformable_model_ptr);

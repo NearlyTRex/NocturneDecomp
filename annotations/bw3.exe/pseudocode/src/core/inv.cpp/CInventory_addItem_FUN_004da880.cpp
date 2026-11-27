@@ -73,7 +73,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
                          (this_ptr->owner,g_CHeroClassInfo.name_hash), pCVar7 != (CDemonActor *)0x0)
      ) {
     if (pCVar4[2].validation_magic == 10) {
-      iVar8 = *(int *)(pCVar7[0x185].create_event + 0x50) + pCVar4[2].health;
+      iVar8 = *(int *)(pCVar7[0x185].create_event + 0x50) + pCVar4[2].process_order;
       *(int *)(pCVar7[0x185].create_event + 0x50) = iVar8;
       if (100 < iVar8) {
         pCVar7[0x185].create_event[0x50] = 'd';
@@ -88,7 +88,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004da880(CInventory *this_ptr,CD
     }
     else {
       if (pCVar4[2].validation_magic == 0xb) {
-        iVar8 = *(int *)(pCVar7[0x185].create_event + 0x54) + pCVar4[2].health;
+        iVar8 = *(int *)(pCVar7[0x185].create_event + 0x54) + pCVar4[2].process_order;
         *(int *)(pCVar7[0x185].create_event + 0x54) = iVar8;
         if (0x32 < iVar8) {
           pCVar7[0x185].create_event[0x54] = '2';
@@ -826,7 +826,7 @@ LAB_004db104:
             core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530
                       (g_CDemonMission_PTR_00600530,actor);
             (*((actor->vtable)._ub)->setup)(actor);
-            *(int *)(actor[4].actor_name + 8) = pCVar7[2].health;
+            *(int *)(actor[4].actor_name + 8) = pCVar7[2].process_order;
             *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar7[2].validation_magic;
             (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
             (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);

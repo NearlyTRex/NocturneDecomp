@@ -69,7 +69,7 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   ADJ(pCVar5)->render_in_background_when_not_moving_flag = 0;
   ADJ(pCVar5)->camera_while_moving[0] = '\0';
   ADJ(pCVar5)->rendered_in_background = 0;
-  ADJ(pCVar5)->base.health = 0x32;
+  ADJ(pCVar5)->base.process_order = 0x32;
   ADJ(pCVar5)->plot_as_box_in_shadow = 0;
   ADJ(pCVar5)->goal_param = 0.0;
   ADJ(pCVar5)->current_movement_rate = 0.0;

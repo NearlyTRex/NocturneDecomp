@@ -84,7 +84,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0054fc20(CDemonSet *this_p
           do {
             pCVar1 = local_20->actors[0];
             if (pCVar1->process_disabled == 0) {
-              iVar4 = pCVar1->health;
+              iVar4 = pCVar1->process_order;
               if (iVar4 == local_2c) {
                 pfVar6 = (float *)((int)pCVar1 + (uint)bVar7 * -8 + 0x34);
                 CStack_6c.z = (pCVar1->orient).vec.x;

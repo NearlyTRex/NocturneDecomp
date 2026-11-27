@@ -102,7 +102,7 @@ void __cdecl core_enemy_cpp_CEnemy_spawnItems_FUN_00489c90(CEnemy *this_ptr)
             if (iVar5 != -2) {
               core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
                         ((CKeyFramedModelInstance *)(pCVar4 + 1),local_30);
-              pCVar4[2].health = 2;
+              pCVar4[2].process_order = 2;
             }
           }
         }

@@ -425,7 +425,7 @@ static void dump_actor_fields(FILE *f, CDemonActor *a) {
         std::fprintf(f, "matrix_yaw: %.4f rad (%.2f deg)\n", yaw, yaw * 57.29577951f);
     }
     std::fprintf(f, "lifecycle:  %d\n", (int)a->lifecycle_state);
-    std::fprintf(f, "health:     %d\n", a->health);
+    std::fprintf(f, "process_order:    %d\n", a->process_order);
     std::fprintf(f, "runtime_state:    %d\n", a->runtime_state);
     std::fprintf(f, "is_renderable:    %d\n", a->is_renderable);
     std::fprintf(f, "is_transparent:   %d\n", a->is_transparent);

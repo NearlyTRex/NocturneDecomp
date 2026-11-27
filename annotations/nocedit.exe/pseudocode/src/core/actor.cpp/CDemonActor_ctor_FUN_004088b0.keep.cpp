@@ -45,7 +45,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   ADJ(pCVar2)->blood_effect_timer = 0;
   ADJ(pCVar2)->collision_disabled = 0;
   ADJ(pCVar2)->process_disabled = 0;
-  ADJ(pCVar2)->health = 100;
+  ADJ(pCVar2)->process_order = 100;
   ADJ(pCVar2)->is_editor_hidden = 0;
   ADJ(pCVar2)->validation_magic = (uintptr_t)&g_ActorMagicNumber;
   strcpy(ADJ(pCVar2)->footstep_sound_code,"str");

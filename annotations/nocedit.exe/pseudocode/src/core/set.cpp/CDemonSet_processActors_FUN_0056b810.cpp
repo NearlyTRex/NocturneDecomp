@@ -93,7 +93,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
           do {
             pCVar1 = pCVar4->actors[0];
             if (pCVar1->process_disabled == 0) {
-              iVar3 = pCVar1->health;
+              iVar3 = pCVar1->process_order;
               if (iVar3 == local_24) {
                 g_CurrentProcessingActor = pCVar1;
                 if (g_CGamePtr->profile_mode == 2) {

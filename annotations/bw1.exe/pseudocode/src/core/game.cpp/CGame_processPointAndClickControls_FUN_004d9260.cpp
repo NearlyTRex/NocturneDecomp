@@ -451,7 +451,8 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
       pCVar13 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar8,g_CBoxActorClassInfo.name_hash);
       if ((pCVar13 != (CDemonActor *)0x0) &&
          (pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c600
-                              (pCVar8,g_CBoxActorClassInfo.name_hash), pCVar13[2].health != 0)) {
+                              (pCVar8,g_CBoxActorClassInfo.name_hash), pCVar13[2].process_order != 0
+         )) {
         g_INT_01cd0c24 = (int)pCVar8;
         g_CHero_PTR_ARRAY_01d06aa4[g_INT_01d06ab4]->hero_action = 4;
         pCVar13 = (CDemonActor *)g_INT_01cd0c24;
@@ -571,10 +572,11 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004d9260(CGame
                                   (pCVar13,g_CBoxActorClassInfo.name_hash),
               pCVar8 != (CDemonActor *)0x0 &&
               (pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c600
-                                  (pCVar13,g_CBoxActorClassInfo.name_hash), pCVar8[2].health != 0))
-             || (pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c600
-                                    (pCVar13,g_CWeaponClassInfo.name_hash),
-                pCVar8 != (CDemonActor *)0x0)))) ||
+                                  (pCVar13,g_CBoxActorClassInfo.name_hash),
+              pCVar8[2].process_order != 0)) ||
+             (pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                 (pCVar13,g_CWeaponClassInfo.name_hash),
+             pCVar8 != (CDemonActor *)0x0)))) ||
            (((pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c600
                                  (pCVar13,g_CLeverClassInfo.name_hash), pCVar8 != (CDemonActor *)0x0
              || (pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c600

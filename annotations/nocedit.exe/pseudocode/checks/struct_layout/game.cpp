@@ -1786,8 +1786,8 @@ static_assert(__builtin_offsetof(CDemonActor, orient_matrix) == 60,
               "offsetof(CDemonActor, orient_matrix) != 60");
 static_assert(__builtin_offsetof(CDemonActor, runtime_state) == 96,
               "offsetof(CDemonActor, runtime_state) != 96");
-static_assert(__builtin_offsetof(CDemonActor, health) == 100,
-              "offsetof(CDemonActor, health) != 100");
+static_assert(__builtin_offsetof(CDemonActor, process_order) == 100,
+              "offsetof(CDemonActor, process_order) != 100");
 static_assert(__builtin_offsetof(CDemonActor, validation_magic) == 104,
               "offsetof(CDemonActor, validation_magic) != 104");
 static_assert(__builtin_offsetof(CDemonActor, direction_hint) == 108,

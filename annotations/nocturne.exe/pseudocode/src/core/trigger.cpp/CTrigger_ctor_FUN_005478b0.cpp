@@ -54,7 +54,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(CTrigger *this_pt
   pCVar2->event_flag = 0;
   pCVar2->laser_type = 1;
   pCVar2->hit_points = 100.0;
-  (pCVar2->base).health = 0x96;
+  (pCVar2->base).process_order = 0x96;
   pCVar2->cached_actor = (CDemonActor *)0x0;
   pCVar2->triggering_actor = (CDemonActor *)0x0;
   pCVar2->test_radius = 99999.9;

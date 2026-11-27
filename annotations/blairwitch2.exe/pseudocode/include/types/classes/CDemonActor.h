@@ -27,7 +27,7 @@ typedef struct CDemonActor {
     UOrientationVector orient; // 0x30
     CMatrix3x3f orient_matrix; // 0x3c
     int runtime_state; // 0x60
-    int health; // 0x64
+    int process_order; // 0x64
     uintptr_t validation_magic; // 0x68
     int direction_hint; // 0x6c
     EActorLifecycleState lifecycle_state; // 0x70

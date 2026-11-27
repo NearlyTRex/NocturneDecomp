@@ -29,11 +29,11 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 8 | `renderMenuAndGetChoice`, `CMoon::free`, `CSound::reset`, `CEditorTools::showFileSelectionDialog` | 8 | 63 | 5314 | 60 | 3 | 95.2% | 26 | 12 |
 | 9 | `CPickList::enableItem`, `CEventList::resetGameFlags`, `CLevelLoader::show`, `CDemonMission::load` | 15 | 56 | 3298 | 37 | 9 | 66.0% | 28 | 10 |
 | 10 | `CDemonMission::createHeros`, `CDemonMission::prepareAllActors`, `CEventList::reset`, `CDemonMission::loadSet` | 15 | 42 | 5112 | 35 | 6 | 83.3% | 24 | 17 |
-| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 187 | 66 | 32.2% | 268 | 49 |
+| 11 | `CScript::loadScript` | 63 | 579 | 67400 | 187 | 67 | 32.2% | 268 | 50 |
 | 12 | `CDemonMission::loadScript`, `CScript::executeInitSection`, `CDemonMission::startMission`, `CDemonMission::buildActiveSetActorList`, `CConsole::reset`, `CEditorTools::displayMemoryDiagnostics`, `CGame::setGameRes`, `CDemonLight::init`, `CDemonSet::initScene` | 12 | 26 | 1658 | 20 | 6 | 76.9% | 14 | 8 |
 | 13 | `CFireEffect::init`, `CDemonSet::loadMasterLightStates`, `CDemonSet::setGamma`, `CGame::clearOverlay`, `CGame::loadAssets` | 7 | 27 | 735 | 16 | 2 | 59.2% | 7 | 1 |
 | 14 | `CNetGame::syncPlayers`, `CNetGame::processServerFrame`, `CLevelLoader::cleanup`, `CKeys::toggleInputMask`, `CGame::processHotkeys` | 17 | 51 | 5302 | 6 | 3 | 11.7% | 19 | 2 |
-| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 50 | 20 | 26.4% | 69 | 14 |
+| 15 | `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame` | 43 | 189 | 28837 | 51 | 26 | 26.9% | 69 | 19 |
 | 16 | `CGame::setScreenResolutionAndDisplayFangs`, `showOptionsScreen`, `CScript::skipCinematic`, `CGame::showFullscreenBitmap`, `CDemonMission::countDamageableEnemies`, `freeInventory`, `CGame::runGameSession`, `CGame::displayActStats` | 10 | 25 | 6938 | 9 | 4 | 36.0% | 14 | 2 |
 | 17 | `CGame::finishAct`, `CDemonMission::run`, `CGame::loadGame`, `CGame::showChapterSelect`, `showDeveloperToolsMenu` | 12 | 26 | 3707 | 6 | 2 | 23.0% | 13 | 0 |
 | 18 | `enterMainGameMenu`, `finalizeGameSystems` | 11 | 13 | 539 | 3 | 0 | 23.0% | 5 | 0 |
@@ -51,7 +51,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 | 30 | Not reached from startup: `core/` (part 8 of 9) | 20 | 300 | 31826 | 43 | 8 | 14.3% | 162 | 11 |
 | 31 | Not reached from startup: `core/` (part 9 of 9) | 5 | 111 | 10905 | 26 | 7 | 23.4% | 68 | 11 |
 | 32 | Not reached from startup: `wincore/` | 2 | 12 | 521 | 4 | 0 | 33.3% | 3 | 3 |
-| | **All** | | **4487** | **402625** | **1333** | **240** | **29.7%** | **2032** | **384** |
+| | **All** | | **4487** | **402625** | **1334** | **247** | **29.7%** | **2032** | **390** |
 
 ## Step 0: Math value types
 
@@ -610,8 +610,8 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/mission.cpp` (1 functions, 23 instructions, 0 done, 1 partial)
 - class `CDemonMission`
   - [~] `reset` 0x00522c80 (23)
-    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
-    - deferred: emptying the queue of actors to delete, with markActorToDelete and process
+    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget
+    - deferred: emptying the queue of actors to delete, with markActorToDelete
     - deferred: clearing actor_lookup_count, with saveActor
     - BW: [ ] bw1 0x0051a2d0 = bw3 0x004f5aa0 (logic-change); [ ] bw2 0x004fb380 (logic-change)
 
@@ -1238,7 +1238,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `doCheckForInvalidPointers` 0x0040ac80 (193)
   - [x] `updateOrientationMatrix` 0x00408c10 (30)
   - [~] `ctor` 0x004088b0 (88)
-    - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency), health and footstep fields, with the steps that read them
+    - deferred: the defaults the constructor gives the orientation's matrix, and the platform, rendering (but for the transparency) and footstep fields, with the steps that read them
     - BW: [x] bw1 0x004085c0 = bw3 0x00408600 (logic-change); [ ] bw2 0x00408790 (logic-change)
 - free functions
   - [x] `getActorClassByName` 0x0040c3c0 (45)
@@ -2438,10 +2438,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005595a0 = bw2 0x00538180 = bw3 0x0053ef60 (logic-change)
   - [ ] `disableIgnore` 0x00574210 (3)
 
-### `core/weather.cpp` (3 functions, 372 instructions, 1 done, 0 partial)
+### `core/weather.cpp` (3 functions, 372 instructions, 1 done, 1 partial)
 - class `CWeather`
-  - [ ] `createLightningStrike` 0x005eeeb0 (188)
-    - BW: [ ] bw1 0x005ae580 (logic-change); [ ] bw2 0x0058aa30 (logic-change); [ ] bw3 0x0057c2e0 (logic-change)
+  - [~] `createLightningStrike` 0x005eeeb0 (188)
+    - deferred: the bolt drawn from above the set's middle, as far out as the set is wide, high or half deep, along the weather's direction, and the strike heard from there, while play_sound is set, with setOriginAndRotation, CFireEffect::createLightningBolt and CSound::playActorSound
+    - deferred: BW3's storm (weather type 5): its next lightning half to three quarters of a second away, and its strike hitting a visible living character, with BW3's weather types
+    - deferred: BW3's flash dimming back to the shown camera's ambient value, whole, rather than to the scene's light, with a per-game weather table
+    - BW: [x] bw1 0x005ae580 (logic-change); [x] bw2 0x0058aa30 (logic-change); [x] bw3 0x0057c2e0 (logic-change)
   - [x] `setWeatherType` 0x005ef8c0 (30)
     - BW: [ ] bw3 0x0057d050 (logic-change)
   - [ ] `setOriginAndRotation` 0x005ef940 (154)
@@ -2577,7 +2580,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [x] bw1 0x00543fd0 = bw2 0x00521ec0 = bw3 0x005295e0 (logic-change)
   - [~] `initRuntime` 0x0055a540 (120)
     - deferred: clearing the wait and dialogue timers and the time a message shows for, with processTimer and startDialogLine
-    - deferred: clearing the ending flag, the breakpoint state, the call stack, the skip label and the loop warning, with process and skipCinematic
+    - deferred: clearing the skip label, with skipCinematic
     - deferred: following the first hero placed in an area when the local hero is in none (the decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
     - deferred: marking the focus changed, with the play loop's virtual director call
     - deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
@@ -2596,7 +2599,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [x] `findDialogEntry` 0x005606e0 (48)
   - [~] `step` 0x0055a810 (5702)
     - deferred: resetting the wait and dialogue timers once a command finishes, with processTimer and startDialogLine
-    - deferred: staying on a command that hasn't finished, and the overrun past the end of the script, while running, with process
     - deferred: running advanceLightFilter, createExplosion, deleteActor, displayBitmap, hurtCharacter, incCounter, fadeSfx, fadeAmbientSound, flagOn, flagOff, gameFlagOn, gameFlagOff, killCharacter, killHero, killSfx, lightning, playSfx, setCameraAmbient, setCounter, setGroupAmbient, setLightFilterFrame, setLeverState, setModelState, setTimer, setWeather, shakeScreen, slamModelToMotion and warpTo, the line run as event commands, with CEventList::executeCommands
     - deferred: running raise, running its event commands, with CEventList::executeCommands
     - deferred: running allowEnemyAttack, setting whether enemies attack by its condition, with CEventList::evaluateCondition
@@ -2615,7 +2617,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: running removeAllItemsFromInventory, emptying the hero's inventory, with CInventory::initialize
     - deferred: running removeItemFromInventory, taking the item the local hero holds by that name from the hero, with CInventory::findItemByName and removeItem
     - deferred: running selectWeapon, cycling the hero's weapons to the class, or saying it can't, with CInventory::selectWeapon
-    - deferred: running setActorVariable, storing the actor in the variable, with process
+    - deferred: running setActorVariable, storing the actor in the variable, with CEventList::setActorVariable
     - deferred: running setCharacterHealth, setting the character's health as a share of its most, with its hit points
     - deferred: setFocusActor making the actor the focus, the network camera's choice of it included, while checking too, with the scene camera
     - deferred: running setHeroTask, setting the hero's task, with CHero::setAiTask
@@ -2633,24 +2635,17 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: running pressButton and releaseButton, pressing or releasing the action in the hero's input and handing the controls back from the script, with the heroes' input
     - deferred: running dbSay and say, holding the script until the line is said, with processTimer and setSpeaker
     - deferred: noting a line the dialogue database doesn't hold in the script's pick list, while checking too, with the script editor
-    - deferred: running breakPoint, showing where the script stopped and stopping it, with process
     - deferred: running cancelCameraHold, ending the camera's hold, with the virtual director
-    - deferred: running chainToMission, naming the next mission and ending this one, with process
-    - deferred: running clearActorVariable, clearing the variable, with process
-    - deferred: running debug, showing the message, with process
-    - deferred: running else, skipping the statement after it, with process
-    - deferred: running end, ending the mission and noting it for the helper-death fix, with process
+    - deferred: running chainToMission, naming the next mission and ending this one, with CDemonMission::setMissionName
+    - deferred: running clearActorVariable, clearing the variable, with CEventList::setActorVariable
+    - deferred: end noting the mission's end for the helper-death fix (the decomp's helper_death.h), with CGame::runGameSession's Game Over menu
     - deferred: running fadeIn and fadeOut, holding the script until the fade finishes, with CGame's fades
-    - deferred: running finishedAct and rollCredits, ending the act, with process
+    - deferred: running finishedAct and rollCredits, ending the act and the mission, with runGameSession's act completion
     - deferred: running getIniInt, reading the INI value into the counter, with CEventList's counters
-    - deferred: running gosub and return, calling and returning through the call stack, with process
-    - deferred: running goto, jumping to the label, with process
-    - deferred: running gtfo, showing the message and ending the mission, with process
-    - deferred: running idle, stopping for the frame after moving past it, with process
     - deferred: letterbox setting what the letterbox allows: the heroes' damage, the enemies' attacks and the hero's controls, the script's saved command and input flag, with their readers
     - deferred: letterbox turning the goggles off and choosing the focus's camera again, with the goggles
     - deferred: running removeKeys, taking the keys from every hero, with CHero::removeMatchingKeys
-    - deferred: running setIniInt, writing the INI value, with process
+    - deferred: running setIniInt, writing the INI value, with CIniFile::setInteger
     - deferred: running setSayTimeOverride, setting how long lines show for, with startDialogLine
     - deferred: running setSkipLabel, setting where a skipped cinematic goes, with skipCinematic
     - deferred: running setTimeFactor, setting the game's speed, with CGame's time scale
@@ -2697,7 +2692,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x0051abf0 (logic-change); [ ] bw2 0x004fbc90 (logic-change); [ ] bw3 0x004f63c0 (logic-change)
   - [~] `startMission` 0x00524760 (95)
     - deferred: the local hero being the one netplay gives this machine, and the set loaded being the area netplay respawns it in (the decomp's nocturne_net_respawn_world_area), with CNetGame's sessions
-    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget and process
+    - deferred: clearing the pending teleport to area -1 at the origin, with setTeleportTarget
     - deferred: clearing the letterbox, with CGame's readers of it
     - BW: [ ] bw1 0x0051bdc0 = bw2 0x004fce00 (logic-change); [ ] bw3 0x004f7590 (logic-change)
   - [x] `buildActiveSetActorList` 0x00524120 (77)
@@ -2855,7 +2850,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x005305a0 (operand-change); [ ] bw2 0x0050f370 = bw3 0x00507e50 (logic-change)
   - [~] `processServerFrame` 0x00543150 (371)
     - deferred: the host's frame: pinging and hearing from the players, dropping one who stopped answering, trimming the sim history to the slowest player, recording this frame's seed, time step and inputs, and sending each client up to five frames it lacks, with CNetGame::initializeNetworkToHost
-    - deferred: keeping the seed for the sim frame to start from, with CGame::process
+    - deferred: keeping the seed, which CGame::process seeds a network game's frame from, with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
     - BW: [x] bw1 0x0052fee0 (logic-change); [x] bw2 0x0050ecb0 = bw3 0x00507790 (logic-change)
 
 ### `core/level.cpp` (1 functions, 13 instructions, 1 done, 0 partial)
@@ -2977,13 +2972,13 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the light view in a debug window of its own, the shadow maps in a grid, closing it turning the view off (the decomp's debug_window, DEBUG_WINDOW), with CDemonSet::renderLightDebugView and a second platform window
     - deferred: nothing while a modal dialog is up, with the pause menu's network dialogs
     - deferred: edit mode and its cameras left alone while a cinematic skips, and the agreed skip polled (the decomp's net_skip.h nocturne_net_skip_poll), with processFrame's cinematic skip
-    - deferred: the script's change of focus forgotten as edit mode ends, with CDemonMission::process's
+    - deferred: the script's change of focus forgotten as edit mode ends, with the teleport CDemonMission::process takes from setTeleportTarget
     - deferred: the sound shut down as the game pauses and started again as it resumes, with CSound::shutdown and CSound::init
     - deferred: the motion debug drawing, with the renderOpaque of Biggs, the Succubus and the Dracula brides
     - deferred: F5 muting and quick load only outside script debug, with processCheatCodes' script debug
     - deferred: the debug display's virtual directors, its key left to a debug movie while one is armed, with CDemonSet::renderVirtualDirectors
     - deferred: saving, loading, quick saving with its "Quick Save" message, and quick loading after asking, not while letterboxed or loading in a network game, with CGame::saveGame and promptLoadGame
-    - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript's script state and resetDialogState
+    - deferred: the script debug keys while not paused: running or stopping the script in the script view, resuming it, and resetting its dialog, with CScript::resetDialogState
     - BW: [ ] bw1 0x004d1a80 (logic-change); [ ] bw2 0x004b82e0 (logic-change); [ ] bw3 0x004ba540 (logic-change)
 
 ## Step 15: `CGame::updateStatusDisplays`, `CGame::processFudge`, `CGame::playerControls`, `CGame::processFrame`
@@ -3064,10 +3059,12 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `C3DSLight`
   - [ ] `doNothing` 0x00586ca0 (1)
 
-### `core/mission.cpp` (1 functions, 92 instructions, 0 done, 0 partial)
+### `core/mission.cpp` (1 functions, 92 instructions, 0 done, 1 partial)
 - class `CDemonMission`
-  - [ ] `process` 0x00524250 (92)
-    - BW: [ ] bw1 0x0051b8d0 = bw3 0x004f70a0 (logic-change); [ ] bw2 0x004fc940 (logic-change)
+  - [~] `process` 0x00524250 (92)
+    - deferred: the actors queued for deletion removed first, with markActorToDelete
+    - deferred: a pending teleport putting the local hero at its place and, in another set, "Changing sets..." shown while that set loads with its lights and scene and the script's focus marked changed; BW1 and BW3 blank the frames instead and BW2 shows nothing, with setTeleportTarget
+    - BW: [x] bw1 0x0051b8d0 = bw3 0x004f70a0 (logic-change); [x] bw2 0x004fc940 (logic-change)
 
 ### `core/charactr.cpp` (1 functions, 3 instructions, 0 done, 0 partial)
 - free functions
@@ -3077,9 +3074,9 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CTerrain`
   - [x] `process` 0x005e2050 (16)
 
-### `core/water.cpp` (1 functions, 1 instructions, 0 done, 0 partial)
+### `core/water.cpp` (1 functions, 1 instructions, 1 done, 0 partial)
 - class `CWater`
-  - [ ] `process` 0x005e9ed0 (1)
+  - [x] `process` 0x005e9ed0 (1)
 
 ### `engine/alphabit.cpp` (1 functions, 103 instructions, 0 done, 0 partial)
 - class `CAlphaBitmap`
@@ -3133,11 +3130,16 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `setCurrentFont` 0x004874c0 (3)
   - [ ] `drawHorizontalLineWithEffect` 0x00487630 (82)
 
-### `core/script.cpp` (4 functions, 469 instructions, 1 done, 1 partial)
+### `core/script.cpp` (4 functions, 469 instructions, 1 done, 2 partial)
 - class `CScript`
   - [x] `getLetterboxHeight` 0x00559ac0 (28)
-  - [ ] `process` 0x00559960 (112)
-    - BW: [ ] bw1 0x005437f0 = bw3 0x00528e00 (operand-change)
+  - [~] `process` 0x00559960 (112)
+    - deferred: the script started again while a cinematic skips, with skipCinematic
+    - deferred: the frame's time handed to the commands that wait, each taking its share of it, with processTimer
+    - deferred: a step at a time in script debug, the script stopping after each, with the script debug keys
+    - deferred: resetting the heroes' input and centring the pointer when a command took the input, with pressButton and releaseButton
+    - deferred: the line cut off once its speaker is dead, with setSpeaker
+    - BW: [x] bw1 0x005437f0 = bw3 0x00528e00 (operand-change)
   - [~] `renderSubtitles` 0x00559b20 (183)
     - deferred: the bars and the lines kept to the screen while a network dialog is up (the decomp's NETPLAY), with the network dialogs
     - BW: [x] bw1 0x005439b0 = bw2 0x005218a0 = bw3 0x00528fc0 (logic-change)
@@ -3247,11 +3249,15 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `renderVirtualDirectors` 0x00575f70 (187)
     - BW: [ ] bw1 0x0055b4f0 = bw3 0x00540eb0 (logic-change)
 
-### `core/weather.cpp` (3 functions, 778 instructions, 0 done, 0 partial)
+### `core/weather.cpp` (3 functions, 778 instructions, 0 done, 2 partial)
 - class `CWeather`
-  - [ ] `createThunder` 0x005ef140 (21)
-  - [ ] `update` 0x005eeaf0 (286)
-    - BW: [ ] bw1 0x005ae190 = bw2 0x0058a660 (logic-change); [ ] bw3 0x0057bda0 (logic-change)
+  - [~] `createThunder` 0x005ef140 (21)
+    - deferred: the thunder heard, with CSound::playSound
+  - [~] `update` 0x005eeaf0 (286)
+    - deferred: each of the 200 drops or flakes falling, put back 100 units up once below the ground, a raindrop splashing four times where it lands, with setOriginAndRotation, renderParticles and CFireEffect::createRainDrop
+    - deferred: the rain heard at a tenth of its volume, and stopped while there is no weather, with CSound::playSound
+    - deferred: BW3's weather types 4 and 5: the flakes drifting up to 5 units a second each way and carried by their own wind, the storm's rain at half its volume and every one of its lightnings a strike, and the longest gap between sub-flashes left where it is, with BW3's weather types
+    - BW: [x] bw1 0x005ae190 = bw2 0x0058a660 (logic-change); [x] bw3 0x0057bda0 (logic-change)
   - [ ] `renderParticles` 0x005ef190 (471)
     - BW: [ ] bw1 0x005ae890 = bw2 0x0058ad40 (logic-change); [ ] bw3 0x0057c890 (logic-change)
 
@@ -3334,12 +3340,18 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
   - [ ] `drawShadowDepthBuffer` 0x00476670 (294)
   - [ ] `renderShadowMapDebugView` 0x00473390 (180)
 
-### `core/set.cpp` (9 functions, 1845 instructions, 0 done, 3 partial)
+### `core/set.cpp` (9 functions, 1845 instructions, 0 done, 4 partial)
 - class `CDemonSet`
   - [ ] `clearLights` 0x0056d2d0 (55)
     - BW: [ ] bw1 0x00551b90 = bw2 0x005308e0 = bw3 0x00537520 (logic-change)
-  - [ ] `processActors` 0x0056b810 (461)
-    - BW: [ ] bw1 0x0054fc20 = bw2 0x0052e940 (logic-change); [ ] bw3 0x005353e0 (logic-change)
+  - [~] `processActors` 0x0056b810 (461)
+    - deferred: the dynamic lights' and corona globes' counts started again, with the actors that add them
+    - deferred: the frame's actors' process times printed while profiling, the slowest twenty in order, with processCheatCodes' profile mode
+    - deferred: each actor numbered by its place in the list, with the actors' AI that reads it
+    - deferred: the actor being processed known while it is, with CHostage::processDamage and CBarrier::getCollisionType
+    - deferred: an actor's path map brought up to date for its place after it processes, with CHero::getPathMap and CNPC::getPathMap
+    - deferred: a living character in an explosion falling apart from its damage, glass in one shattering when it can break, a damage trigger without a wildcard name taking its damage, and a flame can in one lit, with CFireEffect::getExplosionEffect's explosions
+    - BW: [x] bw1 0x0054fc20 = bw2 0x0052e940 (logic-change); [x] bw3 0x005353e0 (logic-change)
   - [~] `renderOpaqueActors` 0x0056cd60 (133)
     - deferred: each actor's place, turn and box for the spatial lights, with setLightingParameters and calculateSpatialLighting
     - deferred: each actor drawn again in each mirror, with buildMirrorList and setupMirrorRendering
@@ -3403,7 +3415,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - free functions
   - [x] `getTextureCacheStats` 0x005dd970 (7)
 
-### `core/game.cpp` (18 functions, 8127 instructions, 5 done, 7 partial)
+### `core/game.cpp` (18 functions, 8127 instructions, 5 done, 8 partial)
 - class `CGame`
   - [x] `updateStatusDisplays` 0x004d85a0 (117)
   - [ ] `processFudge` 0x004d8750 (111)
@@ -3439,8 +3451,22 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [ ] bw1 0x004d27b0 (logic-change); [ ] bw2 0x004b90d0 (logic-change); [ ] bw3 0x004bb100 (logic-change)
   - [x] `updateFadeTransition` 0x004e09c0 (65)
     - BW: [x] bw1 0x004d60e0 = bw3 0x004bd6d0 (logic-change)
-  - [ ] `process` 0x004e3190 (335)
-    - BW: [ ] bw1 0x004d8060 = bw3 0x004bf4b0 (logic-change); [ ] bw2 0x004bd570 (logic-change)
+  - [~] `process` 0x004e3190 (335)
+    - deferred: a network game's frame seeded from the host's seed, with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
+    - deferred: the frame's simulation time and each part's printed while profiling, with processCheatCodes' profile mode
+    - deferred: BW2's alpha fade stepped after the iris, with CGame's alpha fade
+    - deferred: the movie screen's filter stepped to the projector's next frame, with CFilterFX::openMovie
+    - deferred: a skipped cinematic ended once the letterbox is down: the sound started again, the director choosing for the script's focus, the clock restarted and the focus change forgotten, or the input waited out while it is up, with skipCinematic
+    - deferred: the blood's drops, splats and pools aging, with the gore's spawners (CGore's spawnBloodParticles, createGroundBloodSplat, createWallBloodSplat and createBloodPool)
+    - deferred: the fire effects' particles moving and burning out, and their textures' frames stepped, with the fire effects' create functions
+    - deferred: BW2's simple particles moving after the fire's, with CSimpleParticleSystem
+    - deferred: last frame's raised events becoming this frame's and the event timers counting down, with the events' raise and setTimer
+    - deferred: the gas room's netplay tick (the decomp's nocturne_net_sim_gas_tick), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
+    - deferred: the cheat codes, with processCheatCodes
+    - deferred: BW1-3's field notes and puzzle stepped, and the actors left still while BW1's and BW3's field notes show, with CFieldNotes and CPuzzle
+    - deferred: the goggles' look stepped and the heroes' goggles published after the actors' frames (the decomp's GOGGLE_LOOK and NETPLAY), with the goggles
+    - deferred: the play time counted, with displayActStats and saveGame
+    - BW: [x] bw1 0x004d8060 = bw3 0x004bf4b0 (logic-change); [x] bw2 0x004bd570 (logic-change)
   - [~] `processFrame` 0x004da100 (949)
     - deferred: a cinematic skip's or a pending sim frame's frame, unpaused and not drawn: the client's frame, the game processed, the clock stepped a quarter second while skipping and by updateDT otherwise, then the server's frame, with skipCinematic and CNetGame's sim frames
     - deferred: the screen paint time printed while profiling, with processCheatCodes' profile mode
@@ -3467,7 +3493,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: the editor tools switched on and off, with processCheatCodes
     - deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
     - deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
-    - deferred: the pointer left undrawn in an unpaused frame, with CGame::process
     - deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the point-and-click control mode
     - deferred: BW1-3's screen cleared in the frame the goggles or monster vision go off, with CDemonSet::renderMonsterVisionView
     - deferred: the local hero's item panels left out of the scene in the editor, with the editor's mission mode
@@ -3577,7 +3602,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - deferred: each frame presented and counted, or only the window's messages while a cinematic skips or a sim frame is pending, with processFrame
     - deferred: the camera shown again when the window has its focus back, keeping the director's previous best camera (the decomp's WINDOWS), with processFrame
     - deferred: a dead hero's wait: Enter, or four seconds then the fade out, ends the session, and a dead or unplaced client watching the host's hero (the decomp's NETPLAY), with getDeathState and fadeIn
-    - deferred: the session ending when the script ends the mission, a network mission is pending or a chapter reload is asked, with CScript::step's end and showFullscreenBitmap
+    - deferred: the session ending when the script ends the mission, a network mission is pending or a chapter reload is asked, with the play loop and showFullscreenBitmap
     - deferred: the fullscreen bitmap and its wait for a key, with showFullscreenBitmap
     - deferred: the sound started after the first frame, with CSound::init
     - deferred: the Game Over menu after a death, with Load game and Quit, and the host's disconnect, with promptLoadGame
@@ -7657,7 +7682,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 ### `core/platfrm.cpp` (18 functions, 1935 instructions, 10 done, 2 partial)
 - class `CPlatform`
   - [~] `ctor` 0x0054c850 (115)
-    - deferred: the slew mode the editor sets, being drawn in the background, the health of 50 and the attached actors' places, with CPlatform::process
+    - deferred: the slew mode the editor sets, being drawn in the background and the attached actors' places, with CPlatform::process
     - BW: [ ] bw1 0x00539400 = bw3 0x005110e0 (logic-change); [ ] bw2 0x005180b0 (logic-change)
   - [x] `archive` 0x0054dbc0 (251)
     - BW: [x] bw2 0x005193f0 (operand-change); [x] bw3 0x00512420 (logic-change)
@@ -8487,7 +8512,7 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
 - class `CTrigger`
   - [ ] `onProjectileHit` 0x005e0aa0 (6)
   - [~] `ctor` 0x005df840 (63)
-    - deferred: the defaults the constructor gives CDemonActor's health, and the trigger's previous state, event flag, cached and triggering actors and damage cooldown, with the steps that read them
+    - deferred: the defaults the constructor gives the trigger's previous state, event flag, cached and triggering actors and damage cooldown, with the steps that read them
     - BW: [ ] bw1 0x0059afb0 = bw2 0x005776f0 = bw3 0x0056dfa0 (logic-change)
   - [x] `getActorType` 0x005df830 (2)
   - [ ] `containsActor` 0x005e0cd0 (207)
@@ -8515,7 +8540,6 @@ every variant ticked. Blair Witch code nocedit has no twin of is listed at the e
     - BW: [x] bw2 0x00577840 (logic-change)
   - [~] `setup` 0x005df990 (50)
     - deferred: no event raised and no actor held yet, with CTrigger::process
-    - deferred: not processed with neither event, with CDemonSet::processActors
     - BW: [ ] bw1 0x0059b100 = bw3 0x0056e0f0 (logic-change)
 - free functions
   - [x] `factoryFuncTrigger` 0x005df800 (12)

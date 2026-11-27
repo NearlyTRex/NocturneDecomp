@@ -68,7 +68,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
           do {
             pCVar1 = this_ptr->actors[iVar2];
             if (pCVar1->process_disabled == 0) {
-              iVar3 = pCVar1->health;
+              iVar3 = pCVar1->process_order;
               if (iVar3 == local_24) {
                 g_CurrentProcessingActor = pCVar1;
                 orient_snapshot = (g_CurrentProcessingActor->orient).vec;

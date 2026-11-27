@@ -32,7 +32,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(C
     pCVar2->laser_color_r[0] = 0;
     pCVar2->laser_color_g[0] = 0;
     pCVar2->laser_color_b[0] = 0;
-    pCVar4 = (CMansionPuzzleCircle *)&(pCVar4->base).health;
+    pCVar4 = (CMansionPuzzleCircle *)&(pCVar4->base).process_order;
     pCVar2->laser_intensity[0] = 0;
     pCVar2 = pCVar3;
   } while (pCVar3 != (CMansionPuzzleCircle *)&(this_ptr->base).orient);

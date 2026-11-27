@@ -536,7 +536,7 @@ void __cdecl core_game_cpp_CGame_processPointAndClickControls_FUN_004c07b0(CGame
         pCVar15 = core_actor_cpp_castToClassHash_FUN_0040c840
                             (pCVar16,g_CBoxActorClassInfo.name_hash);
         pCVar19 = (CDemonActor *)g_INT_01d22c2c;
-        if (pCVar15[2].health != 0) {
+        if (pCVar15[2].process_order != 0) {
           g_INT_01d22c2c = (int)pCVar16;
           g_CHero_PTR_ARRAY_01d5ba04[g_INT_01d5ba14]->hero_action = 4;
           pCVar19 = (CDemonActor *)g_INT_01d22c2c;
@@ -778,7 +778,7 @@ LAB_004c23a6:
       if (pCVar16 != (CDemonActor *)0x0) {
         pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c840
                             (pCVar19,g_CBoxActorClassInfo.name_hash);
-        if (pCVar16[2].health != 0) {
+        if (pCVar16[2].process_order != 0) {
           pCStack_24 = pCVar19;
           g_INT_01d1e354 = 4;
         }

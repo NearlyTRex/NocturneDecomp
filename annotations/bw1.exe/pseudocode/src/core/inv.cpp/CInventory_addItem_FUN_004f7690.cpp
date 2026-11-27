@@ -1097,7 +1097,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004f7690(CInventory *this_ptr,CD
             (iVar7 = _strcmp
                                (pcStack_2c,(char *)&pCVar5[2].location.position.y), iVar7 == 0)) &&
            (pCVar5[2].validation_magic == pCStack_24->ammo_type)) {
-          pCVar5[2].health = pCVar5[2].health + pCStack_24->ammo_count;
+          pCVar5[2].process_order = pCVar5[2].process_order + pCStack_24->ammo_count;
           engine_console_cpp_CConsole_printf_FUN_00445430
                     (g_CConsolePtr,"Found existing ammo, but no weapon\n");
           core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
@@ -1252,7 +1252,7 @@ LAB_004f84d6:
             core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60
                       (g_CDemonMission_PTR_0061f650,actor);
             (*((actor->vtable)._ub)->setup)(actor);
-            *(int *)(actor[4].actor_name + 8) = pCVar10[2].health;
+            *(int *)(actor[4].actor_name + 8) = pCVar10[2].process_order;
             *(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar10[2].validation_magic;
             (*((actor->vtable)._ub)->pickup)(actor,this_ptr->owner);
             (*((actor->vtable)._ub)->onPickup)(actor,(CDemonActor *)this_ptr);

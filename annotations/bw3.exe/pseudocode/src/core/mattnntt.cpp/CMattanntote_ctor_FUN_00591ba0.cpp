@@ -17,7 +17,8 @@ CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattann
   float *pfVar6;
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
-  pvVar3 = __arrinit(&pCVar2[1].base.base.health,0xc,&g_CFlameTypeInfo);
+  pvVar3 = __arrinit
+                     (&pCVar2[1].base.base.process_order,0xc,&g_CFlameTypeInfo);
   pCVar1 = (CMattanntote *)((int)pvVar3 + -0xd0b8);
   *(CEnemy_full_vtable **)((int)pvVar3 + -0xcf64) = &g_CMattanntoteVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
