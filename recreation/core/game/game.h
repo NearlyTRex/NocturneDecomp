@@ -80,8 +80,11 @@ struct SGameSessionOwners {
     const CDeformableModelManager &deformable_models;
     // What the editor's memory line asks.
     platform::IHeap &heap;
-    // What the keys help's, the death banner's and the inventory's text is translated by.
+    // What the keys help's, the death banner's, the inventory's and the menus' text is translated
+    // by.
     const support::CNewMsg &messages;
+    // What the pause and Game Over menus are built from.
+    const shape::SPickListOwners &pick_list;
     // What each sim frame's seed is drawn from, and what it seeds.
     common::CWatcomRandom &crt_random;
     CActor &actor;
@@ -328,6 +331,15 @@ private:
     void directSession(const SGameSessionOwners &session);
     // death_wait is the seconds the hero has been dead, negative once the screen is closing.
     [[nodiscard]] bool isDeathWaitOver(const SGameSessionOwners &session, float &death_wait);
+    [[nodiscard]] static bool isLocalHeroDead(const SGameSessionOwners &session);
+    // What a frame's Escape did: nothing, the pause menu shown and put away, or Quit confirmed.
+    enum class EPauseMenu : std::uint8_t { None, Closed, Quit };
+    // Escape's pause menu, which a dead hero's Escape doesn't open.
+    [[nodiscard]] EPauseMenu takePauseMenu(const SGameSessionOwners &session);
+    // True when Quit was confirmed.
+    [[nodiscard]] bool showPauseMenu(const SGameSessionOwners &session);
+    // Shown again until Quit is picked, or the window closes.
+    void showGameOverMenu(const SGameSessionOwners &session) const;
     void processKeyboardControls(const SGameSessionOwners &session, SPlayerInput &input);
     // The keyboard's controls, then the mouse's movement from the screen's centre, where the
     // cursor is put back, turning or strafing and looking where it beats the keys.

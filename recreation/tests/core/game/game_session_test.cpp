@@ -7,6 +7,7 @@
 #include "core/fire/fireeffect.h"
 #include "core/game/game.h"
 #include "core/game/irisfade.h"
+#include "core/game/letterbox.h"
 #include "core/gore/gore.h"
 #include "core/hero/heroplaceholder.h"
 #include "core/inv/inventoryassets.h"
@@ -16,12 +17,14 @@
 #include "core/set/demonset.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
+#include "engine/keys/inputcodetype.h"
 #include "engine/keys/keys.h"
 #include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "shape/edittool/editortools.h"
 #include "tests/mocks/core/missionfixture.h"
+#include "tests/mocks/core/notportedcalls.h"
 #include "tests/mocks/core/overlayscreen.h"
 #include "tests/mocks/core/testhero.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -29,10 +32,13 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
+#include <cstddef>
 #include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -41,6 +47,12 @@ using ::testing::_;
 using ::testing::Return;
 using ::testing::StrEq;
 using ::testing::ThrowsMessage;
+
+constexpr engine::EInputCodeType kReturn = engine::EInputCodeType::DIK_RETURN;
+constexpr engine::EInputCodeType kDown = engine::EInputCodeType::DIK_DOWN;
+constexpr engine::EInputCodeType kEscape = engine::EInputCodeType::DIK_ESCAPE;
+// The Game Over menu's Quit, under its Load game.
+constexpr std::array kGameOverQuit = {kDown, kReturn};
 
 // A session on a screen already at 640x480x32 that takes any mode, with a hero for the script to
 // focus on in a set with no cameras to switch to and no network game. Each frame presented moves
@@ -58,7 +70,7 @@ protected:
             time_ += kFrameTicks;
         });
         ON_CALL(game_parts_.getRawInput(), getInputDisabled()).WillByDefault([this] {
-            return frames_ >= closes_after_;
+            return window_closed_ || frames_ >= closes_after_;
         });
         ON_CALL(game_parts_.getRawInput(), getFocusRegained()).WillByDefault([this] {
             return focus_regained_;
@@ -97,6 +109,11 @@ protected:
         script_.initRuntime();
     }
 
+    // Escape pressed for the session's next frame to take.
+    void escape() {
+        game_parts_.hold(engine::EInputCodeType::DIK_ESCAPE, true);
+    }
+
     // The local hero dead, with the game's fonts loaded for the banner it shows.
     void givenADeadHero() {
         drawGameOnto(game_parts_, screen_,
@@ -110,6 +127,8 @@ protected:
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
     int frames_ = 0;
     int closes_after_ = 1;
+    // Closed in a menu, where the session's frames no longer count.
+    bool window_closed_ = false;
     bool focus_regained_ = false;
     int height_ = 480;
     int depth_ = 32;
@@ -391,10 +410,11 @@ TEST_F(CGameSessionTest, EditModeLeavesTheDirectorAlone) {
     EXPECT_FALSE(game_.game_active);
 }
 
-// A dead hero's Enter ends the session there and then.
+// A dead hero's Enter ends the session there and then, on the Game Over menu.
 TEST_F(CGameSessionTest, EnterEndsADeadHerosSession) {
     givenADeadHero();
     game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    pressInTurn(kGameOverQuit);
     EXPECT_EQ(play(kGuardFrames), 0);
     EXPECT_EQ(frames_, 1);
 }
@@ -403,6 +423,7 @@ TEST_F(CGameSessionTest, EnterEndsADeadHerosSession) {
 // ends.
 TEST_F(CGameSessionTest, ADeadHerosScreenClosesAndEndsTheSession) {
     givenADeadHero();
+    pressInTurn(kGameOverQuit);
     EXPECT_EQ(play(kGuardFrames), 0);
     EXPECT_GT(frames_, 16);
     EXPECT_LT(frames_, kGuardFrames);
@@ -424,6 +445,104 @@ TEST_F(CGameSessionTest, EnterLeavesALivingHerosSessionAlone) {
     game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
     EXPECT_EQ(play(3), 0);
     EXPECT_EQ(frames_, 3);
+}
+
+// Return goes back to play; the frame the menu closed on isn't presented, only the window's
+// messages handled.
+TEST_F(CGameSessionTest, EscapesPauseMenuReturnsToPlay) {
+    escape();
+    pressInTurn({kReturn});
+    EXPECT_CALL(game_parts_.getRawInput(), processWindowMessages());
+    EXPECT_EQ(play(2), 0);
+    EXPECT_EQ(frames_, 2);
+    EXPECT_EQ(editor_tools_.getWindowCount(), 0U);
+}
+
+// Quit, confirmed, ends the session as the menu closes; the Game Over menu is a dead hero's.
+TEST_F(CGameSessionTest, AConfirmedQuitEndsTheSession) {
+    escape();
+    pressInTurn({kDown, kDown, kDown, kDown, kReturn, kReturn});
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_EQ(frames_, 0);
+}
+
+TEST_F(CGameSessionTest, AQuitNotConfirmedPlaysOn) {
+    escape();
+    pressInTurn({kDown, kDown, kDown, kDown, kReturn, kDown, kReturn});
+    EXPECT_EQ(play(2), 0);
+    EXPECT_EQ(frames_, 2);
+}
+
+TEST_F(CGameSessionTest, ThePauseMenusOtherItemsAreNotPortedYet) {
+    const auto pick = [this](std::size_t downs) {
+        escape();
+        std::vector<engine::EInputCodeType> keys(downs, kDown);
+        keys.push_back(kReturn);
+        pressInTurn(keys);
+        static_cast<void>(play(kGuardFrames));
+    };
+    expectEachQuitsNotPorted("CGame", {{"setScreenResolutionAndDisplayFangs", [&] { pick(1); }},
+                                       {"promptLoadGame", [&] { pick(2); }},
+                                       {"saveGame", [&] { pick(3); }}});
+}
+
+// A full letterbox's cinematic can be skipped from the menu.
+TEST_F(CGameSessionTest, ALetterboxedCinematicCanBeSkipped) {
+    game_.letterbox_mode = ELetterbox::On;
+    escape();
+    pressInTurn({kDown, kDown, kDown, kDown, kDown, kReturn});
+    const auto play_on = [this] { static_cast<void>(play(kGuardFrames)); };
+    expectEachQuitsNotPorted("CScript", {{"skipCinematic", play_on}});
+}
+
+// Under the bottom bar alone, there is no skip, and Save game can't be picked; the menu's next
+// line, Quit, still can.
+TEST_F(CGameSessionTest, SaveGameIsGreyedOutUnderALetterbox) {
+    game_.letterbox_mode = ELetterbox::Bottom;
+    escape();
+    pressInTurn({kDown, kDown, kDown, kReturn, kDown, kDown, kReturn, kReturn});
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_EQ(frames_, 0);
+}
+
+// A dead hero's Escape is left to the death's own end, where the original's ended the session.
+TEST_F(CGameSessionTest, ADeadHerosEscapeOpensNoMenu) {
+    game_parts_.getContent().death = engine::SDeath{.fades = false};
+    givenADeadHero();
+    escape();
+    EXPECT_CALL(game_parts_.getRawInput(), processWindowMessages()).Times(0);
+    EXPECT_EQ(play(3), 0);
+    EXPECT_EQ(frames_, 3);
+}
+
+// Escape on it shows it again, and Quit ends it.
+TEST_F(CGameSessionTest, TheGameOverMenuWaitsForQuit) {
+    givenADeadHero();
+    game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    pressInTurn({kEscape, kDown, kReturn});
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_TRUE(keys_in_turn_.empty());
+}
+
+TEST_F(CGameSessionTest, TheGameOverMenusLoadGameIsNotPortedYet) {
+    givenADeadHero();
+    game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    pressInTurn({kReturn});
+    const auto play_on = [this] { static_cast<void>(play(kGuardFrames)); };
+    expectEachQuitsNotPorted("CGame", {{"promptLoadGame", play_on}});
+}
+
+// A window closed while it shows ends it, as nothing could answer it again.
+TEST_F(CGameSessionTest, TheGameOverMenuEndsAsTheWindowCloses) {
+    givenADeadHero();
+    game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    pressInTurn({});
+    ON_CALL(raw_input_, getInputDisabled()).WillByDefault([this] {
+        window_closed_ = true;
+        return true;
+    });
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_TRUE(window_closed_);
 }
 
 } // namespace

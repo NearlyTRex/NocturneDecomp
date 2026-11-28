@@ -82,7 +82,8 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 // deferred: the editor tools switched on and off, with processCheatCodes
 // deferred: a client unplaced or dead told it waits for the host, at the top (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
-// deferred: the pause menu's pick list over the frame, with runGameSession's pause menu
+// deferred: an open network dialog drawn over the frame, with runGameSession's host's and client's
+//   dialogs
 // deferred: BW1's and BW3's point-and-click cursor after the MouseControlMode commands, with the
 //   point-and-click control mode
 // deferred: BW1-3's screen cleared in the frame the goggles or monster vision go off, with

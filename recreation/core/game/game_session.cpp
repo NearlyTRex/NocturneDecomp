@@ -1,4 +1,5 @@
 #include "common/error/error.h"
+#include "core/actor/notported.h"
 #include "core/charactr/deathstate.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/dfont/dfont.h"
@@ -23,8 +24,11 @@
 #include "engine/special/special.h"
 #include "platform/environment.h"
 #include "shape/edittool/editortools.h"
+#include "shape/edittool/picklist.h"
+#include "support/newmsg/newmsg.h"
 
 #include <algorithm>
+#include <array>
 #include <format>
 #include <string_view>
 
@@ -46,6 +50,19 @@ constexpr int kSyncStarting = 4;
 constexpr float kDeathFadeSeconds = 4.0F;
 // The death wait once the screen is closing.
 constexpr float kDeathFadeBegun = -1.0F;
+// A menu opens with nothing under the cursor.
+constexpr int kNoSelection = -1;
+// The pause menu's lines, Return first; a full letterbox's skip comes after them.
+constexpr std::array<std::string_view, 5> kPauseMenuItems = {"Return", "Options", "Load game",
+                                                             "Save game", "Quit"};
+constexpr int kOptionsItem = 1;
+constexpr int kLoadGameItem = 2;
+constexpr int kSaveGameItem = 3;
+constexpr int kQuitItem = 4;
+constexpr int kSkipCinematicItem = 5;
+// The Game Over menu's lines.
+constexpr int kGameOverLoadItem = 0;
+constexpr int kGameOverQuitItem = 1;
 
 } // namespace
 
@@ -101,12 +118,12 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 // deferred: ending the session when a player gives up syncing, with CNetGame::syncPlayers' waits
 //   and the session's end
 // deferred: the network game's mode set to playing, with CNetGame::initializeNetworkToHost
-// deferred: the local hero aiming as the options say, with CStranger::processFrame,
-//   CGabriella::updateAimTracking and CScat::updateAiming
+// deferred: the local hero aiming as the options say, as play starts and as the pause menu
+//   closes, with CStranger::processFrame, CGabriella::updateAimTracking and CScat::updateAiming
 // deferred: the act not yet complete, with finishAct
 // deferred: BW1's and BW3's menu resolution put up while the field notes or a puzzle shows, and
 //   the game's and its camera back once they go, with CFieldNotes and CPuzzle
-// deferred: the input masked while a modal dialog is up, with the pause menu's network dialogs
+// deferred: the input masked while a modal dialog is up, with the host's and the client's dialogs
 // deferred: each frame's autosave poll (the decomp's nocturne_autosave_poll), with the autosave
 // deferred: each frame's nudge of the fudge target, with processFudge and
 //   CMansionPuzzleCircle::process
@@ -122,10 +139,14 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   processHotkeys' goggles
 // deferred: a client leaving a game whose host stopped answering or ended it (the decomp's
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
-// deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's
-//   OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's
-//   CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, with
-//   showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+// deferred: the pause menu's Options: the front end's mode and fangs, the options, then the
+//   game's mode, the input mask, the camera and the editor font back, and the menu shown again
+//   over the scene drawn anew (the decomp's OPTIONS_RESUMES_GAME, with its menu font), with
+//   setScreenResolutionAndDisplayFangs and showOptionsScreen
+// deferred: the pause menu's Load game, Save game and Skip cinematic, the skip's frames run
+//   unpresented after it, with promptLoadGame, saveGame and skipCinematic
+// deferred: the pause menu's Warps, greyed out under a letterbox (the decomp's CHEAT_MENU), with
+//   the warps menu
 // deferred: BW1-3's iris put away as a cinematic is skipped (their resetIrisFade), with
 //   skipCinematic
 // deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), not
@@ -137,15 +158,18 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   under its own serial, so the game's handle still finds it. Load, Warps, Skip cinematic and
 //   Quit shut the sound down and start it again as shipped. With CSound::init and shutdown, and
 //   a stop on CSfxVoice that keeps its frame
-// deferred: Escape closing the automap first, and ignored while the hero dies (the decomp's
-//   AUTOMAP and DEATH_FADE_SKIP), with the automap and getDeathState
+// deferred: Escape closing the automap first (the decomp's AUTOMAP), with the automap
+// deferred: BW1-3's Escape putting the field notes or the puzzle away in place of the pause menu,
+//   with CFieldNotes and CPuzzle
+// deferred: an open network dialog read a frame at a time in place of Escape, closed on a pick,
+//   its window put back and the cursor centred, its first item leaving the game, with the host's
+//   and the client's dialogs
 // deferred: the host's abort and the client's leave dialogs, with respawn and skip votes (the
 //   decomp's NETPLAY), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
 // deferred: BW1's and BW3's teleport skipping the rest of the frame from Escape on, with
 //   CDemonMission::setTeleportTarget
 // deferred: the frame left unpresented, only the window's messages handled, while a cinematic
-//   skips, a sim frame is pending or as the pause menu closes, with skipCinematic, CNetGame's sim
-//   frames and the pause menu
+//   skips or a sim frame is pending, with skipCinematic and CNetGame's sim frames
 // deferred: BW1's and BW3's screen cleared before each of a camera's first three frames, with
 //   the screen clear count's reset
 // deferred: the frames counted, with processCheatCodes' frame rate
@@ -155,14 +179,15 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   decomp's NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the session ending when a network mission is pending (the decomp's NETPLAY), with
 //   CNetGame's sessions
-// deferred: the fullscreen bitmap and its wait for a key, with the displayBitmap command and
-//   showFullscreenBitmap
+// deferred: the fullscreen bitmap and its wait for a key, which Escape cancels, with the
+//   displayBitmap command and showFullscreenBitmap
 // deferred: the session ending on a chapter reload, with processHotkeys' quick load and
 //   promptLoadGame
 // deferred: the sound started after the first frame, with CSound::init
 // deferred: BW1's and BW3's NewSet event raised after a set change, with the set change's event
-// deferred: the Game Over menu after a death, with Load game and Quit, and the host's
-//   disconnect, with promptLoadGame
+// deferred: the host disconnecting after a death, and no Game Over menu in a network game (the
+//   decomp's NETPLAY), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
+// deferred: the Game Over menu's Load game, with promptLoadGame
 // deferred: the damageable enemies counted, with displayActStats
 // deferred: the sound stopped, with CSound::shutdown
 // deferred: retail's force feedback stepped after the sound starts and stops, with
@@ -215,6 +240,9 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
     session.net_game.processServerFrame();
     session.level_loader.cleanup();
     const bool mission_ended = playSession(session);
+    if (isLocalHeroDead(session)) {
+        showGameOverMenu(session);
+    }
     session.keys.toggleInputMask(false);
     owners_.keys.clearKeypresses();
     time_scale_factor = 1.0F;
@@ -222,8 +250,9 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
 }
 
 // The loop of runGameSession: a frame each pass, until the script ends the mission, Enter is
-// pressed or the screen has closed on a dead hero, or the window closes. The original never
-// ended its session on the window's closing, but went on with no window and the input off.
+// pressed or the screen has closed on a dead hero, Quit is confirmed, or the window closes. The
+// original never ended its session on the window's closing, but went on with no window and the
+// input off.
 bool CGame::playSession(const SGameSessionOwners &session) {
     // The seconds the hero has been dead, until the screen closes on them; then negative.
     float death_wait = 0.0F;
@@ -237,7 +266,16 @@ bool CGame::playSession(const SGameSessionOwners &session) {
             directSession(session);
         }
         processFrame(session);
-        owners_.screen.swapBuffers();
+        const EPauseMenu pause = takePauseMenu(session);
+        if (pause == EPauseMenu::Quit) {
+            return false;
+        }
+        // The frame the menu closes on isn't presented.
+        if (pause == EPauseMenu::Closed) {
+            raw_input.processWindowMessages();
+        } else {
+            owners_.screen.swapBuffers();
+        }
         // The best camera before it is kept, as the decomp's WINDOWS fix keeps it.
         if (raw_input.getFocusRegained()) {
             raw_input.setFocusRegained(false);
@@ -264,7 +302,7 @@ void CGame::directSession(const SGameSessionOwners &session) {
 // A dead hero's session ends on Enter, or, where the game's death fades, once the screen has
 // closed on them four seconds after.
 bool CGame::isDeathWaitOver(const SGameSessionOwners &session, float &death_wait) {
-    if (session.mission.getLocalHero()->getDeathState() != EDeathState::DEATH_STATE_DEAD) {
+    if (!isLocalHeroDead(session)) {
         return false;
     }
     if (owners_.keys.getAndClearKeyState(engine::EInputCodeType::DIK_RETURN) != 0) {
@@ -282,6 +320,72 @@ bool CGame::isDeathWaitOver(const SGameSessionOwners &session, float &death_wait
         death_wait = kDeathFadeBegun;
     }
     return false;
+}
+
+bool CGame::isLocalHeroDead(const SGameSessionOwners &session) {
+    return session.mission.getLocalHero()->getDeathState() == EDeathState::DEATH_STATE_DEAD;
+}
+
+// The original's Escape ended a dead hero's session there, skipping the screen's close; the
+// enhanced game's leaves it to Enter and the close (the decomp's DEATH_FADE_SKIP).
+CGame::EPauseMenu CGame::takePauseMenu(const SGameSessionOwners &session) {
+    if (owners_.keys.getAndClearKeyState(engine::EInputCodeType::DIK_ESCAPE) == 0 ||
+        isLocalHeroDead(session)) {
+        return EPauseMenu::None;
+    }
+    return showPauseMenu(session) ? EPauseMenu::Quit : EPauseMenu::Closed;
+}
+
+// Save game is greyed out under a letterbox, and a full letterbox's cinematic can be skipped.
+bool CGame::showPauseMenu(const SGameSessionOwners &session) {
+    const support::CNewMsg &messages = session.messages;
+    shape::CPickList menu(session.pick_list);
+    for (const std::string_view item : kPauseMenuItems) {
+        menu.add(messages.getLocalizedString(item));
+    }
+    if (letterbox_mode == ELetterbox::On) {
+        menu.add(messages.getLocalizedString("Skip cinematic."));
+    }
+    if (letterbox_mode != ELetterbox::Off) {
+        menu.enableItem(kSaveGameItem, false);
+    }
+    switch (menu.displayChoicesAndWaitForInput(messages.getLocalizedString("Game paused"),
+                                               kNoSelection)) {
+    case kOptionsItem:
+        quitNotPorted("CGame", "setScreenResolutionAndDisplayFangs");
+    case kLoadGameItem:
+        quitNotPorted("CGame", "promptLoadGame");
+    case kSaveGameItem:
+        quitNotPorted("CGame", "saveGame");
+    case kQuitItem:
+        if (shape::CEditorTools::showDestructiveActionConfirmDialog(
+                session.pick_list, messages, messages.getLocalizedString("Quit"))) {
+            return true;
+        }
+        break;
+    case kSkipCinematicItem:
+        quitNotPorted("CScript", "skipCinematic");
+    default:
+        break;
+    }
+    owners_.two_d.clearInputAndWait();
+    return false;
+}
+
+// Escape on it shows it again. It ends once the window closes, which the original's never did.
+void CGame::showGameOverMenu(const SGameSessionOwners &session) const {
+    const support::CNewMsg &messages = session.messages;
+    shape::CPickList menu(session.pick_list);
+    menu.add(messages.getLocalizedString("Load game"));
+    menu.add(messages.getLocalizedString("Quit"));
+    int choice = kNoSelection;
+    while (choice != kGameOverQuitItem && !owners_.raw_input.getInputDisabled()) {
+        choice = menu.displayChoicesAndWaitForInput(messages.getLocalizedString("Game Over"),
+                                                    kNoSelection);
+        if (choice == kGameOverLoadItem) {
+            quitNotPorted("CGame", "promptLoadGame");
+        }
+    }
 }
 
 // nocedit 0x004e07a0

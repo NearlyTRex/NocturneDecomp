@@ -5,14 +5,17 @@
 #include "engine/rawinput.h"
 #include "shape/edittool/picklist.h"
 #include "tests/mocks/engine/gamepadinputparts.h"
+#include "tests/mocks/runawayguard.h"
 #include "tests/mocks/shape/edcontrolsfixture.h"
 
 #include <gmock/gmock.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <cstdint>
 #include <deque>
+#include <initializer_list>
 #include <span>
 #include <string>
 #include <string_view>
@@ -28,6 +31,8 @@ protected:
     static constexpr int kHeight = 144;
     static constexpr int kRowHeight = 3;
     static constexpr int kCharWidth = 4;
+    // Frames a dialog may stay open once pressInTurn's keys run out.
+    static constexpr int kOpenFrameLimit = 6;
 
     CPickListFixture() : CPickListFixture(kWidth, kHeight) {}
 
@@ -59,6 +64,27 @@ protected:
         keyboard_[static_cast<std::size_t>(code)] = 1;
     }
 
+    // Presses the keys in turn, each as the screen presents a frame once the one before has been
+    // taken; a dialog still open a few frames after they run out ends the test's process.
+    void pressInTurn(std::initializer_list<engine::EInputCodeType> keys) {
+        pressInTurn(std::span<const engine::EInputCodeType>(keys.begin(), keys.size()));
+    }
+
+    void pressInTurn(std::span<const engine::EInputCodeType> keys) {
+        keys_in_turn_.assign(keys.begin(), keys.end());
+        open_after_keys_.reset();
+        screen_.on_swap = [this] {
+            const bool held =
+                std::ranges::any_of(keyboard_, [](std::uint8_t key) { return key != 0; });
+            if (!held && !keys_in_turn_.empty()) {
+                press(keys_in_turn_.front());
+                keys_in_turn_.pop_front();
+            } else if (editor_tools_.getWindowCount() > 0) {
+                open_after_keys_.countFrame();
+            }
+        };
+    }
+
     void type(std::string_view text) {
         for (const char c : text) {
             typed_.push_back(static_cast<unsigned char>(c));
@@ -82,6 +108,8 @@ protected:
 
     std::array<std::uint8_t, engine::IRawInput::kInputCodeCount> keyboard_{};
     std::deque<int> typed_;
+    std::deque<engine::EInputCodeType> keys_in_turn_;
+    CRunawayGuard open_after_keys_{kOpenFrameLimit, "a dialog was still open after its keys"};
     int key_mask_ = 0x1ff;
     engine::SGamepadInputParts gamepad_;
     engine::CMenuInput menu_input_{keys_, gamepad_.input};

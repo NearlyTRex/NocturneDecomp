@@ -34,7 +34,7 @@ public:
     void setCursorPosition(int x, int y) override;
     // Releases the keys let go during the last pump, handles every waiting event, then reads the
     // pad, so every loop in the game, menus included, sees it once a frame.
-    void processWindowMessages();
+    void processWindowMessages() override;
     void displayMessageBoxAndQuit(const common::CFatalError &error);
     // The game's name, on the window and on every message box after.
     void setTitle(std::string_view title);

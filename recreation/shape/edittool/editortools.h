@@ -5,6 +5,7 @@
 #include "engine/fwd.h"
 #include "platform/fwd.h"
 #include "shape/fwd.h"
+#include "support/fwd.h"
 
 #include <array>
 #include <cstddef>
@@ -73,6 +74,10 @@ public:
                                                std::string_view search_directory,
                                                std::string_view file_pattern,
                                                std::string &output_filename, bool start_on_current);
+    // A pick list titled message, of a yes and a no that Y and N pick; true for the yes.
+    [[nodiscard]] static bool showDestructiveActionConfirmDialog(const SPickListOwners &pick_list,
+                                                                 const support::CNewMsg &messages,
+                                                                 std::string_view message);
     int showFilenameInputDialog(char *dialog_title, char *directory_path, char *file_extension,
                                 char *output_buffer, std::uint32_t flags);
     int promptForValidInteger(char *prompt_text, int *result_ptr, int enable_range_check,

@@ -466,6 +466,7 @@ private:
                                              .deformable_models = deformable_models_,
                                              .heap = heap_,
                                              .messages = messages_,
+                                             .pick_list = pick_list_owners_,
                                              .crt_random = crt_random_,
                                              .actor = actor_,
                                              .water = water_,

@@ -44,6 +44,9 @@ public:
     // Set when the window regains focus; the play loop takes it to show its camera again.
     [[nodiscard]] virtual bool getFocusRegained() const = 0;
     virtual void setFocusRegained(bool regained) = 0;
+    // The window's waiting events handled, as a frame presented handles them, for a frame that
+    // isn't presented.
+    virtual void processWindowMessages() = 0;
     // The next typed character, presenting frames on the screen until one comes; 0 once the
     // window has closed.
     virtual int getNextKeypress(IScreenDevice &screen) = 0;
