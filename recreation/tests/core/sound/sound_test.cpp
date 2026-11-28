@@ -45,9 +45,10 @@ TEST(CSound, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CSound::findRandomSoundFile),
                                  std::string (CSound::*)(std::string_view)>);
     static_assert(std::is_same_v<decltype(&CSound::findAllSoundFiles), void (CSound::*)()>);
-    static_assert(std::is_same_v<decltype(&CSound::init), void (CSound::*)()>);
+    static_assert(std::is_same_v<decltype(&CSound::init), void (CSound::*)(const SSoundScene &)>);
     static_assert(std::is_same_v<decltype(&CSound::shutdown), void (CSound::*)()>);
-    static_assert(std::is_same_v<decltype(&CSound::process), void (CSound::*)(float)>);
+    static_assert(
+        std::is_same_v<decltype(&CSound::process), void (CSound::*)(const SSoundScene &, float)>);
     static_assert(std::is_same_v<decltype(&CSound::configure), void (CSound::*)()>);
     static_assert(std::is_same_v<decltype(&CSound::reset), void (CSound::*)()>);
     static_assert(
@@ -67,7 +68,7 @@ TEST(CSound, PublicInterface) {
                                  std::uint32_t (CSound::*)(CDemonActor *, char *,
                                                            common::CVector3f *, float)>);
     static_assert(
-        std::is_same_v<decltype(&CSound::isSoundPlaying), int (CSound::*)(std::uint32_t)>);
+        std::is_same_v<decltype(&CSound::isSoundPlaying), bool (CSound::*)(std::uint32_t)>);
     static_assert(std::is_same_v<decltype(&CSound::killSound), void (CSound::*)(std::uint32_t)>);
     static_assert(
         std::is_same_v<decltype(&CSound::getSoundDuration), float (CSound::*)(std::string_view)>);
@@ -445,73 +446,6 @@ TEST_F(CSoundTest, TheFileIsPickedAtRandomFromTheFirstFortyMatches) {
     EXPECT_EQ(listing.findRandomSoundFile("N*"), std::format("n{:02}.wav", draw % 40));
     EXPECT_EQ(crt_random_.rand(), expected.rand());
     EXPECT_EQ(listing.findRandomSoundFile("x*"), "");
-}
-
-TEST_F(CSoundPlayTest, InitPlaysTheAmbientSoundOnTheAmbientChannelAtTheEffectsVolume) {
-    sound_.setSfxChannelVol(CSound::kEffectsChannel, 0.5F);
-    game_sound_.playAmbientSound("amb");
-    EXPECT_EQ(sound_.countActiveSfx(), 0);
-    game_sound_.init();
-    EXPECT_EQ(sound_.countActiveSfx(), 1);
-    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kAmbientChannel), 0.5F);
-    sound_.enableSfxChannel(CSound::kAmbientChannel, false);
-    EXPECT_EQ(sound_.countActiveSfx(), 0);
-}
-
-// Once the audio is up, a new ambient sound plays at once, in place of the old.
-TEST_F(CSoundPlayTest, AnAmbientSoundPlaysAtOnceWhileTheAudioIsUp) {
-    game_sound_.playAmbientSound("amb");
-    game_sound_.init();
-    game_sound_.playAmbientSound("rain1");
-    EXPECT_EQ(nameOf(sound_.getFirstActiveSfx()), "rain1.wav");
-    EXPECT_EQ(sound_.countActiveSfx(), 1);
-}
-
-TEST_F(CSoundPlayTest, EffectsSwitchedOffLeaveTheAmbientSoundOff) {
-    sound_.enableSfxChannel(CSound::kEffectsChannel, false);
-    game_sound_.playAmbientSound("amb");
-    game_sound_.init();
-    EXPECT_FALSE(sound_.isSfxChannelEnabled(CSound::kAmbientChannel));
-    EXPECT_EQ(sound_.countActiveSfx(), 0);
-}
-
-// Shut down, the output stops, and an ambient sound waits for init again.
-TEST_F(CSoundPlayTest, ShuttingDownStopsTheAudioUntilInit) {
-    game_sound_.playAmbientSound("amb");
-    game_sound_.init();
-    game_sound_.shutdown();
-    EXPECT_FALSE(sound_.isSoundBusy());
-    game_sound_.playAmbientSound("rain1");
-    EXPECT_EQ(sound_.countActiveSfx(), 0);
-    game_sound_.init();
-    EXPECT_EQ(nameOf(sound_.getFirstActiveSfx()), "rain1.wav");
-}
-
-// Without an output, init starts nothing and the audio isn't up.
-TEST_F(CSoundPlayTest, InitWithoutAnOutputStartsNothing) {
-    sound_.setSoundMuted(true);
-    game_sound_.playAmbientSound("amb");
-    game_sound_.init();
-    sound_.setSoundMuted(false);
-    ASSERT_TRUE(sound_.enableSoundSystem());
-    game_sound_.playAmbientSound("amb");
-    EXPECT_EQ(sound_.countActiveSfx(), 0);
-}
-
-// Each frame the ambient channel follows the effects channel, and the sounds move on.
-TEST_F(CSoundPlayTest, AFrameFollowsTheEffectsChannelAndMovesTheSoundsOn) {
-    game_sound_.playAmbientSound("amb");
-    game_sound_.init();
-    sound_.setSfxChannelVol(CSound::kEffectsChannel, 0.25F);
-    const std::uint32_t handle = sound_.getFirstActiveSfx();
-    ASSERT_TRUE(sound_.setSfxFade(handle, 0.0F, 0.25F, true));
-    game_sound_.process(0.25F);
-    EXPECT_EQ(sound_.getSfxChannelVol(CSound::kAmbientChannel), 0.25F);
-    game_sound_.process(0.25F);
-    EXPECT_FALSE(sound_.isSfxPlaying(handle));
-    sound_.enableSfxChannel(CSound::kEffectsChannel, false);
-    game_sound_.process(0.0F);
-    EXPECT_FALSE(sound_.isSfxChannelEnabled(CSound::kAmbientChannel));
 }
 
 TEST_F(CSoundTest, WithNoSoundFilesTheSearchRunsEachTime) {

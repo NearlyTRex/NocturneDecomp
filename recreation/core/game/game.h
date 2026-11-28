@@ -332,6 +332,9 @@ private:
     // death_wait is the seconds the hero has been dead, negative once the screen is closing.
     [[nodiscard]] bool isDeathWaitOver(const SGameSessionOwners &session, float &death_wait);
     [[nodiscard]] static bool isLocalHeroDead(const SGameSessionOwners &session);
+    // The scene camera, the set and how much of its water shows, which the session's sounds
+    // follow.
+    [[nodiscard]] static SSoundScene getSoundScene(const SGameSessionOwners &session);
     // What a frame's Escape did: nothing, the pause menu shown and put away, or Quit confirmed.
     enum class EPauseMenu : std::uint8_t { None, Closed, Quit };
     // Escape's pause menu, which a dead hero's Escape doesn't open.

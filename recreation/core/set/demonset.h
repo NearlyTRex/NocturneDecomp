@@ -9,6 +9,7 @@
 #include "core/dlight/demonlight.h"
 #include "core/fwd.h"
 #include "core/rect.h"
+#include "core/set/setsounds.h"
 #include "core/setdir/vdbox.h"
 #include "core/setutil/3dscamera.h"
 #include "core/setutil/3dslight.h"
@@ -311,6 +312,10 @@ public:
     // The sound the script's start plays as the set's ambient sound, with any volume as its '@'
     // modifier; empty for none.
     [[nodiscard]] const std::string &getAmbientSound() const;
+    // The wind the set blows and the water it laps, as its blocks or its geometry's name say;
+    // nothing for none.
+    [[nodiscard]] const std::optional<SSetWind> &getWind() const;
+    [[nodiscard]] const std::optional<SSetWater> &getWater() const;
     // The camera's depth thumb, kThumbWidth * kThumbHeight depths.
     [[nodiscard]] std::span<const std::uint32_t> getThumb(std::size_t camera_index) const;
     // For each 16.16 intensity below one, its level after gamma, at least 0x100; empty until
@@ -406,6 +411,8 @@ private:
     // for one.
     bool has_terrain_ = false;
     std::string ambient_sound_;
+    std::optional<SSetWind> wind_;
+    std::optional<SSetWater> water_;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
     std::vector<CDemonActor *> renderable_actors_;

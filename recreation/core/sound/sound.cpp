@@ -1,10 +1,16 @@
 #include "core/sound/sound.h"
 
 #include "common/error/error.h"
+#include "common/math/matrix3x3f.h"
 #include "common/math/vector3f.h"
+#include "common/math/vector3i.h"
 #include "common/random/watcomrandom.h"
 #include "common/text/scanformat.h"
 #include "common/text/wildcard.h"
+#include "core/actor/notported.h"
+#include "core/dcamera/demoncamera.h"
+#include "core/set/demonset.h"
+#include "core/set/setsounds.h"
 #include "engine/console/console.h"
 #include "engine/package/gamecontent.h"
 #include "sound/sndmain/sampleinfo.h"
@@ -12,6 +18,7 @@
 #include "sound/sndmain/sndmain.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstddef>
 #include <format>
 #include <functional>
@@ -47,6 +54,24 @@ constexpr int kRoomSizeSearchSteps = 5;
 // A range's last number past this takes two digits.
 constexpr int kLargestOneDigit = 9;
 constexpr std::string_view kDefaultExtension = ".wav";
+// Where the listener starts a session, so the first update moves it.
+constexpr float kFarAway = 1e10F;
+// A camera moved less than this since the listener's last place leaves the listener there.
+constexpr float kListenerStillDistance = 0.0001F;
+// The share of their range the wind and water move a second, and the volume they stop below.
+constexpr float kLoopVolumeRate = 0.5F;
+constexpr float kSilentVolume = 0.001F;
+// The water's volume: its least, and a 36th for each foot of the side of the square it shows.
+constexpr float kWaterQuietest = 0.2F;
+constexpr float kWaterPerRootSquareFoot = 1.0F / 36.0F;
+// The wind's points are the odd 32nds of the frame across and down. A point that is open at all
+// is 0.2 more, then squared, and is a 64th of the whole; the whole, squared, is 0.3 more if any.
+constexpr int kWindSampleDivisions = 32;
+constexpr float kWindPointLift = 0.2F;
+constexpr float kWindPointShare = 1.0F / 64.0F;
+constexpr float kWindLift = 0.3F;
+// The depth screenToWorldCoord gives a point where nothing was drawn.
+constexpr int kNothingDrawnDepth = 0x7fffffff;
 
 void capChannelVolume(sound::CSndMain &sound_main, int channel_index, float volume) {
     if (sound_main.getSfxChannelVol(channel_index) > volume) {
@@ -227,9 +252,6 @@ void CSound::playAmbientSound(std::string_view sound_name) {
 }
 
 // The output's rate is set as the menus left it.
-// deferred: the wind's and the water's volumes, and the listener's last place put far off, so
-//   the first update moves it, with updateListeners and process's wind and water
-// deferred: the listener put on the camera, with updateListeners
 // deferred: the reverb the set's director last chose, with CSound::setReverb and the output's
 //   reverb
 // deferred: the volume fade's multipliers back to 1, with fadeAmbientSound
@@ -243,8 +265,13 @@ void CSound::playAmbientSound(std::string_view sound_name) {
 // bw1 0x0057cc00
 // bw2 0x0055a1d0
 // bw3 0x0055fd30
-void CSound::init() {
+void CSound::init(const SSoundScene &scene) {
+    wind_target_ = 0.0F;
+    wind_volume_ = 0.0F;
+    water_volume_ = 0.0F;
+    listener_previous_ = {.x = kFarAway, .y = kFarAway, .z = kFarAway};
     sound_main_.set3DListenerVelocity(0.0, 0.0, 0.0);
+    updateListeners(scene);
     static_cast<void>(sound_main_.enableSoundSystem());
     if (!sound_main_.isSoundBusy()) {
         return;
@@ -271,10 +298,10 @@ void CSound::shutdown() {
 
 // The sounds' volumes, positions and pitches are worked out here, once a frame, where the
 // original's audio thread worked them out for each buffer it mixed.
-// deferred: the listener moved with the camera, with updateListeners
-// deferred: the wind, louder the farther the ground and sky are in a castle set, and the water
-//   lapping in a dungeon, louder the more water shows, each moving at most half its range a
-//   second, with updateListeners and SET blocks for them
+// The wind and the water each move at most half their range a second. The water is louder the
+// more of it shows: 0.2, and a 36th of the square root of its square feet, up to its loudest.
+// unverified: the wind's and the water's volumes, worked in floats where the original kept the
+//   x87's precision, against a machine-code oracle
 // deferred: the ambient channel's volume faded to the event's target, with fadeAmbientSound
 // deferred: a set aboard a moving vehicle's rumble, outside sound and passing rail noises, with
 //   the vehicle's sounds and CDemonSet::testLineOcclusion
@@ -284,9 +311,101 @@ void CSound::shutdown() {
 // bw1 0x0057ce10
 // bw2 0x0055a3c0
 // bw3 0x0055ff40
-void CSound::process(float delta_time) {
+void CSound::process(const SSoundScene &scene, float delta_time) {
+    const float step = delta_time * kLoopVolumeRate;
+    updateListeners(scene);
+    stepLoopVolume(wind_volume_, wind_target_, step, wind_sfx_handle_,
+                   scene.set.getWind().value_or(SSetWind{}).sound);
+    const std::optional<SSetWater> &water = scene.set.getWater();
+    float water_target = 0.0F;
+    if (water && scene.water_area > 0.0F) {
+        water_target =
+            std::min((std::sqrt(scene.water_area) * kWaterPerRootSquareFoot) + kWaterQuietest,
+                     water->loudest);
+    }
+    stepLoopVolume(water_volume_, water_target, step, water_sfx_handle_,
+                   water.value_or(SSetWater{}).sound);
     followEffectsChannel();
     sound_main_.pollAllSfxSlots(delta_time);
+}
+
+void CSound::stepLoopVolume(float &volume, float target, float step, std::uint32_t &handle,
+                            std::string_view file) {
+    volume += std::clamp(target - volume, -step, step);
+    if (volume <= kSilentVolume) {
+        killSound(handle);
+        volume = 0.0F;
+        return;
+    }
+    if (!isSoundPlaying(handle)) {
+        handle = sound_main_.startSfx(file);
+    }
+    static_cast<void>(sound_main_.setSfxVolume(handle, volume));
+}
+
+// A camera that hasn't moved since leaves the listener's turn and the wind as they were.
+// deferred: the listener on the flashlight's view, and no wind, while the goggles are on, with
+//   the goggles
+// nocedit 0x005b1870
+// nocturne 0x0052c9d0
+// bw1 0x0057b780
+// bw2 0x00558d50
+// bw3 0x0055e8b0
+void CSound::updateListeners(const SSoundScene &scene) {
+    const common::CVector3f &position = scene.camera.getPosition();
+    const float moved_x = position.x - listener_previous_.x;
+    const float moved_y = position.y - listener_previous_.y;
+    const float moved_z = position.z - listener_previous_.z;
+    if (std::sqrt((moved_z * moved_z) + (moved_x * moved_x) + (moved_y * moved_y)) <
+        kListenerStillDistance) {
+        return;
+    }
+    const common::CMatrix3x3f &rotation = scene.camera.getRotationMatrix();
+    sound_main_.set3DListenerPos(position.x, position.y, position.z);
+    const common::CVector3f front = rotation.transformVector({.x = 1.0F, .y = 0.0F, .z = 0.0F});
+    const common::CVector3f up = rotation.transformVector({.x = 0.0F, .y = 1.0F, .z = 0.0F});
+    const common::CVector3f right = rotation.transformVector({.x = 0.0F, .y = 0.0F, .z = 1.0F});
+    sound_main_.set3DListenerOrient(front.x, front.y, front.z, up.x, up.y, up.z, right.x, right.y,
+                                    right.z);
+    float wind = scene.set.getWind() ? sampleWind(scene.camera) : 0.0F;
+    wind *= wind;
+    if (wind > 0.0F) {
+        wind += kWindLift;
+    }
+    wind_target_ = std::min(wind, 1.0F);
+    listener_previous_ = position;
+}
+
+// 16 by 16 points across the camera's frame, each as open as it looks: a point where nothing was
+// drawn is sky, as open as can be. Each point and the whole are capped at 1.
+// deferred: a drawn point's wind, a 50th for each unit it is past 50 away and a 60th for each
+//   unit the ground above it is past 60 higher, with CDemonSet::rayVoxelHeightQuery
+float CSound::sampleWind(CDemonCamera &camera) {
+    float wind = 0.0F;
+    for (int row = 1; row < kWindSampleDivisions; row += 2) {
+        for (int column = 1; column < kWindSampleDivisions; column += 2) {
+            common::CVector3i point;
+            static_cast<void>(camera.screenToWorldCoord(
+                camera.getFramebufferWidth() * column / kWindSampleDivisions,
+                camera.getFramebufferHeight() * row / kWindSampleDivisions, &point));
+            if (point.z < kNothingDrawnDepth) {
+                quitNotPorted("CDemonSet", "rayVoxelHeightQuery");
+            }
+            float open = 1.0F + kWindPointLift;
+            open = std::min(open * open, 1.0F);
+            wind += open * kWindPointShare;
+        }
+    }
+    return wind;
+}
+
+// nocedit 0x005b3b80
+// nocturne 0x0052eba0
+// bw1 0x0057d9c0
+// bw2 0x0055af70
+// bw3 0x00560af0
+bool CSound::isSoundPlaying(std::uint32_t sfx_handle) {
+    return sound_main_.isSfxPlaying(sfx_handle);
 }
 
 void CSound::followEffectsChannel() {

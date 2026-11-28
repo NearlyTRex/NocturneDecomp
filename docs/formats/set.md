@@ -271,6 +271,9 @@ ignoring case. They exist so the original sets load as they did.
 
 **Wave animation, before version 5:** on only when the name starts `ndun`.
 
+**Wind and water, every version:** without the `wind` block, a name starting `castle` blows the
+wind; without the `water` block, a name starting `ndun` laps the water (both below).
+
 **Moving vehicle, every version:** a geometry name starting `train` puts the set aboard a moving
 vehicle, as Nocturne's train is (the original's `player_on_train`): its rails are heard with the
 fog's drift, and it has a moving ground with the default terrain settings unless the file gives
@@ -337,13 +340,59 @@ A value the block leaves out, or a volume that is not a number 0 or more, is wha
 without the block. Without it, the sound is the geometry's own, and a geometry named `smill` or
 `town` (Nocturne's mill and town, in any case) plays it at 0.85, as the original did.
 
+### `wind`
+
+A wind that blows louder the more open the camera's view is, as Nocturne's castle's does.
+
+```
+wind
+<sound>
+```
+
+| Value | Meaning | Default |
+|---|---|---|
+| `sound` | The looping sound the wind plays. | `wind-ctl.wav` |
+
+The values line `off`, in any case, gives the set no wind. Without the block, a set whose
+geometry's name starts `castle`, in any case, has the wind with its default sound, as the
+original did; any other has none.
+
+How loud the wind is comes from 16 by 16 points across the camera's view, worked out whenever the
+camera moves:
+
+- Sky counts fully, as does a point more than 50 units off or under ground more than 60 units
+  higher.
+- The volume moves toward that at most half its range a second.
+
+### `water`
+
+Water that laps louder the more of the set's water surface shows, as Nocturne's dungeon's does.
+
+```
+water
+<sound>,<loudest>
+```
+
+| Value | Meaning | Default |
+|---|---|---|
+| `sound` | The looping sound the water plays. | `water-2.wav` |
+| `loudest` | The highest it gets, a number 0 or more. | 0.7 |
+
+The volume is 0.2 and a 36th of the square root of the square feet of water showing, up to
+`loudest`. It moves toward that at most half its range a second, and is silent while no water
+shows.
+
+The values line `off`, in any case, gives the set no water sound. A value the block leaves out,
+or a `loudest` that is not a number 0 or more, takes its default. Without the block, a set whose
+geometry's name starts `ndun`, in any case, laps with the defaults, as the original did; any
+other is silent.
+
 ### Planned
 
 `vehicle` (the moving vehicle's noises, volumes and the inside/outside test, on or off for any
-set) and `water` (the water's lapping, its file and volume curve) will come with the sound code
-that plays them; their syntax is not settled. Each will take `off`, as `ambient` does and
-`terrain` will; a block always wins over the geometry-name fallbacks, which apply only to files
-without it.
+set) will come with the sound code that plays it; its syntax is not settled. It will take `off`,
+as the other blocks do; a block always wins over the geometry-name fallbacks, which apply only to
+files without it.
 
 ## Example
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "common/math/vector3f.h"
 #include "core/fwd.h"
 #include "engine/fwd.h"
 #include "platform/fwd.h"
@@ -27,6 +28,14 @@ struct SSoundOwners {
     std::function<int(const common::CVector3f &)> room_size_at;
 };
 
+// What a session's sounds follow: the camera the listener is on, the set whose wind and water
+// play, and the square feet of its water that show.
+struct SSoundScene {
+    CDemonCamera &camera;
+    const CDemonSet &set;
+    float water_area = 0.0F;
+};
+
 // The game's sounds, played through the sound system it shuts down when it goes.
 class CSound {
 public:
@@ -49,12 +58,14 @@ public:
     [[nodiscard]] std::string findRandomSoundFile(std::string_view wildcard_pattern);
     // Lists sound\*.wav and sound\*.mp3 the first time, then takes up the sound device.
     void findAllSoundFiles();
-    // A session's audio: the output started and, once it runs, the set's ambient sound.
-    void init();
+    // A session's audio: the wind and water silent, the listener on the camera, the output
+    // started and, once it runs, the set's ambient sound.
+    void init(const SSoundScene &scene);
     // Every sound stopped and the output with them, until init.
     void shutdown();
-    // A frame of the session's sounds, delta_time seconds long.
-    void process(float delta_time);
+    // A frame of the session's sounds, delta_time seconds long: the listener follows the camera,
+    // and the wind and water move toward how loud the scene makes them.
+    void process(const SSoundScene &scene, float delta_time);
     // Turns the effects and music down to the menu's level and the dialog to full at most, then,
     // unless sound is muted, stops every sound, puts the listener at the origin and starts the
     // menu music at the output's rate.
@@ -78,7 +89,7 @@ public:
                                                     common::CVector3f *position, float delay);
     std::uint32_t playTrackedActorSoundWithDelay(CDemonActor *actor, char *sound_name,
                                                  common::CVector3f *position_tracker, float delay);
-    int isSoundPlaying(std::uint32_t sfx_handle);
+    [[nodiscard]] bool isSoundPlaying(std::uint32_t sfx_handle);
     void killSound(std::uint32_t sfx_handle);
     // In seconds, the name ending at an '@', a '*' or whitespace; -1 when there is no such sound.
     [[nodiscard]] float getSoundDuration(std::string_view sound_name);
@@ -99,6 +110,23 @@ private:
                                                 const common::CVector3f &position);
     // The ambient channel on as the effects channel is, as loud.
     void followEffectsChannel();
+    // The listener on the camera, once it has moved, and the wind's target where it was.
+    void updateListeners(const SSoundScene &scene);
+    // How loud the wind the camera's view makes is, 0 to 1.
+    [[nodiscard]] static float sampleWind(CDemonCamera &camera);
+    // The volume moved toward the target by at most step; the sound stopped once silent, or
+    // started from file if it isn't playing.
+    void stepLoopVolume(float &volume, float target, float step, std::uint32_t &handle,
+                        std::string_view file);
+
+    // The wind's and the water's volumes now, and the wind's target.
+    float wind_target_ = 0.0F;
+    float wind_volume_ = 0.0F;
+    float water_volume_ = 0.0F;
+    std::uint32_t wind_sfx_handle_ = 0;
+    std::uint32_t water_sfx_handle_ = 0;
+    // Where the listener was put last; far off until updateListeners first moves it.
+    common::CVector3f listener_previous_;
 
     sound::CSndMain &sound_main_;
     engine::CPod &pod_;

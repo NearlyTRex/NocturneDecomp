@@ -106,7 +106,7 @@ void CGame::processFrame(const SGameSessionOwners &session) {
         slewLocalHero(session);
     } else {
         process(session);
-        session.sound.process(delta_time_float_);
+        session.sound.process(getSoundScene(session), delta_time_float_);
     }
     updateDT();
     session.net_game.processServerFrame();

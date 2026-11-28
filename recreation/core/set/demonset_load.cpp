@@ -137,6 +137,12 @@ constexpr float kQuietAmbientVolume = 0.85F;
 // world units to 24.8.
 constexpr std::string_view kTerrainBlock = "terrain";
 constexpr std::string_view kAmbientBlock = "ambient";
+constexpr std::string_view kWindBlock = "wind";
+constexpr std::string_view kWaterBlock = "water";
+// Without their blocks, sets whose geometry's name starts so blow the wind, as Nocturne's castle
+// does, or lap the water, as its dungeon does.
+constexpr std::string_view kWindPrefix = "castle";
+constexpr std::string_view kWaterPrefix = "ndun";
 constexpr std::string_view kOff = "off";
 constexpr float kWorldToFixed = 256.0F;
 
@@ -197,11 +203,82 @@ SAmbientBlock scanAmbientBlock(std::string_view line) {
     return {.off = false, .sound = std::string(common::getValue(values, 0)), .volume = volume};
 }
 
+// "sound", left out for the default, or "off" for no wind.
+struct SWindBlock {
+    bool off = false;
+    std::string sound;
+};
+
+SWindBlock scanWindBlock(std::string_view line) {
+    if (common::equalsIgnoringAsciiCase(common::trimSpaces(line), kOff)) {
+        return {.off = true, .sound = {}};
+    }
+    return {.off = false, .sound = std::string(common::getValue(common::splitValues(line), 0))};
+}
+
+// "sound,loudest", either left out for its default, or "off" for no water's sound.
+struct SWaterBlock {
+    bool off = false;
+    std::string sound;
+    std::optional<float> loudest;
+};
+
+// The loudest is a plain number, 0 or more.
+SWaterBlock scanWaterBlock(std::string_view line) {
+    if (common::equalsIgnoringAsciiCase(common::trimSpaces(line), kOff)) {
+        return {.off = true, .sound = {}, .loudest = std::nullopt};
+    }
+    const std::vector<std::string_view> values = common::splitValues(line);
+    std::optional<float> loudest = common::parseNumber<float>(common::getValue(values, 1));
+    if (loudest && *loudest < 0.0F) {
+        loudest.reset();
+    }
+    return {.off = false, .sound = std::string(common::getValue(values, 0)), .loudest = loudest};
+}
+
 // What the recreation's blocks after the file's end asked for.
 struct SSetBlocks {
     std::optional<STerrainSettings> terrain;
     std::optional<SAmbientBlock> ambient;
+    std::optional<SWindBlock> wind;
+    std::optional<SWaterBlock> water;
 };
+
+// A block's wind, or without one, the default where the geometry's name says so.
+std::optional<SSetWind> resolveWind(const std::optional<SWindBlock> &block,
+                                    std::string_view geometry_name) {
+    if (!block) {
+        return common::startsWithIgnoringAsciiCase(geometry_name, kWindPrefix)
+                   ? std::optional(SSetWind{})
+                   : std::nullopt;
+    }
+    if (block->off) {
+        return std::nullopt;
+    }
+    SSetWind wind;
+    if (!block->sound.empty()) {
+        wind.sound = block->sound;
+    }
+    return wind;
+}
+
+std::optional<SSetWater> resolveWater(const std::optional<SWaterBlock> &block,
+                                      std::string_view geometry_name) {
+    if (!block) {
+        return common::startsWithIgnoringAsciiCase(geometry_name, kWaterPrefix)
+                   ? std::optional(SSetWater{})
+                   : std::nullopt;
+    }
+    if (block->off) {
+        return std::nullopt;
+    }
+    SSetWater water;
+    if (!block->sound.empty()) {
+        water.sound = block->sound;
+    }
+    water.loudest = block->loudest.value_or(water.loudest);
+    return water;
+}
 
 // Every line after the visibility lists: a line that is a block's label, in any case and spaces
 // around it, takes the next line as its values; any other line is passed over. A block given
@@ -214,6 +291,10 @@ SSetBlocks readSetBlocks(CTextScanner &scanner) {
             blocks.terrain = scanTerrainSettings(scanner.readLine());
         } else if (common::equalsIgnoringAsciiCase(label, kAmbientBlock)) {
             blocks.ambient = scanAmbientBlock(scanner.readLine());
+        } else if (common::equalsIgnoringAsciiCase(label, kWindBlock)) {
+            blocks.wind = scanWindBlock(scanner.readLine());
+        } else if (common::equalsIgnoringAsciiCase(label, kWaterBlock)) {
+            blocks.water = scanWaterBlock(scanner.readLine());
         }
     }
     return blocks;
@@ -454,6 +535,8 @@ void CDemonSet::loadVdirBoxesAndVisibility(CTextScanner &scanner) {
 // it, and the mill's and the town's quieter.
 void CDemonSet::loadExtensions(CTextScanner &scanner, std::string_view geometry_name) {
     const SSetBlocks blocks = readSetBlocks(scanner);
+    wind_ = resolveWind(blocks.wind, geometry_name);
+    water_ = resolveWater(blocks.water, geometry_name);
     has_terrain_ = aboard_moving_vehicle_ || blocks.terrain.has_value();
     if (has_terrain_) {
         owners_.terrain.init(blocks.terrain.value_or(STerrainSettings{}));
@@ -481,6 +564,14 @@ void CDemonSet::loadExtensions(CTextScanner &scanner, std::string_view geometry_
 
 const std::string &CDemonSet::getAmbientSound() const {
     return ambient_sound_;
+}
+
+const std::optional<SSetWind> &CDemonSet::getWind() const {
+    return wind_;
+}
+
+const std::optional<SSetWater> &CDemonSet::getWater() const {
+    return water_;
 }
 
 void CDemonSet::showMissingGeometryWarning() {

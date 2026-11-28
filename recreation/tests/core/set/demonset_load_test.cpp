@@ -367,6 +367,44 @@ TEST_F(CDemonSetLoadTest, AnAmbientBlockOfOffPlaysNone) {
     EXPECT_EQ(set_.getAmbientSound(), "");
 }
 
+// Without their blocks, a castle blows the wind and a dungeon laps the water, in any case.
+TEST_F(CDemonSetLoadTest, WithoutBlocksOnlyACastleBlowsAndOnlyADungeonLaps) {
+    load({});
+    EXPECT_FALSE(set_.getWind().has_value());
+    EXPECT_FALSE(set_.getWater().has_value());
+    load({.geometry = "Castle1.geo"});
+    EXPECT_EQ(set_.getWind(), SSetWind{});
+    EXPECT_FALSE(set_.getWater().has_value());
+    load({.geometry = "NDUN3.geo"});
+    EXPECT_FALSE(set_.getWind().has_value());
+    EXPECT_EQ(set_.getWater(), SSetWater{});
+}
+
+// The block blows any set's wind, with its sound or the castle's; off blows none.
+TEST_F(CDemonSetLoadTest, AWindBlockGivesTheWindItsSound) {
+    load({.tail = "\n  Wind  \n gust.wav \n"});
+    EXPECT_EQ(set_.getWind(), SSetWind{.sound = "gust.wav"});
+    load({.tail = "\nwind\n\n"});
+    EXPECT_EQ(set_.getWind(), SSetWind{});
+    load({.geometry = "castle.geo", .tail = "\nwind\n Off \n"});
+    EXPECT_FALSE(set_.getWind().has_value());
+}
+
+// The block laps any set's water, with its sound and loudest or the dungeon's; a loudest that is
+// no number 0 or more is the dungeon's, and off laps none.
+TEST_F(CDemonSetLoadTest, AWaterBlockGivesTheWaterItsSoundAndLoudest) {
+    load({.tail = "\nwater\n drip.wav , 0.3 \n"});
+    EXPECT_EQ(set_.getWater(), (SSetWater{.sound = "drip.wav", .loudest = 0.3F}));
+    load({.tail = "\nwater\n,0.5\n"});
+    EXPECT_EQ(set_.getWater(), (SSetWater{.sound = "water-2.wav", .loudest = 0.5F}));
+    load({.tail = "\nwater\ndrip.wav,-1\n"});
+    EXPECT_EQ(set_.getWater(), (SSetWater{.sound = "drip.wav", .loudest = 0.7F}));
+    load({.tail = "\nwater\n,loud\n"});
+    EXPECT_EQ(set_.getWater(), SSetWater{});
+    load({.geometry = "ndun.geo", .tail = "\nwater\noff\n"});
+    EXPECT_FALSE(set_.getWater().has_value());
+}
+
 TEST_F(CDemonSetLoadTest, TheEnviroModelIsLoadedWhenTheSetUsesOneAndFreedWithTheNext) {
     givenFile("models\\moon.kfm", std::string(kMoonModel));
     load({.enviro = "1,moon.kfm"});

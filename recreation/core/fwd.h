@@ -320,6 +320,7 @@ struct SQuadVertices;
 struct SSceneInventory;
 struct SScriptScreen;
 struct SSimFrame;
+struct SSoundScene;
 struct STextureSet;
 struct STriangleRef;
 struct STriangleVertices;

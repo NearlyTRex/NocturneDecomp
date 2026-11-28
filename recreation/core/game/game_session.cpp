@@ -15,6 +15,7 @@
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/sound/sound.h"
+#include "core/water/water.h"
 #include "engine/2d/2d.h"
 #include "engine/console/console.h"
 #include "engine/keys/inputcodetype.h"
@@ -290,7 +291,7 @@ bool CGame::playSession(const SGameSessionOwners &session) {
             return true;
         }
         if (!audio_started) {
-            session.sound.init();
+            session.sound.init(getSoundScene(session));
             audio_started = true;
         }
     }
@@ -326,6 +327,11 @@ bool CGame::isDeathWaitOver(const SGameSessionOwners &session, float &death_wait
         death_wait = kDeathFadeBegun;
     }
     return false;
+}
+
+SSoundScene CGame::getSoundScene(const SGameSessionOwners &session) {
+    return {
+        .camera = session.camera, .set = session.set, .water_area = session.water.getVisibleArea()};
 }
 
 bool CGame::isLocalHeroDead(const SGameSessionOwners &session) {
@@ -377,7 +383,7 @@ bool CGame::showPauseMenu(const SGameSessionOwners &session) {
         break;
     }
     owners_.two_d.clearInputAndWait();
-    session.sound.init();
+    session.sound.init(getSoundScene(session));
     return false;
 }
 
