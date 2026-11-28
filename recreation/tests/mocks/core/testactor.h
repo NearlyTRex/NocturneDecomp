@@ -1,6 +1,7 @@
 #pragma once
 
 #include "core/actor/actorrenderowners.h"
+#include "core/actor/collisiontype.h"
 #include "core/actor/demonactor.h"
 #include "core/actor/demonactortype.h"
 
@@ -27,6 +28,13 @@ public:
     void updateCollisionData(CDemonSet & /*set*/) override {
         ++collision_updates_;
     }
+
+    // As the test sets it: none unless told otherwise.
+    ECollisionType getCollisionType(SCollisionInfo * /*collision_info*/) override {
+        return collision_type;
+    }
+
+    ECollisionType collision_type = ECollisionType::kNone;
 
     // Without one, the actor processes as every actor does.
     void process(float delta_time) override {

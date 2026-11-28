@@ -1,4 +1,3 @@
-#include "common/error/fatalerror.h"
 #include "common/math/vector3d.h"
 #include "common/math/vector3f.h"
 #include "core/dcamera/demoncamera.h"
@@ -29,8 +28,6 @@ namespace nocturne::core {
 namespace {
 
 using ::testing::Return;
-using ::testing::StrEq;
-using ::testing::ThrowsMessage;
 
 // The session's sounds over a set of one camera, shown, with nothing drawn, whose blocks each
 // test gives; the sound directory lists a long tone under each name, and the output opens.
@@ -50,15 +47,44 @@ protected:
         givenSet("pier.geo", "");
     }
 
-    // The set loaded and its camera shown.
-    void givenSet(const std::string &geometry, const std::string &tail) {
+    // A depth buffer's value that puts a point as far off as anything drawn, and one that puts
+    // it as near as can be.
+    static constexpr std::uint32_t kFarDepth = 2;
+    static constexpr std::uint32_t kNearDepth = 0x7fffffff;
+
+    // A ceiling at y = 5 over the whole of the set's one cube, met by rays going up.
+    static SGeoCube ceilingCube() {
+        SGeoCube cube;
+        cube.vertex_count = 3;
+        cube.vertices = {
+            {.x = 0, .y = 5, .z = 0}, {.x = 16, .y = 5, .z = 0}, {.x = 0, .y = 5, .z = 24}};
+        cube.triangle_count = 1;
+        cube.triangles = {{.indices = {0, 1, 2},
+                           .normal = {.x = 0, .y = 1, .z = 0},
+                           .plane_distance = -5.0F,
+                           .dominant_axis = 1,
+                           .ground_type = 0}};
+        return cube;
+    }
+
+    // Every point of the screen drawn at the depth.
+    void drawEverywhere(std::uint32_t depth) {
+        const std::span<std::uint32_t *> rows = screen_.getZBufferRows();
+        for (int y = 0; y < screen_.getWindowHeight(); ++y) {
+            std::fill_n(rows[static_cast<std::size_t>(y)], screen_.getWindowWidth(), depth);
+        }
+    }
+
+    // The set loaded over its one cube and its camera shown.
+    void givenSet(const std::string &geometry, const std::string &tail,
+                  const std::vector<SGeoCube> &cubes = {SGeoCube{}}) {
         givenFile("models\\one.set", SSetFile{.geometry = geometry,
                                               .cameras = "1\n" + cameraText("a"),
                                               .pvs = "1\n\t0\n",
                                               .tail = tail}
                                          .text());
-        givenFile("data\\" + geometry, geoFile(CDemonRaytrace::kGeoFileFormatVersion,
-                                               {.x = 1, .y = 1, .z = 1}, {SGeoCube{}}));
+        givenFile("data\\" + geometry,
+                  geoFile(CDemonRaytrace::kGeoFileFormatVersion, {.x = 1, .y = 1, .z = 1}, cubes));
         set_.load("one.set");
         camera().init(kHeight);
         set_.setCameraView(0);
@@ -217,18 +243,31 @@ TEST_F(CSoundSceneTest, TheWindDiesDownWhereThereIsNone) {
     EXPECT_FALSE(isPlaying("wind-ctl.wav"));
 }
 
-// A point where something was drawn asks how high the set's ground is over it. A stored depth of
-// 1 is as far as nothing drawn; 2 is half that.
-TEST_F(CSoundSceneTest, ADrawnPointsWindIsNotPortedYet) {
-    constexpr std::uint32_t kDrawnDepth = 2;
+// Drawn far off, the view is as open as sky.
+TEST_F(CSoundSceneTest, AViewDrawnFarOffBlowsTheWind) {
     givenSet("pier.geo", "\nwind\n\n");
-    const std::span<std::uint32_t *> rows = screen_.getZBufferRows();
-    for (int y = 0; y < screen_.getWindowHeight(); ++y) {
-        std::fill_n(rows[static_cast<std::size_t>(y)], screen_.getWindowWidth(), kDrawnDepth);
-    }
-    EXPECT_THAT([this] { sound_.init(scene()); },
-                ThrowsMessage<common::CFatalError>(
-                    StrEq("CDemonSet::rayVoxelHeightQuery is not ported yet")));
+    drawEverywhere(kFarDepth);
+    sound_.init(scene());
+    sound_.process(scene(), 1.0F);
+    EXPECT_TRUE(isPlaying("wind-ctl.wav"));
+}
+
+// Drawn close by, under a ceiling close over it, the view is closed in.
+TEST_F(CSoundSceneTest, AViewDrawnCloseUnderALowCeilingIsStill) {
+    givenSet("vault.geo", "\nwind\n\n", {ceilingCube()});
+    drawEverywhere(kNearDepth);
+    sound_.init(scene());
+    sound_.process(scene(), 1.0F);
+    EXPECT_FALSE(isPlaying("wind-ctl.wav"));
+}
+
+// Drawn close by under open sky, the view is still open.
+TEST_F(CSoundSceneTest, AViewDrawnCloseUnderOpenSkyBlows) {
+    givenSet("pier.geo", "\nwind\n\n");
+    drawEverywhere(kNearDepth);
+    sound_.init(scene());
+    sound_.process(scene(), 1.0F);
+    EXPECT_TRUE(isPlaying("wind-ctl.wav"));
 }
 
 // The water laps once any of it shows, in a dungeon or a set whose block gives it.

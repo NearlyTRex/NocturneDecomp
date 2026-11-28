@@ -7,7 +7,6 @@
 #include "common/random/watcomrandom.h"
 #include "common/text/scanformat.h"
 #include "common/text/wildcard.h"
-#include "core/actor/notported.h"
 #include "core/dcamera/demoncamera.h"
 #include "core/set/demonset.h"
 #include "core/set/setsounds.h"
@@ -72,6 +71,17 @@ constexpr float kWindPointShare = 1.0F / 64.0F;
 constexpr float kWindLift = 0.3F;
 // The depth screenToWorldCoord gives a point where nothing was drawn.
 constexpr int kNothingDrawnDepth = 0x7fffffff;
+// A drawn point is pulled this much nearer, in 24.8, before it is put back in the world, and
+// its world units are 24.8.
+constexpr int kWindDepthPull = 0x300;
+constexpr float kFromFixed8 = 1.0F / 256.0F;
+// A drawn point opens a 50th for each unit past 50 away, and a 60th for each unit the set rises
+// past 60 over the point lifted a unit.
+constexpr float kWindNearDistance = 50.0F;
+constexpr float kWindPerUnitAway = 0.02F;
+constexpr float kWindHeightLift = 1.0F;
+constexpr float kWindLowCeiling = 60.0F;
+constexpr float kWindPerUnitOverhead = 1.0F / 60.0F;
 
 void capChannelVolume(sound::CSndMain &sound_main, int channel_index, float volume) {
     if (sound_main.getSfxChannelVol(channel_index) > volume) {
@@ -367,7 +377,7 @@ void CSound::updateListeners(const SSoundScene &scene) {
     const common::CVector3f right = rotation.transformVector({.x = 0.0F, .y = 0.0F, .z = 1.0F});
     sound_main_.set3DListenerOrient(front.x, front.y, front.z, up.x, up.y, up.z, right.x, right.y,
                                     right.z);
-    float wind = scene.set.getWind() ? sampleWind(scene.camera) : 0.0F;
+    float wind = scene.set.getWind() ? sampleWind(scene, position) : 0.0F;
     wind *= wind;
     if (wind > 0.0F) {
         wind += kWindLift;
@@ -377,10 +387,11 @@ void CSound::updateListeners(const SSoundScene &scene) {
 }
 
 // 16 by 16 points across the camera's frame, each as open as it looks: a point where nothing was
-// drawn is sky, as open as can be. Each point and the whole are capped at 1.
-// deferred: a drawn point's wind, a 50th for each unit it is past 50 away and a 60th for each
-//   unit the ground above it is past 60 higher, with CDemonSet::rayVoxelHeightQuery
-float CSound::sampleWind(CDemonCamera &camera) {
+// drawn is sky, as open as can be; a drawn point, pulled 3 units nearer, a 50th for each unit it
+// is past 50 away, and a 60th for each unit the set rises past 60 above it. Each point and the
+// whole are capped at 1.
+float CSound::sampleWind(const SSoundScene &scene, const common::CVector3f &eye) {
+    CDemonCamera &camera = scene.camera;
     float wind = 0.0F;
     for (int row = 1; row < kWindSampleDivisions; row += 2) {
         for (int column = 1; column < kWindSampleDivisions; column += 2) {
@@ -388,10 +399,32 @@ float CSound::sampleWind(CDemonCamera &camera) {
             static_cast<void>(camera.screenToWorldCoord(
                 camera.getFramebufferWidth() * column / kWindSampleDivisions,
                 camera.getFramebufferHeight() * row / kWindSampleDivisions, &point));
+            float open = 1.0F;
             if (point.z < kNothingDrawnDepth) {
-                quitNotPorted("CDemonSet", "rayVoxelHeightQuery");
+                open = 0.0F;
+                point.z = std::max(point.z - kWindDepthPull, 1);
+                common::CVector3i world;
+                camera.screenToWorldTransform(&point, &world);
+                common::CVector3f at{.x = static_cast<float>(world.x) * kFromFixed8,
+                                     .y = static_cast<float>(world.y) * kFromFixed8,
+                                     .z = static_cast<float>(world.z) * kFromFixed8};
+                const float away_x = at.x - eye.x;
+                const float away_y = at.y - eye.y;
+                const float away_z = at.z - eye.z;
+                const float away =
+                    std::sqrt((away_z * away_z) + (away_x * away_x) + (away_y * away_y));
+                if (away > kWindNearDistance) {
+                    open = (away - kWindNearDistance) * kWindPerUnitAway;
+                }
+                at.y += kWindHeightLift;
+                const float overhead = scene.set.rayVoxelHeightQuery(at) - at.y;
+                if (overhead > kWindLowCeiling) {
+                    open += (overhead - kWindLowCeiling) * kWindPerUnitOverhead;
+                }
             }
-            float open = 1.0F + kWindPointLift;
+            if (open > 0.0F) {
+                open += kWindPointLift;
+            }
             open = std::min(open * open, 1.0F);
             wind += open * kWindPointShare;
         }

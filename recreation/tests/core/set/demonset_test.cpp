@@ -115,9 +115,10 @@ TEST(CDemonSet, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonSet::processCollisionTypes),
                                  float (CDemonSet::*)(common::CVector3f *, float)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::rayVoxelHeightQuery),
-                                 float (CDemonSet::*)(common::CVector3f *)>);
+                                 float (CDemonSet::*)(const common::CVector3f &) const>);
     static_assert(std::is_same_v<decltype(&CDemonSet::testLineOcclusion),
-                                 int (CDemonSet::*)(common::CVector3f *, common::CVector3f *)>);
+                                 bool (CDemonSet::*)(const common::CVector3f &,
+                                                     const common::CVector3f &) const>);
     static_assert(std::is_same_v<decltype(&CDemonSet::testVoxelRaycast),
                                  int (CDemonSet::*)(common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::raycast),

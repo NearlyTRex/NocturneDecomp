@@ -112,8 +112,8 @@ private:
     void followEffectsChannel();
     // The listener on the camera, once it has moved, and the wind's target where it was.
     void updateListeners(const SSoundScene &scene);
-    // How loud the wind the camera's view makes is, 0 to 1.
-    [[nodiscard]] static float sampleWind(CDemonCamera &camera);
+    // How loud the wind the camera's view makes is, 0 to 1, as heard from eye.
+    [[nodiscard]] static float sampleWind(const SSoundScene &scene, const common::CVector3f &eye);
     // The volume moved toward the target by at most step; the sound stopped once silent, or
     // started from file if it isn't playing.
     void stepLoopVolume(float &volume, float target, float step, std::uint32_t &handle,

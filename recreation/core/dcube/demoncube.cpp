@@ -116,6 +116,37 @@ std::span<const CDemonCubeTriangle> CDemonCube::getTriangles() const {
     return triangles_;
 }
 
+// The first of two triangles met as near is kept. The original also checked each was met within
+// the ray, which the triangle's own test already makes so.
+// deferred: the met triangle's corners kept for the collision's callers (the original's
+//   g_TempNormal0 to 2), with CCharacter::moveAndCollide
+// nocedit 0x004578f0
+// nocturne 0x0044b290
+// bw1 0x00458210
+// bw2 0x00446b60
+// bw3 0x00454360
+float CDemonCube::rayIntersectTriangles(const common::CVector3f &ray_origin,
+                                        const common::CVector3f &ray_direction,
+                                        common::CVector3f &hit_normal,
+                                        std::uint32_t &hit_material) const {
+    float nearest = kNoTriangleMet;
+    std::optional<std::size_t> met;
+    for (std::size_t i = 0; i < triangles_.size(); ++i) {
+        const float along =
+            triangles_[i].rayTriangleIntersection(vertices_, ray_origin, ray_direction);
+        if (along >= 0.0F && along < nearest) {
+            met = i;
+            nearest = along;
+        }
+    }
+    if (met) {
+        const common::CVector3f &normal = triangles_[*met].getNormal();
+        hit_normal = {.x = -normal.x, .y = -normal.y, .z = -normal.z};
+        hit_material = ground_types_[*met];
+    }
+    return nearest;
+}
+
 std::span<const std::uint8_t> CDemonCube::getGroundTypes() const {
     return ground_types_;
 }

@@ -14,9 +14,10 @@ TEST(CDemonCubeTriangle, IsConcrete) {
 TEST(CDemonCubeTriangle, PublicInterface) {
     static_assert(std::is_same_v<decltype(&CDemonCubeTriangle::readFromFile),
                                  void (CDemonCubeTriangle::*)(common::CBinaryReader &)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonCubeTriangle::rayTriangleIntersection),
-                       float (CDemonCubeTriangle::*)(common::CVector3f *, common::CVector3f *)>);
+    static_assert(std::is_same_v<decltype(&CDemonCubeTriangle::rayTriangleIntersection),
+                                 float (CDemonCubeTriangle::*)(std::span<const common::CVector3f>,
+                                                               const common::CVector3f &,
+                                                               const common::CVector3f &) const>);
 }
 
 } // namespace

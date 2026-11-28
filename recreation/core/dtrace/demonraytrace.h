@@ -33,10 +33,17 @@ public:
     bool loadAndSyncWithGeoFile(std::string_view filename);
     common::CVector3f *rayIntersection(common::CVector3f *output_point,
                                        common::CVector3f *ray_start, common::CVector3f *ray_end);
-    float rayVoxelIntersection(common::CVector3f *ray_start, common::CVector3f *ray_end,
-                               common::CVector3f *out_intersection_point,
-                               int *out_intersection_type);
-    int rayVoxelGridTest(common::CVector3f *start_pos, common::CVector3f *end_pos);
+    // How far along the ray, 0 to 1, it first meets the geometry, walking the cubes it crosses
+    // in turn: the facing normal and the ground type go out where it does; -1 where it meets
+    // nothing, the ground type then 1 if the ray was walked. The original named the normal its
+    // intersection point.
+    [[nodiscard]] float rayVoxelIntersection(const common::CVector3f &ray_start,
+                                             const common::CVector3f &ray_end,
+                                             common::CVector3f *out_normal,
+                                             int *out_ground_type) const;
+    // Whether the line from start to end meets the geometry.
+    [[nodiscard]] bool rayVoxelGridTest(const common::CVector3f &start_pos,
+                                        const common::CVector3f &end_pos) const;
     float getGroundHeight(common::CVector3f *pos, int *hit_flag, common::CVector3f *normal_out);
     float cylinderGroundCheck(common::CVector3f *pos, float radius, int *hit_flag,
                               common::CVector3f *normal_out);

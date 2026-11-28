@@ -10,6 +10,7 @@
 #include "tests/mocks/core/clothfixture.h"
 #include "tests/mocks/core/geofile.h"
 #include "tests/mocks/core/setfilefixture.h"
+#include "tests/mocks/core/testactor.h"
 #include "tests/mocks/core/testfieldsarchive.h"
 
 #include <gmock/gmock.h>
@@ -17,8 +18,11 @@
 
 #include <cstdint>
 #include <format>
+#include <functional>
 #include <string>
 #include <string_view>
+#include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -194,6 +198,90 @@ TEST_F(CDemonSetCollisionTest, ASwingRangeNudgesTheDoorOnce) {
     EXPECT_NEAR(position.z, 1.5F, 1.0F);
     EXPECT_FALSE(position.equals({.x = 4.0F, .y = 0.0F, .z = 1.5F}));
     EXPECT_EQ(door_.getSwingRange(), 0.0F);
+}
+
+// A ceiling at y = 5 over the second cube, from x 8 to 16, met by rays going up.
+SGeoCube ceilingCube() {
+    SGeoCube cube;
+    cube.vertex_count = 3;
+    cube.vertices = {
+        {.x = 8, .y = 5, .z = 0}, {.x = 16, .y = 5, .z = 0}, {.x = 8, .y = 5, .z = 24}};
+    cube.triangle_count = 1;
+    cube.triangles = {{.indices = {0, 1, 2},
+                       .normal = {.x = 0, .y = 1, .z = 0},
+                       .plane_distance = -5.0F,
+                       .dominant_axis = 1,
+                       .ground_type = 4}};
+    return cube;
+}
+
+// The collision tests over the ceiling, among the set's actors.
+class CDemonSetRayTest : public CDemonSetCollisionTest {
+protected:
+    CDemonSetRayTest() {
+        givenFile("data\\ceiling.geo", geoFile(4, {.x = 2, .y = 1, .z = 1}, {{}, ceilingCube()}));
+        EXPECT_TRUE(set_parts_.raytrace.loadAndSyncWithGeoFile("ceiling.geo"));
+    }
+
+    void givenActors(std::vector<CDemonActor *> actors) {
+        set_.setActors(std::move(actors));
+        set_.buildCollidableActorList();
+    }
+
+    static void expectRayIntersectNotPorted(const std::function<void()> &query) {
+        EXPECT_THAT(query, ThrowsMessage<common::CFatalError>(
+                               StrEq("CDemonActor::rayIntersect is not ported yet")));
+    }
+
+    CTestActor solid_{kTestBaseType};
+    CTestActor passable_{kTestBaseType};
+};
+
+// The height is where the ray from a unit below meets the ceiling, or 1.01 of the way to 150
+// above when nothing is over the point.
+TEST_F(CDemonSetRayTest, AHeightIsTheCeilingOverThePoint) {
+    EXPECT_FLOAT_EQ(set_.rayVoxelHeightQuery({.x = 12, .y = 2, .z = 4}), 5.0F);
+    EXPECT_FLOAT_EQ(set_.rayVoxelHeightQuery({.x = 4, .y = 2, .z = 4}), 1.0F + (151.0F * 1.01F));
+}
+
+// An actor whose collision type is none is passed over; one with a type would be tested.
+TEST_F(CDemonSetRayTest, AHeightIsTestedAgainstTheActorsThatCollide) {
+    givenActors({&passable_});
+    EXPECT_FLOAT_EQ(set_.rayVoxelHeightQuery({.x = 12, .y = 2, .z = 4}), 5.0F);
+    solid_.collision_type = ECollisionType::kMesh;
+    givenActors({&passable_, &solid_});
+    expectRayIntersectNotPorted(
+        [this] { static_cast<void>(set_.rayVoxelHeightQuery({.x = 12, .y = 2, .z = 4})); });
+}
+
+// Rays pass through the actors once told to, until the next init.
+TEST_F(CDemonSetRayTest, RaysPassThroughActorsUntilInit) {
+    solid_.collision_type = ECollisionType::kMesh;
+    givenActors({&solid_});
+    set_.disableIgnore();
+    EXPECT_FLOAT_EQ(set_.rayVoxelHeightQuery({.x = 12, .y = 2, .z = 4}), 5.0F);
+    EXPECT_FALSE(set_.testLineOcclusion({.x = 4, .y = 2, .z = 4}, {.x = 4, .y = 7, .z = 4}));
+    set_.init();
+    expectRayIntersectNotPorted(
+        [this] { static_cast<void>(set_.rayVoxelHeightQuery({.x = 12, .y = 2, .z = 4})); });
+}
+
+// A ceiling met at the ray's very start leaves nothing of the ray for an actor to stand in.
+TEST_F(CDemonSetRayTest, ACeilingAtTheRaysStartLeavesNoRayForActors) {
+    solid_.collision_type = ECollisionType::kMesh;
+    givenActors({&solid_});
+    EXPECT_FLOAT_EQ(set_.rayVoxelHeightQuery({.x = 12, .y = 6, .z = 4}), 5.0F);
+}
+
+TEST_F(CDemonSetRayTest, TheGeometryStandsBetweenPointsItSeparates) {
+    EXPECT_TRUE(set_.testLineOcclusion({.x = 12, .y = 2, .z = 4}, {.x = 12, .y = 7, .z = 4}));
+    EXPECT_FALSE(set_.testLineOcclusion({.x = 4, .y = 2, .z = 4}, {.x = 4, .y = 7, .z = 4}));
+    solid_.collision_type = ECollisionType::kMesh;
+    givenActors({&solid_});
+    expectRayIntersectNotPorted([this] {
+        static_cast<void>(
+            set_.testLineOcclusion({.x = 4, .y = 2, .z = 4}, {.x = 4, .y = 7, .z = 4}));
+    });
 }
 
 } // namespace

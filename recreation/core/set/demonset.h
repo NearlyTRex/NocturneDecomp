@@ -204,8 +204,9 @@ public:
     void saveStateInfo(std::FILE *file_handle);
     void loadStateInfo(std::FILE *file_handle);
     float processCollisionTypes(common::CVector3f *position, float radius);
-    float rayVoxelHeightQuery(common::CVector3f *position);
-    int testLineOcclusion(common::CVector3f *start_pos, common::CVector3f *end_pos);
+    [[nodiscard]] float rayVoxelHeightQuery(const common::CVector3f &position) const;
+    [[nodiscard]] bool testLineOcclusion(const common::CVector3f &start_pos,
+                                         const common::CVector3f &end_pos) const;
     int testVoxelRaycast(common::CVector3f *start_pos, common::CVector3f *end_pos);
     float raycast(common::CVector3f *ray_origin, common::CVector3f *ray_target);
     float iterativeRaycast(common::CVector3f *start_pos, common::CVector3f *direction);
@@ -356,6 +357,11 @@ private:
     // The recreation's own blocks after the file's end: the moving ground, with the defaults or
     // what the terrain block asks for, and the ambient sound.
     void loadExtensions(common::CTextScanner &scanner, std::string_view geometry_name);
+    // How far along the ray from origin to target, up to max_t, it first meets an actor past
+    // min_t.
+    [[nodiscard]] float raycastAgainstActors(float min_t, const common::CVector3f &ray_origin,
+                                             const common::CVector3f &ray_target,
+                                             float max_t) const;
     void showMissingGeometryWarning();
     static void skipDeprecatedVirtualDirectorData(common::CTextScanner &scanner);
     int findVdirBoxRoot(int box_index);
@@ -413,6 +419,8 @@ private:
     std::string ambient_sound_;
     std::optional<SSetWind> wind_;
     std::optional<SSetWater> water_;
+    // The original's ignore list count of -1, which disableIgnore sets: rays pass through actors.
+    bool rays_meet_actors_ = true;
     std::vector<C3DSLight> lights_;
     std::vector<CDemonActor *> actors_;
     std::vector<CDemonActor *> renderable_actors_;

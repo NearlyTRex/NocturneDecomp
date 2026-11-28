@@ -26,6 +26,9 @@ struct SVoxelGrid {
 // nocedit 0x00454720
 class CDemonCube {
 public:
+    // What rayIntersectTriangles gives when the ray meets no triangle.
+    static constexpr float kNoTriangleMet = 1.0001F;
+
     CDemonCube();
     ~CDemonCube();
     CDemonCube(const CDemonCube &) = delete;
@@ -45,8 +48,13 @@ public:
     // the corners projected into the renderer's buffer, and clipped only when one is off the
     // screen.
     void rotateVertices(const SCubeDrawOwners &owners) const;
-    float rayIntersectTriangles(common::CVector3f *ray_origin, common::CVector3f *ray_direction,
-                                common::CVector3f *hit_normal, std::uint32_t *hit_material);
+    // How far along the ray, 0 to 1, it first meets one of the cube's triangles, that
+    // triangle's normal turned to face the ray and its ground type given; just past 1, outputs
+    // untouched, when it meets none.
+    [[nodiscard]] float rayIntersectTriangles(const common::CVector3f &ray_origin,
+                                              const common::CVector3f &ray_direction,
+                                              common::CVector3f &hit_normal,
+                                              std::uint32_t &hit_material) const;
     void testCylinderCollision(SIntersectXZCylinder *cylinder);
     int testCylinderGroundCollision(common::CVector3f *cylinder_position, float cylinder_radius,
                                     common::CVector3f *output_height,

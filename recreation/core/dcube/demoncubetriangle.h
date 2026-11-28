@@ -5,6 +5,7 @@
 
 #include <array>
 #include <cstdint>
+#include <span>
 
 namespace nocturne::core {
 
@@ -14,7 +15,11 @@ public:
     // Three indices into the cube's vertices, the plane's normal and distance, and the axis the
     // normal leans furthest along.
     void readFromFile(common::CBinaryReader &reader);
-    float rayTriangleIntersection(common::CVector3f *ray_origin, common::CVector3f *ray_direction);
+    // How far along the ray, 0 to 1, it meets the triangle's back face; -1 when it misses, meets
+    // the front, or would meet it only past its end. The vertices are the cube's.
+    [[nodiscard]] float rayTriangleIntersection(std::span<const common::CVector3f> vertices,
+                                                const common::CVector3f &ray_origin,
+                                                const common::CVector3f &ray_direction) const;
 
     // As the file gives them, unchecked against the cube's vertex count.
     [[nodiscard]] const std::array<int, 3> &getVertexIndices() const;

@@ -25,11 +25,12 @@ TEST(CDemonRaytrace, PublicInterface) {
                        common::CVector3f *(CDemonRaytrace::*)(
                            common::CVector3f *, common::CVector3f *, common::CVector3f *)>);
     static_assert(std::is_same_v<decltype(&CDemonRaytrace::rayVoxelIntersection),
-                                 float (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *,
-                                                           common::CVector3f *, int *)>);
-    static_assert(
-        std::is_same_v<decltype(&CDemonRaytrace::rayVoxelGridTest),
-                       int (CDemonRaytrace::*)(common::CVector3f *, common::CVector3f *)>);
+                                 float (CDemonRaytrace::*)(const common::CVector3f &,
+                                                           const common::CVector3f &,
+                                                           common::CVector3f *, int *) const>);
+    static_assert(std::is_same_v<decltype(&CDemonRaytrace::rayVoxelGridTest),
+                                 bool (CDemonRaytrace::*)(const common::CVector3f &,
+                                                          const common::CVector3f &) const>);
     static_assert(
         std::is_same_v<decltype(&CDemonRaytrace::getGroundHeight),
                        float (CDemonRaytrace::*)(common::CVector3f *, int *, common::CVector3f *)>);
