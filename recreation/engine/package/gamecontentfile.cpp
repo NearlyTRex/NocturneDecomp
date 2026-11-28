@@ -1099,6 +1099,18 @@ TomlResult<SScriptRun> readScriptRun(const toml::table &table) {
     return run;
 }
 
+TomlResult<SDeath> readDeath(const toml::table &table) {
+    constexpr std::string_view kWhere = "death: ";
+    if (TomlResult<void> keys = rejectUnknownKeys(table, kWhere, {"fades"}); !keys) {
+        return std::unexpected(keys.error());
+    }
+    const TomlResult<bool> fades = readRequiredBoolean(table, kWhere, "fades");
+    if (!fades) {
+        return std::unexpected(fades.error());
+    }
+    return SDeath{.fades = *fades};
+}
+
 // A one-character string, as a marker in the text.
 TomlResult<char> readCharacter(const toml::table &table, std::string_view where,
                                std::string_view key) {
@@ -3799,7 +3811,7 @@ TomlResult<void> readHudSection(const toml::table &table, SGameContent &content)
 
 // [features]: how the game's own features behave.
 TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &content) {
-    return readSteps<4>({
+    return readSteps<5>({
         [&] { return readInto<SBattery>(table, "battery", readBattery, content.battery); },
         [&] {
             return readInto<SFlashlight>(table, "flashlight", readFlashlight, content.flashlight);
@@ -3808,6 +3820,7 @@ TomlResult<void> readFeaturesSection(const toml::table &table, SGameContent &con
             return readInto<SDifficulty>(table, "difficulty", readDifficulty, content.difficulty);
         },
         [&] { return readInto<SScriptRun>(table, "script", readScriptRun, content.script); },
+        [&] { return readInto<SDeath>(table, "death", readDeath, content.death); },
     });
 }
 
@@ -4042,6 +4055,9 @@ std::string formatGameContentTables(const SGameContent &content) {
     }
     if (const std::optional<SScriptRun> &script = content.script) {
         text += std::format("\n[features.script]\nsteps_per_frame = {}\n", script->steps_per_frame);
+    }
+    if (const std::optional<SDeath> &death = content.death) {
+        text += std::format("\n[features.death]\nfades = {}\n", death->fades);
     }
     text += formatHudPlaces(content);
     for (const SWeaponSpec &weapon : content.weapons) {

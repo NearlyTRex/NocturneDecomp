@@ -125,6 +125,11 @@ public:
     [[nodiscard]] std::span<const SDialogEntry> getDialogEntries() const;
     // The actor the cameras follow; null for none.
     [[nodiscard]] CDemonActor *getFocusActor() const;
+    // Set by end and gtfo; the play loop ends the session on it.
+    [[nodiscard]] bool isMissionEnded() const;
+    // Whether the focus changed since the last take, which clears it; the virtual director then
+    // chooses again.
+    [[nodiscard]] bool takeFocusActorChanged();
 
 private:
     using SStatement = SScriptStatement;
@@ -207,6 +212,8 @@ private:
     std::vector<std::size_t> call_stack_;
     // A run out of steps warns once a mission.
     bool loop_warning_shown_ = false;
+    // The focus changed since the play loop's director last took it.
+    bool focus_actor_changed_ = false;
 };
 
 } // namespace nocturne::core

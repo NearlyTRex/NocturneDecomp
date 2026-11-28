@@ -40,9 +40,8 @@ public:
     void setTitle(std::string_view title);
     // The window was closed: waits for input give up, and menus take it as a cancel.
     [[nodiscard]] bool getInputDisabled() const override;
-    // Set when the window regains focus; the game takes it to restore its camera view.
-    [[nodiscard]] bool getFocusRegained() const;
-    void setFocusRegained(bool regained);
+    [[nodiscard]] bool getFocusRegained() const override;
+    void setFocusRegained(bool regained) override;
 
     [[nodiscard]] std::span<std::uint8_t, kInputCodeCount> getKeyboardState() override;
     [[nodiscard]] int getInputKeyMask() const override;

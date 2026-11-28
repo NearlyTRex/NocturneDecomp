@@ -65,6 +65,7 @@ protected:
                      .flashlight = {},
                      .difficulty = {},
                      .script = {},
+                     .death = {},
                      .weapons = {},
                      .battery_gauge = {},
                      .health_bar = {},

@@ -41,6 +41,9 @@ public:
     [[nodiscard]] virtual int wasKeyPressed() const = 0;
     // The window was closed: every wait for input gives up.
     [[nodiscard]] virtual bool getInputDisabled() const = 0;
+    // Set when the window regains focus; the play loop takes it to show its camera again.
+    [[nodiscard]] virtual bool getFocusRegained() const = 0;
+    virtual void setFocusRegained(bool regained) = 0;
     // The next typed character, presenting frames on the screen until one comes; 0 once the
     // window has closed.
     virtual int getNextKeypress(IScreenDevice &screen) = 0;

@@ -96,10 +96,9 @@ void CScript::executeInitSection() {
 // deferred: clearing the wait and dialogue timers and the time a message shows for, with
 //   processTimer and startDialogLine
 // deferred: clearing the skip label, with skipCinematic
-// The cameras follow the local hero.
+// The cameras follow the local hero, the virtual director told to choose for them.
 // deferred: following the first hero placed in an area when the local hero is in none (the
 //   decomp's netplay focus fallback), with CNetGame's sessions, which bring the other heroes
-// deferred: marking the focus changed, with the play loop's virtual director call
 // deferred: clearing the speaker and the focus lock, with setFocusActor and setSpeaker
 // deferred: letting the heroes be damaged and the enemies attack, with CGame's readers of them
 // The letterbox is down and drawn so, and no line is shown.
@@ -110,6 +109,7 @@ void CScript::initRuntime() {
     next_cmd_ = 0;
     current_message_.clear();
     focus_actor_ = owners_.mission.getHero(kLocalHero);
+    focus_actor_changed_ = true;
     owners_.game.letterbox_mode = ELetterbox::Off;
     letterbox_extension_ = 0.0F;
     owners_.sound.playAmbientSound(owners_.set.getAmbientSound());
@@ -121,6 +121,14 @@ void CScript::initRuntime() {
 
 CDemonActor *CScript::getFocusActor() const {
     return focus_actor_;
+}
+
+bool CScript::isMissionEnded() const {
+    return mission_ended_;
+}
+
+bool CScript::takeFocusActorChanged() {
+    return std::exchange(focus_actor_changed_, false);
 }
 
 // The original first set a placeholder message, which every error replaces.

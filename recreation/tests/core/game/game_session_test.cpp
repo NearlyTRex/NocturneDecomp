@@ -43,11 +43,28 @@ using ::testing::StrEq;
 using ::testing::ThrowsMessage;
 
 // A session on a screen already at 640x480x32 that takes any mode, with a hero for the script to
-// focus on in a set with no cameras to switch to and no network game, which stops at the first
-// frame's processing.
+// focus on in a set with no cameras to switch to and no network game. Each frame presented moves
+// the clock on a quarter second, and the window closes after as many frames as the test plays.
 class CGameSessionTest : public CMissionFixture {
 protected:
+    // A frame's ticks: the longest frame the game's time takes, a quarter second.
+    static constexpr int kFrameTicks = 0x4000 * 18;
+    // Past this many frames a session that should have ended itself is stopped.
+    static constexpr int kGuardFrames = 200;
+
     CGameSessionTest() {
+        ON_CALL(game_screen_, swapBuffers()).WillByDefault([this] {
+            ++frames_;
+            time_ += kFrameTicks;
+        });
+        ON_CALL(game_parts_.getRawInput(), getInputDisabled()).WillByDefault([this] {
+            return frames_ >= closes_after_;
+        });
+        ON_CALL(game_parts_.getRawInput(), getFocusRegained()).WillByDefault([this] {
+            return focus_regained_;
+        });
+        ON_CALL(game_parts_.getRawInput(), setFocusRegained(_))
+            .WillByDefault([this](bool regained) { focus_regained_ = regained; });
         ON_CALL(game_screen_, getWindowHeight()).WillByDefault([this] { return height_; });
         ON_CALL(game_screen_, getBitsPerPixel()).WillByDefault([this] { return depth_; });
         ON_CALL(game_screen_, setScreenResolution(_, _, _))
@@ -66,13 +83,34 @@ protected:
         showACamera();
     }
 
-    void play() {
-        EXPECT_THAT(
-            [this] { static_cast<void>(game_.runGameSession(session_)); },
-            ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
+    // The session, its window closing after that many frames; what it returned.
+    int play(int closes_after = 1) {
+        frames_ = 0;
+        closes_after_ = closes_after;
+        return game_.runGameSession(session_);
+    }
+
+    // The script given, started again.
+    void givenScript(const std::string &text) {
+        givenFile("world\\m1.scr", text);
+        ASSERT_TRUE(script_.loadScript("m1.scr", true));
+        script_.initRuntime();
+    }
+
+    // The local hero dead, with the game's fonts loaded for the banner it shows.
+    void givenADeadHero() {
+        drawGameOnto(game_parts_, screen_,
+                     [this](const std::string &name, const std::string &contents) {
+                         givenFile(name, contents);
+                     });
+        static_cast<CTestHero &>(*mission_.getLocalHero()).death_state =
+            EDeathState::DEATH_STATE_DEAD;
     }
 
     ::testing::NiceMock<engine::MockScreenDevice> &game_screen_ = game_parts_.getScreen();
+    int frames_ = 0;
+    int closes_after_ = 1;
+    bool focus_regained_ = false;
     int height_ = 480;
     int depth_ = 32;
     engine::CBitFont marker_font_{dosio_, screen_, two_d_, three_d_, colors_};
@@ -289,22 +327,103 @@ TEST_F(CGameSessionTest, TheLoadingScreenIsPutAwayAndReportsItsUpdates) {
     EXPECT_TRUE(reported);
 }
 
-// A paused first frame is drawn without processing the game; the play loop after it waits for its
-// port.
-TEST_F(CGameSessionTest, APausedSessionPlaysItsFirstFrame) {
+// A paused frame is drawn without processing the game, and presented like any other.
+TEST_F(CGameSessionTest, APausedSessionPlaysItsFrames) {
     game_.is_paused = true;
-    EXPECT_THAT(
-        [this] { static_cast<void>(game_.runGameSession(session_)); },
-        ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
+    EXPECT_EQ(play(3), 0);
+    EXPECT_EQ(frames_, 3);
 }
 
-// Play reads the extended keys, which the menus fold away.
-TEST_F(CGameSessionTest, PlayKeepsTheExtendedKeys) {
-    int mask = 0;
-    ON_CALL(raw_input_, setInputKeyMask(_)).WillByDefault([&](int value) { mask = value; });
-    keys_.toggleInputMask(false);
+// Play reads the extended keys, which the menus fold away, and a paused frame folds them too;
+// the session's end leaves them folded for the menus.
+TEST_F(CGameSessionTest, PlayKeepsTheExtendedKeysUntilTheSessionEnds) {
+    std::vector<int> masks;
+    ON_CALL(raw_input_, setInputKeyMask(_)).WillByDefault([&](int value) {
+        masks.push_back(value);
+    });
     play();
-    EXPECT_EQ(mask, 0x1ff);
+    EXPECT_EQ(masks, (std::vector<int>{0x1ff, 0x7f}));
+    masks.clear();
+    game_.is_paused = true;
+    play();
+    EXPECT_EQ(masks, (std::vector<int>{0x7f, 0x7f}));
+}
+
+// The session's end lets go of the typed characters and puts the game's time back to normal.
+TEST_F(CGameSessionTest, TheSessionsEndClearsTheKeyPressesAndTimeScale) {
+    EXPECT_CALL(game_parts_.getRawInput(), clearKeypresses()).Times(::testing::AtLeast(1));
+    ON_CALL(game_parts_.getRawInput(), getInputDisabled()).WillByDefault([this] {
+        game_.time_scale_factor = 2.0F;
+        return true;
+    });
+    EXPECT_EQ(game_.runGameSession(session_), 0);
+    EXPECT_EQ(game_.time_scale_factor, 1.0F);
+}
+
+// The script's end ends the session once a frame with time has run it, returning 1.
+TEST_F(CGameSessionTest, TheScriptEndingTheMissionEndsTheSession) {
+    givenScript("end\n");
+    EXPECT_EQ(play(kGuardFrames), 1);
+    EXPECT_LT(frames_, kGuardFrames);
+}
+
+// The session goes on frame after frame until something ends it.
+TEST_F(CGameSessionTest, PlayGoesOnUntilTheWindowCloses) {
+    EXPECT_EQ(play(5), 0);
+    EXPECT_EQ(frames_, 5);
+}
+
+// Back in focus, the camera shown is shown again, the flag taken.
+TEST_F(CGameSessionTest, RegainingTheFocusShowsTheCameraAgain) {
+    focus_regained_ = true;
+    play();
+    EXPECT_FALSE(focus_regained_);
+    EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
+}
+
+// In edit mode, which developer mode's key toggles, the director doesn't choose.
+TEST_F(CGameSessionTest, EditModeLeavesTheDirectorAlone) {
+    ON_CALL(environment_, getVariable(std::string_view("VELOCITY")))
+        .WillByDefault(Return(std::optional<std::string>("")));
+    game_parts_.hold(engine::EInputCodeType::DIK_LCONTROL, true);
+    game_parts_.hold(engine::EInputCodeType::DIK_E, true);
+    EXPECT_EQ(play(), 0);
+    EXPECT_FALSE(game_.game_active);
+}
+
+// A dead hero's Enter ends the session there and then.
+TEST_F(CGameSessionTest, EnterEndsADeadHerosSession) {
+    givenADeadHero();
+    game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_EQ(frames_, 1);
+}
+
+// Four seconds after the death the screen closes on the hero, and once it is black the session
+// ends.
+TEST_F(CGameSessionTest, ADeadHerosScreenClosesAndEndsTheSession) {
+    givenADeadHero();
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_GT(frames_, 16);
+    EXPECT_LT(frames_, kGuardFrames);
+    EXPECT_EQ(game_.getIrisFade(), EIrisFade::Black);
+}
+
+// BW2's dead hero waits for Enter, the screen never closing.
+TEST_F(CGameSessionTest, AGameWhoseDeathDoesntFadeWaitsForEnter) {
+    game_parts_.getContent().death = engine::SDeath{.fades = false};
+    givenADeadHero();
+    EXPECT_EQ(play(kGuardFrames), 0);
+    EXPECT_EQ(frames_, kGuardFrames);
+    EXPECT_NE(game_.getIrisFade(), EIrisFade::Closing);
+    EXPECT_NE(game_.getIrisFade(), EIrisFade::Black);
+}
+
+// A living hero's session isn't ended by Enter.
+TEST_F(CGameSessionTest, EnterLeavesALivingHerosSessionAlone) {
+    game_parts_.hold(engine::EInputCodeType::DIK_RETURN, true);
+    EXPECT_EQ(play(3), 0);
+    EXPECT_EQ(frames_, 3);
 }
 
 } // namespace

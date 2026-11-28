@@ -22,6 +22,8 @@ public:
     MOCK_METHOD(void, clearKeypresses, (), (override));
     MOCK_METHOD(int, wasKeyPressed, (), (const, override));
     MOCK_METHOD(bool, getInputDisabled, (), (const, override));
+    MOCK_METHOD(bool, getFocusRegained, (), (const, override));
+    MOCK_METHOD(void, setFocusRegained, (bool regained), (override));
     MOCK_METHOD(int, getNextKeypress, (IScreenDevice & screen), (override));
 };
 

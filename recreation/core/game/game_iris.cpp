@@ -134,6 +134,14 @@ EIrisFade CGame::getIrisFade() const {
     return iris_fade_;
 }
 
+// nocedit 0x004e0b90
+// bw1 0x004d62e0
+// bw2 0x004bb4e0
+// bw3 0x004bd8d0
+bool CGame::fadeIn() const {
+    return iris_fade_ == EIrisFade::Idle || iris_fade_ == EIrisFade::Black;
+}
+
 const engine::SGameContent &CGame::getContent() const {
     return owners_.content;
 }

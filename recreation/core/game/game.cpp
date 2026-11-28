@@ -34,7 +34,7 @@ void CGame::saveClockTime() {
 
 // deferred: a session the script ended with "end" closing on the Game Over menu, as a helper's
 //   death ends it, where the original drops to the main menu (the decomp's helper_death.h), with
-//   CGame::runGameSession
+//   runGameSession's Game Over menu
 // While a debug movie records, each frame is a frame of the movie's, whatever the clock says.
 // nocedit 0x004d7d90
 void CGame::updateDT() {

@@ -49,7 +49,7 @@ TEST(CGame, PublicInterface) {
                                  void (CGame::*)(CDemonActor *, CDemonCamera &)>);
     static_assert(std::is_same_v<decltype(&CGame::updateFadeTransition), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::getIrisFade), EIrisFade (CGame::*)() const>);
-    static_assert(std::is_same_v<decltype(&CGame::fadeIn), std::uint32_t (CGame::*)()>);
+    static_assert(std::is_same_v<decltype(&CGame::fadeIn), bool (CGame::*)() const>);
     static_assert(std::is_same_v<decltype(&CGame::resetWeaponSwitchTimers), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::resetInventoryDisplayTimer), void (CGame::*)()>);
     static_assert(std::is_same_v<decltype(&CGame::setStatusDisplay),

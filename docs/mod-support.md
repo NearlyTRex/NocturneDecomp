@@ -120,6 +120,7 @@ two axes, and BW2's axes, melee weapon and cross.
 | `[features.flashlight]` | The flashlight: `options`, Graphic Options' halo and range lines (Nocturne's and BW1's, whose heroes light their weapons; BW2's and BW3's carry lanterns) |
 | `[features.difficulty]` | The puzzle and combat difficulty: `options`, the gameplay page's lines for them (BW1's alone) |
 | `[features.script]` | The mission script: `steps_per_frame`, from 1 to 100000, the most steps a frame's run takes before the script warns of a loop (Nocturne's and BW2's 201, BW1's and BW3's 1551) |
+| `[features.death]` | A dead hero's wait: `fades`, whether the screen closes on the hero four seconds after the death and ends the session, as Enter does at any time (Nocturne's, BW1's and BW3's; BW2's waits for Enter alone) |
 
 ### `weapons`: the weapons the game knows
 

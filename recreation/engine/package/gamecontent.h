@@ -873,6 +873,15 @@ struct SScriptRun {
     bool operator==(const SScriptRun &) const = default;
 };
 
+// A dead hero's wait before the session ends.
+struct SDeath {
+    // Whether the screen closes on the hero four seconds after it died, ending the session as
+    // Enter does: Nocturne's, BW1's and BW3's. BW2's waits for Enter alone.
+    bool fades = true;
+
+    bool operator==(const SDeath &) const = default;
+};
+
 // A weapon the game knows: a weapon actor of the class, or one it derives from, and of the model
 // and the actor's name when they are given, matched in either case. Each value an actor takes
 // comes from the most specific weapon that gives it: one naming the actor first, then one naming
@@ -1068,6 +1077,7 @@ struct SGameContent {
     std::optional<SFlashlight> flashlight;
     std::optional<SDifficulty> difficulty;
     std::optional<SScriptRun> script;
+    std::optional<SDeath> death;
     // [[weapons.weapon]], by id.
     std::vector<SWeaponSpec> weapons;
     // Each HUD element none of whose table a package gives is where Nocturne's is.

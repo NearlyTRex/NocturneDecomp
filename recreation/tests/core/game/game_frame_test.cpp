@@ -867,6 +867,7 @@ protected:
 
 TEST_F(CGameIrisTest, AGameStartsWithNoIris) {
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
+    EXPECT_TRUE(game_.fadeIn());
     game_.updateFadeTransition();
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Idle);
     frame();
@@ -940,6 +941,7 @@ TEST_F(CGameIrisTest, AnOpeningIrisKeepsTheCentreItBeganWith) {
 TEST_F(CGameIrisTest, AClosingIrisNarrowsToBlack) {
     game_.beginFadeOut(nullptr, session_.camera);
     EXPECT_EQ(game_.getIrisFade(), EIrisFade::Closing);
+    EXPECT_FALSE(game_.fadeIn());
     frame();
     EXPECT_EQ(screen_.pixel(4, 4), sceneAt(4));
     game_.slamDT(kQuarterSecond);

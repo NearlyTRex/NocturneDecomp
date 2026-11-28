@@ -1,5 +1,6 @@
 #include "common/error/error.h"
 #include "core/actor/demonactor.h"
+#include "core/actor/notported.h"
 #include "core/event/eventlist.h"
 #include "core/game/game.h"
 #include "core/hero/hero.h"
@@ -48,7 +49,7 @@ bool CDemonMission::startMission() {
 // deferred: after the session, taking the hero off the list and resetting it, clearing the
 //   mission, and going on to the mission the session asked for, with its act's stats, a loading
 //   screen and a key to continue away from headquarters, its prompt placed by the front end's
-//   layout (the decomp's nocturne_continue_prompt), or finishing the act, with the play loop,
+//   layout (the decomp's nocturne_continue_prompt), or finishing the act, with
 //   CDemonMission::removeActorFromList, CHero::reset, displayActStats and finishAct
 // deferred: netplay agreeing on the next mission and skipping the key to continue (the decomp's
 //   nocturne_net_mission_*), with CNetGame's sessions
@@ -65,6 +66,7 @@ void CDemonMission::run(CGame &game, const SGameSessionOwners &session) {
     pending_mission_name_.clear();
     buildActiveSetActorList();
     static_cast<void>(game.runGameSession(session));
+    quitNotPorted("CDemonMission", "run");
 }
 
 // nocedit 0x005235b0

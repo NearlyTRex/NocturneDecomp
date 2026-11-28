@@ -130,7 +130,7 @@ public:
     void displayMessage(std::string_view message, float duration);
     void setFudgeTarget(common::CVector3f *fudge_target, float fudge_step);
     // Brings the game up for play at its resolution, with the scene and its lights set up, then
-    // plays until the session ends.
+    // plays until the session ends: 1 when the script ended the mission, otherwise 0.
     int runGameSession(const SGameSessionOwners &session);
     // The packages' control modes and bindings rows; without them, or with a mode, action or row
     // this build lacks, fatal.
@@ -157,7 +157,8 @@ public:
     // bit, opened when it is wider than the screen, closed at nothing.
     void updateFadeTransition();
     [[nodiscard]] EIrisFade getIrisFade() const;
-    std::uint32_t fadeIn();
+    // Whether the iris is done: put away, or closed to black.
+    [[nodiscard]] bool fadeIn() const;
     void resetWeaponSwitchTimers();
     void resetInventoryDisplayTimer();
     // A bar filled to value, 0 to 1, named and shown for duration seconds, or the bar of that name,
@@ -322,6 +323,11 @@ private:
     void setGameRes(const SGameSessionOwners &session);
     // The set's, the fire effects', the gore's and the inventory's textures, models and pictures.
     static void loadAssets(const SGameSessionOwners &session);
+    // The session's frames, until it ends; true when the script ended the mission.
+    [[nodiscard]] bool playSession(const SGameSessionOwners &session);
+    void directSession(const SGameSessionOwners &session);
+    // death_wait is the seconds the hero has been dead, negative once the screen is closing.
+    [[nodiscard]] bool isDeathWaitOver(const SGameSessionOwners &session, float &death_wait);
     void processKeyboardControls(const SGameSessionOwners &session, SPlayerInput &input);
     // The keyboard's controls, then the mouse's movement from the screen's centre, where the
     // cursor is put back, turning or strafing and looking where it beats the keys.

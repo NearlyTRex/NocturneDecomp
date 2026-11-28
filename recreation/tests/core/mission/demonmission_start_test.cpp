@@ -167,12 +167,14 @@ protected:
     }
 
     // Runs the mission, which, with no script started to give the cameras a focus, shows the first
-    // camera and stops after the first frame, where the play loop goes on.
+    // camera, ends the session as the window closes after the first frame, and stops where the
+    // mission goes on after it.
     void run() {
         givenSessionAssets();
+        ON_CALL(game_parts_.getRawInput(), getInputDisabled()).WillByDefault(Return(true));
         EXPECT_THAT(
             [this] { mission_.run(game_, session_); },
-            ThrowsMessage<common::CFatalError>(StrEq("CGame::runGameSession is not ported yet")));
+            ThrowsMessage<common::CFatalError>(StrEq("CDemonMission::run is not ported yet")));
         EXPECT_EQ(set_.getSelectedCameraIndex(), 0);
     }
 };

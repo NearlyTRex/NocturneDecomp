@@ -59,6 +59,7 @@ SGameContent fullContent() {
     content.flashlight = SFlashlight{.options = false};
     content.difficulty = SDifficulty{.options = true};
     content.script = SScriptRun{.steps_per_frame = 1551};
+    content.death = SDeath{.fades = false};
     content.health_bar = SHealthBar{.place = {.anchor = EHudAnchor::Left, .x = 639, .y = 479}};
     content.inventory_panel =
         SInventoryPanel{.place = {.anchor = EHudAnchor::TopLeft, .x = 1, .y = 2}};
@@ -468,6 +469,9 @@ INSTANTIATE_TEST_SUITE_P(
         SBadCase{"[features.script]", "features: script: steps_per_frame: missing"},
         SBadCase{"[features.script]\nsteps_per_frame = 0",
                  "features: script: steps_per_frame: not from 1 to 100000"},
+        SBadCase{"[features.death]\nseconds = 4",
+                 "features: death: seconds: not a key this file takes"},
+        SBadCase{"[features.death]", "features: death: fades: missing"},
         SBadCase{"looks.iris = 1", "looks: iris: not a [iris] table"},
         SBadCase{"[looks.iris]\nspeed = 1", "looks: iris: speed: not a key this file takes"},
         SBadCase{"[looks.iris]\nblack_frames = 1", "looks: iris: opens_session: missing"},
@@ -1285,6 +1289,7 @@ TEST(GameContentFile, BlairWitchTwosFrontEndReads) {
     EXPECT_TRUE(content->figure_scene->models.empty());
     EXPECT_TRUE(content->figure_scene->cheat_model.empty());
     EXPECT_EQ(content->figure_scene->frame_count, 75);
+    EXPECT_EQ(content->death, SDeath{.fades = false});
     ASSERT_TRUE(content->menu.has_value());
     const SMenuLayout &menu = *content->menu;
     EXPECT_EQ(menu.align, EMenuAlign::Centre);
