@@ -263,7 +263,15 @@ private:
                                .current_texture = current_texture_}};
     // deferred: the 10 train noises, with processTrainSounds
     // nocedit 0x005b1760
-    core::CSound sound_{sound_main_, pod_, game_files_, pod_.getGameContent()};
+    core::CSound sound_{{.sound_main = sound_main_,
+                         .pod = pod_,
+                         .file_system = game_files_,
+                         .content = pod_.getGameContent(),
+                         .crt_random = crt_random_,
+                         .console = console_,
+                         .room_size_at = [this](const nocturne::common::CVector3f &position) {
+                             return set_.getReverbPresetAtPosition(position);
+                         }}};
     core::CAttractMovies attract_movies_{clock_};
     // deferred: the filter cache and filter effects, with CFilterCache's and CFilterFX's
     //   constructors

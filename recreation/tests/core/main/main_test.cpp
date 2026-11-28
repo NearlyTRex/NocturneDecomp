@@ -241,7 +241,15 @@ protected:
                                .screen = screen_,
                                .special = special_,
                                .current_texture = current_texture_}};
-    CSound game_sound_{sound_, pod_, file_system_, content_};
+    CSound game_sound_{{.sound_main = sound_,
+                        .pod = pod_,
+                        .file_system = file_system_,
+                        .content = content_,
+                        .crt_random = crt_random_,
+                        .console = console_,
+                        .room_size_at = [this](const common::CVector3f &position) {
+                            return set_.getReverbPresetAtPosition(position);
+                        }}};
     std::array<CDemonFilter, 8> global_filters_;
     std::array<CDemonFilter, 4> player_filters_;
     engine::CMouse mouse_{dosio_, screen_, special_};

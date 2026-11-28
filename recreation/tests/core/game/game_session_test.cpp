@@ -15,6 +15,7 @@
 #include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/sound/sound.h"
 #include "engine/console/console.h"
 #include "engine/font/font.h"
 #include "engine/keys/inputcodetype.h"
@@ -32,6 +33,7 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <memory>
@@ -107,6 +109,12 @@ protected:
         givenFile("world\\m1.scr", text);
         ASSERT_TRUE(script_.loadScript("m1.scr", true));
         script_.initRuntime();
+    }
+
+    // An output that opens, taken up but not started.
+    void givenAnOutput() {
+        ON_CALL(audio_device_, open).WillByDefault(Return(true));
+        sound_main_.initializeSoundDevice();
     }
 
     // Escape pressed for the session's next frame to take.
@@ -530,6 +538,54 @@ TEST_F(CGameSessionTest, TheGameOverMenusLoadGameIsNotPortedYet) {
     pressInTurn({kReturn});
     const auto play_on = [this] { static_cast<void>(play(kGuardFrames)); };
     expectEachQuitsNotPorted("CGame", {{"promptLoadGame", play_on}});
+}
+
+// The output starts once the first frame is shown, and stops as the session ends.
+TEST_F(CGameSessionTest, TheAudioStartsAfterTheFirstFrameAndStopsAtTheEnd) {
+    givenAnOutput();
+    std::vector<bool> running;
+    ON_CALL(game_screen_, swapBuffers()).WillByDefault([&] {
+        ++frames_;
+        time_ += kFrameTicks;
+        running.push_back(sound_main_.isSoundBusy());
+    });
+    EXPECT_EQ(play(3), 0);
+    EXPECT_EQ(running, (std::vector<bool>{false, true, true}));
+    EXPECT_FALSE(sound_main_.isSoundBusy());
+}
+
+// The sound stops while the pause menu shows, and starts again as it closes.
+TEST_F(CGameSessionTest, ThePauseMenuStopsTheSoundWhileItShows) {
+    givenAnOutput();
+    ASSERT_TRUE(sound_main_.enableSoundSystem());
+    escape();
+    pressInTurn({kReturn});
+    std::vector<bool> running;
+    const auto press_keys = screen_.on_swap;
+    screen_.on_swap = [&] {
+        running.push_back(sound_main_.isSoundBusy());
+        press_keys();
+    };
+    bool running_after = false;
+    ON_CALL(game_parts_.getRawInput(), processWindowMessages()).WillByDefault([&] {
+        running_after = sound_main_.isSoundBusy();
+    });
+    EXPECT_EQ(play(1), 0);
+    ASSERT_FALSE(running.empty());
+    EXPECT_TRUE(std::ranges::none_of(running, [](bool on) { return on; }));
+    EXPECT_TRUE(running_after);
+}
+
+// An unpaused frame moves the sounds on, the ambient channel following the effects'; a paused
+// one leaves them.
+TEST_F(CGameSessionTest, AnUnpausedFrameMovesTheSoundsOn) {
+    sound_main_.setSfxChannelVol(CSound::kEffectsChannel, 0.5F);
+    game_.is_paused = true;
+    play();
+    EXPECT_EQ(sound_main_.getSfxChannelVol(CSound::kAmbientChannel), 1.0F);
+    game_.is_paused = false;
+    play();
+    EXPECT_EQ(sound_main_.getSfxChannelVol(CSound::kAmbientChannel), 0.5F);
 }
 
 // A window closed while it shows ends it, as nothing could answer it again.

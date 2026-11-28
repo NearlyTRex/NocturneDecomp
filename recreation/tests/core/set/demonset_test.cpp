@@ -74,7 +74,7 @@ TEST(CDemonSet, PublicInterface) {
         std::is_same_v<decltype(&CDemonSet::setAmbientBaseQuick), void (CDemonSet::*)(int)>);
     static_assert(std::is_same_v<decltype(&CDemonSet::process), void (CDemonSet::*)()>);
     static_assert(std::is_same_v<decltype(&CDemonSet::getReverbPresetAtPosition),
-                                 int (CDemonSet::*)(common::CVector3f *)>);
+                                 int (CDemonSet::*)(const common::CVector3f &) const>);
     static_assert(std::is_same_v<decltype(&CDemonSet::loadAssets), void (CDemonSet::*)()>);
     static_assert(
         std::is_same_v<decltype(&CDemonSet::renderPrimitiveBatch),

@@ -4,6 +4,7 @@
 #include "common/text/ascii.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstddef>
 #include <optional>
 #include <span>
@@ -144,6 +145,22 @@ int CDemonSet::getDefaultRoomSize() const {
 
 std::span<const SRoom> CDemonSet::getRooms() const {
     return rooms_;
+}
+
+// The first room holding the point, edges included, or the set's default.
+// nocedit 0x0056fac0
+int CDemonSet::getReverbPresetAtPosition(const common::CVector3f &position) const {
+    for (const SRoom &room : rooms_) {
+        const common::CVector3f local =
+            room.rotation_matrix.transformVectorTranspose({.x = position.x - room.position.x,
+                                                           .y = position.y - room.position.y,
+                                                           .z = position.z - room.position.z});
+        if (std::abs(local.x) <= room.extents.x && std::abs(local.y) <= room.extents.y &&
+            std::abs(local.z) <= room.extents.z) {
+            return room.reverb_size;
+        }
+    }
+    return default_room_size_;
 }
 
 int CDemonSet::getDefaultGroundType() const {

@@ -83,6 +83,22 @@ TEST_F(CDemonSetLoadTest, ARoomIsAPlacedTurnedBoxWithItsReverb) {
     EXPECT_EQ(room.reverb_size, 7);
 }
 
+// A sound in the room, its turned box, sounds like its size; past any side, the set's default.
+TEST_F(CDemonSetLoadTest, ASoundsRoomSizeIsTheRoomsItIsIn) {
+    load({});
+    const SRoom &room = set_.getRooms()[0];
+    const auto at = [&](common::CVector3f local) {
+        const common::CVector3f turned = room.rotation_matrix.transformVector(local);
+        return set_.getReverbPresetAtPosition({.x = room.position.x + turned.x,
+                                               .y = room.position.y + turned.y,
+                                               .z = room.position.z + turned.z});
+    };
+    EXPECT_EQ(at({.x = 0.9F, .y = -1.9F, .z = 2.9F}), 7);
+    EXPECT_EQ(at({.x = 1.1F, .y = 0.0F, .z = 0.0F}), 3);
+    EXPECT_EQ(at({.x = 0.0F, .y = 2.1F, .z = 0.0F}), 3);
+    EXPECT_EQ(at({.x = 0.0F, .y = 0.0F, .z = -3.1F}), 3);
+}
+
 TEST_F(CDemonSetLoadTest, EveryCameraIsEnabledInGroupZeroAtTheLeastAmbient) {
     load(
         {.cameras = "2\n" + cameraText("first") + cameraText("second"), .pvs = "2\n\t4\n\t5\n0\n"});

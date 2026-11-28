@@ -132,7 +132,15 @@ protected:
     sound::CSndMain sound_main_{dosio_, file_system_, audio_device_, console_,
                                 [] { return std::tm{}; }};
     engine::CPod pod_{file_system_, dosio_};
-    CSound sound_{sound_main_, pod_, file_system_, game_parts_.getContent()};
+    CSound sound_{{.sound_main = sound_main_,
+                   .pod = pod_,
+                   .file_system = file_system_,
+                   .content = game_parts_.getContent(),
+                   .crt_random = crt_random_,
+                   .console = console_,
+                   .room_size_at = [this](const common::CVector3f &position) {
+                       return set_.getReverbPresetAtPosition(position);
+                   }}};
     CScript script_{{.dosio = dosio_,
                      .editor_tools = editor_tools_,
                      .mission = mission_,

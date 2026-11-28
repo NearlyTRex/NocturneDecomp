@@ -251,7 +251,13 @@ protected:
     CActor actor_{game_, crt_random_, models_, keyframed_models_, actor_events_};
     engine::CMenuInput menu_input_{keys_, game_parts_.getGamepad().input};
     engine::CPod pod_{file_system_, dosio_};
-    CSound game_sound_{sound_, pod_, file_system_, game_parts_.getContent()};
+    CSound game_sound_{{.sound_main = sound_,
+                        .pod = pod_,
+                        .file_system = file_system_,
+                        .content = game_parts_.getContent(),
+                        .crt_random = crt_random_,
+                        .console = console_,
+                        .room_size_at = [](const common::CVector3f &) { return 0; }}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,

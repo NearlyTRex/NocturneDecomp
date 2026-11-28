@@ -10,6 +10,7 @@
 #include "core/script/script.h"
 #include "core/set/demonset.h"
 #include "core/slew/slew.h"
+#include "core/sound/sound.h"
 #include "engine/2d/2d.h"
 #include "engine/3d/3d.h"
 #include "engine/console/console.h"
@@ -42,9 +43,9 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 
 } // namespace
 
-// The scene is drawn, the game moved on unless paused, the clock and the network game served,
-// and the 2D drawn over it. Paused, the hero is flown by the slew keys instead, and the pointer
-// drawn.
+// The scene is drawn, the game and its sounds moved on unless paused, the clock and the network
+// game served, and the 2D drawn over it. Paused, the hero is flown by the slew keys instead, and
+// the pointer drawn.
 // deferred: a cinematic skip's or a pending sim frame's frame, unpaused and not drawn: the
 //   client's frame, the game processed, the clock stepped a quarter second while skipping and by
 //   updateDT otherwise, then the server's frame, with skipCinematic and CNetGame's sim frames
@@ -57,7 +58,6 @@ constexpr double kFixed8ToFloat = 1.0 / 256.0;
 //   up, and the puzzle stepped before the client's frame, with CFieldNotes and CPuzzle
 // deferred: the world held still while the automap shows, its frame effects cleared instead, and
 //   the automap stepped after the clock (the decomp's AUTOMAP), with the automap
-// deferred: the sound processed after the game, with CSound::process
 // deferred: retail's force feedback stepped after the sound, with CForceFeedback::processEvent
 // The actors are drawn into the spotlights' maps for the next frame's scene.
 // deferred: the static lights left undrawn while the goggles are on, with the goggles
@@ -106,6 +106,7 @@ void CGame::processFrame(const SGameSessionOwners &session) {
         slewLocalHero(session);
     } else {
         process(session);
+        session.sound.process(delta_time_float_);
     }
     updateDT();
     session.net_game.processServerFrame();

@@ -14,6 +14,7 @@
 #include "core/netgame/netgame.h"
 #include "core/script/script.h"
 #include "core/set/demonset.h"
+#include "core/sound/sound.h"
 #include "engine/2d/2d.h"
 #include "engine/console/console.h"
 #include "engine/keys/inputcodetype.h"
@@ -149,14 +150,14 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   the warps menu
 // deferred: BW1-3's iris put away as a cinematic is skipped (their resetIrisFade), with
 //   skipCinematic
-// deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), not
-//   CSound::shutdown and init, which lost a dialogue line and restarted the music. The slots
+// deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), in place of
+//   the shipped shutdown and init, which lose a dialogue line and restart the music. The slots
 //   playing as it opens are held, neither computed nor heard, and written down with their
 //   sample, options, position and serial; the menu's own sounds play. Return, Save or Options
 //   lets them go from the same sample, after stopping the menu's sounds; one lost meanwhile (an
 //   output reopened, muting, its channel off and on) starts again where it was, in its own slot
 //   under its own serial, so the game's handle still finds it. Load, Warps, Skip cinematic and
-//   Quit shut the sound down and start it again as shipped. With CSound::init and shutdown, and
+//   Quit shut the sound down and start it again as shipped. With a hold on CSndMain's slots and
 //   a stop on CSfxVoice that keeps its frame
 // deferred: Escape closing the automap first (the decomp's AUTOMAP), with the automap
 // deferred: BW1-3's Escape putting the field notes or the puzzle away in place of the pause menu,
@@ -183,13 +184,11 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   displayBitmap command and showFullscreenBitmap
 // deferred: the session ending on a chapter reload, with processHotkeys' quick load and
 //   promptLoadGame
-// deferred: the sound started after the first frame, with CSound::init
 // deferred: BW1's and BW3's NewSet event raised after a set change, with the set change's event
 // deferred: the host disconnecting after a death, and no Game Over menu in a network game (the
 //   decomp's NETPLAY), with CNetGame::initializeNetworkToHost and initializeNetworkToJoin
 // deferred: the Game Over menu's Load game, with promptLoadGame
 // deferred: the damageable enemies counted, with displayActStats
-// deferred: the sound stopped, with CSound::shutdown
 // deferred: retail's force feedback stepped after the sound starts and stops, with
 //   CForceFeedback::processEvent
 // deferred: BW1-3's puzzle pictures and BW1's and BW3's cursor bitmaps freed, with CPuzzle and the
@@ -244,6 +243,7 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
         showGameOverMenu(session);
     }
     session.keys.toggleInputMask(false);
+    session.sound.shutdown();
     owners_.keys.clearKeypresses();
     time_scale_factor = 1.0F;
     return mission_ended ? 1 : 0;
@@ -256,6 +256,8 @@ int CGame::runGameSession(const SGameSessionOwners &session) {
 bool CGame::playSession(const SGameSessionOwners &session) {
     // The seconds the hero has been dead, until the screen closes on them; then negative.
     float death_wait = 0.0F;
+    // The session's audio starts once its first frame has been played.
+    bool audio_started = false;
     engine::IRawInput &raw_input = owners_.raw_input;
     while (true) {
         session.keys.toggleInputMask(!is_paused);
@@ -286,6 +288,10 @@ bool CGame::playSession(const SGameSessionOwners &session) {
         }
         if (session.script.isMissionEnded()) {
             return true;
+        }
+        if (!audio_started) {
+            session.sound.init();
+            audio_started = true;
         }
     }
 }
@@ -336,8 +342,10 @@ CGame::EPauseMenu CGame::takePauseMenu(const SGameSessionOwners &session) {
     return showPauseMenu(session) ? EPauseMenu::Quit : EPauseMenu::Closed;
 }
 
+// The sound stops while it shows, and starts again as it closes, unless Quit ends the session.
 // Save game is greyed out under a letterbox, and a full letterbox's cinematic can be skipped.
 bool CGame::showPauseMenu(const SGameSessionOwners &session) {
+    session.sound.shutdown();
     const support::CNewMsg &messages = session.messages;
     shape::CPickList menu(session.pick_list);
     for (const std::string_view item : kPauseMenuItems) {
@@ -369,6 +377,7 @@ bool CGame::showPauseMenu(const SGameSessionOwners &session) {
         break;
     }
     owners_.two_d.clearInputAndWait();
+    session.sound.init();
     return false;
 }
 

@@ -164,7 +164,8 @@ public:
     // ones' beams taking their filter frame; the events "<light>on" and "<light>off" switch it,
     // and a light named moon... shows only from outside every virtual director box.
     void process();
-    int getReverbPresetAtPosition(common::CVector3f *position);
+    // The size of room a sound there sounds like.
+    [[nodiscard]] int getReverbPresetAtPosition(const common::CVector3f &position) const;
     // The developer's switch that turns every spotlight off, on until flipped.
     void toggleLights();
     [[nodiscard]] bool getLightsOn() const;
